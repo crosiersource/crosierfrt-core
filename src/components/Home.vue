@@ -1,45 +1,57 @@
 <template>
-  <Toast position="bottom-right" class="mt-5" />
-  <div class="container">
-    <div class="form-row">
-      <CrosierInputInt id="id" v-model="fields.id" label="Id" col="3" :disabled="true" />
 
-      <CrosierInputText
-        id="UUID"
-        v-model="fields.UUID"
-        input-class="lowercase"
-        label="UUID"
-        col="3"
-        :error="errors.UUID"
-      />
 
-      <CrosierInputText
-        id="nome"
-        v-model="fields.nome"
-        label="Nome"
-        input-class="lowercase"
-        col="6"
-        :error="errors.nome"
-      />
-    </div>
+  <Layout>
+    <template #content>
 
-    <div class="form-row">
-      <CrosierCurrency id="valorCredito2" v-model="valorCredito2" label="Valor" />
-    </div>
+      <Toast position="bottom-right" class="mt-5" />
+      <h1>oiiiiiii</h1>
+      <div class="container">
+        <div class="form-row">
+          <CrosierInputInt id="id" v-model="fields.id" label="Id" col="3" :disabled="true" />
 
-    <div class="form-row">
-      <CrosierInputTextarea
-        id="obs"
-        v-model="fields.obs"
-        input-class="notuppercase"
-        label="Obs"
-        :error="errors.obs"
-      />
-    </div>
-  </div>
+          <CrosierInputText
+            id="UUID"
+            v-model="fields.UUID"
+            input-class="lowercase"
+            label="UUID"
+            col="3"
+            :error="errors.UUID"
+          />
+
+          <CrosierInputText
+            id="nome"
+            v-model="fields.nome"
+            label="Nome"
+            input-class="lowercase"
+            col="6"
+            :error="errors.nome"
+          />
+        </div>
+
+        <div class="form-row">
+          <CrosierCurrency id="valorCredito2" v-model="valorCredito2" label="Valor" />
+        </div>
+
+        <div class="form-row">
+          <CrosierInputTextarea
+            id="obs"
+            v-model="fields.obs"
+            input-class="notuppercase"
+            label="Obs"
+            :error="errors.obs"
+          />
+        </div>
+      </div>
+      
+    </template>
+  </Layout>
+  
+  
 </template>
 
 <script>
+import Layout from "../layout/Layout.vue";
 import Toast from "primevue/toast";
 import * as yup from "yup";
 import {
@@ -54,6 +66,7 @@ import { mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
+    Layout,
     Toast,
     CrosierInputText,
     CrosierInputTextarea,
@@ -68,6 +81,14 @@ export default {
     };
   },
 
+
+  computed: {
+    ...mapGetters("teste", {
+      fields: "getFields",
+      errors: "getFieldsErrors"
+    })
+  },
+  
   async mounted() {
     this.setLoading(true);
 
@@ -101,11 +122,5 @@ export default {
     },
   },
 
-  computed: {
-    ...mapGetters("teste", {
-      fields: "getFields",
-      errors: "getFieldsErrors"
-    })
-  },
 };
 </script>
