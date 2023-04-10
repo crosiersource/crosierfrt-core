@@ -1,8 +1,5 @@
 <template>
-
-
   <MenuEsquerdo />
-  
 
   <div
     v-if="isOnMobile && !isMenuCollapsed"
@@ -10,17 +7,11 @@
     @click="setMenuCollapsed(true)"
   />
 
-  <div
-    id="layout"
-    :class="[{'collapsed' : isMenuCollapsed}, {'onmobile' : isOnMobile}]"
-  >
+  <div id="layout" :class="[{ collapsed: isMenuCollapsed }, { onmobile: isOnMobile }]">
     <LayoutHeader />
     <slot name="content"></slot>
     <LayoutFooter />
   </div>
-  
-
-
 </template>
 
 <script>
@@ -35,22 +26,16 @@ export default {
   components: {
     LayoutHeader,
     LayoutFooter,
-    MenuEsquerdo
+    MenuEsquerdo,
   },
 
-
   computed: {
-    ...mapGetters("layout", [
-        "isLoading",
-        "isOnMobile",
-        "isMenuCollapsed"
-      ]
-    )
+    ...mapGetters("layout", ["isLoading", "isOnMobile", "isMenuCollapsed"]),
   },
 
   methods: {
-    ...mapMutations("layout/", ["setMenuCollapsed"])
-  }
+    ...mapMutations("layout/", ["setMenuCollapsed"]),
+  },
 };
 </script>
 
@@ -74,5 +59,4 @@ html {
 #layout.onmobile {
   padding-left: 65px;
 }
-
 </style>

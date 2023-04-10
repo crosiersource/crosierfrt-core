@@ -15,19 +15,17 @@
 <script>
 import { h, markRaw } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { mapGetters, mapMutations } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 
 const separator = {
-  template: "<hr style=\"border-color: rgba(0, 0, 0, 0.1); margin: 20px;\">"
+  template: '<hr style="border-color: rgba(0, 0, 0, 0.1); margin: 20px;">',
 };
 
 const faIcon = (props) => {
   return {
     element: markRaw({
-      render: () => h("div", [
-        h(FontAwesomeIcon, { size: "lg", ...props })
-      ])
-    })
+      render: () => h("div", [h(FontAwesomeIcon, { size: "lg", ...props })]),
+    }),
   };
 };
 
@@ -41,28 +39,22 @@ export default {
       themes: [
         {
           name: "Default theme",
-          input: ""
+          input: "",
         },
         {
           name: "White theme",
-          input: "white-theme"
-        }
+          input: "white-theme",
+        },
       ],
       selectedTheme: "white-theme",
-      isOnMobile: false
+      isOnMobile: false,
     };
   },
 
   computed: {
-    ...mapGetters("layout", [
-        "isLoading",
-        "isOnMobile",
-        "isMenuCollapsed"
-      ]
-    ),
-    
-    getLogo() {
+    ...mapGetters("layout", ["isLoading", "isOnMobile", "isMenuCollapsed"]),
 
+    getLogo() {
       const img = this.collapsed
         ? import.meta.env.VITE_CROSIER_LOGO_PEQ
         : import.meta.env.VITE_CROSIER_LOGO;
@@ -71,11 +63,9 @@ export default {
       const classOnMobile = this.isOnMobile ? "onmobile" : "";
 
       return {
-        template: `<img id="logo" class="${classCollapsed} ${classOnMobile}" src="${img}" alt="logo" />`
+        template: `<img id="logo" class="${classCollapsed} ${classOnMobile}" src="${img}" alt="logo" />`,
       };
     },
-
-      
   },
 
   mounted() {
@@ -85,8 +75,12 @@ export default {
   },
 
   methods: {
-    ...mapMutations("layout/", ["setOnMobile", "setMenuCollapsed"]),
-    
+    ...mapMutations({
+      setOnMobile: "layout/setOnMobile",
+      setMenuCollapsed: "layout/setMenuCollapsed",
+    }),
+    ...mapActions({ buildMenuByUrl: "layout/buildMenuByUrl" }),
+
     onToggleCollapse(collapsed) {
       console.log("onToggleCollapse");
       console.log(collapsed);
@@ -100,7 +94,6 @@ export default {
         logoElem.src = import.meta.env.VITE_CROSIER_LOGO;
         logoElem.classList.remove("collapsed");
       }
-
     },
 
     onItemClick(event, item) {
@@ -120,63 +113,64 @@ export default {
     },
 
     buildMenu() {
+      this.buildMenuByUrl();
       this.menu = [
         {
-          component: markRaw(this.getLogo)
+          component: markRaw(this.getLogo),
         },
         {
           header: "Menu Principal",
-          hiddenOnCollapse: true
+          hiddenOnCollapse: true,
         },
         {
           href: "/",
           title: "Installation",
-          icon: faIcon({ icon: "fa-solid fa-download" })
+          icon: faIcon({ icon: "fa-solid fa-download" }),
         },
         {
           href: "/basic-usage",
           title: "Basic Usage",
-          icon: faIcon({ icon: "fa-solid fa-code" })
+          icon: faIcon({ icon: "fa-solid fa-code" }),
         },
         {
           header: "Usage",
-          hiddenOnCollapse: true
+          hiddenOnCollapse: true,
         },
         {
           href: "/props",
           title: "Props",
-          icon: faIcon({ icon: "fa-solid fa-cogs" })
+          icon: faIcon({ icon: "fa-solid fa-cogs" }),
         },
         {
           href: "/events",
           title: "Events",
-          icon: faIcon({ icon: "fa-solid fa-bell" })
+          icon: faIcon({ icon: "fa-solid fa-bell" }),
         },
         {
           href: "/styling",
           title: "Styling",
-          icon: faIcon({ icon: "fa-solid fa-palette" })
+          icon: faIcon({ icon: "fa-solid fa-palette" }),
         },
         {
-          component: markRaw(separator)
+          component: markRaw(separator),
         },
         {
           header: "Example",
-          hiddenOnCollapse: true
+          hiddenOnCollapse: true,
         },
         {
           href: "/disabled",
           title: "Disabled page",
           icon: faIcon({ icon: "fa-solid fa-lock" }),
-          disabled: true
+          disabled: true,
         },
         {
           title: "Badge",
           icon: faIcon({ icon: "fa-solid fa-cog" }),
           badge: {
             text: "new",
-            class: "vsm--badge_default"
-          }
+            class: "vsm--badge_default",
+          },
         },
         {
           href: "/page",
@@ -186,35 +180,35 @@ export default {
             {
               href: "/page/sub-page-1",
               title: "Sub Page 01",
-              icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" })
+              icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" }),
             },
             {
               href: "/page/sub-page-2",
               title: "Sub Page 02",
-              icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" })
-            }
-          ]
+              icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" }),
+            },
+          ],
         },
         {
           title: "Multiple Level",
           icon: faIcon({ icon: "fa-solid fa-list-alt" }),
           child: [
             {
-              title: "page"
+              title: "page",
             },
             {
               title: "Level 2 ",
               child: [
                 {
-                  title: "page"
+                  title: "page",
                 },
                 {
-                  title: "Page"
-                }
-              ]
+                  title: "Page",
+                },
+              ],
             },
             {
-              title: "Page"
+              title: "Page",
             },
             {
               title: "Another Level 2",
@@ -223,21 +217,21 @@ export default {
                   title: "Level 3",
                   child: [
                     {
-                      title: "Page"
+                      title: "Page",
                     },
                     {
-                      title: "Page"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+                      title: "Page",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
       ];
       this.menuKey++;
-    }
-  }
+    },
+  },
 };
 </script>
 

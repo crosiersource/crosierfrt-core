@@ -1,9 +1,20 @@
-import AuthService from "../services/auth-service.js";
+import AuthService from "@/services/auth-service.js";
+import router from "@/router/index.js";
 
-const user = JSON.parse(localStorage.getItem("user"));
-const initialState = user
-  ? { status: { loggedIn: true }, user }
-  : { status: { loggedIn: false }, user: null };
+const loginToken = JSON.parse(localStorage.getItem("loginToken"));
+
+const initialState = {
+  status: {
+    loggedIn: null,
+  },
+  loginToken: null,
+  loginErrorMessage: null,
+};
+
+if (loginToken) {
+  initialState.status.loggedIn = true;
+  initialState.loginToken = loginToken;
+}
 
 export const auth = {
   namespaced: true,
@@ -11,60 +22,50 @@ export const auth = {
   state: initialState,
 
   actions: {
-    login({ commit }, user) {
-      return AuthService.login(user).then(
-        (user) => {
-          commit("loginSuccess", user);
-          return Promise.resolve(user);
-        },
-        (error) => {
-          commit("loginFailure");
-          return Promise.reject(error);
-        }
-      );
-    },
+    async login({ commit }, user) {
+      commit("layout/setLoading", true, { root: true });
 
-    logout({ commit }) {
-      AuthService.logout();
-      commit("logout");
-    },
+      let rsLogin = null;
+      try {
+        rsLogin = await AuthService.login(user);
 
-    register({ commit }, user) {
-      return AuthService.register(user).then(
-        (response) => {
-          commit("registerSuccess");
-          return Promise.resolve(response.data);
-        },
-        (error) => {
-          commit("registerFailure");
-          return Promise.reject(error);
+        console.log(">>>>rs login");
+        console.log(rsLogin);
+
+        if (rsLogin?.data?.token) {
+          commit("loginSuccess", rsLogin.data);
+          // call vue router to redirect to home page
+          await router.push("/");
+        } else {
+          throw new Error("Erro ao efetuar o login.");
         }
-      );
+      } catch (e) {
+        console.log("cai no catch do auth.module.js login");
+        commit("loginFailure", e);
+      }
+
+      commit("layout/setLoading", false, { root: true });
     },
   },
 
   getters: {
     isLoggedIn: (state) => state.status.loggedIn,
+
+    getLoginErrorMessage: (state) => state.loginErrorMessage,
   },
 
   mutations: {
-    loginSuccess(state, user) {
+    loginSuccess(state, loginToken) {
       state.status.loggedIn = true;
-      state.user = user;
+      state.loginToken = loginToken;
+      localStorage.setItem("loginToken", JSON.stringify(loginToken));
     },
-    loginFailure(state) {
+
+    loginFailure(state, err) {
+      const msg = err?.response?.data?.message || err.message || "Erro ao efetuar o login";
+      state.loginErrorMessage = msg;
       state.status.loggedIn = false;
-      state.user = null;
-    },
-    logout(state) {
-      state.status.loggedIn = false;
-      state.user = null;
-    },
-    registerSuccess(state) {
-      state.status.loggedIn = false;
-    },
-    registerFailure(state) {
-      state.status.loggedIn = false;
+      state.loginToken = null;
     },
   },
 };

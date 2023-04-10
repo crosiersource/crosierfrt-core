@@ -18,8 +18,8 @@ import {
   faCog,
   faListUl,
   faFileAlt,
-  faListAlt
-} from '@fortawesome/free-solid-svg-icons'
+  faListAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 library.add(
   faDownload,
@@ -32,7 +32,7 @@ library.add(
   faListUl,
   faFileAlt,
   faListAlt
-)
+);
 
 library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
 

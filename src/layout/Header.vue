@@ -1,11 +1,8 @@
 <template>
-  <div class="fixed-header">
-    Sou o Cabeçalho
-  </div>
+  <div class="fixed-header">Sou o Cabeçalho</div>
 </template>
 
 <style lang="scss">
-
 .fixed-header {
   width: 100%;
   position: fixed;
@@ -14,5 +11,4 @@
   color: #fff;
   top: 0;
 }
-
 </style>

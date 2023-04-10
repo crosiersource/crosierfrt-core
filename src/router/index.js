@@ -7,8 +7,11 @@ import store from "../store";
 
 const routes = [
   {
+    path: "",
+    component: Home,
+  },
+  {
     path: "/",
-    name: "home",
     component: Home,
   },
   {
