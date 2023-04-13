@@ -1,19 +1,19 @@
 import AuthService from "@/services/auth-service.js";
-import router from "@/router/index.js";
+import router from "@/router/router.js";
 
-const loginToken = JSON.parse(localStorage.getItem("loginToken"));
+const crsrTkn = JSON.parse(localStorage.getItem("crsrTkn"));
 
 const initialState = {
   status: {
     loggedIn: null,
   },
-  loginToken: null,
+  crsrTkn: null,
   loginErrorMessage: null,
 };
 
-if (loginToken) {
+if (crsrTkn) {
   initialState.status.loggedIn = true;
-  initialState.loginToken = loginToken;
+  initialState.crsrTkn = crsrTkn;
 }
 
 export const auth = {
@@ -33,7 +33,7 @@ export const auth = {
         console.log(rsLogin);
 
         if (rsLogin?.data?.token) {
-          commit("loginSuccess", rsLogin.data);
+          commit("loginSuccess", rsLogin.data.token);
           // call vue router to redirect to home page
           await router.push("/");
         } else {
@@ -55,17 +55,17 @@ export const auth = {
   },
 
   mutations: {
-    loginSuccess(state, loginToken) {
+    loginSuccess(state, crsrTkn) {
       state.status.loggedIn = true;
-      state.loginToken = loginToken;
-      localStorage.setItem("loginToken", JSON.stringify(loginToken));
+      state.crsrTkn = crsrTkn;
+      localStorage.setItem("crsrTkn", JSON.stringify(crsrTkn));
     },
 
     loginFailure(state, err) {
       const msg = err?.response?.data?.message || err.message || "Erro ao efetuar o login";
       state.loginErrorMessage = msg;
       state.status.loggedIn = false;
-      state.loginToken = null;
+      state.crsrTkn = null;
     },
   },
 };

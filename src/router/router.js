@@ -12,6 +12,7 @@ const routes = [
   },
   {
     path: "/",
+    name: "inicial",
     component: Home,
   },
   {
@@ -48,6 +49,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.name === "login") && store.getters["auth/isLoggedIn"]) {
+    console.log("cara, tá indo pro login pq? bora pro /");
+    next({ name: "inicial" });
+    return;
+  }
+
   if (
     to.matched.some((record) => record.meta?.doNotRequiresAuth) ||
     store.getters["auth/isLoggedIn"]

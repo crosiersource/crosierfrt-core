@@ -17,9 +17,9 @@ import { h, markRaw } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { mapActions, mapGetters, mapMutations } from "vuex";
 
-const separator = {
-  template: '<hr style="border-color: rgba(0, 0, 0, 0.1); margin: 20px;">',
-};
+// const separator = {
+//   template: '<hr style="border-color: rgba(0, 0, 0, 0.1); margin: 20px;">',
+// };
 
 const faIcon = (props) => {
   return {
@@ -112,123 +112,51 @@ export default {
       }
     },
 
-    buildMenu() {
-      this.buildMenuByUrl();
-      this.menu = [
-        {
-          component: markRaw(this.getLogo),
-        },
-        {
-          header: "Menu Principal",
-          hiddenOnCollapse: true,
-        },
-        {
-          href: "/",
-          title: "Installation",
-          icon: faIcon({ icon: "fa-solid fa-download" }),
-        },
-        {
-          href: "/basic-usage",
-          title: "Basic Usage",
-          icon: faIcon({ icon: "fa-solid fa-code" }),
-        },
-        {
-          header: "Usage",
-          hiddenOnCollapse: true,
-        },
-        {
-          href: "/props",
-          title: "Props",
-          icon: faIcon({ icon: "fa-solid fa-cogs" }),
-        },
-        {
-          href: "/events",
-          title: "Events",
-          icon: faIcon({ icon: "fa-solid fa-bell" }),
-        },
-        {
-          href: "/styling",
-          title: "Styling",
-          icon: faIcon({ icon: "fa-solid fa-palette" }),
-        },
-        {
-          component: markRaw(separator),
-        },
-        {
-          header: "Example",
-          hiddenOnCollapse: true,
-        },
-        {
-          href: "/disabled",
-          title: "Disabled page",
-          icon: faIcon({ icon: "fa-solid fa-lock" }),
-          disabled: true,
-        },
-        {
-          title: "Badge",
-          icon: faIcon({ icon: "fa-solid fa-cog" }),
-          badge: {
-            text: "new",
-            class: "vsm--badge_default",
-          },
-        },
-        {
-          href: "/page",
-          title: "Dropdown Page",
+    async buildMenu() {
+      console.log("vou chamar o buildMenuByUrl");
+      const menu = await this.buildMenuByUrl();
+      console.log("retornou:");
+      console.log(menu);
+      // iterate over menu and add icons
+      menu.forEach((item) => {
+        const menuItem = {
+          title: item.label,
           icon: faIcon({ icon: "fa-solid fa-list-ul" }),
-          child: [
-            {
-              href: "/page/sub-page-1",
-              title: "Sub Page 01",
+        };
+        if (item.filhos) {
+          menuItem.child = [];
+          item.filhos.forEach((subItem) => {
+            menuItem.child.push({
+              href: subItem.url,
+              title: subItem.label,
               icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" }),
-            },
-            {
-              href: "/page/sub-page-2",
-              title: "Sub Page 02",
-              icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" }),
-            },
-          ],
-        },
-        {
-          title: "Multiple Level",
-          icon: faIcon({ icon: "fa-solid fa-list-alt" }),
-          child: [
-            {
-              title: "page",
-            },
-            {
-              title: "Level 2 ",
-              child: [
-                {
-                  title: "page",
-                },
-                {
-                  title: "Page",
-                },
-              ],
-            },
-            {
-              title: "Page",
-            },
-            {
-              title: "Another Level 2",
-              child: [
-                {
-                  title: "Level 3",
-                  child: [
-                    {
-                      title: "Page",
-                    },
-                    {
-                      title: "Page",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ];
+            });
+          });
+        } else {
+          menuItem.href = item.url;
+        }
+
+        this.menu.push(menuItem);
+      });
+
+      // {
+      //   href: "/page",
+      //   title: "Dropdown Page",
+      //   icon: faIcon({ icon: "fa-solid fa-list-ul" }),
+      //   child: [
+      //     {
+      //       href: "/page/sub-page-1",
+      //       title: "Sub Page 01",
+      //       icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" }),
+      //     },
+      //     {
+      //       href: "/page/sub-page-2",
+      //       title: "Sub Page 02",
+      //       icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" }),
+      //     },
+      //   ],
+      // },
+
       this.menuKey++;
     },
   },

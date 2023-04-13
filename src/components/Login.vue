@@ -63,7 +63,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import router from "@/router/index.js";
+import router from "@/router/router.js";
 
 export default {
   name: "Login",
@@ -92,9 +92,12 @@ export default {
   },
 
   updated() {
+    console.log("estou no updated do Login.vue");
     if (this.loggedIn()) {
+      console.log("já deu loggedIn, vou pro /");
       router.push("/");
     }
+    console.log("não deu loggedIn :/");
   },
 
   methods: {

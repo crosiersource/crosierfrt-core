@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap-reboot.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap";
 
-import router from "./router";
+import router from "./router/router.js";
 import store from "./store";
 import VueSidebarMenu from "vue-sidebar-menu";
 import "vue-sidebar-menu/dist/vue-sidebar-menu.css";

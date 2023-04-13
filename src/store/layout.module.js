@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "@/services/api.js";
 
 export const layout = {
   namespaced: true,
@@ -47,9 +47,11 @@ export const layout = {
   actions: {
     async buildMenuByUrl() {
       console.log("Olá, estou no buildMenu");
-      const apiUrl = `https://core.crosier.dev/api/cfg/entMenu/getMenuByUrl?url=${window.location.href}`;
-      const response = await axios.get(apiUrl);
+      const apiUrl = "https://core.crosier.dev/api/cfg/entMenu/getMenuByUrl";
+      const response = await api.get(apiUrl, { url: window.location.href });
+      console.log("responseeee");
       console.log(response);
+      return response.data.DATA.menu;
     },
   },
 };
