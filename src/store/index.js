@@ -1,7 +1,8 @@
 import { createStore } from "vuex";
-import { auth } from "./auth.module";
-import { teste } from "./teste.module";
-import { layout } from "./layout.module";
+import { auth } from "./auth.store.js";
+import { teste } from "./teste.store.js";
+import { layout } from "./layout.store.js";
+import { cfg_estabelecimento } from "./cfg/estabelecimento/estabelecimento.store.js";
 // import VuexPersist from "vuex-persist";
 
 // const vuexPersist = new VuexPersist({
@@ -14,6 +15,7 @@ const store = createStore({
     auth,
     teste,
     layout,
+    cfg_estabelecimento,
   },
   // plugins: [vuexPersist.plugin],
 });

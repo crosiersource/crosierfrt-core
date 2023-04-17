@@ -1,25 +1,40 @@
 import axios from "axios";
+import store from "@/store/index.js";
+import router from "@/router/router.js";
+import ApiUtils from "@/services/ApiUtils.js";
 
 export async function apiPostEntity(apiResource, data) {
-  if (apiResource) {
-    do {
-      if (!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i)) {
-        break;
-      }
-      console.debug(`apiResource com formato inválido: ${apiResource}`);
-      apiResource = apiResource.substring(0, apiResource.length - 1);
-      // eslint-disable-next-line no-constant-condition
-    } while (true);
-  }
+  apiResource = ApiUtils.parseApiResourceName(apiResource);
 
   const params = {
     headers: {
+      Authorization: ApiUtils.getAuthorizationBearerToken(),
       "Content-Type": "application/ld+json",
     },
-    validateStatus(status) {
-      return status < 500; // Resolve only if the status code is less than 500
-    },
+    // validateStatus(status) {
+    //   return status < 500;
+    // },
   };
 
-  return axios.post(`${apiResource}`, data, params);
+  try {
+    console.log("vou fazer o post");
+    const rs = await axios.post(`${apiResource}`, data, params);
+    console.log("passou");
+    console.log(rs);
+    return rs;
+  } catch (e) {
+    console.log("erro no post");
+    console.log(e);
+    if (e.response.data.msg === "not logged" || e.response.data.message === "Expired JWT Token") {
+      console.log("não tá logado vai logar zé");
+      // call auth module login failure
+      await store.commit("auth/loginFailure", {
+        message: "Por favor, efetue o login para continuar!",
+      });
+      console.log("commitei o loginFailure");
+      await router.push({ name: "login" });
+    }
+    console.error("erro");
+    console.error(e);
+  }
 }

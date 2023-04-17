@@ -6,6 +6,7 @@ export async function submitForm({
   apiResource,
   formData = null,
   $store = null,
+  storePrefix = null,
   formDataStateName = null,
   schemaValidator = null,
   setUrlId = true,
@@ -17,7 +18,9 @@ export async function submitForm({
   msgErro = "Ocorreu um erro ao salvar",
 }) {
   if (!formData) {
-    const getter = `get${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
+    const getter = `${storePrefix}/get${formDataStateName
+      .charAt(0)
+      .toUpperCase()}${formDataStateName.slice(1)}`;
     const formDataOrig = $store.getters[getter]
       ? $store.getters[getter]
       : $store.state[formDataStateName];
@@ -32,12 +35,14 @@ export async function submitForm({
   let commitFormData = null;
 
   if (formDataStateName) {
-    commitFormData = `set${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
+    commitFormData = `${storePrefix}/set${formDataStateName
+      .charAt(0)
+      .toUpperCase()}${formDataStateName.slice(1)}`;
   }
 
   if (
     schemaValidator &&
-    !validateFormData({ $store, formDataStateName, schemaValidator, $toast })
+    !validateFormData({ $store, storePrefix, formDataStateName, schemaValidator, $toast })
   ) {
     return false;
   }
@@ -47,6 +52,8 @@ export async function submitForm({
   if (fnBeforeSave) {
     fnBeforeSave(formData);
   }
+
+  $store.commit("layout/setLoading", true);
 
   if (formData["@id"]) {
     try {
@@ -62,7 +69,6 @@ export async function submitForm({
       }
       console.error("Erro ao efetuar a requisição PUT");
       console.error(e);
-      return false;
     }
   } else {
     try {
@@ -101,6 +107,7 @@ export async function submitForm({
     if (commitFormDataAfterSave) {
       $store.commit(commitFormData, formData);
     }
+    $store.commit("layout/setLoading", false);
     return response;
   }
   // else...
@@ -117,6 +124,7 @@ export async function submitForm({
       life: 5000,
     });
   }
+  $store.commit("layout/setLoading", false);
   return false;
 }
 

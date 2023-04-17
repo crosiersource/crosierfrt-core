@@ -1,0 +1,8 @@
+[user]
+	email = carlospauluk@gmail.com
+	name = Carlos Eduardo Pauluk
+[core]
+	autocrlf = false
+	safecrlf = true
+[init]
+	defaultBranch = main

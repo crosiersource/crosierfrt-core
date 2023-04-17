@@ -23,7 +23,6 @@ export const layout = {
 
   mutations: {
     setLoading(state, loading) {
-      console.log("me chamaram com o valor: " + loading);
       if (state.loading < 0) {
         state.loading = 0;
       }

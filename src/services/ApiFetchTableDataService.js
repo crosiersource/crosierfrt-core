@@ -13,10 +13,12 @@ export async function apiFetchTableData({
   complement = "",
   properties = null,
 }) {
+  console.log("oi, estamos aqui?");
   apiResource = ApiUtils.parseApiResourceName(apiResource);
 
   const params = {
     headers: {
+      Authorization: ApiUtils.getAuthorizationBearerToken(),
       "Content-Type": "application/json;charset=UTF-8",
     },
   };

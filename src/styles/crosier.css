@@ -1,6 +1,3 @@
-/*
-  Este arquivo deve ficar no static (não ser adicionado pelo webpack) para poder ser chamado pelos apps.
-*/
 
 html {
   font-size: 0.9rem !important;
@@ -14,6 +11,16 @@ input, select {
 
 input[type=submit], input[type=button], input[type=password] {
   text-transform: none;
+}
+
+.form-control {
+  padding: 0.2rem !important;
+  line-height: 2 !important;
+  max-height: 2rem !important;
+}
+
+.p-dropdown-label {
+  margin-top: -5px !important;
 }
 
 .int,

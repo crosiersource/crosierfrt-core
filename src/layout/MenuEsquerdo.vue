@@ -30,7 +30,8 @@ const faIcon = (props) => {
 };
 
 export default {
-  name: "InnerApp",
+  name: "MenuEsquerdo",
+
   data() {
     return {
       menu: [],
@@ -117,19 +118,28 @@ export default {
       const menu = await this.buildMenuByUrl();
       console.log("retornou:");
       console.log(menu);
+
+      this.menu.push({
+        component: markRaw(this.getLogo),
+      });
+
       // iterate over menu and add icons
       menu.forEach((item) => {
+        // remove import.meta.env.VITE_CORE_URL from url
+        item.url = item.url.replace(import.meta.env.VITE_CORE_URL, "");
         const menuItem = {
           title: item.label,
-          icon: faIcon({ icon: "fa-solid fa-list-ul" }),
+          icon: faIcon({ icon: item.icon }),
         };
         if (item.filhos) {
           menuItem.child = [];
           item.filhos.forEach((subItem) => {
+            // remove import.meta.env.VITE_CORE_URL from url
+            subItem.url = subItem.url.replace(import.meta.env.VITE_CORE_URL, "");
             menuItem.child.push({
               href: subItem.url,
               title: subItem.label,
-              icon: faIcon({ icon: "fa-solid fa-file-alt", size: "sm" }),
+              icon: faIcon({ icon: subItem.icon, size: "sm" }),
             });
           });
         } else {

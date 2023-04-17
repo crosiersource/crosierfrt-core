@@ -8,10 +8,10 @@ import fs from "fs";
 export default defineConfig({
   server: {
     https: {
-      key: fs.readFileSync("certs/crosier.dev.key"),
-      cert: fs.readFileSync("certs/crosier.dev.crt"),
+      key: fs.readFileSync("./certs/crosier.frt.key"),
+      cert: fs.readFileSync("./certs/crosier.frt.crt"),
     },
-    host: "core.crosier.dev",
+    host: "core.crosier.frt",
     // port: 443,
   },
   resolve: {

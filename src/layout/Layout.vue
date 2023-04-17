@@ -9,7 +9,9 @@
 
   <div id="layout" :class="[{ collapsed: isMenuCollapsed }, { onmobile: isOnMobile }]">
     <LayoutHeader />
-    <slot name="content"></slot>
+    <div class="container">
+      <slot name="content"></slot>
+    </div>
     <LayoutFooter />
   </div>
 </template>

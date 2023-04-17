@@ -1,7 +1,15 @@
-export function validateFormData({ $store, formDataStateName, schemaValidator, $toast = null }) {
-  const formData = $store.state[formDataStateName];
+export function validateFormData({
+  $store,
+  storePrefix,
+  formDataStateName,
+  schemaValidator,
+  $toast = null,
+}) {
+  console.log("aqui o store state é");
+  console.log($store.state);
+  const formData = $store.state[storePrefix][formDataStateName];
 
-  const commitFormErrors = `set${formDataStateName
+  const commitFormErrors = `${storePrefix}/set${formDataStateName
     .charAt(0)
     .toUpperCase()}${formDataStateName.slice(1)}Errors`;
 

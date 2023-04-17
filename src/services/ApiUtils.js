@@ -22,6 +22,7 @@ export default class ApiUtils {
   }
 
   static parseApiResourceName(apiResource) {
+    console.log('vou parsear isso aqui: "' + apiResource + '"');
     if (!apiResource || apiResource.trim() === "") {
       throw new Error("apiResource não pode ser nula ou vazia");
     }
@@ -44,6 +45,7 @@ export default class ApiUtils {
 
   static getAuthorizationBearerToken() {
     const token = localStorage.getItem("crsrTkn").replace(/"/g, "");
+    console.log("o token é: ", token);
     return token ? `Bearer ${token}` : "";
   }
 

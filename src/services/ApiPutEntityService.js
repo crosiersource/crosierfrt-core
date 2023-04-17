@@ -1,19 +1,12 @@
 import axios from "axios";
+import ApiUtils from "@/services/ApiUtils.js";
 
 export async function apiPutEntity(apiResource, data) {
-  if (apiResource) {
-    do {
-      if (!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i)) {
-        break;
-      }
-      console.debug(`apiResource com formato inválido: ${apiResource}`);
-      apiResource = apiResource.substring(0, apiResource.length - 1);
-      // eslint-disable-next-line no-constant-condition
-    } while (true);
-  }
+  apiResource = ApiUtils.parseApiResourceName(apiResource);
 
   const params = {
     headers: {
+      Authorization: ApiUtils.getAuthorizationBearerToken(),
       "Content-Type": "application/ld+json",
     },
     validateStatus(status) {

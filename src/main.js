@@ -1,8 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 
-import "bootstrap/dist/css/bootstrap-reboot.css";
-import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap";
 
 import router from "./router/router.js";
@@ -21,16 +19,19 @@ import ToastService from "primevue/toastservice";
 import ConfirmationService from "primevue/confirmationservice";
 
 import primevueOptions from "crosier-vue/src/primevue.config.js";
-import "crosier-vue/src/yup.locale.pt-br.js";
+import "./yup.locale.pt-br.js";
 
 import "primeflex/primeflex.css";
 import "primevue/resources/themes/bootstrap4-light-blue/theme.css"; // theme
 import "primevue/resources/primevue.min.css"; // core css
 import "primeicons/primeicons.css";
 
-// import "./styles/app.css";
-// import "./styles/primevue.css";
-// import "./styles/crosier.css";
+import "./styles/app.css";
+import "./styles/primevue.css";
+import "./styles/crosier.css";
+
+import "bootstrap/dist/css/bootstrap-reboot.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 import "@fortawesome/fontawesome-free/css/all.css";
 

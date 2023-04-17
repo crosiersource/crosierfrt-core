@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
+
 import HelloWorld from "../components/HelloWorld.vue";
 import Home from "../components/Home.vue";
 import Login from "../components/Login.vue";
 import Livre from "../components/Livre.vue";
+import EstabelecimentoList from "../components/cfg/estabelecimento/list.vue";
+import EstabelecimentoForm from "../components/cfg/estabelecimento/form.vue";
+
 import store from "../store";
 
 const routes = [
@@ -24,6 +28,17 @@ const routes = [
     path: "/hello",
     name: "hello",
     component: HelloWorld,
+  },
+  {
+    path: "/v/cfg/estabelecimento/list",
+    name: "cfg-estabelecimento-list",
+    component: EstabelecimentoList,
+  },
+  {
+    path: "/v/cfg/estabelecimento/form",
+    name: "cfg-estabelecimento-form",
+    component: EstabelecimentoForm,
+    props: (route) => ({ id: route.query.id }),
   },
   {
     path: "/login",
@@ -59,6 +74,8 @@ router.beforeEach((to, from, next) => {
     to.matched.some((record) => record.meta?.doNotRequiresAuth) ||
     store.getters["auth/isLoggedIn"]
   ) {
+    // check if token is still valid
+
     console.log("tamo livre... bora");
     next();
   } else {

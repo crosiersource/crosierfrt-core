@@ -1,7 +1,9 @@
-import AuthService from "@/services/auth-service.js";
+import api from "@/services/api.js";
 import router from "@/router/router.js";
 
 const crsrTkn = JSON.parse(localStorage.getItem("crsrTkn"));
+
+const API_URL = import.meta.env.VITE_CORE_URL;
 
 const initialState = {
   status: {
@@ -25,22 +27,23 @@ export const auth = {
     async login({ commit }, user) {
       commit("layout/setLoading", true, { root: true });
 
-      let rsLogin = null;
       try {
-        rsLogin = await AuthService.login(user);
-
+        const rsLogin = await api.post(API_URL + "/api/login", {
+          username: user.username,
+          password: user.password,
+        });
         console.log(">>>>rs login");
         console.log(rsLogin);
 
         if (rsLogin?.data?.token) {
           commit("loginSuccess", rsLogin.data.token);
-          // call vue router to redirect to home page
-          await router.push("/");
+          console.log("deu boa o login,,,, vou pro / agora");
+          await router.push({ name: "inicial" });
         } else {
           throw new Error("Erro ao efetuar o login.");
         }
       } catch (e) {
-        console.log("cai no catch do auth.module.js login");
+        console.log("cai no catch do auth.store.js login");
         commit("loginFailure", e);
       }
 
@@ -63,6 +66,8 @@ export const auth = {
 
     loginFailure(state, err) {
       const msg = err?.response?.data?.message || err.message || "Erro ao efetuar o login";
+      console.log("estou no loginFailure do auth.store.js");
+      console.log(msg);
       state.loginErrorMessage = msg;
       state.status.loggedIn = false;
       state.crsrTkn = null;
