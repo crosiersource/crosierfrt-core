@@ -1,5 +1,5 @@
 import axios from "axios";
-import ApiUtils from "@/services/ApiUtils.js";
+import ApiUtils from "./ApiUtils.js";
 
 export async function apiPutEntity(apiResource, data) {
   apiResource = ApiUtils.parseApiResourceName(apiResource);
