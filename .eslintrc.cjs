@@ -7,6 +7,7 @@ module.exports = {
   ],
   ignorePatterns: [
     "/node_modules/",
+    "/node_modules/tiny-case/index.js*",
     "/home/carlos/dev/github/crosier-vue2/dist/crosier-vue2.es.js" // adicione o caminho para o arquivo aqui
   ],
   rules: {

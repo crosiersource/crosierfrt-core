@@ -1,7 +1,7 @@
 import axios from "axios";
 import ApiUtils from "./ApiUtils";
-import router from "@/router/router.js";
-import store from "@/store/index.js";
+import router from "../router/router.js";
+import store from "../store/index.js";
 
 export async function apiFetchData(apiResource, params = null) {
   apiResource = ApiUtils.parseApiResourceName(apiResource);

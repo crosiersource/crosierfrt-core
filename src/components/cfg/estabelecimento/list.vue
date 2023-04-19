@@ -56,9 +56,9 @@
 
 <script>
 import { mapGetters } from "vuex";
-import CrosierListS from "@/components/CrosierListS.vue";
+import CrosierListS from "../../../components/CrosierListS.vue";
 import Column from "primevue/column";
-import Layout from "@/layout/Layout.vue";
+import Layout from "../../../layout/Layout.vue";
 
 export default {
   name: "EstabelecimentoList",

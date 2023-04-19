@@ -326,7 +326,7 @@ import InlineMessage from "primevue/inlinemessage";
 import Sidebar from "primevue/sidebar";
 import { mapGetters, mapMutations } from "vuex";
 // import { api, CrosierBlock } from "crosier-vue";
-import api from "@/services/api";
+import api from "../services/api.js";
 import CrosierBlock from "./CrosierBlock.vue";
 
 export default {

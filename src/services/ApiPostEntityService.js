@@ -1,6 +1,6 @@
 import axios from "axios";
-import store from "@/store/index.js";
-import router from "@/router/router.js";
+import store from "../store/index.js";
+import router from "../router/router.js";
 import ApiUtils from "./ApiUtils.js";
 
 export async function apiPostEntity(apiResource, data) {

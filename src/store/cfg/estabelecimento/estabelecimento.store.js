@@ -1,5 +1,5 @@
-import api from "../../services/api.js";
-import router from "../../router/router.js";
+import api from "../../../services/api.js";
+import router from "../../../router/router.js";
 
 export const cfg_estabelecimento = {
   namespaced: true,

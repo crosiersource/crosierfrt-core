@@ -40,11 +40,11 @@
 import * as yup from "yup";
 import { CrosierDropdownBoolean, CrosierInputText } from "crosier-vue";
 import { mapGetters, mapMutations, mapActions } from "vuex";
-import CrosierFormS from "@/components/CrosierFormS.vue";
-import Layout from "@/layout/Layout.vue";
-import CrosierInputId from "@/components/fields/CrosierInputId.vue";
-import CrosierInputInt from "@/components/fields/CrosierInputInt.vue";
-import { submitForm } from "@/services/SubmitForm.js";
+import CrosierFormS from "../../../components/CrosierFormS.vue";
+import Layout from "../../../layout/Layout.vue";
+import CrosierInputId from "../../../components/fields/CrosierInputId.vue";
+import CrosierInputInt from "../../../components/fields/CrosierInputInt.vue";
+import { submitForm } from "../../../services/SubmitForm.js";
 
 export default {
   name: "EstabelecimentoForm",
