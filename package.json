@@ -1,6 +1,6 @@
 {
   "name": "@crosiersource/crosierfrt-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -8,6 +8,17 @@
     "test:unit": "vitest",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/crosierfrt-core.umd.js",
+  "module": "./dist/crosierfrt-core.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/crosierfrt-core.es.js",
+      "require": "./dist/crosierfrt-core.umd.js"
+    }
   },
   "dependencies": {
     "pinia": "^2.0.32",
