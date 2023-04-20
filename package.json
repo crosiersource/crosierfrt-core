@@ -1,6 +1,6 @@
 {
   "name": "@crosiersource/crosierfrt-core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,36 +10,15 @@
     "format": "prettier --write src/"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "main": "./dist/crosierfrt-core.umd.js",
   "module": "./dist/crosierfrt-core.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/crosierfrt-core.es.js",
-      "require": "./dist/crosierfrt-core.umd.js"
-    }
-  },
   "dependencies": {
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
-    "vue-router": "^4.1.6",
-    "@fortawesome/fontawesome-free": "^6.4.0",
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
-    "@fortawesome/free-regular-svg-icons": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/vue-fontawesome": "^3.0.3",
-    "@popperjs/core": "^2.11.7",
-    "@vue/eslint-config-prettier": "^7.1.0",
-    "axios": "^1.3.4",
-    "bootstrap": "^5.2.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "primeflex": "^3.3.0",
-    "primeicons": "^6.0.1",
-    "primevue": "^3.26.1",
-    "vue-sidebar-menu": "^5.2.5",
-    "yup": "^1.0.2"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
@@ -50,8 +29,7 @@
     "eslint-plugin-vue": "^9.9.0",
     "jsdom": "^21.1.0",
     "prettier": "^2.8.4",
-    "vite": "^4.1.4",
-    "vitest": "^0.29.1",
-    "sass": "^1.60.0"
+    "vite": "^4.3.0",
+    "vitest": "^0.29.1"
   }
 }

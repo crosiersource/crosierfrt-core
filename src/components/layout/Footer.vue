@@ -1,8 +1,8 @@
 <template>
-  <div class="fixed-footer">Sou o rodapé</div>
+  <div class="fixed-footer">Sou o rodapézin</div>
 </template>
 
-<style lang="scss">
+<style scoped>
 .fixed-footer {
   height: 35px;
   width: 100%;

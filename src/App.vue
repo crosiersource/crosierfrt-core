@@ -1,19 +1,12 @@
 <template>
-  <Layout>
-    <template #content>
-      <h1>crosierfrt-core</h1>
-    </template>
-  </Layout>
+  <router-link to="/">| Home |</router-link>
+  <router-link to="/sobre">| Sobre |</router-link>
+  <router-view></router-view>
 </template>
 
 <script>
-import Layout from "@/components/layout/Layout.vue";
 export default {
   name: "App",
-
-  components: {
-    Layout,
-  },
 };
 </script>
 <script setup>

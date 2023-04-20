@@ -1,8 +1,8 @@
 <template>
-  <div class="fixed-header">Sou o Cabeçalho</div>
+  <div class="fixed-header">Sou o Cabeçalhooioioioioi</div>
 </template>
 
-<style lang="scss">
+<style scoped>
 .fixed-header {
   width: 100%;
   position: fixed;
