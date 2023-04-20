@@ -1,16 +1,14 @@
+/* eslint-env node */
+require('@rushstack/eslint-patch/modern-module-resolution')
+
 module.exports = {
-  extends: [
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-    "plugin:vue/vue3-recommended",
-    "prettier",
+  root: true,
+  'extends': [
+    'plugin:vue/vue3-essential',
+    'eslint:recommended',
+    '@vue/eslint-config-prettier/skip-formatting'
   ],
-  ignorePatterns: [
-    "/node_modules/",
-    "/node_modules/tiny-case/index.js*",
-    "/home/carlos/dev/github/crosier-vue2/dist/crosier-vue2.es.js" // adicione o caminho para o arquivo aqui
-  ],
-  rules: {
-    "vue/multi-word-component-names": "off",
-  },
-};
+  parserOptions: {
+    ecmaVersion: 'latest'
+  }
+}
