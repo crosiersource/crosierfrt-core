@@ -1,0 +1,81 @@
+
+html {
+  font-size: 0.9rem !important;
+}
+
+
+
+input, select {
+  text-transform: uppercase;
+}
+
+input[type=submit], input[type=button], input[type=password] {
+  text-transform: none;
+}
+
+.form-control {
+  padding: 0.2rem !important;
+  line-height: 2 !important;
+  max-height: 2rem !important;
+}
+
+.p-dropdown-label {
+  margin-top: -5px !important;
+}
+
+.int,
+.integer,
+.decimal2,
+.decimal3,
+.dinheiro,
+.money,
+.crsr-dec0,
+.crsr-dec1,
+.crsr-dec2,
+.crsr-dec3,
+.crsr-dec4,
+.crsr-dec5,
+.crsr-money {
+  text-align: right;
+  text-transform: none;
+}
+
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase,
+.email {
+  text-transform: lowercase;
+}
+
+.notuppercase {
+  text-transform: none;
+}
+
+
+
+
+
+
+
+
+.blink {
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+

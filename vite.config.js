@@ -5,9 +5,25 @@ import vue from '@vitejs/plugin-vue'
 
 import { resolve } from 'path'
 
+const fs = require('fs');
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  server: {
+    https: {
+      key: fs.readFileSync("./certs/crosier.frt.key"),
+      cert: fs.readFileSync("./certs/crosier.frt.crt"),
+    },
+    host: "core.crosier.frt",
+    // port: 443,
+    watch: {
+      ignored: [
+        '!/home/carlos/dev/github/crosierfrt-core/**',
+        '/home/carlos/**'
+      ]
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

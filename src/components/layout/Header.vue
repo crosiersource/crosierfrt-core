@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed-header">Sou o Cabeçalhooioioioioi</div>
+  <div class="fixed-header">Cabeçalho apenas</div>
 </template>
 
 <style scoped>
