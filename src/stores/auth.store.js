@@ -65,8 +65,7 @@ export const useAuthStore = defineStore("auth", {
 
     isTokenExpired() {
       if (this.tokenExpiration) {
-        const taExpirado = Date.now() >= this.tokenExpiration * 1000;
-        return taExpirado;
+        return Date.now() >= this.tokenExpiration * 1000;
       }
       return true;
     },
