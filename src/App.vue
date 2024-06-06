@@ -13,13 +13,19 @@
 </template>
 <script>
 import { useLoadingStore } from "@/stores/loading.store";
+import { useAuthStore } from "@/stores/auth.store";
 import { mapStores } from "pinia";
 
 export default {
   name: "App",
 
+  mounted() {
+    this.authStore.loadAllFromLocalStorage();
+    this.authStore.doRefreshToken();
+  },
+
   computed: {
-    ...mapStores(useLoadingStore),
+    ...mapStores(useLoadingStore, useAuthStore),
   },
 };
 </script>
