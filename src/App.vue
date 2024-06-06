@@ -3,7 +3,7 @@
     <v-progress-linear
       :active="this.loadingStore.isLoading"
       :indeterminate="this.loadingStore.isLoading"
-      color="deep-purple-accent-4"
+      color="deep-purple-accent-5"
       absolute
       top
     ></v-progress-linear>
@@ -34,7 +34,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 999;
 }
 </style>

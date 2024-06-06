@@ -8,8 +8,16 @@
     ></v-img>
 
     <v-card class="mx-auto pa-12 pb-8" elevation="8" max-width="448" rounded="lg">
+      <v-alert
+        v-if="this.authStore.error === 401"
+        text="Usuário/senha não encontrados."
+        class="p-5 mb-5"
+        title="Atenção!"
+        type="warning"
+      ></v-alert>
+
       <v-text-field
-        compact
+        density="compact"
         label="Usuário"
         v-model="this.authStore.username"
         variant="outlined"
@@ -18,6 +26,7 @@
       ></v-text-field>
 
       <v-text-field
+        density="compact"
         label="Senha"
         :append-icon="passwordVisible ? 'fas fa-eye-slash' : 'fas fa-eye'"
         :type="passwordVisible ? 'text' : 'password'"
@@ -67,6 +76,7 @@
 <script>
 import { mapStores } from "pinia";
 import { useAuthStore } from "@/stores/auth.store";
+import { useLoadingStore } from "@/stores/loading.store";
 
 export default {
   name: "Login",
@@ -88,7 +98,22 @@ export default {
     },
   },
   computed: {
-    ...mapStores(useAuthStore),
+    ...mapStores(useAuthStore, useLoadingStore),
   },
 };
 </script>
+<style>
+#crosierBlockDiv {
+  z-index: 2147483646 !important;
+}
+.overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+</style>

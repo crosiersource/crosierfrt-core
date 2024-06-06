@@ -9,7 +9,7 @@
       <v-img
         src="https://www.crosier.com.br/imgs/CROSIER_branco_transp.png"
         max-width="200"
-        max-height="50"
+        max-height="25"
       ></v-img>
     </v-toolbar-title>
 
