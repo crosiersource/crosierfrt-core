@@ -1,69 +1,45 @@
 <template>
   <v-navigation-drawer
     v-model="menuStore.drawer"
-    @input="updateDrawer"
     expand-on-hover
     class="bg-deep-purple"
     theme="light"
     :location="$vuetify.display.mobile ? 'bottom' : undefined"
     temporary
   >
-    <v-list v-model:opened="open" density="compact">
-      <v-list-item
-        prepend-icon="fas fa-home"
-        title="Home"
-        value="Home"
-        @click="$router.push({ path: '/' })"
-      ></v-list-item>
-      <v-list-item
-        prepend-icon="fas fa-cogs"
-        title="Settings"
-        value="Settings"
-        @click="$router.push({ path: '/settings' })"
-      ></v-list-item>
-      <v-list-item prepend-icon="mdi-home" title="Login"></v-list-item>
+    <v-list density="compact">
+      <!-- Iterar sobre cada item do menu -->
+      <template v-for="(item, index) in menu" :key="index">
+        <!-- Verificar se o item possui subitems -->
+        <v-list-item
+          v-if="!item.subitems"
+          :prepend-icon="item.icon"
+          :title="item.label"
+          @click="$router.push({ path: item.path })"
+        ></v-list-item>
 
-      <v-list-group value="Users" active-color="orange">
-        <v-list-item prepend-icon="mdi-home" title="Item 1"></v-list-item>
-
-        <template v-slot:activator="{ props }">
-          <v-list-item v-bind="props" prepend-icon="mdi-account-circle" title="Users"></v-list-item>
-        </template>
-
-        <v-list-group value="Admin">
+        <!-- Renderizar v-list-group se houver subitems -->
+        <v-list-group v-else :value="expandedGroups.includes(index)" v-model="expandedGroups">
           <template v-slot:activator="{ props }">
-            <v-list-item v-bind="props" title="Admin"></v-list-item>
+            <v-list-item v-bind="props" :prepend-icon="item.icon" :title="item.label"></v-list-item>
           </template>
 
+          <!-- Iterar sobre subitems dentro do v-list-group -->
           <v-list-item
-            v-for="([title, icon], i) in admins"
-            :key="i"
-            :prepend-icon="icon"
-            :value="title"
-          >
-            <v-list-item-title class="submenu-item">Sou eu</v-list-item-title>
-          </v-list-item>
-        </v-list-group>
-
-        <v-list-group value="Actions">
-          <template v-slot:activator="{ props }">
-            <v-list-item v-bind="props" title="Actions"></v-list-item>
-          </template>
-
-          <v-list-item
-            v-for="([title, icon], i) in cruds"
-            :key="i"
-            :prepend-icon="icon"
-            :title="title"
-            :value="title"
+            v-for="(subitem, subIndex) in item.subitems"
+            :key="subIndex"
+            :to="subitem.path"
+            :prepend-icon="subitem.icon"
+            :title="subitem.label"
+            @click="$router.push({ path: subitem.path })"
           ></v-list-item>
         </v-list-group>
-      </v-list-group>
+      </template>
     </v-list>
 
     <template v-slot:append>
       <div class="pa-2">
-        <v-btn block> Sair </v-btn>
+        <v-btn block @click="logout">Sair</v-btn>
       </div>
     </template>
   </v-navigation-drawer>
@@ -76,31 +52,61 @@ import { mapStores } from "pinia";
 export default {
   name: "Menu",
 
-  data: () => ({
-    open: ["Users"],
-    admins: {
-      Profile: "mdi-account-circle",
-      Settings: "mdi-settings",
-    },
-    cruds: {
-      Create: "mdi-plus",
-      Read: "mdi-magnify",
-      Update: "mdi-pencil",
-      Delete: "mdi-delete",
-    },
-  }),
+  data() {
+    return {
+      menu: [
+        { icon: "fas fa-home", label: "Home", path: "/" },
+        { icon: "fas fa-help", label: "Sobre", path: "/about" },
+        {
+          icon: "fas fa-cogs",
+          label: "Settings",
+          subitems: [
+            { icon: "fas fa-user", label: "Usuários", path: "/users" },
+            { icon: "fas fa-key", label: "Grupos", path: "/grupos" },
+          ],
+        },
+      ],
+      expandedGroups: [], // Estado para rastrear grupos expandidos
+    };
+  },
 
   methods: {
-    toggleSubmenu() {
-      this.isSubmenuOpen = !this.isSubmenuOpen;
+    toggleGroup(index) {
+      console.log("vou toglar", index);
+      // Adiciona ou remove o índice do grupo expandido
+      if (this.expandedGroups.includes(index)) {
+        this.expandedGroups = this.expandedGroups.filter((i) => i !== index);
+      } else {
+        this.expandedGroups.push(index);
+      }
     },
-    updateDrawer(value) {
-      this.$emit("update:drawer", value);
+    logout() {
+      // Lógica de logout, se necessário
     },
   },
 
   computed: {
     ...mapStores(useMenuStore),
   },
+
+  watch: {
+    "menuStore.drawer"(newVal) {
+      console.log("vou watchar...", newVal);
+      // Sincronizar estado do expandedGroups quando o drawer muda
+      if (!newVal) {
+        // Fechar todos os grupos quando o drawer é fechado
+        this.expandedGroups = [];
+      }
+    },
+  },
 };
 </script>
+
+<style scoped>
+.v-list-item-title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1rem;
+}
+</style>
