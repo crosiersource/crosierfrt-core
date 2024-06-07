@@ -66,7 +66,6 @@ export default {
 
   methods: {
     toggleGroup(index) {
-      console.log("vou toglar", index);
       // Adiciona ou remove o índice do grupo expandido
       if (this.expandedGroups.includes(index)) {
         this.expandedGroups = this.expandedGroups.filter((i) => i !== index);
@@ -85,7 +84,6 @@ export default {
 
   watch: {
     "menuStore.drawer"(newVal) {
-      console.log("vou watchar...", newVal);
       // Sincronizar estado do expandedGroups quando o drawer muda
       if (!newVal) {
         // Fechar todos os grupos quando o drawer é fechado

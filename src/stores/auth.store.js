@@ -73,8 +73,6 @@ export const useAuthStore = defineStore("auth", {
     async login(password) {
       const loadingStore = useLoadingStore();
       loadingStore.setLoading(true);
-      console.log("com a senha", password);
-      console.log(import.meta.env.VITE_CROSIER_API);
       const delay = (ms) => new Promise((res) => setTimeout(res, ms));
       await delay(1000);
       axios
@@ -83,8 +81,6 @@ export const useAuthStore = defineStore("auth", {
           password,
         })
         .then((response) => {
-          console.log("response", response);
-
           this.setToken(response.data.token);
           this.setRefreshToken(response.data.refresh_token);
           this.setRefreshTokenExpiration(response.data.refresh_token_expiration);
@@ -94,7 +90,7 @@ export const useAuthStore = defineStore("auth", {
           this.$router.push("/");
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
           this.error = error?.response?.status;
         });
       loadingStore.setLoading(false);
@@ -107,14 +103,11 @@ export const useAuthStore = defineStore("auth", {
           refresh_token: this.refreshToken,
         });
 
-        console.log("response", response);
-
         this.setToken(response.data.token);
         this.setRefreshToken(response.data.refresh_token);
         this.setRefreshTokenExpiration(response.data.refresh_token_expiration);
 
         this.setUsername();
-        console.log(this.tokenInfo);
       } catch (e) {
         console.error("Erro ao refrescar o token", e);
         this.$router.push("/login");

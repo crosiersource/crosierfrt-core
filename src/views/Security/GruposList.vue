@@ -103,15 +103,11 @@ export default {
 
   methods: {
     async doFilterData({ page, itemsPerPage, sortBy }) {
-      console.log("page: " + page);
       const rows = itemsPerPage;
-      console.log("itemsPerPage: " + rows);
       let order = {};
       if (sortBy?.[0]?.key) {
         order[sortBy[0].key] = sortBy[0].order;
       }
-
-      console.log("sortBy: ", order);
 
       this.loadingStore.setLoading(true);
       const response = await api.get({
@@ -124,11 +120,7 @@ export default {
         properties: this.properties,
       });
 
-      // extract headers from response.data['hydra:member']
-      // in this case, each header is a key in the objects of the array
-
       this.totalRecords = response.data["hydra:totalItems"];
-      console.log("temos", this.totalRecords, "registros");
       this.tableData = response.data["hydra:member"];
       this.loadingStore.setLoading(false);
     },

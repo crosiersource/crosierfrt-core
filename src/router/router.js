@@ -41,8 +41,6 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to) => {
-  console.log("beforeEach", to.path);
-
   const publicPages = ["/login", "/esqueciMinhaSenha"];
   const authRequired = !publicPages.includes(to.path);
   const authStore = useAuthStore();
@@ -52,12 +50,9 @@ router.beforeEach(async (to) => {
   if (to.path !== "/login") {
     if (authStore.isTokenExpired()) {
       await authStore.doRefreshToken();
-      console.log("acabei de refrescar");
     }
 
     if (authRequired && authStore.isTokenExpired()) {
-      console.log("deu ruim, indo pro login");
-      console.log("isTokenExpired", authStore.isTokenExpired());
       authStore.returnUrl = to.fullPath;
       return "/login";
     }

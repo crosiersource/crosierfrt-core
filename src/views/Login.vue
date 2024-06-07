@@ -88,10 +88,6 @@ export default {
       podeCriarConta: false,
     };
   },
-  mounted() {
-    console.log("aqui eu");
-    console.log(import.meta.env.VITE_CROSIER_API);
-  },
   methods: {
     login() {
       this.authStore.login(this.password);
