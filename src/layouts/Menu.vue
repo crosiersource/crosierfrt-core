@@ -95,3 +95,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.v-list-group__items .v-list-item {
+  padding-inline-start: 16px !important; /* Anula o estilo padrão */
+}
+</style>
