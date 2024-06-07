@@ -8,6 +8,7 @@ import Settings from "@/views/Settings.vue";
 import User from "@/views/User.vue";
 import Login from "@/views/Login.vue";
 import NotFound from "@/views/NotFound.vue";
+import GruposList from "@/views/Security/GruposList.vue";
 import { useAuthStore } from "@/stores/auth.store";
 
 const routes = [
@@ -19,6 +20,7 @@ const routes = [
       { path: "/home", redirect: "/" },
       { path: "/sobre", component: Sobre },
       { path: "/settings", component: Settings },
+      { path: "/sec/grupos/list", component: GruposList },
       { path: "/user/:id", component: User },
     ],
   },

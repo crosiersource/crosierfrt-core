@@ -36,18 +36,12 @@
         </v-list-group>
       </template>
     </v-list>
-
-    <template v-slot:append>
-      <div class="pa-2">
-        <v-btn block @click="logout">Sair</v-btn>
-      </div>
-    </template>
   </v-navigation-drawer>
 </template>
 
 <script>
-import { useMenuStore } from "@/stores/menu.store";
 import { mapStores } from "pinia";
+import { useMenuStore } from "@/stores/menu.store";
 
 export default {
   name: "Menu",
@@ -59,10 +53,10 @@ export default {
         { icon: "fas fa-help", label: "Sobre", path: "/about" },
         {
           icon: "fas fa-cogs",
-          label: "Settings",
+          label: "Configurações",
           subitems: [
             { icon: "fas fa-user", label: "Usuários", path: "/users" },
-            { icon: "fas fa-key", label: "Grupos", path: "/grupos" },
+            { icon: "fas fa-people-carry", label: "Grupos de Usuários", path: "/sec/grupos/list" },
           ],
         },
       ],
@@ -101,12 +95,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.v-list-item-title {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: normal;
-  line-height: 1rem;
-}
-</style>

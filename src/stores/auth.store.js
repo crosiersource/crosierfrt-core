@@ -120,5 +120,21 @@ export const useAuthStore = defineStore("auth", {
         this.$router.push("/login");
       }
     },
+
+    logout() {
+      this.token = null;
+      this.tokenExpiration = null;
+      this.refreshToken = null;
+      this.refreshTokenExpiration = null;
+      this.error = null;
+
+      localStorage.removeItem("username");
+      localStorage.removeItem("token");
+      localStorage.removeItem("tokenExpiration");
+      localStorage.removeItem("refreshToken");
+      localStorage.removeItem("refreshTokenExpiration");
+
+      this.$router.push("/login");
+    },
   },
 });
