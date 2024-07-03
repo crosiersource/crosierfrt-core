@@ -75,6 +75,9 @@ export const useAuthStore = defineStore("auth", {
       loadingStore.setLoading(true);
       const delay = (ms) => new Promise((res) => setTimeout(res, ms));
       await delay(1000);
+      console.log("aqui:");
+      console.log(import.meta.env.VITE_CROSIER_API);
+      console.log("foi");
       axios
         .post(import.meta.env.VITE_CROSIER_API + "/api/login", {
           username: this.username,

@@ -1,12 +1,8 @@
 export function validateFormData({ $store, formDataStateName, schemaValidator, $toast = null }) {
-  const formData = $store.state[formDataStateName];
-
-  const commitFormErrors = `set${formDataStateName
-    .charAt(0)
-    .toUpperCase()}${formDataStateName.slice(1)}Errors`;
+  const formData = $store.fields;
 
   try {
-    $store.commit(commitFormErrors, {});
+    $store.fieldsErrors = {};
     schemaValidator.validateSync(formData, { abortEarly: false });
   } catch (err) {
     console.error(err);
@@ -30,7 +26,7 @@ export function validateFormData({ $store, formDataStateName, schemaValidator, $
         }
       });
 
-      $store.commit(commitFormErrors, formErrors);
+      $store.fieldsErrors = formErrors;
     } else {
       const msgGl = err?.inner || "Erro ao validar dados";
       console.error(msgGl);

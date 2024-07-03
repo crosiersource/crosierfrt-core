@@ -1,23 +1,37 @@
 <template>
   <div id="app">
-    <v-progress-linear
-      :active="this.loadingStore.isLoading"
-      :indeterminate="this.loadingStore.isLoading"
+    <VProgressLinear
+      :active="loadingStore.isLoading"
+      :indeterminate="loadingStore.isLoading"
       color="deep-purple-accent-5"
       absolute
       top
-    ></v-progress-linear>
-    <div v-show="this.loadingStore.isLoading" class="overlay" id="crosierBlockDiv"></div>
-    <router-view></router-view>
+    />
+    <div
+      v-show="loadingStore.isLoading"
+      id="crosierBlockDiv"
+      class="overlay"
+    />
+    <RouterView />
   </div>
 </template>
 <script>
+import { provide } from "vue";
 import { useLoadingStore } from "@/stores/loading.store";
 import { useAuthStore } from "@/stores/auth.store";
 import { mapStores } from "pinia";
 
 export default {
   name: "App",
+
+  setup() {
+    const authStore = useAuthStore();
+    const loadingStore = useLoadingStore();
+    console.log("Proved authStore:", authStore);
+    provide("authStore", authStore);
+    provide("loadingStore", loadingStore);
+    return { authStore }; // Retornar para uso no template
+  },
 
   mounted() {
     this.authStore.loadAllFromLocalStorage();

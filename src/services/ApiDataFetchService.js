@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useAuthStore } from "@/stores/auth.store";
 
 /**
  * @example
@@ -41,6 +40,7 @@ import { useAuthStore } from "@/stores/auth.store";
  */
 export async function fetchTableData({
   apiResource,
+  authToken,
   page = 1,
   rows = 10,
   order = {},
@@ -57,7 +57,6 @@ export async function fetchTableData({
       }
       console.debug(`apiResource com formato inválido: ${apiResource}`);
       apiResource = apiResource.substring(0, apiResource.length - 1);
-      // eslint-disable-next-line no-constant-condition
     } while (true);
   }
 
@@ -93,7 +92,6 @@ export async function fetchTableData({
   function recursiveIterate(item, nivel = 0, auxs = { prefixos: {}, qs: "" }) {
     try {
       if (typeof item === "object" && item !== null) {
-        // eslint-disable-next-line no-restricted-syntax
         for (const [key, value] of Object.entries(item)) {
           auxs.prefixos[nivel] = key;
           recursiveIterate(value, nivel + 1, auxs);
@@ -111,7 +109,6 @@ export async function fetchTableData({
     }
   }
 
-  // eslint-disable-next-line no-restricted-syntax
   if (filters) {
     if (filters instanceof Array) {
       filters.forEach((e) => {
@@ -130,13 +127,11 @@ export async function fetchTableData({
         queryFilter = `${queryFilter}&${entries[0][0]}=${entries[0][1]}`;
       });
     } else {
-      // eslint-disable-next-line no-restricted-syntax
       for (const key in defaultFilters) {
         if (defaultFilters[key] !== null && defaultFilters[key] !== "") {
           if (!Array.isArray(defaultFilters[key])) {
             queryFilter += `&${key}=${defaultFilters[key]}`;
           } else {
-            // eslint-disable-next-line no-loop-func
             defaultFilters[key].forEach(function iterate(item) {
               queryFilter += `&${key}[]=${item}`;
             });
@@ -165,9 +160,7 @@ export async function fetchTableData({
     sProperties = sProperties.substring(0, sProperties.length - 1);
   }
 
-  const authStore = useAuthStore();
-
-  params.headers["Authorization"] = "Bearer " + authStore.token;
+  params.headers["Authorization"] = "Bearer " + authToken;
 
   return axios.get(
     `${apiResource}${queryPage}${queryRows}${queryFilter}${queryOrder}${sProperties}${complement}`,

@@ -1,15 +1,17 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
+import { useAuthStore } from "@/stores/auth.store";
 import MainLayout from "@/layouts/MainLayout.vue";
 import RawLayout from "@/layouts/RawLayout.vue";
 import Home from "@/views/Home.vue";
 import Sobre from "@/views/Sobre.vue";
 import Settings from "@/views/Settings.vue";
-import User from "@/views/User.vue";
 import Login from "@/views/Login.vue";
 import NotFound from "@/views/NotFound.vue";
-import GruposList from "@/views/Security/GruposList.vue";
-import { useAuthStore } from "@/stores/auth.store";
+import GrupoList from "@/views/Security/Grupo/List.vue";
+import GrupoForm from "@/views/Security/Grupo/Form.vue";
+import UsuarioList from "@/views/Security/Usuario/List.vue";
+import UsuarioForm from "@/views/Security/Usuario/Form.vue";
 
 const routes = [
   {
@@ -20,8 +22,10 @@ const routes = [
       { path: "/home", redirect: "/" },
       { path: "/sobre", component: Sobre },
       { path: "/settings", component: Settings },
-      { path: "/sec/grupos/list", component: GruposList },
-      { path: "/user/:id", component: User },
+      { path: "/sec/grupo/list", component: GrupoList },
+      { path: "/sec/grupo/form/:id?", component: GrupoForm, props: true },
+      { path: "/sec/usuario/list", component: UsuarioList },
+      { path: "/sec/usuario/form/:id2", component: UsuarioForm },
     ],
   },
   {

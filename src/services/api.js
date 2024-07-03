@@ -1,11 +1,9 @@
 import { fetchTableData } from "./ApiDataFetchService";
-import { postEntityData } from "./ApiPostService";
-import { putEntityData } from "./ApiPutService";
+import { saveEntityData } from "./ApiSaveService";
 import { deleteEntityData } from "./ApiDeleteService";
 
 export default {
   get: fetchTableData,
-  post: postEntityData,
-  put: putEntityData,
+  save: saveEntityData,
   delete: deleteEntityData,
 };

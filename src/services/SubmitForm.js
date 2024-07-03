@@ -4,6 +4,7 @@ import { validateFormData } from "./ValidateFormData";
 
 export async function submitForm({
   apiResource,
+  authToken,
   formData = null,
   $store = null,
   formDataStateName = null,
@@ -16,23 +17,17 @@ export async function submitForm({
   msgSucesso = "Registro salvo com sucesso",
   msgErro = "Ocorreu um erro ao salvar",
 }) {
+  console.log("vou para " + apiResource);
+
   if (!formData) {
-    const getter = `get${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
-    const formDataOrig = $store.getters[getter]
-      ? $store.getters[getter]
-      : $store.state[formDataStateName];
-    formData = { ...formDataOrig };
+    formData = $store.fields;
   }
+
+  console.log(formData);
 
   if (!formData) {
     console.error(`$store.state[${formDataStateName}] n/d`);
     return false;
-  }
-
-  let commitFormData = null;
-
-  if (formDataStateName) {
-    commitFormData = `set${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
   }
 
   if (
@@ -48,9 +43,14 @@ export async function submitForm({
     await fnBeforeSave(formData);
   }
 
-  if (formData["@id"]) {
+  if (formData?.id) {
+    console.log("vou para put");
     try {
-      response = await api.put(formData["@id"], JSON.stringify(formData));
+      response = await api.save(
+        apiResource + "/" + formData.id,
+        JSON.stringify(formData),
+        authToken
+      );
     } catch (e) {
       if ($toast) {
         $toast.add({
@@ -66,7 +66,7 @@ export async function submitForm({
     }
   } else {
     try {
-      response = await api.post(apiResource, JSON.stringify(formData));
+      response = await api.save(apiResource, JSON.stringify(formData), authToken);
     } catch (e) {
       if ($toast) {
         $toast.add({
@@ -99,7 +99,7 @@ export async function submitForm({
       });
     }
     if (commitFormDataAfterSave) {
-      $store.commit(commitFormData, formData);
+      $store.fields = formData;
     }
     return response;
   }
@@ -119,7 +119,3 @@ export async function submitForm({
   }
   return false;
 }
-
-export default {
-  submitForm,
-};

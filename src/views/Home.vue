@@ -8,9 +8,13 @@
   <p>
     Refresh Token Expiration: <b>{{ refreshTokenWillExpireIn }}</b>
   </p>
-  <button @click="authStore.doRefreshToken">Refresh</button>
+  <button @click="authStore.doRefreshToken">
+    Refresh
+  </button>
   <p>
-    <RouterLink to="/settings">Settings</RouterLink>
+    <RouterLink to="/settings">
+      Settings
+    </RouterLink>
   </p>
 </template>
 

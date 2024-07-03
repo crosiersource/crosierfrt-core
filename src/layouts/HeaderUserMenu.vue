@@ -1,18 +1,24 @@
 <template>
   <div class="text-center">
-    <v-menu open-on-hover>
-      <template v-slot:activator="{ props }">
-        <v-btn v-bind="props" prepend-icon="fas fa-user">
+    <VMenu open-on-hover>
+      <template #activator="{ props }">
+        <VBtn
+          v-bind="props"
+          prepend-icon="fas fa-user"
+        >
           {{ authStore.username }}
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item v-for="(item, index) in items" :key="index">
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+      <VList>
+        <VListItem
+          v-for="(item, index) in items"
+          :key="index"
+        >
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
   </div>
 </template>
 <script>

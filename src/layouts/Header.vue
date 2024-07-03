@@ -1,22 +1,30 @@
 <template>
-  <v-app-bar color="primary" prominent>
-    <template v-slot:prepend>
-      <v-app-bar-nav-icon @click.stop="menuStore.drawer = !menuStore.drawer"></v-app-bar-nav-icon>
+  <VAppBar
+    color="primary"
+    prominent
+  >
+    <template #prepend>
+      <VAppBarNavIcon @click.stop="menuStore.drawer = !menuStore.drawer" />
     </template>
 
-    <v-app-bar-title
-      ><v-img
+    <VAppBarTitle>
+      <VImg
         src="https://www.crosier.com.br/imgs/CROSIER_branco_transp.png"
         max-width="200"
         max-height="25"
-      ></v-img
-    ></v-app-bar-title>
+      />
+    </VAppBarTitle>
 
-    <template v-slot:append>
+    <template #append>
       <HeaderUserMenu />
-      <v-btn @click="authStore.logout()" prepend-icon="fas fa-sign-out-alt">Sair</v-btn>
+      <VBtn
+        prepend-icon="fas fa-sign-out-alt"
+        @click="authStore.logout()"
+      >
+        Sair
+      </VBtn>
     </template>
-  </v-app-bar>
+  </VAppBar>
 </template>
 
 <script>

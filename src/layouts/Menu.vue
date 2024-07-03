@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer
+  <VNavigationDrawer
     v-model="menuStore.drawer"
     expand-on-hover
     class="bg-deep-purple"
@@ -7,36 +7,43 @@
     :location="$vuetify.display.mobile ? 'bottom' : undefined"
     temporary
   >
-    <v-list density="compact">
-      <!-- Iterar sobre cada item do menu -->
-      <template v-for="(item, index) in menu" :key="index">
-        <!-- Verificar se o item possui subitems -->
-        <v-list-item
+    <VList density="compact">
+      <template
+        v-for="(item, index) in menu"
+        :key="index"
+      >
+        <VListItem
           v-if="!item.subitems"
           :prepend-icon="item.icon"
           :title="item.label"
           @click="$router.push({ path: item.path })"
-        ></v-list-item>
+        />
 
-        <!-- Renderizar v-list-group se houver subitems -->
-        <v-list-group v-else :value="expandedGroups.includes(index)" v-model="expandedGroups">
-          <template v-slot:activator="{ props }">
-            <v-list-item v-bind="props" :prepend-icon="item.icon" :title="item.label"></v-list-item>
+        <VListGroup
+          v-else
+          v-model="expandedGroups"
+          :value="expandedGroups.includes(index)"
+        >
+          <template #activator="{ props }">
+            <VListItem
+              v-bind="props"
+              :prepend-icon="item.icon"
+              :title="item.label"
+            />
           </template>
 
-          <!-- Iterar sobre subitems dentro do v-list-group -->
-          <v-list-item
+          <VListItem
             v-for="(subitem, subIndex) in item.subitems"
             :key="subIndex"
             :to="subitem.path"
             :prepend-icon="subitem.icon"
             :title="subitem.label"
             @click="$router.push({ path: subitem.path })"
-          ></v-list-item>
-        </v-list-group>
+          />
+        </VListGroup>
       </template>
-    </v-list>
-  </v-navigation-drawer>
+    </VList>
+  </VNavigationDrawer>
 </template>
 
 <script>
@@ -55,8 +62,8 @@ export default {
           icon: "fas fa-cogs",
           label: "Configurações",
           subitems: [
-            { icon: "fas fa-user", label: "Usuários", path: "/users" },
-            { icon: "fas fa-people-carry", label: "Grupos de Usuários", path: "/sec/grupos/list" },
+            { icon: "fas fa-user", label: "Usuários", path: "/sec/usuario/list" },
+            { icon: "fas fa-people-carry", label: "Grupos de Usuários", path: "/sec/grupo/list" },
           ],
         },
       ],

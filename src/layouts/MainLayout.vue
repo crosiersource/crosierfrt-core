@@ -1,17 +1,17 @@
 <template>
-  <v-app @mousemove="handleMouseMove">
-    <v-layout>
+  <VApp @mousemove="handleMouseMove">
+    <VLayout>
       <Menu />
 
       <Header />
 
-      <v-main>
-        <v-card-text>
-          <router-view></router-view>
-        </v-card-text>
-      </v-main>
-    </v-layout>
-  </v-app>
+      <VMain>
+        <VCardText>
+          <RouterView />
+        </VCardText>
+      </VMain>
+    </VLayout>
+  </VApp>
 </template>
 
 <script>

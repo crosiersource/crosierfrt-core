@@ -8,7 +8,6 @@ export async function deleteEntityData(apiResource) {
       }
       console.debug(`apiResource com formato inválido: ${apiResource}`);
       apiResource = apiResource.substring(0, apiResource.length - 1);
-      // eslint-disable-next-line no-constant-condition
     } while (true);
   }
 
