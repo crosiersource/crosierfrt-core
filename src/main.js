@@ -11,6 +11,8 @@ import router from "./router/router";
 
 import { createPinia } from "pinia";
 
+import "./yup.locale.pt-br.js";
+
 // Components
 import App from "./App.vue";
 

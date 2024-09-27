@@ -1,6 +1,4 @@
 <template>
-  <VBtn @click="showSnackbar"> Mostrar Snackbar </VBtn>
-
   <CrosierListS
     v-if="authStore.token"
     api-resource="/api/sec/group"
@@ -10,7 +8,7 @@
     :auth-store="authStore"
     :store="groupStore"
     form-path="/sec/grupo/form"
-    list-path="/sec/grupo/form"
+    list-path="/sec/grupo/list"
   >
     <template #filters>
       <VTextField
@@ -32,7 +30,7 @@ import { mapStores } from "pinia";
 import { useGroupStore } from "@/stores/Security/group.store";
 
 export default {
-  name: "GruposList",
+  name: "GrupoList",
 
   components: {
     CrosierListS,
@@ -42,30 +40,12 @@ export default {
 
   data() {
     return {
-      snackbar: false,
       headers: [
-        { text: "Id", value: "id" },
-        { text: "Grupo", value: "groupname" },
+        { title: "Id", key: "id", sortable: true },
+        { title: "Grupo", key: "groupname" },
+        { title: "", key: "actions", sortable: false, width: "1%" },
       ],
-      filters: {
-        id: "",
-        groupname: "",
-      },
     };
-  },
-
-  mounted() {
-    console.log("List.vue montado");
-  },
-
-  beforeUnmount() {
-    console.log("List.vue desmontado");
-  },
-
-  methods: {
-    showSnackbar() {
-      this.snackbar = true;
-    },
   },
 
   computed: {

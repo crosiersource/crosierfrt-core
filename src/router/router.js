@@ -25,7 +25,7 @@ const routes = [
       { path: "/sec/grupo/list", component: GrupoList },
       { path: "/sec/grupo/form/:id?", component: GrupoForm, props: true },
       { path: "/sec/usuario/list", component: UsuarioList },
-      { path: "/sec/usuario/form/:id2", component: UsuarioForm },
+      { path: "/sec/usuario/form/:id?", component: UsuarioForm, props: true },
     ],
   },
   {

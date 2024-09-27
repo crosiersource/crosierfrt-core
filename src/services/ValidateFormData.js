@@ -1,10 +1,14 @@
-export function validateFormData({ $store, formDataStateName, schemaValidator, $toast = null }) {
+export function validateFormData({ $store, schemaValidator }) {
   const formData = $store.fields;
+
+  console.log("store é");
+  console.log($store);
 
   try {
     $store.fieldsErrors = {};
     schemaValidator.validateSync(formData, { abortEarly: false });
   } catch (err) {
+    console.log("Erro ao validar!");
     console.error(err);
     if (err?.inner) {
       console.error(err.inner);
@@ -15,29 +19,16 @@ export function validateFormData({ $store, formDataStateName, schemaValidator, $
           const msg = element.message || "Valor inválido";
           formErrors[element.path] = msg;
           console.error(msg);
-          if ($toast) {
-            $toast.add({
-              severity: "error",
-              summary: "Erro",
-              detail: msg,
-              life: 5000,
-            });
-          }
         }
       });
 
       $store.fieldsErrors = formErrors;
+      console.log("Erros de validação:");
+      console.log(formErrors);
+      throw new Error("Erros de validação");
     } else {
       const msgGl = err?.inner || "Erro ao validar dados";
       console.error(msgGl);
-      if ($toast) {
-        $toast.add({
-          severity: "error",
-          summary: "Erro",
-          detail: msgGl,
-          life: 5000,
-        });
-      }
     }
     return false;
   }

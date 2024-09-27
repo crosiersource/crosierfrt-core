@@ -1,16 +1,15 @@
 <template>
   <CrosierForm
-    :store="groupStore"
-    api-resource="/api/sec/group"
+    :store="userStore"
     titulo="Usuário"
     icon="fas fa-users"
-    list-path="/sec/grupo/list"
+    list-path="/sec/usuario/list"
   >
     <template #fields>
       <VTextField
-        id="groupname"
-        v-model="groupStore.groupname"
-        label="Grupo"
+        id="username"
+        v-model="userStore.fields.username"
+        label="Nome de Usuário"
         outlined
         dense
         clearable
@@ -21,17 +20,17 @@
 <script>
 import CrosierForm from "@/components/Crosier/CrosierForm";
 import { mapStores } from "pinia";
-import { useGroupStore } from "@/stores/Security/group.store";
+import { useUserStore } from "@/stores/Security/user.store";
 
 export default {
-  name: "GrupoForm",
+  name: "UsuarioForm",
 
   components: {
     CrosierForm,
   },
 
   computed: {
-    ...mapStores(useGroupStore),
+    ...mapStores(useUserStore),
   },
 };
 </script>

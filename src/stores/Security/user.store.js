@@ -5,7 +5,7 @@ import * as yup from "yup";
 import { useAuthStore } from "@/stores/auth.store";
 import { useLoadingStore } from "@/stores/loading.store";
 
-export const useGroupStore = defineStore("group", {
+export const useUserStore = defineStore("user", {
   state: () => {
     return {
       filters: {},
@@ -30,7 +30,7 @@ export const useGroupStore = defineStore("group", {
       const loadingStore = useLoadingStore();
       loadingStore.setLoading(true);
 
-      console.log("vou load no groupStore");
+      console.log("vou load no userStore");
 
       try {
         const authStore = useAuthStore();
@@ -38,7 +38,7 @@ export const useGroupStore = defineStore("group", {
 
         const response = await api.get({
           authToken: authStore.token,
-          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/group/${id}`,
+          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/user/${id}`,
         });
 
         if (response.data["@id"]) {
@@ -58,14 +58,14 @@ export const useGroupStore = defineStore("group", {
       loadingStore.setLoading(true);
 
       const schemaValidator = yup.object().shape({
-        groupname: yup.string().required().typeError(),
+        username: yup.string().required().typeError(),
       });
 
       const authStore = useAuthStore();
 
       try {
         const rs = await submitForm({
-          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/group`,
+          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/user`,
           schemaValidator,
           $store: this,
           authToken: authStore.token,
@@ -73,11 +73,11 @@ export const useGroupStore = defineStore("group", {
             delete formData.estabelecimentoId;
             delete formData.userInsertedId;
             delete formData.userUpdatedId;
-            if (formData.roles) {
-              formData.roles = formData.roles.map((e) => e["@id"]);
-            }
             console.log("fnBeforeSave");
             console.log(formData);
+            if (formData.userRoles) {
+              formData.userRoles = formData.userRoles.map((e) => e["@id"]);
+            }
           },
         });
 

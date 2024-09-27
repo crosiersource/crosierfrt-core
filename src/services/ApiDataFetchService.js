@@ -50,6 +50,8 @@ export async function fetchTableData({
   complement = "",
   properties = null,
 }) {
+  console.log("aqui no fetchTableData");
+  console.log(apiResource);
   if (apiResource) {
     do {
       if (!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i)) {
@@ -164,6 +166,6 @@ export async function fetchTableData({
 
   return axios.get(
     `${apiResource}${queryPage}${queryRows}${queryFilter}${queryOrder}${sProperties}${complement}`,
-    params
+    params,
   );
 }

@@ -4,12 +4,7 @@
       <VIcon :icon="icon" /> &nbsp; {{ titulo }}
       <VSpacer />
 
-      <VBtn
-        icon="fas fa-file"
-        variant="plain"
-        title="Novo registro"
-        @click="novoRegistro"
-      />
+      <VBtn icon="fas fa-file" variant="plain" title="Novo registro" @click="novoRegistro" />
 
       <VBtn
         v-if="listPath"
@@ -22,29 +17,15 @@
 
     <VDivider />
 
-    <VForm
-      fast-fail
-      @submit.prevent="submitForm"
-    >
+    <VForm fast-fail @submit.prevent="submitForm">
       <slot name="fields" />
 
       <VRow no-gutters>
         <VCol class="d-flex justify-end align-center">
-          <VBtn
-            prepend-icon="fas fa-save"
-            type="submit"
-            color="green"
-          >
-            Salvar
-          </VBtn>
+          <VBtn prepend-icon="fas fa-save" type="submit" color="green"> Salvar </VBtn>
         </VCol>
 
-        <VBtn
-          prepend-icon="far fa-times-circle"
-          class="mx-2"
-          type="button"
-          @click="limpar"
-        >
+        <VBtn prepend-icon="far fa-times-circle" class="mx-2" type="button" @click="limpar">
           Limpar
         </VBtn>
       </VRow>
@@ -54,6 +35,9 @@
 <script>
 export default {
   name: "CrosierForm",
+
+  inject: ["snackbarStore"],
+
   props: {
     store: {
       type: Object,
@@ -84,27 +68,39 @@ export default {
   },
 
   mounted() {
-    console.log("CrosierForm mounted");
+    console.log("snackbarStore");
+    console.log(this.snackbarStore);
+    console.log("Tem Id?");
     if (this.id) {
+      console.log("Tem: " + this.id);
       this.carregarRegistro();
+    } else {
+      console.log("Não tem");
     }
   },
 
   methods: {
     novoRegistro() {
+      this.$router.push({ path: this.$route.path.replace(/\/\d+$/, "") });
       this.store.fields = {};
     },
 
     carregarRegistro() {
-      console.log("oi, vou carregar registro");
-      this.store.loadData(this.id);
+      this.store.load(this.id);
     },
 
-    submitForm() {
-      this.store.saveData();
+    async submitForm() {
+      try {
+        await this.store.save();
+        this.snackbarStore.success("Registro salvo com sucesso!");
+      } catch (e) {
+        this.snackbarStore.error("Erro ao salvar registro!", e.message);
+      }
     },
 
-    limpar() {},
+    limpar() {
+      this.store.fields = {};
+    },
   },
 };
 </script>

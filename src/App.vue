@@ -7,11 +7,19 @@
       absolute
       top
     />
-    <div
-      v-show="loadingStore.isLoading"
-      id="crosierBlockDiv"
-      class="overlay"
-    />
+
+    <VSnackbar
+      v-model="snackbarStore.showing"
+      :timeout="3000"
+      vertical
+      :color="snackbarStore.cor"
+      variant="tonal"
+    >
+      <div class="text-subtitle-1 pb-2 font-weight-bold">{{ snackbarStore.mensagem }}</div>
+      <p v-if="snackbarStore.detalhes">{{ snackbarStore.detalhes }}</p>
+    </VSnackbar>
+
+    <div v-show="loadingStore.isLoading" id="crosierBlockDiv" class="overlay" />
     <RouterView />
   </div>
 </template>
@@ -19,6 +27,7 @@
 import { provide } from "vue";
 import { useLoadingStore } from "@/stores/loading.store";
 import { useAuthStore } from "@/stores/auth.store";
+import { useSnackbarStore } from "@/stores/snackbar.store";
 import { mapStores } from "pinia";
 
 export default {
@@ -27,10 +36,10 @@ export default {
   setup() {
     const authStore = useAuthStore();
     const loadingStore = useLoadingStore();
-    console.log("Proved authStore:", authStore);
+    const snackbarStore = useSnackbarStore();
     provide("authStore", authStore);
     provide("loadingStore", loadingStore);
-    return { authStore }; // Retornar para uso no template
+    provide("snackbarStore", snackbarStore);
   },
 
   mounted() {
@@ -39,7 +48,7 @@ export default {
   },
 
   computed: {
-    ...mapStores(useLoadingStore, useAuthStore),
+    ...mapStores(useLoadingStore, useAuthStore, useSnackbarStore),
   },
 };
 </script>

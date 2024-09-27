@@ -1,8 +1,4 @@
 <template>
-  <VSnackbar v-model="snackbar" :timeout="3000">
-    {{ snackbarText }}
-  </VSnackbar>
-
   <VNavigationDrawer v-model="drawerPesquisa" location="right" permanent width="500">
     <template #prepend>
       <VContainer>
@@ -90,7 +86,7 @@
           >
             fas fa-edit
           </VIcon>
-          <VIcon size="small" @click="console.log('Delete', item)"> fas fa-trash </VIcon>
+          <VIcon size="small" @click="openDlgDelete(item)"> fas fa-trash </VIcon>
         </div>
         <div class="mt-1 d-flex justify-end">
           <VChip variant="plain" size="x-small">
@@ -99,6 +95,20 @@
         </div>
       </template>
     </VDataTableServer>
+
+    <VDialog v-model="dlgDelete" width="auto">
+      <VCard
+        max-width="400"
+        prepend-icon="fas fa-exclamation-triangle"
+        text="Confirmar operação?"
+        title="Atenção"
+      >
+        <template #actions>
+          <VBtn class="ms-auto" text="Sim" @click="this.delete" />
+          <VBtn text="Não" @click="dlgDelete = false" />
+        </template>
+      </VCard>
+    </VDialog>
   </VCard>
 </template>
 <script>
@@ -108,7 +118,7 @@ import Mousetrap from "mousetrap";
 export default {
   name: "CrosierList",
 
-  inject: ["authStore", "loadingStore"],
+  inject: ["authStore", "loadingStore", "snackbarStore"],
 
   props: {
     apiResource: {
@@ -149,8 +159,8 @@ export default {
       defaultFilters: null,
       properties: null,
       totalRecords: 0,
-      snackbarText: "",
-      snackbar: false,
+      dlgDelete: false,
+      item: null,
     };
   },
 
@@ -164,6 +174,7 @@ export default {
     console.log("CrosierList.vue montado");
     console.log("authStore");
     console.log(this.authStore);
+    console.log("o form-path aqui é " + this.formPath);
     Mousetrap.bind("ctrl+k", (e) => {
       e.preventDefault();
       this.drawerPesquisa = !this.drawerPesquisa;
@@ -234,9 +245,16 @@ export default {
       }
     },
 
-    showSnackbar(text) {
-      this.snackbarText = text;
-      this.snackbar = true;
+    openDlgDelete(item) {
+      this.item = item;
+      this.dlgDelete = true;
+    },
+
+    async delete() {
+      await this.store.delete(this.item["@id"]);
+      await this.doFilterData({ page: 1, itemsPerPage: this.rows });
+      this.snackbarStore.show("Registro excluído com sucesso!");
+      this.dlgDelete = false;
     },
   },
 };

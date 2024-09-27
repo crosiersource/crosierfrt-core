@@ -9,10 +9,7 @@
     <template #fields>
       <VContainer>
         <VRow>
-          <VCol
-            cols="12"
-            md="4"
-          >
+          <VCol cols="12" md="4">
             <VTextField
               id="groupname"
               v-model="groupStore.fields.groupname"
@@ -20,6 +17,8 @@
               outlined
               dense
               clearable
+              persistent-hint
+              :hint="groupStore.fieldsErrors?.groupname"
             />
           </VCol>
         </VRow>
