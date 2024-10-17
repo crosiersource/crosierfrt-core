@@ -1,69 +1,67 @@
 <script setup>
 import { useLayout } from '@/layout/composables/layout';
-import { computed, ref, watch } from 'vue';
+import { computed, onBeforeUnmount, onMounted } from 'vue';
+import AppBreadCrumb from './AppBreadcrumb.vue';
+import AppConfig from './AppConfig.vue';
 import AppFooter from './AppFooter.vue';
+import AppRightMenu from './AppRightMenu.vue';
 import AppSidebar from './AppSidebar.vue';
 import AppTopbar from './AppTopbar.vue';
 
-const { layoutConfig, layoutState, isSidebarActive, resetMenu } = useLayout();
+const { layoutConfig, layoutState, watchSidebarActive, unbindOutsideClickListener } = useLayout();
 
-const outsideClickListener = ref(null);
+onMounted(() => {
+    watchSidebarActive();
+});
 
-watch(isSidebarActive, (newVal) => {
-    if (newVal) {
-        bindOutsideClickListener();
-    } else {
-        unbindOutsideClickListener();
-    }
+onBeforeUnmount(() => {
+    unbindOutsideClickListener();
 });
 
 const containerClass = computed(() => {
-    return {
+    let styleClass = {
         'layout-overlay': layoutConfig.menuMode === 'overlay',
         'layout-static': layoutConfig.menuMode === 'static',
+        'layout-slim': layoutConfig.menuMode === 'slim',
+        'layout-slim-plus': layoutConfig.menuMode === 'slim-plus',
+        'layout-horizontal': layoutConfig.menuMode === 'horizontal',
+        'layout-reveal': layoutConfig.menuMode === 'reveal',
+        'layout-drawer': layoutConfig.menuMode === 'drawer',
+        'layout-sidebar-dark': layoutConfig.colorScheme === 'dark',
         'layout-static-inactive': layoutState.staticMenuDesktopInactive && layoutConfig.menuMode === 'static',
         'layout-overlay-active': layoutState.overlayMenuActive,
-        'layout-mobile-active': layoutState.staticMenuMobileActive
+        'layout-mobile-active': layoutState.staticMenuMobileActive,
+        'layout-topbar-menu-active': layoutState.topbarMenuActive,
+        'layout-menu-profile-active': layoutState.rightMenuActive,
+        'layout-sidebar-active': layoutState.sidebarActive,
+        'layout-sidebar-anchored': layoutState.anchored
     };
+
+    styleClass['layout-topbar-' + layoutConfig.topbarTheme] = true;
+    styleClass['layout-menu-' + layoutConfig.menuTheme] = true;
+    styleClass['layout-menu-profile-' + layoutConfig.menuProfilePosition] = true;
+
+    return styleClass;
 });
-
-function bindOutsideClickListener() {
-    if (!outsideClickListener.value) {
-        outsideClickListener.value = (event) => {
-            if (isOutsideClicked(event)) {
-                resetMenu();
-            }
-        };
-        document.addEventListener('click', outsideClickListener.value);
-    }
-}
-
-function unbindOutsideClickListener() {
-    if (outsideClickListener.value) {
-        document.removeEventListener('click', outsideClickListener);
-        outsideClickListener.value = null;
-    }
-}
-
-function isOutsideClicked(event) {
-    const sidebarEl = document.querySelector('.layout-sidebar');
-    const topbarEl = document.querySelector('.layout-menu-button');
-
-    return !(sidebarEl.isSameNode(event.target) || sidebarEl.contains(event.target) || topbarEl.isSameNode(event.target) || topbarEl.contains(event.target));
-}
 </script>
 
 <template>
-    <div class="layout-wrapper" :class="containerClass">
-        <app-topbar></app-topbar>
-        <app-sidebar></app-sidebar>
-        <div class="layout-main-container">
-            <div class="layout-main">
+    <div :class="['layout-container', { ...containerClass }]">
+        <AppTopbar />
+        <AppRightMenu />
+        <AppSidebar />
+
+        <div class="layout-content-wrapper">
+            <AppBreadCrumb></AppBreadCrumb>
+            <div class="layout-content">
                 <router-view></router-view>
             </div>
-            <app-footer></app-footer>
+            <AppFooter></AppFooter>
         </div>
-        <div class="layout-mask animate-fadein"></div>
+
+        <AppConfig />
+
+        <Toast></Toast>
+        <div class="layout-mask"></div>
     </div>
-    <Toast />
 </template>

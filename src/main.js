@@ -1,48 +1,30 @@
-import router from './router/router';
-
-import { createPinia } from 'pinia';
-
-import './yup.locale.pt-br.js';
-
-// Components
+import { createApp } from 'vue';
 import App from './App.vue';
+import router from './router';
 
-// Composables
-import { createApp, markRaw } from 'vue';
+import BlockViewer from '@/components/BlockViewer.vue';
+import Aura from '@primevue/themes/aura';
+import PrimeVue from 'primevue/config';
+import ConfirmationService from 'primevue/confirmationservice';
+import ToastService from 'primevue/toastservice';
 
-import { createVuetify } from 'vuetify';
+import '@/assets/styles.scss';
+import '@/assets/tailwind.css';
 
-import '@fortawesome/fontawesome-free/css/all.css'; // Ensure your project is capable of handling css files
-import { aliases, fa } from 'vuetify/iconsets/fa';
 const app = createApp(App);
 
-import { pt } from 'vuetify/locale';
-const vuetify = createVuetify({
-    locale: {
-        locale: 'pt',
-        messages: { pt }
-    },
-    icons: {
-        defaultSet: 'fa',
-        aliases,
-        sets: {
-            fa
+app.use(router);
+app.use(PrimeVue, {
+    theme: {
+        preset: Aura,
+        options: {
+            darkModeSelector: '.app-dark'
         }
     }
 });
+app.use(ToastService);
+app.use(ConfirmationService);
 
-const pinia = createPinia();
-
-pinia.use(({ store }) => {
-    store.$router = markRaw(router);
-});
-
-registerPlugins(app);
-
-app.use(router);
-
-app.use(vuetify);
-
-app.use(pinia);
+app.component('BlockViewer', BlockViewer);
 
 app.mount('#app');

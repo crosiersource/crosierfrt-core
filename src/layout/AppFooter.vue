@@ -1,8 +1,16 @@
-<script setup></script>
+<script setup>
+import { useLayout } from '@/layout/composables/layout';
+
+const { isDarkTheme } = useLayout();
+</script>
 
 <template>
     <div class="layout-footer">
-        SAKAI by
-        <a href="https://primevue.org" target="_blank" rel="noopener noreferrer" class="text-primary font-bold hover:underline">PrimeVue</a>
+        <img :src="'/layout/images/logo/footer-' + (isDarkTheme ? 'ultima-dark' : 'ultima') + '.svg'" alt="ultima-footer-logo" />
+        <div class="flex gap-2">
+            <Button icon="pi pi-github" rounded text plain></Button>
+            <Button icon="pi pi-facebook" rounded text plain></Button>
+            <Button icon="pi pi-twitter" rounded text plain></Button>
+        </div>
     </div>
 </template>

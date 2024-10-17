@@ -84,12 +84,12 @@ onBeforeUnmount(() => {
                 <div class="font-semibold text-xl mb-4">Avatar</div>
                 <div class="font-semibold mb-4">Group</div>
                 <AvatarGroup>
-                    <Avatar :image="'/demo/images/avatar/amyelsner.png'" size="large" shape="circle"></Avatar>
-                    <Avatar :image="'/demo/images/avatar/asiyajavayant.png'" size="large" shape="circle"></Avatar>
-                    <Avatar :image="'/demo/images/avatar/onyamalimba.png'" size="large" shape="circle"></Avatar>
-                    <Avatar :image="'/demo/images/avatar/ionibowcher.png'" size="large" shape="circle"></Avatar>
-                    <Avatar :image="'/demo/images/avatar/xuxuefeng.png'" size="large" shape="circle"></Avatar>
-                    <Avatar label="+2" shape="circle" size="large" :style="{ 'background-color': '#9c27b0', color: '#ffffff' }"></Avatar>
+                    <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" size="large" shape="circle" />
+                    <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/asiyajavayant.png" size="large" shape="circle" />
+                    <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/onyamalimba.png" size="large" shape="circle" />
+                    <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/ionibowcher.png" size="large" shape="circle" />
+                    <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/xuxuefeng.png" size="large" shape="circle" />
+                    <Avatar label="+2" shape="circle" size="large" />
                 </AvatarGroup>
 
                 <div class="font-semibold my-4">Label - Circle</div>
@@ -151,26 +151,26 @@ onBeforeUnmount(() => {
             <div class="card">
                 <div class="font-semibold text-xl mb-4">Chip</div>
                 <div class="font-semibold mb-4">Basic</div>
-                <div class="flex items-center flex-col sm:flex-row">
-                    <Chip label="Action" class="mr-2 mb-2"></Chip>
-                    <Chip label="Comedy" class="mr-2 mb-2"></Chip>
-                    <Chip label="Mystery" class="mr-2 mb-2"></Chip>
-                    <Chip label="Thriller" :removable="true" class="mb-2"></Chip>
+                <div class="flex items-center flex-col sm:flex-row gap-2">
+                    <Chip label="Action"></Chip>
+                    <Chip label="Comedy"></Chip>
+                    <Chip label="Mystery"></Chip>
+                    <Chip label="Thriller" :removable="true"></Chip>
                 </div>
 
                 <div class="font-semibold my-4">Icon</div>
-                <div class="flex items-center flex-col sm:flex-row">
-                    <Chip label="Apple" icon="pi pi-apple" class="mr-2 mb-2"></Chip>
-                    <Chip label="Facebook" icon="pi pi-facebook" class="mr-2 mb-2"></Chip>
-                    <Chip label="Google" icon="pi pi-google" class="mr-2 mb-2"></Chip>
-                    <Chip label="Microsoft" icon="pi pi-microsoft" :removable="true" class="mb-2"></Chip>
+                <div class="flex items-center flex-col sm:flex-row gap-2">
+                    <Chip label="Apple" icon="pi pi-apple"></Chip>
+                    <Chip label="Facebook" icon="pi pi-facebook"></Chip>
+                    <Chip label="Google" icon="pi pi-google"></Chip>
+                    <Chip label="Microsoft" icon="pi pi-microsoft" :removable="true"></Chip>
                 </div>
 
                 <div class="font-semibold my-4">Image</div>
-                <div class="flex items-center flex-col sm:flex-row">
-                    <Chip label="Amy Elsner" :image="'/demo/images/avatar/amyelsner.png'" class="mr-2 mb-2"></Chip>
-                    <Chip label="Asiya Javayant" :image="'/demo/images/avatar/asiyajavayant.png'" class="mr-2 mb-2"></Chip>
-                    <Chip label="Onyama Limba" :image="'/demo/images/avatar/onyamalimba.png'" class="mr-2 mb-2"></Chip>
+                <div class="flex items-center flex-col sm:flex-row gap-2">
+                    <Chip label="Amy Elsner" image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" />
+                    <Chip label="Asiya Javayant" image="https://primefaces.org/cdn/primevue/images/avatar/asiyajavayant.png" />
+                    <Chip label="Xuxue Feng" image="https://primefaces.org/cdn/primevue/images/avatar/xuxuefeng.png" removable />
                 </div>
             </div>
 

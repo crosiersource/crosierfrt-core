@@ -1,22 +1,32 @@
-import { computed, reactive, readonly } from 'vue';
+import { computed, reactive, ref, watch } from 'vue';
 
 const layoutConfig = reactive({
     preset: 'Aura',
     primary: 'emerald',
     surface: null,
     darkTheme: false,
-    menuMode: 'static'
+    menuMode: 'slim',
+    menuTheme: 'light',
+    topbarTheme: 'indigo',
+    menuProfilePosition: 'end'
 });
 
 const layoutState = reactive({
     staticMenuDesktopInactive: false,
     overlayMenuActive: false,
-    profileSidebarVisible: false,
     configSidebarVisible: false,
     staticMenuMobileActive: false,
     menuHoverActive: false,
-    activeMenuItem: null
+    rightMenuActive: false,
+    topbarMenuActive: false,
+    sidebarActive: false,
+    anchored: false,
+    activeMenuItem: null,
+    overlaySubmenuActive: false,
+    menuProfileActive: false
 });
+
+const outsideClickListener = ref(null);
 
 export function useLayout() {
     const setPrimary = (value) => {
@@ -31,27 +41,59 @@ export function useLayout() {
         layoutConfig.preset = value;
     };
 
+    const setMenuMode = (mode) => {
+        layoutConfig.menuMode = mode;
+
+        if (mode === 'static') {
+            layoutState.staticMenuDesktopInactive = false;
+        }
+    };
+
+    const showConfigSidebar = () => {
+        layoutState.configSidebarVisible = true;
+    };
+
+    const showSidebar = () => {
+        layoutState.rightMenuActive = true;
+    };
+
+    const onMenuProfileToggle = () => {
+        layoutState.menuProfileActive = !layoutState.menuProfileActive;
+    };
+
+    const setMenuTheme = (theme) => {
+        layoutConfig.menuTheme = theme;
+    };
+
+    const setTopbarTheme = (theme) => {
+        layoutConfig.topbarTheme = theme;
+    };
+
+    const setProfilePosition = (value) => {
+        layoutConfig.menuProfilePosition = value;
+    };
+
     const setActiveMenuItem = (item) => {
         layoutState.activeMenuItem = item.value || item;
     };
 
-    const setMenuMode = (mode) => {
-        layoutConfig.menuMode = mode;
+    const setMenuStates = (value) => {
+        layoutState.overlaySubmenuActive = value;
+        layoutState.menuHoverActive = value;
     };
 
-    const toggleDarkMode = () => {
-        if (!document.startViewTransition) {
-            executeDarkModeToggle();
-
-            return;
-        }
-
-        document.startViewTransition(() => executeDarkModeToggle(event));
+    const setStaticMenuMobile = () => {
+        layoutState.staticMenuMobileActive = !layoutState.staticMenuMobileActive;
     };
 
-    const executeDarkModeToggle = () => {
-        layoutConfig.darkTheme = !layoutConfig.darkTheme;
-        document.documentElement.classList.toggle('app-dark');
+    const watchSidebarActive = () => {
+        watch(isSidebarActive, (newVal) => {
+            if (newVal) {
+                bindOutsideClickListener();
+            } else {
+                unbindOutsideClickListener();
+            }
+        });
     };
 
     const onMenuToggle = () => {
@@ -66,19 +108,130 @@ export function useLayout() {
         }
     };
 
-    const resetMenu = () => {
-        layoutState.overlayMenuActive = false;
-        layoutState.staticMenuMobileActive = false;
-        layoutState.menuHoverActive = false;
+    const onTopbarMenuToggle = () => {
+        layoutState.topbarMenuActive = !layoutState.topbarMenuActive;
+    };
+    const openRightSidebar = () => {
+        layoutState.rightMenuActive = true;
     };
 
-    const isSidebarActive = computed(() => layoutState.overlayMenuActive || layoutState.staticMenuMobileActive);
+    const onProfileSidebarToggle = () => {
+        layoutState.rightMenuActive = !layoutState.rightMenuActive;
+    };
+
+    const onConfigSidebarToggle = () => {
+        if (isSidebarActive.value) {
+            resetMenu();
+            unbindOutsideClickListener();
+        }
+
+        layoutState.configSidebarVisible = !layoutState.configSidebarVisible;
+    };
+
+    const onSidebarToggle = (value) => {
+        layoutState.sidebarActive = value;
+    };
+
+    const onAnchorToggle = () => {
+        layoutState.anchored = !layoutState.anchored;
+    };
+
+    const toggleDarkMode = () => {
+        if (!document.startViewTransition) {
+            executeDarkModeToggle();
+
+            return;
+        }
+
+        document.startViewTransition(() => executeDarkModeToggle(event));
+    };
+
+    const executeDarkModeToggle = () => {
+        layoutConfig.darkTheme = !layoutConfig.darkTheme;
+        layoutConfig.menuTheme = isDarkTheme.value ? 'dark' : 'light';
+
+        document.documentElement.classList.toggle('app-dark');
+    };
+
+    const bindOutsideClickListener = () => {
+        if (!outsideClickListener.value) {
+            outsideClickListener.value = (event) => {
+                if (isOutsideClicked(event)) {
+                    resetMenu();
+                }
+            };
+            document.addEventListener('click', outsideClickListener.value);
+        }
+    };
+
+    const unbindOutsideClickListener = () => {
+        if (outsideClickListener.value) {
+            document.removeEventListener('click', outsideClickListener.value);
+            outsideClickListener.value = null;
+        }
+    };
+
+    const isOutsideClicked = (event) => {
+        const sidebarEl = document.querySelector('.layout-sidebar');
+        const topbarButtonEl = document.querySelector('.layout-menu-button');
+
+        return !(sidebarEl?.isSameNode(event.target) || sidebarEl?.contains(event.target) || topbarButtonEl?.isSameNode(event.target) || topbarButtonEl?.contains(event.target));
+    };
+
+    const resetMenu = () => {
+        layoutState.overlayMenuActive = false;
+        layoutState.overlaySubmenuActive = false;
+        layoutState.staticMenuMobileActive = false;
+        layoutState.menuHoverActive = false;
+        layoutState.configSidebarVisible = false;
+    };
+
+    const isSidebarActive = computed(() => layoutState.overlayMenuActive || layoutState.staticMenuMobileActive || layoutState.overlaySubmenuActive);
+    const isDesktop = computed(() => window.innerWidth > 991);
+
+    const isSlim = computed(() => layoutConfig.menuMode === 'slim');
+    const isSlimPlus = computed(() => layoutConfig.menuMode === 'slim-plus');
+    const isHorizontal = computed(() => layoutConfig.menuMode === 'horizontal');
+    const isOverlay = computed(() => layoutConfig.menuMode === 'overlay');
 
     const isDarkTheme = computed(() => layoutConfig.darkTheme);
-
     const getPrimary = computed(() => layoutConfig.primary);
-
     const getSurface = computed(() => layoutConfig.surface);
 
-    return { layoutConfig: readonly(layoutConfig), layoutState: readonly(layoutState), onMenuToggle, isSidebarActive, isDarkTheme, getPrimary, getSurface, setActiveMenuItem, toggleDarkMode, setPrimary, setSurface, setPreset, resetMenu, setMenuMode };
+    return {
+        layoutConfig,
+        layoutState,
+        getPrimary,
+        getSurface,
+        isDarkTheme,
+        setPrimary,
+        setSurface,
+        setPreset,
+        setMenuMode,
+        setProfilePosition,
+        setMenuTheme,
+        setTopbarTheme,
+        onMenuProfileToggle,
+        toggleDarkMode,
+        onMenuToggle,
+        onTopbarMenuToggle,
+        openRightSidebar,
+        onProfileSidebarToggle,
+        setMenuStates,
+        setStaticMenuMobile,
+        watchSidebarActive,
+        isSidebarActive,
+        setActiveMenuItem,
+        onConfigSidebarToggle,
+        onSidebarToggle,
+        onAnchorToggle,
+        isSlim,
+        isSlimPlus,
+        isHorizontal,
+        isDesktop,
+        isOverlay,
+        showConfigSidebar,
+        showSidebar,
+        unbindOutsideClickListener
+    };
 }

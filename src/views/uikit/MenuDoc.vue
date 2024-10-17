@@ -426,7 +426,7 @@ function onContextRightClick(event) {
         <div class="font-semibold text-xl mb-4">Menubar</div>
         <Menubar :model="nestedMenuitems">
             <template #end>
-                <IconField iconPosition="left">
+                <IconField>
                     <InputIcon class="pi pi-search" />
                     <InputText type="text" placeholder="Search" />
                 </IconField>

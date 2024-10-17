@@ -87,7 +87,7 @@ function searchCountry(event) {
                     <InputIcon class="pi pi-user" />
                     <InputText type="text" placeholder="Username" />
                 </IconField>
-                <IconField iconPosition="left">
+                <IconField>
                     <InputText type="text" placeholder="Search" />
                     <InputIcon class="pi pi-search" />
                 </IconField>

@@ -35,7 +35,7 @@ function load(index) {
                 <div class="flex flex-wrap gap-2">
                     <Button label="Submit"></Button>
                     <Button label="Disabled" :disabled="true"></Button>
-                    <Button label="Link" class="p-button-link" />
+                    <Button label="Link" link />
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
