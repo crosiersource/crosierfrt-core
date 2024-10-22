@@ -1,3 +1,4 @@
+// vite.config.mjs
 import { fileURLToPath, URL } from 'node:url';
 
 import { PrimeVueResolver } from '@primevue/auto-import-resolver';
@@ -7,19 +8,22 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    optimizeDeps: {
-        noDiscovery: true,
-        include: ['quill']
-    },
-    plugins: [
-        vue(),
-        Components({
-            resolvers: [PrimeVueResolver()]
-        })
-    ],
-    resolve: {
-        alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
+  optimizeDeps: {
+    noDiscovery: true,
+    include: ['quill']
+  },
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [PrimeVueResolver()]
+    })
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    port: 4000
+  }
 });
