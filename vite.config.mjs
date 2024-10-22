@@ -1,6 +1,5 @@
 // vite.config.mjs
 import { fileURLToPath, URL } from 'node:url';
-
 import { PrimeVueResolver } from '@primevue/auto-import-resolver';
 import vue from '@vitejs/plugin-vue';
 import Components from 'unplugin-vue-components/vite';
@@ -21,7 +20,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+    },
+    // Adicionando suporte implícito a .vue
+    extensions: ['.js', '.json', '.vue']
   },
   server: {
     port: 4000
