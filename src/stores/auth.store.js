@@ -1,9 +1,9 @@
-import { defineStore } from "pinia";
-import axios from "axios";
-import { jwtDecode } from "jwt-decode";
-import { useLoadingStore } from "./loading.store";
+import { defineStore } from 'pinia';
+import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
+import { useLoadingStore } from './loading.store';
 
-export const useAuthStore = defineStore("auth", {
+export const useAuthStore = defineStore('auth', {
   state: () => {
     return {
       // all these properties will have their type inferred automatically
@@ -12,7 +12,7 @@ export const useAuthStore = defineStore("auth", {
       tokenExpiration: null,
       refreshToken: null,
       refreshTokenExpiration: null,
-      error: null,
+      error: null
     };
   },
 
@@ -29,38 +29,38 @@ export const useAuthStore = defineStore("auth", {
         return state.refreshTokenExpiration * 1000 - Date.now();
       }
       return 0;
-    },
+    }
   },
 
   actions: {
     setUsername() {
-      localStorage.setItem("username", this.username);
+      localStorage.setItem('username', this.username);
     },
 
     setToken(token) {
       this.token = token;
-      localStorage.setItem("token", token);
+      localStorage.setItem('token', token);
       const tokenInfo = jwtDecode(token);
       this.tokenExpiration = tokenInfo.exp;
-      localStorage.setItem("tokenExpiration", this.tokenExpiration);
+      localStorage.setItem('tokenExpiration', this.tokenExpiration);
     },
 
     setRefreshToken(refreshToken) {
       this.refreshToken = refreshToken;
-      localStorage.setItem("refreshToken", refreshToken);
+      localStorage.setItem('refreshToken', refreshToken);
     },
 
     setRefreshTokenExpiration(refreshTokenExpiration) {
       this.refreshTokenExpiration = refreshTokenExpiration;
-      localStorage.setItem("refreshTokenExpiration", refreshTokenExpiration);
+      localStorage.setItem('refreshTokenExpiration', refreshTokenExpiration);
     },
 
     loadAllFromLocalStorage() {
-      this.username = localStorage.getItem("username");
-      this.token = localStorage.getItem("token");
-      this.tokenExpiration = localStorage.getItem("tokenExpiration");
-      this.refreshToken = localStorage.getItem("refreshToken");
-      this.refreshTokenExpiration = localStorage.getItem("refreshTokenExpiration");
+      this.username = localStorage.getItem('username');
+      this.token = localStorage.getItem('token');
+      this.tokenExpiration = localStorage.getItem('tokenExpiration');
+      this.refreshToken = localStorage.getItem('refreshToken');
+      this.refreshTokenExpiration = localStorage.getItem('refreshTokenExpiration');
     },
 
     isTokenExpired() {
@@ -75,13 +75,13 @@ export const useAuthStore = defineStore("auth", {
       loadingStore.setLoading(true);
       const delay = (ms) => new Promise((res) => setTimeout(res, ms));
       await delay(1000);
-      console.log("aqui:");
+      console.log('aqui:');
       console.log(import.meta.env.VITE_CROSIER_API);
-      console.log("foi");
+      console.log('foi');
       axios
-        .post(import.meta.env.VITE_CROSIER_API + "/api/login", {
+        .post(import.meta.env.VITE_CROSIER_API + '/api/login', {
           username: this.username,
-          password,
+          password
         })
         .then((response) => {
           this.setToken(response.data.token);
@@ -90,7 +90,7 @@ export const useAuthStore = defineStore("auth", {
 
           this.setUsername();
 
-          this.$router.push("/");
+          this.$router.push('/');
         })
         .catch((error) => {
           console.error(error);
@@ -101,9 +101,9 @@ export const useAuthStore = defineStore("auth", {
 
     async doRefreshToken() {
       try {
-        const response = await axios.post(import.meta.env.VITE_CROSIER_API + "/api/token/refresh", {
+        const response = await axios.post(import.meta.env.VITE_CROSIER_API + '/api/token/refresh', {
           token: this.getToken,
-          refresh_token: this.refreshToken,
+          refresh_token: this.refreshToken
         });
 
         this.setToken(response.data.token);
@@ -112,8 +112,8 @@ export const useAuthStore = defineStore("auth", {
 
         this.setUsername();
       } catch (e) {
-        console.error("Erro ao refrescar o token", e);
-        this.$router.push("/login");
+        console.error('Erro ao refrescar o token', e);
+        this.$router.push('/auth/login');
       }
     },
 
@@ -124,13 +124,13 @@ export const useAuthStore = defineStore("auth", {
       this.refreshTokenExpiration = null;
       this.error = null;
 
-      localStorage.removeItem("username");
-      localStorage.removeItem("token");
-      localStorage.removeItem("tokenExpiration");
-      localStorage.removeItem("refreshToken");
-      localStorage.removeItem("refreshTokenExpiration");
+      localStorage.removeItem('username');
+      localStorage.removeItem('token');
+      localStorage.removeItem('tokenExpiration');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('refreshTokenExpiration');
 
-      this.$router.push("/login");
-    },
-  },
+      this.$router.push('/auth/login');
+    }
+  }
 });
