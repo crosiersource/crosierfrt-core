@@ -7,48 +7,48 @@ const activeUserId = ref(1);
 const users = ref([]);
 
 onMounted(async () => {
-    users.value = await getUserData();
-    scrollToLastMessage();
+  users.value = await getUserData();
+  scrollToLastMessage();
 });
 
 async function getUserData() {
-    const response = await fetch('/demo/data/chat.json');
-    const { data } = await response.json();
+  const response = await fetch('/demo/data/chat.json');
+  const { data } = await response.json();
 
-    return data;
+  return data;
 }
 
 function changeActiveUser(user) {
-    activeUserId.value = user.id;
-    scrollToLastMessage();
+  activeUserId.value = user.id;
+  scrollToLastMessage();
 }
 
 function sendMessage(message) {
-    const activeUser = findActiveUser();
-    activeUser.messages.push(message);
-    scrollToLastMessage();
+  const activeUser = findActiveUser();
+  activeUser.messages.push(message);
+  scrollToLastMessage();
 }
 
 function findActiveUser() {
-    return users.value.find((user) => user.id === activeUserId.value) || {};
+  return users.value.find((user) => user.id === activeUserId.value) || {};
 }
 
 async function scrollToLastMessage() {
-    const element = document.querySelector('.user-message-container');
+  const element = document.querySelector('.user-message-container');
 
-    await nextTick(() => {
-        element.scroll({ top: element.scrollHeight });
-    });
+  await nextTick(() => {
+    element.scroll({ top: element.scrollHeight });
+  });
 }
 </script>
 
 <template>
-    <div class="flex flex-col md:flex-row gap-8" style="min-height: 81vh">
-        <div class="md:w-[25rem] card p-0">
-            <ChatSidebar @change:active:user="changeActiveUser" :users="users"></ChatSidebar>
-        </div>
-        <div class="flex-1 card p-0">
-            <ChatBox @send:message="sendMessage" :user="findActiveUser()"></ChatBox>
-        </div>
+  <div class="flex flex-col md:flex-row gap-8" style="min-height: 81vh">
+    <div class="md:w-[25rem] card p-0">
+      <ChatSidebar :users="users" @change:active:user="changeActiveUser" />
     </div>
+    <div class="flex-1 card p-0">
+      <ChatBox :user="findActiveUser()" @send:message="sendMessage" />
+    </div>
+  </div>
 </template>
