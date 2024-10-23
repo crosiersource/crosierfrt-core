@@ -20,7 +20,7 @@ const listboxValues = ref([
   { name: 'Rome', code: 'RM' },
   { name: 'London', code: 'LDN' },
   { name: 'Istanbul', code: 'IST' },
-  { name: 'Paris', code: 'PRS' }
+  { name: 'Paris', code: 'PRS' },
 ]);
 const listboxValue = ref(null);
 const dropdownValues = ref([
@@ -28,7 +28,7 @@ const dropdownValues = ref([
   { name: 'Rome', code: 'RM' },
   { name: 'London', code: 'LDN' },
   { name: 'Istanbul', code: 'IST' },
-  { name: 'Paris', code: 'PRS' }
+  { name: 'Paris', code: 'PRS' },
 ]);
 const dropdownValue = ref(null);
 const multiselectValues = ref([
@@ -41,7 +41,7 @@ const multiselectValues = ref([
   { name: 'India', code: 'IN' },
   { name: 'Japan', code: 'JP' },
   { name: 'Spain', code: 'ES' },
-  { name: 'United States', code: 'US' }
+  { name: 'United States', code: 'US' },
 ]);
 
 const multiselectValue = ref(null);
@@ -110,7 +110,8 @@ function searchCountry(event) {
           dropdown
           multiple
           display="chip"
-          @complete="searchCountry($event)" />
+          @complete="searchCountry($event)"
+        />
 
         <div class="font-semibold text-xl">DatePicker</div>
         <DatePicker v-model="calendarValue" :show-icon="true" :show-button-bar="true" />
@@ -183,14 +184,16 @@ function searchCountry(event) {
           v-model="listboxValue"
           :options="listboxValues"
           option-label="name"
-          :filter="true" />
+          :filter="true"
+        />
 
         <div class="font-semibold text-xl">Select</div>
         <Select
           v-model="dropdownValue"
           :options="dropdownValues"
           option-label="name"
-          placeholder="Select" />
+          placeholder="Select"
+        />
 
         <div class="font-semibold text-xl">MultiSelect</div>
         <MultiSelect
@@ -198,15 +201,18 @@ function searchCountry(event) {
           :options="multiselectValues"
           option-label="name"
           placeholder="Select Countries"
-          :filter="true">
+          :filter="true"
+        >
           <template #value="slotProps">
             <div
               v-for="option of slotProps.value"
               :key="option.code"
-              class="inline-flex items-center py-1 px-2 bg-primary text-primary-contrast rounded-border mr-2">
+              class="inline-flex items-center py-1 px-2 bg-primary text-primary-contrast rounded-border mr-2"
+            >
               <span
                 :class="'mr-2 flag flag-' + option.code.toLowerCase()"
-                style="width: 18px; height: 12px" />
+                style="width: 18px; height: 12px"
+              />
               <div>{{ option.name }}</div>
             </div>
             <template v-if="!slotProps.value || slotProps.value.length === 0">
@@ -217,7 +223,8 @@ function searchCountry(event) {
             <div class="flex items-center">
               <span
                 :class="'mr-2 flag flag-' + slotProps.option.code.toLowerCase()"
-                style="width: 18px; height: 12px" />
+                style="width: 18px; height: 12px"
+              />
               <div>{{ slotProps.option.name }}</div>
             </div>
           </template>
@@ -233,13 +240,15 @@ function searchCountry(event) {
           v-model="toggleValue"
           on-label="Yes"
           off-label="No"
-          :style="{ width: '10em' }" />
+          :style="{ width: '10em' }"
+        />
 
         <div class="font-semibold text-xl">SelectButton</div>
         <SelectButton
           v-model="selectButtonValue"
           :options="selectButtonValues"
-          option-label="name" />
+          option-label="name"
+        />
       </div>
     </div>
   </Fluid>

@@ -11,7 +11,7 @@ const countries = ref([
   { name: 'India', code: 'IN' },
   { name: 'Japan', code: 'JP' },
   { name: 'Spain', code: 'ES' },
-  { name: 'United States', code: 'US' }
+  { name: 'United States', code: 'US' },
 ]);
 const selectedCountry = ref(null);
 </script>
@@ -47,7 +47,8 @@ const selectedCountry = ref(null);
               accept="image/*"
               :max-file-size="1000000"
               choose-label="Upload Image"
-              class="p-button-outlined p-button-plain w-unset" />
+              class="p-button-outlined p-button-plain w-unset"
+            />
           </div>
           <div class="mb-6 col-span-12">
             <label for="bio" class="font-medium text-surface-900 dark:text-surface-0">Bio</label>
@@ -70,12 +71,14 @@ const selectedCountry = ref(null);
               filter
               fluid
               placeholder="Select a Country"
-              show-clear>
+              show-clear
+            >
               <template #value="slotProps">
                 <div v-if="slotProps.value" class="flex items-center">
                   <span
                     :class="`mr-2 flag flag-${selectedCountry.code.toLowerCase()}`"
-                    style="width: 18px; height: 12px" />
+                    style="width: 18px; height: 12px"
+                  />
                   <div>{{ slotProps.value.name }}</div>
                 </div>
                 <span v-else>
@@ -86,7 +89,8 @@ const selectedCountry = ref(null);
                 <div class="flex items-center">
                   <span
                     :class="`mr-2 flag flag-${slotProps.option.code.toLowerCase()}`"
-                    style="width: 18px; height: 12px" />
+                    style="width: 18px; height: 12px"
+                  />
                   <div>{{ slotProps.option.name }}</div>
                 </div>
               </template>

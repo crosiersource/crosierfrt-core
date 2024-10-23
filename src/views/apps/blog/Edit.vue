@@ -36,29 +36,33 @@ function onRemoveFile(removeFile) {
           :pt="{
             root: {
               class:
-                'border border-surface-200 dark:border-surface-700 bg-surface-0 dark:bg-surface-900 p-0 rounded mb-6'
+                'border border-surface-200 dark:border-surface-700 bg-surface-0 dark:bg-surface-900 p-0 rounded mb-6',
             },
             buttonbar: { class: 'hidden' },
-            removeButton: { class: 'flex' }
+            removeButton: { class: 'flex' },
           }"
-          @select="onSelectedFiles">
+          @select="onSelectedFiles"
+        >
           <template v-if="uploadFiles.length > 0" #content>
             <div class="h-80 m-1 rounded">
               <div
                 v-for="file in uploadFiles"
                 :key="file.name"
                 class="w-full h-full relative rounded p-0"
-                :style="{ cursor: 'copy' }">
+                :style="{ cursor: 'copy' }"
+              >
                 <div
                   class="remove-file-wrapper h-full relative border-4 border-transparent rounded hover:bg-primary hover:text-primary-contrast duration-100 cursor-auto"
-                  :style="{ padding: '1px' }">
+                  :style="{ padding: '1px' }"
+                >
                   <img :src="file.objectURL" :alt="file.name" class="w-full h-full rounded" />
                   <Button
                     icon="pi pi-times"
                     class="remove-button text-sm absolute justify-center items-center cursor-pointer"
                     rounded
                     :style="{ top: '-10px', right: '-10px', display: 'none' }"
-                    @click="onRemoveFile(file)" />
+                    @click="onRemoveFile(file)"
+                  />
                 </div>
               </div>
             </div>
@@ -68,7 +72,8 @@ function onRemoveFile(removeFile) {
               <div
                 class="flex flex-col w-full h-full justify-center items-center cursor-pointer"
                 :style="{ cursor: 'copy' }"
-                @click="onChooseUploadFiles">
+                @click="onChooseUploadFiles"
+              >
                 <i class="pi pi-fw pi-file text-4xl text-primary" />
                 <span class="block font-semibold text-surface-900 dark:text-surface-0 text-lg mt-4">
                   Drop or select a cover image
@@ -91,7 +96,8 @@ function onRemoveFile(removeFile) {
       <div class="col-span-12 lg:col-span-4">
         <div class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
-            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
+          >
             Publish
           </span>
           <div class="p-4">
@@ -113,7 +119,8 @@ function onRemoveFile(removeFile) {
         </div>
         <div class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
-            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
+          >
             Tags
           </span>
           <div class="p-4 flex gap-2">
@@ -122,7 +129,8 @@ function onRemoveFile(removeFile) {
         </div>
         <Fluid class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
-            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
+          >
             Meta
           </span>
           <div class="p-4">
@@ -140,7 +148,8 @@ function onRemoveFile(removeFile) {
             severity="danger"
             outlined
             label="Discard"
-            icon="pi pi-fw pi-trash" />
+            icon="pi pi-fw pi-trash"
+          />
           <Button class="flex-1" label="Publish" icon="pi pi-fw pi-check" />
         </div>
       </div>

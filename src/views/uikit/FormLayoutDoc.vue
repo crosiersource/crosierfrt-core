@@ -4,7 +4,7 @@ import { ref } from 'vue';
 const dropdownItems = ref([
   { name: 'Option 1', code: 'Option 1' },
   { name: 'Option 2', code: 'Option 2' },
-  { name: 'Option 3', code: 'Option 3' }
+  { name: 'Option 3', code: 'Option 3' },
 ]);
 
 const dropdownItem = ref(null);
@@ -118,7 +118,8 @@ const dropdownItem = ref(null);
               :options="dropdownItems"
               option-label="name"
               placeholder="Select One"
-              class="w-full" />
+              class="w-full"
+            />
           </div>
           <div class="flex flex-wrap gap-2 w-full">
             <label for="zip">Zip</label>

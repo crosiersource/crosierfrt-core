@@ -18,7 +18,7 @@ const dailyTasks = ref([
     description:
       'Create profiles of fictional users representing target audience for product or service.',
     avatar: '/demo/images/avatar/circle/avatar-f-6.png',
-    borderColor: 'border-pink-500'
+    borderColor: 'border-pink-500',
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const dailyTasks = ref([
     description:
       'Visual representation of steps a user takes to accomplish a goal within product or service.',
     avatar: '/demo/images/avatar/circle/avatar-f-7.png',
-    borderColor: 'border-purple-500'
+    borderColor: 'border-purple-500',
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const dailyTasks = ref([
     description:
       'Create low-fidelity mockups of onboarding screen. Include layout, hierarchy, functionality.',
     avatar: '/demo/images/avatar/circle/avatar-f-8.png',
-    borderColor: 'border-blue-500'
+    borderColor: 'border-blue-500',
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const dailyTasks = ref([
     description:
       'Conduct research on similar products or services to understand market standards and identify opportunities.',
     avatar: '/demo/images/avatar/circle/avatar-f-9.png',
-    borderColor: 'border-green-500'
+    borderColor: 'border-green-500',
   },
   {
     id: 5,
@@ -54,8 +54,8 @@ const dailyTasks = ref([
     description:
       'Collaborate with UI design team to create plan for visual design of product or service.',
     avatar: '/demo/images/avatar/circle/avatar-f-10.png',
-    borderColor: 'border-yellow-500'
-  }
+    borderColor: 'border-yellow-500',
+  },
 ]);
 const teamMembers = ref([
   {
@@ -66,7 +66,7 @@ const teamMembers = ref([
     doneCount: 15,
     sprintCount: 72,
     onProjectsCount: 33,
-    team: 'UX Researchers'
+    team: 'UX Researchers',
   },
   {
     avatar: '/demo/images/avatar/circle/avatar-f-2.png',
@@ -76,7 +76,7 @@ const teamMembers = ref([
     doneCount: 11,
     sprintCount: 3,
     onProjectsCount: 12,
-    team: 'UX Researchers'
+    team: 'UX Researchers',
   },
   {
     avatar: '/demo/images/avatar/circle/avatar-f-3.png',
@@ -86,7 +86,7 @@ const teamMembers = ref([
     doneCount: 33,
     sprintCount: 11,
     onProjectsCount: 44,
-    team: 'UX Researchers'
+    team: 'UX Researchers',
   },
   {
     avatar: '/demo/images/avatar/circle/avatar-f-4.png',
@@ -96,7 +96,7 @@ const teamMembers = ref([
     doneCount: 11,
     sprintCount: 45,
     onProjectsCount: 23,
-    team: 'UX Researchers'
+    team: 'UX Researchers',
   },
   {
     avatar: '/demo/images/avatar/circle/avatar-f-5.png',
@@ -106,7 +106,7 @@ const teamMembers = ref([
     doneCount: 3,
     sprintCount: 12,
     onProjectsCount: 1,
-    team: 'UX Researchers'
+    team: 'UX Researchers',
   },
   {
     avatar: '/demo/images/avatar/circle/avatar-f-6.png',
@@ -116,7 +116,7 @@ const teamMembers = ref([
     doneCount: 23,
     sprintCount: 29,
     onProjectsCount: 14,
-    team: 'UX Researchers'
+    team: 'UX Researchers',
   },
   {
     avatar: '/demo/images/avatar/circle/avatar-f-7.png',
@@ -126,7 +126,7 @@ const teamMembers = ref([
     doneCount: 33,
     sprintCount: 12,
     onProjectsCount: 14,
-    team: 'UX Researchers'
+    team: 'UX Researchers',
   },
   {
     avatar: '/demo/images/avatar/circle/avatar-f-8.png',
@@ -136,7 +136,7 @@ const teamMembers = ref([
     doneCount: 55,
     sprintCount: 31,
     onProjectsCount: 15,
-    team: 'UX Researchers'
+    team: 'UX Researchers',
   },
 
   {
@@ -147,7 +147,7 @@ const teamMembers = ref([
     doneCount: 15,
     sprintCount: 72,
     onProjectsCount: 33,
-    team: 'UX Designers'
+    team: 'UX Designers',
   },
 
   {
@@ -158,7 +158,7 @@ const teamMembers = ref([
     doneCount: 32,
     sprintCount: 14,
     onProjectsCount: 16,
-    team: 'UX Designers'
+    team: 'UX Designers',
   },
 
   {
@@ -169,7 +169,7 @@ const teamMembers = ref([
     doneCount: 17,
     sprintCount: 12,
     onProjectsCount: 14,
-    team: 'UI Designers'
+    team: 'UI Designers',
   },
 
   {
@@ -180,7 +180,7 @@ const teamMembers = ref([
     doneCount: 15,
     sprintCount: 72,
     onProjectsCount: 33,
-    team: 'UI Designer'
+    team: 'UI Designer',
   },
 
   {
@@ -191,7 +191,7 @@ const teamMembers = ref([
     doneCount: 15,
     sprintCount: 72,
     onProjectsCount: 33,
-    team: 'Front-End Developers'
+    team: 'Front-End Developers',
   },
 
   {
@@ -202,7 +202,7 @@ const teamMembers = ref([
     doneCount: 15,
     sprintCount: 72,
     onProjectsCount: 33,
-    team: 'Front-End Developers'
+    team: 'Front-End Developers',
   },
 
   {
@@ -213,34 +213,34 @@ const teamMembers = ref([
     doneCount: 15,
     sprintCount: 72,
     onProjectsCount: 33,
-    team: 'Back-End Developers'
-  }
+    team: 'Back-End Developers',
+  },
 ]);
 const projectList = ref([
   {
     id: 1,
     title: 'Ultima Sales',
     totalTasks: 50,
-    completedTask: 25
+    completedTask: 25,
   },
   {
     id: 2,
     title: 'Ultima Landing',
     totalTasks: 50,
-    completedTask: 25
+    completedTask: 25,
   },
   {
     id: 3,
     title: 'Ultima SaaS',
     totalTasks: 50,
-    completedTask: 25
+    completedTask: 25,
   },
   {
     id: 4,
     title: 'Ultima SaaS',
     totalTasks: 50,
-    completedTask: 25
-  }
+    completedTask: 25,
+  },
 ]);
 const teams = ref([
   {
@@ -249,38 +249,38 @@ const teams = ref([
       '/demo/images/avatar/circle/avatar-f-1.png',
       '/demo/images/avatar/circle/avatar-f-6.png',
       '/demo/images/avatar/circle/avatar-f-11.png',
-      '/demo/images/avatar/circle/avatar-f-12.png'
+      '/demo/images/avatar/circle/avatar-f-12.png',
     ],
     avatarText: '+4',
-    badgeClass: 'bg-pink-500'
+    badgeClass: 'bg-pink-500',
   },
   {
     title: 'UX Designers',
     avatar: ['/demo/images/avatar/circle/avatar-f-2.png'],
-    badgeClass: 'bg-blue-500'
+    badgeClass: 'bg-blue-500',
   },
   {
     title: 'UI Designers',
     avatar: [
       '/demo/images/avatar/circle/avatar-f-3.png',
-      '/demo/images/avatar/circle/avatar-f-8.png'
+      '/demo/images/avatar/circle/avatar-f-8.png',
     ],
     avatarText: '+1',
-    badgeClass: 'bg-green-500'
+    badgeClass: 'bg-green-500',
   },
   {
     title: 'Front-End Developers',
     avatar: [
       '/demo/images/avatar/circle/avatar-f-4.png',
-      '/demo/images/avatar/circle/avatar-f-9.png'
+      '/demo/images/avatar/circle/avatar-f-9.png',
     ],
-    badgeClass: 'bg-yellow-500'
+    badgeClass: 'bg-yellow-500',
   },
   {
     title: 'Back-End Developers',
     avatar: ['/demo/images/avatar/circle/avatar-f-10.png'],
-    badgeClass: 'bg-purple-500'
-  }
+    badgeClass: 'bg-purple-500',
+  },
 ]);
 
 function setChartData() {
@@ -291,15 +291,15 @@ function setChartData() {
         label: 'Previous Month',
         borderColor: '#E0E0E0',
         tension: 0.5,
-        data: [22, 36, 11, 33, 2]
+        data: [22, 36, 11, 33, 2],
       },
       {
         label: 'Current Month',
         borderColor: '#6366F1',
         tension: 0.5,
-        data: [22, 16, 31, 11, 38]
-      }
-    ]
+        data: [22, 16, 31, 11, 38],
+      },
+    ],
   };
 }
 
@@ -313,32 +313,32 @@ function setChartOptions() {
         labels: {
           color: textColor,
           boxWidth: 12,
-          boxHeight: 4
+          boxHeight: 4,
         },
-        position: 'bottom'
-      }
+        position: 'bottom',
+      },
     },
     maintainAspectRatio: false,
     elements: { point: { radius: 0 } },
     scales: {
       x: {
         ticks: {
-          color: textColor
+          color: textColor,
         },
         grid: {
-          color: surfaceLight
-        }
+          color: surfaceLight,
+        },
       },
       y: {
         ticks: {
           color: textColor,
-          stepSize: 10
+          stepSize: 10,
         },
         grid: {
-          color: surfaceLight
-        }
-      }
-    }
+          color: surfaceLight,
+        },
+      },
+    },
   };
 }
 
@@ -414,7 +414,8 @@ watch(getPrimary, () => {
     </div>
     <div class="col-span-12 md:col-span-4">
       <div
-        class="h-full bg-primary text-primary-contrast flex justify-between items-center pl-8 py-4 rounded-md overflow-hidden">
+        class="h-full bg-primary text-primary-contrast flex justify-between items-center pl-8 py-4 rounded-md overflow-hidden"
+      >
         <div class="flex flex-col justify-center">
           <div><span class="font-bold text-white text-sm">Carry your team on top</span></div>
           <div>
@@ -449,7 +450,8 @@ watch(getPrimary, () => {
                         :size="36"
                         range-color="#EEEEEE"
                         readonly
-                        :max="5" />
+                        :max="5"
+                      />
                     </div>
                     <div class="flex flex-col justify-between gap-1">
                       <span class="font-bold text-surface-900 dark:text-surface-0">
@@ -469,7 +471,8 @@ watch(getPrimary, () => {
                   <div
                     v-for="task in dailyTasks"
                     :key="task.id"
-                    class="flex justify-between p-4 bg-surface-50 dark:bg-surface-800 cursor-pointer text-muted-color rounded-md mx-6 hover:bg-surface-0 dark:hover:bg-surface-900 hover:shadow">
+                    class="flex justify-between p-4 bg-surface-50 dark:bg-surface-800 cursor-pointer text-muted-color rounded-md mx-6 hover:bg-surface-0 dark:hover:bg-surface-900 hover:shadow"
+                  >
                     <div class="flex gap-4">
                       <div>
                         <Checkbox v-model="task.checked" :binary="true" @change="changeChecked()" />
@@ -490,7 +493,8 @@ watch(getPrimary, () => {
                           <Avatar
                             label="+2"
                             shape="circle"
-                            class="bg-surface-200 dark:bg-surface-600 text-muted-color" />
+                            class="bg-surface-200 dark:bg-surface-600 text-muted-color"
+                          />
                         </AvatarGroup>
                       </div>
                       <div class="flex items-center">
@@ -516,7 +520,8 @@ watch(getPrimary, () => {
                   </div>
                   <div class="flex items-center gap-1">
                     <div
-                      class="flex items-center justify-center gap-1 rounded-md p-2 bg-red-100 text-red-400">
+                      class="flex items-center justify-center gap-1 rounded-md p-2 bg-red-100 text-red-400"
+                    >
                       <i class="pi pi-arrow-down-right" />
                       <span>-13%</span>
                     </div>
@@ -554,7 +559,8 @@ watch(getPrimary, () => {
                     v-for="task in dailyTasks"
                     :key="task.id"
                     class="flex justify-between px-4 py-2 border-l-2 cursor-pointer mx-6 rounded-md bg-surface-50 dark:bg-surface-800 hover:shadow hover:bg-surface-0 dark:hover:bg-surface-900"
-                    :class="task.borderColor">
+                    :class="task.borderColor"
+                  >
                     <div class="flex justify-between gap-4">
                       <div class="flex flex-col justify-center gap-2">
                         <span class="font-medium text-base text-color">{{ task.label }}</span>
@@ -593,53 +599,62 @@ watch(getPrimary, () => {
               <div
                 v-show="i < 2"
                 class="col-span-12 md:col-span-4"
-                :class="{ 'hidden md:block': i < 1 }">
+                :class="{ 'hidden md:block': i < 1 }"
+              >
                 <div
                   :class="[
                     'flex flex-col border border-surface justify-between p-4 gap-4 cursor-pointer border-round-md',
-                    { 'bg-primary border-0': selectedProjectID === project.id }
+                    { 'bg-primary border-0': selectedProjectID === project.id },
                   ]"
-                  @click="selectedProjectID = project.id">
+                  @click="selectedProjectID = project.id"
+                >
                   <div class="flex justify-between items-center">
                     <div class="flex gap-2 font-bold text-sm items-center">
                       <i
                         class="pi pi-star-fill"
-                        :class="{ 'text-primary': selectedProjectID !== project.id }" />
+                        :class="{ 'text-primary': selectedProjectID !== project.id }"
+                      />
                       <span>{{ project.title }}</span>
                     </div>
                     <div class="flex gap-2 text-sm items-center text-xs font-bold">
                       <div
                         class="bg-surface-200 dark:bg-surface-600 p-1 px-2 flex font-medium gap-2 rounded-md"
-                        :class="{ 'bg-primary-600': selectedProjectID === project.id }">
+                        :class="{ 'bg-primary-600': selectedProjectID === project.id }"
+                      >
                         <span :class="{ 'text-color-secondary': selectedProjectID !== project.id }">
                           25 July
                         </span>
                         <i
                           class="pi pi-arrow-right"
-                          :class="{ 'text-color-secondary': selectedProjectID !== project.id }" />
+                          :class="{ 'text-color-secondary': selectedProjectID !== project.id }"
+                        />
                         <span :class="{ 'text-color-secondary': selectedProjectID !== project.id }">
                           25 Aug
                         </span>
                       </div>
                       <i
                         class="pi pi-ellipsis-h"
-                        :class="{ 'text-color-secondary': selectedProjectID !== project.id }" />
+                        :class="{ 'text-color-secondary': selectedProjectID !== project.id }"
+                      />
                     </div>
                   </div>
                   <div class="flex gap-2 items-center">
                     <span
                       class="text-sm"
-                      :class="{ 'text-color-secondary': selectedProjectID !== project.id }">
+                      :class="{ 'text-color-secondary': selectedProjectID !== project.id }"
+                    >
                       <span class="font-bold">{{ project.completedTask }}</span>
                       /{{ project.totalTasks }} Tasks
                     </span>
                     <div
                       class="bg-surface-200 dark:bg-surface-600 w-full rounded-lg"
-                      :class="{ 'bg-primary-700': selectedProjectID === project.id }">
+                      :class="{ 'bg-primary-700': selectedProjectID === project.id }"
+                    >
                       <div
                         style="height: 6px"
                         class="bg-surface-0 dark:bg-surface-900 w-5/12 rounded-l-lg"
-                        :class="{ 'bg-primary-700': selectedProjectID !== project.id }" />
+                        :class="{ 'bg-primary-700': selectedProjectID !== project.id }"
+                      />
                     </div>
                   </div>
                 </div>
@@ -647,7 +662,8 @@ watch(getPrimary, () => {
             </template>
             <div class="col-span-12 md:col-span-4">
               <div
-                class="flex justify-between items-center p-4 cursor-pointer border border-surface rounded-md h-full">
+                class="flex justify-between items-center p-4 cursor-pointer border border-surface rounded-md h-full"
+              >
                 <div class="flex flex-col gap-2">
                   <span>Other Projects</span>
                   <Tag value="+5 Projects" />
@@ -672,14 +688,16 @@ watch(getPrimary, () => {
                     :key="team.title"
                     class="flex justify-between items-center border border-transparent rounded-md p-4 -mx-2 cursor-pointer hover:bg-emphasis"
                     :class="{
-                      'bg-primary-50 border-primary-100': selectedTeam === team.title
+                      'bg-primary-50 border-primary-100': selectedTeam === team.title,
                     }"
-                    @click="teamFilter(team.title)">
+                    @click="teamFilter(team.title)"
+                  >
                     <div class="flex items-center gap-4">
                       <div
                         :style="{ width: '7px', height: '7px' }"
                         class="rounded-full"
-                        :class="team.badgeClass" />
+                        :class="team.badgeClass"
+                      />
                       <span>{{ team.title }}</span>
                     </div>
                     <div class="flex gap-2 items-center">
@@ -688,17 +706,20 @@ watch(getPrimary, () => {
                           v-for="avatar in team.avatar"
                           :key="avatar"
                           :image="avatar"
-                          shape="circle" />
+                          shape="circle"
+                        />
                         <Avatar
                           v-if="team.avatarText"
                           :label="team.avatarText"
                           shape="circle"
                           class="bg-surface-200 dark:bg-surface-600 text-muted-color"
-                          style="color: #ffffff" />
+                          style="color: #ffffff"
+                        />
                       </AvatarGroup>
                       <i
                         v-if="selectedTeam === team.title"
-                        class="pi pi-chevron-right text-primary" />
+                        class="pi pi-chevron-right text-primary"
+                      />
                     </div>
                   </div>
                 </div>
@@ -709,7 +730,8 @@ watch(getPrimary, () => {
                 <div
                   v-for="member in filteredTeamMembers"
                   :key="member.avatar"
-                  class="grid grid-cols-12 gap-4 grid-nogutter items-center p-2 border-b border-surface text-surface-700 dark:text-surface-100 cursor-pointer hover:text-color">
+                  class="grid grid-cols-12 gap-4 grid-nogutter items-center p-2 border-b border-surface text-surface-700 dark:text-surface-100 cursor-pointer hover:text-color"
+                >
                   <div class="col-span-4">
                     <div class="flex items-center gap-4">
                       <Avatar size="large" shape="circle" :image="member.avatar" />
@@ -745,7 +767,8 @@ watch(getPrimary, () => {
                         class="text-surface-900 dark:text-surface-0"
                         rounded
                         text
-                        icon="pi pi-ellipsis-h" />
+                        icon="pi pi-ellipsis-h"
+                      />
                     </div>
                   </div>
                 </div>

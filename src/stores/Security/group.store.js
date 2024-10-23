@@ -13,7 +13,7 @@ export const useGroupStore = defineStore('group', {
       fields: {},
       fieldsErrors: {},
 
-      schemaValidator: []
+      schemaValidator: [],
     };
   },
 
@@ -22,7 +22,7 @@ export const useGroupStore = defineStore('group', {
 
     getFields: (state) => state.fields,
 
-    getFieldsErrors: (state) => state.fieldsErrors
+    getFieldsErrors: (state) => state.fieldsErrors,
   },
 
   actions: {
@@ -38,7 +38,7 @@ export const useGroupStore = defineStore('group', {
 
         const response = await api.get({
           authToken: authStore.token,
-          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/group/${id}`
+          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/group/${id}`,
         });
 
         if (response.data['@id']) {
@@ -58,7 +58,7 @@ export const useGroupStore = defineStore('group', {
       loadingStore.setLoading(true);
 
       const schemaValidator = yup.object().shape({
-        groupname: yup.string().required().typeError()
+        groupname: yup.string().required().typeError(),
       });
 
       const authStore = useAuthStore();
@@ -78,7 +78,7 @@ export const useGroupStore = defineStore('group', {
             }
             console.log('fnBeforeSave');
             console.log(formData);
-          }
+          },
         });
 
         console.log('Retornando do submitForm');
@@ -103,6 +103,6 @@ export const useGroupStore = defineStore('group', {
       await api.delete(apiResource, authStore.token);
 
       loadingStore.setLoading(false);
-    }
-  }
+    },
+  },
 });

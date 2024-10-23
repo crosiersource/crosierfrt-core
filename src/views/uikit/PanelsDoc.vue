@@ -4,25 +4,25 @@ import { ref } from 'vue';
 const items = ref([
   {
     label: 'Save',
-    icon: 'pi pi-check'
+    icon: 'pi pi-check',
   },
   {
     label: 'Update',
-    icon: 'pi pi-upload'
+    icon: 'pi pi-upload',
   },
   {
     label: 'Delete',
-    icon: 'pi pi-trash'
+    icon: 'pi pi-trash',
   },
   {
     label: 'Home Page',
-    icon: 'pi pi-home'
-  }
+    icon: 'pi pi-home',
+  },
 ]);
 const cardMenu = ref([
   { label: 'Save', icon: 'pi pi-fw pi-check' },
   { label: 'Update', icon: 'pi pi-fw pi-refresh' },
-  { label: 'Delete', icon: 'pi pi-fw pi-trash' }
+  { label: 'Delete', icon: 'pi pi-fw pi-trash' },
 ]);
 const menuRef = ref(null);
 
@@ -226,7 +226,8 @@ function toggle() {
             label="Sign Up"
             icon="pi pi-user-plus"
             severity="success"
-            class="w-full max-w-[17.35rem] mx-auto" />
+            class="w-full max-w-[17.35rem] mx-auto"
+          />
         </div>
       </div>
     </div>

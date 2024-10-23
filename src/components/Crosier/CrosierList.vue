@@ -11,30 +11,30 @@ export default {
   props: {
     apiResource: {
       type: String,
-      required: true
+      required: true,
     },
     titulo: {
       type: String,
-      required: true
+      required: true,
     },
     icon: {
       type: String,
-      required: true
+      required: true,
     },
     headers: {
       type: Array,
-      required: true
+      required: true,
     },
     filters: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     store: {
-      type: Object
+      type: Object,
     },
     formPath: {
-      type: String
-    }
+      type: String,
+    },
   },
 
   data() {
@@ -48,14 +48,14 @@ export default {
       properties: null,
       totalRecords: 0,
       dlgDelete: false,
-      item: null
+      item: null,
     };
   },
 
   watch: {
     drawerPesquisa(newValue) {
       this.onToggleDrawerPesquisa(newValue);
-    }
+    },
   },
 
   mounted() {
@@ -92,7 +92,7 @@ export default {
           order,
           filters: this.store?.filters,
           defaultFilters: this.defaultFilters,
-          properties: this.properties
+          properties: this.properties,
         });
 
         this.totalRecords = response.data['hydra:totalItems'];
@@ -143,7 +143,7 @@ export default {
       await this.doFilterData({ page: 1, itemsPerPage: this.rows });
       this.snackbarStore.show('Registro excluído com sucesso!');
       this.dlgDelete = false;
-    }
-  }
+    },
+  },
 };
 </script>

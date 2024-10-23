@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const backgroundImage = ref('url(/demo/images/pages/error-bg.jpg)');
 const backgroundStyle = ref({
-  background: backgroundImage.value
+  background: backgroundImage.value,
 });
 
 function navigateToDashboard() {
@@ -28,7 +28,8 @@ function navigateToDashboard() {
     </div>
     <div class="self-center mt-auto mb-auto">
       <div
-        class="text-center z-40 rounded-lg border border-surface bg-surface-0 dark:bg-surface-900 p-4 shadow-md flex flex-col">
+        class="text-center z-40 rounded-lg border border-surface bg-surface-0 dark:bg-surface-900 p-4 shadow-md flex flex-col"
+      >
         <div class="rounded-md mx-auto text-white bg-pink-500 -mt-12 px-4 py-1">
           <span class="text-4xl m-0" style="color: #212121">ERROR</span>
         </div>

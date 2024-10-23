@@ -74,7 +74,8 @@ onBeforeUnmount(() => {
             icon="pi pi-users"
             severity="warn"
             badge="8"
-            badge-class="p-badge-danger" />
+            badge-class="p-badge-danger"
+          />
         </div>
 
         <div class="font-semibold my-4">Sizes</div>
@@ -92,23 +93,28 @@ onBeforeUnmount(() => {
           <Avatar
             image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
             size="large"
-            shape="circle" />
+            shape="circle"
+          />
           <Avatar
             image="https://primefaces.org/cdn/primevue/images/avatar/asiyajavayant.png"
             size="large"
-            shape="circle" />
+            shape="circle"
+          />
           <Avatar
             image="https://primefaces.org/cdn/primevue/images/avatar/onyamalimba.png"
             size="large"
-            shape="circle" />
+            shape="circle"
+          />
           <Avatar
             image="https://primefaces.org/cdn/primevue/images/avatar/ionibowcher.png"
             size="large"
-            shape="circle" />
+            shape="circle"
+          />
           <Avatar
             image="https://primefaces.org/cdn/primevue/images/avatar/xuxuefeng.png"
             size="large"
-            shape="circle" />
+            shape="circle"
+          />
           <Avatar label="+2" shape="circle" size="large" />
         </AvatarGroup>
 
@@ -119,12 +125,14 @@ onBeforeUnmount(() => {
           class="mr-2"
           size="large"
           :style="{ 'background-color': '#2196F3', color: '#ffffff' }"
-          shape="circle" />
+          shape="circle"
+        />
         <Avatar
           label="U"
           class="mr-2"
           :style="{ 'background-color': '#9c27b0', color: '#ffffff' }"
-          shape="circle" />
+          shape="circle"
+        />
 
         <div class="font-semibold my-4">Icon - Badge</div>
         <OverlayBadge value="4" severity="danger" class="inline-flex">
@@ -207,14 +215,17 @@ onBeforeUnmount(() => {
         <div class="flex items-center flex-col sm:flex-row gap-2">
           <Chip
             label="Amy Elsner"
-            image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" />
+            image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
+          />
           <Chip
             label="Asiya Javayant"
-            image="https://primefaces.org/cdn/primevue/images/avatar/asiyajavayant.png" />
+            image="https://primefaces.org/cdn/primevue/images/avatar/asiyajavayant.png"
+          />
           <Chip
             label="Xuxue Feng"
             image="https://primefaces.org/cdn/primevue/images/avatar/xuxuefeng.png"
-            removable />
+            removable
+          />
         </div>
       </div>
 

@@ -5,7 +5,8 @@
         <div class="flex flex-col">
           <div
             style="height: 56px; width: 56px"
-            class="bg-primary-50 rounded-full flex items-center justify-center">
+            class="bg-primary-50 rounded-full flex items-center justify-center"
+          >
             <i class="pi pi-sign-in text-primary !text-4xl" />
           </div>
           <div class="mt-6">
@@ -39,7 +40,8 @@
     </div>
     <div
       :style="{ backgroundImage: 'url(/demo/images/pages/accessDenied-bg.jpg)' }"
-      class="hidden lg:flex flex-1 items-center justify-center bg-cover">
+      class="hidden lg:flex flex-1 items-center justify-center bg-cover"
+    >
       <img src="/layout/images/logo/vector_logo.png" alt="" />
     </div>
   </div>
@@ -52,18 +54,18 @@ import { inject } from 'vue';
 
 export default {
   components: {
-    AppConfig
+    AppConfig,
   },
   data() {
     return {
       authStore: inject('authStore'),
-      password: ''
+      password: '',
     };
   },
   methods: {
     login() {
       this.authStore.login(this.password);
-    }
-  }
+    },
+  },
 };
 </script>

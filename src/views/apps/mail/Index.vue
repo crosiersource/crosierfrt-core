@@ -24,7 +24,7 @@ watch(
   () => router.path,
   (newPath) => {
     activeMailItem.value = newPath.split('/')[3];
-  }
+  },
 );
 
 async function initMail(mails) {
@@ -67,44 +67,44 @@ const sidebarItems = computed(() => {
       label: 'Inbox',
       icon: 'pi pi-inbox',
       badge: mails.inbox?.length || 0,
-      routerLink: '/apps/mail/inbox'
+      routerLink: '/apps/mail/inbox',
     },
     {
       label: 'Starred',
       icon: 'pi pi-star',
       badge: mails.starred?.length || 0,
-      routerLink: '/apps/mail/starred'
+      routerLink: '/apps/mail/starred',
     },
     {
       label: 'Spam',
       icon: 'pi pi-ban',
       badge: mails.spam?.length || 0,
-      routerLink: '/apps/mail/spam'
+      routerLink: '/apps/mail/spam',
     },
     {
       label: 'Important',
       icon: 'pi pi-bookmark',
       badge: mails.important?.length || 0,
-      routerLink: '/apps/mail/important'
+      routerLink: '/apps/mail/important',
     },
     {
       label: 'Sent',
       icon: 'pi pi-send',
       badge: mails.sent?.length || 0,
-      routerLink: '/apps/mail/sent'
+      routerLink: '/apps/mail/sent',
     },
     {
       label: 'Archived',
       icon: 'pi pi-book',
       badge: mails.archived?.length || 0,
-      routerLink: '/apps/mail/archived'
+      routerLink: '/apps/mail/archived',
     },
     {
       label: 'Trash',
       icon: 'pi pi-trash',
       badge: mails.trash?.length || 0,
-      routerLink: '/apps/mail/trash'
-    }
+      routerLink: '/apps/mail/trash',
+    },
   ];
 });
 
@@ -196,7 +196,8 @@ const onChangeDialogVisibility = (isVisible) => {
           @change:mail:type="onChangeMailType"
           @reply="showReplyDialog"
           @send:message="onSaveReplyMail"
-          @new:mail="onSendNewMail" />
+          @new:mail="onSendNewMail"
+        />
       </div>
     </div>
   </div>
@@ -204,5 +205,6 @@ const onChangeDialogVisibility = (isVisible) => {
     v-model:visible="dialogVisible"
     :mail-detail="mailDetail"
     @save="onSaveReplyMail"
-    @update:dialog-visible="onChangeDialogVisibility()" />
+    @update:dialog-visible="onChangeDialogVisibility()"
+  />
 </template>

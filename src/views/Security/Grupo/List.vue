@@ -8,7 +8,8 @@
     :auth-store="authStore"
     :store="groupStore"
     form-path="/sec/grupo/form"
-    list-path="/sec/grupo/list">
+    list-path="/sec/grupo/list"
+  >
     <template #filters>
       <VTextField
         id="filters.id"
@@ -16,7 +17,8 @@
         label="Id"
         outlined
         dense
-        clearable />
+        clearable
+      />
 
       <VTextField v-model="groupStore.filters.groupname" label="Grupo" outlined dense clearable />
     </template>
@@ -31,7 +33,7 @@ export default {
   name: 'GrupoList',
 
   components: {
-    CrosierListS
+    CrosierListS,
   },
 
   inject: ['authStore'],
@@ -41,13 +43,13 @@ export default {
       headers: [
         { title: 'Id', key: 'id', sortable: true },
         { title: 'Grupo', key: 'groupname' },
-        { title: '', key: 'actions', sortable: false, width: '1%' }
-      ]
+        { title: '', key: 'actions', sortable: false, width: '1%' },
+      ],
     };
   },
 
   computed: {
-    ...mapStores(useGroupStore)
-  }
+    ...mapStores(useGroupStore),
+  },
 };
 </script>

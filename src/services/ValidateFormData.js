@@ -36,5 +36,5 @@ export function validateFormData({ $store, schemaValidator }) {
 }
 
 export default {
-  validateFormData
+  validateFormData,
 };

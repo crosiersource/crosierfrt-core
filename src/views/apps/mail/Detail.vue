@@ -6,13 +6,13 @@ const emit = defineEmits(['send:message']);
 const props = defineProps({
   allMails: {
     type: Array,
-    default: () => []
-  }
+    default: () => [],
+  },
 });
 
 const mail = ref({});
 const newMail = ref({
-  message: ''
+  message: '',
 });
 const route = useRoute();
 const router = useRouter();
@@ -26,7 +26,7 @@ watch(
   async () => {
     mail.value = await getMail();
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 function sendMail() {
@@ -40,7 +40,7 @@ function sendMail() {
     spam: false,
     starred: false,
     important: false,
-    date: generateDate()
+    date: generateDate(),
   };
   emit('send:message', sendMail);
   router.push('/apps/mail/sent');
@@ -69,7 +69,8 @@ function goBack() {
 <template>
   <div>
     <div
-      class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 pt-8 md:pt-0 gap-6 md:border-t-0 border-t border-surface-200 dark:border-surface-700">
+      class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 pt-8 md:pt-0 gap-6 md:border-t-0 border-t border-surface-200 dark:border-surface-700"
+    >
       <div class="flex items-center md:justify-start">
         <Button
           type="button"
@@ -77,13 +78,15 @@ function goBack() {
           class="md:mr-4"
           text
           plain
-          @click="goBack()" />
+          @click="goBack()"
+        />
         <Avatar
           v-if="mail && mail.image"
           :image="'/demo/images/avatar/' + mail.image"
           size="large"
           shape="circle"
-          class="border-2 border-surface-200 dark:border-surface-700" />
+          class="border-2 border-surface-200 dark:border-surface-700"
+        />
         <div class="flex flex-col mx-4">
           <span class="block text-surface-900 dark:text-surface-0 font-bold text-lg">
             {{ mail?.from }}
@@ -110,8 +113,9 @@ function goBack() {
       <Editor
         v-model="newMail.message"
         :pt="{
-          content: { style: { height: '250px' } }
-        }" />
+          content: { style: { height: '250px' } },
+        }"
+      />
 
       <div class="flex gap-x-4 justify-end mt-4">
         <Button type="button" outlined icon="pi pi-image" />

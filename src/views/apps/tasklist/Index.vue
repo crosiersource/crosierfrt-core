@@ -11,7 +11,7 @@ const todo = ref([]);
 const completed = ref([]);
 const dialogConfig = ref({
   visible: false,
-  task: null
+  task: null,
 });
 const selectedTask = ref(null);
 
@@ -72,7 +72,7 @@ function onSaveDialog(task) {
       severity: 'success',
       summary: 'Edited',
       detail: `Task "${task.name}" edited successfully.`,
-      life: 3000
+      life: 3000,
     });
   } else {
     taskList.value.push(task);
@@ -80,7 +80,7 @@ function onSaveDialog(task) {
       severity: 'success',
       summary: 'Success',
       detail: `Task "${task.name}" created successfully.`,
-      life: 3000
+      life: 3000,
     });
   }
 
@@ -99,20 +99,23 @@ function onSaveDialog(task) {
         outlined
         icon="pi pi-plus"
         label="Create Task"
-        @click="openCreateDialog()" />
+        @click="openCreateDialog()"
+      />
     </div>
     <List
       :task-list="todo"
       title="ToDo"
       @checkbox:change="onCheckboxChange"
       @delete:task="onDeleteTask"
-      @open:edit:dialog="openEditDialog" />
+      @open:edit:dialog="openEditDialog"
+    />
     <List
       :task-list="completed"
       title="Completed"
       @checkbox:change="onCheckboxChange"
       @delete:task="onDeleteTask"
-      @open:edit:dialog="openEditDialog" />
+      @open:edit:dialog="openEditDialog"
+    />
   </div>
 
   <Dialog
@@ -120,7 +123,8 @@ function onSaveDialog(task) {
     :header="dialogConfig.header || ''"
     modal
     class="mx-4 sm:mx-0 sm:w-full md:w-8/12 lg:w-6/12"
-    content-class="rounded-b border-t border-surface-200 dark:border-surface-700 p-0">
+    content-class="rounded-b border-t border-surface-200 dark:border-surface-700 p-0"
+  >
     <CreateTaskDialog :selected-task="selectedTask" @close="onCloseDialog()" @save="onSaveDialog" />
   </Dialog>
 </template>

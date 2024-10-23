@@ -5,92 +5,92 @@ export const FileService = {
         name: 'nature.jpeg',
         icon: 'pi pi-image',
         date: '29 Jul 2021',
-        fileSize: '12 MB'
+        fileSize: '12 MB',
       },
       {
         name: 'report.pdf',
         icon: 'pi pi-image',
         date: '29 Jul 2021',
-        fileSize: '6 MB'
+        fileSize: '6 MB',
       },
       {
         name: 'screenshot.jpeg',
         icon: 'pi pi-image',
         date: '29 Jul 2021',
-        fileSize: '32 MB'
+        fileSize: '32 MB',
       },
       {
         name: 'sales.xls',
         icon: 'pi pi-file-excel',
         date: '29 Jul 2021',
-        fileSize: '12 MB'
+        fileSize: '12 MB',
       },
       {
         name: 'cv.pdf',
         icon: 'pi pi-file-pdf',
         date: '29 Jul 2021',
-        fileSize: '1.6 MB'
+        fileSize: '1.6 MB',
       },
       {
         name: 'product.png',
         icon: 'pi pi-image',
         date: '29 Jul 2021',
-        fileSize: '1.8 MB'
+        fileSize: '1.8 MB',
       },
       {
         name: 'income.xls',
         icon: 'pi pi-file-excel',
         date: '29 Jul 2021',
-        fileSize: '12 MB'
+        fileSize: '12 MB',
       },
       {
         name: 'art.png',
         icon: 'pi pi-image',
         date: '29 Jul 2021',
-        fileSize: '6 MB'
+        fileSize: '6 MB',
       },
       {
         name: 'expenses.xls',
         icon: 'pi pi-file-excel',
         date: '29 Jul 2021',
-        fileSize: '12 MB'
+        fileSize: '12 MB',
       },
       {
         name: 'cv-new.pdf',
         icon: 'pi pi-file-pdf',
         date: '29 Jul 2021',
-        fileSize: '1.6 MB'
+        fileSize: '1.6 MB',
       },
       {
         name: 'revenue.xls',
         icon: 'pi pi-file-excel',
         date: '29 Jul 2021',
-        fileSize: '12 MB'
+        fileSize: '12 MB',
       },
       {
         name: 'payment-1.pdf',
         icon: 'pi pi-file-pdf',
         date: '29 Jul 2021',
-        fileSize: '6 MB'
+        fileSize: '6 MB',
       },
       {
         name: 'payment-2.pdf',
         icon: 'pi pi-file-pdf',
         date: '29 Jul 2021',
-        fileSize: '32 MB'
+        fileSize: '32 MB',
       },
       {
         name: 'invoices.xls',
         icon: 'pi pi-file-excel',
         date: '29 Jul 2021',
-        fileSize: '12 MB'
+        fileSize: '12 MB',
       },
       {
         name: 'ads.pdf',
         icon: 'pi pi-file-pdf',
         date: '29 Jul 2021',
-        fileSize: '1.6 MB'
-      }
+        fileSize: '1.6 MB',
+      },
     ];
   },
 
@@ -102,7 +102,7 @@ export const FileService = {
         fieldColor: 'bg-yellow-500',
         color: 'bg-yellow-100',
         files: '412 Files',
-        fileSize: '1.5GB'
+        fileSize: '1.5GB',
       },
       {
         title: 'Dropbox Storage',
@@ -110,7 +110,7 @@ export const FileService = {
         fieldColor: 'bg-pink-500',
         color: 'bg-pink-100',
         files: '200 Files',
-        fileSize: '4.1GB'
+        fileSize: '4.1GB',
       },
       {
         title: 'Google Drive Storage',
@@ -118,7 +118,7 @@ export const FileService = {
         fieldColor: 'bg-green-500',
         color: 'bg-green-100',
         files: '24 Files',
-        fileSize: '1.3GB'
+        fileSize: '1.3GB',
       },
       {
         title: 'Internal Storage',
@@ -126,8 +126,8 @@ export const FileService = {
         fieldColor: 'bg-indigo-500',
         color: 'bg-indigo-100',
         files: '82 Files',
-        fileSize: '5.3GB'
-      }
+        fileSize: '5.3GB',
+      },
     ];
   },
 
@@ -136,23 +136,23 @@ export const FileService = {
       {
         name: 'Document Files',
         icon: 'pi pi-folder',
-        size: '1.8 GB'
+        size: '1.8 GB',
       },
       {
         name: 'Document Files',
         icon: 'pi pi-images',
-        size: '23 GB'
+        size: '23 GB',
       },
       {
         name: 'Other Files',
         icon: 'pi pi-folder-open',
-        size: '1.8 GB'
+        size: '1.8 GB',
       },
       {
         name: 'Unknown Files',
         icon: 'pi pi-folder-open',
-        size: '16 GB'
-      }
+        size: '16 GB',
+      },
     ];
   },
 
@@ -161,48 +161,48 @@ export const FileService = {
       {
         name: 'Miami 2022',
         icon: 'pi pi-folder',
-        size: '12'
+        size: '12',
       },
       {
         name: 'Protoype',
         icon: 'pi pi-folder',
-        size: '1'
+        size: '1',
       },
       {
         name: 'Other Files',
         icon: 'pi pi-folder',
-        size: '53'
+        size: '53',
       },
       {
         name: 'Antalya Holiday',
         icon: 'pi pi-folder',
-        size: '1'
+        size: '1',
       },
       {
         name: 'Studio Photograpy',
         icon: 'pi pi-folder',
-        size: '3'
+        size: '3',
       },
       {
         name: 'Server Backup',
         icon: 'pi pi-folder-open',
-        size: '9'
+        size: '9',
       },
       {
         name: 'Document Files',
         icon: 'pi pi-folder',
-        size: '53'
+        size: '53',
       },
       {
         name: 'Vocals',
         icon: 'pi pi-image',
-        size: '0'
+        size: '0',
       },
       {
         name: 'Volces',
         icon: 'pi pi-folder-open',
-        size: '6'
-      }
+        size: '6',
+      },
     ];
   },
 
@@ -220,5 +220,5 @@ export const FileService = {
 
   getFoldersLarge() {
     return Promise.resolve(this.getFoldersLargeData());
-  }
+  },
 };

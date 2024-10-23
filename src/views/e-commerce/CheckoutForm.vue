@@ -57,7 +57,8 @@ onMounted(() => {
               placeholder="Country / Region"
               option-label="name"
               show-clear
-              class="w-full" />
+              class="w-full"
+            />
           </div>
           <div class="col-span-12 lg:col-span-6 mb-6">
             <input id="name" placeholder="Name" type="text" class="p-inputtext w-full" />
@@ -73,7 +74,8 @@ onMounted(() => {
               id="address2"
               placeholder="Apartment, suite, etc"
               type="text"
-              class="p-inputtext w-full" />
+              class="p-inputtext w-full"
+            />
           </div>
           <div class="col-span-12 lg:col-span-6 mb-6">
             <input id="pc" placeholder="Postal Code" type="text" class="p-inputtext w-full" />
@@ -88,17 +90,20 @@ onMounted(() => {
             </div>
           </div>
           <div
-            class="col-span-12 flex flex-col lg:flex-row justify-center items-center lg:justify-end my-12">
+            class="col-span-12 flex flex-col lg:flex-row justify-center items-center lg:justify-end my-12"
+          >
             <Button
               class="mt-4 lg:mt-0 w-full lg:w-auto order-2 lg:order-1 lg:mr-6"
               severity="secondary"
               outlined
               label="Return to Cart"
-              icon="pi pi-fw pi-arrow-left" />
+              icon="pi pi-fw pi-arrow-left"
+            />
             <Button
               class="w-full lg:w-auto order-1 lg:order-2"
               label="Continue to Shipping"
-              icon="pi pi-fw pi-check" />
+              icon="pi pi-fw pi-check"
+            />
           </div>
         </div>
       </div>
@@ -107,11 +112,13 @@ onMounted(() => {
           <span class="text-surface-900 dark:text-surface-0 font-medium text-xl">Your Cart</span>
         </div>
         <div
-          class="flex flex-col lg:flex-row flex-wrap lg:items-center py-2 mt-4 border-surface-200 dark:border-surface-700">
+          class="flex flex-col lg:flex-row flex-wrap lg:items-center py-2 mt-4 border-surface-200 dark:border-surface-700"
+        >
           <img
             src="/demo/images/ecommerce/shop/shop-1.png"
             class="w-32 h-32 flex-shrink-0 mb-4"
-            alt="product" />
+            alt="product"
+          />
           <div class="flex-auto lg:ml-4">
             <div class="flex items-center justify-between mb-4">
               <span class="text-surface-900 dark:text-surface-0 font-bold">Product Name</span>
@@ -129,7 +136,8 @@ onMounted(() => {
                 decrement-button-class="p-button-text text-surface-600 dark:text-surface-200 hover:text-primary py-1 px-1"
                 increment-button-class="p-button-text text-surface-600 dark:text-surface-200 hover:text-primary py-1 px-1"
                 increment-button-icon="pi pi-plus"
-                decrement-button-icon="pi pi-minus" />
+                decrement-button-icon="pi pi-minus"
+              />
               <Button icon="pi pi-trash" text rounded />
             </div>
           </div>

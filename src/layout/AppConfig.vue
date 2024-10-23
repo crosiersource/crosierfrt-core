@@ -8,8 +8,8 @@ import { ref } from 'vue';
 defineProps({
   simple: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 const {
@@ -24,18 +24,18 @@ const {
   setProfilePosition,
   onConfigSidebarToggle,
   toggleDarkMode,
-  isDarkTheme
+  isDarkTheme,
 } = useLayout();
 
 const presets = {
   Aura,
-  Lara
+  Lara,
 };
 const presetOptions = ref(Object.keys(presets));
 const preset = ref(layoutConfig.preset);
 const themeOptions = ref([
   { name: 'Light', value: false },
-  { name: 'Dark', value: true }
+  { name: 'Dark', value: true },
 ]);
 const darkTheme = ref(layoutConfig.darkTheme);
 const menuMode = ref(layoutConfig.menuMode);
@@ -56,8 +56,8 @@ const primaryColors = ref([
       700: '#047857',
       800: '#065f46',
       900: '#064e3b',
-      950: '#022c22'
-    }
+      950: '#022c22',
+    },
   },
   {
     name: 'green',
@@ -72,8 +72,8 @@ const primaryColors = ref([
       700: '#15803d',
       800: '#166534',
       900: '#14532d',
-      950: '#052e16'
-    }
+      950: '#052e16',
+    },
   },
   {
     name: 'lime',
@@ -88,8 +88,8 @@ const primaryColors = ref([
       700: '#4d7c0f',
       800: '#3f6212',
       900: '#365314',
-      950: '#1a2e05'
-    }
+      950: '#1a2e05',
+    },
   },
   {
     name: 'orange',
@@ -104,8 +104,8 @@ const primaryColors = ref([
       700: '#c2410c',
       800: '#9a3412',
       900: '#7c2d12',
-      950: '#431407'
-    }
+      950: '#431407',
+    },
   },
   {
     name: 'amber',
@@ -120,8 +120,8 @@ const primaryColors = ref([
       700: '#b45309',
       800: '#92400e',
       900: '#78350f',
-      950: '#451a03'
-    }
+      950: '#451a03',
+    },
   },
   {
     name: 'yellow',
@@ -136,8 +136,8 @@ const primaryColors = ref([
       700: '#a16207',
       800: '#854d0e',
       900: '#713f12',
-      950: '#422006'
-    }
+      950: '#422006',
+    },
   },
   {
     name: 'teal',
@@ -152,8 +152,8 @@ const primaryColors = ref([
       700: '#0f766e',
       800: '#115e59',
       900: '#134e4a',
-      950: '#042f2e'
-    }
+      950: '#042f2e',
+    },
   },
   {
     name: 'cyan',
@@ -168,8 +168,8 @@ const primaryColors = ref([
       700: '#0e7490',
       800: '#155e75',
       900: '#164e63',
-      950: '#083344'
-    }
+      950: '#083344',
+    },
   },
   {
     name: 'sky',
@@ -184,8 +184,8 @@ const primaryColors = ref([
       700: '#0369a1',
       800: '#075985',
       900: '#0c4a6e',
-      950: '#082f49'
-    }
+      950: '#082f49',
+    },
   },
   {
     name: 'blue',
@@ -200,8 +200,8 @@ const primaryColors = ref([
       700: '#1d4ed8',
       800: '#1e40af',
       900: '#1e3a8a',
-      950: '#172554'
-    }
+      950: '#172554',
+    },
   },
   {
     name: 'indigo',
@@ -216,8 +216,8 @@ const primaryColors = ref([
       700: '#4338ca',
       800: '#3730a3',
       900: '#312e81',
-      950: '#1e1b4b'
-    }
+      950: '#1e1b4b',
+    },
   },
   {
     name: 'violet',
@@ -232,8 +232,8 @@ const primaryColors = ref([
       700: '#6d28d9',
       800: '#5b21b6',
       900: '#4c1d95',
-      950: '#2e1065'
-    }
+      950: '#2e1065',
+    },
   },
   {
     name: 'purple',
@@ -248,8 +248,8 @@ const primaryColors = ref([
       700: '#7e22ce',
       800: '#6b21a8',
       900: '#581c87',
-      950: '#3b0764'
-    }
+      950: '#3b0764',
+    },
   },
   {
     name: 'fuchsia',
@@ -264,8 +264,8 @@ const primaryColors = ref([
       700: '#a21caf',
       800: '#86198f',
       900: '#701a75',
-      950: '#4a044e'
-    }
+      950: '#4a044e',
+    },
   },
   {
     name: 'pink',
@@ -280,8 +280,8 @@ const primaryColors = ref([
       700: '#be185d',
       800: '#9d174d',
       900: '#831843',
-      950: '#500724'
-    }
+      950: '#500724',
+    },
   },
   {
     name: 'rose',
@@ -296,9 +296,9 @@ const primaryColors = ref([
       700: '#be123c',
       800: '#9f1239',
       900: '#881337',
-      950: '#4c0519'
-    }
-  }
+      950: '#4c0519',
+    },
+  },
 ]);
 
 const surfaces = ref([
@@ -316,8 +316,8 @@ const surfaces = ref([
       700: '#334155',
       800: '#1e293b',
       900: '#0f172a',
-      950: '#020617'
-    }
+      950: '#020617',
+    },
   },
   {
     name: 'gray',
@@ -333,8 +333,8 @@ const surfaces = ref([
       700: '#374151',
       800: '#1f2937',
       900: '#111827',
-      950: '#030712'
-    }
+      950: '#030712',
+    },
   },
   {
     name: 'zinc',
@@ -350,8 +350,8 @@ const surfaces = ref([
       700: '#3f3f46',
       800: '#27272a',
       900: '#18181b',
-      950: '#09090b'
-    }
+      950: '#09090b',
+    },
   },
   {
     name: 'neutral',
@@ -367,8 +367,8 @@ const surfaces = ref([
       700: '#404040',
       800: '#262626',
       900: '#171717',
-      950: '#0a0a0a'
-    }
+      950: '#0a0a0a',
+    },
   },
   {
     name: 'stone',
@@ -384,8 +384,8 @@ const surfaces = ref([
       700: '#44403c',
       800: '#292524',
       900: '#1c1917',
-      950: '#0c0a09'
-    }
+      950: '#0c0a09',
+    },
   },
   {
     name: 'soho',
@@ -401,8 +401,8 @@ const surfaces = ref([
       700: '#616268',
       800: '#4a4b52',
       900: '#34343d',
-      950: '#1d1e27'
-    }
+      950: '#1d1e27',
+    },
   },
   {
     name: 'viva',
@@ -418,8 +418,8 @@ const surfaces = ref([
       700: '#565a5b',
       800: '#3e4244',
       900: '#262b2c',
-      950: '#0e1315'
-    }
+      950: '#0e1315',
+    },
   },
   {
     name: 'ocean',
@@ -435,9 +435,9 @@ const surfaces = ref([
       700: '#415B61',
       800: '#29444E',
       900: '#183240',
-      950: '#0c1920'
-    }
-  }
+      950: '#0c1920',
+    },
+  },
 ]);
 
 const menuThemes = ref([
@@ -452,7 +452,7 @@ const menuThemes = ref([
   { name: 'deeporange', color: '#BF360C' },
   { name: 'pink', color: '#880E4F' },
   { name: 'purple', color: '#6A1B9A' },
-  { name: 'teal', color: '#00695C' }
+  { name: 'teal', color: '#00695C' },
 ]);
 
 const topbarThemes = ref([
@@ -475,7 +475,7 @@ const topbarThemes = ref([
   { name: 'brown', color: '#5D4037' },
   { name: 'grey', color: '#616161' },
   { name: 'bluegrey', color: '#546E7A' },
-  { name: 'indigo', color: '#3F51B5' }
+  { name: 'indigo', color: '#3F51B5' },
 ]);
 
 function getPresetExt() {
@@ -495,7 +495,7 @@ function getPresetExt() {
           700: '{surface.700}',
           800: '{surface.800}',
           900: '{surface.900}',
-          950: '{surface.950}'
+          950: '{surface.950}',
         },
         colorScheme: {
           light: {
@@ -503,31 +503,31 @@ function getPresetExt() {
               color: '{primary.950}',
               contrastColor: '#ffffff',
               hoverColor: '{primary.800}',
-              activeColor: '{primary.700}'
+              activeColor: '{primary.700}',
             },
             highlight: {
               background: '{primary.950}',
               focusBackground: '{primary.700}',
               color: '#ffffff',
-              focusColor: '#ffffff'
-            }
+              focusColor: '#ffffff',
+            },
           },
           dark: {
             primary: {
               color: '{primary.50}',
               contrastColor: '{primary.950}',
               hoverColor: '{primary.200}',
-              activeColor: '{primary.300}'
+              activeColor: '{primary.300}',
             },
             highlight: {
               background: '{primary.50}',
               focusBackground: '{primary.300}',
               color: '{primary.950}',
-              focusColor: '{primary.950}'
-            }
-          }
-        }
-      }
+              focusColor: '{primary.950}',
+            },
+          },
+        },
+      },
     };
   } else {
     return {
@@ -539,31 +539,31 @@ function getPresetExt() {
               color: '{primary.500}',
               contrastColor: '#ffffff',
               hoverColor: '{primary.600}',
-              activeColor: '{primary.700}'
+              activeColor: '{primary.700}',
             },
             highlight: {
               background: '{primary.50}',
               focusBackground: '{primary.100}',
               color: '{primary.700}',
-              focusColor: '{primary.800}'
-            }
+              focusColor: '{primary.800}',
+            },
           },
           dark: {
             primary: {
               color: '{primary.400}',
               contrastColor: '{surface.900}',
               hoverColor: '{primary.300}',
-              activeColor: '{primary.200}'
+              activeColor: '{primary.200}',
             },
             highlight: {
               background: 'color-mix(in srgb, {primary.400}, transparent 84%)',
               focusBackground: 'color-mix(in srgb, {primary.400}, transparent 76%)',
               color: 'rgba(255,255,255,.87)',
-              focusColor: 'rgba(255,255,255,.87)'
-            }
-          }
-        }
-      }
+              focusColor: 'rgba(255,255,255,.87)',
+            },
+          },
+        },
+      },
     };
   }
 }
@@ -610,8 +610,9 @@ function onPresetChange() {
     class="layout-config-sidebar w-80"
     header="Settings"
     :pt="{
-      pcCloseButton: { root: 'ml-auto' }
-    }">
+      pcCloseButton: { root: 'ml-auto' },
+    }"
+  >
     <div class="flex flex-col gap-4">
       <div>
         <span class="text-lg font-semibold">Primary</span>
@@ -622,12 +623,13 @@ function onPresetChange() {
             type="button"
             :class="[
               'cursor-pointer w-6 h-6 rounded-full flex flex-shrink-0 items-center justify-center p-0 outline-none outline-offset-1',
-              { 'outline-primary': layoutConfig.primary === primaryColor.name }
+              { 'outline-primary': layoutConfig.primary === primaryColor.name },
             ]"
             :style="{
-              backgroundColor: `${primaryColor.name === 'noir' ? 'var(--text-color)' : primaryColor.palette['500']}`
+              backgroundColor: `${primaryColor.name === 'noir' ? 'var(--text-color)' : primaryColor.palette['500']}`,
             }"
-            @click="updateColors('primary', primaryColor)" />
+            @click="updateColors('primary', primaryColor)"
+          />
         </div>
       </div>
 
@@ -645,11 +647,12 @@ function onPresetChange() {
                   ? layoutConfig.surface === surface.name
                   : isDarkTheme
                     ? surface.name === 'zinc'
-                    : surface.name === 'slate'
-              }
+                    : surface.name === 'slate',
+              },
             ]"
             :style="{ backgroundColor: `${surface.palette['500']}` }"
-            @click="updateColors('surface', surface)" />
+            @click="updateColors('surface', surface)"
+          />
         </div>
       </div>
 
@@ -660,7 +663,8 @@ function onPresetChange() {
             v-model="preset"
             :options="presetOptions"
             :allow-empty="false"
-            @change="onPresetChange" />
+            @change="onPresetChange"
+          />
         </div>
       </div>
 
@@ -673,7 +677,8 @@ function onPresetChange() {
             option-label="name"
             option-value="value"
             :allow-empty="false"
-            @change="toggleDarkMode" />
+            @change="toggleDarkMode"
+          />
         </div>
       </div>
 
@@ -689,7 +694,8 @@ function onPresetChange() {
                     name="menuMode"
                     value="static"
                     input-id="mode1"
-                    @update:model-value="setMenuMode" />
+                    @update:model-value="setMenuMode"
+                  />
                   <label for="mode1">Static</label>
                 </div>
 
@@ -699,7 +705,8 @@ function onPresetChange() {
                     name="menuMode"
                     value="overlay"
                     input-id="mode2"
-                    @update:model-value="setMenuMode" />
+                    @update:model-value="setMenuMode"
+                  />
                   <label for="mode2">Overlay</label>
                 </div>
               </div>
@@ -710,7 +717,8 @@ function onPresetChange() {
                     name="menuMode"
                     value="slim"
                     input-id="mode3"
-                    @update:model-value="setMenuMode" />
+                    @update:model-value="setMenuMode"
+                  />
                   <label for="mode2">Slim</label>
                 </div>
                 <div class="flex items-center gap-2 w-1/2">
@@ -719,7 +727,8 @@ function onPresetChange() {
                     name="menuMode"
                     value="slim-plus"
                     input-id="mode4"
-                    @update:model-value="setMenuMode" />
+                    @update:model-value="setMenuMode"
+                  />
                   <label for="mode3">Slim+</label>
                 </div>
               </div>
@@ -730,7 +739,8 @@ function onPresetChange() {
                     name="menuMode"
                     value="reveal"
                     input-id="mode5"
-                    @update:model-value="setMenuMode" />
+                    @update:model-value="setMenuMode"
+                  />
                   <label for="mode4">Reveal</label>
                 </div>
                 <div class="flex items-center gap-2 w-1/2">
@@ -739,7 +749,8 @@ function onPresetChange() {
                     name="menuMode"
                     value="drawer"
                     input-id="mode6"
-                    @update:model-value="setMenuMode" />
+                    @update:model-value="setMenuMode"
+                  />
                   <label for="mode5">Drawer</label>
                 </div>
               </div>
@@ -750,7 +761,8 @@ function onPresetChange() {
                     name="menuMode"
                     value="horizontal"
                     input-id="mode7"
-                    @update:model-value="setMenuMode" />
+                    @update:model-value="setMenuMode"
+                  />
                   <label for="mode7">Horizontal</label>
                 </div>
               </div>
@@ -769,7 +781,8 @@ function onPresetChange() {
                     name="menuProfilePosition"
                     value="start"
                     input-id="profile1"
-                    @update:model-value="setProfilePosition" />
+                    @update:model-value="setProfilePosition"
+                  />
                   <label for="profile1">Start</label>
                 </div>
 
@@ -779,7 +792,8 @@ function onPresetChange() {
                     name="menuProfilePosition"
                     value="end"
                     input-id="profile2"
-                    @update:model-value="setProfilePosition" />
+                    @update:model-value="setProfilePosition"
+                  />
                   <label for="profile2">End</label>
                 </div>
               </div>
@@ -795,15 +809,17 @@ function onPresetChange() {
               :key="i"
               class="cursor-pointer w-6 h-6 rounded-full flex flex-shrink-0 items-center justify-center p-0 outline-none outline-offset-1 shadow"
               :style="{ 'background-color': theme.color }"
-              @click="() => setMenuTheme(theme.name)">
+              @click="() => setMenuTheme(theme.name)"
+            >
               <i
                 v-if="theme.name === layoutConfig.menuTheme"
                 :class="[
                   'pi pi-check',
                   theme.name === layoutConfig.menuTheme && layoutConfig.menuTheme !== 'light'
                     ? 'text-white'
-                    : 'text-dark'
-                ]" />
+                    : 'text-dark',
+                ]"
+              />
             </button>
           </div>
           <template v-else>
@@ -822,15 +838,17 @@ function onPresetChange() {
               :key="i"
               class="cursor-pointer w-6 h-6 rounded-full flex flex-shrink-0 items-center justify-center p-0 outline-none outline-offset-1 shadow"
               :style="{ 'background-color': theme.color }"
-              @click="() => setTopbarTheme(theme.name)">
+              @click="() => setTopbarTheme(theme.name)"
+            >
               <i
                 v-if="theme.name === layoutConfig.topbarTheme"
                 :class="[
                   'pi pi-check',
                   theme.name === layoutConfig.topbarTheme && layoutConfig.topbarTheme !== 'white'
                     ? 'text-white'
-                    : 'text-dark'
-                ]" />
+                    : 'text-dark',
+                ]"
+              />
             </button>
           </div>
         </div>

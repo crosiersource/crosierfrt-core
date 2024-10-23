@@ -53,13 +53,15 @@ function setVisibleMember(member) {
           <div
             class="relative overflow-hidden"
             @mouseenter="setVisibleMember(0)"
-            @mouseleave="setVisibleMember(-1)">
+            @mouseleave="setVisibleMember(-1)"
+          >
             <img src="/demo/images/blocks/team/team-1.png" class="w-full block" alt="Team 1" />
 
             <div
               v-if="visibleMember === 0"
               class="absolute top-0 left-0 h-full w-full rounded animate-fadein animate-duration-300 select-none"
-              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }">
+              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }"
+            >
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Jeff Davies</span>
                 <span class="font-medium text-surface-400 dark:text-surface-400">
@@ -84,13 +86,15 @@ function setVisibleMember(member) {
           <div
             class="relative overflow-hidden"
             @mouseenter="setVisibleMember(1)"
-            @mouseleave="setVisibleMember(-1)">
+            @mouseleave="setVisibleMember(-1)"
+          >
             <img src="/demo/images/blocks/team/team-2.png" class="w-full block" alt="Team 2" />
 
             <div
               v-if="visibleMember === 1"
               class="absolute top-0 left-0 h-full w-full rounded animate-fadein animate-duration-300 select-none"
-              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }">
+              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }"
+            >
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Kristin Watson</span>
                 <span class="font-medium text-surface-400 dark:text-surface-400">
@@ -115,13 +119,15 @@ function setVisibleMember(member) {
           <div
             class="relative overflow-hidden"
             @mouseenter="setVisibleMember(2)"
-            @mouseleave="setVisibleMember(-1)">
+            @mouseleave="setVisibleMember(-1)"
+          >
             <img src="/demo/images/blocks/team/team-3.png" class="w-full block" alt="Team 3" />
 
             <div
               v-if="visibleMember === 2"
               class="absolute top-0 left-0 h-full w-full rounded animate-fadein animate-duration-300 select-none"
-              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }">
+              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }"
+            >
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Jenna Williams</span>
                 <span class="font-medium text-surface-400 dark:text-surface-400">
@@ -146,13 +152,15 @@ function setVisibleMember(member) {
           <div
             class="relative overflow-hidden"
             @mouseenter="setVisibleMember(3)"
-            @mouseleave="setVisibleMember(-1)">
+            @mouseleave="setVisibleMember(-1)"
+          >
             <img src="/demo/images/blocks/team/team-4.png" class="w-full block" alt="Team 4" />
 
             <div
               v-if="visibleMember === 3"
               class="absolute top-0 left-0 h-full w-full rounded animate-fadein animate-duration-300 select-none"
-              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }">
+              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }"
+            >
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Joe Clifford</span>
                 <span class="font-medium text-surface-400 dark:text-surface-400">

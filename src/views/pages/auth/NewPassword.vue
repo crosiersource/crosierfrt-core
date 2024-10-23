@@ -4,7 +4,7 @@ import { ref } from 'vue';
 
 const backgroundImage = ref('url(/demo/images/pages/accessDenied-bg.jpg)');
 const backgroundStyle = ref({
-  background: backgroundImage.value
+  background: backgroundImage.value,
 });
 </script>
 
@@ -15,7 +15,8 @@ const backgroundStyle = ref({
         <div class="flex flex-col">
           <div
             style="height: 56px; width: 56px"
-            class="bg-primary-50 rounded-full flex items-center justify-center">
+            class="bg-primary-50 rounded-full flex items-center justify-center"
+          >
             <i class="pi pi-key text-primary !text-4xl" />
           </div>
           <div class="mt-6">
@@ -40,7 +41,8 @@ const backgroundStyle = ref({
               id="password"
               placeholder="Repeat Password"
               input-class="w-full"
-              toggle-mask />
+              toggle-mask
+            />
           </InputGroup>
           <InputGroup>
             <Button class="w-full" label="SAVE NEW PASSWORD" />
@@ -53,7 +55,8 @@ const backgroundStyle = ref({
     </div>
     <div
       :style="backgroundStyle"
-      class="hidden lg:flex flex-1 items-center justify-center bg-cover">
+      class="hidden lg:flex flex-1 items-center justify-center bg-cover"
+    >
       <img src="/layout/images/logo/vector_logo.png" alt="" />
     </div>
   </div>

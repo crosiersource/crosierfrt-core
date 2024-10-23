@@ -12,7 +12,7 @@ function showSuccess() {
     severity: 'success',
     summary: 'Success Message',
     detail: 'Message Detail',
-    life: 3000
+    life: 3000,
   });
 }
 

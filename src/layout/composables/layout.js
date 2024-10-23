@@ -8,7 +8,7 @@ const layoutConfig = reactive({
   menuMode: 'horizontal',
   menuTheme: 'light',
   topbarTheme: 'indigo',
-  menuProfilePosition: 'end'
+  menuProfilePosition: 'end',
 });
 
 const layoutState = reactive({
@@ -23,7 +23,7 @@ const layoutState = reactive({
   anchored: false,
   activeMenuItem: null,
   overlaySubmenuActive: false,
-  menuProfileActive: false
+  menuProfileActive: false,
 });
 
 const outsideClickListener = ref(null);
@@ -195,7 +195,7 @@ export function useLayout() {
     () =>
       layoutState.overlayMenuActive ||
       layoutState.staticMenuMobileActive ||
-      layoutState.overlaySubmenuActive
+      layoutState.overlaySubmenuActive,
   );
   const isDesktop = computed(() => window.innerWidth > 991);
 
@@ -242,6 +242,6 @@ export function useLayout() {
     isOverlay,
     showConfigSidebar,
     showSidebar,
-    unbindOutsideClickListener
+    unbindOutsideClickListener,
   };
 }

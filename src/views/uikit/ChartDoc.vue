@@ -31,47 +31,47 @@ function setColorOptions() {
         label: 'My First dataset',
         backgroundColor: documentStyle.getPropertyValue('--p-primary-500'),
         borderColor: documentStyle.getPropertyValue('--p-primary-500'),
-        data: [65, 59, 80, 81, 56, 55, 40]
+        data: [65, 59, 80, 81, 56, 55, 40],
       },
       {
         label: 'My Second dataset',
         backgroundColor: documentStyle.getPropertyValue('--p-primary-200'),
         borderColor: documentStyle.getPropertyValue('--p-primary-200'),
-        data: [28, 48, 40, 19, 86, 27, 90]
-      }
-    ]
+        data: [28, 48, 40, 19, 86, 27, 90],
+      },
+    ],
   };
   barOptions.value = {
     plugins: {
       legend: {
         labels: {
-          fontColor: textColor
-        }
-      }
+          fontColor: textColor,
+        },
+      },
     },
     scales: {
       x: {
         ticks: {
           color: textColorSecondary,
           font: {
-            weight: 500
-          }
+            weight: 500,
+          },
         },
         grid: {
           display: false,
-          drawBorder: false
-        }
+          drawBorder: false,
+        },
       },
       y: {
         ticks: {
-          color: textColorSecondary
+          color: textColorSecondary,
         },
         grid: {
           color: surfaceBorder,
-          drawBorder: false
-        }
-      }
-    }
+          drawBorder: false,
+        },
+      },
+    },
   };
 
   pieData.value = {
@@ -82,15 +82,15 @@ function setColorOptions() {
         backgroundColor: [
           documentStyle.getPropertyValue('--p-indigo-500'),
           documentStyle.getPropertyValue('--p-purple-500'),
-          documentStyle.getPropertyValue('--p-teal-500')
+          documentStyle.getPropertyValue('--p-teal-500'),
         ],
         hoverBackgroundColor: [
           documentStyle.getPropertyValue('--p-indigo-400'),
           documentStyle.getPropertyValue('--p-purple-400'),
-          documentStyle.getPropertyValue('--p-teal-400')
-        ]
-      }
-    ]
+          documentStyle.getPropertyValue('--p-teal-400'),
+        ],
+      },
+    ],
   };
 
   pieOptions.value = {
@@ -98,10 +98,10 @@ function setColorOptions() {
       legend: {
         labels: {
           usePointStyle: true,
-          color: textColor
-        }
-      }
-    }
+          color: textColor,
+        },
+      },
+    },
   };
 
   lineData.value = {
@@ -113,7 +113,7 @@ function setColorOptions() {
         fill: false,
         backgroundColor: documentStyle.getPropertyValue('--p-primary-500'),
         borderColor: documentStyle.getPropertyValue('--p-primary-500'),
-        tension: 0.4
+        tension: 0.4,
       },
       {
         label: 'Second Dataset',
@@ -121,39 +121,39 @@ function setColorOptions() {
         fill: false,
         backgroundColor: documentStyle.getPropertyValue('--p-primary-200'),
         borderColor: documentStyle.getPropertyValue('--p-primary-200'),
-        tension: 0.4
-      }
-    ]
+        tension: 0.4,
+      },
+    ],
   };
 
   lineOptions.value = {
     plugins: {
       legend: {
         labels: {
-          fontColor: textColor
-        }
-      }
+          fontColor: textColor,
+        },
+      },
     },
     scales: {
       x: {
         ticks: {
-          color: textColorSecondary
+          color: textColorSecondary,
         },
         grid: {
           color: surfaceBorder,
-          drawBorder: false
-        }
+          drawBorder: false,
+        },
       },
       y: {
         ticks: {
-          color: textColorSecondary
+          color: textColorSecondary,
         },
         grid: {
           color: surfaceBorder,
-          drawBorder: false
-        }
-      }
-    }
+          drawBorder: false,
+        },
+      },
+    },
   };
 
   polarData.value = {
@@ -164,29 +164,29 @@ function setColorOptions() {
           documentStyle.getPropertyValue('--p-indigo-500'),
           documentStyle.getPropertyValue('--p-purple-500'),
           documentStyle.getPropertyValue('--p-teal-500'),
-          documentStyle.getPropertyValue('--p-orange-500')
+          documentStyle.getPropertyValue('--p-orange-500'),
         ],
-        label: 'My dataset'
-      }
+        label: 'My dataset',
+      },
     ],
-    labels: ['Indigo', 'Purple', 'Teal', 'Orange']
+    labels: ['Indigo', 'Purple', 'Teal', 'Orange'],
   };
 
   polarOptions.value = {
     plugins: {
       legend: {
         labels: {
-          color: textColor
-        }
-      }
+          color: textColor,
+        },
+      },
     },
     scales: {
       r: {
         grid: {
-          color: surfaceBorder
-        }
-      }
-    }
+          color: surfaceBorder,
+        },
+      },
+    },
   };
 
   radarData.value = {
@@ -199,7 +199,7 @@ function setColorOptions() {
         pointBorderColor: documentStyle.getPropertyValue('--p-indigo-400'),
         pointHoverBackgroundColor: textColor,
         pointHoverBorderColor: documentStyle.getPropertyValue('--p-indigo-400'),
-        data: [65, 59, 90, 81, 56, 55, 40]
+        data: [65, 59, 90, 81, 56, 55, 40],
       },
       {
         label: 'My Second dataset',
@@ -208,26 +208,26 @@ function setColorOptions() {
         pointBorderColor: documentStyle.getPropertyValue('--p-purple-400'),
         pointHoverBackgroundColor: textColor,
         pointHoverBorderColor: documentStyle.getPropertyValue('--p-purple-400'),
-        data: [28, 48, 40, 19, 96, 27, 100]
-      }
-    ]
+        data: [28, 48, 40, 19, 96, 27, 100],
+      },
+    ],
   };
 
   radarOptions.value = {
     plugins: {
       legend: {
         labels: {
-          fontColor: textColor
-        }
-      }
+          fontColor: textColor,
+        },
+      },
     },
     scales: {
       r: {
         grid: {
-          color: textColorSecondary
-        }
-      }
-    }
+          color: textColorSecondary,
+        },
+      },
+    },
   };
 }
 
@@ -236,7 +236,7 @@ watch(
   () => {
     setColorOptions();
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 

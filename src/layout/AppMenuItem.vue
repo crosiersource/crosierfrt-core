@@ -16,26 +16,26 @@ const {
   isHorizontal,
   isSlim,
   isSlimPlus,
-  isDesktop
+  isDesktop,
 } = useLayout();
 
 const props = defineProps({
   item: {
     type: Object,
-    default: () => ({})
+    default: () => ({}),
   },
   index: {
     type: Number,
-    default: 0
+    default: 0,
   },
   root: {
     type: Boolean,
-    default: true
+    default: true,
   },
   parentItemKey: {
     type: String,
-    default: null
-  }
+    default: null,
+  },
 });
 
 const isActiveMenu = ref(false);
@@ -67,21 +67,21 @@ watch(
         calculatePosition(overlay, target);
       });
     }
-  }
+  },
 );
 
 watch(
   () => layoutState.activeMenuItem,
   (newVal) => {
     isActiveMenu.value = newVal === itemKey.value || newVal.startsWith(itemKey.value + '-');
-  }
+  },
 );
 
 watch(
   () => layoutConfig.menuMode,
   () => {
     isActiveMenu.value = false;
-  }
+  },
 );
 
 watch(
@@ -90,7 +90,7 @@ watch(
     if (!newValue) {
       isActiveMenu.value = false;
     }
-  }
+  },
 );
 
 watch(
@@ -105,7 +105,7 @@ watch(
     } else if (isSlim.value || isSlimPlus.value || isHorizontal.value) {
       isActiveMenu.value = false;
     }
-  }
+  },
 );
 
 watch(() => route.path, handleRouteChange);
@@ -235,7 +235,8 @@ function checkActiveRoute(item) {
       :target="item.target"
       tabindex="0"
       @click="itemClick($event, item, index)"
-      @mouseenter="onMouseEnter">
+      @mouseenter="onMouseEnter"
+    >
       <i :class="item.icon" class="layout-menuitem-icon" />
       <span class="layout-menuitem-text">{{ item.label }}</span>
       <i v-if="item.items" class="pi pi-fw pi-angle-down layout-submenu-toggler" />
@@ -247,7 +248,8 @@ function checkActiveRoute(item) {
       tabindex="0"
       :to="item.to"
       @click="itemClick($event, item, index)"
-      @mouseenter="onMouseEnter">
+      @mouseenter="onMouseEnter"
+    >
       <i :class="item.icon" class="layout-menuitem-icon" />
       <span class="layout-menuitem-text">{{ item.label }}</span>
       <i v-if="item.items" class="pi pi-fw pi-angle-down layout-submenu-toggler" />
@@ -256,14 +258,16 @@ function checkActiveRoute(item) {
     <ul
       v-if="item.items && item.visible !== false"
       ref="subMenuRef"
-      :class="{ 'layout-root-submenulist': root }">
+      :class="{ 'layout-root-submenulist': root }"
+    >
       <AppMenuItem
         v-for="(child, i) in item.items"
         :key="child"
         :index="i"
         :item="child"
         :parent-item-key="itemKey"
-        :root="false" />
+        :root="false"
+      />
     </ul>
   </li>
 </template>

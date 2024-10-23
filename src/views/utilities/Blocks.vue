@@ -407,7 +407,8 @@ const checked = ref(false);
   <div>
     <BlockViewer header="Hero" :code="block1" free>
       <div
-        class="grid grid-cols-12 gap-4 grid-nogutter bg-surface-0 dark:bg-surface-950 text-surface-800 dark:text-surface-50">
+        class="grid grid-cols-12 gap-4 grid-nogutter bg-surface-0 dark:bg-surface-950 text-surface-800 dark:text-surface-50"
+      >
         <div class="col-span-12 md:col-span-6 p-12 text-center md:text-left flex items-center">
           <section>
             <span class="block text-6xl font-bold mb-1">Create the screens</span>
@@ -426,7 +427,8 @@ const checked = ref(false);
             src="/demo/images/blocks/hero/hero-1.png"
             alt="Image"
             class="md:ml-auto block md:h-full"
-            style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)" />
+            style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)"
+          />
         </div>
       </div>
     </BlockViewer>
@@ -444,7 +446,8 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px">
+              style="border-radius: 10px"
+            >
               <i class="pi pi-desktop text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -458,7 +461,8 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px">
+              style="border-radius: 10px"
+            >
               <i class="pi pi-lock text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -472,7 +476,8 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px">
+              style="border-radius: 10px"
+            >
               <i class="pi pi-check-circle text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -486,7 +491,8 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px">
+              style="border-radius: 10px"
+            >
               <i class="pi pi-globe text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -499,7 +505,8 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px">
+              style="border-radius: 10px"
+            >
               <i class="pi pi-github text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -513,7 +520,8 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 md:mb-6 mb-0 px-4">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px">
+              style="border-radius: 10px"
+            >
               <i class="pi pi-shield text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -534,7 +542,8 @@ const checked = ref(false);
           Pricing Plans
         </div>
         <div
-          class="text-surface-700 dark:text-surface-100 text-xl mb-12 text-center leading-normal">
+          class="text-surface-700 dark:text-surface-100 text-xl mb-12 text-center leading-normal"
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos.
         </div>
 
@@ -543,7 +552,8 @@ const checked = ref(false);
             <div class="p-4 h-full">
               <div
                 class="shadow p-4 h-full flex flex-col bg-surface-0 dark:bg-surface-900"
-                style="border-radius: 6px">
+                style="border-radius: 6px"
+              >
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Basic
                 </div>
@@ -583,7 +593,8 @@ const checked = ref(false);
             <div class="p-4 h-full">
               <div
                 class="shadow p-4 h-full flex flex-col bg-surface-0 dark:bg-surface-900"
-                style="border-radius: 6px">
+                style="border-radius: 6px"
+              >
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Premium
                 </div>
@@ -630,7 +641,8 @@ const checked = ref(false);
             <div class="p-4 h-full">
               <div
                 class="shadow p-4 flex flex-col bg-surface-0 dark:bg-surface-900"
-                style="border-radius: 6px">
+                style="border-radius: 6px"
+              >
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Enterprise
                 </div>
@@ -704,7 +716,8 @@ const checked = ref(false);
             icon="pi pi-discord"
             class="font-bold px-8 py-4 whitespace-nowrap"
             raised
-            rounded />
+            rounded
+          />
         </div>
       </div>
     </BlockViewer>
@@ -713,9 +726,11 @@ const checked = ref(false);
       header="Banner"
       :code="block5"
       container-class="bg-surface-0 dark:bg-surface-950 py-20"
-      free>
+      free
+    >
       <div
-        class="bg-slate-900 text-gray-100 p-4 flex justify-between lg:justify-center items-center flex-wrap">
+        class="bg-slate-900 text-gray-100 p-4 flex justify-between lg:justify-center items-center flex-wrap"
+      >
         <div class="font-bold mr-20">🔥 Hot Deals!</div>
         <div class="items-center hidden lg:flex">
           <span class="leading-normal">
@@ -727,7 +742,8 @@ const checked = ref(false);
         </a>
         <a
           class="flex items-center no-underline justify-center rounded-full text-gray-50 hover:bg-slate-700 cursor-pointer transition-colors duration-150"
-          style="width: 2rem; height: 2rem">
+          style="width: 2rem; height: 2rem"
+        >
           <i class="pi pi-times" />
         </a>
       </div>
@@ -739,7 +755,8 @@ const checked = ref(false);
         <ul class="list-none p-0 m-0 flex items-center font-medium mb-4">
           <li>
             <a
-              class="text-surface-500 dark:text-surface-300 no-underline leading-normal cursor-pointer">
+              class="text-surface-500 dark:text-surface-300 no-underline leading-normal cursor-pointer"
+            >
               Application
             </a>
           </li>
@@ -790,7 +807,8 @@ const checked = ref(false);
                 </div>
                 <div
                   class="flex items-center justify-center bg-blue-100 rounded-border"
-                  style="width: 2.5rem; height: 2.5rem">
+                  style="width: 2.5rem; height: 2.5rem"
+                >
                   <i class="pi pi-shopping-cart text-blue-500 text-xl" />
                 </div>
               </div>
@@ -809,7 +827,8 @@ const checked = ref(false);
                 </div>
                 <div
                   class="flex items-center justify-center bg-orange-100 rounded-border"
-                  style="width: 2.5rem; height: 2.5rem">
+                  style="width: 2.5rem; height: 2.5rem"
+                >
                   <i class="pi pi-map-marker text-orange-500 text-xl" />
                 </div>
               </div>
@@ -828,7 +847,8 @@ const checked = ref(false);
                 </div>
                 <div
                   class="flex items-center justify-center bg-cyan-100 rounded-border"
-                  style="width: 2.5rem; height: 2.5rem">
+                  style="width: 2.5rem; height: 2.5rem"
+                >
                   <i class="pi pi-inbox text-cyan-500 text-xl" />
                 </div>
               </div>
@@ -849,7 +869,8 @@ const checked = ref(false);
                 </div>
                 <div
                   class="flex items-center justify-center bg-purple-100 rounded-border"
-                  style="width: 2.5rem; height: 2.5rem">
+                  style="width: 2.5rem; height: 2.5rem"
+                >
                   <i class="pi pi-comment text-purple-500 text-xl" />
                 </div>
               </div>
@@ -865,7 +886,8 @@ const checked = ref(false);
       header="Sign-In"
       :code="block8"
       container-class="bg-surface-50 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20 flex items-center justify-center"
-      free>
+      free
+    >
       <div class="bg-surface-0 dark:bg-surface-900 p-6 shadow rounded-border w-full lg:w-6/12">
         <div class="text-center mb-8">
           <img src="/demo/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-4" />
@@ -886,7 +908,8 @@ const checked = ref(false);
 
           <label
             for="password1"
-            class="block text-surface-900 dark:text-surface-0 font-medium mb-2">
+            class="block text-surface-900 dark:text-surface-0 font-medium mb-2"
+          >
             Password
           </label>
           <InputText id="password1" type="password" placeholder="Password" class="w-full mb-4" />
@@ -912,7 +935,8 @@ const checked = ref(false);
       header="Description List"
       :code="block9"
       container-class="bg-surface-0 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20"
-      free>
+      free
+    >
       <div class="bg-surface-0 dark:bg-surface-950">
         <div class="font-medium text-3xl text-surface-900 dark:text-surface-0 mb-4">
           Movie Information
@@ -926,7 +950,8 @@ const checked = ref(false);
               Title
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1">
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1"
+            >
               Heat
             </div>
             <div class="w-6/12 md:w-2/12 flex justify-end">
@@ -938,7 +963,8 @@ const checked = ref(false);
               Genre
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1">
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1"
+            >
               <Chip label="Crime" class="mr-2" />
               <Chip label="Drama" class="mr-2" />
               <Chip label="Thriller" />
@@ -952,7 +978,8 @@ const checked = ref(false);
               Director
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1">
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1"
+            >
               Michael Mann
             </div>
             <div class="w-6/12 md:w-2/12 flex justify-end">
@@ -964,7 +991,8 @@ const checked = ref(false);
               Actors
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1">
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1"
+            >
               Robert De Niro, Al Pacino
             </div>
             <div class="w-6/12 md:w-2/12 flex justify-end">
@@ -976,7 +1004,8 @@ const checked = ref(false);
               Plot
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1 leading-normal">
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1 leading-normal"
+            >
               A group of professional bank robbers start to feel the heat from police when they
               unknowingly leave a clue at their latest heist.
             </div>

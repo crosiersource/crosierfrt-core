@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const backgroundImage = ref('url(/demo/images/pages/accessDenied-bg.jpg)');
 const backgroundStyle = ref({
-  background: backgroundImage.value
+  background: backgroundImage.value,
 });
 
 function navigateToDashboard() {
@@ -27,12 +27,14 @@ function navigateToDashboard() {
           label="DASHBOARD"
           class="!text-white"
           text
-          @click="navigateToDashboard" />
+          @click="navigateToDashboard"
+        />
       </div>
     </div>
     <div class="self-center mt-auto mb-auto">
       <div
-        class="text-center z-40 rounded-lg border border-surface bg-white p-4 shadow-md flex flex-col">
+        class="text-center z-40 rounded-lg border border-surface bg-white p-4 shadow-md flex flex-col"
+      >
         <div class="rounded-md mx-auto border border-surface bg-orange-500 -mt-12 px-4 py-1">
           <span class="m-0 text-3xl font-semibold text-surface-0 dark:text-surface-900">
             ACCESS DENIED

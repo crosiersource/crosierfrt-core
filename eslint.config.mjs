@@ -7,8 +7,8 @@ export default [
     ignores: ['**/*.config.js', 'node_modules/'],
     rules: {
       semi: 'error',
-      'prefer-const': 'error'
-    }
+      'prefer-const': 'error',
+    },
   },
   ...pluginVue.configs['flat/recommended'],
   {
@@ -21,22 +21,14 @@ export default [
         'PascalCase',
         {
           registeredComponentsOnly: false,
-          ignores: []
-        }
+          ignores: [],
+        },
       ],
       'vue/singleline-html-element-content-newline': 'off', // Desativa a nova linha para conteúdo de elementos HTML de uma linha
       'vue/multiline-html-element-content-newline': 'error',
       'vue/attribute-hyphenation': 'off',
-      'vue/max-attributes-per-line': [
-        'error',
-        {
-          singleline: 1, // número máximo de atributos em uma linha para elementos de uma linha
-          multiline: {
-            max: 1 // número máximo de atributos em múltiplas linhas
-          }
-        }
-      ],
-      'function-paren-newline': ['error', 'multiline']
-    }
-  }
+      'vue/max-attributes-per-line': 'off',
+      'function-paren-newline': ['error', 'multiline'],
+    },
+  },
 ];

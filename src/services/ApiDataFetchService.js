@@ -48,7 +48,7 @@ export async function fetchTableData({
   defaultFilters = null,
   allRows = false,
   complement = '',
-  properties = null
+  properties = null,
 }) {
   console.log('aqui no fetchTableData');
   console.log(apiResource);
@@ -64,8 +64,8 @@ export async function fetchTableData({
 
   const params = {
     headers: {
-      'Content-Type': 'application/json;charset=UTF-8'
-    }
+      'Content-Type': 'application/json;charset=UTF-8',
+    },
   };
   const queryPage = `?page=${allRows ? 1 : page}`;
   const queryRows = `&rows=${allRows ? Number.MAX_SAFE_INTEGER : rows}`;
@@ -166,6 +166,6 @@ export async function fetchTableData({
 
   return axios.get(
     `${apiResource}${queryPage}${queryRows}${queryFilter}${queryOrder}${sProperties}${complement}`,
-    params
+    params,
   );
 }

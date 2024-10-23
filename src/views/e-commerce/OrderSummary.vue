@@ -8,7 +8,7 @@ const products = ref([
     color: 'White',
     price: '$12',
     quantity: '1',
-    image: '/demo/images/ecommerce/ordersummary/order-summary-1-1.png'
+    image: '/demo/images/ecommerce/ordersummary/order-summary-1-1.png',
   },
   {
     name: 'Regular Jeans',
@@ -16,8 +16,8 @@ const products = ref([
     color: 'Black',
     price: '$24',
     quantity: '1',
-    image: '/demo/images/ecommerce/ordersummary/order-summary-1-2.png'
-  }
+    image: '/demo/images/ecommerce/ordersummary/order-summary-1-2.png',
+  },
 ]);
 </script>
 
@@ -33,8 +33,9 @@ const products = ref([
     <div
       :style="{
         height: '3px',
-        background: 'linear-gradient(90deg, var(--primary-color) 0%, rgba(33, 150, 243, 0) 50%)'
-      }" />
+        background: 'linear-gradient(90deg, var(--primary-color) 0%, rgba(33, 150, 243, 0) 50%)',
+      }"
+    />
 
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-8">
       <div class="mb-4 sm:mb-0">
@@ -54,11 +55,13 @@ const products = ref([
           v-for="(product, i) in products"
           :key="i"
           class="p-4 border-surface-200 dark:border-surface-700 flex items-start sm:items-center"
-          :class="{ 'border-bottom-1': i !== products.length - 1 }">
+          :class="{ 'border-bottom-1': i !== products.length - 1 }"
+        >
           <img
             :src="product.image"
             class="w-12 sm:w-32 flex-shrink-0 mr-4 shadow"
-            :alt="product.name" />
+            :alt="product.name"
+          />
           <div class="flex flex-col">
             <span class="text-surface-900 dark:text-surface-0 font-semibold text-xl mb-2">
               {{ product.name }}
@@ -139,11 +142,13 @@ const products = ref([
       </div>
     </div>
     <div
-      class="flex flex-col md:flex-row md:items-center border-b border-surface-200 dark:border-surface-700 py-8">
+      class="flex flex-col md:flex-row md:items-center border-b border-surface-200 dark:border-surface-700 py-8"
+    >
       <img
         src="/demo/images/ecommerce/ordersummary/order-summary-2-1.png"
         class="w-60 flex-shrink-0 md:mr-12"
-        alt="summary-1-2" />
+        alt="summary-1-2"
+      />
       <div class="flex-auto mt-4 md:mt-0">
         <span class="text-xl text-surface-900 dark:text-surface-0">Product Name</span>
         <div class="font-medium text-2xl text-surface-900 dark:text-surface-0 mt-4 mb-8">
@@ -151,7 +156,8 @@ const products = ref([
         </div>
         <div
           class="rounded overflow-hidden bg-surface-300 dark:bg-surface-500 mb-4"
-          :style="{ height: '7px' }">
+          :style="{ height: '7px' }"
+        >
           <div class="bg-primary text-primary-contrast rounded w-4/12 h-full" />
         </div>
         <div class="flex w-full justify-between">

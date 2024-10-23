@@ -10,7 +10,7 @@ const images = ref([
   'product-overview-3-1.png',
   'product-overview-3-2.png',
   'product-overview-3-3.png',
-  'product-overview-3-4.png'
+  'product-overview-3-4.png',
 ]);
 
 function setColor(val) {
@@ -39,19 +39,22 @@ function setSelectedImageIndex(index) {
               :src="`/demo/images/ecommerce/productoverview/${image}`"
               class="w-full cursor-pointer border-2 border-transparent transition-colors duration-150 border-round'"
               :class="{ 'border-primary': selectedImageIndex === i }"
-              @click="setSelectedImageIndex(i)" />
+              @click="setSelectedImageIndex(i)"
+            />
           </div>
           <div class="pl-4 w-10/12 flex">
             <img
               :alt="images[selectedImageIndex]"
               :src="`/demo/images/ecommerce/productoverview/${images[selectedImageIndex]}`"
-              class="w-full border-2 border-transparent rounded" />
+              class="w-full border-2 border-transparent rounded"
+            />
           </div>
         </div>
       </div>
       <div class="col-span-12 lg:col-span-4 py-4 lg:pl-12">
         <div
-          class="flex items-center text-xl font-medium text-surface-900 dark:text-surface-0 mb-6">
+          class="flex items-center text-xl font-medium text-surface-900 dark:text-surface-0 mb-6"
+        >
           Product Title Placeholder
         </div>
         <div class="flex items-center justify-between mb-8">
@@ -77,24 +80,28 @@ function setSelectedImageIndex(index) {
           <div
             class="w-8 h-8 flex-shrink-0 rounded-full bg-slate-500 mr-4 cursor-pointer border-2 border-surface-200 dark:border-surface-700 transition-all duration-300"
             :style="{
-              boxShadow: color === 'bluegray' ? '0 0 0 0.2rem var(--p-bluegray-500)' : null
+              boxShadow: color === 'bluegray' ? '0 0 0 0.2rem var(--p-bluegray-500)' : null,
             }"
-            @click="setColor('bluegray')" />
+            @click="setColor('bluegray')"
+          />
           <div
             class="w-8 h-8 flex-shrink-0 rounded-full bg-green-500 mr-4 cursor-pointer border-2 border-surface-200 dark:border-surface-700 transition-all duration-300"
             :style="{ boxShadow: color === 'green' ? '0 0 0 0.2rem var(--p-green-500)' : null }"
-            @click="setColor('green')" />
+            @click="setColor('green')"
+          />
           <div
             class="w-8 h-8 flex-shrink-0 rounded-full bg-blue-500 cursor-pointer border-2 border-surface-200 dark:border-surface-700 transition-all duration-300"
             :style="{ boxShadow: color === 'blue' ? '0 0 0 0.2rem var(--p-blue-500)' : null }"
-            @click="setColor('blue')" />
+            @click="setColor('blue')"
+          />
         </div>
 
         <div class="mb-4 flex items-center justify-between">
           <span class="font-bold text-surface-900 dark:text-surface-0">Size</span>
           <a
             tabindex="0"
-            class="cursor-pointer text-surface-600 dark:text-surface-200 text-sm flex items-center">
+            class="cursor-pointer text-surface-600 dark:text-surface-200 text-sm flex items-center"
+          >
             Size Guide
             <i class="ml-1 pi pi-angle-right" />
           </a>
@@ -103,31 +110,36 @@ function setSelectedImageIndex(index) {
           <div
             class="h-12 grow basis-0 border border-surface-300 dark:border-surface-500 text-surface-900 dark:text-surface-0 inline-flex justify-center items-center flex-shrink-0 rounded mr-4 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors"
             :class="{ '!border-primary border-2 !text-primary': size === 'XS' }"
-            @click="setSize('XS')">
+            @click="setSize('XS')"
+          >
             XS
           </div>
           <div
             class="h-12 grow basis-0 border border-surface-300 dark:border-surface-500 text-surface-900 dark:text-surface-0 inline-flex justify-center items-center flex-shrink-0 rounded mr-4 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors"
             :class="{ '!border-primary border-2 !text-primary': size === 'S' }"
-            @click="setSize('S')">
+            @click="setSize('S')"
+          >
             S
           </div>
           <div
             class="h-12 grow basis-0 border border-surface-300 dark:border-surface-500 text-surface-900 dark:text-surface-0 inline-flex justify-center items-center flex-shrink-0 rounded mr-4 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors"
             :class="{ '!border-primary border-2 !text-primary': size === 'M' }"
-            @click="setSize('M')">
+            @click="setSize('M')"
+          >
             M
           </div>
           <div
             class="h-12 grow basis-0 border border-surface-300 dark:border-surface-500 text-surface-900 dark:text-surface-0 inline-flex justify-center items-center flex-shrink-0 rounded mr-4 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors"
             :class="{ '!border-primary border-2 !text-primary': size === 'L' }"
-            @click="setSize('L')">
+            @click="setSize('L')"
+          >
             L
           </div>
           <div
             class="h-12 grow basis-0 border border-surface-300 dark:border-surface-500 text-surface-900 dark:text-surface-0 inline-flex justify-center items-center flex-shrink-0 rounded cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors"
             :class="{ '!border-primary border-2 !text-primary': size === 'XL' }"
-            @click="setSize('XL')">
+            @click="setSize('XL')"
+          >
             XL
           </div>
         </div>
@@ -144,13 +156,15 @@ function setSelectedImageIndex(index) {
             decrement-button-class="p-button-text text-surface-600 dark:text-surface-200 hover:text-primary py-1 px-1"
             increment-button-class="p-button-text text-surface-600 dark:text-surface-200 hover:text-primary py-1 px-1"
             increment-button-icon="pi pi-plus"
-            decrement-button-icon="pi pi-minus" />
+            decrement-button-icon="pi pi-minus"
+          />
           <div class="flex items-center flex-1 mt-4 sm:mt-0 ml-0 sm:ml-8">
             <Button label="Add to Cart" class="flex-1 mr-8" />
             <i
               class="pi text-2xl cursor-pointer"
               :class="{ 'pi-heart text-600': !liked, 'pi-heart-fill text-orange-500': liked }"
-              @click="liked = !liked" />
+              @click="liked = !liked"
+            />
           </div>
         </div>
       </div>
@@ -211,7 +225,8 @@ function setSelectedImageIndex(index) {
                 Material & Care
               </span>
               <ul
-                class="p-0 m-0 flex flex-wrap flex-col xl:flex-row text-surface-600 dark:text-surface-200">
+                class="p-0 m-0 flex flex-wrap flex-col xl:flex-row text-surface-600 dark:text-surface-200"
+              >
                 <li class="flex items-center whitespace-nowrap w-40 mr-2 mb-4">
                   <i class="pi pi-sun mr-2 text-surface-900 dark:text-surface-0" />
                   <span>Not dryer safe</span>

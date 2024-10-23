@@ -31,7 +31,7 @@ watch(
   () => {
     setBreadcrumbRoutes();
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 

@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const backgroundImage = ref('url(/demo/images/pages/error-bg.jpg)');
 const backgroundStyle = ref({
-  background: backgroundImage.value
+  background: backgroundImage.value,
 });
 
 function navigateToDashboard() {
@@ -30,12 +30,14 @@ function navigateToDashboard() {
           label="BACK TO DASHBOARD"
           class="!bg-indigo-500 !text-white"
           text
-          @click="navigateToDashboard" />
+          @click="navigateToDashboard"
+        />
       </div>
     </div>
     <div
       :style="backgroundStyle"
-      class="hidden lg:flex flex-1 items-center justify-center !bg-cover">
+      class="hidden lg:flex flex-1 items-center justify-center !bg-cover"
+    >
       <img src="/layout/images/logo/vector_logo.png" alt="" />
     </div>
   </div>

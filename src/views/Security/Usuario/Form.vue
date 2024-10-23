@@ -3,7 +3,8 @@
     :store="userStore"
     titulo="Usuário"
     icon="fas fa-users"
-    list-path="/sec/usuario/list">
+    list-path="/sec/usuario/list"
+  >
     <template #fields>
       <VTextField
         id="username"
@@ -11,7 +12,8 @@
         label="Nome de Usuário"
         outlined
         dense
-        clearable />
+        clearable
+      />
     </template>
   </CrosierForm>
 </template>
@@ -24,11 +26,11 @@ export default {
   name: 'UsuarioForm',
 
   components: {
-    CrosierForm
+    CrosierForm,
   },
 
   computed: {
-    ...mapStores(useUserStore)
-  }
+    ...mapStores(useUserStore),
+  },
 };
 </script>

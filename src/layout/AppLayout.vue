@@ -40,7 +40,7 @@ export default {
     AppSidebar,
     AppBreadCrumb,
     AppFooter,
-    AppConfig
+    AppConfig,
   },
   setup() {
     const { layoutConfig, layoutState, watchSidebarActive, unbindOutsideClickListener } =
@@ -74,7 +74,7 @@ export default {
           'layout-topbar-menu-active': layoutState.topbarMenuActive,
           'layout-menu-profile-active': layoutState.rightMenuActive,
           'layout-sidebar-active': layoutState.sidebarActive,
-          'layout-sidebar-anchored': layoutState.anchored
+          'layout-sidebar-anchored': layoutState.anchored,
         };
 
         styleClass['layout-topbar-' + layoutConfig.topbarTheme] = true;
@@ -82,14 +82,14 @@ export default {
         styleClass['layout-menu-profile-' + layoutConfig.menuProfilePosition] = true;
 
         return styleClass;
-      })
+      }),
     };
   },
   data() {
     return {
-      loadingStore: inject('loadingStore')
+      loadingStore: inject('loadingStore'),
     };
-  }
+  },
 };
 </script>
 

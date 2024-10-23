@@ -6,7 +6,7 @@ export const useSnackbarStore = defineStore('snackbar', {
       showing: false,
       mensagem: '',
       detalhes: '',
-      cor: 'indigo'
+      cor: 'indigo',
     };
   },
   actions: {
@@ -34,6 +34,6 @@ export const useSnackbarStore = defineStore('snackbar', {
     error(mensagem, detalhes) {
       this.show(mensagem, detalhes);
       this.cor = 'red';
-    }
-  }
+    },
+  },
 });

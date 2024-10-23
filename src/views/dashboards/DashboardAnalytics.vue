@@ -36,7 +36,7 @@ const expensesOptions = ref(null);
 
 const stateOptions = ref([
   { label: 'Weekly', value: 'weekly' },
-  { label: 'Monthly', value: 'monthly' }
+  { label: 'Monthly', value: 'monthly' },
 ]);
 const labels = computed(() => stateOptions.value.map((option) => option.label));
 
@@ -49,17 +49,17 @@ const setExpensesData = () => ({
       backgroundColor: [isDarkTheme.value ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 
 function setExpensesOptions() {
   return {
     plugins: {
       legend: {
-        display: false
-      }
+        display: false,
+      },
     },
     maintainAspectRatio: false,
     responsive: true,
@@ -67,27 +67,27 @@ function setExpensesOptions() {
     scales: {
       y: {
         display: false,
-        beginAtZero: true
+        beginAtZero: true,
       },
       x: {
-        display: false
-      }
+        display: false,
+      },
     },
     tooltips: {
-      enabled: false
+      enabled: false,
     },
     elements: {
       point: {
         radius: 5,
-        pointBackgroundColor: [isDarkTheme.value ? '#fff' : '#000']
-      }
-    }
+        pointBackgroundColor: [isDarkTheme.value ? '#fff' : '#000'],
+      },
+    },
   };
 }
 
 const items = ref([
   { label: 'Update', icon: 'pi pi-fw pi-refresh' },
-  { label: 'Edit', icon: 'pi pi-fw pi-pencil' }
+  { label: 'Edit', icon: 'pi pi-fw pi-pencil' },
 ]);
 const storeAData = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -98,9 +98,9 @@ const storeAData = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.8)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 const storeBData = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -111,9 +111,9 @@ const storeBData = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.8)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 const storeCData = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -124,9 +124,9 @@ const storeCData = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.8)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 const storeDData = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -137,109 +137,109 @@ const storeDData = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.8)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 const storeAOptions = ref({
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   responsive: true,
   aspectRatio: 4,
   scales: {
     y: {
-      display: false
+      display: false,
     },
     x: {
-      display: false
-    }
+      display: false,
+    },
   },
   tooltips: {
-    enabled: false
+    enabled: false,
   },
   elements: {
     point: {
-      radius: 0
-    }
-  }
+      radius: 0,
+    },
+  },
 });
 const storeBOptions = ref({
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   responsive: true,
   aspectRatio: 4,
   scales: {
     y: {
-      display: false
+      display: false,
     },
     x: {
-      display: false
-    }
+      display: false,
+    },
   },
   tooltips: {
-    enabled: false
+    enabled: false,
   },
   elements: {
     point: {
-      radius: 0
-    }
-  }
+      radius: 0,
+    },
+  },
 });
 const storeCOptions = ref({
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   responsive: true,
   aspectRatio: 4,
   scales: {
     y: {
-      display: false
+      display: false,
     },
     x: {
-      display: false
-    }
+      display: false,
+    },
   },
   tooltips: {
-    enabled: false
+    enabled: false,
   },
   elements: {
     point: {
-      radius: 0
-    }
-  }
+      radius: 0,
+    },
+  },
 });
 const storeDOptions = ref({
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   responsive: true,
   aspectRatio: 4,
   scales: {
     y: {
-      display: false
+      display: false,
     },
     x: {
-      display: false
-    }
+      display: false,
+    },
   },
   tooltips: {
-    enabled: false
+    enabled: false,
   },
   elements: {
     point: {
-      radius: 0
-    }
-  }
+      radius: 0,
+    },
+  },
 });
 
 function getChartMonthlyData() {
@@ -252,7 +252,7 @@ function getChartMonthlyData() {
     cyanColor,
     tealColor,
     greenColor,
-    lightgreenColor
+    lightgreenColor,
   } = getColors();
 
   return {
@@ -264,7 +264,7 @@ function getChartMonthlyData() {
         borderColor: blueColor,
         backgroundColor: blueColor,
         borderWidth: 2,
-        fill: true
+        fill: true,
       },
       {
         label: '2013',
@@ -272,7 +272,7 @@ function getChartMonthlyData() {
         borderColor: lightblueColor,
         backgroundColor: lightblueColor,
         borderWidth: 2,
-        fill: true
+        fill: true,
       },
       {
         label: '2014',
@@ -280,7 +280,7 @@ function getChartMonthlyData() {
         borderColor: cyanColor,
         backgroundColor: cyanColor,
         borderWidth: 2,
-        fill: true
+        fill: true,
       },
       {
         label: '2015',
@@ -288,7 +288,7 @@ function getChartMonthlyData() {
         borderColor: tealColor,
         backgroundColor: tealColor,
         borderWidth: 2,
-        fill: true
+        fill: true,
       },
       {
         label: '2016',
@@ -296,7 +296,7 @@ function getChartMonthlyData() {
         borderColor: greenColor,
         backgroundColor: greenColor,
         borderWidth: 2,
-        fill: true
+        fill: true,
       },
       {
         label: '2017',
@@ -304,7 +304,7 @@ function getChartMonthlyData() {
         borderColor: lightgreenColor,
         backgroundColor: lightgreenColor,
         borderWidth: 2,
-        fill: true
+        fill: true,
       },
       {
         label: '2018',
@@ -312,7 +312,7 @@ function getChartMonthlyData() {
         borderColor: limeColor,
         backgroundColor: limeColor,
         borderWidth: 2,
-        fill: true
+        fill: true,
       },
       {
         label: '2019',
@@ -320,7 +320,7 @@ function getChartMonthlyData() {
         borderColor: amberColor,
         backgroundColor: amberColor,
         borderWidth: 2,
-        fill: true
+        fill: true,
       },
       {
         label: '2020',
@@ -328,9 +328,9 @@ function getChartMonthlyData() {
         borderColor: orangeColor,
         backgroundColor: orangeColor,
         borderWidth: 2,
-        fill: true
-      }
-    ]
+        fill: true,
+      },
+    ],
   };
 }
 
@@ -348,47 +348,47 @@ function getMonthlyChartOptions() {
         display: true,
         labels: {
           font: {
-            family: fontFamily
+            family: fontFamily,
           },
-          color: textColor
-        }
-      }
+          color: textColor,
+        },
+      },
     },
     responsive: true,
     maintainAspectRatio: false,
     interaction: {
-      mode: 'x'
+      mode: 'x',
     },
     scales: {
       y: {
         ticks: {
           font: {
-            family: fontFamily
+            family: fontFamily,
           },
-          color: textColor
+          color: textColor,
         },
         grid: {
-          color: gridLinesColor
-        }
+          color: gridLinesColor,
+        },
       },
       x: {
         categoryPercentage: 0.9,
         barPercentage: 0.8,
         ticks: {
           font: {
-            family: fontFamily
+            family: fontFamily,
           },
-          color: textColor
+          color: textColor,
         },
         grid: {
-          color: gridLinesColor
-        }
-      }
+          color: gridLinesColor,
+        },
+      },
     },
     animation: {
       animateScale: true,
-      animateRotate: true
-    }
+      animateRotate: true,
+    },
   };
 }
 
@@ -404,9 +404,9 @@ function getPieData() {
       {
         data: [300, 50, 100],
         backgroundColor: [blueColor, tealColor, limeColor],
-        borderColor
-      }
-    ]
+        borderColor,
+      },
+    ],
   };
 }
 
@@ -423,16 +423,16 @@ function getPieOptions() {
         position: 'top',
         labels: {
           font: {
-            family: fontFamily
+            family: fontFamily,
           },
-          color: textColor
-        }
-      }
+          color: textColor,
+        },
+      },
     },
     animation: {
       animateScale: true,
-      animateRotate: true
-    }
+      animateRotate: true,
+    },
   };
 }
 
@@ -444,7 +444,7 @@ function getDoughnutData() {
     tealColor,
     greenColor,
     lightgreenColor,
-    orangeColor
+    orangeColor,
   } = getColors();
   const borderColor =
     getComputedStyle(document.body).getPropertyValue('--surface-border') ||
@@ -462,11 +462,11 @@ function getDoughnutData() {
           tealColor,
           greenColor,
           lightgreenColor,
-          orangeColor
+          orangeColor,
         ],
-        borderColor
-      }
-    ]
+        borderColor,
+      },
+    ],
   };
 }
 
@@ -483,18 +483,18 @@ function getDoughnutOptions() {
         position: 'top',
         labels: {
           font: {
-            family: fontFamily
+            family: fontFamily,
           },
-          color: textColor
-        }
-      }
+          color: textColor,
+        },
+      },
     },
     circumference: 180,
     rotation: -90,
     animation: {
       animateScale: true,
-      animateRotate: true
-    }
+      animateRotate: true,
+    },
   };
 }
 
@@ -515,7 +515,7 @@ function getColors() {
     amberColor: !isDarkTheme.value ? '#FFCA28' : '#FFE082',
     orangeColor: !isDarkTheme.value ? '#FFA726' : '#FFCC80',
     deeporangeColor: !isDarkTheme.value ? '#FF7043' : '#FFAB91',
-    brownColor: !isDarkTheme.value ? '#8D6E63' : '#BCAAA4'
+    brownColor: !isDarkTheme.value ? '#8D6E63' : '#BCAAA4',
   };
 }
 
@@ -544,7 +544,7 @@ onMounted(async () => {
       const {
         diff: newStoreADiff,
         totalValue: newStoreATotalValue,
-        status: newStoreAStatus
+        status: newStoreAStatus,
       } = calculateStore(storeAData.value, storeATotalValue.value);
       storeADiff.value = newStoreADiff;
       storeATotalValue.value = newStoreATotalValue;
@@ -553,7 +553,7 @@ onMounted(async () => {
       const {
         diff: newStoreBDiff,
         totalValue: newStoreBTotalValue,
-        status: newStoreBStatus
+        status: newStoreBStatus,
       } = calculateStore(storeBData.value, storeBTotalValue.value);
       storeBDiff.value = newStoreBDiff;
       storeBTotalValue.value = newStoreBTotalValue;
@@ -562,7 +562,7 @@ onMounted(async () => {
       const {
         diff: newStoreCDiff,
         totalValue: newStoreCTotalValue,
-        status: newStoreCStatus
+        status: newStoreCStatus,
       } = calculateStore(storeCData.value, storeCTotalValue.value);
       storeCDiff.value = newStoreCDiff;
       storeCTotalValue.value = newStoreCTotalValue;
@@ -571,7 +571,7 @@ onMounted(async () => {
       const {
         diff: newStoreDDiff,
         totalValue: newStoreDTotalValue,
-        status: newStoreDStatus
+        status: newStoreDStatus,
       } = calculateStore(storeDData.value, storeDTotalValue.value);
       storeDDiff.value = newStoreDDiff;
       storeDTotalValue.value = newStoreDTotalValue;
@@ -655,7 +655,8 @@ function refreshChart() {
             label="Vertical/Stacked Data"
             class="ml-auto"
             text
-            @click="changeMonthlyDataView()" />
+            @click="changeMonthlyDataView()"
+          />
         </div>
 
         <Chart
@@ -663,7 +664,8 @@ function refreshChart() {
           type="bar"
           :data="chartMonthlyData"
           :options="chartMonthlyOptions"
-          :height="400" />
+          :height="400"
+        />
       </div>
     </div>
 
@@ -685,7 +687,8 @@ function refreshChart() {
           type="doughnut"
           :data="doughnutData"
           :options="doughnutOptions"
-          :height="200" />
+          :height="200"
+        />
         <div class="flex flex-col justify-center">
           <div class="flex flex-row items-center mt-6 px-4">
             <i class="pi pi-thumbs-up p-4 rounded-full bg-green-400 text-white" />
@@ -800,16 +803,18 @@ function refreshChart() {
                   'font-bold text-2xl pi pr-1',
                   {
                     'pi-arrow-up text-green-500': storeADiff > 0,
-                    'pi-arrow-down text-pink-500': storeADiff < 0
-                  }
-                ]" />
+                    'pi-arrow-down text-pink-500': storeADiff < 0,
+                  },
+                ]"
+              />
               ${{ storeATotalValue }}
               <span
                 v-if="storeADiff !== 0"
                 :class="[
                   'font-medium text-base ml-1',
-                  { 'text-green-500': storeADiff > 0, 'text-pink-500': storeADiff < 0 }
-                ]">
+                  { 'text-green-500': storeADiff > 0, 'text-pink-500': storeADiff < 0 },
+                ]"
+              >
                 {{ storeADiff > 0 ? '+' : '' }}{{ storeADiff }}
               </span>
             </span>
@@ -828,16 +833,18 @@ function refreshChart() {
                   'font-bold text-2xl pi pr-1',
                   {
                     'pi-arrow-up text-green-500': storeBDiff > 0,
-                    'pi-arrow-down text-pink-500': storeBDiff < 0
-                  }
-                ]" />
+                    'pi-arrow-down text-pink-500': storeBDiff < 0,
+                  },
+                ]"
+              />
               ${{ storeBTotalValue }}
               <span
                 v-if="storeBDiff !== 0"
                 :class="[
                   'font-medium text-base ml-1',
-                  { 'text-green-500': storeBDiff > 0, 'text-pink-500': storeBDiff < 0 }
-                ]">
+                  { 'text-green-500': storeBDiff > 0, 'text-pink-500': storeBDiff < 0 },
+                ]"
+              >
                 {{ storeBDiff > 0 ? '+' : '' }}{{ storeBDiff }}
               </span>
             </span>
@@ -856,16 +863,18 @@ function refreshChart() {
                   'font-bold text-2xl pi pr-1',
                   {
                     'pi-arrow-up text-green-500': storeCDiff > 0,
-                    'pi-arrow-down text-pink-500': storeCDiff < 0
-                  }
-                ]" />
+                    'pi-arrow-down text-pink-500': storeCDiff < 0,
+                  },
+                ]"
+              />
               ${{ storeCTotalValue }}
               <span
                 v-if="storeCDiff !== 0"
                 :class="[
                   'fw-500 fs-normal ml-1',
-                  { 'text-green-500': storeCDiff > 0, 'text-pink-500': storeCDiff < 0 }
-                ]">
+                  { 'text-green-500': storeCDiff > 0, 'text-pink-500': storeCDiff < 0 },
+                ]"
+              >
                 {{ storeCDiff > 0 ? '+' : '' }}{{ storeCDiff }}
               </span>
             </span>
@@ -884,16 +893,18 @@ function refreshChart() {
                   'fw-700 fs-large pi pr-1',
                   {
                     'pi-arrow-up text-green-500': storeDDiff > 0,
-                    'pi-arrow-down text-pink-500': storeDDiff < 0
-                  }
-                ]" />
+                    'pi-arrow-down text-pink-500': storeDDiff < 0,
+                  },
+                ]"
+              />
               ${{ storeDTotalValue }}
               <span
                 v-if="storeDDiff !== 0"
                 :class="[
                   'fw-500 fs-normal ml-1',
-                  { 'text-green-500': storeDDiff > 0, 'text-pink-500': storeDDiff < 0 }
-                ]">
+                  { 'text-green-500': storeDDiff > 0, 'text-pink-500': storeDDiff < 0 },
+                ]"
+              >
                 {{ storeDDiff > 0 ? '+' : '' }}{{ storeDDiff }}
               </span>
             </span>
@@ -915,7 +926,8 @@ function refreshChart() {
           </div>
         </div>
         <div
-          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface">
+          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface"
+        >
           <span>Mat Orange Case</span>
           <span class="font-medium text-green-500">82% CONV RATE</span>
         </div>
@@ -924,7 +936,8 @@ function refreshChart() {
           <span class="font-medium text-green-500">78% CONV RATE</span>
         </div>
         <div
-          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface">
+          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface"
+        >
           <span>Orange Black Hoodie</span>
           <span class="font-medium text-green-500">61% CONV RATE</span>
         </div>
@@ -933,7 +946,8 @@ function refreshChart() {
           <span class="font-medium text-orange-500">48% CONV RATE</span>
         </div>
         <div
-          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface">
+          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface"
+        >
           <span>Robots T-Shirt</span>
           <span class="font-medium text-orange-500">34% CONV RATE</span>
         </div>
@@ -951,21 +965,24 @@ function refreshChart() {
           class="p-datatable-customers"
           :rows="4"
           style="margin-bottom: 20px"
-          :paginator="true">
+          :paginator="true"
+        >
           <Column header="Logo" header-style="width:20%; min-width:10rem;">
             <template #body="slotProps">
               <img
                 :src="'/demo/images/product/' + slotProps.data.image"
                 class="shadow-lg"
                 :alt="slotProps.data.image"
-                width="50" />
+                width="50"
+              />
             </template>
           </Column>
           <Column
             field="name"
             header="Name"
             :sortable="true"
-            header-style="width:20%; min-width:10rem;">
+            header-style="width:20%; min-width:10rem;"
+          >
             <template #body="slotProps">
               {{ slotProps.data.name }}
             </template>
@@ -974,7 +991,8 @@ function refreshChart() {
             field="category"
             header="Category"
             :sortable="true"
-            header-style="width:20%; min-width:10rem;">
+            header-style="width:20%; min-width:10rem;"
+          >
             <template #body="slotProps">
               {{ slotProps.data.category }}
             </template>
@@ -983,7 +1001,8 @@ function refreshChart() {
             field="price"
             header="Price"
             :sortable="true"
-            header-style="width:20%; min-width:10rem;">
+            header-style="width:20%; min-width:10rem;"
+          >
             <template #body="slotProps">
               {{ formatCurrency(slotProps.data.price) }}
             </template>
@@ -1058,7 +1077,8 @@ function refreshChart() {
         <div class="flex flex-col gap-4">
           <div
             :class="containerClassesPrimary()"
-            class="flex flex-col p-4 gap-4 w-full justify-between rounded-md">
+            class="flex flex-col p-4 gap-4 w-full justify-between rounded-md"
+          >
             <div class="flex justify-between items-center">
               <span class="m-0 text-surface-900 dark:text-surface-0 text-2xl font-medium">
                 Expenses
@@ -1072,7 +1092,8 @@ function refreshChart() {
           <div class="flex flex-col lg:flex-row gap-4 justify-between flex-1">
             <div
               :class="containerClassesRed()"
-              class="flex flex-col p-4 w-full justify-between rounded-md">
+              class="flex flex-col p-4 w-full justify-between rounded-md"
+            >
               <div class="flex justify-between">
                 <div class="flex flex-col gap-1">
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">23</span>
@@ -1109,7 +1130,8 @@ function refreshChart() {
             </div>
             <div
               :class="containerClassesTeal()"
-              class="flex flex-col p-4 w-full justify-between rounded-md">
+              class="flex flex-col p-4 w-full justify-between rounded-md"
+            >
               <div class="flex justify-between">
                 <div class="flex flex-col gap-1">
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">54</span>
@@ -1146,7 +1168,8 @@ function refreshChart() {
             </div>
             <div
               :class="containerClassesYellow()"
-              class="flex flex-col p-4 gap-4 w-full justify-between rounded-md">
+              class="flex flex-col p-4 gap-4 w-full justify-between rounded-md"
+            >
               <div class="flex justify-between">
                 <div class="flex flex-col gap-1">
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">99+</span>

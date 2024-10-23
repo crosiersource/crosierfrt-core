@@ -17,9 +17,9 @@ const item = ref([
             { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
             { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
             { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/uikit/button' },
-            { label: 'File', icon: 'pi pi-fw pi-file', to: '/uikit/file' }
-          ]
-        }
+            { label: 'File', icon: 'pi pi-fw pi-file', to: '/uikit/file' },
+          ],
+        },
       ],
       [
         {
@@ -29,9 +29,9 @@ const item = ref([
             { label: 'List', icon: 'pi pi-fw pi-list', to: '/uikit/list' },
             { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/uikit/tree' },
             { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/uikit/panel' },
-            { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/uikit/charts' }
-          ]
-        }
+            { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/uikit/charts' },
+          ],
+        },
       ],
       [
         {
@@ -41,11 +41,11 @@ const item = ref([
             { label: 'Media', icon: 'pi pi-fw pi-image', to: '/uikit/media' },
             { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/uikit/menu' },
             { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/uikit/message' },
-            { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/uikit/misc' }
-          ]
-        }
-      ]
-    ]
+            { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/uikit/misc' },
+          ],
+        },
+      ],
+    ],
   },
   {
     label: 'UTILITIES',
@@ -58,18 +58,18 @@ const item = ref([
               label: 'Buy Now',
               icon: 'pi pi-fw pi-shopping-cart',
               url: 'https://www.primefaces.org/store',
-              target: '_blank'
+              target: '_blank',
             },
             {
               label: 'Documentation',
               icon: 'pi pi-fw pi-info-circle',
-              to: '/documentation'
-            }
-          ]
-        }
-      ]
-    ]
-  }
+              to: '/documentation',
+            },
+          ],
+        },
+      ],
+    ],
+  },
 ]);
 
 function focusSearchInput() {
@@ -87,12 +87,14 @@ function focusSearchInput() {
           src="https://www.crosier.com.br/imgs/CROSIER_branco_transp.png"
           alt="Image"
           width="180"
-          class="layout-topbar-logo-full" />
+          class="layout-topbar-logo-full"
+        />
         <Image
           src="https://www.crosier.com.br/imgs/CROSIER_branco_transp.png"
           alt="Image"
           width="70"
-          class="layout-topbar-logo-slim" />
+          class="layout-topbar-logo-slim"
+        />
       </RouterLink>
       <a ref="menuButton" class="layout-menu-button" @click="onMenuToggle">
         <i class="pi pi-chevron-right" />
@@ -117,9 +119,10 @@ function focusSearchInput() {
                 enterActiveClass: 'animate-scalein',
                 leaveToClass: '!hidden',
                 leaveActiveClass: 'animate-fadeout',
-                hideOnOutsideClick: true
+                hideOnOutsideClick: true,
               }"
-              @click="focusSearchInput()">
+              @click="focusSearchInput()"
+            >
               <i class="pi pi-search" />
             </a>
 
@@ -130,13 +133,14 @@ function focusSearchInput() {
                 v-styleclass="{
                   selector: '.layout-search-panel',
                   leaveToClass: '!hidden',
-                  leaveActiveClass: 'animate-fadeout'
+                  leaveActiveClass: 'animate-fadeout',
                 }"
                 type="button"
                 icon="pi pi-times"
                 rounded
                 text
-                plain />
+                plain
+              />
             </div>
           </li>
           <li>
@@ -147,9 +151,10 @@ function focusSearchInput() {
                 enterActiveClass: 'animate-scalein',
                 leaveToClass: 'hidden',
                 leaveActiveClass: 'animate-fadeout',
-                hideOnOutsideClick: true
+                hideOnOutsideClick: true,
               }"
-              class="">
+              class=""
+            >
               <OverlayBadge severity="warn" :pt="{ pcBadge: { root: '!outline-0' } }">
                 <i class="pi pi-bell" />
               </OverlayBadge>
@@ -228,9 +233,10 @@ function focusSearchInput() {
                 enterActiveClass: 'animate-scalein',
                 leaveToClass: 'hidden',
                 leaveActiveClass: 'animate-fadeout',
-                hideOnOutsideClick: true
+                hideOnOutsideClick: true,
               }"
-              class="">
+              class=""
+            >
               <i class="pi pi-table" />
             </a>
             <div class="hidden">
@@ -270,37 +276,42 @@ function focusSearchInput() {
                 enterActiveClass: 'animate-scalein',
                 leaveToClass: 'hidden',
                 leaveActiveClass: 'animate-fadeout',
-                hideOnOutsideClick: true
+                hideOnOutsideClick: true,
               }"
-              class="">
+              class=""
+            >
               <img src="/layout/images/avatar/amyelsner.png" alt="avatar" class="w-8 h-8" />
             </a>
             <div class="hidden">
               <ul class="list-none p-0 m-0">
                 <li>
                   <a
-                    class="cursor-pointer flex items-center hover:bg-emphasis duration-150 transition-all px-4 py-2">
+                    class="cursor-pointer flex items-center hover:bg-emphasis duration-150 transition-all px-4 py-2"
+                  >
                     <i class="pi pi-cog mr-2" />
                     <span>Settings</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    class="cursor-pointer flex items-center hover:bg-emphasis duration-150 transition-all px-4 py-2">
+                    class="cursor-pointer flex items-center hover:bg-emphasis duration-150 transition-all px-4 py-2"
+                  >
                     <i class="pi pi-file-o mr-2" />
                     <span>Terms of Usage</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    class="cursor-pointer flex items-center hover:bg-emphasis duration-150 transition-all px-4 py-2">
+                    class="cursor-pointer flex items-center hover:bg-emphasis duration-150 transition-all px-4 py-2"
+                  >
                     <i class="pi pi-compass mr-2" />
                     <span>Support</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    class="cursor-pointer flex items-center hover:bg-emphasis duration-150 transition-all px-4 py-2">
+                    class="cursor-pointer flex items-center hover:bg-emphasis duration-150 transition-all px-4 py-2"
+                  >
                     <i class="pi pi-power-off mr-2" />
                     <span>Logout</span>
                   </a>

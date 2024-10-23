@@ -8,7 +8,8 @@
     :auth-store="authStore"
     :store="userStore"
     form-path="/sec/usuario/form"
-    list-path="/sec/usuario/list">
+    list-path="/sec/usuario/list"
+  >
     <template #filters>
       <VTextField
         id="filters.id"
@@ -16,14 +17,16 @@
         label="Id"
         outlined
         dense
-        clearable />
+        clearable
+      />
 
       <VTextField
         v-model="userStore.filters.username"
         label="Nome de Usuário"
         outlined
         dense
-        clearable />
+        clearable
+      />
     </template>
   </CrosierListS>
 </template>
@@ -36,7 +39,7 @@ export default {
   name: 'UsuarioList',
 
   components: {
-    CrosierListS
+    CrosierListS,
   },
 
   inject: ['authStore'],
@@ -46,13 +49,13 @@ export default {
       headers: [
         { title: 'Id', key: 'id', sortable: true },
         { title: 'Usuário', key: 'username' },
-        { title: '', key: 'actions', sortable: false, width: '1%' }
-      ]
+        { title: '', key: 'actions', sortable: false, width: '1%' },
+      ],
     };
   },
 
   computed: {
-    ...mapStores(useUserStore)
-  }
+    ...mapStores(useUserStore),
+  },
 };
 </script>

@@ -10,19 +10,19 @@ const model = ref([
       {
         label: 'Sales Dashboard',
         icon: 'pi pi-fw pi-home',
-        to: '/'
+        to: '/',
       },
       {
         label: 'Analytics Dashboard',
         icon: 'pi pi-fw pi-chart-pie',
-        to: '/dashboards/dashboardanalytics'
+        to: '/dashboards/dashboardanalytics',
       },
       {
         label: 'SaaS Dashboard',
         icon: 'pi pi-fw pi-bolt',
-        to: '/dashboards/dashboardsaas'
-      }
-    ]
+        to: '/dashboards/dashboardsaas',
+      },
+    ],
   },
   {
     label: 'Apps',
@@ -35,29 +35,29 @@ const model = ref([
           {
             label: 'List',
             icon: 'pi pi-fw pi-image',
-            to: '/apps/blog/list'
+            to: '/apps/blog/list',
           },
           {
             label: 'Detail',
             icon: 'pi pi-fw pi-list',
-            to: '/apps/blog/detail'
+            to: '/apps/blog/detail',
           },
           {
             label: 'Edit',
             icon: 'pi pi-fw pi-pencil',
-            to: '/apps/blog/edit'
-          }
-        ]
+            to: '/apps/blog/edit',
+          },
+        ],
       },
       {
         label: 'Chat',
         icon: 'pi pi-fw pi-comments',
-        to: '/apps/chat'
+        to: '/apps/chat',
       },
       {
         label: 'Files',
         icon: 'pi pi-fw pi-folder',
-        to: '/apps/files'
+        to: '/apps/files',
       },
       {
         label: 'Mail',
@@ -66,26 +66,26 @@ const model = ref([
           {
             label: 'Inbox',
             icon: 'pi pi-fw pi-inbox',
-            to: '/apps/mail/inbox'
+            to: '/apps/mail/inbox',
           },
           {
             label: 'Compose',
             icon: 'pi pi-fw pi-pencil',
-            to: '/apps/mail/compose'
+            to: '/apps/mail/compose',
           },
           {
             label: 'Detail',
             icon: 'pi pi-fw pi-comment',
-            to: '/apps/mail/detail/1000'
-          }
-        ]
+            to: '/apps/mail/detail/1000',
+          },
+        ],
       },
       {
         label: 'Task List',
         icon: 'pi pi-fw pi-check-square',
-        to: '/apps/tasklist'
-      }
-    ]
+        to: '/apps/tasklist',
+      },
+    ],
   },
   {
     label: 'UI Kit',
@@ -94,79 +94,79 @@ const model = ref([
       {
         label: 'Form Layout',
         icon: 'pi pi-fw pi-id-card',
-        to: '/uikit/formlayout'
+        to: '/uikit/formlayout',
       },
       {
         label: 'Input',
         icon: 'pi pi-fw pi-check-square',
-        to: '/uikit/input'
+        to: '/uikit/input',
       },
       {
         label: 'Button',
         icon: 'pi pi-fw pi-box',
-        to: '/uikit/button'
+        to: '/uikit/button',
       },
       {
         label: 'Table',
         icon: 'pi pi-fw pi-table',
-        to: '/uikit/table'
+        to: '/uikit/table',
       },
       {
         label: 'List',
         icon: 'pi pi-fw pi-list',
-        to: '/uikit/list'
+        to: '/uikit/list',
       },
       {
         label: 'Tree',
         icon: 'pi pi-fw pi-share-alt',
-        to: '/uikit/tree'
+        to: '/uikit/tree',
       },
       {
         label: 'Panel',
         icon: 'pi pi-fw pi-tablet',
-        to: '/uikit/panel'
+        to: '/uikit/panel',
       },
       {
         label: 'Overlay',
         icon: 'pi pi-fw pi-clone',
-        to: '/uikit/overlay'
+        to: '/uikit/overlay',
       },
       {
         label: 'Media',
         icon: 'pi pi-fw pi-image',
-        to: '/uikit/media'
+        to: '/uikit/media',
       },
       {
         label: 'Menu',
         icon: 'pi pi-fw pi-bars',
-        to: '/uikit/menu'
+        to: '/uikit/menu',
       },
       {
         label: 'Message',
         icon: 'pi pi-fw pi-comment',
-        to: '/uikit/message'
+        to: '/uikit/message',
       },
       {
         label: 'File',
         icon: 'pi pi-fw pi-file',
-        to: '/uikit/file'
+        to: '/uikit/file',
       },
       {
         label: 'Chart',
         icon: 'pi pi-fw pi-chart-bar',
-        to: '/uikit/charts'
+        to: '/uikit/charts',
       },
       {
         label: 'Timeline',
         icon: 'pi pi-fw pi-calendar',
-        to: '/uikit/timeline'
+        to: '/uikit/timeline',
       },
       {
         label: 'Misc',
         icon: 'pi pi-fw pi-circle-off',
-        to: '/uikit/misc'
-      }
-    ]
+        to: '/uikit/misc',
+      },
+    ],
   },
   {
     label: 'Prime Blocks',
@@ -175,15 +175,15 @@ const model = ref([
       {
         label: 'Free Blocks',
         icon: 'pi pi-fw pi-eye',
-        to: '/blocks'
+        to: '/blocks',
       },
       {
         label: 'All Blocks',
         icon: 'pi pi-fw pi-globe',
         url: 'https://www.primefaces.org/primeblocks-vue',
-        target: '_blank'
-      }
-    ]
+        target: '_blank',
+      },
+    ],
   },
   {
     label: 'Utilities',
@@ -193,9 +193,9 @@ const model = ref([
         label: 'Figma',
         icon: 'pi pi-fw pi-pencil',
         url: 'https://www.figma.com/file/zQOW0XBXdCTqODzEOqwBtt/Preview-%7C-Apollo-2022?node-id=335%3A21768&t=69qVULK1NqM8pmnE-1',
-        target: '_blank'
-      }
-    ]
+        target: '_blank',
+      },
+    ],
   },
   {
     label: 'Pages',
@@ -204,7 +204,7 @@ const model = ref([
       {
         label: 'Landing',
         icon: 'pi pi-fw pi-globe',
-        to: '/landing'
+        to: '/landing',
       },
       {
         label: 'Auth',
@@ -213,96 +213,96 @@ const model = ref([
           {
             label: 'Login',
             icon: 'pi pi-fw pi-sign-in',
-            to: '/auth/login'
+            to: '/auth/login',
           },
           {
             label: 'Login 2',
             icon: 'pi pi-fw pi-sign-in',
-            to: '/auth/login2'
+            to: '/auth/login2',
           },
           {
             label: 'Error',
             icon: 'pi pi-fw pi-times-circle',
-            to: '/auth/error'
+            to: '/auth/error',
           },
           {
             label: 'Error 2',
             icon: 'pi pi-fw pi-times-circle',
-            to: '/auth/error2'
+            to: '/auth/error2',
           },
           {
             label: 'Access Denied',
             icon: 'pi pi-fw pi-lock',
-            to: '/auth/access'
+            to: '/auth/access',
           },
           {
             label: 'Access Denied 2',
             icon: 'pi pi-fw pi-lock',
-            to: '/auth/access2'
+            to: '/auth/access2',
           },
           {
             label: 'Register',
             icon: 'pi pi-fw pi-user-plus',
-            to: '/auth/register'
+            to: '/auth/register',
           },
           {
             label: 'Forgot Password',
             icon: 'pi pi-fw pi-question',
-            to: '/auth/forgotpassword'
+            to: '/auth/forgotpassword',
           },
           {
             label: 'New Password',
             icon: 'pi pi-fw pi-cog',
-            to: '/auth/newpassword'
+            to: '/auth/newpassword',
           },
           {
             label: 'Verification',
             icon: 'pi pi-fw pi-envelope',
-            to: '/auth/verification'
+            to: '/auth/verification',
           },
           {
             label: 'Lock Screen',
             icon: 'pi pi-fw pi-eye-slash',
-            to: '/auth/lockscreen'
-          }
-        ]
+            to: '/auth/lockscreen',
+          },
+        ],
       },
       {
         label: 'Crud',
         icon: 'pi pi-fw pi-pencil',
-        to: '/pages/crud'
+        to: '/pages/crud',
       },
       {
         label: 'Invoice',
         icon: 'pi pi-fw pi-dollar',
-        to: '/pages/invoice'
+        to: '/pages/invoice',
       },
       {
         label: 'About Us',
         icon: 'pi pi-fw pi-user',
-        to: '/pages/aboutus'
+        to: '/pages/aboutus',
       },
       {
         label: 'Help',
         icon: 'pi pi-fw pi-question-circle',
-        to: '/pages/help'
+        to: '/pages/help',
       },
       {
         label: 'Not Found',
         icon: 'pi pi-fw pi-exclamation-circle',
-        to: '/pages/notfound'
+        to: '/pages/notfound',
       },
       {
         label: 'Empty',
         icon: 'pi pi-fw pi-circle-off',
-        to: '/pages/empty'
+        to: '/pages/empty',
       },
       {
         label: 'Contact Us',
         icon: 'pi pi-fw pi-phone',
-        to: '/pages/contact'
-      }
-    ]
+        to: '/pages/contact',
+      },
+    ],
   },
   {
     label: 'E-Commerce',
@@ -311,39 +311,39 @@ const model = ref([
       {
         label: 'Product Overview',
         icon: 'pi pi-fw pi-image',
-        to: '/ecommerce/product-overview'
+        to: '/ecommerce/product-overview',
       },
       {
         label: 'Product List',
         icon: 'pi pi-fw pi-list',
-        to: '/ecommerce/product-list'
+        to: '/ecommerce/product-list',
       },
       {
         label: 'New Product',
         icon: 'pi pi-fw pi-plus',
-        to: '/ecommerce/new-product'
+        to: '/ecommerce/new-product',
       },
       {
         label: 'Shopping Cart',
         icon: 'pi pi-fw pi-shopping-cart',
-        to: '/ecommerce/shopping-cart'
+        to: '/ecommerce/shopping-cart',
       },
       {
         label: 'Checkout Form',
         icon: 'pi pi-fw pi-check-square',
-        to: '/ecommerce/checkout-form'
+        to: '/ecommerce/checkout-form',
       },
       {
         label: 'Order History',
         icon: 'pi pi-fw pi-history',
-        to: '/ecommerce/order-history'
+        to: '/ecommerce/order-history',
       },
       {
         label: 'Order Summary',
         icon: 'pi pi-fw pi-file',
-        to: '/ecommerce/order-summary'
-      }
-    ]
+        to: '/ecommerce/order-summary',
+      },
+    ],
   },
 
   {
@@ -353,14 +353,14 @@ const model = ref([
       {
         label: 'List',
         icon: 'pi pi-fw pi-list',
-        to: '/profile/list'
+        to: '/profile/list',
       },
       {
         label: 'Create',
         icon: 'pi pi-fw pi-plus',
-        to: '/profile/create'
-      }
-    ]
+        to: '/profile/create',
+      },
+    ],
   },
   {
     label: 'Hierarchy',
@@ -376,17 +376,17 @@ const model = ref([
             items: [
               {
                 label: 'Submenu 1.1.1',
-                icon: 'pi pi-fw pi-align-left'
+                icon: 'pi pi-fw pi-align-left',
               },
               {
                 label: 'Submenu 1.1.2',
-                icon: 'pi pi-fw pi-align-left'
+                icon: 'pi pi-fw pi-align-left',
               },
               {
                 label: 'Submenu 1.1.3',
-                icon: 'pi pi-fw pi-align-left'
-              }
-            ]
+                icon: 'pi pi-fw pi-align-left',
+              },
+            ],
           },
           {
             label: 'Submenu 1.2',
@@ -394,11 +394,11 @@ const model = ref([
             items: [
               {
                 label: 'Submenu 1.2.1',
-                icon: 'pi pi-fw pi-align-left'
-              }
-            ]
-          }
-        ]
+                icon: 'pi pi-fw pi-align-left',
+              },
+            ],
+          },
+        ],
       },
       {
         label: 'Submenu 2',
@@ -410,13 +410,13 @@ const model = ref([
             items: [
               {
                 label: 'Submenu 2.1.1',
-                icon: 'pi pi-fw pi-align-left'
+                icon: 'pi pi-fw pi-align-left',
               },
               {
                 label: 'Submenu 2.1.2',
-                icon: 'pi pi-fw pi-align-left'
-              }
-            ]
+                icon: 'pi pi-fw pi-align-left',
+              },
+            ],
           },
           {
             label: 'Submenu 2.2',
@@ -424,13 +424,13 @@ const model = ref([
             items: [
               {
                 label: 'Submenu 2.2.1',
-                icon: 'pi pi-fw pi-align-left'
-              }
-            ]
-          }
-        ]
-      }
-    ]
+                icon: 'pi pi-fw pi-align-left',
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     label: 'Start',
@@ -439,15 +439,15 @@ const model = ref([
       {
         label: 'Buy Now',
         icon: 'pi pi-fw pi-shopping-cart',
-        url: 'https://www.primefaces.org/store'
+        url: 'https://www.primefaces.org/store',
       },
       {
         label: 'Documentation',
         icon: 'pi pi-fw pi-info-circle',
-        to: '/documentation'
-      }
-    ]
-  }
+        to: '/documentation',
+      },
+    ],
+  },
 ]);
 </script>
 

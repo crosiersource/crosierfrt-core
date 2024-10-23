@@ -38,7 +38,7 @@ const iconClass = computed(() => {
     'pi-angle-down':
       (!layoutState.menuProfileActive && profilePositionStart) ||
       (layoutState.menuProfileActive && !profilePositionStart) ||
-      isHorizontal.value
+      isHorizontal.value,
   };
 });
 
@@ -53,7 +53,8 @@ function tooltipValue(tooltipText) {
       <img
         src="/layout/images/avatar/amyelsner.png"
         alt="avatar"
-        style="width: 32px; height: 32px" />
+        style="width: 32px; height: 32px"
+      />
       <span>
         <strong>Amy Elsner</strong>
         <small>Webmaster</small>

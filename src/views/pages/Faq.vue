@@ -10,8 +10,8 @@ const items = ref([
       'Is there a trial period?',
       'Do I need to sign up with credit card?',
       'Is the subscription monthly or annual?',
-      'How many tiers are there?'
-    ]
+      'How many tiers are there?',
+    ],
   },
   {
     label: 'Mailing',
@@ -20,8 +20,8 @@ const items = ref([
       'How do I setup my account?',
       'Is there a limit on mails to send?',
       'What is my inbox size?',
-      'How can I add attachements?'
-    ]
+      'How can I add attachements?',
+    ],
   },
   {
     label: 'Support',
@@ -30,8 +30,8 @@ const items = ref([
       'How can I get support?',
       'What is the response time?',
       'Is there a community forum?',
-      'Is live chat available?'
-    ]
+      'Is live chat available?',
+    ],
   },
   {
     label: 'Billing',
@@ -40,9 +40,9 @@ const items = ref([
       'Will I receive an invoice?',
       'How to provide my billing information?',
       'Is VAT included?',
-      'Can I receive PDF invoices?'
-    ]
-  }
+      'Can I receive PDF invoices?',
+    ],
+  },
 ]);
 
 function changeItem(index) {
@@ -70,8 +70,9 @@ function changeItem(index) {
               class="flex items-center cursor-pointer select-none p-4 transition-colors duration-150 rounded"
               :class="{
                 'bg-primary text-primary-contrast': activeIndex === i,
-                'hover:bg-surface-100 dark:hover:bg-surface-800': activeIndex !== i
-              }">
+                'hover:bg-surface-100 dark:hover:bg-surface-800': activeIndex !== i,
+              }"
+            >
               <i class="mr-2 text-lg" :class="item.icon" />
               <span>{{ item.label }}</span>
             </a>

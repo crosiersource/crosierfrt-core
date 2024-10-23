@@ -8,15 +8,15 @@ export const useMenuStore = defineStore('menu', {
   state: () => {
     return {
       // all these properties will have their type inferred automatically
-      drawer: false
+      drawer: false,
     };
   },
   getters: {
-    getDrawer: (state) => state.drawer
+    getDrawer: (state) => state.drawer,
   },
   actions: {
     setDrawer(drawer) {
       this.drawer = drawer;
-    }
-  }
+    },
+  },
 });

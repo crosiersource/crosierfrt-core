@@ -7,26 +7,26 @@ const events = ref([
     date: '15/10/2020 10:30',
     icon: 'pi pi-shopping-cart',
     color: '#9C27B0',
-    image: 'game-controller.jpg'
+    image: 'game-controller.jpg',
   },
   {
     status: 'Processing',
     date: '15/10/2020 14:00',
     icon: 'pi pi-cog',
-    color: '#673AB7'
+    color: '#673AB7',
   },
   {
     status: 'Shipped',
     date: '15/10/2020 16:15',
     icon: 'pi pi-envelope',
-    color: '#FF9800'
+    color: '#FF9800',
   },
   {
     status: 'Delivered',
     date: '16/10/2020 10:00',
     icon: 'pi pi-check',
-    color: '#607D8B'
-  }
+    color: '#607D8B',
+  },
 ]);
 
 const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
@@ -84,7 +84,8 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
           <template #marker="slotProps">
             <span
               class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
-              :style="{ backgroundColor: slotProps.item.color }">
+              :style="{ backgroundColor: slotProps.item.color }"
+            >
               <i :class="slotProps.item.icon" />
             </span>
           </template>
@@ -102,7 +103,8 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
                   :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.item.image}`"
                   :alt="slotProps.item.name"
                   width="200"
-                  class="shadow-sm" />
+                  class="shadow-sm"
+                />
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
                   consequuntur error repudiandae numquam deserunt quisquam repellat libero

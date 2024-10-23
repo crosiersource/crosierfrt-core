@@ -4,24 +4,24 @@ import { reactive, ref } from 'vue';
 const props = defineProps({
   header: {
     type: String,
-    default: null
+    default: null,
   },
   code: null,
   recent: {
     type: Boolean,
-    default: false
+    default: false,
   },
   free: {
     type: Boolean,
-    default: false
+    default: false,
   },
   containerClass: null,
-  previewStyle: null
+  previewStyle: null,
 });
 
 const BlockView = reactive({
   PREVIEW: 0,
-  CODE: 1
+  CODE: 1,
 });
 const blockView = ref(0);
 
@@ -48,20 +48,23 @@ async function copyCode(event) {
         <a
           tabindex="0"
           :class="{ 'block-action-active': blockView === BlockView.PREVIEW }"
-          @click="activateView($event, BlockView.PREVIEW)">
+          @click="activateView($event, BlockView.PREVIEW)"
+        >
           <span>Preview</span>
         </a>
         <a
           :tabindex="'0'"
           :class="{ 'block-action-active': blockView === BlockView.CODE }"
-          @click="activateView($event, BlockView.CODE)">
+          @click="activateView($event, BlockView.CODE)"
+        >
           <span>Code</span>
         </a>
         <a
           v-tooltip.focus.bottom="{ value: 'Copied to clipboard' }"
           :tabindex="0"
           class="block-action-copy"
-          @click="copyCode($event)">
+          @click="copyCode($event)"
+        >
           <i class="pi pi-copy" />
         </a>
       </div>

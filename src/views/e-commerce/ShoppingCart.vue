@@ -5,7 +5,7 @@ const quantityOptions = [
   { label: '1', value: 1 },
   { label: '2', value: 2 },
   { label: '3', value: 3 },
-  { label: '4', value: 4 }
+  { label: '4', value: 4 },
 ];
 const selectedQuantity = ref({ label: '1', value: 1 });
 const selectedQuantity2 = ref({ label: '1', value: 1 });
@@ -24,14 +24,17 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
     </div>
     <ul class="list-none p-0 m-0">
       <li
-        class="flex flex-col md:flex-row py-12 border-t border-b border-surface-200 dark:border-surface-700 md:items-center">
+        class="flex flex-col md:flex-row py-12 border-t border-b border-surface-200 dark:border-surface-700 md:items-center"
+      >
         <img
           src="/demo/images/ecommerce/shopping-cart/shopping-cart-2-1.png"
           class="w-48 flex-shrink-0 mx-auto md:mx-0"
-          alt="shopping-cart-2-1" />
+          alt="shopping-cart-2-1"
+        />
         <div class="flex-auto py-8 md:pl-8">
           <div
-            class="flex flex-wrap items-start sm:items-center sm:flex-row sm:justify-between border-surface-200 dark:border-surface-700 pb-12">
+            class="flex flex-wrap items-start sm:items-center sm:flex-row sm:justify-between border-surface-200 dark:border-surface-700 pb-12"
+          >
             <div class="w-full sm:w-6/12 flex flex-col">
               <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-4">
                 Product Name
@@ -43,7 +46,8 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
                 <Select
                   v-model="selectedQuantity"
                   :options="quantityOptions"
-                  option-label="label" />
+                  option-label="label"
+                />
               </div>
               <div class="flex flex-col sm:items-end">
                 <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-2 sm:mb-4">
@@ -51,7 +55,8 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
                 </span>
                 <a
                   class="cursor-pointer text-pink-500 font-medium text-sm hover:text-pink-600 transition-colors duration-300"
-                  tabindex="0">
+                  tabindex="0"
+                >
                   Remove
                 </a>
               </div>
@@ -77,14 +82,17 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
         </div>
       </li>
       <li
-        class="flex flex-col md:flex-row py-12 border-t border-b border-surface-200 dark:border-surface-700 md:items-center">
+        class="flex flex-col md:flex-row py-12 border-t border-b border-surface-200 dark:border-surface-700 md:items-center"
+      >
         <img
           src="/demo/images/ecommerce/shopping-cart/shopping-cart-2-2.png"
           class="w-48 flex-shrink-0 mx-auto md:mx-0"
-          alt="shopping-cart-2-2" />
+          alt="shopping-cart-2-2"
+        />
         <div class="flex-auto py-8 md:pl-8">
           <div
-            class="flex flex-wrap items-start sm:items-center sm:flex-row sm:justify-between border-surface-200 dark:border-surface-700 pb-12">
+            class="flex flex-wrap items-start sm:items-center sm:flex-row sm:justify-between border-surface-200 dark:border-surface-700 pb-12"
+          >
             <div class="w-full sm:w-6/12 flex flex-col">
               <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-4">
                 Product Name
@@ -96,7 +104,8 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
                 <Select
                   v-model="selectedQuantity2"
                   :options="quantityOptions"
-                  option-label="label" />
+                  option-label="label"
+                />
               </div>
               <div class="flex flex-col sm:items-end">
                 <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-2 sm:mb-4">
@@ -104,7 +113,8 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
                 </span>
                 <a
                   class="cursor-pointer text-pink-500 font-medium text-sm hover:text-pink-600 transition-colors duration-300"
-                  tabindex="0">
+                  tabindex="0"
+                >
                   Remove
                 </a>
               </div>
@@ -146,7 +156,8 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
           <span class="text-xl text-surface-900 dark:text-surface-0">$8.00</span>
         </li>
         <li
-          class="flex justify-between border-t border-surface-200 dark:border-surface-700 mb-6 pt-6">
+          class="flex justify-between border-t border-surface-200 dark:border-surface-700 mb-6 pt-6"
+        >
           <span class="text-xl text-surface-900 dark:text-surface-0 font-bold text-3xl">Total</span>
           <span class="text-xl text-surface-900 dark:text-surface-0 font-bold text-3xl">
             $90.00

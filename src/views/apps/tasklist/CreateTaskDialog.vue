@@ -6,8 +6,8 @@ const emit = defineEmits(['close', 'save']);
 const props = defineProps({
   selectedTask: {
     type: Object,
-    default: null
-  }
+    default: null,
+  },
 });
 const task = ref({});
 const filteredMembers = ref([]);
@@ -39,7 +39,7 @@ async function filterMembers(event) {
   if (!event.query) return [];
 
   filteredMembers.value = members.filter(
-    (member) => member.name.toLowerCase().indexOf(event.query.toLowerCase()) === 0
+    (member) => member.name.toLowerCase().indexOf(event.query.toLowerCase()) === 0,
   );
 }
 </script>
@@ -60,8 +60,9 @@ async function filterMembers(event) {
         <Editor
           v-model="task.description"
           :pt="{
-            root: { style: { height: '150px' }, class: 'mb-12' }
-          }" />
+            root: { style: { height: '150px' }, class: 'mb-12' },
+          }"
+        />
       </div>
       <div class="col-span-6">
         <label for="start" class="text-surface-900 dark:text-surface-0 font-semibold">
@@ -72,7 +73,8 @@ async function filterMembers(event) {
           date-format="yy-mm-dd"
           :show-time="false"
           input-id="start"
-          placeholder="Start Date" />
+          placeholder="Start Date"
+        />
       </div>
       <div class="col-span-6">
         <label for="end" class="text-surface-900 dark:text-surface-0 font-semibold">Due Date</label>
@@ -81,7 +83,8 @@ async function filterMembers(event) {
           date-format="yy-mm-dd"
           :show-time="false"
           input-id="end"
-          placeholder="End Date" />
+          placeholder="End Date"
+        />
       </div>
       <div class="col-span-12">
         <label for="members" class="text-surface-900 dark:text-surface-0 font-semibold">
@@ -94,13 +97,15 @@ async function filterMembers(event) {
           option-label="name"
           multiple
           :input-style="{ height: '2.5rem' }"
-          @complete="filterMembers($event)">
+          @complete="filterMembers($event)"
+        >
           <template #chip="{ value }">
             <div class="flex items-center">
               <img
                 :src="'/demo/images/avatar/' + value.image"
                 :alt="value.name"
-                class="h-8 w-8 mr-2" />
+                class="h-8 w-8 mr-2"
+              />
               <span class="text-surface-900 dark:text-surface-0 font-medium">{{ value.name }}</span>
             </div>
           </template>
@@ -109,7 +114,8 @@ async function filterMembers(event) {
               <img
                 :src="'/demo/images/avatar/' + option.image"
                 :alt="option.name"
-                class="h-8 w-8 mr-2" />
+                class="h-8 w-8 mr-2"
+              />
               <span class="text-surface-900 dark:text-surface-0 font-medium">
                 {{ option.name }}
               </span>

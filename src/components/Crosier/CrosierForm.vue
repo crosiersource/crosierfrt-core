@@ -12,7 +12,8 @@
         icon="fas fa-list"
         variant="plain"
         title="Listar registros"
-        @click="$router.push({ path: listPath })" />
+        @click="$router.push({ path: listPath })"
+      />
     </VCardTitle>
 
     <VDivider />
@@ -41,29 +42,29 @@ export default {
   props: {
     store: {
       type: Object,
-      required: true
+      required: true,
     },
     titulo: {
       type: String,
-      required: true
+      required: true,
     },
     icon: {
       type: String,
-      required: true
+      required: true,
     },
     listPath: {
       type: String,
-      required: false
+      required: false,
     },
     id: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
 
   data() {
     return {
-      valid: true
+      valid: true,
     };
   },
 
@@ -100,7 +101,7 @@ export default {
 
     limpar() {
       this.store.fields = {};
-    }
-  }
+    },
+  },
 };
 </script>

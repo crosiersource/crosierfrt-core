@@ -6,10 +6,10 @@ export async function deleteEntityData(apiResource, authToken) {
   return axios.delete(apiResource, {
     headers: {
       'Content-Type': 'application/ld+json',
-      Authorization: 'Bearer ' + authToken
+      Authorization: 'Bearer ' + authToken,
     },
     validateStatus(status) {
       return status < 500;
-    }
+    },
   });
 }

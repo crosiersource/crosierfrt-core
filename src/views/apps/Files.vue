@@ -10,7 +10,7 @@ const chartOptions = ref({});
 const chartPlugins = ref({});
 const menuItems = ref([
   { label: 'View', icon: 'pi pi-search' },
-  { label: 'Refresh', icon: 'pi pi-refresh' }
+  { label: 'Refresh', icon: 'pi pi-refresh' },
 ]);
 const menuRef = ref(null);
 const fileUploaderRef = ref(null);
@@ -48,8 +48,8 @@ chartPlugins.value = [
       ctx.fillText(text2, text2X, text2Y);
       ctx.fillStyle = oldFill;
       ctx.save();
-    }
-  }
+    },
+  },
 ];
 chartData.value = {
   datasets: [
@@ -57,21 +57,21 @@ chartData.value = {
       data: [300, 100],
       backgroundColor: [
         documentStyle.getPropertyValue('--p-primary-600'),
-        documentStyle.getPropertyValue('--p-primary-100')
+        documentStyle.getPropertyValue('--p-primary-100'),
       ],
       hoverBackgroundColor: [
         documentStyle.getPropertyValue('--p-primary-700'),
-        documentStyle.getPropertyValue('--p-primary-200')
+        documentStyle.getPropertyValue('--p-primary-200'),
       ],
       borderColor: 'transparent',
-      fill: true
-    }
-  ]
+      fill: true,
+    },
+  ],
 };
 
 chartOptions.value = {
   animation: {
-    duration: 0
+    duration: 0,
   },
   responsive: true,
   maintainAspectRatio: false,
@@ -79,10 +79,10 @@ chartOptions.value = {
   plugins: {
     legend: {
       labels: {
-        color: textColor
-      }
-    }
-  }
+        color: textColor,
+      },
+    },
+  },
 };
 
 function toggleMenuItem(event, index) {
@@ -116,7 +116,8 @@ function onRemoveFile(removeFile) {
               size="small"
               text
               rounded
-              @click="toggleMenuItem($event, i)" />
+              @click="toggleMenuItem($event, i)"
+            />
             <Menu ref="menuRef" popup :model="menuItems" />
           </div>
         </div>
@@ -146,7 +147,8 @@ function onRemoveFile(removeFile) {
             type="doughnut"
             :plugins="chartPlugins"
             :data="chartData"
-            :options="chartOptions" />
+            :options="chartOptions"
+          />
         </div>
         <div class="mt-8 flex gap-4">
           <Button icon="pi pi-search" class="flex-1" label="Details" outlined />
@@ -160,7 +162,8 @@ function onRemoveFile(removeFile) {
         </div>
         <ul class="list-none p-0 m-0">
           <li
-            class="p-4 mb-4 flex items-center justify-between cursor-pointer rounded bg-indigo-50 text-indigo-900">
+            class="p-4 mb-4 flex items-center justify-between cursor-pointer rounded bg-indigo-50 text-indigo-900"
+          >
             <div class="flex items-center">
               <i class="pi pi-image text-2xl mr-4" />
               <span class="ext-lg font-medium">Images</span>
@@ -168,7 +171,8 @@ function onRemoveFile(removeFile) {
             <span class="text-lg font-bold">85</span>
           </li>
           <li
-            class="p-4 mb-4 flex items-center justify-between cursor-pointer rounded bg-purple-50 text-purple-900">
+            class="p-4 mb-4 flex items-center justify-between cursor-pointer rounded bg-purple-50 text-purple-900"
+          >
             <div class="flex items-center">
               <i class="pi pi-file text-2xl mr-4" />
               <span class="ext-lg font-medium">Documents</span>
@@ -176,7 +180,8 @@ function onRemoveFile(removeFile) {
             <span class="text-lg font-bold">231</span>
           </li>
           <li
-            class="p-4 flex items-center justify-between cursor-pointer rounded bg-teal-50 text-teal-900">
+            class="p-4 flex items-center justify-between cursor-pointer rounded bg-teal-50 text-teal-900"
+          >
             <div class="flex items-center">
               <i class="pi pi-video text-2xl mr-4" />
               <span class="ext-lg font-medium">Videos</span>
@@ -203,25 +208,29 @@ function onRemoveFile(removeFile) {
             :max-file-size="1000000"
             :pt="{
               header: { class: '!hidden' },
-              root: { class: '!border-0' }
+              root: { class: '!border-0' },
             }"
-            @select="onSelectedFiles">
+            @select="onSelectedFiles"
+          >
             <template #content>
               <div v-if="uploadFiles.length > 0" class="w-full py-4" :style="{ cursor: 'copy' }">
                 <div v-for="file in uploadFiles" :key="file.name" class="flex flex-wrap gap-8">
                   <div
                     class="remove-file-wrapper relative w-28 h-28 border-4 border-transparent rounded hover:bg-primary hover:text-primary-contrast duration-100 cursor-auto"
-                    :style="{ padding: '1px' }">
+                    :style="{ padding: '1px' }"
+                  >
                     <img
                       :src="file.objectURL"
                       :alt="file.name"
-                      class="w-full h-full rounded shadow" />
+                      class="w-full h-full rounded shadow"
+                    />
                     <Button
                       icon="pi pi-times"
                       class="remove-button text-sm absolute justify-center items-center cursor-pointer"
                       rounded
                       :style="{ top: '-10px', right: '-10px', display: 'none' }"
-                      @click="onRemoveFile(file)" />
+                      @click="onRemoveFile(file)"
+                    />
                   </div>
                 </div>
               </div>
@@ -231,14 +240,16 @@ function onRemoveFile(removeFile) {
                 v-if="uploadFiles.length < 1"
                 class="w-full py-4"
                 :style="{ cursor: 'copy' }"
-                @click="onChooseUploadFiles">
+                @click="onChooseUploadFiles"
+              >
                 <div class="h-full flex flex-col justify-center items-center">
                   <i class="pi pi-upload text-surface-900 dark:text-surface-0 text-2xl mb-4" />
                   <span class="font-bold text-surface-900 dark:text-surface-0 text-xl mb-4">
                     Upload Files
                   </span>
                   <span
-                    class="font-medium text-surface-600 dark:text-surface-200 text-md text-center">
+                    class="font-medium text-surface-600 dark:text-surface-200 text-md text-center"
+                  >
                     Drop or select files
                   </span>
                 </div>
@@ -255,9 +266,11 @@ function onRemoveFile(removeFile) {
           <div
             v-for="(folder, i) in folders"
             :key="i"
-            class="col-span-12 md:col-span-6 xl:col-span-4">
+            class="col-span-12 md:col-span-6 xl:col-span-4"
+          >
             <div
-              class="p-4 border border-surface-200 dark:border-surface-700 flex items-center justify-between hover:bg-surface-100 dark:hover:bg-surface-700 cursor-pointer rounded">
+              class="p-4 border border-surface-200 dark:border-surface-700 flex items-center justify-between hover:bg-surface-100 dark:hover:bg-surface-700 cursor-pointer rounded"
+            >
               <div class="flex items-center">
                 <i class="text-2xl mr-4" :class="folder.icon" />
                 <span class="text-surface-900 dark:text-surface-0 text-lg font-medium">
@@ -288,12 +301,14 @@ function onRemoveFile(removeFile) {
             field="date"
             header="Date"
             header-class="whitespace-nowrap"
-            :header-style="{ minWidth: '12rem' }" />
+            :header-style="{ minWidth: '12rem' }"
+          />
           <Column
             field="fileSize"
             header="File Size"
             sortable
-            :header-style="{ minWidth: '12rem' }" />
+            :header-style="{ minWidth: '12rem' }"
+          />
           <Column class="w-40">
             <template #body>
               <div class="text-center">

@@ -5,5 +5,5 @@ import { deleteEntityData } from './ApiDeleteService';
 export default {
   get: fetchTableData,
   save: saveEntityData,
-  delete: deleteEntityData
+  delete: deleteEntityData,
 };

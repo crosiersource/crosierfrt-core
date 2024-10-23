@@ -8,12 +8,12 @@ const emit = defineEmits(['save', 'update:dialogVisible']);
 const props = defineProps({
   dialogVisible: {
     type: Boolean,
-    default: false
+    default: false,
   },
   mailDetail: {
     type: Object,
-    default: null
-  }
+    default: null,
+  },
 });
 
 const displayMessage = ref(false);
@@ -27,7 +27,7 @@ watch(
   () => props.mailDetail,
   () => {
     updateContent();
-  }
+  },
 );
 
 function updateContent() {
@@ -52,7 +52,7 @@ function setMailAction() {
     spam: false,
     starred: false,
     important: false,
-    date: generateDate()
+    date: generateDate(),
   };
 }
 
@@ -79,13 +79,13 @@ watch(
   () => props.dialogVisible,
   (newValue) => {
     localDialogVisible.value = newValue;
-  }
+  },
 );
 watch(
   () => localDialogVisible.value,
   (newValue) => {
     emit('update:dialogVisible', newValue);
-  }
+  },
 );
 </script>
 
@@ -95,10 +95,12 @@ watch(
     header="New Message"
     modal
     class="mx-4 sm:mx-0 sm:w-full md:w-8/12 lg:w-6/12"
-    content-class="rounded-b border-t border-surface-200 dark:border-surface-700 p-0">
+    content-class="rounded-b border-t border-surface-200 dark:border-surface-700 p-0"
+  >
     <div class="p-0 m-0">
       <div
-        class="bg-surface-0 dark:bg-surface-950 grid grid-cols-12 grid-nogutter flex-col md:flex-row gap-12 p-8 rounded">
+        class="bg-surface-0 dark:bg-surface-950 grid grid-cols-12 grid-nogutter flex-col md:flex-row gap-12 p-8 rounded"
+      >
         <div class="col">
           <label for="to" class="block text-surface-900 dark:text-surface-0 font-semibold mb-4">
             To
@@ -110,13 +112,15 @@ watch(
               v-model="content.from"
               type="text"
               class="w-full pl-16 text-surface-900 dark:text-surface-0 font-semibold"
-              style="height: 3.5rem" />
+              style="height: 3.5rem"
+            />
           </IconField>
         </div>
         <div class="col">
           <label
             for="Subject"
-            class="block text-surface-900 dark:text-surface-0 font-semibold mb-4">
+            class="block text-surface-900 dark:text-surface-0 font-semibold mb-4"
+          >
             Subject
           </label>
           <IconField class="w-full" style="height: 3.5rem">
@@ -127,7 +131,8 @@ watch(
               type="text"
               placeholder="Subject"
               class="w-full pl-16 text-surface-900 dark:text-surface-0 font-semibold"
-              style="height: 3.5rem" />
+              style="height: 3.5rem"
+            />
           </IconField>
         </div>
         <div v-if="displayMessage" class="col-span-12">
@@ -139,7 +144,8 @@ watch(
           <span
             v-tooltip="displayMessage ? 'Hide content' : 'Show content'"
             class="bg-surface-50 dark:bg-surface-950 cursor-pointer rounded px-2"
-            @click="toggleMessage()">
+            @click="toggleMessage()"
+          >
             <i class="pi pi-ellipsis-h" />
           </span>
           <Editor v-model="newMail.message" :editor-style="{ height: '250px' }" class="mt-4" />

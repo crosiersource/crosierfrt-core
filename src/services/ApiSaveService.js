@@ -13,8 +13,8 @@ export async function saveEntityData(apiResource, data, authToken) {
 
   const params = {
     headers: {
-      'Content-Type': 'application/ld+json'
-    }
+      'Content-Type': 'application/ld+json',
+    },
     // validateStatus(status) {
     //   return status < 500; // Resolve only if the status code is less than 500
     // },

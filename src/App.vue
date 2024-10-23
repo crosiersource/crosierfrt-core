@@ -12,12 +12,12 @@ export default {
   data() {
     return {
       authStore: useAuthStore(), // Obtém a store de autenticação
-      loadingStore: useLoadingStore() // Obtém a store de autenticação
+      loadingStore: useLoadingStore(), // Obtém a store de autenticação
     };
   },
   created() {
     provide('authStore', this.authStore); // Fornece a store para todos os componentes filhos
     provide('loadingStore', this.loadingStore); // Fornece a store para todos os componentes filhos
-  }
+  },
 };
 </script>

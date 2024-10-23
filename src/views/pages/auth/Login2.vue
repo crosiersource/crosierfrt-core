@@ -4,7 +4,7 @@ import { ref } from 'vue';
 
 const backgroundImage = ref('url(/demo/images/pages/login-bg.jpg)');
 const backgroundStyle = ref({
-  background: backgroundImage.value
+  background: backgroundImage.value,
 });
 </script>
 
@@ -23,7 +23,8 @@ const backgroundStyle = ref({
 
     <div class="self-center mt-auto mb-auto">
       <div
-        class="text-center z-50 flex flex-col border rounded-md border-surface bg-surface-0 dark:bg-surface-900 px-4">
+        class="text-center z-50 flex flex-col border rounded-md border-surface bg-surface-0 dark:bg-surface-900 px-4"
+      >
         <div class="-mt-8 primary-contrast bg-cyan-700 rounded-md mx-auto px-4 py-1">
           <span class="text-4xl m-0">LOGIN</span>
         </div>

@@ -4,7 +4,8 @@
     titulo="Grupo de Usuários"
     icon="fas fa-user"
     form-path="/sec/grupo/form"
-    list-path="/sec/grupo/list">
+    list-path="/sec/grupo/list"
+  >
     <template #fields>
       <VContainer>
         <VRow>
@@ -17,7 +18,8 @@
               dense
               clearable
               persistent-hint
-              :hint="groupStore.fieldsErrors?.groupname" />
+              :hint="groupStore.fieldsErrors?.groupname"
+            />
           </VCol>
         </VRow>
       </VContainer>
@@ -32,11 +34,11 @@ export default {
   name: 'GrupoForm',
 
   components: {
-    CrosierForm
+    CrosierForm,
   },
 
   computed: {
-    ...mapStores(useGroupStore)
-  }
+    ...mapStores(useGroupStore),
+  },
 };
 </script>

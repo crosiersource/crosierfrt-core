@@ -17,13 +17,13 @@ const deleteProductsDialog = ref(false);
 const product = ref({});
 const selectedProducts = ref();
 const filters = ref({
-  global: { value: null, matchMode: FilterMatchMode.CONTAINS }
+  global: { value: null, matchMode: FilterMatchMode.CONTAINS },
 });
 const submitted = ref(false);
 const statuses = ref([
   { label: 'INSTOCK', value: 'instock' },
   { label: 'LOWSTOCK', value: 'lowstock' },
-  { label: 'OUTOFSTOCK', value: 'outofstock' }
+  { label: 'OUTOFSTOCK', value: 'outofstock' },
 ]);
 
 function formatCurrency(value) {
@@ -55,7 +55,7 @@ function saveProduct() {
         severity: 'success',
         summary: 'Successful',
         detail: 'Product Updated',
-        life: 3000
+        life: 3000,
       });
     } else {
       product.value.id = createId();
@@ -69,7 +69,7 @@ function saveProduct() {
         severity: 'success',
         summary: 'Successful',
         detail: 'Product Created',
-        life: 3000
+        life: 3000,
       });
     }
 
@@ -158,13 +158,15 @@ function getStatusLabel(status) {
             icon="pi pi-plus"
             severity="secondary"
             class="mr-2"
-            @click="openNew" />
+            @click="openNew"
+          />
           <Button
             label="Delete"
             icon="pi pi-trash"
             severity="secondary"
             :disabled="!selectedProducts || !selectedProducts.length"
-            @click="confirmDeleteSelected" />
+            @click="confirmDeleteSelected"
+          />
         </template>
 
         <template #end>
@@ -172,7 +174,8 @@ function getStatusLabel(status) {
             label="Export"
             icon="pi pi-upload"
             severity="secondary"
-            @click="exportCSV($event)" />
+            @click="exportCSV($event)"
+          />
         </template>
       </Toolbar>
 
@@ -186,7 +189,8 @@ function getStatusLabel(status) {
         :filters="filters"
         paginator-template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
         :rows-per-page-options="[5, 10, 25]"
-        current-page-report-template="Showing {first} to {last} of {totalRecords} products">
+        current-page-report-template="Showing {first} to {last} of {totalRecords} products"
+      >
         <template #header>
           <div class="flex flex-wrap gap-2 items-center justify-between">
             <h4 class="m-0">Manage Products</h4>
@@ -208,7 +212,8 @@ function getStatusLabel(status) {
               :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`"
               :alt="slotProps.data.image"
               class="rounded"
-              style="width: 64px" />
+              style="width: 64px"
+            />
           </template>
         </Column>
         <Column field="price" header="Price" sortable style="min-width: 8rem">
@@ -226,7 +231,8 @@ function getStatusLabel(status) {
           <template #body="slotProps">
             <Tag
               :value="slotProps.data.inventoryStatus"
-              :severity="getStatusLabel(slotProps.data.inventoryStatus)" />
+              :severity="getStatusLabel(slotProps.data.inventoryStatus)"
+            />
           </template>
         </Column>
         <Column :exportable="false" style="min-width: 12rem">
@@ -236,13 +242,15 @@ function getStatusLabel(status) {
               outlined
               rounded
               class="mr-2"
-              @click="editProduct(slotProps.data)" />
+              @click="editProduct(slotProps.data)"
+            />
             <Button
               icon="pi pi-trash"
               outlined
               rounded
               severity="danger"
-              @click="confirmDeleteProduct(slotProps.data)" />
+              @click="confirmDeleteProduct(slotProps.data)"
+            />
           </template>
         </Column>
       </DataTable>
@@ -252,13 +260,15 @@ function getStatusLabel(status) {
       v-model:visible="productDialog"
       :style="{ width: '450px' }"
       header="Product Details"
-      :modal="true">
+      :modal="true"
+    >
       <div class="flex flex-col gap-6">
         <img
           v-if="product.image"
           :src="`https://primefaces.org/cdn/primevue/images/product/${product.image}`"
           :alt="product.image"
-          class="block m-auto pb-4" />
+          class="block m-auto pb-4"
+        />
         <div>
           <label for="name" class="block font-bold mb-3">Name</label>
           <InputText
@@ -267,7 +277,8 @@ function getStatusLabel(status) {
             required="true"
             autofocus
             :invalid="submitted && !product.name"
-            fluid />
+            fluid
+          />
           <small v-if="submitted && !product.name" class="text-red-500">Name is required.</small>
         </div>
         <div>
@@ -278,7 +289,8 @@ function getStatusLabel(status) {
             required="true"
             rows="3"
             cols="20"
-            fluid />
+            fluid
+          />
         </div>
         <div>
           <label for="inventoryStatus" class="block font-bold mb-3">Inventory Status</label>
@@ -288,7 +300,8 @@ function getStatusLabel(status) {
             :options="statuses"
             option-label="label"
             placeholder="Select a Status"
-            fluid />
+            fluid
+          />
         </div>
 
         <div>
@@ -299,7 +312,8 @@ function getStatusLabel(status) {
                 id="category1"
                 v-model="product.category"
                 name="category"
-                value="Accessories" />
+                value="Accessories"
+              />
               <label for="category1">Accessories</label>
             </div>
             <div class="flex items-center gap-2 col-span-6">
@@ -307,7 +321,8 @@ function getStatusLabel(status) {
                 id="category2"
                 v-model="product.category"
                 name="category"
-                value="Clothing" />
+                value="Clothing"
+              />
               <label for="category2">Clothing</label>
             </div>
             <div class="flex items-center gap-2 col-span-6">
@@ -315,7 +330,8 @@ function getStatusLabel(status) {
                 id="category3"
                 v-model="product.category"
                 name="category"
-                value="Electronics" />
+                value="Electronics"
+              />
               <label for="category3">Electronics</label>
             </div>
             <div class="flex items-center gap-2 col-span-6">
@@ -323,7 +339,8 @@ function getStatusLabel(status) {
                 id="category4"
                 v-model="product.category"
                 name="category"
-                value="Fitness" />
+                value="Fitness"
+              />
               <label for="category4">Fitness</label>
             </div>
           </div>
@@ -338,7 +355,8 @@ function getStatusLabel(status) {
               mode="currency"
               currency="USD"
               locale="en-US"
-              fluid />
+              fluid
+            />
           </div>
           <div class="col-span-6">
             <label for="quantity" class="block font-bold mb-3">Quantity</label>
@@ -357,7 +375,8 @@ function getStatusLabel(status) {
       v-model:visible="deleteProductDialog"
       :style="{ width: '450px' }"
       header="Confirm"
-      :modal="true">
+      :modal="true"
+    >
       <div class="flex items-center gap-4">
         <i class="pi pi-exclamation-triangle !text-3xl" />
         <span v-if="product">
@@ -376,7 +395,8 @@ function getStatusLabel(status) {
       v-model:visible="deleteProductsDialog"
       :style="{ width: '450px' }"
       header="Confirm"
-      :modal="true">
+      :modal="true"
+    >
       <div class="flex items-center gap-4">
         <i class="pi pi-exclamation-triangle !text-3xl" />
         <span v-if="product">Are you sure you want to delete the selected products?</span>

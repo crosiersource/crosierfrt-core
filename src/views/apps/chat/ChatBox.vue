@@ -4,8 +4,8 @@ import { ref } from 'vue';
 defineProps({
   user: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const defaultUserId = ref(123);
@@ -90,7 +90,7 @@ const emojis = [
   '😢',
   '😥',
   '😪',
-  '🤤'
+  '🤤',
 ];
 
 function parseDate(timestamp) {
@@ -104,7 +104,7 @@ function sendMessage() {
   const message = {
     text: textContent.value,
     ownerId: 123,
-    createdAt: new Date().getTime()
+    createdAt: new Date().getTime(),
   };
 
   emit('send:message', message);
@@ -124,14 +124,16 @@ function addEmoji(emoji) {
         <img
           :src="'/demo/images/avatar/' + user.image"
           :alt="user.name"
-          class="w-16 h-16 rounded-full shadow-lg" />
+          class="w-16 h-16 rounded-full shadow-lg"
+        />
         <span
           class="w-4 h-4 rounded-full border-2 border-surface-200 dark:border-surface-700 absolute bottom-0 right-0"
           :class="{
             'bg-green-400': user.status === 'active',
             'bg-red-400': user.status === 'busy',
-            'bg-yellow-400': user.status === 'away'
-          }" />
+            'bg-yellow-400': user.status === 'away',
+          }"
+        />
       </div>
       <div class="mr-2">
         <span class="text-surface-900 dark:text-surface-0 font-semibold block">
@@ -146,20 +148,23 @@ function addEmoji(emoji) {
           class="mr-4"
           outlined
           severity="secondary"
-          rounded />
+          rounded
+        />
         <Button type="button" icon="pi pi-ellipsis-v" outlined severity="secondary" rounded />
       </div>
     </div>
     <div
       class="user-message-container p-4 md:px-6 lg:px-12 lg:py-6 mt-2 overflow-y-auto"
-      style="max-height: 53vh">
+      style="max-height: 53vh"
+    >
       <div v-for="message in user.messages" :key="message">
         <div v-if="message.ownerId !== 123" class="grid gap-4 grid-nogutter mb-6">
           <div class="mr-4 mt-1">
             <img
               :src="'/demo/images/avatar/' + user.image"
               :alt="user.name"
-              class="w-12 h-12 rounded-full shadow-lg" />
+              class="w-12 h-12 rounded-full shadow-lg"
+            />
           </div>
           <div class="col mt-4">
             <p class="text-surface-900 dark:text-surface-0 font-semibold mb-4">
@@ -167,7 +172,8 @@ function addEmoji(emoji) {
             </p>
             <span
               class="text-surface-700 dark:text-surface-100 inline-block font-medium border border-surface-200 dark:border-surface-700 p-4 whitespace-normal rounded"
-              style="word-break: break-word; max-width: 80%">
+              style="word-break: break-word; max-width: 80%"
+            >
               {{ message.text }}
             </span>
             <p class="text-surface-700 dark:text-surface-100 mt-4">
@@ -181,7 +187,8 @@ function addEmoji(emoji) {
           <div class="col mt-4 text-right">
             <span
               class="inline-block text-left font-medium border border-surface-200 dark:border-surface-700 bg-primary-100 text-primary-900 p-4 whitespace-normal rounded"
-              style="word-break: break-word; max-width: 80%">
+              style="word-break: break-word; max-width: 80%"
+            >
               {{ message.text }}
             </span>
             <p class="text-surface-700 dark:text-surface-100 mt-4">
@@ -193,19 +200,22 @@ function addEmoji(emoji) {
       </div>
     </div>
     <div
-      class="p-4 md:p-6 lg:p-12 flex flex-col sm:flex-row items-center mt-auto border-t border-surface-200 dark:border-surface-700 gap-4">
+      class="p-4 md:p-6 lg:p-12 flex flex-col sm:flex-row items-center mt-auto border-t border-surface-200 dark:border-surface-700 gap-4"
+    >
       <InputText
         id="message"
         v-model="textContent"
         type="text"
         placeholder="Type a message"
         class="flex-1 w-full sm:w-auto rounded"
-        @keydown.enter="sendMessage()" />
+        @keydown.enter="sendMessage()"
+      />
       <div class="flex w-full sm:w-auto gap-4">
         <Button
           class="w-full sm:w-auto justify-center text-xl"
           severity="secondary"
-          @click="(event) => $refs.op.toggle(event)">
+          @click="(event) => $refs.op.toggle(event)"
+        >
           😀
         </Button>
         <Button label="Send" icon="pi pi-send" class="w-full sm:w-auto" @click="sendMessage()" />
@@ -221,6 +231,7 @@ function addEmoji(emoji) {
       :label="emoji"
       class="p-2 text-2xl"
       text
-      @click="addEmoji(emoji)" />
+      @click="addEmoji(emoji)"
+    />
   </Popover>
 </template>

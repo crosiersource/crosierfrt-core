@@ -57,22 +57,22 @@ function confirm(event) {
     rejectProps: {
       label: 'Cancel',
       severity: 'secondary',
-      outlined: true
+      outlined: true,
     },
     acceptProps: {
-      label: 'Save'
+      label: 'Save',
     },
     accept: () => {
       toast.add({
         severity: 'info',
         summary: 'Confirmed',
         detail: 'You have accepted',
-        life: 3000
+        life: 3000,
       });
     },
     reject: () => {
       toast.add({ severity: 'info', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
-    }
+    },
   });
 }
 </script>
@@ -87,7 +87,8 @@ function confirm(event) {
           header="Dialog"
           :breakpoints="{ '960px': '75vw' }"
           :style="{ width: '30vw' }"
-          :modal="true">
+          :modal="true"
+        >
           <p class="leading-normal m-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -114,14 +115,16 @@ function confirm(event) {
               selection-mode="single"
               :paginator="true"
               :rows="5"
-              @row-select="onProductSelect">
+              @row-select="onProductSelect"
+            >
               <Column field="name" header="Name" sortable style="min-width: 12rem" />
               <Column header="Image">
                 <template #body="slotProps">
                   <img
                     :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`"
                     :alt="slotProps.data.image"
-                    class="w-16 shadow-sm" />
+                    class="w-16 shadow-sm"
+                  />
                 </template>
               </Column>
               <Column field="price" header="Price" sortable style="min-width: 8rem">
@@ -198,7 +201,8 @@ function confirm(event) {
           icon="pi pi-check"
           label="Confirm"
           class="mr-2"
-          @click="confirm($event)" />
+          @click="confirm($event)"
+        />
       </div>
 
       <div class="card">
@@ -208,12 +212,14 @@ function confirm(event) {
           icon="pi pi-trash"
           severity="danger"
           style="width: auto"
-          @click="openConfirmation" />
+          @click="openConfirmation"
+        />
         <Dialog
           v-model:visible="displayConfirmation"
           header="Confirmation"
           :style="{ width: '350px' }"
-          :modal="true">
+          :modal="true"
+        >
           <div class="flex items-center justify-center">
             <i class="pi pi-exclamation-triangle mr-4" style="font-size: 2rem" />
             <span>Are you sure you want to proceed?</span>
@@ -224,14 +230,16 @@ function confirm(event) {
               icon="pi pi-times"
               text
               severity="secondary"
-              @click="closeConfirmation" />
+              @click="closeConfirmation"
+            />
             <Button
               label="Yes"
               icon="pi pi-check"
               severity="danger"
               outlined
               autofocus
-              @click="closeConfirmation" />
+              @click="closeConfirmation"
+            />
           </template>
         </Dialog>
       </div>

@@ -24,7 +24,8 @@ onMounted(() => {
     <TreeTable
       v-model:selection-keys="selectedTreeTableValue"
       :value="treeTableValue"
-      selection-mode="checkbox">
+      selection-mode="checkbox"
+    >
       <Column field="name" header="Name" :expander="true" />
       <Column field="size" header="Size" />
       <Column field="type" header="Type" />

@@ -12,7 +12,7 @@ export const useAuthStore = defineStore('auth', {
       tokenExpiration: null,
       refreshToken: null,
       refreshTokenExpiration: null,
-      error: null
+      error: null,
     };
   },
 
@@ -29,7 +29,7 @@ export const useAuthStore = defineStore('auth', {
         return state.refreshTokenExpiration * 1000 - Date.now();
       }
       return 0;
-    }
+    },
   },
 
   actions: {
@@ -81,7 +81,7 @@ export const useAuthStore = defineStore('auth', {
       axios
         .post(import.meta.env.VITE_CROSIER_API + '/api/login', {
           username: this.username,
-          password
+          password,
         })
         .then((response) => {
           this.setToken(response.data.token);
@@ -103,7 +103,7 @@ export const useAuthStore = defineStore('auth', {
       try {
         const response = await axios.post(import.meta.env.VITE_CROSIER_API + '/api/token/refresh', {
           token: this.getToken,
-          refresh_token: this.refreshToken
+          refresh_token: this.refreshToken,
         });
 
         this.setToken(response.data.token);
@@ -131,6 +131,6 @@ export const useAuthStore = defineStore('auth', {
       localStorage.removeItem('refreshTokenExpiration');
 
       this.$router.push('/auth/login');
-    }
-  }
+    },
+  },
 });

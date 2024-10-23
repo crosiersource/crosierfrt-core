@@ -13,7 +13,7 @@ export const useUserStore = defineStore('user', {
       fields: {},
       fieldsErrors: {},
 
-      schemaValidator: []
+      schemaValidator: [],
     };
   },
 
@@ -22,7 +22,7 @@ export const useUserStore = defineStore('user', {
 
     getFields: (state) => state.fields,
 
-    getFieldsErrors: (state) => state.fieldsErrors
+    getFieldsErrors: (state) => state.fieldsErrors,
   },
 
   actions: {
@@ -38,7 +38,7 @@ export const useUserStore = defineStore('user', {
 
         const response = await api.get({
           authToken: authStore.token,
-          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/user/${id}`
+          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/user/${id}`,
         });
 
         if (response.data['@id']) {
@@ -58,7 +58,7 @@ export const useUserStore = defineStore('user', {
       loadingStore.setLoading(true);
 
       const schemaValidator = yup.object().shape({
-        username: yup.string().required().typeError()
+        username: yup.string().required().typeError(),
       });
 
       const authStore = useAuthStore();
@@ -78,7 +78,7 @@ export const useUserStore = defineStore('user', {
             if (formData.userRoles) {
               formData.userRoles = formData.userRoles.map((e) => e['@id']);
             }
-          }
+          },
         });
 
         console.log('Retornando do submitForm');
@@ -103,6 +103,6 @@ export const useUserStore = defineStore('user', {
       await api.delete(apiResource, authStore.token);
 
       loadingStore.setLoading(false);
-    }
-  }
+    },
+  },
 });

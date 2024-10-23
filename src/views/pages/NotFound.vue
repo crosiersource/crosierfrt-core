@@ -6,7 +6,7 @@ const router = useRouter();
 
 const backgroundImage = ref('url(/demo/images/pages/404-bg.jpg)');
 const backgroundStyle = ref({
-  background: backgroundImage.value
+  background: backgroundImage.value,
 });
 
 function navigateToDashboard() {
@@ -29,7 +29,8 @@ function navigateToDashboard() {
 
     <div class="self-center mt-auto mb-auto">
       <div
-        class="text-center z-40 rounded-lg border border-surface bg-white p-4 shadow-md flex flex-col">
+        class="text-center z-40 rounded-lg border border-surface bg-white p-4 shadow-md flex flex-col"
+      >
         <div class="rounded-md mx-auto border border-surface bg-slate-700 px-4 py-1">
           <h2 class="m-0 text-white">NOT FOUND</h2>
         </div>

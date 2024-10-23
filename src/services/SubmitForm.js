@@ -13,7 +13,7 @@ export async function submitForm({
   setUrlId = true,
   fnBeforeSave = null,
   fnAfterGet = null,
-  commitFormDataAfterSave = true
+  commitFormDataAfterSave = true,
 }) {
   console.log('vou para ' + apiResource);
 

@@ -4,19 +4,19 @@ import { ref } from 'vue';
 const items = ref([
   {
     label: 'Update',
-    icon: 'pi pi-refresh'
+    icon: 'pi pi-refresh',
   },
   {
     label: 'Delete',
-    icon: 'pi pi-times'
+    icon: 'pi pi-times',
   },
   {
-    separator: true
+    separator: true,
   },
   {
     label: 'Home',
-    icon: 'pi pi-home'
-  }
+    icon: 'pi pi-home',
+  },
 ]);
 
 const loading = ref([false, false, false]);
@@ -193,7 +193,8 @@ function load(index) {
             label="Search"
             icon="pi pi-search"
             :loading="loading[0]"
-            @click="load(0)" />
+            @click="load(0)"
+          />
           <Button
             type="button"
             class="mr-2 mb-2"
@@ -201,19 +202,22 @@ function load(index) {
             icon="pi pi-search"
             icon-pos="right"
             :loading="loading[1]"
-            @click="load(1)" />
+            @click="load(1)"
+          />
           <Button
             type="button"
             class="mr-2 mb-2"
             icon="pi pi-search"
             :loading="loading[2]"
-            @click="load(2)" />
+            @click="load(2)"
+          />
           <Button
             type="button"
             class="mr-2 mb-2"
             label="Search"
             :loading="loading[3]"
-            @click="load(3)" />
+            @click="load(3)"
+          />
         </div>
       </div>
     </div>

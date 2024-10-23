@@ -13,17 +13,17 @@ const op = ref(null);
 
 const items = ref([
   { label: 'Update', icon: 'pi pi-fw pi-refresh' },
-  { label: 'Edit', icon: 'pi pi-fw pi-pencil' }
+  { label: 'Edit', icon: 'pi pi-fw pi-pencil' },
 ]);
 const items2 = ref([
   { label: 'New', icon: 'pi pi-fw pi-plus' },
   { label: 'Edit', icon: 'pi pi-fw pi-pencil' },
-  { label: 'Delete', icon: 'pi pi-fw pi-trash' }
+  { label: 'Delete', icon: 'pi pi-fw pi-trash' },
 ]);
 const items3 = ref([
   { label: 'View Media', icon: 'pi pi-fw pi-images' },
   { label: 'Starred Messages', icon: 'pi pi-fw pi-star' },
-  { label: 'Search', icon: 'pi pi-fw pi-search' }
+  { label: 'Search', icon: 'pi pi-fw pi-search' },
 ]);
 const timelineEvents = ref([
   {
@@ -31,29 +31,29 @@ const timelineEvents = ref([
     date: '15/10/2020 10:30',
     icon: 'pi pi-shopping-cart',
     color: '#E91E63',
-    description: 'Richard Jones (C8012) has ordered a blue t-shirt for $79.'
+    description: 'Richard Jones (C8012) has ordered a blue t-shirt for $79.',
   },
   {
     status: 'Processing',
     date: '15/10/2020 14:00',
     icon: 'pi pi-cog',
     color: '#FB8C00',
-    description: 'Order #99207 has processed succesfully.'
+    description: 'Order #99207 has processed succesfully.',
   },
   {
     status: 'Shipped',
     date: '15/10/2020 16:15',
     icon: 'pi pi-compass',
     color: '#673AB7',
-    description: 'Order #99207 has shipped with shipping code 2222302090.'
+    description: 'Order #99207 has shipped with shipping code 2222302090.',
   },
   {
     status: 'Delivered',
     date: '16/10/2020 10:00',
     icon: 'pi pi-check-square',
     color: '#0097A7',
-    description: 'Richard Jones (C8012) has recieved his blue t-shirt.'
-  }
+    description: 'Richard Jones (C8012) has recieved his blue t-shirt.',
+  },
 ]);
 const chatMessages = ref([
   {
@@ -61,22 +61,22 @@ const chatMessages = ref([
     url: '/demo/images/avatar/ionibowcher.png',
     messages: [
       'Hey M. hope you are well.',
-      'Our idea is accepted by the board. Now it’s time to execute it'
-    ]
+      'Our idea is accepted by the board. Now it’s time to execute it',
+    ],
   },
   { messages: ['We did it! 🤠'] },
   {
     from: 'Ioni Bowcher',
     url: '/demo/images/avatar/ionibowcher.png',
-    messages: ["That's really good!"]
+    messages: ["That's really good!"],
   },
   { messages: ['But it’s important to ship MVP ASAP'] },
   {
     from: 'Ioni Bowcher',
     url: '/demo/images/avatar/ionibowcher.png',
-    messages: ['I’ll be looking at the process then, just to be sure 🤓']
+    messages: ['I’ll be looking at the process then, just to be sure 🤓'],
   },
-  { messages: ['That’s awesome. Thanks!'] }
+  { messages: ['That’s awesome. Thanks!'] },
 ]);
 const chatEmojis = ref([
   '😀',
@@ -155,7 +155,7 @@ const chatEmojis = ref([
   '😢',
   '😥',
   '😪',
-  '🤤'
+  '🤤',
 ]);
 const overviewChartData1 = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -166,9 +166,9 @@ const overviewChartData1 = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.8)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 const overviewChartData2 = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -179,9 +179,9 @@ const overviewChartData2 = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.8)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 const overviewChartData3 = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -192,9 +192,9 @@ const overviewChartData3 = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.8)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 const overviewChartData4 = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -205,102 +205,102 @@ const overviewChartData4 = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.8)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 const overviewChartOptions1 = ref({
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   responsive: true,
   scales: {
     y: {
-      display: false
+      display: false,
     },
     x: {
-      display: false
-    }
+      display: false,
+    },
   },
   tooltips: {
-    enabled: false
+    enabled: false,
   },
   elements: {
     point: {
-      radius: 0
-    }
-  }
+      radius: 0,
+    },
+  },
 });
 const overviewChartOptions2 = ref({
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   scales: {
     y: {
-      display: false
+      display: false,
     },
     x: {
-      display: false
-    }
+      display: false,
+    },
   },
   tooltips: {
-    enabled: false
+    enabled: false,
   },
   elements: {
     point: {
-      radius: 0
-    }
-  }
+      radius: 0,
+    },
+  },
 });
 const overviewChartOptions3 = ref({
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   scales: {
     y: {
-      display: false
+      display: false,
     },
     x: {
-      display: false
-    }
+      display: false,
+    },
   },
   tooltips: {
-    enabled: false
+    enabled: false,
   },
   elements: {
     point: {
-      radius: 0
-    }
-  }
+      radius: 0,
+    },
+  },
 });
 const overviewChartOptions4 = ref({
   plugins: {
     legend: {
-      display: false
-    }
+      display: false,
+    },
   },
   scales: {
     y: {
-      display: false
+      display: false,
     },
     x: {
-      display: false
-    }
+      display: false,
+    },
   },
   tooltips: {
-    enabled: false
+    enabled: false,
   },
   elements: {
     point: {
-      radius: 0
-    }
-  }
+      radius: 0,
+    },
+  },
 });
 const ordersChart = ref({
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -312,7 +312,7 @@ const ordersChart = ref({
       backgroundColor: ['rgba(77, 208, 225, 0.2)'],
       borderWidth: 2,
       fill: true,
-      tension: 0.4
+      tension: 0.4,
     },
     {
       label: 'Completed Orders',
@@ -321,9 +321,9 @@ const ordersChart = ref({
       backgroundColor: ['rgba(63, 81, 181, 0.4)'],
       borderWidth: 2,
       fill: false,
-      tension: 0.4
-    }
-  ]
+      tension: 0.4,
+    },
+  ],
 });
 
 onMounted(async () => {
@@ -337,7 +337,7 @@ watch(
   () => {
     refreshChart();
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 function formatCurrency(value) {
@@ -371,7 +371,7 @@ async function onChatKeydown(event) {
         self: true,
         from: 'Jerome Bell',
         url: '/demo/images/avatar/ivanmagalhaes.png',
-        messages: [message]
+        messages: [message],
       });
     } else {
       lastMessage.messages.push(message);
@@ -382,7 +382,7 @@ async function onChatKeydown(event) {
         nth: false,
         from: 'Ioni Bowcher',
         url: '/demo/images/avatar/ionibowcher.png',
-        messages: ['Always bet on Prime!']
+        messages: ['Always bet on Prime!'],
       });
     }
 
@@ -392,7 +392,7 @@ async function onChatKeydown(event) {
     const chatContainer = document.querySelector('.chat-container');
     chatContainer.scrollTo({
       top: chatContainer.scrollHeight,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
 }
@@ -416,11 +416,11 @@ function getOrdersOptions() {
         display: true,
         labels: {
           font: {
-            family: fontFamily
+            family: fontFamily,
           },
-          color: textColor
-        }
-      }
+          color: textColor,
+        },
+      },
     },
     maintainAspectRatio: false,
     responsive: true,
@@ -428,26 +428,26 @@ function getOrdersOptions() {
       y: {
         ticks: {
           font: {
-            family: fontFamily
+            family: fontFamily,
           },
-          color: textColor
+          color: textColor,
         },
         grid: {
-          color: gridLinesColor
-        }
+          color: gridLinesColor,
+        },
       },
       x: {
         ticks: {
           font: {
-            family: fontFamily
+            family: fontFamily,
           },
-          color: textColor
+          color: textColor,
         },
         grid: {
-          color: gridLinesColor
-        }
-      }
-    }
+          color: gridLinesColor,
+        },
+      },
+    },
   };
 }
 
@@ -474,7 +474,7 @@ function getOverviewColors() {
     tealBorderColor: !isDarkTheme.value ? '#009688' : '#26A69A',
     tealBgColor: !isDarkTheme.value ? '#80CBC4' : '#B2DFDB',
     whiteBorderColor: !isDarkTheme.value ? '#ffffff' : '#ffffff',
-    whiteBgColor: !isDarkTheme.value ? 'rgba(255,255,255,.35)' : 'rgba(255,255,255,.35)'
+    whiteBgColor: !isDarkTheme.value ? 'rgba(255,255,255,.35)' : 'rgba(255,255,255,.35)',
   };
 }
 </script>
@@ -504,7 +504,8 @@ function getOverviewColors() {
               :data="overviewChartData1"
               :options="overviewChartOptions1"
               :height="60"
-              :width="160" />
+              :width="160"
+            />
           </div>
         </div>
       </div>
@@ -532,7 +533,8 @@ function getOverviewColors() {
               :data="overviewChartData2"
               :options="overviewChartOptions2"
               :height="60"
-              :width="160" />
+              :width="160"
+            />
           </div>
         </div>
       </div>
@@ -560,7 +562,8 @@ function getOverviewColors() {
               :data="overviewChartData3"
               :options="overviewChartOptions3"
               :height="60"
-              :width="160" />
+              :width="160"
+            />
           </div>
         </div>
       </div>
@@ -588,7 +591,8 @@ function getOverviewColors() {
               :data="overviewChartData4"
               :options="overviewChartOptions4"
               :height="60"
-              :width="160" />
+              :width="160"
+            />
           </div>
         </div>
       </div>
@@ -693,7 +697,8 @@ function getOverviewColors() {
           :data="ordersChart"
           :options="ordersOptions"
           :height="375"
-          :width="300" />
+          :width="300"
+        />
       </div>
     </div>
 
@@ -727,7 +732,8 @@ function getOverviewColors() {
                   :src="'assets/showcase/images/demo/product/' + slotProps.item.image"
                   :alt="slotProps.item.name"
                   width="200"
-                  class="shadow" />
+                  class="shadow"
+                />
                 <p>{{ slotProps.item.description }}</p>
               </template>
             </Card>
@@ -744,7 +750,8 @@ function getOverviewColors() {
               <img
                 :src="'/demo/images/product/' + slotProps.data.image"
                 class="shadow-lg w-12"
-                :alt="slotProps.data.image" />
+                :alt="slotProps.data.image"
+              />
             </template>
           </Column>
           <Column field="name" header="Name" :sortable="true" header-style=" min-width:14rem;">
@@ -756,7 +763,8 @@ function getOverviewColors() {
             field="category"
             header="Category"
             :sortable="true"
-            header-style="min-width:8rem;">
+            header-style="min-width:8rem;"
+          >
             <template #body="slotProps">
               {{ slotProps.data.category }}
             </template>
@@ -785,14 +793,16 @@ function getOverviewColors() {
               rounded
               text
               plain
-              @click="toggleMenu" />
+              @click="toggleMenu"
+            />
             <Menu ref="menu8" :popup="true" :model="items3" />
           </div>
         </div>
         <div>
           <ul
             ref="chatcontainer"
-            class="chat-container m-0 px-4 pt-4 pb-0 border-0 list-none h-[30rem] overflow-y-auto outline-0">
+            class="chat-container m-0 px-4 pt-4 pb-0 border-0 list-none h-[30rem] overflow-y-auto outline-0"
+          >
             <li
               v-for="(chartMessage, index) in chatMessages"
               :key="index"
@@ -801,20 +811,23 @@ function getOverviewColors() {
                 from: !!chartMessage.from,
                 'text-right justify-end': !chartMessage.from,
                 'mb-3': index !== chatMessages.length - 1,
-                'mb-1': index === chatMessages.length - 1
-              }">
+                'mb-1': index === chatMessages.length - 1,
+              }"
+            >
               <img
                 v-if="!!chartMessage.url"
                 :src="chartMessage.url"
                 alt="avatar"
                 :width="32"
-                class="mr-2" />
+                class="mr-2"
+              />
               <div
                 class="flex flex-col"
                 :class="{
                   'items-start': !!chartMessage.from,
-                  'items-end': !chartMessage.from
-                }">
+                  'items-end': !chartMessage.from,
+                }"
+              >
                 <span
                   v-for="(message, j) in chartMessage.messages"
                   :key="j"
@@ -823,8 +836,9 @@ function getOverviewColors() {
                   :class="{
                     'bg-cyan-500': !!chartMessage.from,
                     'bg-pink-500': !chartMessage.from,
-                    'mt-1': j !== 0
-                  }">
+                    'mt-1': j !== 0,
+                  }"
+                >
                   {{ message }}
                 </span>
               </div>
@@ -838,7 +852,8 @@ function getOverviewColors() {
               ref="input"
               v-model="chatInput"
               placeholder="Write your message (Hint: 'PrimeVue')"
-              @keydown="onChatKeydown($event)" />
+              @keydown="onChatKeydown($event)"
+            />
             <InputGroupAddon class="p-0 overflow-hidden">
               <Button icon="pi pi-video" class="h-full" text plain />
             </InputGroupAddon>
@@ -853,7 +868,8 @@ function getOverviewColors() {
                   class="emoji-button p-2"
                   text
                   plain
-                  @click="onEmojiOverlayPanel(emoji)" />
+                  @click="onEmojiOverlayPanel(emoji)"
+                />
               </Popover>
             </InputGroupAddon>
           </InputGroup>
@@ -940,13 +956,15 @@ function getOverviewColors() {
         <ul class="m-0 p-0 border-0 outline-0 list-none">
           <li class="py-4 px-0">
             <div
-              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700">
+              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700"
+            >
               <img
                 width="32px"
                 height="32px"
                 class="rounded-full mr-4"
                 src="/demo/images/product/blue-band.jpg"
-                alt="product" />
+                alt="product"
+              />
               <span>Blue Band</span>
               <span class="ml-auto">
                 <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
@@ -954,13 +972,15 @@ function getOverviewColors() {
             </div>
 
             <div
-              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700">
+              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700"
+            >
               <img
                 width="32px"
                 height="32px"
                 class="rounded-full mr-4"
                 src="/demo/images/product/bracelet.jpg"
-                alt="product" />
+                alt="product"
+              />
               <span>Bracelet</span>
               <span class="ml-auto">
                 <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
@@ -968,13 +988,15 @@ function getOverviewColors() {
             </div>
 
             <div
-              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700">
+              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700"
+            >
               <img
                 width="32px"
                 height="32px"
                 class="rounded-full mr-4"
                 src="/demo/images/product/black-watch.jpg"
-                alt="product" />
+                alt="product"
+              />
               <span>Black Watch</span>
               <span class="ml-auto">
                 <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
@@ -982,13 +1004,15 @@ function getOverviewColors() {
             </div>
 
             <div
-              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700">
+              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700"
+            >
               <img
                 width="32px"
                 height="32px"
                 class="rounded-full mr-4"
                 src="/demo/images/product/bamboo-watch.jpg"
-                alt="product" />
+                alt="product"
+              />
               <span>Bamboo Watch</span>
               <span class="ml-auto">
                 <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
@@ -996,13 +1020,15 @@ function getOverviewColors() {
             </div>
 
             <div
-              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700">
+              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700"
+            >
               <img
                 width="32px"
                 height="32px"
                 class="rounded-full mr-4"
                 src="/demo/images/product/blue-t-shirt.jpg"
-                alt="product" />
+                alt="product"
+              />
               <span>Blue T-Shirt</span>
               <span class="ml-auto">
                 <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
@@ -1010,13 +1036,15 @@ function getOverviewColors() {
             </div>
 
             <div
-              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700">
+              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700"
+            >
               <img
                 width="32px"
                 height="32px"
                 class="rounded-full mr-4"
                 src="/demo/images/product/game-controller.jpg"
-                alt="product" />
+                alt="product"
+              />
               <span>Game Controller</span>
               <span class="ml-auto">
                 <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
@@ -1024,13 +1052,15 @@ function getOverviewColors() {
             </div>
 
             <div
-              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700">
+              class="rounded h-16 bg-surface-200 dark:bg-surface-600 transition-transform duration-200 flex items-center p-4 mb-2 cursor-pointer hover:bg-surface-100 dark:hover:bg-surface-700"
+            >
               <img
                 width="32px"
                 height="32px"
                 class="rounded-full mr-4"
                 src="/demo/images/product/gold-phone-case.jpg"
-                alt="product" />
+                alt="product"
+              />
               <span>Phone Case</span>
               <span class="ml-auto">
                 <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
