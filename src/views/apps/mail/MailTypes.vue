@@ -112,22 +112,12 @@ function clearMaileActions(mail) {
     :rows-per-page-options="[10, 20, 30]"
     data-key="id"
     row-hover
-    :global-filter-fields="['from', 'to', 'title', 'message']"
-  >
-    <Column
-      selection-mode="multiple"
-      style="width: 4rem"
-    />
+    :global-filter-fields="['from', 'to', 'title', 'message']">
+    <Column selection-mode="multiple" style="width: 4rem" />
     <Column style="width: 8rem">
       <template #header>
         <div class="flex -ml-2">
-          <Button
-            type="button"
-            icon="pi pi-refresh"
-            text
-            plain
-            rounded
-          />
+          <Button type="button" icon="pi pi-refresh" text plain rounded />
           <Button
             type="button"
             icon="pi pi-ellipsis-v"
@@ -135,62 +125,37 @@ function clearMaileActions(mail) {
             text
             plain
             rounded
-            @click="menuRef.toggle($event)"
-          />
-          <Menu
-            ref="menuRef"
-            popup
-            :model="menuItems"
-            class="w-32"
-          />
+            @click="menuRef.toggle($event)" />
+          <Menu ref="menuRef" popup :model="menuItems" class="w-32" />
         </div>
         <div />
       </template>
       <template #body="{ data }">
-        <td
-          v-if="!data.trash && !data.spam"
-          class="w-16"
-        >
-          <span
-            class="cursor-pointer"
-            @click="changeMailType('starred', data)"
-          >
+        <td v-if="!data.trash && !data.spam" class="w-16">
+          <span class="cursor-pointer" @click="changeMailType('starred', data)">
             <i
               class="pi pi-fw text-xl"
-              :class="{ 'pi-star-fill': data.starred, 'pi-star': !data.starred }"
-            />
+              :class="{ 'pi-star-fill': data.starred, 'pi-star': !data.starred }" />
           </span>
         </td>
-        <td
-          v-if="!data.trash && !data.spam"
-          class="w-16"
-        >
-          <span
-            class="cursor-pointer ml-4"
-            @click="changeMailType('important', data)"
-          >
+        <td v-if="!data.trash && !data.spam" class="w-16">
+          <span class="cursor-pointer ml-4" @click="changeMailType('important', data)">
             <i
               class="pi pi-fw text-xl"
-              :class="{ 'pi-bookmark-fill': data.important, 'pi-bookmark': !data.important }"
-            />
+              :class="{ 'pi-bookmark-fill': data.important, 'pi-bookmark': !data.important }" />
           </span>
         </td>
       </template>
     </Column>
     <Column style="min-width: 4rem">
       <template #body="{ data }">
-        <Avatar
-          v-if="!data.image"
-          icon="pi pi-user"
-          shape="circle"
-        />
+        <Avatar v-if="!data.image" icon="pi pi-user" shape="circle" />
         <Avatar
           v-else
           :id="data.id"
           :image="`/demo/images/avatar/${data.image ? data.image : '.png'}`"
           class="cursor-pointer"
-          @click="onNavigateToDetailPage(data.id)"
-        />
+          @click="onNavigateToDetailPage(data.id)" />
       </template>
     </Column>
     <Column style="min-width: 4rem">
@@ -198,8 +163,7 @@ function clearMaileActions(mail) {
         <div
           :style="{ minWidth: '12rem' }"
           class="text-surface-900 dark:text-surface-0 font-semibold cursor-pointer"
-          @click="onNavigateToDetailPage(data.id)"
-        >
+          @click="onNavigateToDetailPage(data.id)">
           {{ data.from || data.to }}
         </div>
       </template>
@@ -209,8 +173,7 @@ function clearMaileActions(mail) {
         <span
           class="font-medium whitespace-nowrap overflow-hidden text-ellipsis block cursor-pointer"
           style="max-width: 30rem"
-          @click="onNavigateToDetailPage(data.id)"
-        >
+          @click="onNavigateToDetailPage(data.id)">
           {{ data.title }}
         </span>
       </template>
@@ -223,8 +186,7 @@ function clearMaileActions(mail) {
             v-model="filterTable.global.value"
             type="text"
             placeholder="Search Mail"
-            class="w-full sm:w-auto"
-          />
+            class="w-full sm:w-auto" />
         </IconField>
       </template>
       <template #body="{ data }">
@@ -232,38 +194,30 @@ function clearMaileActions(mail) {
           <div class="flex justify-end w-full px-0">
             <span
               ref="dateRef"
-              class="date-text text-surface-700 dark:text-surface-100 font-semibold whitespace-nowrap"
-            >
+              class="date-text text-surface-700 dark:text-surface-100 font-semibold whitespace-nowrap">
               {{ data.date }}
             </span>
-            <div
-              ref="actionRef"
-              class="action-buttons"
-              style="display: none"
-            >
+            <div ref="actionRef" class="action-buttons" style="display: none">
               <Button
                 v-tooltip.top="'Archive'"
                 type="button"
                 icon="pi pi-inbox"
                 class="h-8 w-8 mr-2"
-                @click="onSingleMailAction('archive', data)"
-              />
+                @click="onSingleMailAction('archive', data)" />
               <Button
                 v-tooltip.top="'Reply'"
                 type="button"
                 icon="pi pi-reply"
                 class="h-8 w-8 mr-2"
                 severity="secondary"
-                @click="onReplyMail(data)"
-              />
+                @click="onReplyMail(data)" />
               <Button
                 v-tooltip.top="'Trash'"
                 type="button"
                 icon="pi pi-trash"
                 class="h-8 w-8"
                 severity="danger"
-                @click="onSingleMailAction('trash', data)"
-              />
+                @click="onSingleMailAction('trash', data)" />
             </div>
           </div>
         </div>

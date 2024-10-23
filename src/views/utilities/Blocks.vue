@@ -405,14 +405,9 @@ const checked = ref(false);
 
 <template>
   <div>
-    <BlockViewer
-      header="Hero"
-      :code="block1"
-      free
-    >
+    <BlockViewer header="Hero" :code="block1" free>
       <div
-        class="grid grid-cols-12 gap-4 grid-nogutter bg-surface-0 dark:bg-surface-950 text-surface-800 dark:text-surface-50"
-      >
+        class="grid grid-cols-12 gap-4 grid-nogutter bg-surface-0 dark:bg-surface-950 text-surface-800 dark:text-surface-50">
         <div class="col-span-12 md:col-span-6 p-12 text-center md:text-left flex items-center">
           <section>
             <span class="block text-6xl font-bold mb-1">Create the screens</span>
@@ -422,17 +417,8 @@ const checked = ref(false);
               incididunt ut labore et dolore magna aliqua.
             </p>
 
-            <Button
-              label="Learn More"
-              type="button"
-              class="mr-4"
-              raised
-            />
-            <Button
-              label="Live Demo"
-              type="button"
-              outlined
-            />
+            <Button label="Learn More" type="button" class="mr-4" raised />
+            <Button label="Live Demo" type="button" outlined />
           </section>
         </div>
         <div class="col-span-12 md:col-span-6 overflow-hidden">
@@ -440,17 +426,12 @@ const checked = ref(false);
             src="/demo/images/blocks/hero/hero-1.png"
             alt="Image"
             class="md:ml-auto block md:h-full"
-            style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)"
-          >
+            style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)" />
         </div>
       </div>
     </BlockViewer>
 
-    <BlockViewer
-      header="Feature"
-      :code="block2"
-      free
-    >
+    <BlockViewer header="Feature" :code="block2" free>
       <div class="bg-surface-0 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20 text-center">
         <div class="mb-4 font-bold text-3xl">
           <span class="text-surface-900 dark:text-surface-0">One Product,</span>
@@ -463,8 +444,7 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px"
-            >
+              style="border-radius: 10px">
               <i class="pi pi-desktop text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -478,8 +458,7 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px"
-            >
+              style="border-radius: 10px">
               <i class="pi pi-lock text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -493,8 +472,7 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px"
-            >
+              style="border-radius: 10px">
               <i class="pi pi-check-circle text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -508,8 +486,7 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px"
-            >
+              style="border-radius: 10px">
               <i class="pi pi-globe text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -522,8 +499,7 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px"
-            >
+              style="border-radius: 10px">
               <i class="pi pi-github text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -537,8 +513,7 @@ const checked = ref(false);
           <div class="col-span-12 md:col-span-4 md:mb-6 mb-0 px-4">
             <span
               class="p-4 shadow mb-4 inline-block bg-surface-0 dark:bg-surface-900"
-              style="border-radius: 10px"
-            >
+              style="border-radius: 10px">
               <i class="pi pi-shield text-4xl text-blue-500" />
             </span>
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
@@ -553,18 +528,13 @@ const checked = ref(false);
       </div>
     </BlockViewer>
 
-    <BlockViewer
-      header="Pricing"
-      :code="block3"
-      free
-    >
+    <BlockViewer header="Pricing" :code="block3" free>
       <div class="bg-surface-50 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20">
         <div class="text-surface-900 dark:text-surface-0 font-bold text-6xl mb-6 text-center">
           Pricing Plans
         </div>
         <div
-          class="text-surface-700 dark:text-surface-100 text-xl mb-12 text-center leading-normal"
-        >
+          class="text-surface-700 dark:text-surface-100 text-xl mb-12 text-center leading-normal">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos.
         </div>
 
@@ -573,20 +543,19 @@ const checked = ref(false);
             <div class="p-4 h-full">
               <div
                 class="shadow p-4 h-full flex flex-col bg-surface-0 dark:bg-surface-900"
-                style="border-radius: 6px"
-              >
+                style="border-radius: 6px">
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Basic
                 </div>
                 <div class="text-surface-600 dark:text-surface-200">Plan description</div>
-                <hr class="my-4 mx-0 border-t border-0 border-surface">
+                <hr class="my-4 mx-0 border-t border-0 border-surface" />
                 <div class="flex items-center">
                   <span class="font-bold text-2xl text-surface-900 dark:text-surface-0">$9</span>
                   <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">
                     per month
                   </span>
                 </div>
-                <hr class="my-4 mx-0 border-t border-0 border-surface">
+                <hr class="my-4 mx-0 border-t border-0 border-surface" />
                 <ul class="list-none p-0 m-0 grow">
                   <li class="flex items-center mb-4">
                     <i class="pi pi-check-circle text-green-500 mr-2" />
@@ -604,11 +573,8 @@ const checked = ref(false);
                     <span class="text-surface-900 dark:text-surface-0">Morbi tincidunt augue</span>
                   </li>
                 </ul>
-                <hr class="mb-4 mx-0 border-t border-0 border-surface mt-auto">
-                <Button
-                  label="Buy Now"
-                  class="p-4 w-full mt-auto"
-                />
+                <hr class="mb-4 mx-0 border-t border-0 border-surface mt-auto" />
+                <Button label="Buy Now" class="p-4 w-full mt-auto" />
               </div>
             </div>
           </div>
@@ -617,20 +583,19 @@ const checked = ref(false);
             <div class="p-4 h-full">
               <div
                 class="shadow p-4 h-full flex flex-col bg-surface-0 dark:bg-surface-900"
-                style="border-radius: 6px"
-              >
+                style="border-radius: 6px">
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Premium
                 </div>
                 <div class="text-surface-600 dark:text-surface-200">Plan description</div>
-                <hr class="my-4 mx-0 border-t border-0 border-surface">
+                <hr class="my-4 mx-0 border-t border-0 border-surface" />
                 <div class="flex items-center">
                   <span class="font-bold text-2xl text-surface-900 dark:text-surface-0">$29</span>
                   <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">
                     per month
                   </span>
                 </div>
-                <hr class="my-4 mx-0 border-t border-0 border-surface">
+                <hr class="my-4 mx-0 border-t border-0 border-surface" />
                 <ul class="list-none p-0 m-0 grow">
                   <li class="flex items-center mb-4">
                     <i class="pi pi-check-circle text-green-500 mr-2" />
@@ -655,11 +620,8 @@ const checked = ref(false);
                     </span>
                   </li>
                 </ul>
-                <hr class="mb-4 mx-0 border-t border-0 border-surface">
-                <Button
-                  label="Buy Now"
-                  class="p-4 w-full"
-                />
+                <hr class="mb-4 mx-0 border-t border-0 border-surface" />
+                <Button label="Buy Now" class="p-4 w-full" />
               </div>
             </div>
           </div>
@@ -668,20 +630,19 @@ const checked = ref(false);
             <div class="p-4 h-full">
               <div
                 class="shadow p-4 flex flex-col bg-surface-0 dark:bg-surface-900"
-                style="border-radius: 6px"
-              >
+                style="border-radius: 6px">
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Enterprise
                 </div>
                 <div class="text-surface-600 dark:text-surface-200">Plan description</div>
-                <hr class="my-4 mx-0 border-t border-0 border-surface">
+                <hr class="my-4 mx-0 border-t border-0 border-surface" />
                 <div class="flex items-center">
                   <span class="font-bold text-2xl text-surface-900 dark:text-surface-0">$49</span>
                   <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">
                     per month
                   </span>
                 </div>
-                <hr class="my-4 mx-0 border-t border-0 border-surface">
+                <hr class="my-4 mx-0 border-t border-0 border-surface" />
                 <ul class="list-none p-0 m-0 grow">
                   <li class="flex items-center mb-4">
                     <i class="pi pi-check-circle text-green-500 mr-2" />
@@ -716,12 +677,8 @@ const checked = ref(false);
                     <span class="text-surface-900 dark:text-surface-0">Nisi scelerisque</span>
                   </li>
                 </ul>
-                <hr class="mb-4 mx-0 border-t border-0 border-surface">
-                <Button
-                  label="Buy Now"
-                  class="p-4 w-full"
-                  outlined
-                />
+                <hr class="mb-4 mx-0 border-t border-0 border-surface" />
+                <Button label="Buy Now" class="p-4 w-full" outlined />
               </div>
             </div>
           </div>
@@ -729,11 +686,7 @@ const checked = ref(false);
       </div>
     </BlockViewer>
 
-    <BlockViewer
-      header="Call to Action"
-      :code="block4"
-      free
-    >
+    <BlockViewer header="Call to Action" :code="block4" free>
       <div class="bg-surface-0 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20">
         <div class="text-surface-700 dark:text-surface-100 text-center">
           <div class="text-blue-600 font-bold mb-4">
@@ -751,8 +704,7 @@ const checked = ref(false);
             icon="pi pi-discord"
             class="font-bold px-8 py-4 whitespace-nowrap"
             raised
-            rounded
-          />
+            rounded />
         </div>
       </div>
     </BlockViewer>
@@ -761,11 +713,9 @@ const checked = ref(false);
       header="Banner"
       :code="block5"
       container-class="bg-surface-0 dark:bg-surface-950 py-20"
-      free
-    >
+      free>
       <div
-        class="bg-slate-900 text-gray-100 p-4 flex justify-between lg:justify-center items-center flex-wrap"
-      >
+        class="bg-slate-900 text-gray-100 p-4 flex justify-between lg:justify-center items-center flex-wrap">
         <div class="font-bold mr-20">🔥 Hot Deals!</div>
         <div class="items-center hidden lg:flex">
           <span class="leading-normal">
@@ -773,32 +723,23 @@ const checked = ref(false);
           </span>
         </div>
         <a class="flex items-center ml-2 mr-20">
-          <a
-            class="text-white"
-            href="#"
-          ><span class="underline font-bold">Learn More</span></a>
+          <a class="text-white" href="#"><span class="underline font-bold">Learn More</span></a>
         </a>
         <a
           class="flex items-center no-underline justify-center rounded-full text-gray-50 hover:bg-slate-700 cursor-pointer transition-colors duration-150"
-          style="width: 2rem; height: 2rem"
-        >
+          style="width: 2rem; height: 2rem">
           <i class="pi pi-times" />
         </a>
       </div>
     </BlockViewer>
 
     <div class="block-category-title">Application UI</div>
-    <BlockViewer
-      header="Page Heading"
-      :code="block6"
-      free
-    >
+    <BlockViewer header="Page Heading" :code="block6" free>
       <div class="bg-surface-0 dark:bg-surface-950 px-6 py-8 md:px-12 lg:px-20">
         <ul class="list-none p-0 m-0 flex items-center font-medium mb-4">
           <li>
             <a
-              class="text-surface-500 dark:text-surface-300 no-underline leading-normal cursor-pointer"
-            >
+              class="text-surface-500 dark:text-surface-300 no-underline leading-normal cursor-pointer">
               Application
             </a>
           </li>
@@ -828,26 +769,14 @@ const checked = ref(false);
             </div>
           </div>
           <div class="mt-4 lg:mt-0">
-            <Button
-              label="Add"
-              class="mr-2"
-              outlined
-              icon="pi pi-user-plus"
-            />
-            <Button
-              label="Save"
-              icon="pi pi-check"
-            />
+            <Button label="Add" class="mr-2" outlined icon="pi pi-user-plus" />
+            <Button label="Save" icon="pi pi-check" />
           </div>
         </div>
       </div>
     </BlockViewer>
 
-    <BlockViewer
-      header="Stats"
-      :code="block7"
-      free
-    >
+    <BlockViewer header="Stats" :code="block7" free>
       <div class="bg-surface-50 dark:bg-surface-950 px-6 py-8 md:px-12 lg:px-20">
         <div class="grid grid-cols-12 gap-4">
           <div class="col-span-12 md:col-span-6 lg:col-span-3">
@@ -861,8 +790,7 @@ const checked = ref(false);
                 </div>
                 <div
                   class="flex items-center justify-center bg-blue-100 rounded-border"
-                  style="width: 2.5rem; height: 2.5rem"
-                >
+                  style="width: 2.5rem; height: 2.5rem">
                   <i class="pi pi-shopping-cart text-blue-500 text-xl" />
                 </div>
               </div>
@@ -881,8 +809,7 @@ const checked = ref(false);
                 </div>
                 <div
                   class="flex items-center justify-center bg-orange-100 rounded-border"
-                  style="width: 2.5rem; height: 2.5rem"
-                >
+                  style="width: 2.5rem; height: 2.5rem">
                   <i class="pi pi-map-marker text-orange-500 text-xl" />
                 </div>
               </div>
@@ -901,8 +828,7 @@ const checked = ref(false);
                 </div>
                 <div
                   class="flex items-center justify-center bg-cyan-100 rounded-border"
-                  style="width: 2.5rem; height: 2.5rem"
-                >
+                  style="width: 2.5rem; height: 2.5rem">
                   <i class="pi pi-inbox text-cyan-500 text-xl" />
                 </div>
               </div>
@@ -923,8 +849,7 @@ const checked = ref(false);
                 </div>
                 <div
                   class="flex items-center justify-center bg-purple-100 rounded-border"
-                  style="width: 2.5rem; height: 2.5rem"
-                >
+                  style="width: 2.5rem; height: 2.5rem">
                   <i class="pi pi-comment text-purple-500 text-xl" />
                 </div>
               </div>
@@ -940,16 +865,10 @@ const checked = ref(false);
       header="Sign-In"
       :code="block8"
       container-class="bg-surface-50 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20 flex items-center justify-center"
-      free
-    >
+      free>
       <div class="bg-surface-0 dark:bg-surface-900 p-6 shadow rounded-border w-full lg:w-6/12">
         <div class="text-center mb-8">
-          <img
-            src="/demo/images/blocks/logos/hyper.svg"
-            alt="Image"
-            height="50"
-            class="mb-4"
-          >
+          <img src="/demo/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-4" />
           <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">
             Welcome Back
           </div>
@@ -960,44 +879,22 @@ const checked = ref(false);
         </div>
 
         <div>
-          <label
-            for="email1"
-            class="block text-surface-900 dark:text-surface-0 font-medium mb-2"
-          >
+          <label for="email1" class="block text-surface-900 dark:text-surface-0 font-medium mb-2">
             Email
           </label>
-          <InputText
-            id="email1"
-            type="text"
-            placeholder="Email address"
-            class="w-full mb-4"
-          />
+          <InputText id="email1" type="text" placeholder="Email address" class="w-full mb-4" />
 
           <label
             for="password1"
-            class="block text-surface-900 dark:text-surface-0 font-medium mb-2"
-          >
+            class="block text-surface-900 dark:text-surface-0 font-medium mb-2">
             Password
           </label>
-          <InputText
-            id="password1"
-            type="password"
-            placeholder="Password"
-            class="w-full mb-4"
-          />
+          <InputText id="password1" type="password" placeholder="Password" class="w-full mb-4" />
 
           <div class="flex items-center justify-between mb-12">
             <div class="flex items-center">
-              <Checkbox
-                id="rememberme1"
-                v-model="checked"
-                :binary="true"
-                class="mr-2"
-              />
-              <label
-                for="rememberme1"
-                class="text-surface-900 dark:text-surface-0"
-              >
+              <Checkbox id="rememberme1" v-model="checked" :binary="true" class="mr-2" />
+              <label for="rememberme1" class="text-surface-900 dark:text-surface-0">
                 Remember me
               </label>
             </div>
@@ -1006,11 +903,7 @@ const checked = ref(false);
             </a>
           </div>
 
-          <Button
-            label="Sign In"
-            icon="pi pi-user"
-            class="w-full"
-          />
+          <Button label="Sign In" icon="pi pi-user" class="w-full" />
         </div>
       </div>
     </BlockViewer>
@@ -1019,8 +912,7 @@ const checked = ref(false);
       header="Description List"
       :code="block9"
       container-class="bg-surface-0 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20"
-      free
-    >
+      free>
       <div class="bg-surface-0 dark:bg-surface-950">
         <div class="font-medium text-3xl text-surface-900 dark:text-surface-0 mb-4">
           Movie Information
@@ -1034,16 +926,11 @@ const checked = ref(false);
               Title
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1"
-            >
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1">
               Heat
             </div>
             <div class="w-6/12 md:w-2/12 flex justify-end">
-              <Button
-                label="Edit"
-                icon="pi pi-pencil"
-                text
-              />
+              <Button label="Edit" icon="pi pi-pencil" text />
             </div>
           </li>
           <li class="flex items-center py-4 px-2 border-t border-surface flex-wrap">
@@ -1051,24 +938,13 @@ const checked = ref(false);
               Genre
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1"
-            >
-              <Chip
-                label="Crime"
-                class="mr-2"
-              />
-              <Chip
-                label="Drama"
-                class="mr-2"
-              />
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1">
+              <Chip label="Crime" class="mr-2" />
+              <Chip label="Drama" class="mr-2" />
               <Chip label="Thriller" />
             </div>
             <div class="w-6/12 md:w-2/12 flex justify-end">
-              <Button
-                label="Edit"
-                icon="pi pi-pencil"
-                text
-              />
+              <Button label="Edit" icon="pi pi-pencil" text />
             </div>
           </li>
           <li class="flex items-center py-4 px-2 border-t border-surface flex-wrap">
@@ -1076,16 +952,11 @@ const checked = ref(false);
               Director
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1"
-            >
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1">
               Michael Mann
             </div>
             <div class="w-6/12 md:w-2/12 flex justify-end">
-              <Button
-                label="Edit"
-                icon="pi pi-pencil"
-                text
-              />
+              <Button label="Edit" icon="pi pi-pencil" text />
             </div>
           </li>
           <li class="flex items-center py-4 px-2 border-t border-surface flex-wrap">
@@ -1093,16 +964,11 @@ const checked = ref(false);
               Actors
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1"
-            >
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1">
               Robert De Niro, Al Pacino
             </div>
             <div class="w-6/12 md:w-2/12 flex justify-end">
-              <Button
-                label="Edit"
-                icon="pi pi-pencil"
-                text
-              />
+              <Button label="Edit" icon="pi pi-pencil" text />
             </div>
           </li>
           <li class="flex items-center py-4 px-2 border-t border-b border-surface flex-wrap">
@@ -1110,38 +976,25 @@ const checked = ref(false);
               Plot
             </div>
             <div
-              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1 leading-normal"
-            >
+              class="text-surface-900 dark:text-surface-0 w-full md:w-8/12 md:order-none order-1 leading-normal">
               A group of professional bank robbers start to feel the heat from police when they
               unknowingly leave a clue at their latest heist.
             </div>
             <div class="w-6/12 md:w-2/12 flex justify-end">
-              <Button
-                label="Edit"
-                icon="pi pi-pencil"
-                text
-              />
+              <Button label="Edit" icon="pi pi-pencil" text />
             </div>
           </li>
         </ul>
       </div>
     </BlockViewer>
 
-    <BlockViewer
-      header="Card"
-      :code="block10"
-      container-class="px-6 py-20 md:px-12 lg:px-20"
-      free
-    >
+    <BlockViewer header="Card" :code="block10" container-class="px-6 py-20 md:px-12 lg:px-20" free>
       <div class="bg-surface-0 dark:bg-surface-900 p-6 shadow rounded-border">
         <div class="text-3xl font-medium text-surface-900 dark:text-surface-0 mb-4">Card Title</div>
         <div class="font-medium text-surface-500 dark:text-surface-300 mb-4">
           Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.
         </div>
-        <div
-          style="height: 150px"
-          class="border-2 border-dashed border-surface"
-        />
+        <div style="height: 150px" class="border-2 border-dashed border-surface" />
       </div>
     </BlockViewer>
   </div>

@@ -28,8 +28,7 @@ function focus(event) {
         <div class="flex flex-col">
           <div
             style="height: 56px; width: 56px"
-            class="bg-primary-50 rounded-full flex items-center justify-center"
-          >
+            class="bg-primary-50 rounded-full flex items-center justify-center">
             <i class="pi pi-check-circle text-primary !text-4xl" />
           </div>
           <div class="mt-6">
@@ -43,52 +42,33 @@ function focus(event) {
             input-id="val1"
             input-class="text-center"
             :max="9"
-            @keyup="focus($event)"
-          />
+            @keyup="focus($event)" />
           <InputNumber
             v-model="value2"
             input-id="val2"
             input-class="text-center"
             :max="9"
-            @keyup="focus($event)"
-          />
+            @keyup="focus($event)" />
           <InputNumber
             v-model="value3"
             input-id="val3"
             input-class="text-center"
             :max="9"
-            @keyup="focus($event)"
-          />
-          <InputNumber
-            v-model="value4"
-            input-id="val4"
-            input-class="text-center"
-            :max="9"
-          />
+            @keyup="focus($event)" />
+          <InputNumber v-model="value4" input-id="val4" input-class="text-center" :max="9" />
         </Fluid>
         <div class="mt-4">
-          <Button
-            class="w-full"
-            label="VERIFY NOW"
-          />
+          <Button class="w-full" label="VERIFY NOW" />
         </div>
         <div class="mt-4">
-          <Button
-            class="w-full text-primary-500"
-            text
-            label="SEND AGAIN"
-          />
+          <Button class="w-full text-primary-500" text label="SEND AGAIN" />
         </div>
       </div>
     </div>
     <div
       :style="backgroundStyle"
-      class="hidden lg:flex flex-1 items-center justify-center bg-cover"
-    >
-      <img
-        src="/layout/images/logo/vector_logo.png"
-        alt=""
-      >
+      class="hidden lg:flex flex-1 items-center justify-center bg-cover">
+      <img src="/layout/images/logo/vector_logo.png" alt="" />
     </div>
   </div>
 

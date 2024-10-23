@@ -655,8 +655,7 @@ function refreshChart() {
             label="Vertical/Stacked Data"
             class="ml-auto"
             text
-            @click="changeMonthlyDataView()"
-          />
+            @click="changeMonthlyDataView()" />
         </div>
 
         <Chart
@@ -664,8 +663,7 @@ function refreshChart() {
           type="bar"
           :data="chartMonthlyData"
           :options="chartMonthlyOptions"
-          :height="400"
-        />
+          :height="400" />
       </div>
     </div>
 
@@ -674,36 +672,20 @@ function refreshChart() {
         <div class="flex items-center justify-between mb-2">
           <span class="text-xl font-semibold m-0">Insights</span>
           <div>
-            <Button
-              icon="pi pi-ellipsis-h"
-              rounded
-              text
-              plain
-              @click="toggleMenu"
-            />
-            <Menu
-              ref="menuRef"
-              :popup="true"
-              :model="items"
-            />
+            <Button icon="pi pi-ellipsis-h" rounded text plain @click="toggleMenu" />
+            <Menu ref="menuRef" :popup="true" :model="items" />
           </div>
         </div>
         <div class="border-b border-surface text-sm text-muted-color mb-2 flex items-center">
           <span>November 22 - November 29</span>
-          <Button
-            label="Semi/Full Data"
-            class="ml-auto"
-            text
-            @click="changeDoughnutDataView"
-          />
+          <Button label="Semi/Full Data" class="ml-auto" text @click="changeDoughnutDataView" />
         </div>
         <Chart
           ref="doughnutRef"
           type="doughnut"
           :data="doughnutData"
           :options="doughnutOptions"
-          :height="200"
-        />
+          :height="200" />
         <div class="flex flex-col justify-center">
           <div class="flex flex-row items-center mt-6 px-4">
             <i class="pi pi-thumbs-up p-4 rounded-full bg-green-400 text-white" />
@@ -741,18 +723,12 @@ function refreshChart() {
           <div class="w-6/12 text-center p-4 flex flex-col border-r border-surface">
             <span class="font-medium">Target</span>
             <span class="text-muted-color mb-2">10.000</span>
-            <ProgressBar
-              :value="50"
-              :show-value="false"
-            />
+            <ProgressBar :value="50" :show-value="false" />
           </div>
           <div class="w-6/12 text-center p-4 flex flex-col">
             <span class="font-medium">All Time Record</span>
             <span class="text-muted-color mb-2">50.702</span>
-            <ProgressBar
-              :value="24"
-              :show-value="false"
-            />
+            <ProgressBar :value="24" :show-value="false" />
           </div>
         </div>
       </div>
@@ -774,18 +750,12 @@ function refreshChart() {
           <div class="w-6/12 text-center p-4 flex flex-col border-r border-surface">
             <span class="font-medium">Target</span>
             <span class="text-muted-color mb-2">10.000</span>
-            <ProgressBar
-              :value="23"
-              :show-value="false"
-            />
+            <ProgressBar :value="23" :show-value="false" />
           </div>
           <div class="w-6/12 text-center p-4 flex flex-col">
             <span class="font-medium">All Time Record</span>
             <span class="text-muted-color mb-2">99.028</span>
-            <ProgressBar
-              :value="38"
-              :show-value="false"
-            />
+            <ProgressBar :value="38" :show-value="false" />
           </div>
         </div>
       </div>
@@ -807,18 +777,12 @@ function refreshChart() {
           <div class="w-6/12 text-center p-4 flex flex-col border-r border-surface">
             <span class="font-medium">Target</span>
             <span class="text-muted-color mb-2">10.000</span>
-            <ProgressBar
-              :value="62"
-              :show-value="false"
-            />
+            <ProgressBar :value="62" :show-value="false" />
           </div>
           <div class="w-6/12 text-center p-4 flex flex-col">
             <span class="font-medium">All Time Record</span>
             <span class="text-muted-color mb-2">162.550</span>
-            <ProgressBar
-              :value="14"
-              :show-value="false"
-            />
+            <ProgressBar :value="14" :show-value="false" />
           </div>
         </div>
       </div>
@@ -838,27 +802,20 @@ function refreshChart() {
                     'pi-arrow-up text-green-500': storeADiff > 0,
                     'pi-arrow-down text-pink-500': storeADiff < 0
                   }
-                ]"
-              />
+                ]" />
               ${{ storeATotalValue }}
               <span
                 v-if="storeADiff !== 0"
                 :class="[
                   'font-medium text-base ml-1',
                   { 'text-green-500': storeADiff > 0, 'text-pink-500': storeADiff < 0 }
-                ]"
-              >
+                ]">
                 {{ storeADiff > 0 ? '+' : '' }}{{ storeADiff }}
               </span>
             </span>
           </div>
           <div class="px-6">
-            <Chart
-              ref="storeA"
-              type="line"
-              :data="storeAData"
-              :options="storeAOptions"
-            />
+            <Chart ref="storeA" type="line" :data="storeAData" :options="storeAOptions" />
           </div>
         </div>
         <div class="lg:col-span-3 md:col-span-6 sm:col-span-12 p-0">
@@ -873,27 +830,20 @@ function refreshChart() {
                     'pi-arrow-up text-green-500': storeBDiff > 0,
                     'pi-arrow-down text-pink-500': storeBDiff < 0
                   }
-                ]"
-              />
+                ]" />
               ${{ storeBTotalValue }}
               <span
                 v-if="storeBDiff !== 0"
                 :class="[
                   'font-medium text-base ml-1',
                   { 'text-green-500': storeBDiff > 0, 'text-pink-500': storeBDiff < 0 }
-                ]"
-              >
+                ]">
                 {{ storeBDiff > 0 ? '+' : '' }}{{ storeBDiff }}
               </span>
             </span>
           </div>
           <div class="px-6">
-            <Chart
-              ref="storeB"
-              type="line"
-              :data="storeBData"
-              :options="storeBOptions"
-            />
+            <Chart ref="storeB" type="line" :data="storeBData" :options="storeBOptions" />
           </div>
         </div>
         <div class="lg:col-span-3 md:col-span-6 sm:col-span-12 p-0">
@@ -908,27 +858,20 @@ function refreshChart() {
                     'pi-arrow-up text-green-500': storeCDiff > 0,
                     'pi-arrow-down text-pink-500': storeCDiff < 0
                   }
-                ]"
-              />
+                ]" />
               ${{ storeCTotalValue }}
               <span
                 v-if="storeCDiff !== 0"
                 :class="[
                   'fw-500 fs-normal ml-1',
                   { 'text-green-500': storeCDiff > 0, 'text-pink-500': storeCDiff < 0 }
-                ]"
-              >
+                ]">
                 {{ storeCDiff > 0 ? '+' : '' }}{{ storeCDiff }}
               </span>
             </span>
           </div>
           <div class="px-6">
-            <Chart
-              ref="storeC"
-              type="line"
-              :data="storeCData"
-              :options="storeCOptions"
-            />
+            <Chart ref="storeC" type="line" :data="storeCData" :options="storeCOptions" />
           </div>
         </div>
         <div class="lg:col-span-3 md:col-span-6 sm:col-span-12 p-0">
@@ -943,27 +886,20 @@ function refreshChart() {
                     'pi-arrow-up text-green-500': storeDDiff > 0,
                     'pi-arrow-down text-pink-500': storeDDiff < 0
                   }
-                ]"
-              />
+                ]" />
               ${{ storeDTotalValue }}
               <span
                 v-if="storeDDiff !== 0"
                 :class="[
                   'fw-500 fs-normal ml-1',
                   { 'text-green-500': storeDDiff > 0, 'text-pink-500': storeDDiff < 0 }
-                ]"
-              >
+                ]">
                 {{ storeDDiff > 0 ? '+' : '' }}{{ storeDDiff }}
               </span>
             </span>
           </div>
           <div class="px-6">
-            <Chart
-              ref="storeD"
-              type="line"
-              :data="storeDData"
-              :options="storeDOptions"
-            />
+            <Chart ref="storeD" type="line" :data="storeDData" :options="storeDOptions" />
           </div>
         </div>
       </div>
@@ -974,23 +910,12 @@ function refreshChart() {
         <div class="flex items-center justify-between mb-4">
           <span class="text-xl font-semibold m-0">Top Searchs</span>
           <div>
-            <Button
-              icon="pi pi-ellipsis-h"
-              rounded
-              text
-              plain
-              @click="toggleMenu"
-            />
-            <Menu
-              ref="menu12"
-              :popup="true"
-              :model="items"
-            />
+            <Button icon="pi pi-ellipsis-h" rounded text plain @click="toggleMenu" />
+            <Menu ref="menu12" :popup="true" :model="items" />
           </div>
         </div>
         <div
-          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface"
-        >
+          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface">
           <span>Mat Orange Case</span>
           <span class="font-medium text-green-500">82% CONV RATE</span>
         </div>
@@ -999,8 +924,7 @@ function refreshChart() {
           <span class="font-medium text-green-500">78% CONV RATE</span>
         </div>
         <div
-          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface"
-        >
+          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface">
           <span>Orange Black Hoodie</span>
           <span class="font-medium text-green-500">61% CONV RATE</span>
         </div>
@@ -1009,8 +933,7 @@ function refreshChart() {
           <span class="font-medium text-orange-500">48% CONV RATE</span>
         </div>
         <div
-          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface"
-        >
+          class="flex justify-between bg-surface-200 dark:bg-surface-600 p-4 border-b border-surface">
           <span>Robots T-Shirt</span>
           <span class="font-medium text-orange-500">34% CONV RATE</span>
         </div>
@@ -1028,27 +951,21 @@ function refreshChart() {
           class="p-datatable-customers"
           :rows="4"
           style="margin-bottom: 20px"
-          :paginator="true"
-        >
-          <Column
-            header="Logo"
-            header-style="width:20%; min-width:10rem;"
-          >
+          :paginator="true">
+          <Column header="Logo" header-style="width:20%; min-width:10rem;">
             <template #body="slotProps">
               <img
                 :src="'/demo/images/product/' + slotProps.data.image"
                 class="shadow-lg"
                 :alt="slotProps.data.image"
-                width="50"
-              >
+                width="50" />
             </template>
           </Column>
           <Column
             field="name"
             header="Name"
             :sortable="true"
-            header-style="width:20%; min-width:10rem;"
-          >
+            header-style="width:20%; min-width:10rem;">
             <template #body="slotProps">
               {{ slotProps.data.name }}
             </template>
@@ -1057,8 +974,7 @@ function refreshChart() {
             field="category"
             header="Category"
             :sortable="true"
-            header-style="width:20%; min-width:10rem;"
-          >
+            header-style="width:20%; min-width:10rem;">
             <template #body="slotProps">
               {{ slotProps.data.category }}
             </template>
@@ -1067,23 +983,14 @@ function refreshChart() {
             field="price"
             header="Price"
             :sortable="true"
-            header-style="width:20%; min-width:10rem;"
-          >
+            header-style="width:20%; min-width:10rem;">
             <template #body="slotProps">
               {{ formatCurrency(slotProps.data.price) }}
             </template>
           </Column>
-          <Column
-            header="View"
-            header-style="width:20%; min-width:10rem;"
-          >
+          <Column header="View" header-style="width:20%; min-width:10rem;">
             <template #body>
-              <Button
-                icon="pi pi-search"
-                class="mb-1"
-                rounded
-                text
-              />
+              <Button icon="pi pi-search" class="mb-1" rounded text />
             </template>
           </Column>
         </DataTable>
@@ -1095,18 +1002,8 @@ function refreshChart() {
         <div class="flex items-center justify-between mb-4">
           <span class="text-xl font-semibold m-0">Expenses</span>
           <div>
-            <Button
-              icon="pi pi-ellipsis-h"
-              rounded
-              text
-              plain
-              @click="toggleMenu"
-            />
-            <Menu
-              ref="menu13"
-              :popup="true"
-              :model="items"
-            />
+            <Button icon="pi pi-ellipsis-h" rounded text plain @click="toggleMenu" />
+            <Menu ref="menu13" :popup="true" :model="items" />
           </div>
         </div>
         <div class="border-b border-surface text-sm text-muted-color mb-2 pb-4">
@@ -1120,10 +1017,7 @@ function refreshChart() {
             <span class="text-muted-color">Cloud Infrastructure</span>
           </div>
           <span>
-            <a
-              href="#"
-              class="text-muted-color"
-            ><i class="pi pi-chevron-right" /></a>
+            <a href="#" class="text-muted-color"><i class="pi pi-chevron-right" /></a>
           </span>
         </div>
         <div class="flex justify-between items-center my-2 p-2 border-b border-surface">
@@ -1133,10 +1027,7 @@ function refreshChart() {
             <span class="text-muted-color">General Goods</span>
           </div>
           <span>
-            <a
-              href="#"
-              class="text-muted-color"
-            ><i class="pi pi-chevron-right" /></a>
+            <a href="#" class="text-muted-color"><i class="pi pi-chevron-right" /></a>
           </span>
         </div>
         <div class="flex justify-between items-center my-2 p-2 border-b border-surface">
@@ -1146,10 +1037,7 @@ function refreshChart() {
             <span class="text-muted-color">Consumer Electronics</span>
           </div>
           <span>
-            <a
-              href="#"
-              class="text-muted-color"
-            ><i class="pi pi-chevron-right" /></a>
+            <a href="#" class="text-muted-color"><i class="pi pi-chevron-right" /></a>
           </span>
         </div>
         <div class="flex justify-between items-center my-2 p-2">
@@ -1159,10 +1047,7 @@ function refreshChart() {
             <span class="text-muted-color">Incalculables</span>
           </div>
           <span>
-            <a
-              href="#"
-              class="text-muted-color"
-            ><i class="pi pi-chevron-right" /></a>
+            <a href="#" class="text-muted-color"><i class="pi pi-chevron-right" /></a>
           </span>
         </div>
       </div>
@@ -1173,30 +1058,21 @@ function refreshChart() {
         <div class="flex flex-col gap-4">
           <div
             :class="containerClassesPrimary()"
-            class="flex flex-col p-4 gap-4 w-full justify-between rounded-md"
-          >
+            class="flex flex-col p-4 gap-4 w-full justify-between rounded-md">
             <div class="flex justify-between items-center">
               <span class="m-0 text-surface-900 dark:text-surface-0 text-2xl font-medium">
                 Expenses
               </span>
-              <SelectButton
-                v-model="optionValue"
-                :options="labels"
-              />
+              <SelectButton v-model="optionValue" :options="labels" />
             </div>
             <div>
-              <Chart
-                type="line"
-                :data="expensesData"
-                :options="expensesOptions"
-              />
+              <Chart type="line" :data="expensesData" :options="expensesOptions" />
             </div>
           </div>
           <div class="flex flex-col lg:flex-row gap-4 justify-between flex-1">
             <div
               :class="containerClassesRed()"
-              class="flex flex-col p-4 w-full justify-between rounded-md"
-            >
+              class="flex flex-col p-4 w-full justify-between rounded-md">
               <div class="flex justify-between">
                 <div class="flex flex-col gap-1">
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">23</span>
@@ -1208,10 +1084,7 @@ function refreshChart() {
               </div>
               <div class="flex flex-col gap-2">
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
-                  <img
-                    src="/demo/images/product/black-watch.jpg"
-                    class="w-8 h-8 rounded-full"
-                  >
+                  <img src="/demo/images/product/black-watch.jpg" class="w-8 h-8 rounded-full" />
                   <div class="flex flex-col gap-1">
                     <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
                       Black Watch
@@ -1222,10 +1095,7 @@ function refreshChart() {
                   </div>
                 </div>
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
-                  <img
-                    src="/demo/images/product/blue-t-shirt.jpg"
-                    class="w-8 h-8 rounded-full"
-                  >
+                  <img src="/demo/images/product/blue-t-shirt.jpg" class="w-8 h-8 rounded-full" />
                   <div class="flex flex-col gap-1">
                     <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
                       Blue T-Shirt
@@ -1239,8 +1109,7 @@ function refreshChart() {
             </div>
             <div
               :class="containerClassesTeal()"
-              class="flex flex-col p-4 w-full justify-between rounded-md"
-            >
+              class="flex flex-col p-4 w-full justify-between rounded-md">
               <div class="flex justify-between">
                 <div class="flex flex-col gap-1">
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">54</span>
@@ -1252,10 +1121,7 @@ function refreshChart() {
               </div>
               <div class="flex flex-col gap-2">
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
-                  <img
-                    src="/demo/images/product/blue-band.jpg"
-                    class="w-8 h-8 rounded-full"
-                  >
+                  <img src="/demo/images/product/blue-band.jpg" class="w-8 h-8 rounded-full" />
                   <div class="flex flex-col gap-1">
                     <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
                       Blue Band
@@ -1266,10 +1132,7 @@ function refreshChart() {
                   </div>
                 </div>
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
-                  <img
-                    src="/demo/images/product/bamboo-watch.jpg"
-                    class="w-8 h-8 rounded-full"
-                  >
+                  <img src="/demo/images/product/bamboo-watch.jpg" class="w-8 h-8 rounded-full" />
                   <div class="flex flex-col gap-1">
                     <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
                       Bamboo Watch
@@ -1283,8 +1146,7 @@ function refreshChart() {
             </div>
             <div
               :class="containerClassesYellow()"
-              class="flex flex-col p-4 gap-4 w-full justify-between rounded-md"
-            >
+              class="flex flex-col p-4 gap-4 w-full justify-between rounded-md">
               <div class="flex justify-between">
                 <div class="flex flex-col gap-1">
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">99+</span>
@@ -1296,10 +1158,7 @@ function refreshChart() {
               </div>
               <div class="flex flex-col gap-2">
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
-                  <img
-                    src="/demo/images/product/blue-t-shirt.jpg"
-                    class="w-8 h-8 rounded-full"
-                  >
+                  <img src="/demo/images/product/blue-t-shirt.jpg" class="w-8 h-8 rounded-full" />
                   <div class="flex flex-col gap-1">
                     <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
                       Black Tshirt
@@ -1310,10 +1169,7 @@ function refreshChart() {
                   </div>
                 </div>
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
-                  <img
-                    src="/demo/images/product/black-watch.jpg"
-                    class="w-8 h-8 rounded-full"
-                  >
+                  <img src="/demo/images/product/black-watch.jpg" class="w-8 h-8 rounded-full" />
                   <div class="flex flex-col gap-1">
                     <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
                       Black Watch
@@ -1324,10 +1180,7 @@ function refreshChart() {
                   </div>
                 </div>
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
-                  <img
-                    src="/demo/images/product/bamboo-watch.jpg"
-                    class="w-8 h-8 rounded-full"
-                  >
+                  <img src="/demo/images/product/bamboo-watch.jpg" class="w-8 h-8 rounded-full" />
                   <div class="flex flex-col gap-1">
                     <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
                       Blue T-Shirt

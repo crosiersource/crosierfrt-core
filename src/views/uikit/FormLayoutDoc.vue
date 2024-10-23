@@ -18,24 +18,15 @@ const dropdownItem = ref(null);
           <div class="font-semibold text-xl">Vertical</div>
           <div class="flex flex-col gap-2">
             <label for="name1">Name</label>
-            <InputText
-              id="name1"
-              type="text"
-            />
+            <InputText id="name1" type="text" />
           </div>
           <div class="flex flex-col gap-2">
             <label for="email1">Email</label>
-            <InputText
-              id="email1"
-              type="text"
-            />
+            <InputText id="email1" type="text" />
           </div>
           <div class="flex flex-col gap-2">
             <label for="age1">Age</label>
-            <InputText
-              id="age1"
-              type="text"
-            />
+            <InputText id="age1" type="text" />
           </div>
         </div>
 
@@ -44,17 +35,11 @@ const dropdownItem = ref(null);
           <div class="flex flex-wrap gap-4">
             <div class="flex flex-col grow basis-0 gap-2">
               <label for="name2">Name</label>
-              <InputText
-                id="name2"
-                type="text"
-              />
+              <InputText id="name2" type="text" />
             </div>
             <div class="flex flex-col grow basis-0 gap-2">
               <label for="email2">Email</label>
-              <InputText
-                id="email2"
-                type="text"
-              />
+              <InputText id="email2" type="text" />
             </div>
           </div>
         </div>
@@ -63,31 +48,19 @@ const dropdownItem = ref(null);
         <div class="card flex flex-col gap-4">
           <div class="font-semibold text-xl">Horizontal</div>
           <div class="grid grid-cols-12 gap-2">
-            <label
-              for="name3"
-              class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
-            >
+            <label for="name3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">
               Name
             </label>
             <div class="col-span-12 md:col-span-10">
-              <InputText
-                id="name3"
-                type="text"
-              />
+              <InputText id="name3" type="text" />
             </div>
           </div>
           <div class="grid grid-cols-12 gap-2">
-            <label
-              for="email3"
-              class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
-            >
+            <label for="email3" class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0">
               Email
             </label>
             <div class="col-span-12 md:col-span-10">
-              <InputText
-                id="email3"
-                type="text"
-              />
+              <InputText id="email3" type="text" />
             </div>
           </div>
         </div>
@@ -96,41 +69,21 @@ const dropdownItem = ref(null);
           <div class="font-semibold text-xl">Inline</div>
           <div class="flex flex-wrap items-start gap-4">
             <div>
-              <label
-                for="firstname1"
-                class="sr-only"
-              >Firstname</label>
-              <InputText
-                id="firstname1"
-                type="text"
-                placeholder="Firstname"
-              />
+              <label for="firstname1" class="sr-only">Firstname</label>
+              <InputText id="firstname1" type="text" placeholder="Firstname" />
             </div>
             <div>
-              <label
-                for="lastname1"
-                class="sr-only"
-              >Lastname</label>
-              <InputText
-                id="lastname1"
-                type="text"
-                placeholder="Lastname"
-              />
+              <label for="lastname1" class="sr-only">Lastname</label>
+              <InputText id="lastname1" type="text" placeholder="Lastname" />
             </div>
-            <Button
-              label="Submit"
-              :fluid="false"
-            />
+            <Button label="Submit" :fluid="false" />
           </div>
         </div>
         <div class="card flex flex-col gap-4">
           <div class="font-semibold text-xl">Help Text</div>
           <div class="flex flex-wrap gap-2">
             <label for="username">Username</label>
-            <InputText
-              id="username"
-              type="text"
-            />
+            <InputText id="username" type="text" />
             <small>Enter your username to reset your password.</small>
           </div>
         </div>
@@ -143,26 +96,17 @@ const dropdownItem = ref(null);
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex flex-wrap gap-2 w-full">
             <label for="firstname2">Firstname</label>
-            <InputText
-              id="firstname2"
-              type="text"
-            />
+            <InputText id="firstname2" type="text" />
           </div>
           <div class="flex flex-wrap gap-2 w-full">
             <label for="lastname2">Lastname</label>
-            <InputText
-              id="lastname2"
-              type="text"
-            />
+            <InputText id="lastname2" type="text" />
           </div>
         </div>
 
         <div class="flex flex-wrap">
           <label for="address">Address</label>
-          <Textarea
-            id="address"
-            rows="4"
-          />
+          <Textarea id="address" rows="4" />
         </div>
 
         <div class="flex flex-col md:flex-row gap-4">
@@ -174,15 +118,11 @@ const dropdownItem = ref(null);
               :options="dropdownItems"
               option-label="name"
               placeholder="Select One"
-              class="w-full"
-            />
+              class="w-full" />
           </div>
           <div class="flex flex-wrap gap-2 w-full">
             <label for="zip">Zip</label>
-            <InputText
-              id="zip"
-              type="text"
-            />
+            <InputText id="zip" type="text" />
           </div>
         </div>
       </div>

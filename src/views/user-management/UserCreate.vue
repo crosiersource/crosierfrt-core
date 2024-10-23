@@ -31,23 +31,13 @@ const selectedCountry = ref(null);
       <div class="col-span-12 lg:col-span-10">
         <div class="grid grid-cols-12 gap-4">
           <div class="mb-6 col-span-12">
-            <label
-              for="nickname"
-              class="font-medium text-surface-900 dark:text-surface-0"
-            >
+            <label for="nickname" class="font-medium text-surface-900 dark:text-surface-0">
               Nickname
             </label>
-            <InputText
-              id="nickname"
-              type="text"
-              fluid
-            />
+            <InputText id="nickname" type="text" fluid />
           </div>
           <div class="mb-6 col-span-12 flex flex-col items-start">
-            <label
-              for="avatar"
-              class="font-medium text-surface-900 dark:text-surface-0"
-            >
+            <label for="avatar" class="font-medium text-surface-900 dark:text-surface-0">
               Avatar
             </label>
             <FileUpload
@@ -57,40 +47,20 @@ const selectedCountry = ref(null);
               accept="image/*"
               :max-file-size="1000000"
               choose-label="Upload Image"
-              class="p-button-outlined p-button-plain w-unset"
-            />
+              class="p-button-outlined p-button-plain w-unset" />
           </div>
           <div class="mb-6 col-span-12">
-            <label
-              for="bio"
-              class="font-medium text-surface-900 dark:text-surface-0"
-            >Bio</label>
-            <Textarea
-              id="bio"
-              type="text"
-              :rows="5"
-              auto-resize
-              fluid
-            />
+            <label for="bio" class="font-medium text-surface-900 dark:text-surface-0">Bio</label>
+            <Textarea id="bio" type="text" :rows="5" auto-resize fluid />
           </div>
           <div class="mb-6 col-span-12 md:col-span-6">
-            <label
-              for="email"
-              class="font-medium text-surface-900 dark:text-surface-0"
-            >
+            <label for="email" class="font-medium text-surface-900 dark:text-surface-0">
               Email
             </label>
-            <InputText
-              id="email"
-              type="text"
-              fluid
-            />
+            <InputText id="email" type="text" fluid />
           </div>
           <div class="mb-6 col-span-12 md:col-span-6">
-            <label
-              for="country"
-              class="font-medium text-surface-900 dark:text-surface-0"
-            >
+            <label for="country" class="font-medium text-surface-900 dark:text-surface-0">
               Country
             </label>
             <Select
@@ -100,17 +70,12 @@ const selectedCountry = ref(null);
               filter
               fluid
               placeholder="Select a Country"
-              show-clear
-            >
+              show-clear>
               <template #value="slotProps">
-                <div
-                  v-if="slotProps.value"
-                  class="flex items-center"
-                >
+                <div v-if="slotProps.value" class="flex items-center">
                   <span
                     :class="`mr-2 flag flag-${selectedCountry.code.toLowerCase()}`"
-                    style="width: 18px; height: 12px"
-                  />
+                    style="width: 18px; height: 12px" />
                   <div>{{ slotProps.value.name }}</div>
                 </div>
                 <span v-else>
@@ -121,58 +86,33 @@ const selectedCountry = ref(null);
                 <div class="flex items-center">
                   <span
                     :class="`mr-2 flag flag-${slotProps.option.code.toLowerCase()}`"
-                    style="width: 18px; height: 12px"
-                  />
+                    style="width: 18px; height: 12px" />
                   <div>{{ slotProps.option.name }}</div>
                 </div>
               </template>
             </Select>
           </div>
           <div class="mb-6 col-span-12 md:col-span-6">
-            <label
-              for="city"
-              class="font-medium text-surface-900 dark:text-surface-0"
-            >City</label>
-            <InputText
-              id="city"
-              type="text"
-              fluid
-            />
+            <label for="city" class="font-medium text-surface-900 dark:text-surface-0">City</label>
+            <InputText id="city" type="text" fluid />
           </div>
           <div class="mb-6 col-span-12 md:col-span-6">
-            <label
-              for="state"
-              class="font-medium text-surface-900 dark:text-surface-0"
-            >
+            <label for="state" class="font-medium text-surface-900 dark:text-surface-0">
               State
             </label>
-            <InputText
-              id="state"
-              type="text"
-              fluid
-            />
+            <InputText id="state" type="text" fluid />
           </div>
           <div class="mb-6 col-span-12">
-            <label
-              for="website"
-              class="font-medium text-surface-900 dark:text-surface-0"
-            >
+            <label for="website" class="font-medium text-surface-900 dark:text-surface-0">
               Website
             </label>
             <InputGroup>
               <InputGroupAddon>www</InputGroupAddon>
-              <InputText
-                id="website"
-                type="text"
-                fluid
-              />
+              <InputText id="website" type="text" fluid />
             </InputGroup>
           </div>
           <div class="col-span-12">
-            <Button
-              label="Create User"
-              class="w-auto mt-4"
-            />
+            <Button label="Create User" class="w-auto mt-4" />
           </div>
         </div>
       </div>

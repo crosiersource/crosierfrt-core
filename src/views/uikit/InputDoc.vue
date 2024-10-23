@@ -77,55 +77,29 @@ function searchCountry(event) {
       <div class="card flex flex-col gap-4">
         <div class="font-semibold text-xl">InputText</div>
         <div class="flex flex-col md:flex-row gap-4">
-          <InputText
-            type="text"
-            placeholder="Default"
-          />
-          <InputText
-            type="text"
-            placeholder="Disabled"
-            :disabled="true"
-          />
-          <InputText
-            type="text"
-            placeholder="Invalid"
-            invalid
-          />
+          <InputText type="text" placeholder="Default" />
+          <InputText type="text" placeholder="Disabled" :disabled="true" />
+          <InputText type="text" placeholder="Invalid" invalid />
         </div>
 
         <div class="font-semibold text-xl">Icons</div>
         <IconField>
           <InputIcon class="pi pi-user" />
-          <InputText
-            type="text"
-            placeholder="Username"
-          />
+          <InputText type="text" placeholder="Username" />
         </IconField>
         <IconField>
-          <InputText
-            type="text"
-            placeholder="Search"
-          />
+          <InputText type="text" placeholder="Search" />
           <InputIcon class="pi pi-search" />
         </IconField>
 
         <div class="font-semibold text-xl">Float Label</div>
         <FloatLabel>
-          <InputText
-            id="username"
-            v-model="floatValue"
-            type="text"
-          />
+          <InputText id="username" v-model="floatValue" type="text" />
           <label for="username">Username</label>
         </FloatLabel>
 
         <div class="font-semibold text-xl">Textarea</div>
-        <Textarea
-          placeholder="Your Message"
-          :auto-resize="true"
-          rows="3"
-          cols="30"
-        />
+        <Textarea placeholder="Your Message" :auto-resize="true" rows="3" cols="30" />
 
         <div class="font-semibold text-xl">AutoComplete</div>
         <AutoComplete
@@ -136,22 +110,13 @@ function searchCountry(event) {
           dropdown
           multiple
           display="chip"
-          @complete="searchCountry($event)"
-        />
+          @complete="searchCountry($event)" />
 
         <div class="font-semibold text-xl">DatePicker</div>
-        <DatePicker
-          v-model="calendarValue"
-          :show-icon="true"
-          :show-button-bar="true"
-        />
+        <DatePicker v-model="calendarValue" :show-icon="true" :show-button-bar="true" />
 
         <div class="font-semibold text-xl">InputNumber</div>
-        <InputNumber
-          v-model="inputNumberValue"
-          show-buttons
-          mode="decimal"
-        />
+        <InputNumber v-model="inputNumberValue" show-buttons mode="decimal" />
       </div>
 
       <div class="card flex flex-col gap-4">
@@ -166,21 +131,12 @@ function searchCountry(event) {
           </div>
           <div class="flex flex-col gap-4 w-1/2">
             <div class="font-semibold text-xl">ColorPicker</div>
-            <ColorPicker
-              v-model="colorValue"
-              style="width: 2rem"
-            />
+            <ColorPicker v-model="colorValue" style="width: 2rem" />
           </div>
         </div>
 
         <div class="font-semibold text-xl">Knob</div>
-        <Knob
-          v-model="knobValue"
-          :step="10"
-          :min="-50"
-          :max="50"
-          value-template="{value}%"
-        />
+        <Knob v-model="knobValue" :step="10" :min="-50" :max="50" value-template="{value}%" />
       </div>
     </div>
     <div class="md:w-1/2">
@@ -188,80 +144,32 @@ function searchCountry(event) {
         <div class="font-semibold text-xl">RadioButton</div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex items-center">
-            <RadioButton
-              id="option1"
-              v-model="radioValue"
-              name="option"
-              value="Chicago"
-            />
-            <label
-              for="option1"
-              class="leading-none ml-2"
-            >Chicago</label>
+            <RadioButton id="option1" v-model="radioValue" name="option" value="Chicago" />
+            <label for="option1" class="leading-none ml-2">Chicago</label>
           </div>
           <div class="flex items-center">
-            <RadioButton
-              id="option2"
-              v-model="radioValue"
-              name="option"
-              value="Los Angeles"
-            />
-            <label
-              for="option2"
-              class="leading-none ml-2"
-            >Los Angeles</label>
+            <RadioButton id="option2" v-model="radioValue" name="option" value="Los Angeles" />
+            <label for="option2" class="leading-none ml-2">Los Angeles</label>
           </div>
           <div class="flex items-center">
-            <RadioButton
-              id="option3"
-              v-model="radioValue"
-              name="option"
-              value="New York"
-            />
-            <label
-              for="option3"
-              class="leading-none ml-2"
-            >New York</label>
+            <RadioButton id="option3" v-model="radioValue" name="option" value="New York" />
+            <label for="option3" class="leading-none ml-2">New York</label>
           </div>
         </div>
 
         <div class="font-semibold text-xl">Checkbox</div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex items-center">
-            <Checkbox
-              id="checkOption1"
-              v-model="checkboxValue"
-              name="option"
-              value="Chicago"
-            />
-            <label
-              for="checkOption1"
-              class="ml-2"
-            >Chicago</label>
+            <Checkbox id="checkOption1" v-model="checkboxValue" name="option" value="Chicago" />
+            <label for="checkOption1" class="ml-2">Chicago</label>
           </div>
           <div class="flex items-center">
-            <Checkbox
-              id="checkOption2"
-              v-model="checkboxValue"
-              name="option"
-              value="Los Angeles"
-            />
-            <label
-              for="checkOption2"
-              class="ml-2"
-            >Los Angeles</label>
+            <Checkbox id="checkOption2" v-model="checkboxValue" name="option" value="Los Angeles" />
+            <label for="checkOption2" class="ml-2">Los Angeles</label>
           </div>
           <div class="flex items-center">
-            <Checkbox
-              id="checkOption3"
-              v-model="checkboxValue"
-              name="option"
-              value="New York"
-            />
-            <label
-              for="checkOption3"
-              class="ml-2"
-            >New York</label>
+            <Checkbox id="checkOption3" v-model="checkboxValue" name="option" value="New York" />
+            <label for="checkOption3" class="ml-2">New York</label>
           </div>
         </div>
 
@@ -275,16 +183,14 @@ function searchCountry(event) {
           v-model="listboxValue"
           :options="listboxValues"
           option-label="name"
-          :filter="true"
-        />
+          :filter="true" />
 
         <div class="font-semibold text-xl">Select</div>
         <Select
           v-model="dropdownValue"
           :options="dropdownValues"
           option-label="name"
-          placeholder="Select"
-        />
+          placeholder="Select" />
 
         <div class="font-semibold text-xl">MultiSelect</div>
         <MultiSelect
@@ -292,18 +198,15 @@ function searchCountry(event) {
           :options="multiselectValues"
           option-label="name"
           placeholder="Select Countries"
-          :filter="true"
-        >
+          :filter="true">
           <template #value="slotProps">
             <div
               v-for="option of slotProps.value"
               :key="option.code"
-              class="inline-flex items-center py-1 px-2 bg-primary text-primary-contrast rounded-border mr-2"
-            >
+              class="inline-flex items-center py-1 px-2 bg-primary text-primary-contrast rounded-border mr-2">
               <span
                 :class="'mr-2 flag flag-' + option.code.toLowerCase()"
-                style="width: 18px; height: 12px"
-              />
+                style="width: 18px; height: 12px" />
               <div>{{ option.name }}</div>
             </div>
             <template v-if="!slotProps.value || slotProps.value.length === 0">
@@ -314,19 +217,14 @@ function searchCountry(event) {
             <div class="flex items-center">
               <span
                 :class="'mr-2 flag flag-' + slotProps.option.code.toLowerCase()"
-                style="width: 18px; height: 12px"
-              />
+                style="width: 18px; height: 12px" />
               <div>{{ slotProps.option.name }}</div>
             </div>
           </template>
         </MultiSelect>
 
         <div class="font-semibold text-xl">TreeSelect</div>
-        <TreeSelect
-          v-model="selectedNode"
-          :options="treeSelectNodes"
-          placeholder="Select Item"
-        />
+        <TreeSelect v-model="selectedNode" :options="treeSelectNodes" placeholder="Select Item" />
       </div>
 
       <div class="card flex flex-col gap-4">
@@ -335,15 +233,13 @@ function searchCountry(event) {
           v-model="toggleValue"
           on-label="Yes"
           off-label="No"
-          :style="{ width: '10em' }"
-        />
+          :style="{ width: '10em' }" />
 
         <div class="font-semibold text-xl">SelectButton</div>
         <SelectButton
           v-model="selectButtonValue"
           :options="selectButtonValues"
-          option-label="name"
-        />
+          option-label="name" />
       </div>
     </div>
   </Fluid>
@@ -377,10 +273,7 @@ function searchCountry(event) {
         </InputGroup>
         <InputGroup>
           <InputGroupAddon>
-            <Checkbox
-              v-model="inputGroupValue"
-              :binary="true"
-            />
+            <Checkbox v-model="inputGroupValue" :binary="true" />
           </InputGroupAddon>
           <InputText placeholder="Confirm" />
         </InputGroup>

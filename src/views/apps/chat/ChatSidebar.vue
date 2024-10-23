@@ -34,7 +34,8 @@ async function filter() {
   }
 
   const filteredArr = filteredUsers.value.filter((user) =>
-    user.name.toLowerCase().includes(searchedUser.value.toLowerCase()));
+    user.name.toLowerCase().includes(searchedUser.value.toLowerCase())
+  );
 
   filteredUsers.value = [...filteredArr];
 }
@@ -45,8 +46,7 @@ async function filter() {
     <img
       src="/demo/images/avatar/circle/avatar-f-1@2x.png"
       class="w-24 h-24 rounded-full shadow-lg"
-      alt="Asiya Javayant"
-    >
+      alt="Asiya Javayant" />
     <span class="text-surface-900 dark:text-surface-0 text-xl font-semibold mt-6">
       Asiya Javayant
     </span>
@@ -60,16 +60,14 @@ async function filter() {
         type="text"
         placeholder="Search"
         class="w-full"
-        @input="filter"
-      />
+        @input="filter" />
     </IconField>
     <div class="flex flex-row gap-6 md:flex-col overflow-auto">
       <UserCard
         v-for="user in filteredUsers"
         :key="user"
         :user="user"
-        @click="onChangeActiveUser(user)"
-      />
+        @click="onChangeActiveUser(user)" />
     </div>
   </div>
 </template>

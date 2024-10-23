@@ -25,8 +25,7 @@ function onUpload() {
           accept="image/*"
           :max-file-size="1000000"
           custom-upload
-          @uploader="onUpload"
-        />
+          @uploader="onUpload" />
       </div>
     </div>
     <div class="col-span-full lg:col-span-6">
@@ -41,13 +40,8 @@ function onUpload() {
             accept="image/*"
             :max-file-size="1000000"
             custom-upload
-            @uploader="onUpload"
-          />
-          <Button
-            label="Upload"
-            severity="secondary"
-            @click="upload"
-          />
+            @uploader="onUpload" />
+          <Button label="Upload" severity="secondary" @click="upload" />
         </div>
       </div>
     </div>

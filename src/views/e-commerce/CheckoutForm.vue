@@ -41,23 +41,10 @@ onMounted(() => {
             <span class="text-surface-900 dark:text-surface-0 text-2xl block font-medium mb-8">
               Contact Information
             </span>
-            <input
-              id="email"
-              placeholder="Email"
-              type="text"
-              class="p-inputtext w-full mb-6"
-            >
+            <input id="email" placeholder="Email" type="text" class="p-inputtext w-full mb-6" />
             <div class="flex items-center">
-              <Checkbox
-                v-model="checked"
-                name="checkbox-1"
-                binary
-                input-id="checkbox-1"
-              />
-              <label
-                class="ml-2"
-                for="checkbox-1"
-              >Email me with news and offers</label>
+              <Checkbox v-model="checked" name="checkbox-1" binary input-id="checkbox-1" />
+              <label class="ml-2" for="checkbox-1">Email me with news and offers</label>
             </div>
           </div>
           <div class="col-span-12 mb-6">
@@ -70,86 +57,48 @@ onMounted(() => {
               placeholder="Country / Region"
               option-label="name"
               show-clear
-              class="w-full"
-            />
+              class="w-full" />
           </div>
           <div class="col-span-12 lg:col-span-6 mb-6">
-            <input
-              id="name"
-              placeholder="Name"
-              type="text"
-              class="p-inputtext w-full"
-            >
+            <input id="name" placeholder="Name" type="text" class="p-inputtext w-full" />
           </div>
           <div class="col-span-12 lg:col-span-6 mb-6">
-            <input
-              id="lastname"
-              placeholder="Last Name"
-              type="text"
-              class="p-inputtext w-full"
-            >
+            <input id="lastname" placeholder="Last Name" type="text" class="p-inputtext w-full" />
           </div>
           <div class="col-span-12 mb-6">
-            <input
-              id="address"
-              placeholder="Address"
-              type="text"
-              class="p-inputtext w-full"
-            >
+            <input id="address" placeholder="Address" type="text" class="p-inputtext w-full" />
           </div>
           <div class="col-span-12 mb-6">
             <input
               id="address2"
               placeholder="Apartment, suite, etc"
               type="text"
-              class="p-inputtext w-full"
-            >
+              class="p-inputtext w-full" />
           </div>
           <div class="col-span-12 lg:col-span-6 mb-6">
-            <input
-              id="pc"
-              placeholder="Postal Code"
-              type="text"
-              class="p-inputtext w-full"
-            >
+            <input id="pc" placeholder="Postal Code" type="text" class="p-inputtext w-full" />
           </div>
           <div class="col-span-12 lg:col-span-6 mb-6">
-            <input
-              id="city"
-              placeholder="City"
-              type="text"
-              class="p-inputtext w-full"
-            >
+            <input id="city" placeholder="City" type="text" class="p-inputtext w-full" />
           </div>
           <div class="col-span-12 lg:col-span-6 mb-6">
             <div class="flex items-center">
-              <Checkbox
-                v-model="checked2"
-                name="checkbox-2"
-                binary
-                input-id="checkbox-2"
-              />
-              <label
-                class="ml-2"
-                for="checkbox-2"
-              >Save for next purchase</label>
+              <Checkbox v-model="checked2" name="checkbox-2" binary input-id="checkbox-2" />
+              <label class="ml-2" for="checkbox-2">Save for next purchase</label>
             </div>
           </div>
           <div
-            class="col-span-12 flex flex-col lg:flex-row justify-center items-center lg:justify-end my-12"
-          >
+            class="col-span-12 flex flex-col lg:flex-row justify-center items-center lg:justify-end my-12">
             <Button
               class="mt-4 lg:mt-0 w-full lg:w-auto order-2 lg:order-1 lg:mr-6"
               severity="secondary"
               outlined
               label="Return to Cart"
-              icon="pi pi-fw pi-arrow-left"
-            />
+              icon="pi pi-fw pi-arrow-left" />
             <Button
               class="w-full lg:w-auto order-1 lg:order-2"
               label="Continue to Shipping"
-              icon="pi pi-fw pi-check"
-            />
+              icon="pi pi-fw pi-check" />
           </div>
         </div>
       </div>
@@ -158,13 +107,11 @@ onMounted(() => {
           <span class="text-surface-900 dark:text-surface-0 font-medium text-xl">Your Cart</span>
         </div>
         <div
-          class="flex flex-col lg:flex-row flex-wrap lg:items-center py-2 mt-4 border-surface-200 dark:border-surface-700"
-        >
+          class="flex flex-col lg:flex-row flex-wrap lg:items-center py-2 mt-4 border-surface-200 dark:border-surface-700">
           <img
             src="/demo/images/ecommerce/shop/shop-1.png"
             class="w-32 h-32 flex-shrink-0 mb-4"
-            alt="product"
-          >
+            alt="product" />
           <div class="flex-auto lg:ml-4">
             <div class="flex items-center justify-between mb-4">
               <span class="text-surface-900 dark:text-surface-0 font-bold">Product Name</span>
@@ -182,29 +129,15 @@ onMounted(() => {
                 decrement-button-class="p-button-text text-surface-600 dark:text-surface-200 hover:text-primary py-1 px-1"
                 increment-button-class="p-button-text text-surface-600 dark:text-surface-200 hover:text-primary py-1 px-1"
                 increment-button-icon="pi pi-plus"
-                decrement-button-icon="pi pi-minus"
-              />
-              <Button
-                icon="pi pi-trash"
-                text
-                rounded
-              />
+                decrement-button-icon="pi pi-minus" />
+              <Button icon="pi pi-trash" text rounded />
             </div>
           </div>
         </div>
         <div class="py-2 mt-4 border-surface-200 dark:border-surface-700">
           <InputGroup class="mt-4">
-            <InputText
-              v-model="value"
-              type="text"
-              placeholder="Promo code"
-              class="w-full"
-            />
-            <Button
-              type="button"
-              label="Apply"
-              :disabled="!value"
-            />
+            <InputText v-model="value" type="text" placeholder="Promo code" class="w-full" />
+            <Button type="button" label="Apply" :disabled="!value" />
           </InputGroup>
         </div>
         <div class="py-2 mt-4">
@@ -222,11 +155,7 @@ onMounted(() => {
           </div>
         </div>
         <div class="py-2 mt-4 bg-yellow-100 flex items-center justify-center rounded">
-          <img
-            src="/demo/images/ecommerce/shop/flag.png"
-            class="mr-2"
-            alt="Country Flag"
-          >
+          <img src="/demo/images/ecommerce/shop/flag.png" class="mr-2" alt="Country Flag" />
           <span class="text-black/90 font-medium">No additional duties or taxes.</span>
         </div>
       </div>

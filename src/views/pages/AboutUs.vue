@@ -11,11 +11,7 @@ function setVisibleMember(member) {
   <div class="card px-6 py-20 md:px-12 lg:px-20">
     <div class="flex flex-wrap mb-6">
       <div class="w-full lg:w-6/12 pl-0 lg:pr-6">
-        <img
-          src="/demo/images/blocks/about/about-1.png"
-          alt="Image"
-          class="w-full rounded"
-        >
+        <img src="/demo/images/blocks/about/about-1.png" alt="Image" class="w-full rounded" />
       </div>
       <div class="w-full lg:w-6/12 pr-0 lg:pl-6 mt-4 lg:mt-0">
         <div class="font-bold text-4xl mb-6 text-surface-900 dark:text-surface-0">About us</div>
@@ -57,41 +53,26 @@ function setVisibleMember(member) {
           <div
             class="relative overflow-hidden"
             @mouseenter="setVisibleMember(0)"
-            @mouseleave="setVisibleMember(-1)"
-          >
-            <img
-              src="/demo/images/blocks/team/team-1.png"
-              class="w-full block"
-              alt="Team 1"
-            >
+            @mouseleave="setVisibleMember(-1)">
+            <img src="/demo/images/blocks/team/team-1.png" class="w-full block" alt="Team 1" />
 
             <div
               v-if="visibleMember === 0"
               class="absolute top-0 left-0 h-full w-full rounded animate-fadein animate-duration-300 select-none"
-              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }"
-            >
+              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }">
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Jeff Davies</span>
                 <span class="font-medium text-surface-400 dark:text-surface-400">
                   Software Developer
                 </span>
                 <div class="mt-auto">
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-twitter text-surface-600 dark:text-surface-200 text-xl mr-4" />
                   </a>
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-github text-surface-600 dark:text-surface-200 text-xl mr-4" />
                   </a>
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-facebook text-surface-600 dark:text-surface-200 text-xl" />
                   </a>
                 </div>
@@ -103,41 +84,26 @@ function setVisibleMember(member) {
           <div
             class="relative overflow-hidden"
             @mouseenter="setVisibleMember(1)"
-            @mouseleave="setVisibleMember(-1)"
-          >
-            <img
-              src="/demo/images/blocks/team/team-2.png"
-              class="w-full block"
-              alt="Team 2"
-            >
+            @mouseleave="setVisibleMember(-1)">
+            <img src="/demo/images/blocks/team/team-2.png" class="w-full block" alt="Team 2" />
 
             <div
               v-if="visibleMember === 1"
               class="absolute top-0 left-0 h-full w-full rounded animate-fadein animate-duration-300 select-none"
-              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }"
-            >
+              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }">
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Kristin Watson</span>
                 <span class="font-medium text-surface-400 dark:text-surface-400">
                   UI/UX Designer
                 </span>
                 <div class="mt-auto">
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-twitter text-surface-600 dark:text-surface-200 text-xl mr-4" />
                   </a>
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-github text-surface-600 dark:text-surface-200 text-xl mr-4" />
                   </a>
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-facebook text-surface-600 dark:text-surface-200 text-xl" />
                   </a>
                 </div>
@@ -149,41 +115,26 @@ function setVisibleMember(member) {
           <div
             class="relative overflow-hidden"
             @mouseenter="setVisibleMember(2)"
-            @mouseleave="setVisibleMember(-1)"
-          >
-            <img
-              src="/demo/images/blocks/team/team-3.png"
-              class="w-full block"
-              alt="Team 3"
-            >
+            @mouseleave="setVisibleMember(-1)">
+            <img src="/demo/images/blocks/team/team-3.png" class="w-full block" alt="Team 3" />
 
             <div
               v-if="visibleMember === 2"
               class="absolute top-0 left-0 h-full w-full rounded animate-fadein animate-duration-300 select-none"
-              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }"
-            >
+              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }">
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Jenna Williams</span>
                 <span class="font-medium text-surface-400 dark:text-surface-400">
                   Marketing Specialist
                 </span>
                 <div class="mt-auto">
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-twitter text-surface-600 dark:text-surface-200 text-xl mr-4" />
                   </a>
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-github text-surface-600 dark:text-surface-200 text-xl mr-4" />
                   </a>
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-facebook text-surface-600 dark:text-surface-200 text-xl" />
                   </a>
                 </div>
@@ -195,41 +146,26 @@ function setVisibleMember(member) {
           <div
             class="relative overflow-hidden"
             @mouseenter="setVisibleMember(3)"
-            @mouseleave="setVisibleMember(-1)"
-          >
-            <img
-              src="/demo/images/blocks/team/team-4.png"
-              class="w-full block"
-              alt="Team 4"
-            >
+            @mouseleave="setVisibleMember(-1)">
+            <img src="/demo/images/blocks/team/team-4.png" class="w-full block" alt="Team 4" />
 
             <div
               v-if="visibleMember === 3"
               class="absolute top-0 left-0 h-full w-full rounded animate-fadein animate-duration-300 select-none"
-              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }"
-            >
+              :style="{ backgroundColor: 'rgba(0,0,0,0.7)' }">
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Joe Clifford</span>
                 <span class="font-medium text-surface-400 dark:text-surface-400">
                   Customer Relations
                 </span>
                 <div class="mt-auto">
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-twitter text-surface-600 dark:text-surface-200 text-xl mr-4" />
                   </a>
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-github text-surface-600 dark:text-surface-200 text-xl mr-4" />
                   </a>
-                  <a
-                    tabindex="0"
-                    class="cursor-pointer text-white"
-                  >
+                  <a tabindex="0" class="cursor-pointer text-white">
                     <i class="pi pi-facebook text-surface-600 dark:text-surface-200 text-xl" />
                   </a>
                 </div>

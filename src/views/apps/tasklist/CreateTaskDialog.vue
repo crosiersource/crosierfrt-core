@@ -38,7 +38,9 @@ async function filterMembers(event) {
 
   if (!event.query) return [];
 
-  filteredMembers.value = members.filter((member) => member.name.toLowerCase().indexOf(event.query.toLowerCase()) === 0);
+  filteredMembers.value = members.filter(
+    (member) => member.name.toLowerCase().indexOf(event.query.toLowerCase()) === 0
+  );
 }
 </script>
 
@@ -46,38 +48,23 @@ async function filterMembers(event) {
   <div class="p-6">
     <Fluid class="grid grid-cols-12 gap-4">
       <div class="col-span-12">
-        <label
-          for="name"
-          class="text-surface-900 dark:text-surface-0 font-semibold"
-        >
+        <label for="name" class="text-surface-900 dark:text-surface-0 font-semibold">
           Task Name
         </label>
-        <InputText
-          id="name"
-          v-model="task.name"
-          type="text"
-          placeholder="Title"
-        />
+        <InputText id="name" v-model="task.name" type="text" placeholder="Title" />
       </div>
       <div class="col-span-12">
-        <label
-          for="description"
-          class="text-surface-900 dark:text-surface-0 font-semibold"
-        >
+        <label for="description" class="text-surface-900 dark:text-surface-0 font-semibold">
           Description
         </label>
         <Editor
           v-model="task.description"
           :pt="{
             root: { style: { height: '150px' }, class: 'mb-12' }
-          }"
-        />
+          }" />
       </div>
       <div class="col-span-6">
-        <label
-          for="start"
-          class="text-surface-900 dark:text-surface-0 font-semibold"
-        >
+        <label for="start" class="text-surface-900 dark:text-surface-0 font-semibold">
           Start Date
         </label>
         <DatePicker
@@ -85,27 +72,19 @@ async function filterMembers(event) {
           date-format="yy-mm-dd"
           :show-time="false"
           input-id="start"
-          placeholder="Start Date"
-        />
+          placeholder="Start Date" />
       </div>
       <div class="col-span-6">
-        <label
-          for="end"
-          class="text-surface-900 dark:text-surface-0 font-semibold"
-        >Due Date</label>
+        <label for="end" class="text-surface-900 dark:text-surface-0 font-semibold">Due Date</label>
         <DatePicker
           v-model="task.endDate"
           date-format="yy-mm-dd"
           :show-time="false"
           input-id="end"
-          placeholder="End Date"
-        />
+          placeholder="End Date" />
       </div>
       <div class="col-span-12">
-        <label
-          for="members"
-          class="text-surface-900 dark:text-surface-0 font-semibold"
-        >
+        <label for="members" class="text-surface-900 dark:text-surface-0 font-semibold">
           Add Team Member
         </label>
         <AutoComplete
@@ -115,15 +94,13 @@ async function filterMembers(event) {
           option-label="name"
           multiple
           :input-style="{ height: '2.5rem' }"
-          @complete="filterMembers($event)"
-        >
+          @complete="filterMembers($event)">
           <template #chip="{ value }">
             <div class="flex items-center">
               <img
                 :src="'/demo/images/avatar/' + value.image"
                 :alt="value.name"
-                class="h-8 w-8 mr-2"
-              >
+                class="h-8 w-8 mr-2" />
               <span class="text-surface-900 dark:text-surface-0 font-medium">{{ value.name }}</span>
             </div>
           </template>
@@ -132,8 +109,7 @@ async function filterMembers(event) {
               <img
                 :src="'/demo/images/avatar/' + option.image"
                 :alt="option.name"
-                class="h-8 w-8 mr-2"
-              >
+                class="h-8 w-8 mr-2" />
               <span class="text-surface-900 dark:text-surface-0 font-medium">
                 {{ option.name }}
               </span>
@@ -143,19 +119,8 @@ async function filterMembers(event) {
       </div>
 
       <div class="col-span-12 flex justify-end mt-6">
-        <Button
-          class="w-32 mr-4"
-          outlined
-          icon="pi pi-times"
-          label="Cancel"
-          @click="onHide()"
-        />
-        <Button
-          class="w-32"
-          icon="pi pi-check"
-          label="Save"
-          @click="onSave()"
-        />
+        <Button class="w-32 mr-4" outlined icon="pi pi-times" label="Cancel" @click="onHide()" />
+        <Button class="w-32" icon="pi pi-check" label="Save" @click="onSave()" />
       </div>
     </Fluid>
   </div>

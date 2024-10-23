@@ -41,49 +41,34 @@ function onRemoveFile(removeFile) {
             buttonbar: { class: 'hidden' },
             removeButton: { class: 'flex' }
           }"
-          @select="onSelectedFiles"
-        >
-          <template
-            v-if="uploadFiles.length > 0"
-            #content
-          >
+          @select="onSelectedFiles">
+          <template v-if="uploadFiles.length > 0" #content>
             <div class="h-80 m-1 rounded">
               <div
                 v-for="file in uploadFiles"
                 :key="file.name"
                 class="w-full h-full relative rounded p-0"
-                :style="{ cursor: 'copy' }"
-              >
+                :style="{ cursor: 'copy' }">
                 <div
                   class="remove-file-wrapper h-full relative border-4 border-transparent rounded hover:bg-primary hover:text-primary-contrast duration-100 cursor-auto"
-                  :style="{ padding: '1px' }"
-                >
-                  <img
-                    :src="file.objectURL"
-                    :alt="file.name"
-                    class="w-full h-full rounded"
-                  >
+                  :style="{ padding: '1px' }">
+                  <img :src="file.objectURL" :alt="file.name" class="w-full h-full rounded" />
                   <Button
                     icon="pi pi-times"
                     class="remove-button text-sm absolute justify-center items-center cursor-pointer"
                     rounded
                     :style="{ top: '-10px', right: '-10px', display: 'none' }"
-                    @click="onRemoveFile(file)"
-                  />
+                    @click="onRemoveFile(file)" />
                 </div>
               </div>
             </div>
           </template>
           <template #empty>
-            <div
-              v-if="uploadFiles.length < 1"
-              class="h-80 m-1 rounded"
-            >
+            <div v-if="uploadFiles.length < 1" class="h-80 m-1 rounded">
               <div
                 class="flex flex-col w-full h-full justify-center items-center cursor-pointer"
                 :style="{ cursor: 'copy' }"
-                @click="onChooseUploadFiles"
-              >
+                @click="onChooseUploadFiles">
                 <i class="pi pi-fw pi-file text-4xl text-primary" />
                 <span class="block font-semibold text-surface-900 dark:text-surface-0 text-lg mt-4">
                   Drop or select a cover image
@@ -94,17 +79,10 @@ function onRemoveFile(removeFile) {
         </FileUpload>
         <Fluid class="flex flex-col">
           <div class="mb-6 mt-4">
-            <InputText
-              type="text"
-              placeholder="Title"
-            />
+            <InputText type="text" placeholder="Title" />
           </div>
           <div class="mb-6">
-            <Textarea
-              rows="6"
-              placeholder="Content"
-              auto-resize
-            />
+            <Textarea rows="6" placeholder="Content" auto-resize />
           </div>
 
           <Editor editor-style="height: 320px" />
@@ -113,21 +91,14 @@ function onRemoveFile(removeFile) {
       <div class="col-span-12 lg:col-span-4">
         <div class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
-            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">
             Publish
           </span>
           <div class="p-4">
             <div class="bg-surface-100 dark:bg-surface-700 p-4 flex items-center rounded">
               <span class="text-surface-900 dark:text-surface-0 font-semibold mr-4">Status:</span>
               <span class="font-medium">Draft</span>
-              <Button
-                type="button"
-                icon="pi pi-fw pi-pencil"
-                class="ml-auto"
-                text
-                rounded
-              />
+              <Button type="button" icon="pi pi-fw pi-pencil" class="ml-auto" text rounded />
             </div>
           </div>
           <div class="p-4">
@@ -136,49 +107,30 @@ function onRemoveFile(removeFile) {
                 Visibility:
               </span>
               <span class="font-medium">Private</span>
-              <Button
-                type="button"
-                icon="pi pi-fw pi-pencil"
-                class="ml-auto"
-                text
-                rounded
-              />
+              <Button type="button" icon="pi pi-fw pi-pencil" class="ml-auto" text rounded />
             </div>
           </div>
         </div>
         <div class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
-            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">
             Tags
           </span>
           <div class="p-4 flex gap-2">
-            <Chip
-              v-for="(tag, i) in tags"
-              :key="i"
-              :label="tag"
-            />
+            <Chip v-for="(tag, i) in tags" :key="i" :label="tag" />
           </div>
         </div>
         <Fluid class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
-            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">
             Meta
           </span>
           <div class="p-4">
             <div class="mb-6">
-              <InputText
-                type="text"
-                placeholder="Title"
-              />
+              <InputText type="text" placeholder="Title" />
             </div>
             <div>
-              <Textarea
-                rows="6"
-                placeholder="Description"
-                auto-resize
-              />
+              <Textarea rows="6" placeholder="Description" auto-resize />
             </div>
           </div>
         </Fluid>
@@ -188,13 +140,8 @@ function onRemoveFile(removeFile) {
             severity="danger"
             outlined
             label="Discard"
-            icon="pi pi-fw pi-trash"
-          />
-          <Button
-            class="flex-1"
-            label="Publish"
-            icon="pi pi-fw pi-check"
-          />
+            icon="pi pi-fw pi-trash" />
+          <Button class="flex-1" label="Publish" icon="pi pi-fw pi-check" />
         </div>
       </div>
     </div>

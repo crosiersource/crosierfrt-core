@@ -87,8 +87,7 @@ function confirm(event) {
           header="Dialog"
           :breakpoints="{ '960px': '75vw' }"
           :style="{ width: '30vw' }"
-          :modal="true"
-        >
+          :modal="true">
           <p class="leading-normal m-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -98,61 +97,34 @@ function confirm(event) {
             mollit anim id est laborum.
           </p>
           <template #footer>
-            <Button
-              label="Save"
-              @click="close"
-            />
+            <Button label="Save" @click="close" />
           </template>
         </Dialog>
-        <Button
-          label="Show"
-          style="width: auto"
-          @click="open"
-        />
+        <Button label="Show" style="width: auto" @click="open" />
       </div>
 
       <div class="card">
         <div class="font-semibold text-xl mb-4">Popover</div>
         <div class="flex flex-wrap gap-2">
-          <Button
-            type="button"
-            label="Show"
-            @click="toggleDataTable"
-          />
-          <Popover
-            id="overlay_panel"
-            ref="op2"
-            style="width: 450px"
-          >
+          <Button type="button" label="Show" @click="toggleDataTable" />
+          <Popover id="overlay_panel" ref="op2" style="width: 450px">
             <DataTable
               v-model:selection="selectedProduct"
               :value="products"
               selection-mode="single"
               :paginator="true"
               :rows="5"
-              @row-select="onProductSelect"
-            >
-              <Column
-                field="name"
-                header="Name"
-                sortable
-                style="min-width: 12rem"
-              />
+              @row-select="onProductSelect">
+              <Column field="name" header="Name" sortable style="min-width: 12rem" />
               <Column header="Image">
                 <template #body="slotProps">
                   <img
                     :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`"
                     :alt="slotProps.data.image"
-                    class="w-16 shadow-sm"
-                  >
+                    class="w-16 shadow-sm" />
                 </template>
               </Column>
-              <Column
-                field="price"
-                header="Price"
-                sortable
-                style="min-width: 8rem"
-              >
+              <Column field="price" header="Price" sortable style="min-width: 8rem">
                 <template #body="slotProps">$ {{ slotProps.data.price }}</template>
               </Column>
             </DataTable>
@@ -163,26 +135,15 @@ function confirm(event) {
       <div class="card">
         <div class="font-semibold text-xl mb-4">Tooltip</div>
         <div class="inline-flex gap-4">
-          <InputText
-            v-tooltip="'Your username'"
-            type="text"
-            placeholder="Username"
-          />
-          <Button
-            v-tooltip="'Click to proceed'"
-            type="button"
-            label="Save"
-          />
+          <InputText v-tooltip="'Your username'" type="text" placeholder="Username" />
+          <Button v-tooltip="'Click to proceed'" type="button" label="Save" />
         </div>
       </div>
     </div>
     <div class="md:w-1/2">
       <div class="card">
         <div class="font-semibold text-xl mb-4">Drawer</div>
-        <Drawer
-          v-model:visible="visibleLeft"
-          header="Drawer"
-        >
+        <Drawer v-model:visible="visibleLeft" header="Drawer">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -190,11 +151,7 @@ function confirm(event) {
           </p>
         </Drawer>
 
-        <Drawer
-          v-model:visible="visibleRight"
-          header="Drawer"
-          position="right"
-        >
+        <Drawer v-model:visible="visibleRight" header="Drawer" position="right">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -202,11 +159,7 @@ function confirm(event) {
           </p>
         </Drawer>
 
-        <Drawer
-          v-model:visible="visibleTop"
-          header="Drawer"
-          position="top"
-        >
+        <Drawer v-model:visible="visibleTop" header="Drawer" position="top">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -214,11 +167,7 @@ function confirm(event) {
           </p>
         </Drawer>
 
-        <Drawer
-          v-model:visible="visibleBottom"
-          header="Drawer"
-          position="bottom"
-        >
+        <Drawer v-model:visible="visibleBottom" header="Drawer" position="bottom">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -226,11 +175,7 @@ function confirm(event) {
           </p>
         </Drawer>
 
-        <Drawer
-          v-model:visible="visibleFull"
-          header="Drawer"
-          position="full"
-        >
+        <Drawer v-model:visible="visibleFull" header="Drawer" position="full">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -238,30 +183,11 @@ function confirm(event) {
           </p>
         </Drawer>
 
-        <Button
-          icon="pi pi-arrow-right"
-          style="margin-right: 0.25em"
-          @click="visibleLeft = true"
-        />
-        <Button
-          icon="pi pi-arrow-left"
-          style="margin-right: 0.25em"
-          @click="visibleRight = true"
-        />
-        <Button
-          icon="pi pi-arrow-down"
-          style="margin-right: 0.25em"
-          @click="visibleTop = true"
-        />
-        <Button
-          icon="pi pi-arrow-up"
-          style="margin-right: 0.25em"
-          @click="visibleBottom = true"
-        />
-        <Button
-          icon="pi pi-external-link"
-          @click="visibleFull = true"
-        />
+        <Button icon="pi pi-arrow-right" style="margin-right: 0.25em" @click="visibleLeft = true" />
+        <Button icon="pi pi-arrow-left" style="margin-right: 0.25em" @click="visibleRight = true" />
+        <Button icon="pi pi-arrow-down" style="margin-right: 0.25em" @click="visibleTop = true" />
+        <Button icon="pi pi-arrow-up" style="margin-right: 0.25em" @click="visibleBottom = true" />
+        <Button icon="pi pi-external-link" @click="visibleFull = true" />
       </div>
 
       <div class="card">
@@ -272,8 +198,7 @@ function confirm(event) {
           icon="pi pi-check"
           label="Confirm"
           class="mr-2"
-          @click="confirm($event)"
-        />
+          @click="confirm($event)" />
       </div>
 
       <div class="card">
@@ -283,19 +208,14 @@ function confirm(event) {
           icon="pi pi-trash"
           severity="danger"
           style="width: auto"
-          @click="openConfirmation"
-        />
+          @click="openConfirmation" />
         <Dialog
           v-model:visible="displayConfirmation"
           header="Confirmation"
           :style="{ width: '350px' }"
-          :modal="true"
-        >
+          :modal="true">
           <div class="flex items-center justify-center">
-            <i
-              class="pi pi-exclamation-triangle mr-4"
-              style="font-size: 2rem"
-            />
+            <i class="pi pi-exclamation-triangle mr-4" style="font-size: 2rem" />
             <span>Are you sure you want to proceed?</span>
           </div>
           <template #footer>
@@ -304,16 +224,14 @@ function confirm(event) {
               icon="pi pi-times"
               text
               severity="secondary"
-              @click="closeConfirmation"
-            />
+              @click="closeConfirmation" />
             <Button
               label="Yes"
               icon="pi pi-check"
               severity="danger"
               outlined
               autofocus
-              @click="closeConfirmation"
-            />
+              @click="closeConfirmation" />
           </template>
         </Dialog>
       </div>

@@ -8,8 +8,7 @@
     :auth-store="authStore"
     :store="userStore"
     form-path="/sec/usuario/form"
-    list-path="/sec/usuario/list"
-  >
+    list-path="/sec/usuario/list">
     <template #filters>
       <VTextField
         id="filters.id"
@@ -17,16 +16,14 @@
         label="Id"
         outlined
         dense
-        clearable
-      />
+        clearable />
 
       <VTextField
         v-model="userStore.filters.username"
         label="Nome de Usuário"
         outlined
         dense
-        clearable
-      />
+        clearable />
     </template>
   </CrosierListS>
 </template>

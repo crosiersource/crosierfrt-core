@@ -5,47 +5,27 @@
       &nbsp; {{ titulo }}
       <VSpacer />
 
-      <VBtn
-        icon="fas fa-file"
-        variant="plain"
-        title="Novo registro"
-        @click="novoRegistro"
-      />
+      <VBtn icon="fas fa-file" variant="plain" title="Novo registro" @click="novoRegistro" />
 
       <VBtn
         v-if="listPath"
         icon="fas fa-list"
         variant="plain"
         title="Listar registros"
-        @click="$router.push({ path: listPath })"
-      />
+        @click="$router.push({ path: listPath })" />
     </VCardTitle>
 
     <VDivider />
 
-    <VForm
-      fast-fail
-      @submit.prevent="submitForm"
-    >
+    <VForm fast-fail @submit.prevent="submitForm">
       <slot name="fields" />
 
       <VRow no-gutters>
         <VCol class="d-flex justify-end align-center">
-          <VBtn
-            prepend-icon="fas fa-save"
-            type="submit"
-            color="green"
-          >
-            Salvar
-          </VBtn>
+          <VBtn prepend-icon="fas fa-save" type="submit" color="green">Salvar</VBtn>
         </VCol>
 
-        <VBtn
-          prepend-icon="far fa-times-circle"
-          class="mx-2"
-          type="button"
-          @click="limpar"
-        >
+        <VBtn prepend-icon="far fa-times-circle" class="mx-2" type="button" @click="limpar">
           Limpar
         </VBtn>
       </VRow>

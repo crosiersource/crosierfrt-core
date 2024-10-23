@@ -41,8 +41,7 @@ function navigateToCreateListPage() {
       paginator-template="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
       current-page-report-template="Showing {first} to {last} of {totalRecords} entries"
       :rows-per-page-options="[10, 25, 50]"
-      :global-filter-fields="['name', 'country.name', 'representative.name']"
-    >
+      :global-filter-fields="['name', 'country.name', 'representative.name']">
       <template #header>
         <div class="flex flex-wrap gap-2 items-center justify-between">
           <IconField class="w-full sm:w-80 order-1 sm:order-none">
@@ -50,8 +49,7 @@ function navigateToCreateListPage() {
             <InputText
               v-model="filterTable.global.value"
               placeholder="Global Search"
-              class="w-full"
-            />
+              class="w-full" />
           </IconField>
           <Button
             type="button"
@@ -59,8 +57,7 @@ function navigateToCreateListPage() {
             label="Add New"
             class="w-full sm:w-auto order-none sm:order-1"
             outlined
-            @click="navigateToCreateListPage"
-          />
+            @click="navigateToCreateListPage" />
         </div>
       </template>
       <Column
@@ -68,8 +65,7 @@ function navigateToCreateListPage() {
         header="Name"
         sortable
         header-class="whitespace-nowrap"
-        :style="{ width: '25%' }"
-      >
+        :style="{ width: '25%' }">
         <template #body="{ data }">
           {{ data.name }}
         </template>
@@ -79,15 +75,13 @@ function navigateToCreateListPage() {
         header="Country"
         sortable
         header-class="whitespace-nowrap"
-        :style="{ width: '25%' }"
-      >
+        :style="{ width: '25%' }">
         <template #body="{ data }">
           <div class="flex items-center gap-2">
             <img
               :alt="data.country.name"
               src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
-              :class="'w-8 mr-2 flag flag-' + data.country.code"
-            >
+              :class="'w-8 mr-2 flag flag-' + data.country.code" />
             <span>{{ data.country.name }}</span>
           </div>
         </template>
@@ -97,8 +91,7 @@ function navigateToCreateListPage() {
         header="Join Date"
         sortable
         header-class="whitespace-nowrap"
-        :style="{ width: '25%' }"
-      >
+        :style="{ width: '25%' }">
         <template #body="{ data }">
           {{ formatDate(data.date) }}
         </template>
@@ -108,15 +101,13 @@ function navigateToCreateListPage() {
         header="Created By"
         header-class="whitespace-nowrap"
         :style="{ width: '25%' }"
-        sortable
-      >
+        sortable>
         <template #body="{ data }">
           <div class="inline-flex items-center">
             <img
               :alt="data.representative.name"
               :src="`/demo/images/avatar/${data.representative.image}`"
-              class="w-8 mr-2"
-            >
+              class="w-8 mr-2" />
             <span>{{ data.representative.name }}</span>
           </div>
         </template>
@@ -126,16 +117,14 @@ function navigateToCreateListPage() {
         header="Activity"
         header-class="whitespace-nowrap"
         :style="{ width: '25%' }"
-        sortable
-      >
+        sortable>
         <template #body="{ data }">
           <ProgressBar
             :value="data.activity"
             :show-value="false"
             :style="{
               height: '.5rem'
-            }"
-          />
+            }" />
         </template>
       </Column>
     </DataTable>

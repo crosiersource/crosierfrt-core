@@ -15,8 +15,7 @@ const backgroundStyle = ref({
         <div class="flex flex-col">
           <div
             style="height: 56px; width: 56px"
-            class="bg-primary-50 rounded-full flex items-center justify-center"
-          >
+            class="bg-primary-50 rounded-full flex items-center justify-center">
             <i class="pi pi-question text-primary !text-4xl" />
           </div>
           <div class="mt-6">
@@ -34,29 +33,18 @@ const backgroundStyle = ref({
             <InputText placeholder="Email" />
           </InputGroup>
           <InputGroup>
-            <Button
-              class="w-full"
-              label="SUBMIT EMAIL"
-            />
+            <Button class="w-full" label="SUBMIT EMAIL" />
           </InputGroup>
           <InputGroup>
-            <Button
-              class="w-full text-primary-500"
-              text
-              label="BACK TO LOGIN"
-            />
+            <Button class="w-full text-primary-500" text label="BACK TO LOGIN" />
           </InputGroup>
         </div>
       </div>
     </div>
     <div
       :style="backgroundStyle"
-      class="hidden lg:flex flex-1 items-center justify-center bg-cover"
-    >
-      <img
-        src="/layout/images/logo/vector_logo.png"
-        alt=""
-      >
+      class="hidden lg:flex flex-1 items-center justify-center bg-cover">
+      <img src="/layout/images/logo/vector_logo.png" alt="" />
     </div>
   </div>
   <AppConfig simple />

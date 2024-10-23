@@ -600,11 +600,7 @@ function onPresetChange() {
 </script>
 
 <template>
-  <button
-    class="layout-config-button config-link"
-    type="button"
-    @click="onConfigSidebarToggle"
-  >
+  <button class="layout-config-button config-link" type="button" @click="onConfigSidebarToggle">
     <i class="pi pi-cog" />
   </button>
 
@@ -615,8 +611,7 @@ function onPresetChange() {
     header="Settings"
     :pt="{
       pcCloseButton: { root: 'ml-auto' }
-    }"
-  >
+    }">
     <div class="flex flex-col gap-4">
       <div>
         <span class="text-lg font-semibold">Primary</span>
@@ -632,8 +627,7 @@ function onPresetChange() {
             :style="{
               backgroundColor: `${primaryColor.name === 'noir' ? 'var(--text-color)' : primaryColor.palette['500']}`
             }"
-            @click="updateColors('primary', primaryColor)"
-          />
+            @click="updateColors('primary', primaryColor)" />
         </div>
       </div>
 
@@ -655,8 +649,7 @@ function onPresetChange() {
               }
             ]"
             :style="{ backgroundColor: `${surface.palette['500']}` }"
-            @click="updateColors('surface', surface)"
-          />
+            @click="updateColors('surface', surface)" />
         </div>
       </div>
 
@@ -667,8 +660,7 @@ function onPresetChange() {
             v-model="preset"
             :options="presetOptions"
             :allow-empty="false"
-            @change="onPresetChange"
-          />
+            @change="onPresetChange" />
         </div>
       </div>
 
@@ -681,8 +673,7 @@ function onPresetChange() {
             option-label="name"
             option-value="value"
             :allow-empty="false"
-            @change="toggleDarkMode"
-          />
+            @change="toggleDarkMode" />
         </div>
       </div>
 
@@ -698,8 +689,7 @@ function onPresetChange() {
                     name="menuMode"
                     value="static"
                     input-id="mode1"
-                    @update:model-value="setMenuMode"
-                  />
+                    @update:model-value="setMenuMode" />
                   <label for="mode1">Static</label>
                 </div>
 
@@ -709,8 +699,7 @@ function onPresetChange() {
                     name="menuMode"
                     value="overlay"
                     input-id="mode2"
-                    @update:model-value="setMenuMode"
-                  />
+                    @update:model-value="setMenuMode" />
                   <label for="mode2">Overlay</label>
                 </div>
               </div>
@@ -721,8 +710,7 @@ function onPresetChange() {
                     name="menuMode"
                     value="slim"
                     input-id="mode3"
-                    @update:model-value="setMenuMode"
-                  />
+                    @update:model-value="setMenuMode" />
                   <label for="mode2">Slim</label>
                 </div>
                 <div class="flex items-center gap-2 w-1/2">
@@ -731,8 +719,7 @@ function onPresetChange() {
                     name="menuMode"
                     value="slim-plus"
                     input-id="mode4"
-                    @update:model-value="setMenuMode"
-                  />
+                    @update:model-value="setMenuMode" />
                   <label for="mode3">Slim+</label>
                 </div>
               </div>
@@ -743,8 +730,7 @@ function onPresetChange() {
                     name="menuMode"
                     value="reveal"
                     input-id="mode5"
-                    @update:model-value="setMenuMode"
-                  />
+                    @update:model-value="setMenuMode" />
                   <label for="mode4">Reveal</label>
                 </div>
                 <div class="flex items-center gap-2 w-1/2">
@@ -753,8 +739,7 @@ function onPresetChange() {
                     name="menuMode"
                     value="drawer"
                     input-id="mode6"
-                    @update:model-value="setMenuMode"
-                  />
+                    @update:model-value="setMenuMode" />
                   <label for="mode5">Drawer</label>
                 </div>
               </div>
@@ -765,8 +750,7 @@ function onPresetChange() {
                     name="menuMode"
                     value="horizontal"
                     input-id="mode7"
-                    @update:model-value="setMenuMode"
-                  />
+                    @update:model-value="setMenuMode" />
                   <label for="mode7">Horizontal</label>
                 </div>
               </div>
@@ -785,8 +769,7 @@ function onPresetChange() {
                     name="menuProfilePosition"
                     value="start"
                     input-id="profile1"
-                    @update:model-value="setProfilePosition"
-                  />
+                    @update:model-value="setProfilePosition" />
                   <label for="profile1">Start</label>
                 </div>
 
@@ -796,8 +779,7 @@ function onPresetChange() {
                     name="menuProfilePosition"
                     value="end"
                     input-id="profile2"
-                    @update:model-value="setProfilePosition"
-                  />
+                    @update:model-value="setProfilePosition" />
                   <label for="profile2">End</label>
                 </div>
               </div>
@@ -807,17 +789,13 @@ function onPresetChange() {
 
         <div>
           <span class="text-lg font-semibold">Menu Themes</span>
-          <div
-            v-if="!layoutConfig.darkTheme"
-            class="pt-2 flex gap-2 flex-wrap"
-          >
+          <div v-if="!layoutConfig.darkTheme" class="pt-2 flex gap-2 flex-wrap">
             <button
               v-for="(theme, i) in menuThemes"
               :key="i"
               class="cursor-pointer w-6 h-6 rounded-full flex flex-shrink-0 items-center justify-center p-0 outline-none outline-offset-1 shadow"
               :style="{ 'background-color': theme.color }"
-              @click="() => setMenuTheme(theme.name)"
-            >
+              @click="() => setMenuTheme(theme.name)">
               <i
                 v-if="theme.name === layoutConfig.menuTheme"
                 :class="[
@@ -825,8 +803,7 @@ function onPresetChange() {
                   theme.name === layoutConfig.menuTheme && layoutConfig.menuTheme !== 'light'
                     ? 'text-white'
                     : 'text-dark'
-                ]"
-              />
+                ]" />
             </button>
           </div>
           <template v-else>
@@ -845,8 +822,7 @@ function onPresetChange() {
               :key="i"
               class="cursor-pointer w-6 h-6 rounded-full flex flex-shrink-0 items-center justify-center p-0 outline-none outline-offset-1 shadow"
               :style="{ 'background-color': theme.color }"
-              @click="() => setTopbarTheme(theme.name)"
-            >
+              @click="() => setTopbarTheme(theme.name)">
               <i
                 v-if="theme.name === layoutConfig.topbarTheme"
                 :class="[
@@ -854,8 +830,7 @@ function onPresetChange() {
                   theme.name === layoutConfig.topbarTheme && layoutConfig.topbarTheme !== 'white'
                     ? 'text-white'
                     : 'text-dark'
-                ]"
-              />
+                ]" />
             </button>
           </div>
         </div>

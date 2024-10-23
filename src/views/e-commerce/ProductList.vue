@@ -58,22 +58,16 @@ const products2 = ref([
       <div
         v-for="(product, i) in products"
         :key="i"
-        class="col-span-12 md:col-span-6 lg:col-span-4"
-      >
+        class="col-span-12 md:col-span-6 lg:col-span-4">
         <div class="p-2">
           <div class="shadow p-6 bg-surface-0 dark:bg-surface-900 rounded">
             <div class="relative mb-4">
               <span
                 class="bg-surface-0 dark:bg-surface-900 text-surface-900 dark:text-surface-0 shadow px-4 py-2 absolute rounded-3xl"
-                :style="{ left: '1rem', top: '1rem' }"
-              >
+                :style="{ left: '1rem', top: '1rem' }">
                 Category
               </span>
-              <img
-                :src="product.image"
-                class="w-full"
-                :alt="i"
-              >
+              <img :src="product.image" class="w-full" :alt="i" />
             </div>
             <div class="flex justify-between items-center mb-4">
               <span class="text-surface-900 dark:text-surface-0 font-medium text-xl">
@@ -99,19 +93,13 @@ const products2 = ref([
       <div
         v-for="(product, i) in products2"
         :key="i"
-        class="col-span-12 md:col-span-6 lg:col-span-3 mb-8 lg:mb-0"
-      >
+        class="col-span-12 md:col-span-6 lg:col-span-3 mb-8 lg:mb-0">
         <div class="mb-4 relative">
-          <img
-            :src="product.image"
-            class="w-full"
-            :alt="i"
-          >
+          <img :src="product.image" class="w-full" :alt="i" />
           <Button
             type="button"
             class="border !border-white rounded py-2 px-4 !absolute !bg-black/30 !text-white inline-flex items-center justify-center hover:bg-black/40 transition-colors duration-300 cursor-pointer"
-            :style="{ bottom: '1rem', left: '1rem', width: 'calc(100% - 2rem)' }"
-          >
+            :style="{ bottom: '1rem', left: '1rem', width: 'calc(100% - 2rem)' }">
             <i class="pi pi-shopping-cart mr-4 text-base" />
             <span class="text-base">Add to Cart</span>
           </Button>
@@ -128,29 +116,25 @@ const products2 = ref([
                 'box-shadow':
                   product.color === 'Bluegray' ? '0 0 0 0.2rem var(--p-bluegray-500)' : null
               }"
-              @click="product.color = 'Bluegray'"
-            />
+              @click="product.color = 'Bluegray'" />
             <div
               class="w-8 h-8 flex-shrink-0 rounded-full bg-indigo-500 hover:border-indigo-500 mr-4 cursor-pointer border-2 border-surface-200 dark:border-surface-700 transition-all duration-300"
               :style="{
                 'box-shadow': product.color === 'Indigo' ? '0 0 0 0.2rem var(--p-indigo-500)' : null
               }"
-              @click="product.color = 'Indigo'"
-            />
+              @click="product.color = 'Indigo'" />
             <div
               class="w-8 h-8 flex-shrink-0 rounded-full bg-purple-500 hover:border-purple-500 mr-4 cursor-pointer border-2 border-surface-200 dark:border-surface-700 transition-all duration-300"
               :style="{
                 'box-shadow': product.color === 'Purple' ? '0 0 0 0.2rem var(--p-purple-500)' : null
               }"
-              @click="product.color = 'Purple'"
-            />
+              @click="product.color = 'Purple'" />
             <div
               class="w-8 h-8 flex-shrink-0 rounded-full bg-cyan-500 hover:border-cyan-500 cursor-pointer border-2 border-surface-200 dark:border-surface-700 transition-all duration-300"
               :style="{
                 'box-shadow': product.color === 'Cyan' ? '0 0 0 0.2rem var(--p-cyan-500)' : null
               }"
-              @click="product.color = 'Cyan'"
-            />
+              @click="product.color = 'Cyan'" />
           </div>
           <span class="text-surface-700 dark:text-surface-100">{{ product.color }}</span>
         </div>

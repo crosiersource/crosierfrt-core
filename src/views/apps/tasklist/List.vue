@@ -56,51 +56,38 @@ function toggleMenu(event, i, task) {
 
 <template>
   <div
-    class="text-surface-900 dark:text-surface-0 font-semibold text-lg mt-8 mb-4 border-b border-surface-200 dark:border-surface-700 py-4"
-  >
+    class="text-surface-900 dark:text-surface-0 font-semibold text-lg mt-8 mb-4 border-b border-surface-200 dark:border-surface-700 py-4">
     {{ title }}
   </div>
   <ul class="list-none p-0 m-0">
     <li
       v-for="(task, i) in taskList"
       :key="task"
-      class="flex flex-col gap-4 md:flex-row md:items-center p-2 border-b border-surface-200 dark:border-surface-700"
-    >
+      class="flex flex-col gap-4 md:flex-row md:items-center p-2 border-b border-surface-200 dark:border-surface-700">
       <div class="flex items-center flex-1">
         <Checkbox
           v-model="task.completed"
           binary
           :input-id="task.id?.toString()"
-          @change="onCheckboxChange(task)"
-        />
+          @change="onCheckboxChange(task)" />
         <label
           class="font-medium whitespace-nowrap text-ellipsis overflow-hidden ml-2"
           :class="{ 'line-through': task.completed }"
-          style="max-width: 500px"
-        >
+          style="max-width: 500px">
           {{ task.name }}
         </label>
       </div>
       <div class="flex flex-1 gap-4 flex-col sm:flex-row sm:justify-between">
         <div class="flex items-center">
-          <span
-            v-if="task.comments"
-            class="flex items-center font-semibold mr-4"
-          >
+          <span v-if="task.comments" class="flex items-center font-semibold mr-4">
             <i class="pi pi-comment mr-2" />
             {{ task.comments }}
           </span>
-          <span
-            v-if="task.attachments"
-            class="flex items-center font-semibold mr-4"
-          >
+          <span v-if="task.attachments" class="flex items-center font-semibold mr-4">
             <i class="pi pi-paperclip mr-2" />
             {{ task.attachments }}
           </span>
-          <span
-            v-if="task.startDate"
-            class="flex items-center font-semibold whitespace-nowrap"
-          >
+          <span v-if="task.startDate" class="flex items-center font-semibold whitespace-nowrap">
             <i class="pi pi-clock mr-2" />
             {{ parseDate(task.startDate) }}
           </span>
@@ -113,16 +100,14 @@ function toggleMenu(event, i, task) {
                 :key="member"
                 :image="'/demo/images/avatar/' + member.image"
                 size="large"
-                shape="circle"
-              />
+                shape="circle" />
               <Avatar
                 v-if="task && task.members && task.members.length > 4"
                 :label="`+${task.members.length - 4}`"
                 shape="circle"
                 size="large"
                 class="bg-blue-500"
-                :style="{ color: '#212121', border: '2px solid var(--surface-border)' }"
-              />
+                :style="{ color: '#212121', border: '2px solid var(--surface-border)' }" />
             </AvatarGroup>
           </div>
           <Button
@@ -131,14 +116,8 @@ function toggleMenu(event, i, task) {
             class="z-30 ml-auto sm:ml-0"
             text
             rounded
-            @click="toggleMenu($event, i, task)"
-          />
-          <Menu
-            ref="menu"
-            popup
-            :model="menuItems"
-            class="w-32"
-          />
+            @click="toggleMenu($event, i, task)" />
+          <Menu ref="menu" popup :model="menuItems" class="w-32" />
         </div>
       </div>
     </li>

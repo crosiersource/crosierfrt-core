@@ -41,50 +41,37 @@ function navigateToEdit() {
     <div class="flex justify-between flex-col-reverse md:flex-row items-center">
       <div>
         <div
-          class="text-xl text-surface-900 dark:text-surface-0 mb-6 mt-6 md:mt-0 text-center md:text-left font-semibold md:pr-6"
-        >
+          class="text-xl text-surface-900 dark:text-surface-0 mb-6 mt-6 md:mt-0 text-center md:text-left font-semibold md:pr-6">
           How To Get Started Tutorial
         </div>
         <div class="flex flex-wrap justify-center md:justify-start gap-4">
           <span
-            class="inline-flex items-center py-2 px-4 font-medium border border-surface-200 dark:border-surface-700 rounded"
-          >
+            class="inline-flex items-center py-2 px-4 font-medium border border-surface-200 dark:border-surface-700 rounded">
             <i class="pi pi-clock text-primary mr-2" />
             <span class="text-surface-900 dark:text-surface-0">2d ago</span>
           </span>
           <span
-            class="inline-flex items-center py-2 px-4 font-medium border border-surface-200 dark:border-surface-700 rounded"
-          >
+            class="inline-flex items-center py-2 px-4 font-medium border border-surface-200 dark:border-surface-700 rounded">
             <i class="pi pi-comments text-primary mr-2" />
             <span class="text-surface-900 dark:text-surface-0">24</span>
           </span>
           <span
-            class="inline-flex items-center py-2 px-4 font-medium border border-surface-200 dark:border-surface-700 rounded"
-          >
+            class="inline-flex items-center py-2 px-4 font-medium border border-surface-200 dark:border-surface-700 rounded">
             <i class="pi pi-eye text-primary mr-2" />
             <span class="text-surface-900 dark:text-surface-0">124</span>
           </span>
         </div>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <img
-          class="w-16 h-16"
-          src="/demo/images/avatar/circle/avatar-f-2@2x.png"
-          alt="Avatar"
-        >
+        <img class="w-16 h-16" src="/demo/images/avatar/circle/avatar-f-2@2x.png" alt="Avatar" />
         <span
-          class="mt-4 font-bold text-surface-900 dark:text-surface-0 text-center whitespace-nowrap"
-        >
+          class="mt-4 font-bold text-surface-900 dark:text-surface-0 text-center whitespace-nowrap">
           Jane Cooper
         </span>
       </div>
     </div>
     <div class="text-center my-12">
-      <img
-        src="/demo/images/blog/blogdetail.png"
-        alt="Image"
-        class="w-full"
-      >
+      <img src="/demo/images/blog/blogdetail.png" alt="Image" class="w-full" />
     </div>
     <div class="text-2xl text-surface-900 dark:text-surface-0 mb-6 font-semibold">
       Sodales massa, morbi convallis
@@ -134,28 +121,14 @@ function navigateToEdit() {
       </li>
     </ul>
     <div class="flex flex-col sm:flex-row my-20 w-full gap-4">
-      <Button
-        icon="pi pi-twitter"
-        severity="secondary"
-        label="Twitter"
-      />
-      <Button
-        icon="pi pi-facebook"
-        severity="secondary"
-        label="Facebook"
-      />
-      <Button
-        icon="pi pi-pencil"
-        class="sm:ml-auto"
-        label="Edit Post"
-        @click="navigateToEdit"
-      />
+      <Button icon="pi pi-twitter" severity="secondary" label="Twitter" />
+      <Button icon="pi pi-facebook" severity="secondary" label="Facebook" />
+      <Button icon="pi pi-pencil" class="sm:ml-auto" label="Edit Post" @click="navigateToEdit" />
     </div>
     <div class="flex items-center mb-6 font-bold">
       <span class="text-xl text-surface-900 dark:text-surface-0 mr-6">Comments</span>
       <span
-        class="inline-flex items-center justify-center w-8 h-8 border border-surface-200 dark:border-surface-700 rounded"
-      >
+        class="inline-flex items-center justify-center w-8 h-8 border border-surface-200 dark:border-surface-700 rounded">
         {{ comments.length }}
       </span>
     </div>
@@ -163,13 +136,8 @@ function navigateToEdit() {
       <li
         v-for="(comment, i) in comments"
         :key="{ i }"
-        class="flex p-4 mb-4 border border-surface-200 dark:border-surface-700 rounded"
-      >
-        <img
-          :src="comment.image"
-          class="w-12 h-12 mr-4 flex-shrink-0"
-          :alt="'Image' + i"
-        >
+        class="flex p-4 mb-4 border border-surface-200 dark:border-surface-700 rounded">
+        <img :src="comment.image" class="w-12 h-12 mr-4 flex-shrink-0" :alt="'Image' + i" />
         <div>
           <span class="font-semibold text-surface-900 dark:text-surface-0">{{ comment.name }}</span>
           <p class="font-semibold text-surface-600 dark:text-surface-200 m-0 text-sm">
@@ -188,26 +156,17 @@ function navigateToEdit() {
     <Fluid class="mb-4">
       <IconField>
         <InputIcon class="pi pi-user" />
-        <InputText
-          type="text"
-          placeholder="Name"
-        />
+        <InputText type="text" placeholder="Name" />
       </IconField>
     </Fluid>
     <Fluid class="mb-4">
       <IconField>
         <InputIcon class="pi pi-envelope" />
-        <InputText
-          type="text"
-          placeholder="Email"
-        />
+        <InputText type="text" placeholder="Email" />
       </IconField>
     </Fluid>
     <Fluid class="mb-4">
-      <Textarea
-        :rows="6"
-        placeholder="Your comment"
-      />
+      <Textarea :rows="6" placeholder="Your comment" />
     </Fluid>
     <div class="flex justify-end">
       <Button label="Post Comment" />

@@ -47,10 +47,7 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
     <div class="col-span-6">
       <div class="card">
         <div class="font-semibold text-xl mb-4">Right Align</div>
-        <Timeline
-          :value="events"
-          align="right"
-        >
+        <Timeline :value="events" align="right">
           <template #content="slotProps">
             {{ slotProps.item.status }}
           </template>
@@ -60,10 +57,7 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
     <div class="col-span-6">
       <div class="card">
         <div class="font-semibold text-xl mb-4">Alternate Align</div>
-        <Timeline
-          :value="events"
-          align="alternate"
-        >
+        <Timeline :value="events" align="alternate">
           <template #content="slotProps">
             {{ slotProps.item.status }}
           </template>
@@ -86,16 +80,11 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
     <div class="col-span-full">
       <div class="card">
         <div class="font-semibold text-xl mb-4">Templating</div>
-        <Timeline
-          :value="events"
-          align="alternate"
-          class="customized-timeline"
-        >
+        <Timeline :value="events" align="alternate" class="customized-timeline">
           <template #marker="slotProps">
             <span
               class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
-              :style="{ backgroundColor: slotProps.item.color }"
-            >
+              :style="{ backgroundColor: slotProps.item.color }">
               <i :class="slotProps.item.icon" />
             </span>
           </template>
@@ -113,18 +102,14 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
                   :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.item.image}`"
                   :alt="slotProps.item.name"
                   width="200"
-                  class="shadow-sm"
-                >
+                  class="shadow-sm" />
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
                   consequuntur error repudiandae numquam deserunt quisquam repellat libero
                   asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
                   quas!
                 </p>
-                <Button
-                  label="Read more"
-                  text
-                />
+                <Button label="Read more" text />
               </template>
             </Card>
           </template>
@@ -135,33 +120,21 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
       <div class="card">
         <div class="font-semibold text-xl mb-4">Horizontal</div>
         <div class="font-semibold mb-2">Top Align</div>
-        <Timeline
-          :value="horizontalEvents"
-          layout="horizontal"
-          align="top"
-        >
+        <Timeline :value="horizontalEvents" layout="horizontal" align="top">
           <template #content="slotProps">
             {{ slotProps.item }}
           </template>
         </Timeline>
 
         <div class="font-semibold mt-4 mb-2">Bottom Align</div>
-        <Timeline
-          :value="horizontalEvents"
-          layout="horizontal"
-          align="bottom"
-        >
+        <Timeline :value="horizontalEvents" layout="horizontal" align="bottom">
           <template #content="slotProps">
             {{ slotProps.item }}
           </template>
         </Timeline>
 
         <div class="font-semibold mt-4 mb-2">Alternate Align</div>
-        <Timeline
-          :value="horizontalEvents"
-          layout="horizontal"
-          align="alternate"
-        >
+        <Timeline :value="horizontalEvents" layout="horizontal" align="alternate">
           <template #opposite>&nbsp;</template>
           <template #content="slotProps">
             {{ slotProps.item }}

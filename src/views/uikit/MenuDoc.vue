@@ -442,10 +442,7 @@ function onContextRightClick(event) {
       <template #end>
         <IconField>
           <InputIcon class="pi pi-search" />
-          <InputText
-            type="text"
-            placeholder="Search"
-          />
+          <InputText type="text" placeholder="Search" />
         </IconField>
       </template>
     </Menubar>
@@ -453,10 +450,7 @@ function onContextRightClick(event) {
 
   <div class="card">
     <div class="font-semibold text-xl mb-4">Breadcrumb</div>
-    <Breadcrumb
-      :home="breadcrumbHome"
-      :model="breadcrumbItems"
-    />
+    <Breadcrumb :home="breadcrumbHome" :model="breadcrumbItems" />
   </div>
 
   <div class="flex flex-col md:flex-row gap-8">
@@ -502,30 +496,19 @@ function onContextRightClick(event) {
     <div class="md:w-1/3">
       <div class="card">
         <div class="font-semibold text-xl mb-4">Overlay Menu</div>
-        <Menu
-          ref="menu"
-          :model="overlayMenuItems"
-          :popup="true"
-        />
+        <Menu ref="menu" :model="overlayMenuItems" :popup="true" />
         <Button
           type="button"
           label="Options"
           icon="pi pi-angle-down"
           style="width: auto"
-          @click="toggleMenu"
-        />
+          @click="toggleMenu" />
       </div>
 
-      <div
-        class="card"
-        @contextmenu="onContextRightClick"
-      >
+      <div class="card" @contextmenu="onContextRightClick">
         <div class="font-semibold text-xl mb-4">Context Menu</div>
         Right click to display.
-        <ContextMenu
-          ref="contextMenu"
-          :model="contextMenuItems"
-        />
+        <ContextMenu ref="contextMenu" :model="contextMenuItems" />
       </div>
     </div>
   </div>
@@ -537,10 +520,7 @@ function onContextRightClick(event) {
         <MegaMenu :model="megamenuItems" />
 
         <div class="font-semibold text-xl mb-4 mt-8">MegaMenu | Vertical</div>
-        <MegaMenu
-          :model="megamenuItems"
-          orientation="vertical"
-        />
+        <MegaMenu :model="megamenuItems" orientation="vertical" />
       </div>
     </div>
     <div class="md:w-1/2">

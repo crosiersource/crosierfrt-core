@@ -39,14 +39,9 @@ function handleMouseLeave(event) {
   <div class="bg-surface-50 dark:bg-surface-950">
     <div
       style="height: 68px; backdrop-filter: blur(17px)"
-      class="flex justify-between items-center z-30 px-8 bg-black/40 top-0 w-full fixed"
-    >
+      class="flex justify-between items-center z-30 px-8 bg-black/40 top-0 w-full fixed">
       <div>
-        <img
-          :draggable="false"
-          src="/layout/images/logo/logo.png"
-          alt=""
-        >
+        <img :draggable="false" src="/layout/images/logo/logo.png" alt="" />
       </div>
 
       <a
@@ -56,24 +51,20 @@ function handleMouseLeave(event) {
           enterFromClass: 'hidden',
           leaveToClass: 'hidden'
         }"
-        class="cursor-pointer block lg:hidden text-white"
-      >
+        class="cursor-pointer block lg:hidden text-white">
         <i class="pi pi-bars !text-4xl" />
       </a>
 
       <div
         id="menu"
         class="items-center grow hidden lg:flex absolute lg:static w-full lg:px-0 z-30 shadow lg:shadow-none animate-fadein"
-        style="top: 68px; right: 0%"
-      >
+        style="top: 68px; right: 0%">
         <ul
-          class="list-none p-4 lg:p-0 m-0 ml-auto flex lg:items-center select-none flex-col lg:flex-row cursor-pointer"
-        >
+          class="list-none p-4 lg:p-0 m-0 ml-auto flex lg:items-center select-none flex-col lg:flex-row cursor-pointer">
           <li>
             <a
               v-styleclass="{ selector: '#menu', enterFromClass: 'hidden', leaveToClass: 'hidden' }"
-              class="flex m-0 md:ml-8 px-0 py-4 text-surface-900 dark:text-surface-0 leading-normal"
-            >
+              class="flex m-0 md:ml-8 px-0 py-4 text-surface-900 dark:text-surface-0 leading-normal">
               <span>HOME</span>
             </a>
           </li>
@@ -81,8 +72,7 @@ function handleMouseLeave(event) {
             <a
               v-styleclass="{ selector: '#menu', enterFromClass: 'hidden', leaveToClass: 'hidden' }"
               class="flex m-0 md:ml-8 px-0 py-4 text-surface-900 dark:text-surface-0 leading-normal"
-              @click="scrollToElement(features)"
-            >
+              @click="scrollToElement(features)">
               <span>FEATURES</span>
             </a>
           </li>
@@ -90,8 +80,7 @@ function handleMouseLeave(event) {
             <a
               v-styleclass="{ selector: '#menu', enterFromClass: 'hidden', leaveToClass: 'hidden' }"
               class="flex m-0 md:ml-8 px-0 py-4 text-surface-900 dark:text-surface-0 leading-normal"
-              @click="scrollToElement(collaboration)"
-            >
+              @click="scrollToElement(collaboration)">
               <span>COLLABORATION</span>
             </a>
           </li>
@@ -99,8 +88,7 @@ function handleMouseLeave(event) {
             <a
               v-styleclass="{ selector: '#menu', enterFromClass: 'hidden', leaveToClass: 'hidden' }"
               class="flex m-0 md:ml-8 px-0 py-4 text-surface-900 dark:text-surface-0 leading-normal"
-              @click="scrollToElement(events)"
-            >
+              @click="scrollToElement(events)">
               <span>EVENTS</span>
             </a>
           </li>
@@ -108,16 +96,14 @@ function handleMouseLeave(event) {
             <a
               v-styleclass="{ selector: '#menu', enterFromClass: 'hidden', leaveToClass: 'hidden' }"
               class="flex m-0 md:ml-8 px-0 py-4 text-surface-900 dark:text-surface-0 leading-normal"
-              @click="scrollToElement(video)"
-            >
+              @click="scrollToElement(video)">
               <span>VIDEO</span>
             </a>
           </li>
           <li>
             <Button
               label="LET'S TRY"
-              class="!bg-surface-0 !text-surface-900 !border-surface-900 m-0 mt-4 md:mt-0 md:ml-8"
-            />
+              class="!bg-surface-0 !text-surface-900 !border-surface-900 m-0 mt-4 md:mt-0 md:ml-8" />
           </li>
         </ul>
       </div>
@@ -125,35 +111,26 @@ function handleMouseLeave(event) {
     <div class="h-screen">
       <div
         style="perspective: 101px"
-        class="h-screen overflow-x-hidden overflow-y-auto absolute top-0 left-0 right-0 bottom-0"
-      >
+        class="h-screen overflow-x-hidden overflow-y-auto absolute top-0 left-0 right-0 bottom-0">
         <div class="hidden lg:block absolute top-0 right-0 bottom-0 left-0 parallax__layer__0">
           <img
             :draggable="false"
             src="/demo/images/landing/layer-0-opt.jpg"
-            class="w-full h-full block absolute bottom-0"
-          >
+            class="w-full h-full block absolute bottom-0" />
         </div>
         <div class="hidden lg:block absolute top-0 right-0 bottom-0 left-0 parallax__layer__1">
           <img
             :draggable="false"
             src="/demo/images/landing/layer-1-opt.png"
-            class="w-full block absolute bottom-0"
-          >
+            class="w-full block absolute bottom-0" />
         </div>
 
         <div
           class="hidden lg:flex absolute right-0 bottom-0 left-0 parallax__layer__3 justify-center"
-          style="top: 27%"
-        >
+          style="top: 27%">
           <div>
             <h1 class="m-0 -mb-6 text-4xl text-white">LET'S</h1>
-            <h1
-              class="m-0 text-white"
-              style="font-size: 15rem"
-            >
-              EXPLORE
-            </h1>
+            <h1 class="m-0 text-white" style="font-size: 15rem">EXPLORE</h1>
             <div class="flex -mt-6 justify-end">
               <h1 class="m-0 text-white text-4xl">TO ULTIMA</h1>
             </div>
@@ -163,27 +140,23 @@ function handleMouseLeave(event) {
           <img
             :draggable="false"
             src="/demo/images/landing/layer-2-opt.png"
-            class="w-full block absolute bottom-0"
-          >
+            class="w-full block absolute bottom-0" />
         </div>
 
         <div
           class="absolute flex justify-center items-center w-full h-full parallax__layer__3"
-          style="top: 112px"
-        >
+          style="top: 112px">
           <Button
             label="GET STARTED"
             style="backdrop-filter: blur(7px)"
             class="!text-surface-0 !bg-white/20 !text-lg !px-8 !py-4 !font-semibold hover:!bg-white hover:!text-surface-900 !rounded-xl !border-white/30 border"
             text
-            @click="scrollBehavior(features)"
-          />
+            @click="scrollBehavior(features)" />
         </div>
 
         <div
           class="block lg:hidden h-[28rem] bg-center bg-no-repeat bg-cover"
-          style="top: 68px; background: url(/demo/images/landing/landing-hero-image.jpg)"
-        >
+          style="top: 68px; background: url(/demo/images/landing/landing-hero-image.jpg)">
           <div class="flex justify-center items-center h-full">
             <div class="flex flex-col">
               <span class="m-0 text-base text-white font-semibold">LET'S</span>
@@ -197,60 +170,32 @@ function handleMouseLeave(event) {
                   style="backdrop-filter: blur(7px)"
                   class="!text-surface-0 !bg-white/20 !text-xs !font-semibold hover:!bg-white hover:!text-surface-900 !rounded-xl !border-white/30 border"
                   text
-                  @click="scrollBehavior(parallaxBody)"
-                />
+                  @click="scrollBehavior(parallaxBody)" />
               </div>
             </div>
           </div>
         </div>
-        <div
-          ref="parallaxBody"
-          class="lg:top-full block absolute left-0 right-0 h-full z-20"
-        >
+        <div ref="parallaxBody" class="lg:top-full block absolute left-0 right-0 h-full z-20">
           <div>
             <div
               class="grid grid-cols-12 gap-4 grid-nogutter p-2 lg:p-8"
-              style="background-color: #000"
-            >
+              style="background-color: #000">
               <div class="col-span-6 lg:col-span-3 flex items-center justify-center gap-4">
-                <img
-                  :draggable="false"
-                  src="/demo/images/landing/landing-logo1.png"
-                  alt=""
-                >
+                <img :draggable="false" src="/demo/images/landing/landing-logo1.png" alt="" />
               </div>
               <div class="col-span-6 lg:col-span-3 flex items-center justify-center gap-4">
-                <img
-                  :draggable="false"
-                  src="/demo/images/landing/landing-logo2.png"
-                  alt=""
-                >
+                <img :draggable="false" src="/demo/images/landing/landing-logo2.png" alt="" />
               </div>
               <div class="col-span-6 lg:col-span-3 flex items-center justify-center gap-4">
-                <img
-                  :draggable="false"
-                  src="/demo/images/landing/landing-logo3.png"
-                  alt=""
-                >
+                <img :draggable="false" src="/demo/images/landing/landing-logo3.png" alt="" />
               </div>
               <div class="col-span-6 lg:col-span-3 flex items-center justify-center gap-4">
-                <img
-                  :draggable="false"
-                  src="/demo/images/landing/landing-logo4.png"
-                  alt=""
-                >
+                <img :draggable="false" src="/demo/images/landing/landing-logo4.png" alt="" />
               </div>
             </div>
           </div>
-          <div
-            ref="features"
-            class="pt-8"
-            style="background-color: #000"
-          >
-            <div
-              ref="parallaxBody"
-              class="flex flex-col items-center gap-4"
-            >
+          <div ref="features" class="pt-8" style="background-color: #000">
+            <div ref="parallaxBody" class="flex flex-col items-center gap-4">
               <div class="bg-surface-500 dark:bg-surface-300 text-white text-sm p-2 rounded-lg">
                 FEATURES
               </div>
@@ -262,22 +207,17 @@ function handleMouseLeave(event) {
                   background-clip: text;
                   -webkit-background-clip: text;
                   color: transparent;
-                "
-              >
+                ">
                 ULTIMA
               </h1>
             </div>
             <div class="flex flex-col items-center">
-              <div
-                class="grid grid-cols-12 gap-4 pt-12 p-6"
-                style="max-width: 1200px"
-              >
+              <div class="grid grid-cols-12 gap-4 pt-12 p-6" style="max-width: 1200px">
                 <div class="col-span-6 lg:col-span-4">
                   <div
                     class="flex justify-center flex-col gap-4 border border-surface-50 dark:border-surface-800 rounded-2xl p-8 cursor-pointer h-full"
                     @mouseenter="handleMouseEnter"
-                    @mouseleave="handleMouseLeave"
-                  >
+                    @mouseleave="handleMouseLeave">
                     <i class="pi pi-palette !text-4xl text-white" />
                     <span class="font-semibold text-white">Creative Design</span>
                     <span class="text-white">
@@ -293,8 +233,7 @@ function handleMouseLeave(event) {
                   <div
                     class="flex justify-center flex-col gap-4 border border-surface-50 dark:border-surface-800 rounded-2xl p-8 cursor-pointer h-full"
                     @mouseenter="handleMouseEnter"
-                    @mouseleave="handleMouseLeave"
-                  >
+                    @mouseleave="handleMouseLeave">
                     <i class="pi pi-mobile !text-4xl text-white" />
                     <span class="font-semibold text-white">Responsive Design</span>
                     <span class="text-white">
@@ -311,8 +250,7 @@ function handleMouseLeave(event) {
                   <div
                     class="flex justify-center flex-col gap-4 border border-surface-50 dark:border-surface-800 rounded-2xl p-8 cursor-pointer h-full"
                     @mouseenter="handleMouseEnter"
-                    @mouseleave="handleMouseLeave"
-                  >
+                    @mouseleave="handleMouseLeave">
                     <i class="pi pi-sync !text-4xl text-white" />
                     <span class="font-semibold text-white">Cross Browser Support</span>
                     <span class="text-white">
@@ -329,8 +267,7 @@ function handleMouseLeave(event) {
                   <div
                     class="flex justify-center flex-col gap-4 border border-surface-50 dark:border-surface-800 rounded-2xl p-8 cursor-pointer h-full"
                     @mouseenter="handleMouseEnter"
-                    @mouseleave="handleMouseLeave"
-                  >
+                    @mouseleave="handleMouseLeave">
                     <i class="pi pi-th-large !text-4xl text-white" />
                     <span class="font-semibold text-white">Well Organized</span>
                     <span class="text-white">
@@ -347,8 +284,7 @@ function handleMouseLeave(event) {
                   <div
                     class="flex justify-center flex-col gap-4 border border-surface-50 dark:border-surface-800 rounded-2xl text-white p-8 cursor-pointer h-full"
                     @mouseenter="handleMouseEnter"
-                    @mouseleave="handleMouseLeave"
-                  >
+                    @mouseleave="handleMouseLeave">
                     <i class="pi pi-code !text-4xl text-white" />
                     <span class="font-semibold text-white">Easy to Product</span>
                     <span class="text-white">
@@ -364,8 +300,7 @@ function handleMouseLeave(event) {
                   <div
                     class="flex justify-center flex-col gap-4 border border-surface-50 dark:border-surface-800 rounded-2xl text-white p-8 cursor-pointer h-full"
                     @mouseenter="handleMouseEnter"
-                    @mouseleave="handleMouseLeave"
-                  >
+                    @mouseleave="handleMouseLeave">
                     <i class="pi pi-box !text-4xl" />
                     <span class="font-semibold">Top Notch Quality</span>
                     <span>
@@ -382,12 +317,10 @@ function handleMouseLeave(event) {
               <div
                 ref="collaboration"
                 style="max-width: 1200px"
-                class="flex flex-col lg:flex-row gap-20 mt-12 py-12 px-6 w-full"
-              >
+                class="flex flex-col lg:flex-row gap-20 mt-12 py-12 px-6 w-full">
                 <div class="flex flex-col items-end justify-center">
                   <div
-                    class="bg-surface-50 dark:bg-surface-800 text-white text-sm p-2 rounded-lg mb-6"
-                  >
+                    class="bg-surface-50 dark:bg-surface-800 text-white text-sm p-2 rounded-lg mb-6">
                     PLAY AS A TEAM
                   </div>
                   <div>
@@ -398,8 +331,7 @@ function handleMouseLeave(event) {
                         background-clip: text;
                         -webkit-background-clip: text;
                         color: transparent;
-                      "
-                    >
+                      ">
                       COLLABORATION
                     </h1>
                     <p class="text-white text-right mt-4">
@@ -409,26 +341,16 @@ function handleMouseLeave(event) {
                     </p>
                   </div>
                 </div>
-                <img
-                  :draggable="false"
-                  src="/demo/images/landing/collaboration-image.png"
-                  alt=""
-                >
+                <img :draggable="false" src="/demo/images/landing/collaboration-image.png" alt="" />
               </div>
               <div
                 ref="events"
                 style="max-width: 1200px"
-                class="flex flex-col lg:flex-row gap-20 mt-12 py-12 px-6 w-full"
-              >
-                <img
-                  :draggable="false"
-                  src="/demo/images/landing/easyfollow-image.png"
-                  alt=""
-                >
+                class="flex flex-col lg:flex-row gap-20 mt-12 py-12 px-6 w-full">
+                <img :draggable="false" src="/demo/images/landing/easyfollow-image.png" alt="" />
                 <div class="flex flex-col items-start justify-center">
                   <div
-                    class="bg-surface-50 dark:bg-surface-800 text-white text-sm p-2 rounded-lg mb-6"
-                  >
+                    class="bg-surface-50 dark:bg-surface-800 text-white text-sm p-2 rounded-lg mb-6">
                     EVENTS
                   </div>
                   <div>
@@ -439,8 +361,7 @@ function handleMouseLeave(event) {
                         background-clip: text;
                         -webkit-background-clip: text;
                         color: transparent;
-                      "
-                    >
+                      ">
                       EASY FOLLOW
                     </h1>
                     <p class="text-white mt-2">
@@ -454,8 +375,7 @@ function handleMouseLeave(event) {
               <div
                 ref="video"
                 style="max-width: 1200px"
-                class="flex gap-6 mt-12 py-12 flex-col items-center w-full"
-              >
+                class="flex gap-6 mt-12 py-12 flex-col items-center w-full">
                 <div class="bg-surface-50 dark:bg-surface-800 text-white text-sm p-2 rounded-lg">
                   VIDEO
                 </div>
@@ -466,8 +386,7 @@ function handleMouseLeave(event) {
                     background-clip: text;
                     -webkit-background-clip: text;
                     color: transparent;
-                  "
-                >
+                  ">
                   SHOWREELS
                 </h1>
                 <div class="mt-4 relative">
@@ -475,40 +394,27 @@ function handleMouseLeave(event) {
                     class="border-0 rounded-lg z-30 max-w-full"
                     width="600"
                     height="400"
-                    src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                  />
-                  <div
-                    class="absolute z-0"
-                    style="top: -50px; left: -50px"
-                  >
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY" />
+                  <div class="absolute z-0" style="top: -50px; left: -50px">
                     <img
                       :draggable="false"
                       class="opacity-40"
                       src="/demo/images/landing/landing-ellipse.png"
-                      alt=""
-                    >
+                      alt="" />
                   </div>
-                  <div
-                    class="absolute z-0"
-                    style="bottom: -50px; right: -50px; filter: blur(4px)"
-                  >
+                  <div class="absolute z-0" style="bottom: -50px; right: -50px; filter: blur(4px)">
                     <img
                       :draggable="false"
                       class="opacity-40"
                       src="/demo/images/landing/landing-ellipse2.png"
-                      alt=""
-                    >
+                      alt="" />
                   </div>
-                  <div
-                    class="absolute z-0"
-                    style="bottom: -50px; right: 10px; filter: blur(4px)"
-                  >
+                  <div class="absolute z-0" style="bottom: -50px; right: 10px; filter: blur(4px)">
                     <img
                       :draggable="false"
                       class="opacity-40"
                       src="/demo/images/landing/landing-ellipse2.png"
-                      alt=""
-                    >
+                      alt="" />
                   </div>
                 </div>
               </div>
@@ -518,8 +424,7 @@ function handleMouseLeave(event) {
                   style="
                     background: linear-gradient(110.43deg, #868cd0 0.04%, #ff5759 100.11%);
                     max-width: 1200px;
-                  "
-                >
+                  ">
                   <div class="flex flex-col gap-2">
                     <h1 class="m-0 text-white font-bold text-2xl">NEWSLETTER</h1>
                     <p class="m-0 text-white">
@@ -530,20 +435,15 @@ function handleMouseLeave(event) {
                   <div class="flex items-center gap-2">
                     <InputText
                       placeholder="Email Address"
-                      class="!bg-transparent !border-white !rounded-md placeholder:!text-white"
-                    />
+                      class="!bg-transparent !border-white !rounded-md placeholder:!text-white" />
                     <Button
                       class="!text-white !border !border-white !rounded-md h-full"
                       text
-                      label="JOIN"
-                    />
+                      label="JOIN" />
                   </div>
                 </div>
               </div>
-              <div
-                class="w-full px-6"
-                style="max-width: 1200px"
-              >
+              <div class="w-full px-6" style="max-width: 1200px">
                 <div class="grid grid-cols-12 gap-4 lg:gap-0 lg:grid-nogutter pb-12">
                   <div class="col-span-12 lg:col-span-3">
                     <div class="w-full text-white flex flex-col gap-4">
@@ -557,7 +457,7 @@ function handleMouseLeave(event) {
                       </div>
                       <p class="m-0 text-base lg:text-sm">
                         (415) 931-1624 794 Mcallister
-                        <br>
+                        <br />
                         St San Francisco, 94102
                       </p>
                       <span class="text-base lg:text-sm">©Copyright 202X</span>

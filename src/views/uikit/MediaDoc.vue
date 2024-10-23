@@ -70,8 +70,7 @@ function getSeverity(status) {
       :value="products"
       :num-visible="3"
       :num-scroll="3"
-      :responsive-options="carouselResponsiveOptions"
-    >
+      :responsive-options="carouselResponsiveOptions">
       <template #item="slotProps">
         <div class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4">
           <div class="mb-4">
@@ -79,16 +78,11 @@ function getSeverity(status) {
               <img
                 :src="'https://primefaces.org/cdn/primevue/images/product/' + slotProps.data.image"
                 :alt="slotProps.data.name"
-                class="w-full rounded"
-              >
-              <div
-                class="dark:bg-surface-900 absolute rounded-border"
-                style="left: 5px; top: 5px"
-              >
+                class="w-full rounded" />
+              <div class="dark:bg-surface-900 absolute rounded-border" style="left: 5px; top: 5px">
                 <Tag
                   :value="slotProps.data.inventoryStatus"
-                  :severity="getSeverity(slotProps.data.inventoryStatus)"
-                />
+                  :severity="getSeverity(slotProps.data.inventoryStatus)" />
               </div>
             </div>
           </div>
@@ -98,15 +92,8 @@ function getSeverity(status) {
           <div class="flex justify-between items-center">
             <div class="mt-0 font-semibold text-xl">${{ slotProps.data.price }}</div>
             <span>
-              <Button
-                icon="pi pi-heart"
-                severity="secondary"
-                outlined
-              />
-              <Button
-                icon="pi pi-shopping-cart"
-                class="ml-2"
-              />
+              <Button icon="pi pi-heart" severity="secondary" outlined />
+              <Button icon="pi pi-shopping-cart" class="ml-2" />
             </span>
           </div>
         </div>
@@ -119,8 +106,7 @@ function getSeverity(status) {
     <Image
       src="https://primefaces.org/cdn/primevue/images/galleria/galleria10.jpg"
       alt="Image"
-      width="250"
-    />
+      width="250" />
   </div>
 
   <div class="card">
@@ -129,20 +115,12 @@ function getSeverity(status) {
       :value="images"
       :responsive-options="galleriaResponsiveOptions"
       :num-visible="5"
-      container-style="max-width: 640px"
-    >
+      container-style="max-width: 640px">
       <template #item="slotProps">
-        <img
-          :src="slotProps.item.itemImageSrc"
-          :alt="slotProps.item.alt"
-          style="width: 100%"
-        >
+        <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%" />
       </template>
       <template #thumbnail="slotProps">
-        <img
-          :src="slotProps.item.thumbnailImageSrc"
-          :alt="slotProps.item.alt"
-        >
+        <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" />
       </template>
     </Galleria>
   </div>

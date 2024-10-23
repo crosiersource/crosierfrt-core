@@ -37,17 +37,10 @@ function getSeverity(product) {
   <div class="flex flex-col">
     <div class="card">
       <div class="font-semibold text-xl">DataView</div>
-      <DataView
-        :value="products"
-        :layout="layout"
-      >
+      <DataView :value="products" :layout="layout">
         <template #header>
           <div class="flex justify-end">
-            <SelectButton
-              v-model="layout"
-              :options="options"
-              :allow-empty="false"
-            >
+            <SelectButton v-model="layout" :options="options" :allow-empty="false">
               <template #option="{ option }">
                 <i :class="[option === 'list' ? 'pi pi-bars' : 'pi pi-table']" />
               </template>
@@ -57,26 +50,20 @@ function getSeverity(product) {
 
         <template #list="slotProps">
           <div class="flex flex-col">
-            <div
-              v-for="(item, index) in slotProps.items"
-              :key="index"
-            >
+            <div v-for="(item, index) in slotProps.items" :key="index">
               <div
                 class="flex flex-col sm:flex-row sm:items-center p-6 gap-4"
-                :class="{ 'border-t border-surface': index !== 0 }"
-              >
+                :class="{ 'border-t border-surface': index !== 0 }">
                 <div class="md:w-40 relative">
                   <img
                     class="block xl:block mx-auto rounded w-full"
                     :src="`https://primefaces.org/cdn/primevue/images/product/${item.image}`"
-                    :alt="item.name"
-                  >
+                    :alt="item.name" />
                   <Tag
                     :value="item.inventoryStatus"
                     :severity="getSeverity(item)"
                     class="absolute dark:!bg-surface-900"
-                    style="left: 4px; top: 4px"
-                  />
+                    style="left: 4px; top: 4px" />
                 </div>
                 <div class="flex flex-col md:flex-row justify-between md:items-center flex-1 gap-6">
                   <div class="flex flex-row md:flex-col justify-between items-start gap-2">
@@ -88,10 +75,7 @@ function getSeverity(product) {
                         {{ item.name }}
                       </div>
                     </div>
-                    <div
-                      class="bg-surface-100 p-1"
-                      style="border-radius: 30px"
-                    >
+                    <div class="bg-surface-100 p-1" style="border-radius: 30px">
                       <div
                         class="bg-surface-0 flex items-center gap-2 justify-center py-1 px-2"
                         style="
@@ -99,8 +83,7 @@ function getSeverity(product) {
                           box-shadow:
                             0px 1px 2px 0px rgba(0, 0, 0, 0.04),
                             0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-                        "
-                      >
+                        ">
                         <span class="text-surface-900 font-medium text-sm">{{ item.rating }}</span>
                         <i class="pi pi-star-fill text-yellow-500" />
                       </div>
@@ -109,16 +92,12 @@ function getSeverity(product) {
                   <div class="flex flex-col md:items-end gap-8">
                     <span class="text-xl font-semibold">${{ item.price }}</span>
                     <div class="flex flex-row-reverse md:flex-row gap-2">
-                      <Button
-                        icon="pi pi-heart"
-                        outlined
-                      />
+                      <Button icon="pi pi-heart" outlined />
                       <Button
                         icon="pi pi-shopping-cart"
                         label="Buy Now"
                         :disabled="item.inventoryStatus === 'OUTOFSTOCK'"
-                        class="flex-auto md:flex-initial whitespace-nowrap"
-                      />
+                        class="flex-auto md:flex-initial whitespace-nowrap" />
                     </div>
                   </div>
                 </div>
@@ -132,25 +111,21 @@ function getSeverity(product) {
             <div
               v-for="(item, index) in slotProps.items"
               :key="index"
-              class="col-span-12 sm:col-span-6 lg:col-span-4 p-2"
-            >
+              class="col-span-12 sm:col-span-6 lg:col-span-4 p-2">
               <div
-                class="p-6 border border-surface-200 dark:border-surface-700 bg-surface-0 dark:bg-surface-900 rounded flex flex-col"
-              >
+                class="p-6 border border-surface-200 dark:border-surface-700 bg-surface-0 dark:bg-surface-900 rounded flex flex-col">
                 <div class="bg-surface-50 flex justify-center rounded p-4">
                   <div class="relative mx-auto">
                     <img
                       class="rounded w-full"
                       :src="`https://primefaces.org/cdn/primevue/images/product/${item.image}`"
                       :alt="item.name"
-                      style="max-width: 300px"
-                    >
+                      style="max-width: 300px" />
                     <Tag
                       :value="item.inventoryStatus"
                       :severity="getSeverity(item)"
                       class="absolute dark:!bg-surface-900"
-                      style="left: 4px; top: 4px"
-                    />
+                      style="left: 4px; top: 4px" />
                   </div>
                 </div>
                 <div class="pt-6">
@@ -163,10 +138,7 @@ function getSeverity(product) {
                         {{ item.name }}
                       </div>
                     </div>
-                    <div
-                      class="bg-surface-100 p-1"
-                      style="border-radius: 30px"
-                    >
+                    <div class="bg-surface-100 p-1" style="border-radius: 30px">
                       <div
                         class="bg-surface-0 flex items-center gap-2 justify-center py-1 px-2"
                         style="
@@ -174,8 +146,7 @@ function getSeverity(product) {
                           box-shadow:
                             0px 1px 2px 0px rgba(0, 0, 0, 0.04),
                             0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-                        "
-                      >
+                        ">
                         <span class="text-surface-900 font-medium text-sm">{{ item.rating }}</span>
                         <i class="pi pi-star-fill text-yellow-500" />
                       </div>
@@ -188,12 +159,8 @@ function getSeverity(product) {
                         icon="pi pi-shopping-cart"
                         label="Buy Now"
                         :disabled="item.inventoryStatus === 'OUTOFSTOCK'"
-                        class="flex-auto whitespace-nowrap"
-                      />
-                      <Button
-                        icon="pi pi-heart"
-                        outlined
-                      />
+                        class="flex-auto whitespace-nowrap" />
+                      <Button icon="pi pi-heart" outlined />
                     </div>
                   </div>
                 </div>
@@ -208,11 +175,7 @@ function getSeverity(product) {
       <div class="lg:w-2/3">
         <div class="card">
           <div class="font-semibold text-xl mb-4">PickList</div>
-          <PickList
-            v-model="picklistProducts"
-            breakpoint="1400px"
-            data-key="id"
-          >
+          <PickList v-model="picklistProducts" breakpoint="1400px" data-key="id">
             <template #option="{ option }">
               {{ option.name }}
             </template>
@@ -227,8 +190,7 @@ function getSeverity(product) {
             v-model="orderlistProducts"
             breakpoint="1400px"
             data-key="id"
-            pt:pcList:root="w-full"
-          >
+            pt:pcList:root="w-full">
             <template #option="{ option }">
               {{ option.name }}
             </template>

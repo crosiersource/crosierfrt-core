@@ -8,8 +8,7 @@
     :auth-store="authStore"
     :store="groupStore"
     form-path="/sec/grupo/form"
-    list-path="/sec/grupo/list"
-  >
+    list-path="/sec/grupo/list">
     <template #filters>
       <VTextField
         id="filters.id"
@@ -17,16 +16,9 @@
         label="Id"
         outlined
         dense
-        clearable
-      />
+        clearable />
 
-      <VTextField
-        v-model="groupStore.filters.groupname"
-        label="Grupo"
-        outlined
-        dense
-        clearable
-      />
+      <VTextField v-model="groupStore.filters.groupname" label="Grupo" outlined dense clearable />
     </template>
   </CrosierListS>
 </template>

@@ -9,8 +9,7 @@ const { layoutState } = useLayout();
     v-model:visible="layoutState.rightMenuActive"
     position="right"
     pt:header="!hidden"
-    pt:content="!p-3"
-  >
+    pt:content="!p-3">
     <div class="p-4">
       <div class="flex flex-col mb-8">
         <span class="pb-2 mb-2 border-b border-surface font-semibold">ONLINE MEMBERS</span>
@@ -19,98 +18,82 @@ const { layoutState } = useLayout();
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-1.png"
-            alt="avatar-1"
-          >
+            alt="avatar-1" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-2.png"
-            alt="avatar-2"
-          >
+            alt="avatar-2" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-3.png"
-            alt="avatar-3"
-          >
+            alt="avatar-3" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-4.png"
-            alt="avatar-4"
-          >
+            alt="avatar-4" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-5.png"
-            alt="avatar-5"
-          >
+            alt="avatar-5" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-6.png"
-            alt="avatar-6"
-          >
+            alt="avatar-6" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-7.png"
-            alt="avatar-7"
-          >
+            alt="avatar-7" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-8.png"
-            alt="avatar-8"
-          >
+            alt="avatar-8" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-9.png"
-            alt="avatar-9"
-          >
+            alt="avatar-9" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-10.png"
-            alt="avatar-10"
-          >
+            alt="avatar-10" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-11.png"
-            alt="avatar-11"
-          >
+            alt="avatar-11" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-12.png"
-            alt="avatar-12"
-          >
+            alt="avatar-12" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-13.png"
-            alt="avatar-13"
-          >
+            alt="avatar-13" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-14.png"
-            alt="avatar-14"
-          >
+            alt="avatar-14" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-15.png"
-            alt="avatar-15"
-          >
+            alt="avatar-15" />
           <img
             class="cursor-pointer"
             style="width: 32px"
             src="/layout/images/avatar/avatar-16.png"
-            alt="avatar-16"
-          >
+            alt="avatar-16" />
         </div>
         <span class="mt-4">
           <b class="text-primary">+19</b>
@@ -122,19 +105,14 @@ const { layoutState } = useLayout();
         <div class="flex pt-2">
           <i
             class="pi pi-images self-start p-2 border border-transparent rounded-full mr-2"
-            style="background-color: rgba(0, 0, 0, 0.12)"
-          />
+            style="background-color: rgba(0, 0, 0, 0.12)" />
           <div class="flex flex-col">
             <span class="font-bold mb-1">New Sale</span>
             <span class="mb-2 leading-normal">
               Richard Jones has purchased a blue t-shirt for $79.
             </span>
             <span class="flex items-center">
-              <img
-                class="mr-2"
-                src="/layout/images/avatar/activity-1.png"
-                alt=""
-              >
+              <img class="mr-2" src="/layout/images/avatar/activity-1.png" alt="" />
               <small>Emmy Adams, 21.40</small>
             </span>
           </div>
@@ -142,19 +120,14 @@ const { layoutState } = useLayout();
         <div class="flex pt-4">
           <i
             class="pi pi-images self-start p-2 border border-transparent rounded-full mr-2"
-            style="background-color: rgba(0, 0, 0, 0.12)"
-          />
+            style="background-color: rgba(0, 0, 0, 0.12)" />
           <div class="flex flex-col">
             <span class="font-bold mb-1">Withdrawal Initiated</span>
             <span class="mb-2 leading-normal">
               Your request for withdrawal of $2500 has been initiated.
             </span>
             <span class="flex items-center">
-              <img
-                class="mr-2"
-                src="/layout/images/avatar/activity-2.png"
-                alt="avatar-2"
-              >
+              <img class="mr-2" src="/layout/images/avatar/activity-2.png" alt="avatar-2" />
               <small>Emily Walter, 21.40</small>
             </span>
           </div>
@@ -162,19 +135,14 @@ const { layoutState } = useLayout();
         <div class="flex pt-4">
           <i
             class="pi pi-images self-start p-2 border border-transparent rounded-full mr-2"
-            style="background-color: rgba(0, 0, 0, 0.12)"
-          />
+            style="background-color: rgba(0, 0, 0, 0.12)" />
           <div class="flex flex-col">
             <span class="font-bold mb-1">Question Received</span>
             <span class="mb-2 leading-normal">
               Jane Davis has posted a new question about your product.
             </span>
             <span class="flex items-center">
-              <img
-                class="mr-2"
-                src="/layout/images/avatar/activity-3.png"
-                alt="avatar-3"
-              >
+              <img class="mr-2" src="/layout/images/avatar/activity-3.png" alt="avatar-3" />
               <small>Jane Davis, 21.45</small>
             </span>
           </div>

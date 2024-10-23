@@ -35,49 +35,20 @@ function showError() {
       <div class="card">
         <div class="font-semibold text-xl mb-4">Toast</div>
         <div class="flex flex-wrap gap-2">
-          <Button
-            label="Success"
-            severity="success"
-            @click="showSuccess()"
-          />
-          <Button
-            label="Info"
-            severity="info"
-            @click="showInfo()"
-          />
-          <Button
-            label="Warn"
-            severity="warn"
-            @click="showWarn()"
-          />
-          <Button
-            label="Error"
-            severity="danger"
-            @click="showError()"
-          />
+          <Button label="Success" severity="success" @click="showSuccess()" />
+          <Button label="Info" severity="info" @click="showInfo()" />
+          <Button label="Warn" severity="warn" @click="showWarn()" />
+          <Button label="Error" severity="danger" @click="showError()" />
         </div>
 
         <div class="font-semibold text-xl mt-4 mb-4">Inline</div>
         <div class="flex flex-wrap mb-4 gap-2">
-          <InputText
-            v-model="username"
-            placeholder="Username"
-            aria-label="username"
-            invalid
-          />
+          <InputText v-model="username" placeholder="Username" aria-label="username" invalid />
           <Message severity="error">Username is required</Message>
         </div>
         <div class="flex flex-wrap gap-2">
-          <InputText
-            v-model="email"
-            placeholder="Email"
-            aria-label="email"
-            invalid
-          />
-          <Message
-            severity="error"
-            icon="pi pi-times-circle"
-          />
+          <InputText v-model="email" placeholder="Email" aria-label="email" invalid />
+          <Message severity="error" icon="pi pi-times-circle" />
         </div>
       </div>
     </div>
@@ -93,15 +64,8 @@ function showError() {
           <Message severity="contrast">Contrast Message</Message>
         </div>
 
-        <TransitionGroup
-          name="p-message"
-          tag="div"
-        >
-          <Message
-            v-for="msg of message"
-            :key="msg.content"
-            :severity="msg.severity"
-          >
+        <TransitionGroup name="p-message" tag="div">
+          <Message v-for="msg of message" :key="msg.content" :severity="msg.severity">
             {{ msg.content }}
           </Message>
         </TransitionGroup>

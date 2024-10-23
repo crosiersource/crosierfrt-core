@@ -196,8 +196,7 @@ const onChangeDialogVisibility = (isVisible) => {
           @change:mail:type="onChangeMailType"
           @reply="showReplyDialog"
           @send:message="onSaveReplyMail"
-          @new:mail="onSendNewMail"
-        />
+          @new:mail="onSendNewMail" />
       </div>
     </div>
   </div>
@@ -205,6 +204,5 @@ const onChangeDialogVisibility = (isVisible) => {
     v-model:visible="dialogVisible"
     :mail-detail="mailDetail"
     @save="onSaveReplyMail"
-    @update:dialog-visible="onChangeDialogVisibility()"
-  />
+    @update:dialog-visible="onChangeDialogVisibility()" />
 </template>

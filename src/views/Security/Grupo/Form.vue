@@ -4,15 +4,11 @@
     titulo="Grupo de Usuários"
     icon="fas fa-user"
     form-path="/sec/grupo/form"
-    list-path="/sec/grupo/list"
-  >
+    list-path="/sec/grupo/list">
     <template #fields>
       <VContainer>
         <VRow>
-          <VCol
-            cols="12"
-            md="4"
-          >
+          <VCol cols="12" md="4">
             <VTextField
               id="groupname"
               v-model="groupStore.fields.groupname"
@@ -21,8 +17,7 @@
               dense
               clearable
               persistent-hint
-              :hint="groupStore.fieldsErrors?.groupname"
-            />
+              :hint="groupStore.fieldsErrors?.groupname" />
           </VCol>
         </VRow>
       </VContainer>

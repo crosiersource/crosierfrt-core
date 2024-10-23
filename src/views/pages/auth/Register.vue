@@ -18,8 +18,7 @@ const backgroundStyle = ref({
         <div class="flex flex-col">
           <div
             style="height: 56px; width: 56px"
-            class="bg-primary-50 rounded-full flex items-center justify-center"
-          >
+            class="bg-primary-50 rounded-full flex items-center justify-center">
             <i class="pi pi-users text-primary !text-4xl" />
           </div>
           <div class="mt-6">
@@ -51,8 +50,7 @@ const backgroundStyle = ref({
               v-model="value1"
               placeholder="Password"
               input-class="w-full"
-              toggle-mask
-            />
+              toggle-mask />
           </InputGroup>
           <InputGroup>
             <InputGroupAddon>
@@ -63,33 +61,21 @@ const backgroundStyle = ref({
               v-model="value2"
               placeholder="Password Again"
               input-class="w-full"
-              toggle-mask
-            />
+              toggle-mask />
           </InputGroup>
           <div>
-            <Button
-              class="w-full"
-              label="SIGN UP"
-            />
+            <Button class="w-full" label="SIGN UP" />
           </div>
           <div>
-            <Button
-              class="w-full text-primary-500"
-              text
-              label="BACK TO LOGIN"
-            />
+            <Button class="w-full text-primary-500" text label="BACK TO LOGIN" />
           </div>
         </div>
       </div>
     </div>
     <div
       :style="backgroundStyle"
-      class="hidden lg:flex flex-1 items-center justify-center bg-cover"
-    >
-      <img
-        src="/layout/images/logo/vector_logo.png"
-        alt=""
-      >
+      class="hidden lg:flex flex-1 items-center justify-center bg-cover">
+      <img src="/layout/images/logo/vector_logo.png" alt="" />
     </div>
   </div>
   <AppConfig simple />

@@ -1,13 +1,7 @@
 <template>
   <div :class="['layout-container', { ...containerClass }]">
-    <ProgressSpinner
-      v-if="loadingStore.isLoading"
-      class="progress-spinner"
-    />
-    <BlockUI
-      full-screen
-      :blocked="loadingStore.isLoading"
-    />
+    <ProgressSpinner v-if="loadingStore.isLoading" class="progress-spinner" />
+    <BlockUI full-screen :blocked="loadingStore.isLoading" />
 
     <AppTopbar />
     <AppRightMenu />

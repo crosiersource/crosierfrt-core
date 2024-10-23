@@ -5,8 +5,7 @@
         <div class="flex flex-col">
           <div
             style="height: 56px; width: 56px"
-            class="bg-primary-50 rounded-full flex items-center justify-center"
-          >
+            class="bg-primary-50 rounded-full flex items-center justify-center">
             <i class="pi pi-sign-in text-primary !text-4xl" />
           </div>
           <div class="mt-6">
@@ -21,47 +20,27 @@
             <InputGroupAddon>
               <i class="pi pi-user" />
             </InputGroupAddon>
-            <InputText
-              v-model="authStore.username"
-              type="text"
-              placeholder="Usuário"
-            />
+            <InputText v-model="authStore.username" type="text" placeholder="Usuário" />
           </InputGroup>
           <InputGroup>
             <InputGroupAddon>
               <i class="pi pi-key" />
             </InputGroupAddon>
-            <InputText
-              v-model="password"
-              type="password"
-              placeholder="Senha"
-            />
+            <InputText v-model="password" type="password" placeholder="Senha" />
           </InputGroup>
           <div>
-            <Button
-              class="w-full"
-              label="LOGIN"
-              @click="login"
-            />
+            <Button class="w-full" label="LOGIN" @click="login" />
           </div>
           <div>
-            <Button
-              class="w-full text-primary-500"
-              text
-              label="Esqueci minha senha..."
-            />
+            <Button class="w-full text-primary-500" text label="Esqueci minha senha..." />
           </div>
         </div>
       </div>
     </div>
     <div
       :style="{ backgroundImage: 'url(/demo/images/pages/accessDenied-bg.jpg)' }"
-      class="hidden lg:flex flex-1 items-center justify-center bg-cover"
-    >
-      <img
-        src="/layout/images/logo/vector_logo.png"
-        alt=""
-      >
+      class="hidden lg:flex flex-1 items-center justify-center bg-cover">
+      <img src="/layout/images/logo/vector_logo.png" alt="" />
     </div>
   </div>
   <AppConfig simple />

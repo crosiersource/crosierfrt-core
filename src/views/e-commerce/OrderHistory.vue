@@ -81,16 +81,14 @@ const orders = ref([
         <input
           type="text"
           class="p-inputtext w-full lg:w-[25rem] bg-surface-50 dark:bg-surface-800"
-          placeholder="Search"
-        >
+          placeholder="Search" />
       </IconField>
     </div>
 
     <div
       v-for="(order, i) in orders"
       :key="i"
-      class="bg-surface-0 dark:bg-surface-900 grid grid-cols-12 gap-4 grid-nogutter rounded shadow mb-12"
-    >
+      class="bg-surface-0 dark:bg-surface-900 grid grid-cols-12 gap-4 grid-nogutter rounded shadow mb-12">
       <div class="col-span-12 flex p-2 bg-surface-100 dark:bg-surface-700 rounded-t">
         <div class="p-2 flex-auto text-center md:text-left">
           <span class="text-surface-700 dark:text-surface-100 block">Order Number</span>
@@ -101,8 +99,7 @@ const orders = ref([
         <Divider
           align="center"
           layout="vertical"
-          class="h-full mx-0 lg:mx-4 border-surface-200 dark:border-surface-700"
-        />
+          class="h-full mx-0 lg:mx-4 border-surface-200 dark:border-surface-700" />
         <div class="p-2 flex-auto text-center md:text-left">
           <span class="text-surface-700 dark:text-surface-100 block">Order Date</span>
           <span class="text-surface-900 dark:text-surface-0 font-medium block mt-2">
@@ -112,8 +109,7 @@ const orders = ref([
         <Divider
           align="center"
           layout="vertical"
-          class="h-full mx-0 lg:mx-4 border-surface-200 dark:border-surface-700"
-        />
+          class="h-full mx-0 lg:mx-4 border-surface-200 dark:border-surface-700" />
         <div class="p-2 flex-auto text-center md:text-left">
           <span class="text-surface-700 dark:text-surface-100 block">Total Amount</span>
           <span class="text-surface-900 dark:text-surface-0 font-medium block mt-2">
@@ -125,14 +121,9 @@ const orders = ref([
         <div
           v-for="(product, i) in order.products"
           :key="i"
-          class="p-2 my-6 flex flex-col lg:flex-row justify-between items-center"
-        >
+          class="p-2 my-6 flex flex-col lg:flex-row justify-between items-center">
           <div class="flex flex-col lg:flex-row justify-center items-center px-2">
-            <img
-              :src="product.image"
-              alt="product"
-              class="w-32 h-32 mr-4 flex-shrink-0"
-            >
+            <img :src="product.image" alt="product" class="w-32 h-32 mr-4 flex-shrink-0" />
             <div class="flex flex-col my-auto text-center md:text-left">
               <span class="text-surface-900 dark:text-surface-0 font-medium mb-4 mt-4 lg:mt-0">
                 {{ product.name }}
@@ -142,8 +133,7 @@ const orders = ref([
               </span>
               <a
                 tabindex="0"
-                class="p-2 select-none cursor-pointer w-40 mx-auto lg:mx-0 rounded font-medium text-center border border-primary text-primary duration-150"
-              >
+                class="p-2 select-none cursor-pointer w-40 mx-auto lg:mx-0 rounded font-medium text-center border border-primary text-primary duration-150">
                 Buy Again
                 <span class="font-light">| {{ product.price }}</span>
               </a>
@@ -151,50 +141,43 @@ const orders = ref([
           </div>
           <div
             class="mr-0 lg:mr-4 mt-6 lg:mt-0 p-2 flex items-center"
-            :style="{ 'background-color': 'rgba(76, 175, 80, 0.1)', 'border-radius': '2.5rem' }"
-          >
+            :style="{ 'background-color': 'rgba(76, 175, 80, 0.1)', 'border-radius': '2.5rem' }">
             <span
               class="bg-green-500 text-white flex items-center justify-center rounded-full mr-2"
-              :style="{ minWidth: '2rem', minHeight: '2rem' }"
-            >
+              :style="{ minWidth: '2rem', minHeight: '2rem' }">
               <i class="pi pi-check" />
             </span>
             <span class="text-green-500">{{ product.deliveryDate }}</span>
           </div>
           <Divider
             v-if="i !== order.products.length - 1"
-            class="w-full !block lg:!hidden border-surface-200 dark:border-surface-700"
-          />
+            class="w-full !block lg:!hidden border-surface-200 dark:border-surface-700" />
         </div>
       </div>
       <div class="col-span-12 p-0 flex border-t border-surface-200 dark:border-surface-700">
         <a
           tabindex="0"
           class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full"
-          :style="{ borderBottomLeftRadius: '6px' }"
-        >
+          :style="{ borderBottomLeftRadius: '6px' }">
           <i class="pi pi-folder mr-2 mb-2 md:mb-1" />
           Archive Order
         </a>
         <a
           tabindex="0"
-          class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full"
-        >
+          class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full">
           <i class="pi pi-refresh mr-2 mb-2 md:mb-1" />
           Return
         </a>
         <a
           tabindex="0"
-          class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full"
-        >
+          class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full">
           <i class="pi pi-file mr-2 mb-2 md:mb-1" />
           View Invoice
         </a>
         <a
           tabindex="0"
           class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full"
-          :style="{ borderBottomRightRadius: '6px' }"
-        >
+          :style="{ borderBottomRightRadius: '6px' }">
           <i class="pi pi-comment mr-2 mb-2 md:mb-1" />
           Write a Review
         </a>

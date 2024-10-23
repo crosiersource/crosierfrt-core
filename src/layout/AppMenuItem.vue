@@ -222,14 +222,8 @@ function checkActiveRoute(item) {
 </script>
 
 <template>
-  <li
-    ref="menuItemRef"
-    :class="{ 'layout-root-menuitem': root, 'active-menuitem': isActiveMenu }"
-  >
-    <div
-      v-if="root && item.visible !== false"
-      class="layout-menuitem-root-text"
-    >
+  <li ref="menuItemRef" :class="{ 'layout-root-menuitem': root, 'active-menuitem': isActiveMenu }">
+    <div v-if="root && item.visible !== false" class="layout-menuitem-root-text">
       <span>{{ item.label }}</span>
       <i class="layout-menuitem-root-icon pi pi-fw pi-ellipsis-h" />
     </div>
@@ -241,17 +235,10 @@ function checkActiveRoute(item) {
       :target="item.target"
       tabindex="0"
       @click="itemClick($event, item, index)"
-      @mouseenter="onMouseEnter"
-    >
-      <i
-        :class="item.icon"
-        class="layout-menuitem-icon"
-      />
+      @mouseenter="onMouseEnter">
+      <i :class="item.icon" class="layout-menuitem-icon" />
       <span class="layout-menuitem-text">{{ item.label }}</span>
-      <i
-        v-if="item.items"
-        class="pi pi-fw pi-angle-down layout-submenu-toggler"
-      />
+      <i v-if="item.items" class="pi pi-fw pi-angle-down layout-submenu-toggler" />
     </a>
     <RouterLink
       v-if="item.to && !item.items && item.visible !== false"
@@ -260,32 +247,23 @@ function checkActiveRoute(item) {
       tabindex="0"
       :to="item.to"
       @click="itemClick($event, item, index)"
-      @mouseenter="onMouseEnter"
-    >
-      <i
-        :class="item.icon"
-        class="layout-menuitem-icon"
-      />
+      @mouseenter="onMouseEnter">
+      <i :class="item.icon" class="layout-menuitem-icon" />
       <span class="layout-menuitem-text">{{ item.label }}</span>
-      <i
-        v-if="item.items"
-        class="pi pi-fw pi-angle-down layout-submenu-toggler"
-      />
+      <i v-if="item.items" class="pi pi-fw pi-angle-down layout-submenu-toggler" />
     </RouterLink>
 
     <ul
       v-if="item.items && item.visible !== false"
       ref="subMenuRef"
-      :class="{ 'layout-root-submenulist': root }"
-    >
+      :class="{ 'layout-root-submenulist': root }">
       <AppMenuItem
         v-for="(child, i) in item.items"
         :key="child"
         :index="i"
         :item="child"
         :parent-item-key="itemKey"
-        :root="false"
-      />
+        :root="false" />
     </ul>
   </li>
 </template>

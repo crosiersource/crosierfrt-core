@@ -191,10 +191,12 @@ export function useLayout() {
     layoutState.configSidebarVisible = false;
   };
 
-  const isSidebarActive = computed(() =>
+  const isSidebarActive = computed(
+    () =>
       layoutState.overlayMenuActive ||
       layoutState.staticMenuMobileActive ||
-      layoutState.overlaySubmenuActive);
+      layoutState.overlaySubmenuActive
+  );
   const isDesktop = computed(() => window.innerWidth > 991);
 
   const isSlim = computed(() => layoutConfig.menuMode === 'slim');

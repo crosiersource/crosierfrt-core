@@ -7,8 +7,7 @@
       Atlantis is an application template and is based on
       <a
         href="https://github.com/vuejs/create-vue"
-        class="font-medium text-primary hover:underline"
-      >
+        class="font-medium text-primary hover:underline">
         create-vue
       </a>
       , the recommended way to start a Vite-powered Vue projects.
@@ -228,8 +227,7 @@ const model = ref([
         height="315"
         src="https://www.youtube.com/embed/Ni_Yecfxv_g?si=11QMilH9sf06Xwi5"
         frameborder="0"
-        allowfullscreen
-      />
+        allowfullscreen />
     </div>
 
     <div class="font-semibold text-xl mb-4">Tailwind CSS</div>

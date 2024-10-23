@@ -97,8 +97,7 @@ function onSortChange(event) {
       :rows="3"
       layout="grid"
       :sort-order="sortOrder"
-      :sort-field="sortField"
-    >
+      :sort-field="sortField">
       <template #header>
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <span class="text-xl text-surface-900 dark:text-surface-0 font-semibold">Articles</span>
@@ -108,8 +107,7 @@ function onSortChange(event) {
             option-label="label"
             placeholder="Sort By"
             class="w-full md:w-60"
-            @change="onSortChange($event)"
-          />
+            @change="onSortChange($event)" />
         </div>
       </template>
       <template #grid="slotProps">
@@ -117,24 +115,20 @@ function onSortChange(event) {
           <div
             v-for="(item, index) in slotProps.items"
             :key="index"
-            class="col-span-12 md:col-span-4"
-          >
+            class="col-span-12 md:col-span-4">
             <div class="p-4">
               <div
-                class="border border-surface-200 dark:border-surface-700 cursor-pointer z-index rounded"
-              >
+                class="border border-surface-200 dark:border-surface-700 cursor-pointer z-index rounded">
                 <div class="relative">
                   <img
                     :src="item.coverImage"
                     class="w-full"
-                    :alt="item.description.split(' ', 1)"
-                  >
+                    :alt="item.description.split(' ', 1)" />
                   <img
                     :src="item.profile"
                     class="flex absolute w-16 h-16"
                     :style="{ bottom: '-1.5rem', right: '1.5rem' }"
-                    :alt="item.description.split(' ', 1)"
-                  >
+                    :alt="item.description.split(' ', 1)" />
                 </div>
                 <div class="p-4">
                   <div class="text-surface-900 dark:text-surface-0 font-semibold text-xl mb-4">
@@ -188,10 +182,7 @@ function onSortChange(event) {
             incididunt ut labore et dolore magna aliqua.
           </div>
           <div class="flex mt-6">
-            <Avatar
-              image="/demo/images/avatar/circle/avatar-f-1.png"
-              shape="circle"
-            />
+            <Avatar image="/demo/images/avatar/circle/avatar-f-1.png" shape="circle" />
             <div class="ml-2">
               <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">
                 Anna Miles
@@ -214,10 +205,7 @@ function onSortChange(event) {
             incididunt ut labore et dolore magna aliqua.
           </div>
           <div class="flex mt-6">
-            <Avatar
-              image="/demo/images/avatar/circle/avatar-f-2.png"
-              shape="circle"
-            />
+            <Avatar image="/demo/images/avatar/circle/avatar-f-2.png" shape="circle" />
             <div class="ml-2">
               <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">
                 Arlene Miles
@@ -240,10 +228,7 @@ function onSortChange(event) {
             incididunt ut labore et dolore magna aliqua.
           </div>
           <div class="flex mt-6">
-            <Avatar
-              image="/demo/images/avatar/circle/avatar-f-3.png"
-              shape="circle"
-            />
+            <Avatar image="/demo/images/avatar/circle/avatar-f-3.png" shape="circle" />
             <div class="ml-2">
               <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">
                 Diane Miles

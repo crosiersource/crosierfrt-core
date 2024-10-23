@@ -65,23 +65,14 @@ function changeItem(index) {
       <div class="card mb-0 md:w-80">
         <div class="text-surface-900 dark:text-surface-0 block font-bold mb-4">Categories</div>
         <ul class="list-none m-0 p-0">
-          <li
-            v-for="(item, i) in items"
-            :key="i"
-            class="mb-2"
-            @click="changeItem(i)"
-          >
+          <li v-for="(item, i) in items" :key="i" class="mb-2" @click="changeItem(i)">
             <a
               class="flex items-center cursor-pointer select-none p-4 transition-colors duration-150 rounded"
               :class="{
                 'bg-primary text-primary-contrast': activeIndex === i,
                 'hover:bg-surface-100 dark:hover:bg-surface-800': activeIndex !== i
-              }"
-            >
-              <i
-                class="mr-2 text-lg"
-                :class="item.icon"
-              />
+              }">
+              <i class="mr-2 text-lg" :class="item.icon" />
               <span>{{ item.label }}</span>
             </a>
           </li>
@@ -89,11 +80,7 @@ function changeItem(index) {
       </div>
       <div class="card flex-1">
         <Accordion>
-          <AccordionPanel
-            v-for="(question, i) in items[activeIndex].questions"
-            :key="i"
-            :value="i"
-          >
+          <AccordionPanel v-for="(question, i) in items[activeIndex].questions" :key="i" :value="i">
             <AccordionHeader>{{ question }}</AccordionHeader>
             <AccordionContent>
               <p class="leading-normal m-0 p-0">

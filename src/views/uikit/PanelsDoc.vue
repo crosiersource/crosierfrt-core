@@ -37,23 +37,9 @@ function toggle() {
       <div class="font-semibold text-xl mb-4">Toolbar</div>
       <Toolbar>
         <template #start>
-          <Button
-            icon="pi pi-plus"
-            class="mr-2"
-            severity="secondary"
-            text
-          />
-          <Button
-            icon="pi pi-print"
-            class="mr-2"
-            severity="secondary"
-            text
-          />
-          <Button
-            icon="pi pi-upload"
-            severity="secondary"
-            text
-          />
+          <Button icon="pi pi-plus" class="mr-2" severity="secondary" text />
+          <Button icon="pi pi-print" class="mr-2" severity="secondary" text />
+          <Button icon="pi pi-upload" severity="secondary" text />
         </template>
 
         <template #center>
@@ -66,10 +52,7 @@ function toggle() {
         </template>
 
         <template #end>
-          <SplitButton
-            label="Save"
-            :model="items"
-          />
+          <SplitButton label="Save" :model="items" />
         </template>
       </Toolbar>
     </div>
@@ -166,10 +149,7 @@ function toggle() {
       <div class="md:w-1/2 mt-6 md:mt-0">
         <div class="card">
           <div class="font-semibold text-xl mb-4">Panel</div>
-          <Panel
-            header="Header"
-            :toggleable="true"
-          >
+          <Panel header="Header" :toggleable="true">
             <p class="leading-normal m-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -182,10 +162,7 @@ function toggle() {
         </div>
         <div class="card">
           <div class="font-semibold text-xl mb-4">Fieldset</div>
-          <Fieldset
-            legend="Legend"
-            :toggleable="true"
-          >
+          <Fieldset legend="Legend" :toggleable="true">
             <p class="leading-normal m-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -201,18 +178,9 @@ function toggle() {
           <template #title>
             <div class="flex items-center justify-between mb-0">
               <div class="font-semibold text-xl mb-4">Card</div>
-              <Button
-                icon="pi pi-plus"
-                class="p-button-text"
-                @click="toggle"
-              />
+              <Button icon="pi pi-plus" class="p-button-text" @click="toggle" />
             </div>
-            <Menu
-              id="config_menu"
-              ref="menuRef"
-              :model="cardMenu"
-              :popup="true"
-            />
+            <Menu id="config_menu" ref="menuRef" :model="cardMenu" :popup="true" />
           </template>
 
           <template #content>
@@ -235,38 +203,21 @@ function toggle() {
         <div class="w-full md:w-5/12 flex flex-col items-center justify-center gap-3 py-5">
           <div class="flex flex-col gap-2">
             <label for="username">Username</label>
-            <InputText
-              id="username"
-              type="text"
-            />
+            <InputText id="username" type="text" />
           </div>
           <div class="flex flex-col gap-2">
             <label for="password">Password</label>
-            <InputText
-              id="password"
-              type="password"
-            />
+            <InputText id="password" type="password" />
           </div>
           <div class="flex">
-            <Button
-              label="Login"
-              icon="pi pi-user"
-              class="w-full max-w-[17.35rem] mx-auto"
-            />
+            <Button label="Login" icon="pi pi-user" class="w-full max-w-[17.35rem] mx-auto" />
           </div>
         </div>
         <div class="w-full md:w-2/12">
-          <Divider
-            layout="vertical"
-            class="!hidden md:!flex"
-          >
+          <Divider layout="vertical" class="!hidden md:!flex">
             <b>OR</b>
           </Divider>
-          <Divider
-            layout="horizontal"
-            class="!flex md:!hidden"
-            align="center"
-          >
+          <Divider layout="horizontal" class="!flex md:!hidden" align="center">
             <b>OR</b>
           </Divider>
         </div>
@@ -275,22 +226,15 @@ function toggle() {
             label="Sign Up"
             icon="pi pi-user-plus"
             severity="success"
-            class="w-full max-w-[17.35rem] mx-auto"
-          />
+            class="w-full max-w-[17.35rem] mx-auto" />
         </div>
       </div>
     </div>
 
     <div class="card">
       <div class="font-semibold text-xl mb-4">Splitter</div>
-      <Splitter
-        style="height: 300px"
-        class="mb-8"
-      >
-        <SplitterPanel
-          :size="30"
-          :min-size="10"
-        >
+      <Splitter style="height: 300px" class="mb-8">
+        <SplitterPanel :size="30" :min-size="10">
           <div className="h-full flex items-center justify-center">Panel 1</div>
         </SplitterPanel>
         <SplitterPanel :size="70">
