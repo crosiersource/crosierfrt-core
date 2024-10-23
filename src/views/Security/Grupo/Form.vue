@@ -1,10 +1,28 @@
 <template>
-  <CrosierForm :store="groupStore" titulo="Grupo de Usuários" icon="fas fa-user" form-path="/sec/grupo/form" list-path="/sec/grupo/list">
+  <CrosierForm
+    :store="groupStore"
+    titulo="Grupo de Usuários"
+    icon="fas fa-user"
+    form-path="/sec/grupo/form"
+    list-path="/sec/grupo/list"
+  >
     <template #fields>
       <VContainer>
         <VRow>
-          <VCol cols="12" md="4">
-            <VTextField id="groupname" v-model="groupStore.fields.groupname" label="Nome do Grupo" outlined dense clearable persistent-hint :hint="groupStore.fieldsErrors?.groupname" />
+          <VCol
+            cols="12"
+            md="4"
+          >
+            <VTextField
+              id="groupname"
+              v-model="groupStore.fields.groupname"
+              label="Nome do Grupo"
+              outlined
+              dense
+              clearable
+              persistent-hint
+              :hint="groupStore.fieldsErrors?.groupname"
+            />
           </VCol>
         </VRow>
       </VContainer>

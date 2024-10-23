@@ -1,5 +1,5 @@
-import api from "./api";
-import { validateFormData } from "./ValidateFormData";
+import api from './api';
+import { validateFormData } from './ValidateFormData';
 
 // import { api, validateFormData } from "crosier-vue";
 
@@ -13,9 +13,9 @@ export async function submitForm({
   setUrlId = true,
   fnBeforeSave = null,
   fnAfterGet = null,
-  commitFormDataAfterSave = true,
+  commitFormDataAfterSave = true
 }) {
-  console.log("vou para " + apiResource);
+  console.log('vou para ' + apiResource);
 
   if (!formData) {
     formData = $store.fields;
@@ -47,7 +47,7 @@ export async function submitForm({
     }
 
     if (setUrlId) {
-      window.history.pushState("form", "id", `/${formData.id}`);
+      window.history.pushState('form', 'id', `/${formData.id}`);
     }
 
     if (commitFormDataAfterSave) {
@@ -57,7 +57,7 @@ export async function submitForm({
   }
   // else...
 
-  const errMsg = response.data["hydra:description"] || msgErro;
+  const errMsg = response.data['hydra:description'] || msgErro;
 
   console.error(errMsg);
 

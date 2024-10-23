@@ -41,7 +41,8 @@ const totalBlogs = ref([
     coverImage: '/demo/images/blog/blog-4.png',
     profile: '/demo/images/avatar/circle/avatar-m-1.png',
     title: 'Blog',
-    description: 'Curabitur vitae sit justo facilisi nec, sodales proin aliquet libero volutpat nunc',
+    description:
+      'Curabitur vitae sit justo facilisi nec, sodales proin aliquet libero volutpat nunc',
     comment: 5,
     share: 5,
     day: '14',
@@ -61,7 +62,8 @@ const totalBlogs = ref([
     coverImage: '/demo/images/blog/blog-6.png',
     profile: '/demo/images/avatar/circle/avatar-m-3.png',
     title: 'Science',
-    description: 'Sagittis hendrerit laoreet dignissim sed auctor sit pellentesque vel diam iaculis et',
+    description:
+      'Sagittis hendrerit laoreet dignissim sed auctor sit pellentesque vel diam iaculis et',
     comment: 1,
     share: 3,
     day: '12',
@@ -89,21 +91,50 @@ function onSortChange(event) {
 
 <template>
   <div class="card">
-    <DataView :value="totalBlogs" paginator :rows="3" layout="grid" :sort-order="sortOrder" :sort-field="sortField">
+    <DataView
+      :value="totalBlogs"
+      paginator
+      :rows="3"
+      layout="grid"
+      :sort-order="sortOrder"
+      :sort-field="sortField"
+    >
       <template #header>
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <span class="text-xl text-surface-900 dark:text-surface-0 font-semibold">Articles</span>
-          <Select v-model="sortKey" :options="sortOptions" option-label="label" placeholder="Sort By" class="w-full md:w-60" @change="onSortChange($event)" />
+          <Select
+            v-model="sortKey"
+            :options="sortOptions"
+            option-label="label"
+            placeholder="Sort By"
+            class="w-full md:w-60"
+            @change="onSortChange($event)"
+          />
         </div>
       </template>
       <template #grid="slotProps">
         <div class="grid grid-cols-12 gap-4 grid-nogutter">
-          <div v-for="(item, index) in slotProps.items" :key="index" class="col-span-12 md:col-span-4">
+          <div
+            v-for="(item, index) in slotProps.items"
+            :key="index"
+            class="col-span-12 md:col-span-4"
+          >
             <div class="p-4">
-              <div class="border border-surface-200 dark:border-surface-700 cursor-pointer z-index rounded">
+              <div
+                class="border border-surface-200 dark:border-surface-700 cursor-pointer z-index rounded"
+              >
                 <div class="relative">
-                  <img :src="item.coverImage" class="w-full" :alt="item.description.split(' ', 1)" />
-                  <img :src="item.profile" class="flex absolute w-16 h-16" :style="{ bottom: '-1.5rem', right: '1.5rem' }" :alt="item.description.split(' ', 1)" />
+                  <img
+                    :src="item.coverImage"
+                    class="w-full"
+                    :alt="item.description.split(' ', 1)"
+                  >
+                  <img
+                    :src="item.profile"
+                    class="flex absolute w-16 h-16"
+                    :style="{ bottom: '-1.5rem', right: '1.5rem' }"
+                    :alt="item.description.split(' ', 1)"
+                  >
                 </div>
                 <div class="p-4">
                   <div class="text-surface-900 dark:text-surface-0 font-semibold text-xl mb-4">
@@ -138,18 +169,35 @@ function onSortChange(event) {
 
   <div class="card">
     <div class="bg-surface-0 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20">
-      <div class="font-bold text-5xl text-surface-900 dark:text-surface-0 mb-4">Recent Articles</div>
-      <div class="text-surface-700 dark:text-surface-100 text-xl leading-normal mb-8">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+      <div class="font-bold text-5xl text-surface-900 dark:text-surface-0 mb-4">
+        Recent Articles
+      </div>
+      <div class="text-surface-700 dark:text-surface-100 text-xl leading-normal mb-8">
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+      </div>
       <div class="grid grid-cols-12 gap-4 nogutter">
         <div class="col-span-12 lg:col-span-4 p-6">
           <div class="border-t-4 border-blue-600" />
-          <div class="text-blue-600 font-medium my-2">Animals</div>
-          <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">Why Earth&lsquo;s most beloved creatures are headed toward extinction</div>
-          <div class="font-sm text-surface-700 dark:text-surface-100 leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div class="text-blue-600 font-medium my-2">
+            Animals
+          </div>
+          <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">
+            Why Earth&lsquo;s most beloved creatures are headed toward extinction
+          </div>
+          <div class="font-sm text-surface-700 dark:text-surface-100 leading-normal">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </div>
           <div class="flex mt-6">
-            <Avatar image="/demo/images/avatar/circle/avatar-f-1.png" shape="circle" />
+            <Avatar
+              image="/demo/images/avatar/circle/avatar-f-1.png"
+              shape="circle"
+            />
             <div class="ml-2">
-              <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">Anna Miles</div>
+              <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">
+                Anna Miles
+              </div>
               <div class="text-xs flex items-center text-surface-700 dark:text-surface-100">
                 <i class="pi pi-calendar mr-1 text-xs" />
                 <span>Apr 9, 2021</span>
@@ -159,13 +207,25 @@ function onSortChange(event) {
         </div>
         <div class="col-span-12 lg:col-span-4 p-6">
           <div class="border-t-4 border-pink-600" />
-          <div class="text-pink-600 font-medium my-2">Oxygen</div>
-          <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">Only one-third of tropical rainforests remain intact, study says</div>
-          <div class="font-sm text-surface-700 dark:text-surface-100 leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div class="text-pink-600 font-medium my-2">
+            Oxygen
+          </div>
+          <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">
+            Only one-third of tropical rainforests remain intact, study says
+          </div>
+          <div class="font-sm text-surface-700 dark:text-surface-100 leading-normal">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </div>
           <div class="flex mt-6">
-            <Avatar image="/demo/images/avatar/circle/avatar-f-2.png" shape="circle" />
+            <Avatar
+              image="/demo/images/avatar/circle/avatar-f-2.png"
+              shape="circle"
+            />
             <div class="ml-2">
-              <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">Arlene Miles</div>
+              <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">
+                Arlene Miles
+              </div>
               <div class="text-xs flex items-center text-surface-700 dark:text-surface-100">
                 <i class="pi pi-calendar mr-1 text-xs" />
                 <span>Apr 9, 2021</span>
@@ -175,13 +235,25 @@ function onSortChange(event) {
         </div>
         <div class="col-span-12 lg:col-span-4 p-6">
           <div class="border-t-4 border-orange-600" />
-          <div class="text-orange-600 font-medium my-2">Nature</div>
-          <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">Does planting a tree really offset your carbon footprint?</div>
-          <div class="font-sm text-surface-700 dark:text-surface-100 leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div class="text-orange-600 font-medium my-2">
+            Nature
+          </div>
+          <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">
+            Does planting a tree really offset your carbon footprint?
+          </div>
+          <div class="font-sm text-surface-700 dark:text-surface-100 leading-normal">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </div>
           <div class="flex mt-6">
-            <Avatar image="/demo/images/avatar/circle/avatar-f-3.png" shape="circle" />
+            <Avatar
+              image="/demo/images/avatar/circle/avatar-f-3.png"
+              shape="circle"
+            />
             <div class="ml-2">
-              <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">Diane Miles</div>
+              <div class="text-xs font-bold text-surface-900 dark:text-surface-0 mb-1">
+                Diane Miles
+              </div>
               <div class="text-xs flex items-center text-surface-700 dark:text-surface-100">
                 <i class="pi pi-calendar mr-1 text-xs" />
                 <span>Apr 9, 2021</span>

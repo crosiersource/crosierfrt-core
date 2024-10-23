@@ -58,16 +58,35 @@ function onRemoveTags(tag) {
       <div class="col-span-12 lg:col-span-8">
         <div class="grid grid-cols-12 gap-4">
           <div class="col-span-12">
-            <InputText v-model="product.name" type="text" placeholder="Product Name" />
+            <InputText
+              v-model="product.name"
+              type="text"
+              placeholder="Product Name"
+            />
           </div>
           <div class="col-span-12 lg:col-span-4">
-            <InputText v-model="product.price" type="text" placeholder="Price" label="Price" />
+            <InputText
+              v-model="product.price"
+              type="text"
+              placeholder="Price"
+              label="Price"
+            />
           </div>
           <div class="col-span-12 lg:col-span-4">
-            <InputText v-model="product.code" type="text" placeholder="Product Code" label="Product Code" />
+            <InputText
+              v-model="product.code"
+              type="text"
+              placeholder="Product Code"
+              label="Product Code"
+            />
           </div>
           <div class="col-span-12 lg:col-span-4">
-            <InputText v-model="product.sku" type="text" placeholder="Product SKU" label="SKU" />
+            <InputText
+              v-model="product.sku"
+              type="text"
+              placeholder="Product SKU"
+              label="SKU"
+            />
           </div>
           <div class="col-span-12">
             <Editor editor-style="height: 320px" />
@@ -89,21 +108,50 @@ function onRemoveTags(tag) {
               }"
               @select="onSelectedFiles"
             >
-              <template v-if="uploadFiles.length > 0" #content>
+              <template
+                v-if="uploadFiles.length > 0"
+                #content
+              >
                 <div class="h-80 m-1 rounded">
-                  <div v-for="file in uploadFiles" :key="file.name" class="w-full h-full relative rounded p-0" :style="{ cursor: 'copy' }">
-                    <div class="remove-file-wrapper h-full relative border-4 border-transparent rounded hover:bg-primary hover:text-primary-contrast duration-100 cursor-auto">
-                      <img :src="file.objectURL" :alt="file.name" class="w-full h-full rounded" />
-                      <Button icon="pi pi-times" class="remove-button text-sm absolute justify-center items-center cursor-pointer" rounded :style="{ top: '-10px', right: '-10px', display: 'none', width: '3rem' }" @click="onRemoveFile(file)" />
+                  <div
+                    v-for="file in uploadFiles"
+                    :key="file.name"
+                    class="w-full h-full relative rounded p-0"
+                    :style="{ cursor: 'copy' }"
+                  >
+                    <div
+                      class="remove-file-wrapper h-full relative border-4 border-transparent rounded hover:bg-primary hover:text-primary-contrast duration-100 cursor-auto"
+                    >
+                      <img
+                        :src="file.objectURL"
+                        :alt="file.name"
+                        class="w-full h-full rounded"
+                      >
+                      <Button
+                        icon="pi pi-times"
+                        class="remove-button text-sm absolute justify-center items-center cursor-pointer"
+                        rounded
+                        :style="{ top: '-10px', right: '-10px', display: 'none', width: '3rem' }"
+                        @click="onRemoveFile(file)"
+                      />
                     </div>
                   </div>
                 </div>
               </template>
               <template #empty>
-                <div v-if="uploadFiles.length < 1" class="h-80 m-1 rounded">
-                  <div class="flex flex-col w-full h-full justify-center items-center cursor-pointer" :style="{ cursor: 'copy' }" @click="onChooseUploadFiles">
+                <div
+                  v-if="uploadFiles.length < 1"
+                  class="h-80 m-1 rounded"
+                >
+                  <div
+                    class="flex flex-col w-full h-full justify-center items-center cursor-pointer"
+                    :style="{ cursor: 'copy' }"
+                    @click="onChooseUploadFiles"
+                  >
                     <i class="pi pi-fw pi-file text-4xl text-primary" />
-                    <span class="block font-semibold text-surface-900 dark:text-surface-0 text-lg mt-4">Drop or select a cover image</span>
+                    <span
+                      class="block font-semibold text-surface-900 dark:text-surface-0 text-lg mt-4"
+                    >Drop or select a cover image</span>
                   </div>
                 </div>
               </template>
@@ -113,18 +161,28 @@ function onRemoveTags(tag) {
       </div>
       <div class="col-span-12 lg:col-span-4 flex flex-col gap-y-4">
         <div class="border border-surface-200 dark:border-surface-700 rounded">
-          <span class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">Publish</span>
+          <span
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
+          >Publish</span>
           <div class="p-4">
             <div class="bg-surface-100 dark:bg-surface-700 py-2 px-4 flex items-center rounded">
               <span class="text-black/90 font-bold mr-4">Status:</span>
               <span class="text-black/60 font-semibold">Draft</span>
-              <Button type="button" icon="pi pi-fw pi-pencil" class="ml-auto" text rounded />
+              <Button
+                type="button"
+                icon="pi pi-fw pi-pencil"
+                class="ml-auto"
+                text
+                rounded
+              />
             </div>
           </div>
         </div>
 
         <div class="border border-surface-200 dark:border-surface-700 rounded">
-          <span class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">Tags</span>
+          <span
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
+          >Tags</span>
           <div class="p-4 flex flex-wrap gap-1">
             <Chip
               v-for="(tag, i) in product.tags"
@@ -134,22 +192,37 @@ function onRemoveTags(tag) {
               style="border-radius: 20px"
             >
               <span class="mr-4">{{ tag }}</span>
-              <span class="flex items-center justify-center border border-surface-200 dark:border-surface-700 bg-gray-100 rounded-full cursor-pointer" :style="{ width: '1.5rem', height: '1.5rem' }" @click="onRemoveTags(tag)">
-                <i class="pi pi-fw pi-times text-black/60" :style="{ fontSize: '9px' }" />
+              <span
+                class="flex items-center justify-center border border-surface-200 dark:border-surface-700 bg-gray-100 rounded-full cursor-pointer"
+                :style="{ width: '1.5rem', height: '1.5rem' }"
+                @click="onRemoveTags(tag)"
+              >
+                <i
+                  class="pi pi-fw pi-times text-black/60"
+                  :style="{ fontSize: '9px' }"
+                />
               </span>
             </Chip>
           </div>
         </div>
 
         <div class="border border-surface-200 dark:border-surface-700 rounded">
-          <span class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">Category</span>
+          <span
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
+          >Category</span>
           <div class="p-4">
-            <Select v-model="selectedCategory" :options="categoryOptions" placeholder="Select a category" />
+            <Select
+              v-model="selectedCategory"
+              :options="categoryOptions"
+              placeholder="Select a category"
+            />
           </div>
         </div>
 
         <div class="border border-surface-200 dark:border-surface-700 rounded">
-          <span class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">Colors</span>
+          <span
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
+          >Colors</span>
           <div class="p-4 flex">
             <div
               v-for="(color, i) in colorOptions"
@@ -158,24 +231,46 @@ function onRemoveTags(tag) {
               :class="color.background"
               @click="toggleColor(color.name)"
             >
-              <i v-if="product.colors.includes(color.name)" :key="i" class="pi pi-check text-sm text-white z-50" />
+              <i
+                v-if="product.colors.includes(color.name)"
+                :key="i"
+                class="pi pi-check text-sm text-white z-50"
+              />
             </div>
           </div>
         </div>
 
         <div class="border border-surface-200 dark:border-surface-700 rounded">
-          <span class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4">Stock</span>
+          <span
+            class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
+          >Stock</span>
           <div class="p-4">
-            <Select v-model="selectedStock" :options="categoryOptions" placeholder="Select stock" />
+            <Select
+              v-model="selectedStock"
+              :options="categoryOptions"
+              placeholder="Select stock"
+            />
           </div>
         </div>
-        <div class="border border-surface-200 dark:border-surface-700 flex justify-between items-center px-4 rounded">
+        <div
+          class="border border-surface-200 dark:border-surface-700 flex justify-between items-center px-4 rounded"
+        >
           <span class="text-surface-900 dark:text-surface-0 font-bold p-4">In stock</span>
           <ToggleSwitch v-model="product.inStock" />
         </div>
         <div class="flex justify-between gap-4">
-          <Button class="flex-1" severity="danger" outlined label="Discard" icon="pi pi-fw pi-trash" />
-          <Button class="flex-1" label="Publish" icon="pi pi-fw pi-check" />
+          <Button
+            class="flex-1"
+            severity="danger"
+            outlined
+            label="Discard"
+            icon="pi pi-fw pi-trash"
+          />
+          <Button
+            class="flex-1"
+            label="Publish"
+            icon="pi pi-fw pi-check"
+          />
         </div>
       </div>
     </Fluid>

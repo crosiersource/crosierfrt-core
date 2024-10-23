@@ -1,11 +1,11 @@
-import { defineStore } from "pinia";
-import api from "@/services/api";
-import { submitForm } from "@/services/SubmitForm";
-import * as yup from "yup";
-import { useAuthStore } from "@/stores/auth.store";
-import { useLoadingStore } from "@/stores/loading.store";
+import { defineStore } from 'pinia';
+import api from '@/services/api';
+import { submitForm } from '@/services/SubmitForm';
+import * as yup from 'yup';
+import { useAuthStore } from '@/stores/auth.store';
+import { useLoadingStore } from '@/stores/loading.store';
 
-export const useUserStore = defineStore("user", {
+export const useUserStore = defineStore('user', {
   state: () => {
     return {
       filters: {},
@@ -13,7 +13,7 @@ export const useUserStore = defineStore("user", {
       fields: {},
       fieldsErrors: {},
 
-      schemaValidator: [],
+      schemaValidator: []
     };
   },
 
@@ -22,7 +22,7 @@ export const useUserStore = defineStore("user", {
 
     getFields: (state) => state.fields,
 
-    getFieldsErrors: (state) => state.fieldsErrors,
+    getFieldsErrors: (state) => state.fieldsErrors
   },
 
   actions: {
@@ -30,21 +30,21 @@ export const useUserStore = defineStore("user", {
       const loadingStore = useLoadingStore();
       loadingStore.setLoading(true);
 
-      console.log("vou load no userStore");
+      console.log('vou load no userStore');
 
       try {
         const authStore = useAuthStore();
-        console.log("authStore.token", authStore.token);
+        console.log('authStore.token', authStore.token);
 
         const response = await api.get({
           authToken: authStore.token,
-          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/user/${id}`,
+          apiResource: `${import.meta.env.VITE_CROSIER_API}/api/sec/user/${id}`
         });
 
-        if (response.data["@id"]) {
+        if (response.data['@id']) {
           this.fields = response.data;
         } else {
-          console.error("Id não encontrado");
+          console.error('Id não encontrado');
         }
       } catch (err) {
         console.error(err);
@@ -58,7 +58,7 @@ export const useUserStore = defineStore("user", {
       loadingStore.setLoading(true);
 
       const schemaValidator = yup.object().shape({
-        username: yup.string().required().typeError(),
+        username: yup.string().required().typeError()
       });
 
       const authStore = useAuthStore();
@@ -73,18 +73,18 @@ export const useUserStore = defineStore("user", {
             delete formData.estabelecimentoId;
             delete formData.userInsertedId;
             delete formData.userUpdatedId;
-            console.log("fnBeforeSave");
+            console.log('fnBeforeSave');
             console.log(formData);
             if (formData.userRoles) {
-              formData.userRoles = formData.userRoles.map((e) => e["@id"]);
+              formData.userRoles = formData.userRoles.map((e) => e['@id']);
             }
-          },
+          }
         });
 
-        console.log("Retornando do submitForm");
+        console.log('Retornando do submitForm');
         console.log(rs);
       } catch (e) {
-        console.log("Erro no submitForm");
+        console.log('Erro no submitForm');
         console.error(e);
         throw e;
       } finally {
@@ -103,6 +103,6 @@ export const useUserStore = defineStore("user", {
       await api.delete(apiResource, authStore.token);
 
       loadingStore.setLoading(false);
-    },
-  },
+    }
+  }
 });

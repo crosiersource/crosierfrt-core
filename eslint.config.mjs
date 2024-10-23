@@ -23,7 +23,9 @@ export default [
           registeredComponentsOnly: false,
           ignores: []
         }
-      ]
+      ],
+      'vue/attribute-hyphenation': 'off',
+      'function-paren-newline': ['error', 'multiline']
     }
   }
 ];

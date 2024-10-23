@@ -90,37 +90,101 @@ watch(
 </script>
 
 <template>
-  <Dialog v-model:visible="localDialogVisible" header="New Message" modal class="mx-4 sm:mx-0 sm:w-full md:w-8/12 lg:w-6/12" content-class="rounded-b border-t border-surface-200 dark:border-surface-700 p-0">
+  <Dialog
+    v-model:visible="localDialogVisible"
+    header="New Message"
+    modal
+    class="mx-4 sm:mx-0 sm:w-full md:w-8/12 lg:w-6/12"
+    content-class="rounded-b border-t border-surface-200 dark:border-surface-700 p-0"
+  >
     <div class="p-0 m-0">
-      <div class="bg-surface-0 dark:bg-surface-950 grid grid-cols-12 grid-nogutter flex-col md:flex-row gap-12 p-8 rounded">
+      <div
+        class="bg-surface-0 dark:bg-surface-950 grid grid-cols-12 grid-nogutter flex-col md:flex-row gap-12 p-8 rounded"
+      >
         <div class="col">
-          <label for="to" class="block text-surface-900 dark:text-surface-0 font-semibold mb-4">To</label>
-          <IconField class="w-full" style="height: 3.5rem">
-            <InputIcon class="pi pi-user" style="left: 1.5rem" />
-            <InputText id="to" v-model="content.from" type="text" class="w-full pl-16 text-surface-900 dark:text-surface-0 font-semibold" style="height: 3.5rem" />
+          <label
+            for="to"
+            class="block text-surface-900 dark:text-surface-0 font-semibold mb-4"
+          >To</label>
+          <IconField
+            class="w-full"
+            style="height: 3.5rem"
+          >
+            <InputIcon
+              class="pi pi-user"
+              style="left: 1.5rem"
+            />
+            <InputText
+              id="to"
+              v-model="content.from"
+              type="text"
+              class="w-full pl-16 text-surface-900 dark:text-surface-0 font-semibold"
+              style="height: 3.5rem"
+            />
           </IconField>
         </div>
         <div class="col">
-          <label for="Subject" class="block text-surface-900 dark:text-surface-0 font-semibold mb-4">Subject</label>
-          <IconField class="w-full" style="height: 3.5rem">
-            <InputIcon class="pi pi-pencil" style="left: 1.5rem" />
-            <InputText id="subject" v-model="content.title" type="text" placeholder="Subject" class="w-full pl-16 text-surface-900 dark:text-surface-0 font-semibold" style="height: 3.5rem" />
+          <label
+            for="Subject"
+            class="block text-surface-900 dark:text-surface-0 font-semibold mb-4"
+          >Subject</label>
+          <IconField
+            class="w-full"
+            style="height: 3.5rem"
+          >
+            <InputIcon
+              class="pi pi-pencil"
+              style="left: 1.5rem"
+            />
+            <InputText
+              id="subject"
+              v-model="content.title"
+              type="text"
+              placeholder="Subject"
+              class="w-full pl-16 text-surface-900 dark:text-surface-0 font-semibold"
+              style="height: 3.5rem"
+            />
           </IconField>
         </div>
-        <div v-if="displayMessage" class="col-span-12">
+        <div
+          v-if="displayMessage"
+          class="col-span-12"
+        >
           <div class="border border-surface-200 dark:border-surface-700 rounded p-6">
             {{ content.message }}
           </div>
         </div>
         <div class="col-span-12">
-          <span v-tooltip="displayMessage ? 'Hide content' : 'Show content'" class="bg-surface-50 dark:bg-surface-950 cursor-pointer rounded px-2" @click="toggleMessage()"><i class="pi pi-ellipsis-h" /></span>
-          <Editor v-model="newMail.message" :editor-style="{ height: '250px' }" class="mt-4" />
+          <span
+            v-tooltip="displayMessage ? 'Hide content' : 'Show content'"
+            class="bg-surface-50 dark:bg-surface-950 cursor-pointer rounded px-2"
+            @click="toggleMessage()"
+          ><i class="pi pi-ellipsis-h" /></span>
+          <Editor
+            v-model="newMail.message"
+            :editor-style="{ height: '250px' }"
+            class="mt-4"
+          />
         </div>
       </div>
       <div class="flex gap-x-4 justify-end p-8 border-t border-surface-200 dark:border-surface-700">
-        <Button type="button" outlined icon="pi pi-image" />
-        <Button type="button" outlined icon="pi pi-paperclip" />
-        <Button type="button" class="h-12" icon="pi pi-send" label="Send" @click="sendMail()" />
+        <Button
+          type="button"
+          outlined
+          icon="pi pi-image"
+        />
+        <Button
+          type="button"
+          outlined
+          icon="pi pi-paperclip"
+        />
+        <Button
+          type="button"
+          class="h-12"
+          icon="pi pi-send"
+          label="Send"
+          @click="sendMail()"
+        />
       </div>
     </div>
   </Dialog>

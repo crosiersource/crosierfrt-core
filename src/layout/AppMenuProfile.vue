@@ -32,8 +32,13 @@ const iconClass = computed(() => {
   const profilePositionStart = layoutConfig.menuProfilePosition === 'start';
 
   return {
-    'pi-angle-up': (layoutState.menuProfileActive && (profilePositionStart || isHorizontal.value)) || (!layoutState.menuProfileActive && !profilePositionStart && !isHorizontal.value),
-    'pi-angle-down': (!layoutState.menuProfileActive && profilePositionStart) || (layoutState.menuProfileActive && !profilePositionStart) || isHorizontal.value
+    'pi-angle-up':
+      (layoutState.menuProfileActive && (profilePositionStart || isHorizontal.value)) ||
+      (!layoutState.menuProfileActive && !profilePositionStart && !isHorizontal.value),
+    'pi-angle-down':
+      (!layoutState.menuProfileActive && profilePositionStart) ||
+      (layoutState.menuProfileActive && !profilePositionStart) ||
+      isHorizontal.value
   };
 });
 
@@ -44,16 +49,29 @@ function tooltipValue(tooltipText) {
 
 <template>
   <div class="layout-menu-profile">
-    <button v-tooltip="{ value: tooltipValue('Profile') }" @click="toggleMenu">
-      <img src="/layout/images/avatar/amyelsner.png" alt="avatar" style="width: 32px; height: 32px" />
+    <button
+      v-tooltip="{ value: tooltipValue('Profile') }"
+      @click="toggleMenu"
+    >
+      <img
+        src="/layout/images/avatar/amyelsner.png"
+        alt="avatar"
+        style="width: 32px; height: 32px"
+      >
       <span>
         <strong>Amy Elsner</strong>
         <small>Webmaster</small>
       </span>
-      <i class="layout-menu-profile-toggler pi pi-fw" :class="iconClass" />
+      <i
+        class="layout-menu-profile-toggler pi pi-fw"
+        :class="iconClass"
+      />
     </button>
 
-    <ul :class="['menu-transition', menuClass]" style="overflow: hidden; max-height: 0; opacity: 0">
+    <ul
+      :class="['menu-transition', menuClass]"
+      style="overflow: hidden; max-height: 0; opacity: 0"
+    >
       <li v-tooltip="{ value: tooltipValue('Settings') }">
         <button @click="router.push('/documentation')">
           <i class="pi pi-cog pi-fw" />

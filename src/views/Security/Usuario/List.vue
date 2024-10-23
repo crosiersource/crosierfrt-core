@@ -31,31 +31,31 @@
   </CrosierListS>
 </template>
 <script>
-import CrosierListS from "@/components/Crosier/CrosierList";
-import { mapStores } from "pinia";
-import { useUserStore } from "@/stores/Security/user.store";
+import CrosierListS from '@/components/Crosier/CrosierList';
+import { mapStores } from 'pinia';
+import { useUserStore } from '@/stores/Security/user.store';
 
 export default {
-  name: "UsuarioList",
+  name: 'UsuarioList',
 
   components: {
-    CrosierListS,
+    CrosierListS
   },
 
-  inject: ["authStore"],
+  inject: ['authStore'],
 
   data() {
     return {
       headers: [
-        { title: "Id", key: "id", sortable: true },
-        { title: "Usuário", key: "username" },
-        { title: "", key: "actions", sortable: false, width: "1%" },
-      ],
+        { title: 'Id', key: 'id', sortable: true },
+        { title: 'Usuário', key: 'username' },
+        { title: '', key: 'actions', sortable: false, width: '1%' }
+      ]
     };
   },
 
   computed: {
-    ...mapStores(useUserStore),
-  },
+    ...mapStores(useUserStore)
+  }
 };
 </script>

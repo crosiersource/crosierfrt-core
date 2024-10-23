@@ -63,13 +63,48 @@ const sidebarItems = computed(() => {
   const mails = filteredMails.value;
 
   return [
-    { label: 'Inbox', icon: 'pi pi-inbox', badge: mails.inbox?.length || 0, routerLink: '/apps/mail/inbox' },
-    { label: 'Starred', icon: 'pi pi-star', badge: mails.starred?.length || 0, routerLink: '/apps/mail/starred' },
-    { label: 'Spam', icon: 'pi pi-ban', badge: mails.spam?.length || 0, routerLink: '/apps/mail/spam' },
-    { label: 'Important', icon: 'pi pi-bookmark', badge: mails.important?.length || 0, routerLink: '/apps/mail/important' },
-    { label: 'Sent', icon: 'pi pi-send', badge: mails.sent?.length || 0, routerLink: '/apps/mail/sent' },
-    { label: 'Archived', icon: 'pi pi-book', badge: mails.archived?.length || 0, routerLink: '/apps/mail/archived' },
-    { label: 'Trash', icon: 'pi pi-trash', badge: mails.trash?.length || 0, routerLink: '/apps/mail/trash' }
+    {
+      label: 'Inbox',
+      icon: 'pi pi-inbox',
+      badge: mails.inbox?.length || 0,
+      routerLink: '/apps/mail/inbox'
+    },
+    {
+      label: 'Starred',
+      icon: 'pi pi-star',
+      badge: mails.starred?.length || 0,
+      routerLink: '/apps/mail/starred'
+    },
+    {
+      label: 'Spam',
+      icon: 'pi pi-ban',
+      badge: mails.spam?.length || 0,
+      routerLink: '/apps/mail/spam'
+    },
+    {
+      label: 'Important',
+      icon: 'pi pi-bookmark',
+      badge: mails.important?.length || 0,
+      routerLink: '/apps/mail/important'
+    },
+    {
+      label: 'Sent',
+      icon: 'pi pi-send',
+      badge: mails.sent?.length || 0,
+      routerLink: '/apps/mail/sent'
+    },
+    {
+      label: 'Archived',
+      icon: 'pi pi-book',
+      badge: mails.archived?.length || 0,
+      routerLink: '/apps/mail/archived'
+    },
+    {
+      label: 'Trash',
+      icon: 'pi pi-trash',
+      badge: mails.trash?.length || 0,
+      routerLink: '/apps/mail/trash'
+    }
   ];
 });
 
@@ -166,5 +201,10 @@ const onChangeDialogVisibility = (isVisible) => {
       </div>
     </div>
   </div>
-  <Reply v-model:visible="dialogVisible" :mail-detail="mailDetail" @save="onSaveReplyMail" @update:dialog-visible="onChangeDialogVisibility()" />
+  <Reply
+    v-model:visible="dialogVisible"
+    :mail-detail="mailDetail"
+    @save="onSaveReplyMail"
+    @update:dialog-visible="onChangeDialogVisibility()"
+  />
 </template>

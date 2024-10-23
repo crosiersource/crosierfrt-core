@@ -47,38 +47,87 @@ function navigateToCreateListPage() {
         <div class="flex flex-wrap gap-2 items-center justify-between">
           <IconField class="w-full sm:w-80 order-1 sm:order-none">
             <InputIcon class="pi pi-search" />
-            <InputText v-model="filterTable.global.value" placeholder="Global Search" class="w-full" />
+            <InputText
+              v-model="filterTable.global.value"
+              placeholder="Global Search"
+              class="w-full"
+            />
           </IconField>
-          <Button type="button" icon="pi pi-user-plus" label="Add New" class="w-full sm:w-auto order-none sm:order-1" outlined @click="navigateToCreateListPage" />
+          <Button
+            type="button"
+            icon="pi pi-user-plus"
+            label="Add New"
+            class="w-full sm:w-auto order-none sm:order-1"
+            outlined
+            @click="navigateToCreateListPage"
+          />
         </div>
       </template>
-      <Column field="name" header="Name" sortable header-class="whitespace-nowrap" :style="{ width: '25%' }">
+      <Column
+        field="name"
+        header="Name"
+        sortable
+        header-class="whitespace-nowrap"
+        :style="{ width: '25%' }"
+      >
         <template #body="{ data }">
           {{ data.name }}
         </template>
       </Column>
-      <Column field="country.name" header="Country" sortable header-class="whitespace-nowrap" :style="{ width: '25%' }">
+      <Column
+        field="country.name"
+        header="Country"
+        sortable
+        header-class="whitespace-nowrap"
+        :style="{ width: '25%' }"
+      >
         <template #body="{ data }">
           <div class="flex items-center gap-2">
-            <img :alt="data.country.name" src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png" :class="'w-8 mr-2 flag flag-' + data.country.code" />
+            <img
+              :alt="data.country.name"
+              src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
+              :class="'w-8 mr-2 flag flag-' + data.country.code"
+            >
             <span>{{ data.country.name }}</span>
           </div>
         </template>
       </Column>
-      <Column field="date" header="Join Date" sortable header-class="whitespace-nowrap" :style="{ width: '25%' }">
+      <Column
+        field="date"
+        header="Join Date"
+        sortable
+        header-class="whitespace-nowrap"
+        :style="{ width: '25%' }"
+      >
         <template #body="{ data }">
           {{ formatDate(data.date) }}
         </template>
       </Column>
-      <Column field="representative.name" header="Created By" header-class="whitespace-nowrap" :style="{ width: '25%' }" sortable>
+      <Column
+        field="representative.name"
+        header="Created By"
+        header-class="whitespace-nowrap"
+        :style="{ width: '25%' }"
+        sortable
+      >
         <template #body="{ data }">
           <div class="inline-flex items-center">
-            <img :alt="data.representative.name" :src="`/demo/images/avatar/${data.representative.image}`" class="w-8 mr-2" />
+            <img
+              :alt="data.representative.name"
+              :src="`/demo/images/avatar/${data.representative.image}`"
+              class="w-8 mr-2"
+            >
             <span>{{ data.representative.name }}</span>
           </div>
         </template>
       </Column>
-      <Column field="activity" header="Activity" header-class="whitespace-nowrap" :style="{ width: '25%' }" sortable>
+      <Column
+        field="activity"
+        header="Activity"
+        header-class="whitespace-nowrap"
+        :style="{ width: '25%' }"
+        sortable
+      >
         <template #body="{ data }">
           <ProgressBar
             :value="data.activity"

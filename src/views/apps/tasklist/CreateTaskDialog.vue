@@ -46,11 +46,22 @@ async function filterMembers(event) {
   <div class="p-6">
     <Fluid class="grid grid-cols-12 gap-4">
       <div class="col-span-12">
-        <label for="name" class="text-surface-900 dark:text-surface-0 font-semibold">Task Name</label>
-        <InputText id="name" v-model="task.name" type="text" placeholder="Title" />
+        <label
+          for="name"
+          class="text-surface-900 dark:text-surface-0 font-semibold"
+        >Task Name</label>
+        <InputText
+          id="name"
+          v-model="task.name"
+          type="text"
+          placeholder="Title"
+        />
       </div>
       <div class="col-span-12">
-        <label for="description" class="text-surface-900 dark:text-surface-0 font-semibold">Description</label>
+        <label
+          for="description"
+          class="text-surface-900 dark:text-surface-0 font-semibold"
+        >Description</label>
         <Editor
           v-model="task.description"
           :pt="{
@@ -59,34 +70,84 @@ async function filterMembers(event) {
         />
       </div>
       <div class="col-span-6">
-        <label for="start" class="text-surface-900 dark:text-surface-0 font-semibold">Start Date</label>
-        <DatePicker v-model="task.startDate" date-format="yy-mm-dd" :show-time="false" input-id="start" placeholder="Start Date" />
+        <label
+          for="start"
+          class="text-surface-900 dark:text-surface-0 font-semibold"
+        >Start Date</label>
+        <DatePicker
+          v-model="task.startDate"
+          date-format="yy-mm-dd"
+          :show-time="false"
+          input-id="start"
+          placeholder="Start Date"
+        />
       </div>
       <div class="col-span-6">
-        <label for="end" class="text-surface-900 dark:text-surface-0 font-semibold">Due Date</label>
-        <DatePicker v-model="task.endDate" date-format="yy-mm-dd" :show-time="false" input-id="end" placeholder="End Date" />
+        <label
+          for="end"
+          class="text-surface-900 dark:text-surface-0 font-semibold"
+        >Due Date</label>
+        <DatePicker
+          v-model="task.endDate"
+          date-format="yy-mm-dd"
+          :show-time="false"
+          input-id="end"
+          placeholder="End Date"
+        />
       </div>
       <div class="col-span-12">
-        <label for="members" class="text-surface-900 dark:text-surface-0 font-semibold">Add Team Member</label>
-        <AutoComplete v-model="task.members" input-id="members" :suggestions="filteredMembers" option-label="name" multiple :input-style="{ height: '2.5rem' }" @complete="filterMembers($event)">
+        <label
+          for="members"
+          class="text-surface-900 dark:text-surface-0 font-semibold"
+        >Add Team Member</label>
+        <AutoComplete
+          v-model="task.members"
+          input-id="members"
+          :suggestions="filteredMembers"
+          option-label="name"
+          multiple
+          :input-style="{ height: '2.5rem' }"
+          @complete="filterMembers($event)"
+        >
           <template #chip="{ value }">
             <div class="flex items-center">
-              <img :src="'/demo/images/avatar/' + value.image" :alt="value.name" class="h-8 w-8 mr-2" />
+              <img
+                :src="'/demo/images/avatar/' + value.image"
+                :alt="value.name"
+                class="h-8 w-8 mr-2"
+              >
               <span class="text-surface-900 dark:text-surface-0 font-medium">{{ value.name }}</span>
             </div>
           </template>
           <template #option="{ option }">
             <div class="flex items-center">
-              <img :src="'/demo/images/avatar/' + option.image" :alt="option.name" class="h-8 w-8 mr-2" />
-              <span class="text-surface-900 dark:text-surface-0 font-medium">{{ option.name }}</span>
+              <img
+                :src="'/demo/images/avatar/' + option.image"
+                :alt="option.name"
+                class="h-8 w-8 mr-2"
+              >
+              <span class="text-surface-900 dark:text-surface-0 font-medium">{{
+                option.name
+              }}</span>
             </div>
           </template>
         </AutoComplete>
       </div>
 
       <div class="col-span-12 flex justify-end mt-6">
-        <Button class="w-32 mr-4" outlined icon="pi pi-times" label="Cancel" @click="onHide()" />
-        <Button class="w-32" icon="pi pi-check" label="Save" @click="onSave()" />
+        <Button
+          class="w-32 mr-4"
+          outlined
+          icon="pi pi-times"
+          label="Cancel"
+          @click="onHide()"
+        />
+        <Button
+          class="w-32"
+          icon="pi pi-check"
+          label="Save"
+          @click="onSave()"
+        />
       </div>
     </Fluid>
   </div>

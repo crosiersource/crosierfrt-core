@@ -12,7 +12,14 @@ const loading1 = ref(null);
 const balanceFrozen = ref(false);
 const products = ref(null);
 const expandedRows = ref([]);
-const statuses = reactive(['unqualified', 'qualified', 'new', 'negotiation', 'renewal', 'proposal']);
+const statuses = reactive([
+  'unqualified',
+  'qualified',
+  'new',
+  'negotiation',
+  'renewal',
+  'proposal'
+]);
 const representatives = reactive([
   { name: 'Amy Elsner', image: 'amyelsner.png' },
   { name: 'Anna Fali', image: 'annafali.png' },
@@ -96,12 +103,27 @@ onBeforeMount(() => {
 function initFilters1() {
   filters1.value = {
     global: { value: null, matchMode: FilterMatchMode.CONTAINS },
-    name: { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }] },
-    'country.name': { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }] },
+    name: {
+      operator: FilterOperator.AND,
+      constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }]
+    },
+    'country.name': {
+      operator: FilterOperator.AND,
+      constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }]
+    },
     representative: { value: null, matchMode: FilterMatchMode.IN },
-    date: { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.DATE_IS }] },
-    balance: { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }] },
-    status: { operator: FilterOperator.OR, constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }] },
+    date: {
+      operator: FilterOperator.AND,
+      constraints: [{ value: null, matchMode: FilterMatchMode.DATE_IS }]
+    },
+    balance: {
+      operator: FilterOperator.AND,
+      constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }]
+    },
+    status: {
+      operator: FilterOperator.OR,
+      constraints: [{ value: null, matchMode: FilterMatchMode.EQUALS }]
+    },
     activity: { value: [0, 100], matchMode: FilterMatchMode.BETWEEN },
     verified: { value: null, matchMode: FilterMatchMode.EQUALS }
   };
@@ -143,7 +165,9 @@ function calculateCustomerTotal(name) {
 
 <template>
   <div class="card">
-    <div class="font-semibold text-xl mb-4">Filtering</div>
+    <div class="font-semibold text-xl mb-4">
+      Filtering
+    </div>
     <DataTable
       v-model:filters="filters1"
       :value="customers1"
@@ -159,127 +183,315 @@ function calculateCustomerTotal(name) {
     >
       <template #header>
         <div class="flex justify-between">
-          <Button type="button" icon="pi pi-filter-slash" label="Clear" outlined @click="clearFilter()" />
+          <Button
+            type="button"
+            icon="pi pi-filter-slash"
+            label="Clear"
+            outlined
+            @click="clearFilter()"
+          />
           <IconField>
             <InputIcon>
               <i class="pi pi-search" />
             </InputIcon>
-            <InputText v-model="filters1['global'].value" placeholder="Keyword Search" />
+            <InputText
+              v-model="filters1['global'].value"
+              placeholder="Keyword Search"
+            />
           </IconField>
         </div>
       </template>
-      <template #empty> No customers found. </template>
-      <template #loading> Loading customers data. Please wait. </template>
-      <Column field="name" header="Name" style="min-width: 12rem">
+      <template #empty>
+        No customers found.
+      </template>
+      <template #loading>
+        Loading customers data. Please wait.
+      </template>
+      <Column
+        field="name"
+        header="Name"
+        style="min-width: 12rem"
+      >
         <template #body="{ data }">
           {{ data.name }}
         </template>
         <template #filter="{ filterModel }">
-          <InputText v-model="filterModel.value" type="text" placeholder="Search by name" />
+          <InputText
+            v-model="filterModel.value"
+            type="text"
+            placeholder="Search by name"
+          />
         </template>
       </Column>
-      <Column header="Country" filter-field="country.name" style="min-width: 12rem">
+      <Column
+        header="Country"
+        filter-field="country.name"
+        style="min-width: 12rem"
+      >
         <template #body="{ data }">
           <div class="flex items-center gap-2">
-            <img alt="flag" src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png" :class="`flag flag-${data.country.code}`" style="width: 24px" />
+            <img
+              alt="flag"
+              src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
+              :class="`flag flag-${data.country.code}`"
+              style="width: 24px"
+            >
             <span>{{ data.country.name }}</span>
           </div>
         </template>
         <template #filter="{ filterModel }">
-          <InputText v-model="filterModel.value" type="text" placeholder="Search by country" />
+          <InputText
+            v-model="filterModel.value"
+            type="text"
+            placeholder="Search by country"
+          />
         </template>
         <template #filterclear="{ filterCallback }">
-          <Button type="button" icon="pi pi-times" severity="secondary" @click="filterCallback()" />
+          <Button
+            type="button"
+            icon="pi pi-times"
+            severity="secondary"
+            @click="filterCallback()"
+          />
         </template>
         <template #filterapply="{ filterCallback }">
-          <Button type="button" icon="pi pi-check" severity="success" @click="filterCallback()" />
+          <Button
+            type="button"
+            icon="pi pi-check"
+            severity="success"
+            @click="filterCallback()"
+          />
         </template>
       </Column>
-      <Column header="Agent" filter-field="representative" :show-filter-match-modes="false" :filter-menu-style="{ width: '14rem' }" style="min-width: 14rem">
+      <Column
+        header="Agent"
+        filter-field="representative"
+        :show-filter-match-modes="false"
+        :filter-menu-style="{ width: '14rem' }"
+        style="min-width: 14rem"
+      >
         <template #body="{ data }">
           <div class="flex items-center gap-2">
-            <img :alt="data.representative.name" :src="`https://primefaces.org/cdn/primevue/images/avatar/${data.representative.image}`" style="width: 32px" />
+            <img
+              :alt="data.representative.name"
+              :src="`https://primefaces.org/cdn/primevue/images/avatar/${data.representative.image}`"
+              style="width: 32px"
+            >
             <span>{{ data.representative.name }}</span>
           </div>
         </template>
         <template #filter="{ filterModel }">
-          <MultiSelect v-model="filterModel.value" :options="representatives" option-label="name" placeholder="Any">
+          <MultiSelect
+            v-model="filterModel.value"
+            :options="representatives"
+            option-label="name"
+            placeholder="Any"
+          >
             <template #option="slotProps">
               <div class="flex items-center gap-2">
-                <img :alt="slotProps.option.name" :src="`https://primefaces.org/cdn/primevue/images/avatar/${slotProps.option.image}`" style="width: 32px" />
+                <img
+                  :alt="slotProps.option.name"
+                  :src="`https://primefaces.org/cdn/primevue/images/avatar/${slotProps.option.image}`"
+                  style="width: 32px"
+                >
                 <span>{{ slotProps.option.name }}</span>
               </div>
             </template>
           </MultiSelect>
         </template>
       </Column>
-      <Column header="Date" filter-field="date" data-type="date" style="min-width: 10rem">
+      <Column
+        header="Date"
+        filter-field="date"
+        data-type="date"
+        style="min-width: 10rem"
+      >
         <template #body="{ data }">
           {{ formatDate(data.date) }}
         </template>
         <template #filter="{ filterModel }">
-          <DatePicker v-model="filterModel.value" date-format="mm/dd/yy" placeholder="mm/dd/yyyy" />
+          <DatePicker
+            v-model="filterModel.value"
+            date-format="mm/dd/yy"
+            placeholder="mm/dd/yyyy"
+          />
         </template>
       </Column>
-      <Column header="Balance" filter-field="balance" data-type="numeric" style="min-width: 10rem">
+      <Column
+        header="Balance"
+        filter-field="balance"
+        data-type="numeric"
+        style="min-width: 10rem"
+      >
         <template #body="{ data }">
           {{ formatCurrency(data.balance) }}
         </template>
         <template #filter="{ filterModel }">
-          <InputNumber v-model="filterModel.value" mode="currency" currency="USD" locale="en-US" />
+          <InputNumber
+            v-model="filterModel.value"
+            mode="currency"
+            currency="USD"
+            locale="en-US"
+          />
         </template>
       </Column>
-      <Column header="Status" field="status" :filter-menu-style="{ width: '14rem' }" style="min-width: 12rem">
+      <Column
+        header="Status"
+        field="status"
+        :filter-menu-style="{ width: '14rem' }"
+        style="min-width: 12rem"
+      >
         <template #body="{ data }">
-          <Tag :value="data.status" :severity="getSeverity(data.status)" />
+          <Tag
+            :value="data.status"
+            :severity="getSeverity(data.status)"
+          />
         </template>
         <template #filter="{ filterModel }">
-          <Select v-model="filterModel.value" :options="statuses" placeholder="Select One" show-clear>
+          <Select
+            v-model="filterModel.value"
+            :options="statuses"
+            placeholder="Select One"
+            show-clear
+          >
             <template #option="slotProps">
-              <Tag :value="slotProps.option" :severity="getSeverity(slotProps.option)" />
+              <Tag
+                :value="slotProps.option"
+                :severity="getSeverity(slotProps.option)"
+              />
             </template>
           </Select>
         </template>
       </Column>
-      <Column field="activity" header="Activity" :show-filter-match-modes="false" style="min-width: 12rem">
+      <Column
+        field="activity"
+        header="Activity"
+        :show-filter-match-modes="false"
+        style="min-width: 12rem"
+      >
         <template #body="{ data }">
-          <ProgressBar :value="data.activity" :show-value="false" style="height: 6px" />
+          <ProgressBar
+            :value="data.activity"
+            :show-value="false"
+            style="height: 6px"
+          />
         </template>
         <template #filter="{ filterModel }">
-          <Slider v-model="filterModel.value" range class="m-4" />
+          <Slider
+            v-model="filterModel.value"
+            range
+            class="m-4"
+          />
           <div class="flex items-center justify-between px-2">
             <span>{{ filterModel.value ? filterModel.value[0] : 0 }}</span>
             <span>{{ filterModel.value ? filterModel.value[1] : 100 }}</span>
           </div>
         </template>
       </Column>
-      <Column field="verified" header="Verified" data-type="boolean" body-class="text-center" style="min-width: 8rem">
+      <Column
+        field="verified"
+        header="Verified"
+        data-type="boolean"
+        body-class="text-center"
+        style="min-width: 8rem"
+      >
         <template #body="{ data }">
-          <i class="pi" :class="{ 'pi-check-circle text-green-500 ': data.verified, 'pi-times-circle text-red-500': !data.verified }" />
+          <i
+            class="pi"
+            :class="{
+              'pi-check-circle text-green-500 ': data.verified,
+              'pi-times-circle text-red-500': !data.verified
+            }"
+          />
         </template>
         <template #filter="{ filterModel }">
-          <label for="verified-filter" class="font-bold"> Verified </label>
-          <Checkbox v-model="filterModel.value" :indeterminate="filterModel.value === null" binary input-id="verified-filter" />
+          <label
+            for="verified-filter"
+            class="font-bold"
+          > Verified </label>
+          <Checkbox
+            v-model="filterModel.value"
+            :indeterminate="filterModel.value === null"
+            binary
+            input-id="verified-filter"
+          />
         </template>
       </Column>
     </DataTable>
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">Frozen Columns</div>
-    <ToggleButton v-model="balanceFrozen" on-icon="pi pi-lock" off-icon="pi pi-lock-open" on-label="Balance" off-label="Balance" />
+    <div class="font-semibold text-xl mb-4">
+      Frozen Columns
+    </div>
+    <ToggleButton
+      v-model="balanceFrozen"
+      on-icon="pi pi-lock"
+      off-icon="pi pi-lock-open"
+      on-label="Balance"
+      off-label="Balance"
+    />
 
-    <DataTable :value="customers2" scrollable scroll-height="400px" class="mt-6">
-      <Column field="name" header="Name" style="min-width: 200px" frozen class="font-bold" />
-      <Column field="id" header="Id" style="min-width: 100px" />
-      <Column field="name" header="Name" style="min-width: 200px" />
-      <Column field="country.name" header="Country" style="min-width: 200px" />
-      <Column field="date" header="Date" style="min-width: 200px" />
-      <Column field="company" header="Company" style="min-width: 200px" />
-      <Column field="status" header="Status" style="min-width: 200px" />
-      <Column field="activity" header="Activity" style="min-width: 200px" />
-      <Column field="representative.name" header="Representative" style="min-width: 200px" />
-      <Column field="balance" header="Balance" style="min-width: 200px" align-frozen="right" :frozen="balanceFrozen">
+    <DataTable
+      :value="customers2"
+      scrollable
+      scroll-height="400px"
+      class="mt-6"
+    >
+      <Column
+        field="name"
+        header="Name"
+        style="min-width: 200px"
+        frozen
+        class="font-bold"
+      />
+      <Column
+        field="id"
+        header="Id"
+        style="min-width: 100px"
+      />
+      <Column
+        field="name"
+        header="Name"
+        style="min-width: 200px"
+      />
+      <Column
+        field="country.name"
+        header="Country"
+        style="min-width: 200px"
+      />
+      <Column
+        field="date"
+        header="Date"
+        style="min-width: 200px"
+      />
+      <Column
+        field="company"
+        header="Company"
+        style="min-width: 200px"
+      />
+      <Column
+        field="status"
+        header="Status"
+        style="min-width: 200px"
+      />
+      <Column
+        field="activity"
+        header="Activity"
+        style="min-width: 200px"
+      />
+      <Column
+        field="representative.name"
+        header="Representative"
+        style="min-width: 200px"
+      />
+      <Column
+        field="balance"
+        header="Balance"
+        style="min-width: 200px"
+        align-frozen="right"
+        :frozen="balanceFrozen"
+      >
         <template #body="{ data }">
           <span class="font-bold">{{ formatCurrency(data.balance) }}</span>
         </template>
@@ -288,52 +500,118 @@ function calculateCustomerTotal(name) {
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">Row Expansion</div>
-    <DataTable v-model:expanded-rows="expandedRows" :value="products" data-key="id" table-style="min-width: 60rem">
+    <div class="font-semibold text-xl mb-4">
+      Row Expansion
+    </div>
+    <DataTable
+      v-model:expanded-rows="expandedRows"
+      :value="products"
+      data-key="id"
+      table-style="min-width: 60rem"
+    >
       <template #header>
         <div class="flex flex-wrap justify-end gap-2">
-          <Button text icon="pi pi-plus" label="Expand All" @click="expandAll" />
-          <Button text icon="pi pi-minus" label="Collapse All" @click="collapseAll" />
+          <Button
+            text
+            icon="pi pi-plus"
+            label="Expand All"
+            @click="expandAll"
+          />
+          <Button
+            text
+            icon="pi pi-minus"
+            label="Collapse All"
+            @click="collapseAll"
+          />
         </div>
       </template>
-      <Column expander style="width: 5rem" />
-      <Column field="name" header="Name" />
+      <Column
+        expander
+        style="width: 5rem"
+      />
+      <Column
+        field="name"
+        header="Name"
+      />
       <Column header="Image">
         <template #body="slotProps">
-          <img :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`" :alt="slotProps.data.image" class="shadow-lg" width="64" />
+          <img
+            :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`"
+            :alt="slotProps.data.image"
+            class="shadow-lg"
+            width="64"
+          >
         </template>
       </Column>
-      <Column field="price" header="Price">
+      <Column
+        field="price"
+        header="Price"
+      >
         <template #body="slotProps">
           {{ formatCurrency(slotProps.data.price) }}
         </template>
       </Column>
-      <Column field="category" header="Category" />
-      <Column field="rating" header="Reviews">
+      <Column
+        field="category"
+        header="Category"
+      />
+      <Column
+        field="rating"
+        header="Reviews"
+      >
         <template #body="slotProps">
-          <Rating :model-value="slotProps.data.rating" readonly />
+          <Rating
+            :model-value="slotProps.data.rating"
+            readonly
+          />
         </template>
       </Column>
       <Column header="Status">
         <template #body="slotProps">
-          <Tag :value="slotProps.data.inventoryStatus" :severity="getStockSeverity(slotProps.data)" />
+          <Tag
+            :value="slotProps.data.inventoryStatus"
+            :severity="getStockSeverity(slotProps.data)"
+          />
         </template>
       </Column>
       <template #expansion="slotProps">
         <div class="p-4">
           <h5>Orders for {{ slotProps.data.name }}</h5>
           <DataTable :value="slotProps.data.orders">
-            <Column field="id" header="Id" sortable />
-            <Column field="customer" header="Customer" sortable />
-            <Column field="date" header="Date" sortable />
-            <Column field="amount" header="Amount" sortable>
+            <Column
+              field="id"
+              header="Id"
+              sortable
+            />
+            <Column
+              field="customer"
+              header="Customer"
+              sortable
+            />
+            <Column
+              field="date"
+              header="Date"
+              sortable
+            />
+            <Column
+              field="amount"
+              header="Amount"
+              sortable
+            >
               <template #body="slotProps">
                 {{ formatCurrency(slotProps.data.amount) }}
               </template>
             </Column>
-            <Column field="status" header="Status" sortable>
+            <Column
+              field="status"
+              header="Status"
+              sortable
+            >
               <template #body="slotProps">
-                <Tag :value="slotProps.data.status.toLowerCase()" :severity="getOrderSeverity(slotProps.data)" />
+                <Tag
+                  :value="slotProps.data.status.toLowerCase()"
+                  :severity="getOrderSeverity(slotProps.data)"
+                />
               </template>
             </Column>
             <Column header-style="width:4rem">
@@ -348,33 +626,83 @@ function calculateCustomerTotal(name) {
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">Grouping</div>
-    <DataTable :value="customers3" row-group-mode="subheader" group-rows-by="representative.name" sort-mode="single" sort-field="representative.name" :sort-order="1" scrollable scroll-height="400px" table-style="min-width: 50rem">
+    <div class="font-semibold text-xl mb-4">
+      Grouping
+    </div>
+    <DataTable
+      :value="customers3"
+      row-group-mode="subheader"
+      group-rows-by="representative.name"
+      sort-mode="single"
+      sort-field="representative.name"
+      :sort-order="1"
+      scrollable
+      scroll-height="400px"
+      table-style="min-width: 50rem"
+    >
       <template #groupheader="slotProps">
         <div class="flex items-center gap-2">
-          <img :alt="slotProps.data.representative.name" :src="`https://primefaces.org/cdn/primevue/images/avatar/${slotProps.data.representative.image}`" width="32" style="vertical-align: middle" />
+          <img
+            :alt="slotProps.data.representative.name"
+            :src="`https://primefaces.org/cdn/primevue/images/avatar/${slotProps.data.representative.image}`"
+            width="32"
+            style="vertical-align: middle"
+          >
           <span>{{ slotProps.data.representative.name }}</span>
         </div>
       </template>
-      <Column field="representative.name" header="Representative" />
-      <Column field="name" header="Name" style="min-width: 200px" />
-      <Column field="country" header="Country" style="min-width: 200px">
+      <Column
+        field="representative.name"
+        header="Representative"
+      />
+      <Column
+        field="name"
+        header="Name"
+        style="min-width: 200px"
+      />
+      <Column
+        field="country"
+        header="Country"
+        style="min-width: 200px"
+      >
         <template #body="slotProps">
           <div class="flex items-center gap-2">
-            <img alt="flag" src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png" :class="`flag flag-${slotProps.data.country.code}`" style="width: 24px" />
+            <img
+              alt="flag"
+              src="https://primefaces.org/cdn/primevue/images/flag/flag_placeholder.png"
+              :class="`flag flag-${slotProps.data.country.code}`"
+              style="width: 24px"
+            >
             <span>{{ slotProps.data.country.name }}</span>
           </div>
         </template>
       </Column>
-      <Column field="company" header="Company" style="min-width: 200px" />
-      <Column field="status" header="Status" style="min-width: 200px">
+      <Column
+        field="company"
+        header="Company"
+        style="min-width: 200px"
+      />
+      <Column
+        field="status"
+        header="Status"
+        style="min-width: 200px"
+      >
         <template #body="slotProps">
-          <Tag :value="slotProps.data.status" :severity="getSeverity(slotProps.data.status)" />
+          <Tag
+            :value="slotProps.data.status"
+            :severity="getSeverity(slotProps.data.status)"
+          />
         </template>
       </Column>
-      <Column field="date" header="Date" style="min-width: 200px" />
+      <Column
+        field="date"
+        header="Date"
+        style="min-width: 200px"
+      />
       <template #groupfooter="slotProps">
-        <div class="flex justify-end font-bold w-full">Total Customers: {{ calculateCustomerTotal(slotProps.data.representative.name) }}</div>
+        <div class="flex justify-end font-bold w-full">
+          Total Customers: {{ calculateCustomerTotal(slotProps.data.representative.name) }}
+        </div>
       </template>
     </DataTable>
   </div>

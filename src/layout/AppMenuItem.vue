@@ -6,7 +6,18 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
-const { layoutConfig, layoutState, setActiveMenuItem, onMenuToggle, setMenuStates, setStaticMenuMobile, isHorizontal, isSlim, isSlimPlus, isDesktop } = useLayout();
+const {
+  layoutConfig,
+  layoutState,
+  setActiveMenuItem,
+  onMenuToggle,
+  setMenuStates,
+  setStaticMenuMobile,
+  isHorizontal,
+  isSlim,
+  isSlimPlus,
+  isDesktop
+} = useLayout();
 
 const props = defineProps({
   item: {
@@ -33,11 +44,14 @@ const subMenuRef = ref(null);
 const menuItemRef = ref(null);
 
 onBeforeMount(() => {
-  itemKey.value = props.parentItemKey ? props.parentItemKey + '-' + props.index : String(props.index);
+  itemKey.value = props.parentItemKey
+    ? props.parentItemKey + '-' + props.index
+    : String(props.index);
 
   const activeItem = layoutState.activeMenuItem;
 
-  isActiveMenu.value = activeItem === itemKey.value || activeItem ? activeItem.startsWith(itemKey.value + '-') : false;
+  isActiveMenu.value =
+    activeItem === itemKey.value || activeItem ? activeItem.startsWith(itemKey.value + '-') : false;
   handleRouteChange(route.path);
 });
 
@@ -82,7 +96,11 @@ watch(
 watch(
   () => route.path,
   (newPath) => {
-    if (!(isSlim.value || isSlimPlus.value || isHorizontal.value) && props.item.to && props.item.to === newPath) {
+    if (
+      !(isSlim.value || isSlimPlus.value || isHorizontal.value) &&
+      props.item.to &&
+      props.item.to === newPath
+    ) {
       setActiveMenuItem(itemKey);
     } else if (isSlim.value || isSlimPlus.value || isHorizontal.value) {
       isActiveMenu.value = false;
@@ -93,7 +111,11 @@ watch(
 watch(() => route.path, handleRouteChange);
 
 function handleRouteChange(newPath) {
-  if (!(isSlim.value || isSlimPlus.value || isHorizontal.value) && props.item.to && props.item.to === newPath) {
+  if (
+    !(isSlim.value || isSlimPlus.value || isHorizontal.value) &&
+    props.item.to &&
+    props.item.to === newPath
+  ) {
     setActiveMenuItem(itemKey);
   } else if (isSlim.value || isSlimPlus.value || isHorizontal.value) {
     isActiveMenu.value = false;
@@ -106,7 +128,10 @@ async function itemClick(event, item) {
     return;
   }
 
-  if ((item.to || item.url) && (layoutState.staticMenuMobileActive || layoutState.overlayMenuActive)) {
+  if (
+    (item.to || item.url) &&
+    (layoutState.staticMenuMobileActive || layoutState.overlayMenuActive)
+  ) {
     onMenuToggle();
   }
 
@@ -115,7 +140,11 @@ async function itemClick(event, item) {
   }
 
   if (item.items) {
-    if (props.root && isActiveMenu.value && (isSlim.value || isSlimPlus.value || isHorizontal.value)) {
+    if (
+      props.root &&
+      isActiveMenu.value &&
+      (isSlim.value || isSlimPlus.value || isHorizontal.value)
+    ) {
       setMenuStates(false);
 
       return;
@@ -123,7 +152,11 @@ async function itemClick(event, item) {
 
     setActiveMenuItem(isActiveMenu.value ? props.parentItemKey : itemKey);
 
-    if (props.root && !isActiveMenu.value && (isSlim.value || isSlimPlus.value || isHorizontal.value)) {
+    if (
+      props.root &&
+      !isActiveMenu.value &&
+      (isSlim.value || isSlimPlus.value || isHorizontal.value)
+    ) {
       setMenuStates(true);
       isActiveMenu.value = true;
 
@@ -177,7 +210,8 @@ function calculatePosition(overlay, target) {
     } else if (isSlim.value || isSlimPlus.value) {
       const topOffset = top - topbarHeight;
       const height = topOffset + oHeight + topbarHeight;
-      overlay.style.top = vHeight < height ? `${topOffset - (height - vHeight)}px` : `${topOffset}px`;
+      overlay.style.top =
+        vHeight < height ? `${topOffset - (height - vHeight)}px` : `${topOffset}px`;
     }
   }
 }
@@ -188,8 +222,14 @@ function checkActiveRoute(item) {
 </script>
 
 <template>
-  <li ref="menuItemRef" :class="{ 'layout-root-menuitem': root, 'active-menuitem': isActiveMenu }">
-    <div v-if="root && item.visible !== false" class="layout-menuitem-root-text">
+  <li
+    ref="menuItemRef"
+    :class="{ 'layout-root-menuitem': root, 'active-menuitem': isActiveMenu }"
+  >
+    <div
+      v-if="root && item.visible !== false"
+      class="layout-menuitem-root-text"
+    >
       <span>{{ item.label }}</span> <i class="layout-menuitem-root-icon pi pi-fw pi-ellipsis-h" />
     </div>
     <a
@@ -202,9 +242,15 @@ function checkActiveRoute(item) {
       @click="itemClick($event, item, index)"
       @mouseenter="onMouseEnter"
     >
-      <i :class="item.icon" class="layout-menuitem-icon" />
+      <i
+        :class="item.icon"
+        class="layout-menuitem-icon"
+      />
       <span class="layout-menuitem-text">{{ item.label }}</span>
-      <i v-if="item.items" class="pi pi-fw pi-angle-down layout-submenu-toggler" />
+      <i
+        v-if="item.items"
+        class="pi pi-fw pi-angle-down layout-submenu-toggler"
+      />
     </a>
     <RouterLink
       v-if="item.to && !item.items && item.visible !== false"
@@ -215,13 +261,30 @@ function checkActiveRoute(item) {
       @click="itemClick($event, item, index)"
       @mouseenter="onMouseEnter"
     >
-      <i :class="item.icon" class="layout-menuitem-icon" />
+      <i
+        :class="item.icon"
+        class="layout-menuitem-icon"
+      />
       <span class="layout-menuitem-text">{{ item.label }}</span>
-      <i v-if="item.items" class="pi pi-fw pi-angle-down layout-submenu-toggler" />
+      <i
+        v-if="item.items"
+        class="pi pi-fw pi-angle-down layout-submenu-toggler"
+      />
     </RouterLink>
 
-    <ul v-if="item.items && item.visible !== false" ref="subMenuRef" :class="{ 'layout-root-submenulist': root }">
-      <AppMenuItem v-for="(child, i) in item.items" :key="child" :index="i" :item="child" :parent-item-key="itemKey" :root="false" />
+    <ul
+      v-if="item.items && item.visible !== false"
+      ref="subMenuRef"
+      :class="{ 'layout-root-submenulist': root }"
+    >
+      <AppMenuItem
+        v-for="(child, i) in item.items"
+        :key="child"
+        :index="i"
+        :item="child"
+        :parent-item-key="itemKey"
+        :root="false"
+      />
     </ul>
   </li>
 </template>

@@ -175,7 +175,12 @@ export function useLayout() {
     const sidebarEl = document.querySelector('.layout-sidebar');
     const topbarButtonEl = document.querySelector('.layout-menu-button');
 
-    return !(sidebarEl?.isSameNode(event.target) || sidebarEl?.contains(event.target) || topbarButtonEl?.isSameNode(event.target) || topbarButtonEl?.contains(event.target));
+    return !(
+      sidebarEl?.isSameNode(event.target) ||
+      sidebarEl?.contains(event.target) ||
+      topbarButtonEl?.isSameNode(event.target) ||
+      topbarButtonEl?.contains(event.target)
+    );
   };
 
   const resetMenu = () => {
@@ -186,7 +191,10 @@ export function useLayout() {
     layoutState.configSidebarVisible = false;
   };
 
-  const isSidebarActive = computed(() => layoutState.overlayMenuActive || layoutState.staticMenuMobileActive || layoutState.overlaySubmenuActive);
+  const isSidebarActive = computed(() =>
+      layoutState.overlayMenuActive ||
+      layoutState.staticMenuMobileActive ||
+      layoutState.overlaySubmenuActive);
   const isDesktop = computed(() => window.innerWidth > 991);
 
   const isSlim = computed(() => layoutConfig.menuMode === 'slim');

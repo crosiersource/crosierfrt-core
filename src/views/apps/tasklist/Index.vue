@@ -68,10 +68,20 @@ function onSaveDialog(task) {
     taskList.value = taskList.value.filter((t) => t.id !== task.id);
 
     taskList.value.push(task);
-    toast.add({ severity: 'success', summary: 'Edited', detail: `Task "${task.name}" edited successfully.`, life: 3000 });
+    toast.add({
+      severity: 'success',
+      summary: 'Edited',
+      detail: `Task "${task.name}" edited successfully.`,
+      life: 3000
+    });
   } else {
     taskList.value.push(task);
-    toast.add({ severity: 'success', summary: 'Success', detail: `Task "${task.name}" created successfully.`, life: 3000 });
+    toast.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: `Task "${task.name}" created successfully.`,
+      life: 3000
+    });
   }
 
   categorize(taskList.value);
@@ -84,13 +94,41 @@ function onSaveDialog(task) {
   <div class="card">
     <div class="flex justify-between items-center mb-8">
       <span class="text-surface-900 dark:text-surface-0 text-xl font-semibold">Task List</span>
-      <Button class="font-semibold" outlined icon="pi pi-plus" label="Create Task" @click="openCreateDialog()" />
+      <Button
+        class="font-semibold"
+        outlined
+        icon="pi pi-plus"
+        label="Create Task"
+        @click="openCreateDialog()"
+      />
     </div>
-    <List :task-list="todo" title="ToDo" @checkbox:change="onCheckboxChange" @delete:task="onDeleteTask" @open:edit:dialog="openEditDialog" />
-    <List :task-list="completed" title="Completed" @checkbox:change="onCheckboxChange" @delete:task="onDeleteTask" @open:edit:dialog="openEditDialog" />
+    <List
+      :task-list="todo"
+      title="ToDo"
+      @checkbox:change="onCheckboxChange"
+      @delete:task="onDeleteTask"
+      @open:edit:dialog="openEditDialog"
+    />
+    <List
+      :task-list="completed"
+      title="Completed"
+      @checkbox:change="onCheckboxChange"
+      @delete:task="onDeleteTask"
+      @open:edit:dialog="openEditDialog"
+    />
   </div>
 
-  <Dialog v-model:visible="dialogConfig.visible" :header="dialogConfig.header || ''" modal class="mx-4 sm:mx-0 sm:w-full md:w-8/12 lg:w-6/12" content-class="rounded-b border-t border-surface-200 dark:border-surface-700 p-0">
-    <CreateTaskDialog :selected-task="selectedTask" @close="onCloseDialog()" @save="onSaveDialog" />
+  <Dialog
+    v-model:visible="dialogConfig.visible"
+    :header="dialogConfig.header || ''"
+    modal
+    class="mx-4 sm:mx-0 sm:w-full md:w-8/12 lg:w-6/12"
+    content-class="rounded-b border-t border-surface-200 dark:border-surface-700 p-0"
+  >
+    <CreateTaskDialog
+      :selected-task="selectedTask"
+      @close="onCloseDialog()"
+      @save="onSaveDialog"
+    />
   </Dialog>
 </template>

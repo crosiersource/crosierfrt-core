@@ -1,9 +1,32 @@
 <template>
-  <CrosierListS v-if="authStore.token" api-resource="/api/sec/group" titulo="Grupos" icon="fas fa-users" :headers="headers" :auth-store="authStore" :store="groupStore" form-path="/sec/grupo/form" list-path="/sec/grupo/list">
+  <CrosierListS
+    v-if="authStore.token"
+    api-resource="/api/sec/group"
+    titulo="Grupos"
+    icon="fas fa-users"
+    :headers="headers"
+    :auth-store="authStore"
+    :store="groupStore"
+    form-path="/sec/grupo/form"
+    list-path="/sec/grupo/list"
+  >
     <template #filters>
-      <VTextField id="filters.id" v-model="groupStore.filters.id" label="Id" outlined dense clearable />
+      <VTextField
+        id="filters.id"
+        v-model="groupStore.filters.id"
+        label="Id"
+        outlined
+        dense
+        clearable
+      />
 
-      <VTextField v-model="groupStore.filters.groupname" label="Grupo" outlined dense clearable />
+      <VTextField
+        v-model="groupStore.filters.groupname"
+        label="Grupo"
+        outlined
+        dense
+        clearable
+      />
     </template>
   </CrosierListS>
 </template>

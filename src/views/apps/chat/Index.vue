@@ -43,12 +43,21 @@ async function scrollToLastMessage() {
 </script>
 
 <template>
-  <div class="flex flex-col md:flex-row gap-8" style="min-height: 81vh">
+  <div
+    class="flex flex-col md:flex-row gap-8"
+    style="min-height: 81vh"
+  >
     <div class="md:w-[25rem] card p-0">
-      <ChatSidebar :users="users" @change:active:user="changeActiveUser" />
+      <ChatSidebar
+        :users="users"
+        @change:active:user="changeActiveUser"
+      />
     </div>
     <div class="flex-1 card p-0">
-      <ChatBox :user="findActiveUser()" @send:message="sendMessage" />
+      <ChatBox
+        :user="findActiveUser()"
+        @send:message="sendMessage"
+      />
     </div>
   </div>
 </template>

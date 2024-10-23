@@ -453,8 +453,15 @@ const model = ref([
 
 <template>
   <ul class="layout-menu">
-    <template v-for="(item, i) in model" :key="item">
-      <AppMenuItem :item="item" root :index="i" />
+    <template
+      v-for="(item, i) in model"
+      :key="item"
+    >
+      <AppMenuItem
+        :item="item"
+        root
+        :index="i"
+      />
 
       <li class="menu-separator" />
     </template>

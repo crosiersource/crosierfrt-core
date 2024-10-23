@@ -1,12 +1,12 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-export const useSnackbarStore = defineStore("snackbar", {
+export const useSnackbarStore = defineStore('snackbar', {
   state: () => {
     return {
       showing: false,
-      mensagem: "",
-      detalhes: "",
-      cor: "indigo",
+      mensagem: '',
+      detalhes: '',
+      cor: 'indigo'
     };
   },
   actions: {
@@ -18,22 +18,22 @@ export const useSnackbarStore = defineStore("snackbar", {
 
     info(mensagem, detalhes) {
       this.show(mensagem, detalhes);
-      this.cor = "indigo";
+      this.cor = 'indigo';
     },
 
     success(mensagem, detalhes) {
       this.show(mensagem, detalhes);
-      this.cor = "green";
+      this.cor = 'green';
     },
 
     warning(mensagem, detalhes) {
       this.show(mensagem, detalhes);
-      this.cor = "yellow";
+      this.cor = 'yellow';
     },
 
     error(mensagem, detalhes) {
       this.show(mensagem, detalhes);
-      this.cor = "red";
-    },
-  },
+      this.cor = 'red';
+    }
+  }
 });

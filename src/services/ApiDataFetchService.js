@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 /**
  * @example
@@ -47,10 +47,10 @@ export async function fetchTableData({
   filters = null,
   defaultFilters = null,
   allRows = false,
-  complement = "",
-  properties = null,
+  complement = '',
+  properties = null
 }) {
-  console.log("aqui no fetchTableData");
+  console.log('aqui no fetchTableData');
   console.log(apiResource);
   if (apiResource) {
     do {
@@ -64,19 +64,19 @@ export async function fetchTableData({
 
   const params = {
     headers: {
-      "Content-Type": "application/json;charset=UTF-8",
-    },
+      'Content-Type': 'application/json;charset=UTF-8'
+    }
   };
   const queryPage = `?page=${allRows ? 1 : page}`;
   const queryRows = `&rows=${allRows ? Number.MAX_SAFE_INTEGER : rows}`;
-  let queryOrder = "";
-  let queryFilter = "";
+  let queryOrder = '';
+  let queryFilter = '';
 
   if (order) {
     if (order instanceof Array) {
       // padrão primevue.datatable
       order.forEach((v) => {
-        queryOrder += `&order[${v.field}]=${v.order === 1 ? "ASC" : "DESC"}`;
+        queryOrder += `&order[${v.field}]=${v.order === 1 ? 'ASC' : 'DESC'}`;
       }, order);
     } else if (order instanceof Map) {
       // padrão map.set(field, sortOrder)
@@ -91,14 +91,14 @@ export async function fetchTableData({
     }
   }
 
-  function recursiveIterate(item, nivel = 0, auxs = { prefixos: {}, qs: "" }) {
+  function recursiveIterate(item, nivel = 0, auxs = { prefixos: {}, qs: '' }) {
     try {
-      if (typeof item === "object" && item !== null) {
+      if (typeof item === 'object' && item !== null) {
         for (const [key, value] of Object.entries(item)) {
           auxs.prefixos[nivel] = key;
           recursiveIterate(value, nivel + 1, auxs);
         }
-      } else if (item || typeof item === "boolean") {
+      } else if (item || typeof item === 'boolean') {
         for (let i = 0; i < nivel; i++) {
           auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
         }
@@ -130,7 +130,7 @@ export async function fetchTableData({
       });
     } else {
       for (const key in defaultFilters) {
-        if (defaultFilters[key] !== null && defaultFilters[key] !== "") {
+        if (defaultFilters[key] !== null && defaultFilters[key] !== '') {
           if (!Array.isArray(defaultFilters[key])) {
             queryFilter += `&${key}=${defaultFilters[key]}`;
           } else {
@@ -143,13 +143,13 @@ export async function fetchTableData({
     }
   }
 
-  let sProperties = "";
+  let sProperties = '';
   if (properties) {
-    sProperties = "&";
+    sProperties = '&';
     Object.values(properties).forEach((property) => {
-      if (property.includes(".")) {
-        let sMult = "properties[";
-        const campos = property.split(".");
+      if (property.includes('.')) {
+        let sMult = 'properties[';
+        const campos = property.split('.');
         for (let i = 0; i <= campos.length - 2; i++) {
           sMult += `${campos[i]}][`;
         }
@@ -162,10 +162,10 @@ export async function fetchTableData({
     sProperties = sProperties.substring(0, sProperties.length - 1);
   }
 
-  params.headers["Authorization"] = "Bearer " + authToken;
+  params.headers['Authorization'] = 'Bearer ' + authToken;
 
   return axios.get(
     `${apiResource}${queryPage}${queryRows}${queryFilter}${queryOrder}${sProperties}${complement}`,
-    params,
+    params
   );
 }

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export async function saveEntityData(apiResource, data, authToken) {
   if (apiResource) {
@@ -13,21 +13,21 @@ export async function saveEntityData(apiResource, data, authToken) {
 
   const params = {
     headers: {
-      "Content-Type": "application/ld+json",
-    },
+      'Content-Type': 'application/ld+json'
+    }
     // validateStatus(status) {
     //   return status < 500; // Resolve only if the status code is less than 500
     // },
   };
 
-  params.headers["Authorization"] = "Bearer " + authToken;
-  console.log("data aqui");
+  params.headers['Authorization'] = 'Bearer ' + authToken;
+  console.log('data aqui');
   console.log(data);
   if (data?.id) {
-    console.log("putttttting");
+    console.log('putttttting');
     return axios.put(`${apiResource}/${data.id}`, JSON.stringify(data), params);
   } else {
-    console.log("postttttting");
+    console.log('postttttting');
     return axios.post(`${apiResource}`, JSON.stringify(data), params);
   }
 }

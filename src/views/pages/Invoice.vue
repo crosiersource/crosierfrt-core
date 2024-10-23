@@ -1,8 +1,16 @@
 <template>
   <div class="card py-20 px-12 md:px-20 overflow-auto">
-    <div class="flex flex-col items-start md:flex-row md:items-center md:justify-between border-b border-surface-200 dark:border-surface-700 pb-8 min-w-max">
+    <div
+      class="flex flex-col items-start md:flex-row md:items-center md:justify-between border-b border-surface-200 dark:border-surface-700 pb-8 min-w-max"
+    >
       <div class="flex flex-col">
-        <svg width="48" height="50" viewBox="0 0 48 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="48"
+          height="50"
+          viewBox="0 0 48 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -10,12 +18,16 @@
             fill="var(--primary-color)"
           />
         </svg>
-        <div class="my-4 text-4xl font-bold text-surface-900 dark:text-surface-0">YOUR COMPANY</div>
+        <div class="my-4 text-4xl font-bold text-surface-900 dark:text-surface-0">
+          YOUR COMPANY
+        </div>
         <span class="mb-2">9137 3rd Lane California City</span>
         <span>CA 93504, U.S.A.</span>
       </div>
       <div class="flex flex-col mt-8 md:mt-0">
-        <div class="text-2xl font-semibold text-left md:text-right mb-4">INVOICE</div>
+        <div class="text-2xl font-semibold text-left md:text-right mb-4">
+          INVOICE
+        </div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center mb-2">
             <span class="font-semibold mr-12">DATE</span>
@@ -34,46 +46,99 @@
     </div>
 
     <div class="mt-8 mb-20 flex flex-col">
-      <div class="mb-4 text-2xl font-medium">BILL TO</div>
+      <div class="mb-4 text-2xl font-medium">
+        BILL TO
+      </div>
       <span class="mb-2">Claire Williams, 148 Hope Lane</span>
       <span>Palo Alto, CA 94304.</span>
     </div>
 
     <div class="overflow-x-auto">
-      <table class="w-full" :style="{ borderCollapse: 'collapse', tableLayout: 'auto' }">
+      <table
+        class="w-full"
+        :style="{ borderCollapse: 'collapse', tableLayout: 'auto' }"
+      >
         <thead>
           <tr>
-            <th class="text-left font-semibold py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap">Description</th>
-            <th class="text-right font-semibold py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap px-4">Quantity</th>
-            <th class="text-right font-semibold py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap px-4">Unit Price</th>
-            <th class="text-right font-semibold py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap">Line Total</th>
+            <th
+              class="text-left font-semibold py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap"
+            >
+              Description
+            </th>
+            <th
+              class="text-right font-semibold py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap px-4"
+            >
+              Quantity
+            </th>
+            <th
+              class="text-right font-semibold py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap px-4"
+            >
+              Unit Price
+            </th>
+            <th
+              class="text-right font-semibold py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap"
+            >
+              Line Total
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="text-left py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap">Green T-Shirt</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">1</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">$49.00</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700">$49.00</td>
+            <td
+              class="text-left py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap"
+            >
+              Green T-Shirt
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">
+              1
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">
+              $49.00
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700">
+              $49.00
+            </td>
           </tr>
           <tr>
-            <td class="text-left py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap">Game Controller</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">2</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">$99.00</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700">$198.00</td>
+            <td
+              class="text-left py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap"
+            >
+              Game Controller
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">
+              2
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">
+              $99.00
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700">
+              $198.00
+            </td>
           </tr>
           <tr>
-            <td class="text-left py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap">Mini Speakers</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">1</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">$85.00</td>
-            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700">$85.00</td>
+            <td
+              class="text-left py-4 border-b border-surface-200 dark:border-surface-700 whitespace-nowrap"
+            >
+              Mini Speakers
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">
+              1
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700 px-4">
+              $85.00
+            </td>
+            <td class="text-right py-4 border-b border-surface-200 dark:border-surface-700">
+              $85.00
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="flex flex-col md:flex-row md:items-start md:justify-between mt-20">
-      <div class="font-semibold mb-4 md:mb-0">NOTES</div>
+      <div class="font-semibold mb-4 md:mb-0">
+        NOTES
+      </div>
       <div class="flex flex-col">
         <div class="flex justify-between items-center mb-2">
           <span class="font-semibold mr-12">SUBTOTAL</span>

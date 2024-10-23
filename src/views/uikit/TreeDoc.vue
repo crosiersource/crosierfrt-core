@@ -15,16 +15,38 @@ onMounted(() => {
 
 <template>
   <div class="card">
-    <div class="font-semibold text-xl">Tree</div>
-    <Tree v-model:selection-keys="selectedTreeValue" :value="treeValue" selection-mode="checkbox" />
+    <div class="font-semibold text-xl">
+      Tree
+    </div>
+    <Tree
+      v-model:selection-keys="selectedTreeValue"
+      :value="treeValue"
+      selection-mode="checkbox"
+    />
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">TreeTable</div>
-    <TreeTable v-model:selection-keys="selectedTreeTableValue" :value="treeTableValue" selection-mode="checkbox">
-      <Column field="name" header="Name" :expander="true" />
-      <Column field="size" header="Size" />
-      <Column field="type" header="Type" />
+    <div class="font-semibold text-xl mb-4">
+      TreeTable
+    </div>
+    <TreeTable
+      v-model:selection-keys="selectedTreeTableValue"
+      :value="treeTableValue"
+      selection-mode="checkbox"
+    >
+      <Column
+        field="name"
+        header="Name"
+        :expander="true"
+      />
+      <Column
+        field="size"
+        header="Size"
+      />
+      <Column
+        field="type"
+        header="Type"
+      />
     </TreeTable>
   </div>
 </template>

@@ -27,19 +27,45 @@ function onMouseLeave() {
 </script>
 
 <template>
-  <div class="layout-sidebar" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
+  <div
+    class="layout-sidebar"
+    @mouseenter="onMouseEnter"
+    @mouseleave="onMouseLeave"
+  >
     <div class="layout-sidebar-top">
       <a href="/">
-        <svg width="167" height="32" viewBox="0 0 167 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="layout-sidebar-logo">
+        <svg
+          width="167"
+          height="32"
+          viewBox="0 0 167 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="layout-sidebar-logo"
+        >
           <path
             d="M76.5469 5.25V20.7812C76.5365 22.3125 76.1979 23.6458 75.5312 24.7812C74.8646 25.9167 73.9219 26.7917 72.7031 27.4062C71.4948 28.0104 70.1042 28.3125 68.5312 28.3125C66.1354 28.3125 64.2135 27.6615 62.7656 26.3594C61.3281 25.0469 60.5833 23.2344 60.5312 20.9219V5.25H62.4375V20.6406C62.4375 22.5573 62.9844 24.0469 64.0781 25.1094C65.1719 26.1615 66.6562 26.6875 68.5312 26.6875C70.4062 26.6875 71.8854 26.1562 72.9688 25.0938C74.0625 24.0312 74.6094 22.5521 74.6094 20.6562V5.25H76.5469Z"
             fill="var(--topbar-item-text-color)"
           />
-          <path d="M83.8438 26.375H95.0781V28H81.9062V5.25H83.8438V26.375Z" fill="var(--topbar-item-text-color)" />
-          <path d="M109.906 6.89062H102.109V28H100.188V6.89062H92.4062V5.25H109.906V6.89062Z" fill="var(--topbar-item-text-color)" />
-          <path d="M115.938 28H114.016V5.25H115.938V28Z" fill="var(--topbar-item-text-color)" />
-          <path d="M124.672 5.25L133.062 25.3281L141.484 5.25H144.047V28H142.125V18.0938L142.281 7.9375L133.812 28H132.328L123.891 8.01562L124.047 18.0312V28H122.125V5.25H124.672Z" fill="var(--topbar-item-text-color)" />
-          <path d="M162.375 21.625H152.047L149.703 28H147.688L156.297 5.25H158.125L166.734 28H164.734L162.375 21.625ZM152.641 19.9844H161.766L157.203 7.59375L152.641 19.9844Z" fill="var(--topbar-item-text-color)" />
+          <path
+            d="M83.8438 26.375H95.0781V28H81.9062V5.25H83.8438V26.375Z"
+            fill="var(--topbar-item-text-color)"
+          />
+          <path
+            d="M109.906 6.89062H102.109V28H100.188V6.89062H92.4062V5.25H109.906V6.89062Z"
+            fill="var(--topbar-item-text-color)"
+          />
+          <path
+            d="M115.938 28H114.016V5.25H115.938V28Z"
+            fill="var(--topbar-item-text-color)"
+          />
+          <path
+            d="M124.672 5.25L133.062 25.3281L141.484 5.25H144.047V28H142.125V18.0938L142.281 7.9375L133.812 28H132.328L123.891 8.01562L124.047 18.0312V28H122.125V5.25H124.672Z"
+            fill="var(--topbar-item-text-color)"
+          />
+          <path
+            d="M162.375 21.625H152.047L149.703 28H147.688L156.297 5.25H158.125L166.734 28H164.734L162.375 21.625ZM152.641 19.9844H161.766L157.203 7.59375L152.641 19.9844Z"
+            fill="var(--topbar-item-text-color)"
+          />
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
@@ -47,7 +73,14 @@ function onMouseLeave() {
             fill="var(--topbar-item-text-color)"
           />
         </svg>
-        <svg width="41" height="32" viewBox="0 0 41 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="layout-sidebar-logo-slim">
+        <svg
+          width="41"
+          height="32"
+          viewBox="0 0 41 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="layout-sidebar-logo-slim"
+        >
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
@@ -56,7 +89,11 @@ function onMouseLeave() {
           />
         </svg>
       </a>
-      <button class="layout-sidebar-anchor" type="button" @click="onAnchorToggle" />
+      <button
+        class="layout-sidebar-anchor"
+        type="button"
+        @click="onAnchorToggle"
+      />
     </div>
     <AppMenuProfile v-if="layoutConfig.menuProfilePosition === 'start'" />
     <div class="layout-menu-container">

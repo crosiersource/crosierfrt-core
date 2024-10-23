@@ -49,30 +49,83 @@ function generateDate() {
 </script>
 
 <template>
-  <div class="flex items-center px-6 md:px-0 border-t border-surface-200 dark:border-surface-700 md:border-0 pt-6 md:pt-0">
-    <Button type="button" icon="pi pi-chevron-left" class="border-surface-200 dark:border-surface-700 text-surface-900 dark:text-surface-0 w-12 h-12 mr-4" outlined severity="secondary" @click="goBack()" />
+  <div
+    class="flex items-center px-6 md:px-0 border-t border-surface-200 dark:border-surface-700 md:border-0 pt-6 md:pt-0"
+  >
+    <Button
+      type="button"
+      icon="pi pi-chevron-left"
+      class="border-surface-200 dark:border-surface-700 text-surface-900 dark:text-surface-0 w-12 h-12 mr-4"
+      outlined
+      severity="secondary"
+      @click="goBack()"
+    />
     <span class="block text-surface-900 dark:text-surface-0 font-bold text-xl">Compose Message</span>
   </div>
-  <div class="bg-surface-0 dark:bg-surface-950 grid gap-4 mt-6 grid-nogutter p-6 md:border-surface-200 dark:md:border-surface-700 md:border rounded">
+  <div
+    class="bg-surface-0 dark:bg-surface-950 grid gap-4 mt-6 grid-nogutter p-6 md:border-surface-200 dark:md:border-surface-700 md:border rounded"
+  >
     <div class="col-span-12">
-      <label for="to" class="text-surface-900 dark:text-surface-0 font-semibold">To</label>
-      <IconField style="height: 3.5rem" class="mt-4">
-        <InputIcon class="pi pi-user" style="left: 1.5rem" />
-        <InputText id="to" v-model="newMail.to" type="text" class="pl-16 text-surface-900 dark:text-surface-0 font-semibold" fluid style="height: 3.5rem" />
+      <label
+        for="to"
+        class="text-surface-900 dark:text-surface-0 font-semibold"
+      >To</label>
+      <IconField
+        style="height: 3.5rem"
+        class="mt-4"
+      >
+        <InputIcon
+          class="pi pi-user"
+          style="left: 1.5rem"
+        />
+        <InputText
+          id="to"
+          v-model="newMail.to"
+          type="text"
+          class="pl-16 text-surface-900 dark:text-surface-0 font-semibold"
+          fluid
+          style="height: 3.5rem"
+        />
       </IconField>
     </div>
     <div class="col-span-12">
-      <label for="Subject" class="text-surface-900 dark:text-surface-0 font-semibold">Subject</label>
-      <IconField style="height: 3.5rem" class="mt-4">
-        <InputIcon class="pi pi-pencil" style="left: 1.5rem" />
-        <InputText id="subject" v-model="newMail.title" type="text" placeholder="Subject" class="!pl-16 text-surface-900 dark:text-surface-0 font-semibold" fluid style="height: 3.5rem" />
+      <label
+        for="Subject"
+        class="text-surface-900 dark:text-surface-0 font-semibold"
+      >Subject</label>
+      <IconField
+        style="height: 3.5rem"
+        class="mt-4"
+      >
+        <InputIcon
+          class="pi pi-pencil"
+          style="left: 1.5rem"
+        />
+        <InputText
+          id="subject"
+          v-model="newMail.title"
+          type="text"
+          placeholder="Subject"
+          class="!pl-16 text-surface-900 dark:text-surface-0 font-semibold"
+          fluid
+          style="height: 3.5rem"
+        />
       </IconField>
     </div>
     <div class="col-span-12">
-      <Editor v-model="newMail.message" editor-style=" height: 250px " />
+      <Editor
+        v-model="newMail.message"
+        editor-style=" height: 250px "
+      />
     </div>
     <div class="col-span-12 flex gap-x-4 justify-end mt-16">
-      <Button type="button" class="h-12 w-full sm:w-auto" icon="pi pi-send" label="Send Message" @click="sendMail()" />
+      <Button
+        type="button"
+        class="h-12 w-full sm:w-auto"
+        icon="pi pi-send"
+        label="Send Message"
+        @click="sendMail()"
+      />
     </div>
   </div>
 </template>

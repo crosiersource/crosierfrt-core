@@ -1,7 +1,13 @@
 <template>
   <div :class="['layout-container', { ...containerClass }]">
-    <ProgressSpinner v-if="loadingStore.isLoading" class="progress-spinner" />
-    <BlockUI full-screen :blocked="loadingStore.isLoading" />
+    <ProgressSpinner
+      v-if="loadingStore.isLoading"
+      class="progress-spinner"
+    />
+    <BlockUI
+      full-screen
+      :blocked="loadingStore.isLoading"
+    />
 
     <AppTopbar />
     <AppRightMenu />
@@ -43,7 +49,8 @@ export default {
     AppConfig
   },
   setup() {
-    const { layoutConfig, layoutState, watchSidebarActive, unbindOutsideClickListener } = useLayout();
+    const { layoutConfig, layoutState, watchSidebarActive, unbindOutsideClickListener } =
+      useLayout();
 
     onMounted(() => {
       watchSidebarActive();
@@ -66,7 +73,8 @@ export default {
           'layout-reveal': layoutConfig.menuMode === 'reveal',
           'layout-drawer': layoutConfig.menuMode === 'drawer',
           'layout-sidebar-dark': layoutConfig.colorScheme === 'dark',
-          'layout-static-inactive': layoutState.staticMenuDesktopInactive && layoutConfig.menuMode === 'static',
+          'layout-static-inactive':
+            layoutState.staticMenuDesktopInactive && layoutConfig.menuMode === 'static',
           'layout-overlay-active': layoutState.overlayMenuActive,
           'layout-mobile-active': layoutState.staticMenuMobileActive,
           'layout-topbar-menu-active': layoutState.topbarMenuActive,

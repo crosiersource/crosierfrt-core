@@ -33,7 +33,8 @@ async function filter() {
     return;
   }
 
-  const filteredArr = filteredUsers.value.filter((user) => user.name.toLowerCase().includes(searchedUser.value.toLowerCase()));
+  const filteredArr = filteredUsers.value.filter((user) =>
+    user.name.toLowerCase().includes(searchedUser.value.toLowerCase()));
 
   filteredUsers.value = [...filteredArr];
 }
@@ -41,16 +42,32 @@ async function filter() {
 
 <template>
   <div class="flex flex-col items-center border-b border-surface-200 dark:border-surface-700 p-12">
-    <img src="/demo/images/avatar/circle/avatar-f-1@2x.png" class="w-24 h-24 rounded-full shadow-lg" alt="Asiya Javayant" />
+    <img
+      src="/demo/images/avatar/circle/avatar-f-1@2x.png"
+      class="w-24 h-24 rounded-full shadow-lg"
+      alt="Asiya Javayant"
+    >
     <span class="text-surface-900 dark:text-surface-0 text-xl font-semibold mt-6">Asiya Javayant</span>
   </div>
   <div class="w-full flex gap-y-6 flex-col border-surface-200 dark:border-surface-700 p-6">
     <IconField class="w-full">
       <InputIcon class="pi pi-search" />
-      <InputText id="search" v-model="searchedUser" type="text" placeholder="Search" class="w-full" @input="filter" />
+      <InputText
+        id="search"
+        v-model="searchedUser"
+        type="text"
+        placeholder="Search"
+        class="w-full"
+        @input="filter"
+      />
     </IconField>
     <div class="flex flex-row gap-6 md:flex-col overflow-auto">
-      <UserCard v-for="user in filteredUsers" :key="user" :user="user" @click="onChangeActiveUser(user)" />
+      <UserCard
+        v-for="user in filteredUsers"
+        :key="user"
+        :user="user"
+        @click="onChangeActiveUser(user)"
+      />
     </div>
   </div>
 </template>

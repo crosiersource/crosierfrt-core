@@ -18,19 +18,19 @@
   </CrosierForm>
 </template>
 <script>
-import CrosierForm from "@/components/Crosier/CrosierForm";
-import { mapStores } from "pinia";
-import { useUserStore } from "@/stores/Security/user.store";
+import CrosierForm from '@/components/Crosier/CrosierForm';
+import { mapStores } from 'pinia';
+import { useUserStore } from '@/stores/Security/user.store';
 
 export default {
-  name: "UsuarioForm",
+  name: 'UsuarioForm',
 
   components: {
-    CrosierForm,
+    CrosierForm
   },
 
   computed: {
-    ...mapStores(useUserStore),
-  },
+    ...mapStores(useUserStore)
+  }
 };
 </script>

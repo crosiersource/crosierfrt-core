@@ -102,46 +102,115 @@ function clearMaileActions(mail) {
 </script>
 
 <template>
-  <DataTable ref="mailTable" v-model:selection="selectedMails" v-model:filters="filterTable" :value="mails" :rows="10" paginator :rows-per-page-options="[10, 20, 30]" data-key="id" row-hover :global-filter-fields="['from', 'to', 'title', 'message']">
-    <Column selection-mode="multiple" style="width: 4rem" />
+  <DataTable
+    ref="mailTable"
+    v-model:selection="selectedMails"
+    v-model:filters="filterTable"
+    :value="mails"
+    :rows="10"
+    paginator
+    :rows-per-page-options="[10, 20, 30]"
+    data-key="id"
+    row-hover
+    :global-filter-fields="['from', 'to', 'title', 'message']"
+  >
+    <Column
+      selection-mode="multiple"
+      style="width: 4rem"
+    />
     <Column style="width: 8rem">
       <template #header>
         <div class="flex -ml-2">
-          <Button type="button" icon="pi pi-refresh" text plain rounded />
-          <Button type="button" icon="pi pi-ellipsis-v" class="ml-4" text plain rounded @click="menuRef.toggle($event)" />
-          <Menu ref="menuRef" popup :model="menuItems" class="w-32" />
+          <Button
+            type="button"
+            icon="pi pi-refresh"
+            text
+            plain
+            rounded
+          />
+          <Button
+            type="button"
+            icon="pi pi-ellipsis-v"
+            class="ml-4"
+            text
+            plain
+            rounded
+            @click="menuRef.toggle($event)"
+          />
+          <Menu
+            ref="menuRef"
+            popup
+            :model="menuItems"
+            class="w-32"
+          />
         </div>
         <div />
       </template>
       <template #body="{ data }">
-        <td v-if="!data.trash && !data.spam" class="w-16">
-          <span class="cursor-pointer" @click="changeMailType('starred', data)">
-            <i class="pi pi-fw text-xl" :class="{ 'pi-star-fill': data.starred, 'pi-star': !data.starred }" />
+        <td
+          v-if="!data.trash && !data.spam"
+          class="w-16"
+        >
+          <span
+            class="cursor-pointer"
+            @click="changeMailType('starred', data)"
+          >
+            <i
+              class="pi pi-fw text-xl"
+              :class="{ 'pi-star-fill': data.starred, 'pi-star': !data.starred }"
+            />
           </span>
         </td>
-        <td v-if="!data.trash && !data.spam" class="w-16">
-          <span class="cursor-pointer ml-4" @click="changeMailType('important', data)">
-            <i class="pi pi-fw text-xl" :class="{ 'pi-bookmark-fill': data.important, 'pi-bookmark': !data.important }" />
+        <td
+          v-if="!data.trash && !data.spam"
+          class="w-16"
+        >
+          <span
+            class="cursor-pointer ml-4"
+            @click="changeMailType('important', data)"
+          >
+            <i
+              class="pi pi-fw text-xl"
+              :class="{ 'pi-bookmark-fill': data.important, 'pi-bookmark': !data.important }"
+            />
           </span>
         </td>
       </template>
     </Column>
     <Column style="min-width: 4rem">
       <template #body="{ data }">
-        <Avatar v-if="!data.image" icon="pi pi-user" shape="circle" />
-        <Avatar v-else :id="data.id" :image="`/demo/images/avatar/${data.image ? data.image : '.png'}`" class="cursor-pointer" @click="onNavigateToDetailPage(data.id)" />
+        <Avatar
+          v-if="!data.image"
+          icon="pi pi-user"
+          shape="circle"
+        />
+        <Avatar
+          v-else
+          :id="data.id"
+          :image="`/demo/images/avatar/${data.image ? data.image : '.png'}`"
+          class="cursor-pointer"
+          @click="onNavigateToDetailPage(data.id)"
+        />
       </template>
     </Column>
     <Column style="min-width: 4rem">
       <template #body="{ data }">
-        <div :style="{ minWidth: '12rem' }" class="text-surface-900 dark:text-surface-0 font-semibold cursor-pointer" @click="onNavigateToDetailPage(data.id)">
+        <div
+          :style="{ minWidth: '12rem' }"
+          class="text-surface-900 dark:text-surface-0 font-semibold cursor-pointer"
+          @click="onNavigateToDetailPage(data.id)"
+        >
           {{ data.from || data.to }}
         </div>
       </template>
     </Column>
     <Column style="min-width: 30rem">
       <template #body="{ data }">
-        <span class="font-medium whitespace-nowrap overflow-hidden text-ellipsis block cursor-pointer" style="max-width: 30rem" @click="onNavigateToDetailPage(data.id)">
+        <span
+          class="font-medium whitespace-nowrap overflow-hidden text-ellipsis block cursor-pointer"
+          style="max-width: 30rem"
+          @click="onNavigateToDetailPage(data.id)"
+        >
           {{ data.title }}
         </span>
       </template>
@@ -150,19 +219,51 @@ function clearMaileActions(mail) {
       <template #header>
         <IconField class="w-full">
           <InputIcon class="pi pi-search" />
-          <InputText v-model="filterTable.global.value" type="text" placeholder="Search Mail" class="w-full sm:w-auto" />
+          <InputText
+            v-model="filterTable.global.value"
+            type="text"
+            placeholder="Search Mail"
+            class="w-full sm:w-auto"
+          />
         </IconField>
       </template>
       <template #body="{ data }">
         <div :style="{ minWidth: '10rem' }">
           <div class="flex justify-end w-full px-0">
-            <span ref="dateRef" class="date-text text-surface-700 dark:text-surface-100 font-semibold whitespace-nowrap">
+            <span
+              ref="dateRef"
+              class="date-text text-surface-700 dark:text-surface-100 font-semibold whitespace-nowrap"
+            >
               {{ data.date }}
             </span>
-            <div ref="actionRef" class="action-buttons" style="display: none">
-              <Button v-tooltip.top="'Archive'" type="button" icon="pi pi-inbox" class="h-8 w-8 mr-2" @click="onSingleMailAction('archive', data)" />
-              <Button type="button" icon="pi pi-reply" v-tooltip.top="'Reply'" class="h-8 w-8 mr-2" severity="secondary" @click="onReplyMail(data)" />
-              <Button v-tooltip.top="'Trash'" type="button" icon="pi pi-trash" class="h-8 w-8" severity="danger" @click="onSingleMailAction('trash', data)" />
+            <div
+              ref="actionRef"
+              class="action-buttons"
+              style="display: none"
+            >
+              <Button
+                v-tooltip.top="'Archive'"
+                type="button"
+                icon="pi pi-inbox"
+                class="h-8 w-8 mr-2"
+                @click="onSingleMailAction('archive', data)"
+              />
+              <Button
+                v-tooltip.top="'Reply'"
+                type="button"
+                icon="pi pi-reply"
+                class="h-8 w-8 mr-2"
+                severity="secondary"
+                @click="onReplyMail(data)"
+              />
+              <Button
+                v-tooltip.top="'Trash'"
+                type="button"
+                icon="pi pi-trash"
+                class="h-8 w-8"
+                severity="danger"
+                @click="onSingleMailAction('trash', data)"
+              />
             </div>
           </div>
         </div>

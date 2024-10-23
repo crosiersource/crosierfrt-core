@@ -40,10 +40,16 @@ watch(
     <nav class="layout-breadcrumb">
       <ol>
         <li>
-          <i :class="home.icon" @click="navigate" />
+          <i
+            :class="home.icon"
+            @click="navigate"
+          />
         </li>
         <li><i class="pi pi-angle-right" /></li>
-        <template v-for="(item, index) in breadcrumbRoutes" :key="index">
+        <template
+          v-for="(item, index) in breadcrumbRoutes"
+          :key="index"
+        >
           <li>
             <span> {{ item.label }}</span>
           </li>
@@ -55,9 +61,24 @@ watch(
     </nav>
 
     <div class="layout-breadcrumb-buttons">
-      <Button icon="pi pi-cloud-upload" rounded text plain />
-      <Button icon="pi pi-bookmark" rounded text plain />
-      <Button icon="pi pi-power-off" rounded text plain />
+      <Button
+        icon="pi pi-cloud-upload"
+        rounded
+        text
+        plain
+      />
+      <Button
+        icon="pi pi-bookmark"
+        rounded
+        text
+        plain
+      />
+      <Button
+        icon="pi pi-power-off"
+        rounded
+        text
+        plain
+      />
     </div>
   </div>
 </template>

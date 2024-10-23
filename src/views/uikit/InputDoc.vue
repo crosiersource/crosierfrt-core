@@ -75,143 +75,326 @@ function searchCountry(event) {
   <Fluid class="flex flex-col md:flex-row gap-8">
     <div class="md:w-1/2">
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">InputText</div>
+        <div class="font-semibold text-xl">
+          InputText
+        </div>
         <div class="flex flex-col md:flex-row gap-4">
-          <InputText type="text" placeholder="Default" />
-          <InputText type="text" placeholder="Disabled" :disabled="true" />
-          <InputText type="text" placeholder="Invalid" invalid />
+          <InputText
+            type="text"
+            placeholder="Default"
+          />
+          <InputText
+            type="text"
+            placeholder="Disabled"
+            :disabled="true"
+          />
+          <InputText
+            type="text"
+            placeholder="Invalid"
+            invalid
+          />
         </div>
 
-        <div class="font-semibold text-xl">Icons</div>
+        <div class="font-semibold text-xl">
+          Icons
+        </div>
         <IconField>
           <InputIcon class="pi pi-user" />
-          <InputText type="text" placeholder="Username" />
+          <InputText
+            type="text"
+            placeholder="Username"
+          />
         </IconField>
         <IconField>
-          <InputText type="text" placeholder="Search" />
+          <InputText
+            type="text"
+            placeholder="Search"
+          />
           <InputIcon class="pi pi-search" />
         </IconField>
 
-        <div class="font-semibold text-xl">Float Label</div>
+        <div class="font-semibold text-xl">
+          Float Label
+        </div>
         <FloatLabel>
-          <InputText id="username" v-model="floatValue" type="text" />
+          <InputText
+            id="username"
+            v-model="floatValue"
+            type="text"
+          />
           <label for="username">Username</label>
         </FloatLabel>
 
-        <div class="font-semibold text-xl">Textarea</div>
-        <Textarea placeholder="Your Message" :auto-resize="true" rows="3" cols="30" />
+        <div class="font-semibold text-xl">
+          Textarea
+        </div>
+        <Textarea
+          placeholder="Your Message"
+          :auto-resize="true"
+          rows="3"
+          cols="30"
+        />
 
-        <div class="font-semibold text-xl">AutoComplete</div>
-        <AutoComplete v-model="selectedAutoValue" :suggestions="autoFilteredValue" option-label="name" placeholder="Search" dropdown multiple display="chip" @complete="searchCountry($event)" />
+        <div class="font-semibold text-xl">
+          AutoComplete
+        </div>
+        <AutoComplete
+          v-model="selectedAutoValue"
+          :suggestions="autoFilteredValue"
+          option-label="name"
+          placeholder="Search"
+          dropdown
+          multiple
+          display="chip"
+          @complete="searchCountry($event)"
+        />
 
-        <div class="font-semibold text-xl">DatePicker</div>
-        <DatePicker v-model="calendarValue" :show-icon="true" :show-button-bar="true" />
+        <div class="font-semibold text-xl">
+          DatePicker
+        </div>
+        <DatePicker
+          v-model="calendarValue"
+          :show-icon="true"
+          :show-button-bar="true"
+        />
 
-        <div class="font-semibold text-xl">InputNumber</div>
-        <InputNumber v-model="inputNumberValue" show-buttons mode="decimal" />
+        <div class="font-semibold text-xl">
+          InputNumber
+        </div>
+        <InputNumber
+          v-model="inputNumberValue"
+          show-buttons
+          mode="decimal"
+        />
       </div>
 
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">Slider</div>
+        <div class="font-semibold text-xl">
+          Slider
+        </div>
         <InputText v-model.number="sliderValue" />
         <Slider v-model="sliderValue" />
 
         <div class="flex flex-row mt-6">
           <div class="flex flex-col gap-4 w-1/2">
-            <div class="font-semibold text-xl">Rating</div>
+            <div class="font-semibold text-xl">
+              Rating
+            </div>
             <Rating v-model="ratingValue" />
           </div>
           <div class="flex flex-col gap-4 w-1/2">
-            <div class="font-semibold text-xl">ColorPicker</div>
-            <ColorPicker v-model="colorValue" style="width: 2rem" />
+            <div class="font-semibold text-xl">
+              ColorPicker
+            </div>
+            <ColorPicker
+              v-model="colorValue"
+              style="width: 2rem"
+            />
           </div>
         </div>
 
-        <div class="font-semibold text-xl">Knob</div>
-        <Knob v-model="knobValue" :step="10" :min="-50" :max="50" value-template="{value}%" />
+        <div class="font-semibold text-xl">
+          Knob
+        </div>
+        <Knob
+          v-model="knobValue"
+          :step="10"
+          :min="-50"
+          :max="50"
+          value-template="{value}%"
+        />
       </div>
     </div>
     <div class="md:w-1/2">
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">RadioButton</div>
+        <div class="font-semibold text-xl">
+          RadioButton
+        </div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex items-center">
-            <RadioButton id="option1" v-model="radioValue" name="option" value="Chicago" />
-            <label for="option1" class="leading-none ml-2">Chicago</label>
+            <RadioButton
+              id="option1"
+              v-model="radioValue"
+              name="option"
+              value="Chicago"
+            />
+            <label
+              for="option1"
+              class="leading-none ml-2"
+            >Chicago</label>
           </div>
           <div class="flex items-center">
-            <RadioButton id="option2" v-model="radioValue" name="option" value="Los Angeles" />
-            <label for="option2" class="leading-none ml-2">Los Angeles</label>
+            <RadioButton
+              id="option2"
+              v-model="radioValue"
+              name="option"
+              value="Los Angeles"
+            />
+            <label
+              for="option2"
+              class="leading-none ml-2"
+            >Los Angeles</label>
           </div>
           <div class="flex items-center">
-            <RadioButton id="option3" v-model="radioValue" name="option" value="New York" />
-            <label for="option3" class="leading-none ml-2">New York</label>
+            <RadioButton
+              id="option3"
+              v-model="radioValue"
+              name="option"
+              value="New York"
+            />
+            <label
+              for="option3"
+              class="leading-none ml-2"
+            >New York</label>
           </div>
         </div>
 
-        <div class="font-semibold text-xl">Checkbox</div>
+        <div class="font-semibold text-xl">
+          Checkbox
+        </div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex items-center">
-            <Checkbox id="checkOption1" v-model="checkboxValue" name="option" value="Chicago" />
-            <label for="checkOption1" class="ml-2">Chicago</label>
+            <Checkbox
+              id="checkOption1"
+              v-model="checkboxValue"
+              name="option"
+              value="Chicago"
+            />
+            <label
+              for="checkOption1"
+              class="ml-2"
+            >Chicago</label>
           </div>
           <div class="flex items-center">
-            <Checkbox id="checkOption2" v-model="checkboxValue" name="option" value="Los Angeles" />
-            <label for="checkOption2" class="ml-2">Los Angeles</label>
+            <Checkbox
+              id="checkOption2"
+              v-model="checkboxValue"
+              name="option"
+              value="Los Angeles"
+            />
+            <label
+              for="checkOption2"
+              class="ml-2"
+            >Los Angeles</label>
           </div>
           <div class="flex items-center">
-            <Checkbox id="checkOption3" v-model="checkboxValue" name="option" value="New York" />
-            <label for="checkOption3" class="ml-2">New York</label>
+            <Checkbox
+              id="checkOption3"
+              v-model="checkboxValue"
+              name="option"
+              value="New York"
+            />
+            <label
+              for="checkOption3"
+              class="ml-2"
+            >New York</label>
           </div>
         </div>
 
-        <div class="font-semibold text-xl">ToggleSwitch</div>
+        <div class="font-semibold text-xl">
+          ToggleSwitch
+        </div>
         <ToggleSwitch v-model="switchValue" />
       </div>
 
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">Listbox</div>
-        <Listbox v-model="listboxValue" :options="listboxValues" option-label="name" :filter="true" />
+        <div class="font-semibold text-xl">
+          Listbox
+        </div>
+        <Listbox
+          v-model="listboxValue"
+          :options="listboxValues"
+          option-label="name"
+          :filter="true"
+        />
 
-        <div class="font-semibold text-xl">Select</div>
-        <Select v-model="dropdownValue" :options="dropdownValues" option-label="name" placeholder="Select" />
+        <div class="font-semibold text-xl">
+          Select
+        </div>
+        <Select
+          v-model="dropdownValue"
+          :options="dropdownValues"
+          option-label="name"
+          placeholder="Select"
+        />
 
-        <div class="font-semibold text-xl">MultiSelect</div>
-        <MultiSelect v-model="multiselectValue" :options="multiselectValues" option-label="name" placeholder="Select Countries" :filter="true">
+        <div class="font-semibold text-xl">
+          MultiSelect
+        </div>
+        <MultiSelect
+          v-model="multiselectValue"
+          :options="multiselectValues"
+          option-label="name"
+          placeholder="Select Countries"
+          :filter="true"
+        >
           <template #value="slotProps">
-            <div v-for="option of slotProps.value" :key="option.code" class="inline-flex items-center py-1 px-2 bg-primary text-primary-contrast rounded-border mr-2">
-              <span :class="'mr-2 flag flag-' + option.code.toLowerCase()" style="width: 18px; height: 12px" />
+            <div
+              v-for="option of slotProps.value"
+              :key="option.code"
+              class="inline-flex items-center py-1 px-2 bg-primary text-primary-contrast rounded-border mr-2"
+            >
+              <span
+                :class="'mr-2 flag flag-' + option.code.toLowerCase()"
+                style="width: 18px; height: 12px"
+              />
               <div>{{ option.name }}</div>
             </div>
             <template v-if="!slotProps.value || slotProps.value.length === 0">
-              <div class="p-1">Select Countries</div>
+              <div class="p-1">
+                Select Countries
+              </div>
             </template>
           </template>
           <template #option="slotProps">
             <div class="flex items-center">
-              <span :class="'mr-2 flag flag-' + slotProps.option.code.toLowerCase()" style="width: 18px; height: 12px" />
+              <span
+                :class="'mr-2 flag flag-' + slotProps.option.code.toLowerCase()"
+                style="width: 18px; height: 12px"
+              />
               <div>{{ slotProps.option.name }}</div>
             </div>
           </template>
         </MultiSelect>
 
-        <div class="font-semibold text-xl">TreeSelect</div>
-        <TreeSelect v-model="selectedNode" :options="treeSelectNodes" placeholder="Select Item" />
+        <div class="font-semibold text-xl">
+          TreeSelect
+        </div>
+        <TreeSelect
+          v-model="selectedNode"
+          :options="treeSelectNodes"
+          placeholder="Select Item"
+        />
       </div>
 
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">ToggleButton</div>
-        <ToggleButton v-model="toggleValue" on-label="Yes" off-label="No" :style="{ width: '10em' }" />
+        <div class="font-semibold text-xl">
+          ToggleButton
+        </div>
+        <ToggleButton
+          v-model="toggleValue"
+          on-label="Yes"
+          off-label="No"
+          :style="{ width: '10em' }"
+        />
 
-        <div class="font-semibold text-xl">SelectButton</div>
-        <SelectButton v-model="selectButtonValue" :options="selectButtonValues" option-label="name" />
+        <div class="font-semibold text-xl">
+          SelectButton
+        </div>
+        <SelectButton
+          v-model="selectButtonValue"
+          :options="selectButtonValues"
+          option-label="name"
+        />
       </div>
     </div>
   </Fluid>
 
   <Fluid class="flex mt-8">
     <div class="card flex flex-col gap-4 w-full">
-      <div class="font-semibold text-xl">InputGroup</div>
+      <div class="font-semibold text-xl">
+        InputGroup
+      </div>
       <div class="flex flex-col md:flex-row gap-4">
         <InputGroup>
           <InputGroupAddon>
@@ -238,7 +421,10 @@ function searchCountry(event) {
         </InputGroup>
         <InputGroup>
           <InputGroupAddon>
-            <Checkbox v-model="inputGroupValue" :binary="true" />
+            <Checkbox
+              v-model="inputGroupValue"
+              :binary="true"
+            />
           </InputGroupAddon>
           <InputText placeholder="Confirm" />
         </InputGroup>
