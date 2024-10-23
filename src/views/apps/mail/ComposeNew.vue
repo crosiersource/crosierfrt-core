@@ -60,7 +60,9 @@ function generateDate() {
       severity="secondary"
       @click="goBack()"
     />
-    <span class="block text-surface-900 dark:text-surface-0 font-bold text-xl">Compose Message</span>
+    <span class="block text-surface-900 dark:text-surface-0 font-bold text-xl">
+      Compose Message
+    </span>
   </div>
   <div
     class="bg-surface-0 dark:bg-surface-950 grid gap-4 mt-6 grid-nogutter p-6 md:border-surface-200 dark:md:border-surface-700 md:border rounded"
@@ -92,7 +94,9 @@ function generateDate() {
       <label
         for="Subject"
         class="text-surface-900 dark:text-surface-0 font-semibold"
-      >Subject</label>
+      >
+        Subject
+      </label>
       <IconField
         style="height: 3.5rem"
         class="mt-4"

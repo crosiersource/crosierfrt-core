@@ -39,7 +39,9 @@ const products = ref([
 
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-8">
       <div class="mb-4 sm:mb-0">
-        <span class="font-medium text-xl text-surface-900 dark:text-surface-0 mr-2">Order number:</span>
+        <span class="font-medium text-xl text-surface-900 dark:text-surface-0 mr-2">
+          Order number:
+        </span>
         <span class="font-medium text-xl text-blue-500">451234</span>
       </div>
       <div>
@@ -70,17 +72,19 @@ const products = ref([
             :alt="product.name"
           >
           <div class="flex flex-col">
-            <span class="text-surface-900 dark:text-surface-0 font-semibold text-xl mb-2">{{
-              product.name
-            }}</span>
+            <span class="text-surface-900 dark:text-surface-0 font-semibold text-xl mb-2">
+              {{ product.name }}
+            </span>
             <span class="text-surface-700 dark:text-surface-100 font-medium mb-4">
               {{ product.color }} | {{ product.size }}
             </span>
-            <span class="text-surface-900 dark:text-surface-0 font-medium">Quantity: {{ product.quantity }}</span>
+            <span class="text-surface-900 dark:text-surface-0 font-medium">
+              Quantity: {{ product.quantity }}
+            </span>
           </div>
-          <span class="text-surface-900 dark:text-surface-0 font-medium text-lg ml-auto">{{
-            product.price
-          }}</span>
+          <span class="text-surface-900 dark:text-surface-0 font-medium text-lg ml-auto">
+            {{ product.price }}
+          </span>
         </li>
       </ul>
     </div>
@@ -102,7 +106,9 @@ const products = ref([
           >
           <div class="flex flex-col">
             <span class="text-surface-900 dark:text-surface-0 mb-1">Visa Debit Card</span>
-            <span class="text-surface-900 dark:text-surface-0 font-medium">**** **** **** 1234</span>
+            <span class="text-surface-900 dark:text-surface-0 font-medium">
+              **** **** **** 1234
+            </span>
           </div>
         </div>
       </div>
@@ -134,7 +140,9 @@ const products = ref([
 
   <div class="card">
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-      <span class="text-2xl font-medium text-surface-900 dark:text-surface-0">Thanks for your order!</span>
+      <span class="text-2xl font-medium text-surface-900 dark:text-surface-0">
+        Thanks for your order!
+      </span>
       <div class="flex mt-4 sm:mt-0">
         <div class="flex flex-col items-center">
           <span class="text-surface-900 dark:text-surface-0 font-medium mb-2">Order ID</span>
@@ -167,7 +175,9 @@ const products = ref([
         </div>
         <div class="flex w-full justify-between">
           <span class="text-surface-900 dark:text-surface-0 text-xs sm:text-base">Ordered</span>
-          <span class="text-surface-900 dark:text-surface-0 font-medium text-xs sm:text-base">Processing</span>
+          <span class="text-surface-900 dark:text-surface-0 font-medium text-xs sm:text-base">
+            Processing
+          </span>
           <span class="text-surface-500 dark:text-surface-300 text-xs sm:text-base">Shipping</span>
           <span class="text-surface-500 dark:text-surface-300 text-xs sm:text-base">Delivered</span>
         </div>
@@ -175,11 +185,15 @@ const products = ref([
     </div>
     <div class="py-8 flex justify-between flex-wrap">
       <div class="flex sm:mr-8 mb-8">
-        <span class="font-medium text-surface-900 dark:text-surface-0 text-xl mr-20">Product Name</span>
+        <span class="font-medium text-surface-900 dark:text-surface-0 text-xl mr-20">
+          Product Name
+        </span>
         <span class="text-surface-900 dark:text-surface-0 text-xl">$21.00</span>
       </div>
       <div class="flex flex-col sm:mr-8 mb-8">
-        <span class="font-medium text-surface-900 dark:text-surface-0 text-xl">Shipping Address</span>
+        <span class="font-medium text-surface-900 dark:text-surface-0 text-xl">
+          Shipping Address
+        </span>
         <div class="flex flex-col text-surface-900 dark:text-surface-0 mt-4">
           <span class="mb-1">Celeste Slater</span>
           <span class="mb-1">606-3727 Ullamcorper. Roseville NH 11523</span>
@@ -196,7 +210,9 @@ const products = ref([
           >
           <div class="flex flex-col">
             <span class="text-surface-900 dark:text-surface-0 mb-1">Visa Debit Card</span>
-            <span class="text-surface-900 dark:text-surface-0 font-medium">**** **** **** 1234</span>
+            <span class="text-surface-900 dark:text-surface-0 font-medium">
+              **** **** **** 1234
+            </span>
           </div>
         </div>
       </div>

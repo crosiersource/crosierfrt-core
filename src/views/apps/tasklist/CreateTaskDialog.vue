@@ -49,7 +49,9 @@ async function filterMembers(event) {
         <label
           for="name"
           class="text-surface-900 dark:text-surface-0 font-semibold"
-        >Task Name</label>
+        >
+          Task Name
+        </label>
         <InputText
           id="name"
           v-model="task.name"
@@ -61,7 +63,9 @@ async function filterMembers(event) {
         <label
           for="description"
           class="text-surface-900 dark:text-surface-0 font-semibold"
-        >Description</label>
+        >
+          Description
+        </label>
         <Editor
           v-model="task.description"
           :pt="{
@@ -73,7 +77,9 @@ async function filterMembers(event) {
         <label
           for="start"
           class="text-surface-900 dark:text-surface-0 font-semibold"
-        >Start Date</label>
+        >
+          Start Date
+        </label>
         <DatePicker
           v-model="task.startDate"
           date-format="yy-mm-dd"
@@ -99,7 +105,9 @@ async function filterMembers(event) {
         <label
           for="members"
           class="text-surface-900 dark:text-surface-0 font-semibold"
-        >Add Team Member</label>
+        >
+          Add Team Member
+        </label>
         <AutoComplete
           v-model="task.members"
           input-id="members"
@@ -126,9 +134,9 @@ async function filterMembers(event) {
                 :alt="option.name"
                 class="h-8 w-8 mr-2"
               >
-              <span class="text-surface-900 dark:text-surface-0 font-medium">{{
-                option.name
-              }}</span>
+              <span class="text-surface-900 dark:text-surface-0 font-medium">
+                {{ option.name }}
+              </span>
             </div>
           </template>
         </AutoComplete>

@@ -47,7 +47,9 @@ async function filter() {
       class="w-24 h-24 rounded-full shadow-lg"
       alt="Asiya Javayant"
     >
-    <span class="text-surface-900 dark:text-surface-0 text-xl font-semibold mt-6">Asiya Javayant</span>
+    <span class="text-surface-900 dark:text-surface-0 text-xl font-semibold mt-6">
+      Asiya Javayant
+    </span>
   </div>
   <div class="w-full flex gap-y-6 flex-col border-surface-200 dark:border-surface-700 p-6">
     <IconField class="w-full">

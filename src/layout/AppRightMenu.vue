@@ -112,7 +112,10 @@ const { layoutState } = useLayout();
             alt="avatar-16"
           >
         </div>
-        <span class="mt-4"><b class="text-primary">+19</b> Costumers</span>
+        <span class="mt-4">
+          <b class="text-primary">+19</b>
+          Costumers
+        </span>
       </div>
       <div class="flex flex-col mb-8">
         <span class="pb-2 mb-2 border-b border-surface font-semibold">LATEST ACTIVITY</span>
@@ -123,7 +126,9 @@ const { layoutState } = useLayout();
           />
           <div class="flex flex-col">
             <span class="font-bold mb-1">New Sale</span>
-            <span class="mb-2 leading-normal">Richard Jones has purchased a blue t-shirt for $79.</span>
+            <span class="mb-2 leading-normal">
+              Richard Jones has purchased a blue t-shirt for $79.
+            </span>
             <span class="flex items-center">
               <img
                 class="mr-2"
@@ -141,7 +146,9 @@ const { layoutState } = useLayout();
           />
           <div class="flex flex-col">
             <span class="font-bold mb-1">Withdrawal Initiated</span>
-            <span class="mb-2 leading-normal">Your request for withdrawal of $2500 has been initiated.</span>
+            <span class="mb-2 leading-normal">
+              Your request for withdrawal of $2500 has been initiated.
+            </span>
             <span class="flex items-center">
               <img
                 class="mr-2"
@@ -159,7 +166,9 @@ const { layoutState } = useLayout();
           />
           <div class="flex flex-col">
             <span class="font-bold mb-1">Question Received</span>
-            <span class="mb-2 leading-normal">Jane Davis has posted a new question about your product.</span>
+            <span class="mb-2 leading-normal">
+              Jane Davis has posted a new question about your product.
+            </span>
             <span class="flex items-center">
               <img
                 class="mr-2"
@@ -175,19 +184,24 @@ const { layoutState } = useLayout();
         <span class="pb-2 mb-2 border-b border-surface font-semibold">NEXT EVENTS</span>
         <ul class="m-0 list-none p-0">
           <li class="py-4 px-2 rounded-md hover:bg-emphasis cursor-pointer">
-            <i class="pi pi-eye mr-4" />A/B Test
+            <i class="pi pi-eye mr-4" />
+            A/B Test
           </li>
           <li class="py-4 px-2 rounded-md hover:bg-emphasis cursor-pointer">
-            <i class="pi pi-video mr-4" />Video Shoot
+            <i class="pi pi-video mr-4" />
+            Video Shoot
           </li>
           <li class="py-4 px-2 rounded-md hover:bg-emphasis cursor-pointer">
-            <i class="pi pi-sitemap mr-4" />Board Meeting
+            <i class="pi pi-sitemap mr-4" />
+            Board Meeting
           </li>
           <li class="py-4 px-2 rounded-md hover:bg-emphasis cursor-pointer">
-            <i class="pi pi-compass mr-4" />Q4 Planning
+            <i class="pi pi-compass mr-4" />
+            Q4 Planning
           </li>
           <li class="py-4 px-2 rounded-md hover:bg-emphasis cursor-pointer">
-            <i class="pi pi-palette mr-4" />Design Training
+            <i class="pi pi-palette mr-4" />
+            Design Training
           </li>
         </ul>
       </div>

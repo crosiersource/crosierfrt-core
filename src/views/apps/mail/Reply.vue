@@ -105,7 +105,9 @@ watch(
           <label
             for="to"
             class="block text-surface-900 dark:text-surface-0 font-semibold mb-4"
-          >To</label>
+          >
+            To
+          </label>
           <IconField
             class="w-full"
             style="height: 3.5rem"
@@ -127,7 +129,9 @@ watch(
           <label
             for="Subject"
             class="block text-surface-900 dark:text-surface-0 font-semibold mb-4"
-          >Subject</label>
+          >
+            Subject
+          </label>
           <IconField
             class="w-full"
             style="height: 3.5rem"
@@ -159,7 +163,9 @@ watch(
             v-tooltip="displayMessage ? 'Hide content' : 'Show content'"
             class="bg-surface-50 dark:bg-surface-950 cursor-pointer rounded px-2"
             @click="toggleMessage()"
-          ><i class="pi pi-ellipsis-h" /></span>
+          >
+            <i class="pi pi-ellipsis-h" />
+          </span>
           <Editor
             v-model="newMail.message"
             :editor-style="{ height: '250px' }"

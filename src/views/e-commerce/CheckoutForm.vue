@@ -27,22 +27,20 @@ onMounted(() => {
             <i class="pi pi-chevron-right text-surface-500 dark:text-surface-300 text-xs ml-2" />
           </li>
           <li class="flex items-center text-surface-500 dark:text-surface-300 mr-2">
-            Information<i
-              class="pi pi-chevron-right text-surface-500 dark:text-surface-300 text-xs ml-2"
-            />
+            Information
+            <i class="pi pi-chevron-right text-surface-500 dark:text-surface-300 text-xs ml-2" />
           </li>
           <li class="flex items-center text-surface-500 dark:text-surface-300 mr-2">
-            Shipping<i
-              class="pi pi-chevron-right text-surface-500 dark:text-surface-300 text-xs ml-2"
-            />
+            Shipping
+            <i class="pi pi-chevron-right text-surface-500 dark:text-surface-300 text-xs ml-2" />
           </li>
-          <li class="flex items-center text-surface-500 dark:text-surface-300 mr-2">
-            Payment
-          </li>
+          <li class="flex items-center text-surface-500 dark:text-surface-300 mr-2">Payment</li>
         </ul>
         <div class="grid grid-cols-12 gap-4">
           <div class="col-span-12 mb-12">
-            <span class="text-surface-900 dark:text-surface-0 text-2xl block font-medium mb-8">Contact Information</span>
+            <span class="text-surface-900 dark:text-surface-0 text-2xl block font-medium mb-8">
+              Contact Information
+            </span>
             <input
               id="email"
               placeholder="Email"
@@ -63,7 +61,9 @@ onMounted(() => {
             </div>
           </div>
           <div class="col-span-12 mb-6">
-            <span class="text-surface-900 dark:text-surface-0 text-2xl block font-medium mb-8">Shipping</span>
+            <span class="text-surface-900 dark:text-surface-0 text-2xl block font-medium mb-8">
+              Shipping
+            </span>
             <Select
               v-model="selectedCountry"
               :options="countries"
@@ -170,9 +170,7 @@ onMounted(() => {
               <span class="text-surface-900 dark:text-surface-0 font-bold">Product Name</span>
               <span class="text-surface-900 dark:text-surface-0 font-bold">$123.00</span>
             </div>
-            <div class="text-surface-600 dark:text-surface-200 text-sm mb-4">
-              Black | Large
-            </div>
+            <div class="text-surface-600 dark:text-surface-200 text-sm mb-4">Black | Large</div>
             <div class="flex flex-auto justify-between items-center">
               <InputNumber
                 v-model="quantities[0]"

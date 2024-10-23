@@ -36,7 +36,9 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
             class="flex flex-wrap items-start sm:items-center sm:flex-row sm:justify-between border-surface-200 dark:border-surface-700 pb-12"
           >
             <div class="w-full sm:w-6/12 flex flex-col">
-              <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-4">Product Name</span>
+              <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-4">
+                Product Name
+              </span>
               <span class="text-surface-700 dark:text-surface-100">Medium</span>
             </div>
             <div class="w-full sm:w-6/12 flex items-start justify-between mt-4 sm:mt-0">
@@ -48,7 +50,9 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
                 />
               </div>
               <div class="flex flex-col sm:items-end">
-                <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-2 sm:mb-4">$20.00</span>
+                <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-2 sm:mb-4">
+                  $20.00
+                </span>
                 <a
                   class="cursor-pointer text-pink-500 font-medium text-sm hover:text-pink-600 transition-colors duration-300"
                   tabindex="0"
@@ -66,7 +70,8 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
             <span class="inline-flex items-center mb-4">
               <i class="pi pi-send text-surface-700 dark:text-surface-100 mr-2" />
               <span class="text-surface-700 dark:text-surface-100 mr-2">
-                Delivery by <span class="font-bold">Dec 23.</span>
+                Delivery by
+                <span class="font-bold">Dec 23.</span>
               </span>
             </span>
             <span class="flex items-center">
@@ -89,7 +94,9 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
             class="flex flex-wrap items-start sm:items-center sm:flex-row sm:justify-between border-surface-200 dark:border-surface-700 pb-12"
           >
             <div class="w-full sm:w-6/12 flex flex-col">
-              <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-4">Product Name</span>
+              <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-4">
+                Product Name
+              </span>
               <span class="text-surface-700 dark:text-surface-100">Medium</span>
             </div>
             <div class="w-full sm:w-6/12 flex items-start justify-between mt-4 sm:mt-0">
@@ -101,7 +108,9 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
                 />
               </div>
               <div class="flex flex-col sm:items-end">
-                <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-2 sm:mb-4">$62.00</span>
+                <span class="text-surface-900 dark:text-surface-0 text-xl font-medium mb-2 sm:mb-4">
+                  $62.00
+                </span>
                 <a
                   class="cursor-pointer text-pink-500 font-medium text-sm hover:text-pink-600 transition-colors duration-300"
                   tabindex="0"
@@ -119,7 +128,8 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
             <span class="inline-flex items-center mb-4">
               <i class="pi pi-send text-surface-700 dark:text-surface-100 mr-2" />
               <span class="text-surface-700 dark:text-surface-100 mr-2">
-                Delivery by <span class="font-bold">Dec 23.</span>
+                Delivery by
+                <span class="font-bold">Dec 23.</span>
               </span>
             </span>
             <span class="flex items-center">
@@ -149,7 +159,9 @@ const selectedQuantity2 = ref({ label: '1', value: 1 });
           class="flex justify-between border-t border-surface-200 dark:border-surface-700 mb-6 pt-6"
         >
           <span class="text-xl text-surface-900 dark:text-surface-0 font-bold text-3xl">Total</span>
-          <span class="text-xl text-surface-900 dark:text-surface-0 font-bold text-3xl">$90.00</span>
+          <span class="text-xl text-surface-900 dark:text-surface-0 font-bold text-3xl">
+            $90.00
+          </span>
         </li>
         <li class="flex justify-end">
           <Button label="Check Out" />

@@ -193,9 +193,7 @@ function getStatusLabel(status) {
       >
         <template #header>
           <div class="flex flex-wrap gap-2 items-center justify-between">
-            <h4 class="m-0">
-              Manage Products
-            </h4>
+            <h4 class="m-0">Manage Products</h4>
             <IconField>
               <InputIcon>
                 <i class="pi pi-search" />
@@ -456,7 +454,11 @@ function getStatusLabel(status) {
     >
       <div class="flex items-center gap-4">
         <i class="pi pi-exclamation-triangle !text-3xl" />
-        <span v-if="product">Are you sure you want to delete <b>{{ product.name }}</b>?</span>
+        <span v-if="product">
+          Are you sure you want to delete
+          <b>{{ product.name }}</b>
+          ?
+        </span>
       </div>
       <template #footer>
         <Button

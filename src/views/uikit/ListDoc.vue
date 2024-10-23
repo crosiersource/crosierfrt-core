@@ -36,9 +36,7 @@ function getSeverity(product) {
 <template>
   <div class="flex flex-col">
     <div class="card">
-      <div class="font-semibold text-xl">
-        DataView
-      </div>
+      <div class="font-semibold text-xl">DataView</div>
       <DataView
         :value="products"
         :layout="layout"
@@ -83,9 +81,9 @@ function getSeverity(product) {
                 <div class="flex flex-col md:flex-row justify-between md:items-center flex-1 gap-6">
                   <div class="flex flex-row md:flex-col justify-between items-start gap-2">
                     <div>
-                      <span class="font-medium text-surface-500 dark:text-surface-400 text-sm">{{
-                        item.category
-                      }}</span>
+                      <span class="font-medium text-surface-500 dark:text-surface-400 text-sm">
+                        {{ item.category }}
+                      </span>
                       <div class="text-lg font-medium mt-2">
                         {{ item.name }}
                       </div>
@@ -158,9 +156,9 @@ function getSeverity(product) {
                 <div class="pt-6">
                   <div class="flex flex-row justify-between items-start gap-2">
                     <div>
-                      <span class="font-medium text-surface-500 dark:text-surface-400 text-sm">{{
-                        item.category
-                      }}</span>
+                      <span class="font-medium text-surface-500 dark:text-surface-400 text-sm">
+                        {{ item.category }}
+                      </span>
                       <div class="text-lg font-medium mt-1">
                         {{ item.name }}
                       </div>
@@ -209,9 +207,7 @@ function getSeverity(product) {
     <div class="flex flex-col lg:flex-row gap-8">
       <div class="lg:w-2/3">
         <div class="card">
-          <div class="font-semibold text-xl mb-4">
-            PickList
-          </div>
+          <div class="font-semibold text-xl mb-4">PickList</div>
           <PickList
             v-model="picklistProducts"
             breakpoint="1400px"
@@ -226,9 +222,7 @@ function getSeverity(product) {
 
       <div class="lg:w-1/3">
         <div class="card">
-          <div class="font-semibold text-xl mb-4">
-            OrderList
-          </div>
+          <div class="font-semibold text-xl mb-4">OrderList</div>
           <OrderList
             v-model="orderlistProducts"
             breakpoint="1400px"

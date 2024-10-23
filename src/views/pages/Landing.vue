@@ -147,9 +147,7 @@ function handleMouseLeave(event) {
           style="top: 27%"
         >
           <div>
-            <h1 class="m-0 -mb-6 text-4xl text-white">
-              LET'S
-            </h1>
+            <h1 class="m-0 -mb-6 text-4xl text-white">LET'S</h1>
             <h1
               class="m-0 text-white"
               style="font-size: 15rem"
@@ -157,9 +155,7 @@ function handleMouseLeave(event) {
               EXPLORE
             </h1>
             <div class="flex -mt-6 justify-end">
-              <h1 class="m-0 text-white text-4xl">
-                TO ULTIMA
-              </h1>
+              <h1 class="m-0 text-white text-4xl">TO ULTIMA</h1>
             </div>
           </div>
         </div>
@@ -284,8 +280,13 @@ function handleMouseLeave(event) {
                   >
                     <i class="pi pi-palette !text-4xl text-white" />
                     <span class="font-semibold text-white">Creative Design</span>
-                    <span class="text-white">Unleash your brand's full potential with our creative design services.</span>
-                    <span class="text-primary-300 font-medium flex items-center">Learn more <i class="pi pi-arrow-right ml-2" /></span>
+                    <span class="text-white">
+                      Unleash your brand's full potential with our creative design services.
+                    </span>
+                    <span class="text-primary-300 font-medium flex items-center">
+                      Learn more
+                      <i class="pi pi-arrow-right ml-2" />
+                    </span>
                   </div>
                 </div>
                 <div class="col-span-6 lg:col-span-4">
@@ -296,9 +297,14 @@ function handleMouseLeave(event) {
                   >
                     <i class="pi pi-mobile !text-4xl text-white" />
                     <span class="font-semibold text-white">Responsive Design</span>
-                    <span class="text-white">Make sure your website looks great and functions seamlessly on any device
-                      with responsive design.</span>
-                    <span class="text-primary-300 font-medium flex items-center">Learn more <i class="pi pi-arrow-right ml-2" /></span>
+                    <span class="text-white">
+                      Make sure your website looks great and functions seamlessly on any device with
+                      responsive design.
+                    </span>
+                    <span class="text-primary-300 font-medium flex items-center">
+                      Learn more
+                      <i class="pi pi-arrow-right ml-2" />
+                    </span>
                   </div>
                 </div>
                 <div class="col-span-6 lg:col-span-4">
@@ -309,9 +315,14 @@ function handleMouseLeave(event) {
                   >
                     <i class="pi pi-sync !text-4xl text-white" />
                     <span class="font-semibold text-white">Cross Browser Support</span>
-                    <span class="text-white">Don't let browser compatibility hold you back. Our cross browser support
-                      ensures your website works perfectly on all browsers.</span>
-                    <span class="text-primary-300 font-medium flex items-center">Learn more <i class="pi pi-arrow-right ml-2" /></span>
+                    <span class="text-white">
+                      Don't let browser compatibility hold you back. Our cross browser support
+                      ensures your website works perfectly on all browsers.
+                    </span>
+                    <span class="text-primary-300 font-medium flex items-center">
+                      Learn more
+                      <i class="pi pi-arrow-right ml-2" />
+                    </span>
                   </div>
                 </div>
                 <div class="col-span-6 lg:col-span-4">
@@ -322,9 +333,14 @@ function handleMouseLeave(event) {
                   >
                     <i class="pi pi-th-large !text-4xl text-white" />
                     <span class="font-semibold text-white">Well Organized</span>
-                    <span class="text-white">Our well-organized approach guarantees a smooth design process from start to
-                      finish.</span>
-                    <span class="text-primary-300 font-medium flex items-center">Learn more <i class="pi pi-arrow-right ml-2" /></span>
+                    <span class="text-white">
+                      Our well-organized approach guarantees a smooth design process from start to
+                      finish.
+                    </span>
+                    <span class="text-primary-300 font-medium flex items-center">
+                      Learn more
+                      <i class="pi pi-arrow-right ml-2" />
+                    </span>
                   </div>
                 </div>
                 <div class="col-span-6 lg:col-span-4">
@@ -335,9 +351,13 @@ function handleMouseLeave(event) {
                   >
                     <i class="pi pi-code !text-4xl text-white" />
                     <span class="font-semibold text-white">Easy to Product</span>
-                    <span class="text-white">We make product creation easy with straightforward and intuitive
-                      processes.</span>
-                    <span class="text-primary-300 font-medium flex items-center">Learn more <i class="pi pi-arrow-right ml-2" /></span>
+                    <span class="text-white">
+                      We make product creation easy with straightforward and intuitive processes.
+                    </span>
+                    <span class="text-primary-300 font-medium flex items-center">
+                      Learn more
+                      <i class="pi pi-arrow-right ml-2" />
+                    </span>
                   </div>
                 </div>
                 <div class="col-span-6 lg:col-span-4">
@@ -348,9 +368,14 @@ function handleMouseLeave(event) {
                   >
                     <i class="pi pi-box !text-4xl" />
                     <span class="font-semibold">Top Notch Quality</span>
-                    <span>Expect top notch quality in all of our work, delivering exceptional results
-                      every time.</span>
-                    <span class="text-primary-300 font-medium flex items-center">Learn more <i class="pi pi-arrow-right ml-2" /></span>
+                    <span>
+                      Expect top notch quality in all of our work, delivering exceptional results
+                      every time.
+                    </span>
+                    <span class="text-primary-300 font-medium flex items-center">
+                      Learn more
+                      <i class="pi pi-arrow-right ml-2" />
+                    </span>
                   </div>
                 </div>
               </div>
@@ -496,9 +521,7 @@ function handleMouseLeave(event) {
                   "
                 >
                   <div class="flex flex-col gap-2">
-                    <h1 class="m-0 text-white font-bold text-2xl">
-                      NEWSLETTER
-                    </h1>
+                    <h1 class="m-0 text-white font-bold text-2xl">NEWSLETTER</h1>
                     <p class="m-0 text-white">
                       Sign up for our newsletter and stay up-to-date on the latest features and
                       updates for our platform.
@@ -533,7 +556,8 @@ function handleMouseLeave(event) {
                         <a href="#"><i class="pi pi-linkedin text-white !text-2xl" /></a>
                       </div>
                       <p class="m-0 text-base lg:text-sm">
-                        (415) 931-1624 794 Mcallister <br>
+                        (415) 931-1624 794 Mcallister
+                        <br>
                         St San Francisco, 94102
                       </p>
                       <span class="text-base lg:text-sm">©Copyright 202X</span>
@@ -544,10 +568,18 @@ function handleMouseLeave(event) {
                       <h1 class="m-0 font-medium text-sm text-surface-500 dark:text-surface-300">
                         ABOUT US
                       </h1>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Our Values</span></a>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Our Team</span></a>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Our History</span></a>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Career & Join Us</span></a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Our Values</span>
+                      </a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Our Team</span>
+                      </a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Our History</span>
+                      </a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Career & Join Us</span>
+                      </a>
                     </div>
                   </div>
                   <div class="col-span-12 lg:col-span-3">
@@ -555,10 +587,18 @@ function handleMouseLeave(event) {
                       <h1 class="m-0 font-medium text-sm text-surface-500 dark:text-surface-300">
                         SITE MAP
                       </h1>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Dashboard</span></a>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">CRUD</span></a>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Invoice</span></a>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Help </span></a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Dashboard</span>
+                      </a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">CRUD</span>
+                      </a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Invoice</span>
+                      </a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Help</span>
+                      </a>
                     </div>
                   </div>
                   <div class="col-span-12 lg:col-span-3">
@@ -566,9 +606,15 @@ function handleMouseLeave(event) {
                       <h1 class="m-0 font-medium text-sm text-surface-500 dark:text-surface-300">
                         CALENDAR
                       </h1>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Widgets</span></a>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Documentation</span></a>
-                      <a href="#"><span class="text-base lg:text-sm block text-white">Buy Now</span></a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Widgets</span>
+                      </a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Documentation</span>
+                      </a>
+                      <a href="#">
+                        <span class="text-base lg:text-sm block text-white">Buy Now</span>
+                      </a>
                     </div>
                   </div>
                 </div>

@@ -58,9 +58,7 @@ function navigateToDashboard() {
             alt=""
           >
         </div>
-        <div class="text-muted-color pb-12">
-          Requested resource is not available.
-        </div>
+        <div class="text-muted-color pb-12">Requested resource is not available.</div>
         <Button
           label="GO BACK TO DASHBOARD"
           text

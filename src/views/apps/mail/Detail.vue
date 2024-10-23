@@ -88,16 +88,18 @@ function goBack() {
           class="border-2 border-surface-200 dark:border-surface-700"
         />
         <div class="flex flex-col mx-4">
-          <span class="block text-surface-900 dark:text-surface-0 font-bold text-lg">{{
-            mail?.from
-          }}</span>
-          <span class="block text-surface-900 dark:text-surface-0 font-semibold">To: {{ mail?.email || mail?.to }}</span>
+          <span class="block text-surface-900 dark:text-surface-0 font-bold text-lg">
+            {{ mail?.from }}
+          </span>
+          <span class="block text-surface-900 dark:text-surface-0 font-semibold">
+            To: {{ mail?.email || mail?.to }}
+          </span>
         </div>
       </div>
       <div class="flex items-center justify-end gap-x-4 px-6 md:px-0">
-        <span
-          class="text-surface-900 dark:text-surface-0 font-semibold whitespace-nowrap mr-auto"
-        >{{ mail?.date }}</span>
+        <span class="text-surface-900 dark:text-surface-0 font-semibold whitespace-nowrap mr-auto">
+          {{ mail?.date }}
+        </span>
         <Button
           type="button"
           icon="pi pi-reply"

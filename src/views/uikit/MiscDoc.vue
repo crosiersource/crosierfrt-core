@@ -30,9 +30,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      ProgressBar
-    </div>
+    <div class="font-semibold text-xl mb-4">ProgressBar</div>
     <div class="flex flex-col md:flex-row gap-4">
       <div class="md:w-1/2">
         <ProgressBar :value="value" />
@@ -49,9 +47,7 @@ onBeforeUnmount(() => {
   <div class="flex flex-col md:flex-row gap-8">
     <div class="md:w-1/2">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Badge
-        </div>
+        <div class="font-semibold text-xl mb-4">Badge</div>
         <div class="flex gap-2">
           <Badge :value="2" />
           <Badge
@@ -72,9 +68,7 @@ onBeforeUnmount(() => {
           />
         </div>
 
-        <div class="font-semibold my-4">
-          Overlay
-        </div>
+        <div class="font-semibold my-4">Overlay</div>
         <div class="flex gap-6">
           <OverlayBadge value="2">
             <i
@@ -99,9 +93,7 @@ onBeforeUnmount(() => {
           </OverlayBadge>
         </div>
 
-        <div class="font-semibold my-4">
-          Button
-        </div>
+        <div class="font-semibold my-4">Button</div>
         <div class="flex gap-2">
           <Button
             label="Emails"
@@ -117,9 +109,7 @@ onBeforeUnmount(() => {
           />
         </div>
 
-        <div class="font-semibold my-4">
-          Sizes
-        </div>
+        <div class="font-semibold my-4">Sizes</div>
         <div class="flex items-start gap-2">
           <Badge :value="2" />
           <Badge
@@ -136,12 +126,8 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Avatar
-        </div>
-        <div class="font-semibold mb-4">
-          Group
-        </div>
+        <div class="font-semibold text-xl mb-4">Avatar</div>
+        <div class="font-semibold mb-4">Group</div>
         <AvatarGroup>
           <Avatar
             image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
@@ -175,9 +161,7 @@ onBeforeUnmount(() => {
           />
         </AvatarGroup>
 
-        <div class="font-semibold my-4">
-          Label - Circle
-        </div>
+        <div class="font-semibold my-4">Label - Circle</div>
         <Avatar
           label="P"
           class="mr-2"
@@ -198,9 +182,7 @@ onBeforeUnmount(() => {
           shape="circle"
         />
 
-        <div class="font-semibold my-4">
-          Icon - Badge
-        </div>
+        <div class="font-semibold my-4">Icon - Badge</div>
         <OverlayBadge
           value="4"
           severity="danger"
@@ -214,9 +196,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          ScrollTop
-        </div>
+        <div class="font-semibold text-xl mb-4">ScrollTop</div>
         <ScrollPanel :style="{ width: '250px', height: '200px' }">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -243,12 +223,8 @@ onBeforeUnmount(() => {
     </div>
     <div class="md:w-1/2">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Tag
-        </div>
-        <div class="font-semibold mb-4">
-          Default
-        </div>
+        <div class="font-semibold text-xl mb-4">Tag</div>
+        <div class="font-semibold mb-4">Default</div>
         <div class="flex gap-2">
           <Tag value="Primary" />
           <Tag
@@ -269,9 +245,7 @@ onBeforeUnmount(() => {
           />
         </div>
 
-        <div class="font-semibold my-4">
-          Pills
-        </div>
+        <div class="font-semibold my-4">Pills</div>
         <div class="flex gap-2">
           <Tag
             value="Primary"
@@ -299,9 +273,7 @@ onBeforeUnmount(() => {
           />
         </div>
 
-        <div class="font-semibold my-4">
-          Icons
-        </div>
+        <div class="font-semibold my-4">Icons</div>
         <div class="flex gap-2">
           <Tag
             icon="pi pi-user"
@@ -331,12 +303,8 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Chip
-        </div>
-        <div class="font-semibold mb-4">
-          Basic
-        </div>
+        <div class="font-semibold text-xl mb-4">Chip</div>
+        <div class="font-semibold mb-4">Basic</div>
         <div class="flex items-center flex-col sm:flex-row gap-2">
           <Chip label="Action" />
           <Chip label="Comedy" />
@@ -347,9 +315,7 @@ onBeforeUnmount(() => {
           />
         </div>
 
-        <div class="font-semibold my-4">
-          Icon
-        </div>
+        <div class="font-semibold my-4">Icon</div>
         <div class="flex items-center flex-col sm:flex-row gap-2">
           <Chip
             label="Apple"
@@ -370,9 +336,7 @@ onBeforeUnmount(() => {
           />
         </div>
 
-        <div class="font-semibold my-4">
-          Image
-        </div>
+        <div class="font-semibold my-4">Image</div>
         <div class="flex items-center flex-col sm:flex-row gap-2">
           <Chip
             label="Amy Elsner"
@@ -391,9 +355,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Skeleton
-        </div>
+        <div class="font-semibold text-xl mb-4">Skeleton</div>
         <div class="rounded-border border border-surface p-6">
           <div class="flex mb-4">
             <Skeleton

@@ -65,9 +65,7 @@ function getSeverity(status) {
 
 <template>
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      Carousel
-    </div>
+    <div class="font-semibold text-xl mb-4">Carousel</div>
     <Carousel
       :value="products"
       :num-visible="3"
@@ -98,9 +96,7 @@ function getSeverity(status) {
             {{ slotProps.data.name }}
           </div>
           <div class="flex justify-between items-center">
-            <div class="mt-0 font-semibold text-xl">
-              ${{ slotProps.data.price }}
-            </div>
+            <div class="mt-0 font-semibold text-xl">${{ slotProps.data.price }}</div>
             <span>
               <Button
                 icon="pi pi-heart"
@@ -119,9 +115,7 @@ function getSeverity(status) {
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      Image
-    </div>
+    <div class="font-semibold text-xl mb-4">Image</div>
     <Image
       src="https://primefaces.org/cdn/primevue/images/galleria/galleria10.jpg"
       alt="Image"
@@ -130,9 +124,7 @@ function getSeverity(status) {
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      Galleria
-    </div>
+    <div class="font-semibold text-xl mb-4">Galleria</div>
     <Galleria
       :value="images"
       :responsive-options="galleriaResponsiveOptions"

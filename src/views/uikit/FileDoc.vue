@@ -18,9 +18,7 @@ function onUpload() {
   <div class="grid grid-cols-12 gap-8">
     <div class="col-span-full lg:col-span-6">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Advanced
-        </div>
+        <div class="font-semibold text-xl mb-4">Advanced</div>
         <FileUpload
           name="demo[]"
           :multiple="true"
@@ -33,9 +31,7 @@ function onUpload() {
     </div>
     <div class="col-span-full lg:col-span-6">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Basic
-        </div>
+        <div class="font-semibold text-xl mb-4">Basic</div>
         <div class="card flex flex-col gap-6 items-center justify-center">
           <Toast />
           <FileUpload

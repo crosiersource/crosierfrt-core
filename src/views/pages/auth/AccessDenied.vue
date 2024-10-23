@@ -46,7 +46,9 @@ function navigateToDashboard() {
         class="text-center z-40 rounded-lg border border-surface bg-white p-4 shadow-md flex flex-col"
       >
         <div class="rounded-md mx-auto border border-surface bg-orange-500 -mt-12 px-4 py-1">
-          <span class="m-0 text-3xl font-semibold text-surface-0 dark:text-surface-900">ACCESS DENIED</span>
+          <span class="m-0 text-3xl font-semibold text-surface-0 dark:text-surface-900">
+            ACCESS DENIED
+          </span>
         </div>
         <div class="bg-surface-200 dark:bg-surface-600 p-4 mb-8 shadow rounded-md mt-4 px-12">
           <img
@@ -54,9 +56,7 @@ function navigateToDashboard() {
             alt=""
           >
         </div>
-        <div class="text-muted-color pb-12">
-          Requested resource is not available.
-        </div>
+        <div class="text-muted-color pb-12">Requested resource is not available.</div>
         <Button
           type="button"
           label="GO BACK TO DASHBOARD"

@@ -15,9 +15,7 @@ const dropdownItem = ref(null);
     <div class="flex flex-col md:flex-row gap-8">
       <div class="md:w-1/2">
         <div class="card flex flex-col gap-4">
-          <div class="font-semibold text-xl">
-            Vertical
-          </div>
+          <div class="font-semibold text-xl">Vertical</div>
           <div class="flex flex-col gap-2">
             <label for="name1">Name</label>
             <InputText
@@ -42,9 +40,7 @@ const dropdownItem = ref(null);
         </div>
 
         <div class="card flex flex-col gap-4">
-          <div class="font-semibold text-xl">
-            Vertical Grid
-          </div>
+          <div class="font-semibold text-xl">Vertical Grid</div>
           <div class="flex flex-wrap gap-4">
             <div class="flex flex-col grow basis-0 gap-2">
               <label for="name2">Name</label>
@@ -65,14 +61,14 @@ const dropdownItem = ref(null);
       </div>
       <div class="md:w-1/2">
         <div class="card flex flex-col gap-4">
-          <div class="font-semibold text-xl">
-            Horizontal
-          </div>
+          <div class="font-semibold text-xl">Horizontal</div>
           <div class="grid grid-cols-12 gap-2">
             <label
               for="name3"
               class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
-            >Name</label>
+            >
+              Name
+            </label>
             <div class="col-span-12 md:col-span-10">
               <InputText
                 id="name3"
@@ -84,7 +80,9 @@ const dropdownItem = ref(null);
             <label
               for="email3"
               class="flex items-center col-span-12 mb-2 md:col-span-2 md:mb-0"
-            >Email</label>
+            >
+              Email
+            </label>
             <div class="col-span-12 md:col-span-10">
               <InputText
                 id="email3"
@@ -95,9 +93,7 @@ const dropdownItem = ref(null);
         </div>
 
         <div class="card flex flex-col gap-4">
-          <div class="font-semibold text-xl">
-            Inline
-          </div>
+          <div class="font-semibold text-xl">Inline</div>
           <div class="flex flex-wrap items-start gap-4">
             <div>
               <label
@@ -128,9 +124,7 @@ const dropdownItem = ref(null);
           </div>
         </div>
         <div class="card flex flex-col gap-4">
-          <div class="font-semibold text-xl">
-            Help Text
-          </div>
+          <div class="font-semibold text-xl">Help Text</div>
           <div class="flex flex-wrap gap-2">
             <label for="username">Username</label>
             <InputText
@@ -145,9 +139,7 @@ const dropdownItem = ref(null);
 
     <div class="flex mt-8">
       <div class="card flex flex-col gap-4 w-full">
-        <div class="font-semibold text-xl">
-          Advanced
-        </div>
+        <div class="font-semibold text-xl">Advanced</div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex flex-wrap gap-2 w-full">
             <label for="firstname2">Firstname</label>

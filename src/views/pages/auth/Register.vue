@@ -23,10 +23,10 @@ const backgroundStyle = ref({
             <i class="pi pi-users text-primary !text-4xl" />
           </div>
           <div class="mt-6">
-            <h1 class="m-0 text-primary font-semibold text-4xl">
-              Join us!
-            </h1>
-            <span class="block text-surface-700 dark:text-surface-100 mt-2">Please fill the fields to sign-up Ultima network</span>
+            <h1 class="m-0 text-primary font-semibold text-4xl">Join us!</h1>
+            <span class="block text-surface-700 dark:text-surface-100 mt-2">
+              Please fill the fields to sign-up Ultima network
+            </span>
           </div>
         </div>
         <div class="flex flex-col gap-4 mt-12">

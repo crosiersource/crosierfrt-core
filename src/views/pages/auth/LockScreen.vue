@@ -21,7 +21,9 @@ const backgroundStyle = ref({
           </div>
           <div class="mt-6">
             <span class="m-0 text-primary font-semibold text-4xl">Lock Screen</span>
-            <span class="block text-surface-700 dark:text-surface-100 mt-2">Enter your password</span>
+            <span class="block text-surface-700 dark:text-surface-100 mt-2">
+              Enter your password
+            </span>
           </div>
         </div>
         <div class="flex flex-col gap-4 mt-12">

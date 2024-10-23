@@ -33,9 +33,7 @@ function focus(event) {
             <i class="pi pi-check-circle text-primary !text-4xl" />
           </div>
           <div class="mt-6">
-            <h1 class="m-0 text-primary font-semibold text-4xl">
-              Authentication?
-            </h1>
+            <h1 class="m-0 text-primary font-semibold text-4xl">Authentication?</h1>
             <span class="block text-surface-700 dark:text-surface-100 mt-2">Verify your code</span>
           </div>
         </div>

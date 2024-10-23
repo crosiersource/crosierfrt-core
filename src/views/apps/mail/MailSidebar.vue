@@ -46,12 +46,16 @@ function navigate(item) {
           <span
             class="text-surface-900 dark:text-surface-0 font-medium hidden md:inline"
             :class="{ 'text-primary-50': router.currentRoute.value.path === item.routerLink }"
-          >{{ item.label }}</span>
+          >
+            {{ item.label }}
+          </span>
           <span
             v-if="item.badge"
             class="ml-auto text-sm font-semibold bg-primary-50 text-primary-900 px-2 py-1 hidden md:inline text-center"
             style="border-radius: 2rem; width: 23px; height: 23px"
-          >{{ item.badge }}</span>
+          >
+            {{ item.badge }}
+          </span>
         </li>
       </ul>
     </div>

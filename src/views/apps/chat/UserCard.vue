@@ -36,16 +36,18 @@ const lastmessage = computed(() => {
         />
       </div>
       <div class="flex-col hidden md:flex">
-        <span class="text-surface-900 dark:text-surface-0 font-semibold block">{{
-          user.name
-        }}</span>
+        <span class="text-surface-900 dark:text-surface-0 font-semibold block">
+          {{ user.name }}
+        </span>
         <span
           class="block text-surface-600 dark:text-surface-200 text-ellipsis overflow-hidden whitespace-nowrap w-40 text-sm"
-        >{{ lastmessage }}</span>
+        >
+          {{ lastmessage }}
+        </span>
       </div>
     </div>
-    <span class="text-surface-700 dark:text-surface-100 font-semibold ml-auto hidden md:inline">{{
-      user.lastSeen
-    }}</span>
+    <span class="text-surface-700 dark:text-surface-100 font-semibold ml-auto hidden md:inline">
+      {{ user.lastSeen }}
+    </span>
   </div>
 </template>

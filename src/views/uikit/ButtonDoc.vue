@@ -31,9 +31,7 @@ function load(index) {
   <div class="flex flex-col md:flex-row gap-8">
     <div class="md:w-1/2">
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Default
-        </div>
+        <div class="font-semibold text-xl">Default</div>
         <div class="flex flex-wrap gap-2">
           <Button label="Submit" />
           <Button
@@ -47,9 +45,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Severities
-        </div>
+        <div class="font-semibold text-xl">Severities</div>
         <div class="flex flex-wrap gap-2">
           <Button label="Primary" />
           <Button
@@ -83,9 +79,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Text
-        </div>
+        <div class="font-semibold text-xl">Text</div>
         <div class="flex flex-wrap gap-2">
           <Button
             label="Primary"
@@ -129,9 +123,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Outlined
-        </div>
+        <div class="font-semibold text-xl">Outlined</div>
         <div class="flex flex-wrap gap-2">
           <Button
             label="Primary"
@@ -175,9 +167,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Group
-        </div>
+        <div class="font-semibold text-xl">Group</div>
         <div class="flex flex-wrap gap-2">
           <ButtonGroup>
             <Button
@@ -196,9 +186,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          SplitButton
-        </div>
+        <div class="font-semibold text-xl">SplitButton</div>
         <div class="flex flex-wrap gap-2">
           <SplitButton
             label="Save"
@@ -242,9 +230,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Templating
-        </div>
+        <div class="font-semibold text-xl">Templating</div>
         <div class="flex flex-wrap gap-2">
           <Button type="button">
             <img
@@ -270,9 +256,7 @@ function load(index) {
     </div>
     <div class="md:w-1/2">
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Icons
-        </div>
+        <div class="font-semibold text-xl">Icons</div>
         <div class="flex flex-wrap gap-2">
           <Button
             icon="pi pi-star-fill"
@@ -292,9 +276,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Raised
-        </div>
+        <div class="font-semibold text-xl">Raised</div>
         <div class="flex flex-wrap gap-2">
           <Button
             label="Primary"
@@ -338,9 +320,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Rounded
-        </div>
+        <div class="font-semibold text-xl">Rounded</div>
         <div class="flex flex-wrap gap-2">
           <Button
             label="Primary"
@@ -384,9 +364,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Rounded Icons
-        </div>
+        <div class="font-semibold text-xl">Rounded Icons</div>
         <div class="flex flex-wrap gap-2">
           <Button
             icon="pi pi-check"
@@ -425,9 +403,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Rounded Text
-        </div>
+        <div class="font-semibold text-xl">Rounded Text</div>
         <div class="flex flex-wrap gap-2">
           <Button
             icon="pi pi-check"
@@ -480,9 +456,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Rounded Outlined
-        </div>
+        <div class="font-semibold text-xl">Rounded Outlined</div>
         <div class="flex flex-wrap gap-2">
           <Button
             icon="pi pi-check"
@@ -528,9 +502,7 @@ function load(index) {
         </div>
       </div>
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Loading
-        </div>
+        <div class="font-semibold text-xl">Loading</div>
         <div class="flex flex-wrap gap-2">
           <Button
             type="button"

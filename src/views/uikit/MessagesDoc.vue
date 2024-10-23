@@ -33,9 +33,7 @@ function showError() {
   <div class="flex flex-col md:flex-row gap-8">
     <div class="md:w-1/2">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Toast
-        </div>
+        <div class="font-semibold text-xl mb-4">Toast</div>
         <div class="flex flex-wrap gap-2">
           <Button
             label="Success"
@@ -59,9 +57,7 @@ function showError() {
           />
         </div>
 
-        <div class="font-semibold text-xl mt-4 mb-4">
-          Inline
-        </div>
+        <div class="font-semibold text-xl mt-4 mb-4">Inline</div>
         <div class="flex flex-wrap mb-4 gap-2">
           <InputText
             v-model="username"
@@ -69,9 +65,7 @@ function showError() {
             aria-label="username"
             invalid
           />
-          <Message severity="error">
-            Username is required
-          </Message>
+          <Message severity="error">Username is required</Message>
         </div>
         <div class="flex flex-wrap gap-2">
           <InputText
@@ -89,28 +83,14 @@ function showError() {
     </div>
     <div class="md:w-1/2">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Message
-        </div>
+        <div class="font-semibold text-xl mb-4">Message</div>
         <div class="flex flex-col gap-4 mb-4">
-          <Message severity="success">
-            Success Message
-          </Message>
-          <Message severity="info">
-            Info Message
-          </Message>
-          <Message severity="warn">
-            Warn Message
-          </Message>
-          <Message severity="error">
-            Error Message
-          </Message>
-          <Message severity="secondary">
-            Secondary Message
-          </Message>
-          <Message severity="contrast">
-            Contrast Message
-          </Message>
+          <Message severity="success">Success Message</Message>
+          <Message severity="info">Info Message</Message>
+          <Message severity="warn">Warn Message</Message>
+          <Message severity="error">Error Message</Message>
+          <Message severity="secondary">Secondary Message</Message>
+          <Message severity="contrast">Contrast Message</Message>
         </div>
 
         <TransitionGroup

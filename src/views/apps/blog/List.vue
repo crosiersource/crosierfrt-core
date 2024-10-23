@@ -179,9 +179,7 @@ function onSortChange(event) {
       <div class="grid grid-cols-12 gap-4 nogutter">
         <div class="col-span-12 lg:col-span-4 p-6">
           <div class="border-t-4 border-blue-600" />
-          <div class="text-blue-600 font-medium my-2">
-            Animals
-          </div>
+          <div class="text-blue-600 font-medium my-2">Animals</div>
           <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">
             Why Earth&lsquo;s most beloved creatures are headed toward extinction
           </div>
@@ -207,9 +205,7 @@ function onSortChange(event) {
         </div>
         <div class="col-span-12 lg:col-span-4 p-6">
           <div class="border-t-4 border-pink-600" />
-          <div class="text-pink-600 font-medium my-2">
-            Oxygen
-          </div>
+          <div class="text-pink-600 font-medium my-2">Oxygen</div>
           <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">
             Only one-third of tropical rainforests remain intact, study says
           </div>
@@ -235,9 +231,7 @@ function onSortChange(event) {
         </div>
         <div class="col-span-12 lg:col-span-4 p-6">
           <div class="border-t-4 border-orange-600" />
-          <div class="text-orange-600 font-medium my-2">
-            Nature
-          </div>
+          <div class="text-orange-600 font-medium my-2">Nature</div>
           <div class="text-surface-900 dark:text-surface-0 font-medium text-xl leading-normal mb-6">
             Does planting a tree really offset your carbon footprint?
           </div>

@@ -77,22 +77,33 @@ function toggleMenu(event, i, task) {
           class="font-medium whitespace-nowrap text-ellipsis overflow-hidden ml-2"
           :class="{ 'line-through': task.completed }"
           style="max-width: 500px"
-        >{{ task.name }}</label>
+        >
+          {{ task.name }}
+        </label>
       </div>
       <div class="flex flex-1 gap-4 flex-col sm:flex-row sm:justify-between">
         <div class="flex items-center">
           <span
             v-if="task.comments"
             class="flex items-center font-semibold mr-4"
-          ><i class="pi pi-comment mr-2" />{{ task.comments }}</span>
+          >
+            <i class="pi pi-comment mr-2" />
+            {{ task.comments }}
+          </span>
           <span
             v-if="task.attachments"
             class="flex items-center font-semibold mr-4"
-          ><i class="pi pi-paperclip mr-2" />{{ task.attachments }}</span>
+          >
+            <i class="pi pi-paperclip mr-2" />
+            {{ task.attachments }}
+          </span>
           <span
             v-if="task.startDate"
             class="flex items-center font-semibold whitespace-nowrap"
-          ><i class="pi pi-clock mr-2" />{{ parseDate(task.startDate) }}</span>
+          >
+            <i class="pi pi-clock mr-2" />
+            {{ parseDate(task.startDate) }}
+          </span>
         </div>
         <div class="flex items-center sm:justify-end">
           <div class="mr-4">

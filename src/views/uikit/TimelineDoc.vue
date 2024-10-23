@@ -36,9 +36,7 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
   <div class="grid grid-cols-12 gap-8">
     <div class="col-span-6">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Left Align
-        </div>
+        <div class="font-semibold text-xl mb-4">Left Align</div>
         <Timeline :value="events">
           <template #content="slotProps">
             {{ slotProps.item.status }}
@@ -48,9 +46,7 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
     </div>
     <div class="col-span-6">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Right Align
-        </div>
+        <div class="font-semibold text-xl mb-4">Right Align</div>
         <Timeline
           :value="events"
           align="right"
@@ -63,9 +59,7 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
     </div>
     <div class="col-span-6">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Alternate Align
-        </div>
+        <div class="font-semibold text-xl mb-4">Alternate Align</div>
         <Timeline
           :value="events"
           align="alternate"
@@ -78,9 +72,7 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
     </div>
     <div class="col-span-6">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Opposite Content
-        </div>
+        <div class="font-semibold text-xl mb-4">Opposite Content</div>
         <Timeline :value="events">
           <template #opposite="slotProps">
             <small class="text-muted-color">{{ slotProps.item.date }}</small>
@@ -93,9 +85,7 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
     </div>
     <div class="col-span-full">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Templating
-        </div>
+        <div class="font-semibold text-xl mb-4">Templating</div>
         <Timeline
           :value="events"
           align="alternate"
@@ -143,12 +133,8 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
     </div>
     <div class="col-span-full">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Horizontal
-        </div>
-        <div class="font-semibold mb-2">
-          Top Align
-        </div>
+        <div class="font-semibold text-xl mb-4">Horizontal</div>
+        <div class="font-semibold mb-2">Top Align</div>
         <Timeline
           :value="horizontalEvents"
           layout="horizontal"
@@ -159,9 +145,7 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
           </template>
         </Timeline>
 
-        <div class="font-semibold mt-4 mb-2">
-          Bottom Align
-        </div>
+        <div class="font-semibold mt-4 mb-2">Bottom Align</div>
         <Timeline
           :value="horizontalEvents"
           layout="horizontal"
@@ -172,17 +156,13 @@ const horizontalEvents = ref(['2020', '2021', '2022', '2023']);
           </template>
         </Timeline>
 
-        <div class="font-semibold mt-4 mb-2">
-          Alternate Align
-        </div>
+        <div class="font-semibold mt-4 mb-2">Alternate Align</div>
         <Timeline
           :value="horizontalEvents"
           layout="horizontal"
           align="alternate"
         >
-          <template #opposite>
-&nbsp;
-          </template>
+          <template #opposite>&nbsp;</template>
           <template #content="slotProps">
             {{ slotProps.item }}
           </template>

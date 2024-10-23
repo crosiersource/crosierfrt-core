@@ -20,7 +20,9 @@ function onRemoveFile(removeFile) {
 
 <template>
   <div class="card">
-    <span class="block text-surface-900 dark:text-surface-0 font-bold text-xl mb-6">Create a new post</span>
+    <span class="block text-surface-900 dark:text-surface-0 font-bold text-xl mb-6">
+      Create a new post
+    </span>
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-12 lg:col-span-8">
         <FileUpload
@@ -83,7 +85,9 @@ function onRemoveFile(removeFile) {
                 @click="onChooseUploadFiles"
               >
                 <i class="pi pi-fw pi-file text-4xl text-primary" />
-                <span class="block font-semibold text-surface-900 dark:text-surface-0 text-lg mt-4">Drop or select a cover image</span>
+                <span class="block font-semibold text-surface-900 dark:text-surface-0 text-lg mt-4">
+                  Drop or select a cover image
+                </span>
               </div>
             </div>
           </template>
@@ -110,7 +114,9 @@ function onRemoveFile(removeFile) {
         <div class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
             class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >Publish</span>
+          >
+            Publish
+          </span>
           <div class="p-4">
             <div class="bg-surface-100 dark:bg-surface-700 p-4 flex items-center rounded">
               <span class="text-surface-900 dark:text-surface-0 font-semibold mr-4">Status:</span>
@@ -126,7 +132,9 @@ function onRemoveFile(removeFile) {
           </div>
           <div class="p-4">
             <div class="bg-surface-100 dark:bg-surface-700 p-4 flex items-center rounded">
-              <span class="text-surface-900 dark:text-surface-0 font-semibold mr-4">Visibility:</span>
+              <span class="text-surface-900 dark:text-surface-0 font-semibold mr-4">
+                Visibility:
+              </span>
               <span class="font-medium">Private</span>
               <Button
                 type="button"
@@ -141,7 +149,9 @@ function onRemoveFile(removeFile) {
         <div class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
             class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >Tags</span>
+          >
+            Tags
+          </span>
           <div class="p-4 flex gap-2">
             <Chip
               v-for="(tag, i) in tags"
@@ -153,7 +163,9 @@ function onRemoveFile(removeFile) {
         <Fluid class="border border-surface-200 dark:border-surface-700 rounded mb-6">
           <span
             class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >Meta</span>
+          >
+            Meta
+          </span>
           <div class="p-4">
             <div class="mb-6">
               <InputText

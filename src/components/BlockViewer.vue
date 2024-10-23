@@ -55,7 +55,9 @@ async function copyCode(event) {
           tabindex="0"
           :class="{ 'block-action-active': blockView === BlockView.PREVIEW }"
           @click="activateView($event, BlockView.PREVIEW)"
-        ><span>Preview</span></a>
+        >
+          <span>Preview</span>
+        </a>
         <a
           :tabindex="'0'"
           :class="{ 'block-action-active': blockView === BlockView.CODE }"
@@ -68,7 +70,9 @@ async function copyCode(event) {
           :tabindex="0"
           class="block-action-copy"
           @click="copyCode($event)"
-        ><i class="pi pi-copy" /></a>
+        >
+          <i class="pi pi-copy" />
+        </a>
       </div>
     </div>
     <div class="block-content">

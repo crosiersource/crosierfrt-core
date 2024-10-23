@@ -15,9 +15,7 @@ onMounted(() => {
 
 <template>
   <div class="card">
-    <div class="font-semibold text-xl">
-      Tree
-    </div>
+    <div class="font-semibold text-xl">Tree</div>
     <Tree
       v-model:selection-keys="selectedTreeValue"
       :value="treeValue"
@@ -26,9 +24,7 @@ onMounted(() => {
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      TreeTable
-    </div>
+    <div class="font-semibold text-xl mb-4">TreeTable</div>
     <TreeTable
       v-model:selection-keys="selectedTreeTableValue"
       :value="treeTableValue"

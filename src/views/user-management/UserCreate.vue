@@ -18,12 +18,12 @@ const selectedCountry = ref(null);
 
 <template>
   <div class="card">
-    <span class="text-surface-900 dark:text-surface-0 text-xl font-bold mb-6 block">Create User</span>
+    <span class="text-surface-900 dark:text-surface-0 text-xl font-bold mb-6 block">
+      Create User
+    </span>
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-12 lg:col-span-2">
-        <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-4">
-          Profile
-        </div>
+        <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-4">Profile</div>
         <p class="m-0 p-0 text-surface-600 dark:text-surface-200 leading-normal mr-4">
           Odio euismod lacinia at quis risus sed vulputate odio.
         </p>
@@ -64,7 +64,7 @@ const selectedCountry = ref(null);
             <label
               for="bio"
               class="font-medium text-surface-900 dark:text-surface-0"
-            > Bio </label>
+            >Bio</label>
             <Textarea
               id="bio"
               type="text"
@@ -132,9 +132,7 @@ const selectedCountry = ref(null);
             <label
               for="city"
               class="font-medium text-surface-900 dark:text-surface-0"
-            >
-              City
-            </label>
+            >City</label>
             <InputText
               id="city"
               type="text"
@@ -162,7 +160,7 @@ const selectedCountry = ref(null);
               Website
             </label>
             <InputGroup>
-              <InputGroupAddon> www </InputGroupAddon>
+              <InputGroupAddon>www</InputGroupAddon>
               <InputText
                 id="website"
                 type="text"

@@ -24,9 +24,7 @@ const content = ref([
     style="column-gap: 2rem; row-gap: 2rem"
   >
     <div class="col-span-12">
-      <p class="text-surface-900 dark:text-surface-0 font-bold">
-        Contact Us
-      </p>
+      <p class="text-surface-900 dark:text-surface-0 font-bold">Contact Us</p>
     </div>
     <div
       class="col-span-12 mt-4 h-80 border border-surface-200 dark:border-surface-700 p-0 w-full bg-cover rounded"
@@ -48,18 +46,16 @@ const content = ref([
             class="pi pi-fw text-2xl text-primary"
             :class="item.icon"
           />
-          <span class="text-surface-900 dark:text-surface-0 font-bold mt-6 mb-1">{{
-            item.title
-          }}</span>
+          <span class="text-surface-900 dark:text-surface-0 font-bold mt-6 mb-1">
+            {{ item.title }}
+          </span>
           <span class="text-surface-500 dark:text-surface-300">{{ item.info }}</span>
         </div>
       </div>
     </div>
 
     <div class="col-span-12 mt-8">
-      <p class="text-surface-900 dark:text-surface-0 font-bold">
-        Send Us Email
-      </p>
+      <p class="text-surface-900 dark:text-surface-0 font-bold">Send Us Email</p>
       <div
         class="grid gap-4 flex-col md:flex-row grid-nogutter mt-12"
         :style="{ rowGap: '2rem', columnGap: '2rem' }"
@@ -68,7 +64,7 @@ const content = ref([
           <label
             for="name"
             class="block text-indigo-300 font-bold"
-          > Name </label>
+          >Name</label>
           <IconField
             class="mt-2"
             :style="{ height: '3.5rem' }"
@@ -92,7 +88,7 @@ const content = ref([
           <label
             for="email"
             class="block text-indigo-300 font-bold"
-          > Email Address </label>
+          >Email Address</label>
           <IconField
             class="mt-2"
             :style="{ height: '3.5rem' }"
@@ -115,7 +111,7 @@ const content = ref([
           <label
             for="message"
             class="block text-indigo-300 font-bold"
-          > Message </label>
+          >Message</label>
           <Textarea
             id="message"
             v-model="message"

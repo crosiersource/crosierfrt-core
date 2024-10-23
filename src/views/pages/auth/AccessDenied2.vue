@@ -24,7 +24,9 @@ function navigateToDashboard() {
       </div>
       <div class="flex flex-col gap-2 items-center">
         <span class="text-4xl m-0 text-orange-600 font-semibold">ACCESS DENIED!</span>
-        <span class="text-surface-700 dark:text-surface-100">Requested resource is not available.</span>
+        <span class="text-surface-700 dark:text-surface-100">
+          Requested resource is not available.
+        </span>
       </div>
       <div class="flex justify-center mt-12">
         <Button

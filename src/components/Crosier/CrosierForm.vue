@@ -1,7 +1,8 @@
 <template>
   <VCard flat>
     <VCardTitle class="d-flex align-center pe-2">
-      <VIcon :icon="icon" /> &nbsp; {{ titulo }}
+      <VIcon :icon="icon" />
+      &nbsp; {{ titulo }}
       <VSpacer />
 
       <VBtn

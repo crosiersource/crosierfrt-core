@@ -1119,10 +1119,12 @@ function refreshChart() {
             <span class="font-medium mb-1">$30.247</span>
             <span class="text-muted-color">Cloud Infrastructure</span>
           </div>
-          <span><a
-            href="#"
-            class="text-muted-color"
-          ><i class="pi pi-chevron-right" /></a></span>
+          <span>
+            <a
+              href="#"
+              class="text-muted-color"
+            ><i class="pi pi-chevron-right" /></a>
+          </span>
         </div>
         <div class="flex justify-between items-center my-2 p-2 border-b border-surface">
           <div class="flex flex-col">
@@ -1130,10 +1132,12 @@ function refreshChart() {
             <span class="font-medium mb-1">$29.550</span>
             <span class="text-muted-color">General Goods</span>
           </div>
-          <span><a
-            href="#"
-            class="text-muted-color"
-          ><i class="pi pi-chevron-right" /></a></span>
+          <span>
+            <a
+              href="#"
+              class="text-muted-color"
+            ><i class="pi pi-chevron-right" /></a>
+          </span>
         </div>
         <div class="flex justify-between items-center my-2 p-2 border-b border-surface">
           <div class="flex flex-col">
@@ -1141,10 +1145,12 @@ function refreshChart() {
             <span class="font-medium mb-1">$16.660</span>
             <span class="text-muted-color">Consumer Electronics</span>
           </div>
-          <span><a
-            href="#"
-            class="text-muted-color"
-          ><i class="pi pi-chevron-right" /></a></span>
+          <span>
+            <a
+              href="#"
+              class="text-muted-color"
+            ><i class="pi pi-chevron-right" /></a>
+          </span>
         </div>
         <div class="flex justify-between items-center my-2 p-2">
           <div class="flex flex-col">
@@ -1152,10 +1158,12 @@ function refreshChart() {
             <span class="font-medium mb-1">$5.801</span>
             <span class="text-muted-color">Incalculables</span>
           </div>
-          <span><a
-            href="#"
-            class="text-muted-color"
-          ><i class="pi pi-chevron-right" /></a></span>
+          <span>
+            <a
+              href="#"
+              class="text-muted-color"
+            ><i class="pi pi-chevron-right" /></a>
+          </span>
         </div>
       </div>
     </div>
@@ -1168,7 +1176,9 @@ function refreshChart() {
             class="flex flex-col p-4 gap-4 w-full justify-between rounded-md"
           >
             <div class="flex justify-between items-center">
-              <span class="m-0 text-surface-900 dark:text-surface-0 text-2xl font-medium">Expenses</span>
+              <span class="m-0 text-surface-900 dark:text-surface-0 text-2xl font-medium">
+                Expenses
+              </span>
               <SelectButton
                 v-model="optionValue"
                 :options="labels"
@@ -1192,7 +1202,9 @@ function refreshChart() {
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">23</span>
                   <span class="text-surface-700 dark:text-surface-100">Product Questions</span>
                 </div>
-                <a href="#/dashboard-analytics"><i class="pi pi-arrow-up-right text-surface-900 dark:text-surface-0 text-2xl" /></a>
+                <a href="#/dashboard-analytics">
+                  <i class="pi pi-arrow-up-right text-surface-900 dark:text-surface-0 text-2xl" />
+                </a>
               </div>
               <div class="flex flex-col gap-2">
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
@@ -1201,8 +1213,12 @@ function refreshChart() {
                     class="w-8 h-8 rounded-full"
                   >
                   <div class="flex flex-col gap-1">
-                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">Black Watch</span>
-                    <span class="text-sm text-surface-900 dark:text-surface-0">Is the Black Watch product water-resistant?</span>
+                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
+                      Black Watch
+                    </span>
+                    <span class="text-sm text-surface-900 dark:text-surface-0">
+                      Is the Black Watch product water-resistant?
+                    </span>
                   </div>
                 </div>
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
@@ -1211,9 +1227,12 @@ function refreshChart() {
                     class="w-8 h-8 rounded-full"
                   >
                   <div class="flex flex-col gap-1">
-                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">Blue T-Shirt</span>
-                    <span class="text-sm text-surface-900 dark:text-surface-0">Can I return or exchange the blue t-shirt if I am not satisfied with
-                      it?</span>
+                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
+                      Blue T-Shirt
+                    </span>
+                    <span class="text-sm text-surface-900 dark:text-surface-0">
+                      Can I return or exchange the blue t-shirt if I am not satisfied with it?
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1227,7 +1246,9 @@ function refreshChart() {
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">54</span>
                   <span class="text-surface-700 dark:text-surface-100">Product Reviews</span>
                 </div>
-                <a href="#/dashboard-analytics"><i class="pi pi-arrow-up-right text-surface-900 dark:text-surface-0 text-2xl" /></a>
+                <a href="#/dashboard-analytics">
+                  <i class="pi pi-arrow-up-right text-surface-900 dark:text-surface-0 text-2xl" />
+                </a>
               </div>
               <div class="flex flex-col gap-2">
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
@@ -1236,8 +1257,12 @@ function refreshChart() {
                     class="w-8 h-8 rounded-full"
                   >
                   <div class="flex flex-col gap-1">
-                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">Blue Band</span>
-                    <span class="text-sm text-surface-900 dark:text-surface-0">Loved the blue band from this e-commerce site!</span>
+                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
+                      Blue Band
+                    </span>
+                    <span class="text-sm text-surface-900 dark:text-surface-0">
+                      Loved the blue band from this e-commerce site!
+                    </span>
                   </div>
                 </div>
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
@@ -1246,8 +1271,12 @@ function refreshChart() {
                     class="w-8 h-8 rounded-full"
                   >
                   <div class="flex flex-col gap-1">
-                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">Bamboo Watch</span>
-                    <span class="text-sm text-surface-900 dark:text-surface-0">I purchased the bamboo watch and I'm really happy with it.</span>
+                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
+                      Bamboo Watch
+                    </span>
+                    <span class="text-sm text-surface-900 dark:text-surface-0">
+                      I purchased the bamboo watch and I'm really happy with it.
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1261,7 +1290,9 @@ function refreshChart() {
                   <span class="text-surface-900 dark:text-surface-0 text-4xl">99+</span>
                   <span class="text-surface-700 dark:text-surface-100">Will Shipping Orders</span>
                 </div>
-                <a href="#/dashboard-analytics"><i class="pi pi-arrow-up-right text-surface-900 dark:text-surface-0 text-2xl" /></a>
+                <a href="#/dashboard-analytics">
+                  <i class="pi pi-arrow-up-right text-surface-900 dark:text-surface-0 text-2xl" />
+                </a>
               </div>
               <div class="flex flex-col gap-2">
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
@@ -1270,8 +1301,12 @@ function refreshChart() {
                     class="w-8 h-8 rounded-full"
                   >
                   <div class="flex flex-col gap-1">
-                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">Black Tshirt</span>
-                    <span class="text-sm text-surface-900 dark:text-surface-0">Last Shipping Date</span>
+                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
+                      Black Tshirt
+                    </span>
+                    <span class="text-sm text-surface-900 dark:text-surface-0">
+                      Last Shipping Date
+                    </span>
                   </div>
                 </div>
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
@@ -1280,8 +1315,12 @@ function refreshChart() {
                     class="w-8 h-8 rounded-full"
                   >
                   <div class="flex flex-col gap-1">
-                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">Black Watch</span>
-                    <span class="text-sm text-surface-900 dark:text-surface-0">Last Shipping Date</span>
+                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
+                      Black Watch
+                    </span>
+                    <span class="text-sm text-surface-900 dark:text-surface-0">
+                      Last Shipping Date
+                    </span>
                   </div>
                 </div>
                 <div class="flex gap-2 p-2 bg-surface-0 dark:bg-surface-900 shadow-sm rounded-md">
@@ -1290,8 +1329,12 @@ function refreshChart() {
                     class="w-8 h-8 rounded-full"
                   >
                   <div class="flex flex-col gap-1">
-                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">Blue T-Shirt</span>
-                    <span class="text-sm text-surface-900 dark:text-surface-0">Last Shipping Date</span>
+                    <span class="text-sm font-medium text-surface-900 dark:text-surface-0">
+                      Blue T-Shirt
+                    </span>
+                    <span class="text-sm text-surface-900 dark:text-surface-0">
+                      Last Shipping Date
+                    </span>
                   </div>
                 </div>
               </div>

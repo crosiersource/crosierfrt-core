@@ -74,7 +74,9 @@ function navigateToEdit() {
         >
         <span
           class="mt-4 font-bold text-surface-900 dark:text-surface-0 text-center whitespace-nowrap"
-        >Jane Cooper</span>
+        >
+          Jane Cooper
+        </span>
       </div>
     </div>
     <div class="text-center my-12">
@@ -125,9 +127,7 @@ function navigateToEdit() {
         Enim in porta facilisi a vulputate fermentum, morbi. Consequat, id praesent tristique
         euismod pellentesque.
       </li>
-      <li class="mb-4 leading-normal">
-        Implements This is an external link
-      </li>
+      <li class="mb-4 leading-normal">Implements This is an external link</li>
       <li class="leading-normal">
         Scelerisque ultricies tincidunt lectus faucibus non morbi sed nibh varius. Quam a, habitasse
         egestaseleifend.
@@ -155,7 +155,9 @@ function navigateToEdit() {
       <span class="text-xl text-surface-900 dark:text-surface-0 mr-6">Comments</span>
       <span
         class="inline-flex items-center justify-center w-8 h-8 border border-surface-200 dark:border-surface-700 rounded"
-      >{{ comments.length }}</span>
+      >
+        {{ comments.length }}
+      </span>
     </div>
     <ul class="list-none p-0 m-0">
       <li

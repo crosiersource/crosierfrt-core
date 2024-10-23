@@ -53,7 +53,9 @@ function onRemoveTags(tag) {
 
 <template>
   <div class="card">
-    <span class="block text-surface-900 dark:text-surface-0 font-bold text-xl mb-6">Create Product</span>
+    <span class="block text-surface-900 dark:text-surface-0 font-bold text-xl mb-6">
+      Create Product
+    </span>
     <Fluid class="grid grid-cols-12 gap-4 flex-wrap">
       <div class="col-span-12 lg:col-span-8">
         <div class="grid grid-cols-12 gap-4">
@@ -151,7 +153,9 @@ function onRemoveTags(tag) {
                     <i class="pi pi-fw pi-file text-4xl text-primary" />
                     <span
                       class="block font-semibold text-surface-900 dark:text-surface-0 text-lg mt-4"
-                    >Drop or select a cover image</span>
+                    >
+                      Drop or select a cover image
+                    </span>
                   </div>
                 </div>
               </template>
@@ -163,7 +167,9 @@ function onRemoveTags(tag) {
         <div class="border border-surface-200 dark:border-surface-700 rounded">
           <span
             class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >Publish</span>
+          >
+            Publish
+          </span>
           <div class="p-4">
             <div class="bg-surface-100 dark:bg-surface-700 py-2 px-4 flex items-center rounded">
               <span class="text-black/90 font-bold mr-4">Status:</span>
@@ -182,7 +188,9 @@ function onRemoveTags(tag) {
         <div class="border border-surface-200 dark:border-surface-700 rounded">
           <span
             class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >Tags</span>
+          >
+            Tags
+          </span>
           <div class="p-4 flex flex-wrap gap-1">
             <Chip
               v-for="(tag, i) in product.tags"
@@ -209,7 +217,9 @@ function onRemoveTags(tag) {
         <div class="border border-surface-200 dark:border-surface-700 rounded">
           <span
             class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >Category</span>
+          >
+            Category
+          </span>
           <div class="p-4">
             <Select
               v-model="selectedCategory"
@@ -222,7 +232,9 @@ function onRemoveTags(tag) {
         <div class="border border-surface-200 dark:border-surface-700 rounded">
           <span
             class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >Colors</span>
+          >
+            Colors
+          </span>
           <div class="p-4 flex">
             <div
               v-for="(color, i) in colorOptions"
@@ -243,7 +255,9 @@ function onRemoveTags(tag) {
         <div class="border border-surface-200 dark:border-surface-700 rounded">
           <span
             class="text-surface-900 dark:text-surface-0 font-bold block border-b border-surface-200 dark:border-surface-700 p-4"
-          >Stock</span>
+          >
+            Stock
+          </span>
           <div class="p-4">
             <Select
               v-model="selectedStock"

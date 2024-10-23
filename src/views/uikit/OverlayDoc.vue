@@ -81,9 +81,7 @@ function confirm(event) {
   <div class="flex flex-col md:flex-row gap-8">
     <div class="md:w-1/2">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Dialog
-        </div>
+        <div class="font-semibold text-xl mb-4">Dialog</div>
         <Dialog
           v-model:visible="display"
           header="Dialog"
@@ -114,9 +112,7 @@ function confirm(event) {
       </div>
 
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Popover
-        </div>
+        <div class="font-semibold text-xl mb-4">Popover</div>
         <div class="flex flex-wrap gap-2">
           <Button
             type="button"
@@ -157,9 +153,7 @@ function confirm(event) {
                 sortable
                 style="min-width: 8rem"
               >
-                <template #body="slotProps">
-                  $ {{ slotProps.data.price }}
-                </template>
+                <template #body="slotProps">$ {{ slotProps.data.price }}</template>
               </Column>
             </DataTable>
           </Popover>
@@ -167,9 +161,7 @@ function confirm(event) {
       </div>
 
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Tooltip
-        </div>
+        <div class="font-semibold text-xl mb-4">Tooltip</div>
         <div class="inline-flex gap-4">
           <InputText
             v-tooltip="'Your username'"
@@ -186,9 +178,7 @@ function confirm(event) {
     </div>
     <div class="md:w-1/2">
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          Drawer
-        </div>
+        <div class="font-semibold text-xl mb-4">Drawer</div>
         <Drawer
           v-model:visible="visibleLeft"
           header="Drawer"
@@ -275,9 +265,7 @@ function confirm(event) {
       </div>
 
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          ConfirmPopup
-        </div>
+        <div class="font-semibold text-xl mb-4">ConfirmPopup</div>
         <ConfirmPopup />
         <Button
           ref="popup"
@@ -289,9 +277,7 @@ function confirm(event) {
       </div>
 
       <div class="card">
-        <div class="font-semibold text-xl mb-4">
-          ConfirmDialog
-        </div>
+        <div class="font-semibold text-xl mb-4">ConfirmDialog</div>
         <Button
           label="Delete"
           icon="pi pi-trash"

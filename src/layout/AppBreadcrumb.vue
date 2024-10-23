@@ -51,7 +51,7 @@ watch(
           :key="index"
         >
           <li>
-            <span> {{ item.label }}</span>
+            <span>{{ item.label }}</span>
           </li>
           <li v-if="index !== breadcrumbRoutes.length - 1">
             <i class="pi pi-angle-right" />

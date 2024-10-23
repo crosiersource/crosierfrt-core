@@ -111,9 +111,9 @@ function onRemoveFile(removeFile) {
     >
       <div class="card h-full">
         <div class="flex items-center justify-between mb-4">
-          <span class="text-surface-900 dark:text-surface-0 text-xl font-semibold">{{
-            metric.title
-          }}</span>
+          <span class="text-surface-900 dark:text-surface-0 text-xl font-semibold">
+            {{ metric.title }}
+          </span>
           <div>
             <Button
               :icon="metric.icon"
@@ -142,12 +142,12 @@ function onRemoveFile(removeFile) {
             />
           </div>
           <div class="flex align-item-center justify-between">
-            <span class="text-surface-900 dark:text-surface-0 mt-4 text-md font-medium">{{
-              metric.files
-            }}</span>
-            <span class="text-surface-900 dark:text-surface-0 mt-4 text-md font-medium">{{
-              metric.fileSize
-            }}</span>
+            <span class="text-surface-900 dark:text-surface-0 mt-4 text-md font-medium">
+              {{ metric.files }}
+            </span>
+            <span class="text-surface-900 dark:text-surface-0 mt-4 text-md font-medium">
+              {{ metric.fileSize }}
+            </span>
           </div>
         </div>
       </div>
@@ -280,10 +280,14 @@ function onRemoveFile(removeFile) {
               >
                 <div class="h-full flex flex-col justify-center items-center">
                   <i class="pi pi-upload text-surface-900 dark:text-surface-0 text-2xl mb-4" />
-                  <span class="font-bold text-surface-900 dark:text-surface-0 text-xl mb-4">Upload Files</span>
+                  <span class="font-bold text-surface-900 dark:text-surface-0 text-xl mb-4">
+                    Upload Files
+                  </span>
                   <span
                     class="font-medium text-surface-600 dark:text-surface-200 text-md text-center"
-                  >Drop or select files</span>
+                  >
+                    Drop or select files
+                  </span>
                 </div>
               </div>
             </template>
@@ -293,9 +297,7 @@ function onRemoveFile(removeFile) {
     </div>
     <div class="col-span-12 md:col-span-7 xl:col-span-9">
       <div class="card">
-        <div class="text-surface-900 dark:text-surface-0 text-xl font-semibold mb-4">
-          Folders
-        </div>
+        <div class="text-surface-900 dark:text-surface-0 text-xl font-semibold mb-4">Folders</div>
         <div class="grid grid-cols-12 gap-4">
           <div
             v-for="(folder, i) in folders"
@@ -310,13 +312,13 @@ function onRemoveFile(removeFile) {
                   class="text-2xl mr-4"
                   :class="folder.icon"
                 />
-                <span class="text-surface-900 dark:text-surface-0 text-lg font-medium">{{
-                  folder.name
-                }}</span>
+                <span class="text-surface-900 dark:text-surface-0 text-lg font-medium">
+                  {{ folder.name }}
+                </span>
               </div>
-              <span class="text-surface-600 dark:text-surface-200 text-lg font-semibold">{{
-                folder.size
-              }}</span>
+              <span class="text-surface-600 dark:text-surface-200 text-lg font-semibold">
+                {{ folder.size }}
+              </span>
             </div>
           </div>
         </div>

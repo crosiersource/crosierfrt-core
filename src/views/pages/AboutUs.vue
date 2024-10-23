@@ -18,9 +18,7 @@ function setVisibleMember(member) {
         >
       </div>
       <div class="w-full lg:w-6/12 pr-0 lg:pl-6 mt-4 lg:mt-0">
-        <div class="font-bold text-4xl mb-6 text-surface-900 dark:text-surface-0">
-          About us
-        </div>
+        <div class="font-bold text-4xl mb-6 text-surface-900 dark:text-surface-0">About us</div>
         <p class="leading-normal mt-0 mb-4 p-0">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -47,7 +45,9 @@ function setVisibleMember(member) {
       </div>
     </div>
     <div class="mt-4 md:mt-20">
-      <span class="block text-surface-900 dark:text-surface-0 font-bold text-3xl mb-4 text-center">Our Team</span>
+      <span class="block text-surface-900 dark:text-surface-0 font-bold text-3xl mb-4 text-center">
+        Our Team
+      </span>
       <div class="text-center text-lg leading-normal mb-12">
         Faucibus ornare suspendisse sed nisi. Nisl rhoncus mattis rhoncus urna neque viverra justo
         nec.
@@ -72,7 +72,9 @@ function setVisibleMember(member) {
             >
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Jeff Davies</span>
-                <span class="font-medium text-surface-400 dark:text-surface-400">Software Developer</span>
+                <span class="font-medium text-surface-400 dark:text-surface-400">
+                  Software Developer
+                </span>
                 <div class="mt-auto">
                   <a
                     tabindex="0"
@@ -116,7 +118,9 @@ function setVisibleMember(member) {
             >
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Kristin Watson</span>
-                <span class="font-medium text-surface-400 dark:text-surface-400">UI/UX Designer</span>
+                <span class="font-medium text-surface-400 dark:text-surface-400">
+                  UI/UX Designer
+                </span>
                 <div class="mt-auto">
                   <a
                     tabindex="0"
@@ -160,7 +164,9 @@ function setVisibleMember(member) {
             >
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Jenna Williams</span>
-                <span class="font-medium text-surface-400 dark:text-surface-400">Marketing Specialist</span>
+                <span class="font-medium text-surface-400 dark:text-surface-400">
+                  Marketing Specialist
+                </span>
                 <div class="mt-auto">
                   <a
                     tabindex="0"
@@ -204,7 +210,9 @@ function setVisibleMember(member) {
             >
               <div class="flex flex-col p-8 h-full">
                 <span class="block font-medium text-white text-xl mb-4">Joe Clifford</span>
-                <span class="font-medium text-surface-400 dark:text-surface-400">Customer Relations</span>
+                <span class="font-medium text-surface-400 dark:text-surface-400">
+                  Customer Relations
+                </span>
                 <div class="mt-auto">
                   <a
                     tabindex="0"

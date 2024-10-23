@@ -506,7 +506,9 @@ function getOverviewColors() {
             style="width: 80px"
           >
             <span class="mb-1 text-4xl">640</span>
-            <span class="font-medium rounded-sm text-white p-1 bg-teal-500 text-sm">1420 Completed</span>
+            <span class="font-medium rounded-sm text-white p-1 bg-teal-500 text-sm">
+              1420 Completed
+            </span>
           </div>
           <div class="flex items-end">
             <Chart
@@ -545,7 +547,9 @@ function getOverviewColors() {
             style="width: 80px"
           >
             <span class="mb-1 text-4xl">$57K</span>
-            <span class="font-medium rounded-sm text-white p-1 bg-teal-500 text-sm">$9,640 Income</span>
+            <span class="font-medium rounded-sm text-white p-1 bg-teal-500 text-sm">
+              $9,640 Income
+            </span>
           </div>
           <div class="flex items-end">
             <Chart
@@ -584,7 +588,9 @@ function getOverviewColors() {
             style="width: 80px"
           >
             <span class="mb-1 text-4xl">8572</span>
-            <span class="font-medium rounded-sm text-white p-1 bg-pink-500 text-sm">25402 Registered</span>
+            <span class="font-medium rounded-sm text-white p-1 bg-pink-500 text-sm">
+              25402 Registered
+            </span>
           </div>
           <div class="flex items-end">
             <Chart
@@ -624,7 +630,9 @@ function getOverviewColors() {
             style="width: 80px"
           >
             <span class="mb-1 text-4xl">805</span>
-            <span class="font-medium rounded-sm text-white p-1 bg-teal-500 text-sm">85 Responded</span>
+            <span class="font-medium rounded-sm text-white p-1 bg-teal-500 text-sm">
+              85 Responded
+            </span>
           </div>
           <div class="flex items-end">
             <Chart
@@ -666,8 +674,12 @@ function getOverviewColors() {
                 <small class="text-muted-color">feng@ultima.org</small>
               </div>
             </div>
-            <span class="bg-indigo-500 p-1 font-medium text-white rounded-sm text-sm ml-auto">Accounting</span>
-            <span class="bg-orange-500 p-1 text-sm font-medium text-white rounded-sm ml-2">Sales</span>
+            <span class="bg-indigo-500 p-1 font-medium text-white rounded-sm text-sm ml-auto">
+              Accounting
+            </span>
+            <span class="bg-orange-500 p-1 text-sm font-medium text-white rounded-sm ml-2">
+              Sales
+            </span>
           </li>
 
           <li class="flex items-center py-4">
@@ -678,8 +690,12 @@ function getOverviewColors() {
                 <small class="text-muted-color">sharvill@ultima.org</small>
               </div>
             </div>
-            <span class="bg-teal-500 p-1 text-sm font-medium text-white rounded-sm ml-auto">Finance</span>
-            <span class="bg-orange-500 p-1 text-sm font-medium text-white rounded-sm ml-2">Sales</span>
+            <span class="bg-teal-500 p-1 text-sm font-medium text-white rounded-sm ml-auto">
+              Finance
+            </span>
+            <span class="bg-orange-500 p-1 text-sm font-medium text-white rounded-sm ml-2">
+              Sales
+            </span>
           </li>
 
           <li class="flex items-center py-4">
@@ -690,7 +706,9 @@ function getOverviewColors() {
                 <small class="text-muted-color">fali@ultima.org</small>
               </div>
             </div>
-            <span class="bg-pink-500 p-1 text-sm font-medium text-white rounded-sm ml-auto">Management</span>
+            <span class="bg-pink-500 p-1 text-sm font-medium text-white rounded-sm ml-auto">
+              Management
+            </span>
           </li>
 
           <li class="flex items-center py-4">
@@ -701,8 +719,12 @@ function getOverviewColors() {
                 <small class="text-muted-color">stone@ultima.org</small>
               </div>
             </div>
-            <span class="bg-pink-500 p-1 text-sm font-medium text-white rounded-sm ml-auto">Management</span>
-            <span class="bg-teal-500 p-1 text-sm font-medium text-white rounded-sm ml-2">Finance</span>
+            <span class="bg-pink-500 p-1 text-sm font-medium text-white rounded-sm ml-auto">
+              Management
+            </span>
+            <span class="bg-teal-500 p-1 text-sm font-medium text-white rounded-sm ml-2">
+              Finance
+            </span>
           </li>
 
           <li class="flex items-center py-4">
@@ -713,7 +735,9 @@ function getOverviewColors() {
                 <small class="text-muted-color">shaw@ultima.org</small>
               </div>
             </div>
-            <span class="bg-teal-500 p-1 text-sm font-medium text-white rounded-sm ml-auto">Finance</span>
+            <span class="bg-teal-500 p-1 text-sm font-medium text-white rounded-sm ml-auto">
+              Finance
+            </span>
           </li>
         </ul>
       </div>
@@ -1015,12 +1039,8 @@ function getOverviewColors() {
         <ul class="widget-activity p-0 list-none">
           <li class="py-4 px-0 border-b border-surface">
             <div class="activity-item flex flex-col">
-              <div class="font-medium mb-1">
-                Income
-              </div>
-              <div class="text-sm text-muted-color mb-2">
-                30 November, 16.20
-              </div>
+              <div class="font-medium mb-1">Income</div>
+              <div class="text-sm text-muted-color mb-2">30 November, 16.20</div>
               <div
                 class="bg-surface-50 dark:bg-surface-800"
                 style="height: 6px"
@@ -1031,12 +1051,8 @@ function getOverviewColors() {
           </li>
           <li class="py-4 px-0 border-b border-surface">
             <div class="activity-item flex flex-col">
-              <div class="font-medium mb-1">
-                Tax
-              </div>
-              <div class="text-sm text-muted-color mb-2">
-                1 December, 15.27
-              </div>
+              <div class="font-medium mb-1">Tax</div>
+              <div class="text-sm text-muted-color mb-2">1 December, 15.27</div>
               <div
                 class="bg-surface-50 dark:bg-surface-800"
                 style="height: 6px"
@@ -1047,12 +1063,8 @@ function getOverviewColors() {
           </li>
           <li class="py-4 px-0 border-b border-surface">
             <div class="activity-item flex flex-col">
-              <div class="font-medium mb-1">
-                Invoices
-              </div>
-              <div class="text-sm text-muted-color mb-2">
-                1 December, 15.28
-              </div>
+              <div class="font-medium mb-1">Invoices</div>
+              <div class="text-sm text-muted-color mb-2">1 December, 15.28</div>
               <div
                 class="bg-surface-50 dark:bg-surface-800"
                 style="height: 6px"
@@ -1063,12 +1075,8 @@ function getOverviewColors() {
           </li>
           <li class="py-4 px-0 border-b border-surface">
             <div class="activity-item flex flex-col">
-              <div class="font-medium mb-1">
-                Expanses
-              </div>
-              <div class="text-sm text-muted-color mb-2">
-                3 December, 09.15
-              </div>
+              <div class="font-medium mb-1">Expanses</div>
+              <div class="text-sm text-muted-color mb-2">3 December, 09.15</div>
               <div
                 class="bg-surface-50 dark:bg-surface-800"
                 style="height: 6px"
@@ -1079,12 +1087,8 @@ function getOverviewColors() {
           </li>
           <li class="py-4 px-0 border-b border-surface">
             <div class="activity-item flex flex-col">
-              <div class="font-medium mb-1">
-                Bonus
-              </div>
-              <div class="text-sm text-muted-color mb-2">
-                1 December, 23.55
-              </div>
+              <div class="font-medium mb-1">Bonus</div>
+              <div class="text-sm text-muted-color mb-2">1 December, 23.55</div>
               <div
                 class="bg-surface-50 dark:bg-surface-800"
                 style="height: 6px"
@@ -1095,12 +1099,8 @@ function getOverviewColors() {
           </li>
           <li class="py-4 px-0">
             <div class="activity-item flex flex-col">
-              <div class="font-medium mb-1">
-                Revenue
-              </div>
-              <div class="text-sm text-muted-color mb-2">
-                30 November, 16.20
-              </div>
+              <div class="font-medium mb-1">Revenue</div>
+              <div class="text-sm text-muted-color mb-2">30 November, 16.20</div>
               <div
                 class="bg-surface-50 dark:bg-surface-800"
                 style="height: 6px"
@@ -1144,7 +1144,9 @@ function getOverviewColors() {
                 alt="product"
               >
               <span>Blue Band</span>
-              <span class="ml-auto"><a href="#"><i class="pi pi-chevron-right text-muted-color" /></a></span>
+              <span class="ml-auto">
+                <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
+              </span>
             </div>
 
             <div
@@ -1158,7 +1160,9 @@ function getOverviewColors() {
                 alt="product"
               >
               <span>Bracelet</span>
-              <span class="ml-auto"><a href="#"><i class="pi pi-chevron-right text-muted-color" /></a></span>
+              <span class="ml-auto">
+                <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
+              </span>
             </div>
 
             <div
@@ -1172,7 +1176,9 @@ function getOverviewColors() {
                 alt="product"
               >
               <span>Black Watch</span>
-              <span class="ml-auto"><a href="#"><i class="pi pi-chevron-right text-muted-color" /></a></span>
+              <span class="ml-auto">
+                <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
+              </span>
             </div>
 
             <div
@@ -1186,7 +1192,9 @@ function getOverviewColors() {
                 alt="product"
               >
               <span>Bamboo Watch</span>
-              <span class="ml-auto"><a href="#"><i class="pi pi-chevron-right text-muted-color" /></a></span>
+              <span class="ml-auto">
+                <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
+              </span>
             </div>
 
             <div
@@ -1200,7 +1208,9 @@ function getOverviewColors() {
                 alt="product"
               >
               <span>Blue T-Shirt</span>
-              <span class="ml-auto"><a href="#"><i class="pi pi-chevron-right text-muted-color" /></a></span>
+              <span class="ml-auto">
+                <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
+              </span>
             </div>
 
             <div
@@ -1214,7 +1224,9 @@ function getOverviewColors() {
                 alt="product"
               >
               <span>Game Controller</span>
-              <span class="ml-auto"><a href="#"><i class="pi pi-chevron-right text-muted-color" /></a></span>
+              <span class="ml-auto">
+                <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
+              </span>
             </div>
 
             <div
@@ -1228,7 +1240,9 @@ function getOverviewColors() {
                 alt="product"
               >
               <span>Phone Case</span>
-              <span class="ml-auto"><a href="#"><i class="pi pi-chevron-right text-muted-color" /></a></span>
+              <span class="ml-auto">
+                <a href="#"><i class="pi pi-chevron-right text-muted-color" /></a>
+              </span>
             </div>
           </li>
         </ul>

@@ -18,16 +18,12 @@
             fill="var(--primary-color)"
           />
         </svg>
-        <div class="my-4 text-4xl font-bold text-surface-900 dark:text-surface-0">
-          YOUR COMPANY
-        </div>
+        <div class="my-4 text-4xl font-bold text-surface-900 dark:text-surface-0">YOUR COMPANY</div>
         <span class="mb-2">9137 3rd Lane California City</span>
         <span>CA 93504, U.S.A.</span>
       </div>
       <div class="flex flex-col mt-8 md:mt-0">
-        <div class="text-2xl font-semibold text-left md:text-right mb-4">
-          INVOICE
-        </div>
+        <div class="text-2xl font-semibold text-left md:text-right mb-4">INVOICE</div>
         <div class="flex flex-col">
           <div class="flex justify-between items-center mb-2">
             <span class="font-semibold mr-12">DATE</span>
@@ -46,9 +42,7 @@
     </div>
 
     <div class="mt-8 mb-20 flex flex-col">
-      <div class="mb-4 text-2xl font-medium">
-        BILL TO
-      </div>
+      <div class="mb-4 text-2xl font-medium">BILL TO</div>
       <span class="mb-2">Claire Williams, 148 Hope Lane</span>
       <span>Palo Alto, CA 94304.</span>
     </div>
@@ -136,9 +130,7 @@
     </div>
 
     <div class="flex flex-col md:flex-row md:items-start md:justify-between mt-20">
-      <div class="font-semibold mb-4 md:mb-0">
-        NOTES
-      </div>
+      <div class="font-semibold mb-4 md:mb-0">NOTES</div>
       <div class="flex flex-col">
         <div class="flex justify-between items-center mb-2">
           <span class="font-semibold mr-12">SUBTOTAL</span>

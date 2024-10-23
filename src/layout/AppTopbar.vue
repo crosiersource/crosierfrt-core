@@ -184,7 +184,11 @@ function focusSearchInput() {
             <div class="hidden">
               <ul class="list-none p-0 m-0">
                 <li class="px-4 py-1">
-                  <span>You have <b>4</b> new notifications</span>
+                  <span>
+                    You have
+                    <b>4</b>
+                    new notifications
+                  </span>
                 </li>
                 <li class="p-4">
                   <div class="flex items-center">
@@ -194,7 +198,9 @@ function focusSearchInput() {
                         <span class="font-bold">Jerome Bell</span>
                         <small>42 mins ago</small>
                       </div>
-                      <span class="text-sm leading-normal">How to write content about your photographs?</span>
+                      <span class="text-sm leading-normal">
+                        How to write content about your photographs?
+                      </span>
                     </div>
                   </div>
                 </li>
@@ -206,7 +212,9 @@ function focusSearchInput() {
                         <span class="fs-small font-bold">Cameron Williamson</span>
                         <small>48 mins ago</small>
                       </div>
-                      <span class="text-sm leading-normal">Start a blog to reach your creative peak.</span>
+                      <span class="text-sm leading-normal">
+                        Start a blog to reach your creative peak.
+                      </span>
                     </div>
                   </div>
                 </li>
@@ -230,7 +238,9 @@ function focusSearchInput() {
                         <span class="fs-small font-bold">Arlene Mccoy</span>
                         <small>4 day ago</small>
                       </div>
-                      <span class="text-sm leading-normal">Starting your traveling blog with Vasco.</span>
+                      <span class="text-sm leading-normal">
+                        Starting your traveling blog with Vasco.
+                      </span>
                     </div>
                   </div>
                 </li>

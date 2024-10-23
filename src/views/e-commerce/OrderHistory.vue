@@ -72,7 +72,9 @@ const orders = ref([
     <div class="flex flex-col md:flex-row justify-between items-center mb-6">
       <div class="flex flex-col text-center md:text-left">
         <span class="text-surface-900 dark:text-surface-0 text-2xl mb-2">My Orders</span>
-        <span class="text-surface-600 dark:text-surface-200 text-lg">Dignissim diam quis enim lobortis.</span>
+        <span class="text-surface-600 dark:text-surface-200 text-lg">
+          Dignissim diam quis enim lobortis.
+        </span>
       </div>
       <IconField class="mt-8 mb-2 md:mt-0 md:mb-0 w-full lg:w-[25rem]">
         <InputIcon class="pi pi-search text-gray-400" />
@@ -92,9 +94,9 @@ const orders = ref([
       <div class="col-span-12 flex p-2 bg-surface-100 dark:bg-surface-700 rounded-t">
         <div class="p-2 flex-auto text-center md:text-left">
           <span class="text-surface-700 dark:text-surface-100 block">Order Number</span>
-          <span class="text-surface-900 dark:text-surface-0 font-medium block mt-2">{{
-            order.orderNumber
-          }}</span>
+          <span class="text-surface-900 dark:text-surface-0 font-medium block mt-2">
+            {{ order.orderNumber }}
+          </span>
         </div>
         <Divider
           align="center"
@@ -103,9 +105,9 @@ const orders = ref([
         />
         <div class="p-2 flex-auto text-center md:text-left">
           <span class="text-surface-700 dark:text-surface-100 block">Order Date</span>
-          <span class="text-surface-900 dark:text-surface-0 font-medium block mt-2">{{
-            order.orderDate
-          }}</span>
+          <span class="text-surface-900 dark:text-surface-0 font-medium block mt-2">
+            {{ order.orderDate }}
+          </span>
         </div>
         <Divider
           align="center"
@@ -114,9 +116,9 @@ const orders = ref([
         />
         <div class="p-2 flex-auto text-center md:text-left">
           <span class="text-surface-700 dark:text-surface-100 block">Total Amount</span>
-          <span class="text-surface-900 dark:text-surface-0 font-medium block mt-2">{{
-            order.amount
-          }}</span>
+          <span class="text-surface-900 dark:text-surface-0 font-medium block mt-2">
+            {{ order.amount }}
+          </span>
         </div>
       </div>
       <div class="col-span-12">
@@ -132,9 +134,9 @@ const orders = ref([
               class="w-32 h-32 mr-4 flex-shrink-0"
             >
             <div class="flex flex-col my-auto text-center md:text-left">
-              <span class="text-surface-900 dark:text-surface-0 font-medium mb-4 mt-4 lg:mt-0">{{
-                product.name
-              }}</span>
+              <span class="text-surface-900 dark:text-surface-0 font-medium mb-4 mt-4 lg:mt-0">
+                {{ product.name }}
+              </span>
               <span class="text-surface-700 dark:text-surface-100 text-sm mb-4">
                 {{ product.color }} | {{ product.size }}
               </span>
@@ -142,7 +144,8 @@ const orders = ref([
                 tabindex="0"
                 class="p-2 select-none cursor-pointer w-40 mx-auto lg:mx-0 rounded font-medium text-center border border-primary text-primary duration-150"
               >
-                Buy Again <span class="font-light">| {{ product.price }}</span>
+                Buy Again
+                <span class="font-light">| {{ product.price }}</span>
               </a>
             </div>
           </div>
@@ -170,26 +173,30 @@ const orders = ref([
           class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full"
           :style="{ borderBottomLeftRadius: '6px' }"
         >
-          <i class="pi pi-folder mr-2 mb-2 md:mb-1" />Archive Order
+          <i class="pi pi-folder mr-2 mb-2 md:mb-1" />
+          Archive Order
         </a>
         <a
           tabindex="0"
           class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full"
         >
-          <i class="pi pi-refresh mr-2 mb-2 md:mb-1" />Return
+          <i class="pi pi-refresh mr-2 mb-2 md:mb-1" />
+          Return
         </a>
         <a
           tabindex="0"
           class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full"
         >
-          <i class="pi pi-file mr-2 mb-2 md:mb-1" />View Invoice
+          <i class="pi pi-file mr-2 mb-2 md:mb-1" />
+          View Invoice
         </a>
         <a
           tabindex="0"
           class="cursor-pointer py-6 flex flex-col md:flex-row text-center justify-center items-center text-primary hover:bg-primary hover:text-primary-contrast dark:hover:text-surface-900 duration-150 w-full"
           :style="{ borderBottomRightRadius: '6px' }"
         >
-          <i class="pi pi-comment mr-2 mb-2 md:mb-1" />Write a Review
+          <i class="pi pi-comment mr-2 mb-2 md:mb-1" />
+          Write a Review
         </a>
       </div>
     </div>

@@ -34,9 +34,7 @@ function toggle() {
 <template>
   <div class="flex flex-col">
     <div class="card">
-      <div class="font-semibold text-xl mb-4">
-        Toolbar
-      </div>
+      <div class="font-semibold text-xl mb-4">Toolbar</div>
       <Toolbar>
         <template #start>
           <Button
@@ -79,9 +77,7 @@ function toggle() {
     <div class="flex flex-col md:flex-row gap-8">
       <div class="md:w-1/2">
         <div class="card">
-          <div class="font-semibold text-xl mb-4">
-            Accordion
-          </div>
+          <div class="font-semibold text-xl mb-4">Accordion</div>
           <Accordion value="0">
             <AccordionPanel value="0">
               <AccordionHeader>Header I</AccordionHeader>
@@ -125,20 +121,12 @@ function toggle() {
           </Accordion>
         </div>
         <div class="card">
-          <div class="font-semibold text-xl mb-4">
-            Tabs
-          </div>
+          <div class="font-semibold text-xl mb-4">Tabs</div>
           <Tabs value="0">
             <TabList>
-              <Tab value="0">
-                Header I
-              </Tab>
-              <Tab value="1">
-                Header II
-              </Tab>
-              <Tab value="2">
-                Header III
-              </Tab>
+              <Tab value="0">Header I</Tab>
+              <Tab value="1">Header II</Tab>
+              <Tab value="2">Header III</Tab>
             </TabList>
             <TabPanels>
               <TabPanel value="0">
@@ -177,9 +165,7 @@ function toggle() {
       </div>
       <div class="md:w-1/2 mt-6 md:mt-0">
         <div class="card">
-          <div class="font-semibold text-xl mb-4">
-            Panel
-          </div>
+          <div class="font-semibold text-xl mb-4">Panel</div>
           <Panel
             header="Header"
             :toggleable="true"
@@ -195,9 +181,7 @@ function toggle() {
           </Panel>
         </div>
         <div class="card">
-          <div class="font-semibold text-xl mb-4">
-            Fieldset
-          </div>
+          <div class="font-semibold text-xl mb-4">Fieldset</div>
           <Fieldset
             legend="Legend"
             :toggleable="true"
@@ -216,9 +200,7 @@ function toggle() {
         <Card>
           <template #title>
             <div class="flex items-center justify-between mb-0">
-              <div class="font-semibold text-xl mb-4">
-                Card
-              </div>
+              <div class="font-semibold text-xl mb-4">Card</div>
               <Button
                 icon="pi pi-plus"
                 class="p-button-text"
@@ -248,9 +230,7 @@ function toggle() {
     </div>
 
     <div class="card mt-8">
-      <div class="font-semibold text-xl mb-4">
-        Divider
-      </div>
+      <div class="font-semibold text-xl mb-4">Divider</div>
       <div class="flex flex-col md:flex-row">
         <div class="w-full md:w-5/12 flex flex-col items-center justify-center gap-3 py-5">
           <div class="flex flex-col gap-2">
@@ -302,9 +282,7 @@ function toggle() {
     </div>
 
     <div class="card">
-      <div class="font-semibold text-xl mb-4">
-        Splitter
-      </div>
+      <div class="font-semibold text-xl mb-4">Splitter</div>
       <Splitter
         style="height: 300px"
         class="mb-8"
@@ -313,21 +291,15 @@ function toggle() {
           :size="30"
           :min-size="10"
         >
-          <div className="h-full flex items-center justify-center">
-            Panel 1
-          </div>
+          <div className="h-full flex items-center justify-center">Panel 1</div>
         </SplitterPanel>
         <SplitterPanel :size="70">
           <Splitter layout="vertical">
             <SplitterPanel :size="15">
-              <div className="h-full flex items-center justify-center">
-                Panel 2
-              </div>
+              <div className="h-full flex items-center justify-center">Panel 2</div>
             </SplitterPanel>
             <SplitterPanel :size="50">
-              <div className="h-full flex items-center justify-center">
-                Panel 3
-              </div>
+              <div className="h-full flex items-center justify-center">Panel 3</div>
             </SplitterPanel>
           </Splitter>
         </SplitterPanel>

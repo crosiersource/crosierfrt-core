@@ -165,9 +165,7 @@ function calculateCustomerTotal(name) {
 
 <template>
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      Filtering
-    </div>
+    <div class="font-semibold text-xl mb-4">Filtering</div>
     <DataTable
       v-model:filters="filters1"
       :value="customers1"
@@ -201,12 +199,8 @@ function calculateCustomerTotal(name) {
           </IconField>
         </div>
       </template>
-      <template #empty>
-        No customers found.
-      </template>
-      <template #loading>
-        Loading customers data. Please wait.
-      </template>
+      <template #empty>No customers found.</template>
+      <template #loading>Loading customers data. Please wait.</template>
       <Column
         field="name"
         header="Name"
@@ -408,7 +402,7 @@ function calculateCustomerTotal(name) {
           <label
             for="verified-filter"
             class="font-bold"
-          > Verified </label>
+          >Verified</label>
           <Checkbox
             v-model="filterModel.value"
             :indeterminate="filterModel.value === null"
@@ -421,9 +415,7 @@ function calculateCustomerTotal(name) {
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      Frozen Columns
-    </div>
+    <div class="font-semibold text-xl mb-4">Frozen Columns</div>
     <ToggleButton
       v-model="balanceFrozen"
       on-icon="pi pi-lock"
@@ -500,9 +492,7 @@ function calculateCustomerTotal(name) {
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      Row Expansion
-    </div>
+    <div class="font-semibold text-xl mb-4">Row Expansion</div>
     <DataTable
       v-model:expanded-rows="expandedRows"
       :value="products"
@@ -626,9 +616,7 @@ function calculateCustomerTotal(name) {
   </div>
 
   <div class="card">
-    <div class="font-semibold text-xl mb-4">
-      Grouping
-    </div>
+    <div class="font-semibold text-xl mb-4">Grouping</div>
     <DataTable
       :value="customers3"
       row-group-mode="subheader"

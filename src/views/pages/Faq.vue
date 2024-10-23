@@ -63,9 +63,7 @@ function changeItem(index) {
 
     <div class="flex flex-col md:flex-row gap-8">
       <div class="card mb-0 md:w-80">
-        <div class="text-surface-900 dark:text-surface-0 block font-bold mb-4">
-          Categories
-        </div>
+        <div class="text-surface-900 dark:text-surface-0 block font-bold mb-4">Categories</div>
         <ul class="list-none m-0 p-0">
           <li
             v-for="(item, i) in items"

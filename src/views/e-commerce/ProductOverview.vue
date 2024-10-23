@@ -72,14 +72,13 @@ function setSelectedImageIndex(index) {
             </span>
             <span class="text-sm">
               <b class="text-surface-900 dark:text-surface-0 mr-1">24</b>
-              <span class="text-surface-500 dark:text-surface-300" />reviews
+              <span class="text-surface-500 dark:text-surface-300" />
+              reviews
             </span>
           </div>
         </div>
 
-        <div class="font-bold text-surface-900 dark:text-surface-0 mb-4">
-          Color
-        </div>
+        <div class="font-bold text-surface-900 dark:text-surface-0 mb-4">Color</div>
         <div class="flex items-center mb-8">
           <div
             class="w-8 h-8 flex-shrink-0 rounded-full bg-slate-500 mr-4 cursor-pointer border-2 border-surface-200 dark:border-surface-700 transition-all duration-300"
@@ -106,7 +105,8 @@ function setSelectedImageIndex(index) {
             tabindex="0"
             class="cursor-pointer text-surface-600 dark:text-surface-200 text-sm flex items-center"
           >
-            Size Guide <i class="ml-1 pi pi-angle-right" />
+            Size Guide
+            <i class="ml-1 pi pi-angle-right" />
           </a>
         </div>
         <div class="flex flex-wrap gap-4 items-center mb-8">
@@ -147,9 +147,7 @@ function setSelectedImageIndex(index) {
           </div>
         </div>
 
-        <div class="font-bold text-surface-900 dark:text-surface-0 mb-4">
-          Quantity
-        </div>
+        <div class="font-bold text-surface-900 dark:text-surface-0 mb-4">Quantity</div>
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <InputNumber
             v-model="quantity"
@@ -180,15 +178,9 @@ function setSelectedImageIndex(index) {
 
     <Tabs value="0">
       <TabList>
-        <Tab value="0">
-          Details
-        </Tab>
-        <Tab value="1">
-          Reviews
-        </Tab>
-        <Tab value="2">
-          Shipping and Returns
-        </Tab>
+        <Tab value="0">Details</Tab>
+        <Tab value="1">Reviews</Tab>
+        <Tab value="2">Shipping and Returns</Tab>
       </TabList>
       <TabPanels>
         <TabPanel value="0">
@@ -205,34 +197,39 @@ function setSelectedImageIndex(index) {
 
           <div class="grid grid-cols-12 gap-4">
             <div class="col-span-12 lg:col-span-4">
-              <span class="text-surface-900 dark:text-surface-0 block mb-4 font-bold">Highlights</span>
+              <span class="text-surface-900 dark:text-surface-0 block mb-4 font-bold">
+                Highlights
+              </span>
               <ul class="py-0 pl-4 m-0 text-surface-600 dark:text-surface-200 mb-4">
-                <li class="mb-2">
-                  Vulputate sapien nec.
-                </li>
-                <li class="mb-2">
-                  Purus gravida quis blandit.
-                </li>
-                <li class="mb-2">
-                  Nisi quis eleifend quam adipiscing.
-                </li>
+                <li class="mb-2">Vulputate sapien nec.</li>
+                <li class="mb-2">Purus gravida quis blandit.</li>
+                <li class="mb-2">Nisi quis eleifend quam adipiscing.</li>
                 <li>Imperdiet proin fermentum.</li>
               </ul>
             </div>
             <div class="col-span-12 lg:col-span-4">
-              <span class="text-surface-900 dark:text-surface-0 block mb-4 font-bold">Size and Fit</span>
+              <span class="text-surface-900 dark:text-surface-0 block mb-4 font-bold">
+                Size and Fit
+              </span>
               <ul class="list-none p-0 m-0 text-surface-600 dark:text-surface-200 mb-6">
                 <li class="mb-4">
-                  <span class="font-semibold">Leo vel:</span> Egestas congue.
+                  <span class="font-semibold">Leo vel:</span>
+                  Egestas congue.
                 </li>
                 <li class="mb-4">
-                  <span class="font-semibold">Sociis natoque:</span> Parturient montes nascetur.
+                  <span class="font-semibold">Sociis natoque:</span>
+                  Parturient montes nascetur.
                 </li>
-                <li><span class="font-semibold">Suspendisse in:</span> Purus sit amet volutpat.</li>
+                <li>
+                  <span class="font-semibold">Suspendisse in:</span>
+                  Purus sit amet volutpat.
+                </li>
               </ul>
             </div>
             <div class="col-span-12 lg:col-span-4">
-              <span class="text-surface-900 dark:text-surface-0 block mb-4 font-bold">Material & Care</span>
+              <span class="text-surface-900 dark:text-surface-0 block mb-4 font-bold">
+                Material & Care
+              </span>
               <ul
                 class="p-0 m-0 flex flex-wrap flex-col xl:flex-row text-surface-600 dark:text-surface-200"
               >
@@ -287,9 +284,7 @@ function setSelectedImageIndex(index) {
                 <i class="pi pi-star-fill text-yellow-500 mr-1" />
                 <i class="pi pi-star-fill text-yellow-500" />
               </span>
-              <div class="text-surface-900 dark:text-surface-0 font-bold text-xl my-4">
-                Classy
-              </div>
+              <div class="text-surface-900 dark:text-surface-0 font-bold text-xl my-4">Classy</div>
               <p class="mx-0 mt-0 mb-4 text-surface-600 dark:text-surface-200 leading-normal">
                 Venenatis cras sed felis eget. Proin nibh nisl condimentum id venenatis a
                 condimentum.
@@ -311,33 +306,23 @@ function setSelectedImageIndex(index) {
 
           <div class="grid grid-cols-12 gap-4">
             <div class="col-span-12 md:col-span-6">
-              <span class="text-surface-900 dark:text-surface-0 block font-bold mb-4">Shipping Costs</span>
+              <span class="text-surface-900 dark:text-surface-0 block font-bold mb-4">
+                Shipping Costs
+              </span>
               <ul class="py-0 pl-4 m-0 text-surface-600 dark:text-surface-200 mb-4">
-                <li class="mb-2">
-                  Japan - JPY 2,500.
-                </li>
-                <li class="mb-2">
-                  Europe - EUR 10
-                </li>
-                <li class="mb-2">
-                  Switzerland - CHF 10
-                </li>
-                <li class="mb-2">
-                  Canada - CAD 25
-                </li>
-                <li class="mb-2">
-                  USA - USD 20
-                </li>
-                <li class="mb-2">
-                  Australia - AUD 30
-                </li>
-                <li class="mb-2">
-                  United Kingdom - GBP 10
-                </li>
+                <li class="mb-2">Japan - JPY 2,500.</li>
+                <li class="mb-2">Europe - EUR 10</li>
+                <li class="mb-2">Switzerland - CHF 10</li>
+                <li class="mb-2">Canada - CAD 25</li>
+                <li class="mb-2">USA - USD 20</li>
+                <li class="mb-2">Australia - AUD 30</li>
+                <li class="mb-2">United Kingdom - GBP 10</li>
               </ul>
             </div>
             <div class="col-span-12 md:col-span-6">
-              <span class="text-surface-900 dark:text-surface-0 block font-bold mb-4">Return Policy</span>
+              <span class="text-surface-900 dark:text-surface-0 block font-bold mb-4">
+                Return Policy
+              </span>
               <p class="leading-normal text-surface-600 dark:text-surface-200 p-0 m-0">
                 Pharetra et ultrices neque ornare aenean euismod elementum nisi. Diam phasellus
                 vestibulum lorem sed. Mattis molestie a iaculis at.

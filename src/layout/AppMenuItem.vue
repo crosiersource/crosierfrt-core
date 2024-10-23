@@ -230,7 +230,8 @@ function checkActiveRoute(item) {
       v-if="root && item.visible !== false"
       class="layout-menuitem-root-text"
     >
-      <span>{{ item.label }}</span> <i class="layout-menuitem-root-icon pi pi-fw pi-ellipsis-h" />
+      <span>{{ item.label }}</span>
+      <i class="layout-menuitem-root-icon pi pi-fw pi-ellipsis-h" />
     </div>
     <a
       v-if="(!item.to || item.items) && item.visible !== false"

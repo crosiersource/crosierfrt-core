@@ -53,9 +53,7 @@ const products2 = ref([
     <div class="text-surface-900 dark:text-surface-0 font-medium text-4xl mb-6">
       Popular Products
     </div>
-    <p class="mt-0 p-0 mb-8 text-surface-700 dark:text-surface-100 text-2xl">
-      Exclusive Selection
-    </p>
+    <p class="mt-0 p-0 mb-8 text-surface-700 dark:text-surface-100 text-2xl">Exclusive Selection</p>
     <div class="grid grid-cols-12 gap-4 -mt-4 -ml-4 -mr-4">
       <div
         v-for="(product, i) in products"
@@ -78,7 +76,9 @@ const products2 = ref([
               >
             </div>
             <div class="flex justify-between items-center mb-4">
-              <span class="text-surface-900 dark:text-surface-0 font-medium text-xl">Product Name</span>
+              <span class="text-surface-900 dark:text-surface-0 font-medium text-xl">
+                Product Name
+              </span>
               <span>
                 <i class="pi pi-star-fill text-yellow-500 mr-1" />
                 <span class="font-medium">5.0</span>
@@ -117,7 +117,9 @@ const products2 = ref([
           </Button>
         </div>
         <div class="flex flex-col items-center">
-          <span class="text-xl text-surface-900 dark:text-surface-0 font-medium mb-4">Product Name</span>
+          <span class="text-xl text-surface-900 dark:text-surface-0 font-medium mb-4">
+            Product Name
+          </span>
           <span class="text-xl text-surface-900 dark:text-surface-0 mb-4">$150.00</span>
           <div class="flex items-center mb-4">
             <div

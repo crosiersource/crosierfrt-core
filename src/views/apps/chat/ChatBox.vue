@@ -136,9 +136,9 @@ function addEmoji(emoji) {
         />
       </div>
       <div class="mr-2">
-        <span class="text-surface-900 dark:text-surface-0 font-semibold block">{{
-          user.name
-        }}</span>
+        <span class="text-surface-900 dark:text-surface-0 font-semibold block">
+          {{ user.name }}
+        </span>
         <span class="text-surface-700 dark:text-surface-100">Last active 1 hour ago</span>
       </div>
       <div class="flex items-center ml-auto">
@@ -185,9 +185,12 @@ function addEmoji(emoji) {
             <span
               class="text-surface-700 dark:text-surface-100 inline-block font-medium border border-surface-200 dark:border-surface-700 p-4 whitespace-normal rounded"
               style="word-break: break-word; max-width: 80%"
-            >{{ message.text }}</span>
+            >
+              {{ message.text }}
+            </span>
             <p class="text-surface-700 dark:text-surface-100 mt-4">
-              {{ parseDate(message.createdAt) }}<i class="pi pi-check ml-2 text-green-400" />
+              {{ parseDate(message.createdAt) }}
+              <i class="pi pi-check ml-2 text-green-400" />
             </p>
           </div>
         </div>
@@ -200,9 +203,12 @@ function addEmoji(emoji) {
             <span
               class="inline-block text-left font-medium border border-surface-200 dark:border-surface-700 bg-primary-100 text-primary-900 p-4 whitespace-normal rounded"
               style="word-break: break-word; max-width: 80%"
-            >{{ message.text }}</span>
+            >
+              {{ message.text }}
+            </span>
             <p class="text-surface-700 dark:text-surface-100 mt-4">
-              {{ parseDate(message.createdAt) }} <i class="pi pi-check ml-2 text-green-400" />
+              {{ parseDate(message.createdAt) }}
+              <i class="pi pi-check ml-2 text-green-400" />
             </p>
           </div>
         </div>

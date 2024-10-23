@@ -370,12 +370,16 @@ watch(getPrimary, () => {
           <div class="flex aling-items-center justify-between mb-4">
             <div class="flex gap-4 flex-col justify-between w-full md:flex-row md:items-center">
               <div class="flex gap-4 items-center">
-                <div class="text-4xl">
-                  👋
-                </div>
+                <div class="text-4xl">👋</div>
                 <div class="flex flex-col gap-1 text-surface-600 dark:text-surface-200">
-                  <span class="text-2xl font-semibold">Hi,<span class="text-color"> Amy!</span></span>
-                  <span>Team Lead <span class="font-bold text-primary">@UX Designer</span></span>
+                  <span class="text-2xl font-semibold">
+                    Hi,
+                    <span class="text-color">Amy!</span>
+                  </span>
+                  <span>
+                    Team Lead
+                    <span class="font-bold text-primary">@UX Designer</span>
+                  </span>
                 </div>
               </div>
               <div class="flex items-center gap-2">
@@ -394,10 +398,22 @@ watch(getPrimary, () => {
           <div class="flex flex-col gap-2 text-primary mt-6 md:mt-0">
             <span class="font-bold text-sm">Done in Current Month</span>
             <div class="grid grid-cols-12 gap-4 grid-nogutter font-medium">
-              <span class="col-span-6 text-6xl md:col-span-3 flex items-center">72 <span class="text-base ml-2">tasks</span></span>
-              <span class="col-span-6 text-6xl md:col-span-3 flex items-center">4 <span class="text-base ml-2">production</span></span>
-              <span class="col-span-6 text-6xl md:col-span-3 flex items-center">18 <span class="text-base ml-2">tests</span></span>
-              <span class="col-span-6 text-6xl md:col-span-3 flex items-center">13 <span class="text-base ml-2">meetings</span></span>
+              <span class="col-span-6 text-6xl md:col-span-3 flex items-center">
+                72
+                <span class="text-base ml-2">tasks</span>
+              </span>
+              <span class="col-span-6 text-6xl md:col-span-3 flex items-center">
+                4
+                <span class="text-base ml-2">production</span>
+              </span>
+              <span class="col-span-6 text-6xl md:col-span-3 flex items-center">
+                18
+                <span class="text-base ml-2">tests</span>
+              </span>
+              <span class="col-span-6 text-6xl md:col-span-3 flex items-center">
+                13
+                <span class="text-base ml-2">meetings</span>
+              </span>
             </div>
           </div>
         </div>
@@ -435,7 +451,9 @@ watch(getPrimary, () => {
       <div class="card flex justify-between items-center">
         <div class="p-2 h-full w-full flex flex-col justify-between">
           <div class="flex items-center justify-between mb-4">
-            <span class="font-semibold text-lg text-surface-900 dark:text-surface-0">My Workspace</span>
+            <span class="font-semibold text-lg text-surface-900 dark:text-surface-0">
+              My Workspace
+            </span>
           </div>
           <div class="grid grid-cols-12 gap-8">
             <div class="col-span-12 md:col-span-4">
@@ -453,8 +471,13 @@ watch(getPrimary, () => {
                       />
                     </div>
                     <div class="flex flex-col justify-between gap-1">
-                      <span class="font-bold text-surface-900 dark:text-surface-0">My Daily Tasks</span>
-                      <span class="text-muted-color text-sm"><span class="font-bold">{{ completeTask }}</span>/5 Tasks</span>
+                      <span class="font-bold text-surface-900 dark:text-surface-0">
+                        My Daily Tasks
+                      </span>
+                      <span class="text-muted-color text-sm">
+                        <span class="font-bold">{{ completeTask }}</span>
+                        /5 Tasks
+                      </span>
                     </div>
                   </div>
                   <div>
@@ -518,7 +541,9 @@ watch(getPrimary, () => {
                       <i class="pi pi-chart-bar text-primary text-3xl" />
                     </div>
                     <div class="flex flex-col justify-between gap-1">
-                      <span class="font-bold text-surface-900 dark:text-surface-0">My Performance</span>
+                      <span class="font-bold text-surface-900 dark:text-surface-0">
+                        My Performance
+                      </span>
                     </div>
                   </div>
                   <div class="flex items-center gap-1">
@@ -548,8 +573,13 @@ watch(getPrimary, () => {
                       <i class="pi pi-calendar text-primary text-3xl" />
                     </div>
                     <div class="flex flex-col justify-between gap-1">
-                      <span class="font-bold text-surface-900 dark:text-surface-0">My Calendar</span>
-                      <span class="text-muted-color text-sm"><span class="font-bold">19</span> Events on this month</span>
+                      <span class="font-bold text-surface-900 dark:text-surface-0">
+                        My Calendar
+                      </span>
+                      <span class="text-muted-color text-sm">
+                        <span class="font-bold">19</span>
+                        Events on this month
+                      </span>
                     </div>
                   </div>
                   <div class="flex items-center gap-1">
@@ -574,7 +604,10 @@ watch(getPrimary, () => {
                       <div class="flex flex-col justify-center gap-2">
                         <span class="font-medium text-base text-color">{{ task.label }}</span>
                         <span class="text-muted-color text-sm">{{ task.description }}</span>
-                        <span class="flex items-center font-medium gap-1 text-muted-color text-xs"><i class="pi pi-clock" /> 10:30 AM</span>
+                        <span class="flex items-center font-medium gap-1 text-muted-color text-xs">
+                          <i class="pi pi-clock" />
+                          10:30 AM
+                        </span>
                       </div>
                     </div>
                     <div class="flex items-center">
@@ -592,7 +625,9 @@ watch(getPrimary, () => {
       <div class="card flex justify-between items-center">
         <div class="p-2 h-full w-full flex flex-col justify-between">
           <div class="flex items-center justify-between mb-4">
-            <span class="font-semibold text-lg text-surface-900 dark:text-surface-0">Projects Overview</span>
+            <span class="font-semibold text-lg text-surface-900 dark:text-surface-0">
+              Projects Overview
+            </span>
             <div class="flex items-center gap-2">
               <Button
                 label="Organize Teams"
@@ -635,12 +670,16 @@ watch(getPrimary, () => {
                         class="bg-surface-200 dark:bg-surface-600 p-1 px-2 flex font-medium gap-2 rounded-md"
                         :class="{ 'bg-primary-600': selectedProjectID === project.id }"
                       >
-                        <span :class="{ 'text-color-secondary': selectedProjectID !== project.id }">25 July</span>
+                        <span :class="{ 'text-color-secondary': selectedProjectID !== project.id }">
+                          25 July
+                        </span>
                         <i
                           class="pi pi-arrow-right"
                           :class="{ 'text-color-secondary': selectedProjectID !== project.id }"
                         />
-                        <span :class="{ 'text-color-secondary': selectedProjectID !== project.id }">25 Aug</span>
+                        <span :class="{ 'text-color-secondary': selectedProjectID !== project.id }">
+                          25 Aug
+                        </span>
                       </div>
                       <i
                         class="pi pi-ellipsis-h"
@@ -653,7 +692,8 @@ watch(getPrimary, () => {
                       class="text-sm"
                       :class="{ 'text-color-secondary': selectedProjectID !== project.id }"
                     >
-                      <span class="font-bold">{{ project.completedTask }}</span>/{{ project.totalTasks }} Tasks
+                      <span class="font-bold">{{ project.completedTask }}</span>
+                      /{{ project.totalTasks }} Tasks
                     </span>
                     <div
                       class="bg-surface-200 dark:bg-surface-600 w-full rounded-lg"
@@ -684,7 +724,9 @@ watch(getPrimary, () => {
               <div class="border border-surface p-4 rounded-md flex flex-col gap-4">
                 <div class="flex justify-between items-center">
                   <div class="flex flex-col gap-1">
-                    <span class="font-semibold text-surface-900 dark:text-surface-0 text-lg">Teams</span>
+                    <span class="font-semibold text-surface-900 dark:text-surface-0 text-lg">
+                      Teams
+                    </span>
                     <span class="text-sm text-muted-color">18 Members</span>
                   </div>
                   <Button

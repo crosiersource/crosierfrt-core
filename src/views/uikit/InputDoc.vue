@@ -75,9 +75,7 @@ function searchCountry(event) {
   <Fluid class="flex flex-col md:flex-row gap-8">
     <div class="md:w-1/2">
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          InputText
-        </div>
+        <div class="font-semibold text-xl">InputText</div>
         <div class="flex flex-col md:flex-row gap-4">
           <InputText
             type="text"
@@ -95,9 +93,7 @@ function searchCountry(event) {
           />
         </div>
 
-        <div class="font-semibold text-xl">
-          Icons
-        </div>
+        <div class="font-semibold text-xl">Icons</div>
         <IconField>
           <InputIcon class="pi pi-user" />
           <InputText
@@ -113,9 +109,7 @@ function searchCountry(event) {
           <InputIcon class="pi pi-search" />
         </IconField>
 
-        <div class="font-semibold text-xl">
-          Float Label
-        </div>
+        <div class="font-semibold text-xl">Float Label</div>
         <FloatLabel>
           <InputText
             id="username"
@@ -125,9 +119,7 @@ function searchCountry(event) {
           <label for="username">Username</label>
         </FloatLabel>
 
-        <div class="font-semibold text-xl">
-          Textarea
-        </div>
+        <div class="font-semibold text-xl">Textarea</div>
         <Textarea
           placeholder="Your Message"
           :auto-resize="true"
@@ -135,9 +127,7 @@ function searchCountry(event) {
           cols="30"
         />
 
-        <div class="font-semibold text-xl">
-          AutoComplete
-        </div>
+        <div class="font-semibold text-xl">AutoComplete</div>
         <AutoComplete
           v-model="selectedAutoValue"
           :suggestions="autoFilteredValue"
@@ -149,18 +139,14 @@ function searchCountry(event) {
           @complete="searchCountry($event)"
         />
 
-        <div class="font-semibold text-xl">
-          DatePicker
-        </div>
+        <div class="font-semibold text-xl">DatePicker</div>
         <DatePicker
           v-model="calendarValue"
           :show-icon="true"
           :show-button-bar="true"
         />
 
-        <div class="font-semibold text-xl">
-          InputNumber
-        </div>
+        <div class="font-semibold text-xl">InputNumber</div>
         <InputNumber
           v-model="inputNumberValue"
           show-buttons
@@ -169,23 +155,17 @@ function searchCountry(event) {
       </div>
 
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Slider
-        </div>
+        <div class="font-semibold text-xl">Slider</div>
         <InputText v-model.number="sliderValue" />
         <Slider v-model="sliderValue" />
 
         <div class="flex flex-row mt-6">
           <div class="flex flex-col gap-4 w-1/2">
-            <div class="font-semibold text-xl">
-              Rating
-            </div>
+            <div class="font-semibold text-xl">Rating</div>
             <Rating v-model="ratingValue" />
           </div>
           <div class="flex flex-col gap-4 w-1/2">
-            <div class="font-semibold text-xl">
-              ColorPicker
-            </div>
+            <div class="font-semibold text-xl">ColorPicker</div>
             <ColorPicker
               v-model="colorValue"
               style="width: 2rem"
@@ -193,9 +173,7 @@ function searchCountry(event) {
           </div>
         </div>
 
-        <div class="font-semibold text-xl">
-          Knob
-        </div>
+        <div class="font-semibold text-xl">Knob</div>
         <Knob
           v-model="knobValue"
           :step="10"
@@ -207,9 +185,7 @@ function searchCountry(event) {
     </div>
     <div class="md:w-1/2">
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          RadioButton
-        </div>
+        <div class="font-semibold text-xl">RadioButton</div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex items-center">
             <RadioButton
@@ -249,9 +225,7 @@ function searchCountry(event) {
           </div>
         </div>
 
-        <div class="font-semibold text-xl">
-          Checkbox
-        </div>
+        <div class="font-semibold text-xl">Checkbox</div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex items-center">
             <Checkbox
@@ -291,16 +265,12 @@ function searchCountry(event) {
           </div>
         </div>
 
-        <div class="font-semibold text-xl">
-          ToggleSwitch
-        </div>
+        <div class="font-semibold text-xl">ToggleSwitch</div>
         <ToggleSwitch v-model="switchValue" />
       </div>
 
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          Listbox
-        </div>
+        <div class="font-semibold text-xl">Listbox</div>
         <Listbox
           v-model="listboxValue"
           :options="listboxValues"
@@ -308,9 +278,7 @@ function searchCountry(event) {
           :filter="true"
         />
 
-        <div class="font-semibold text-xl">
-          Select
-        </div>
+        <div class="font-semibold text-xl">Select</div>
         <Select
           v-model="dropdownValue"
           :options="dropdownValues"
@@ -318,9 +286,7 @@ function searchCountry(event) {
           placeholder="Select"
         />
 
-        <div class="font-semibold text-xl">
-          MultiSelect
-        </div>
+        <div class="font-semibold text-xl">MultiSelect</div>
         <MultiSelect
           v-model="multiselectValue"
           :options="multiselectValues"
@@ -341,9 +307,7 @@ function searchCountry(event) {
               <div>{{ option.name }}</div>
             </div>
             <template v-if="!slotProps.value || slotProps.value.length === 0">
-              <div class="p-1">
-                Select Countries
-              </div>
+              <div class="p-1">Select Countries</div>
             </template>
           </template>
           <template #option="slotProps">
@@ -357,9 +321,7 @@ function searchCountry(event) {
           </template>
         </MultiSelect>
 
-        <div class="font-semibold text-xl">
-          TreeSelect
-        </div>
+        <div class="font-semibold text-xl">TreeSelect</div>
         <TreeSelect
           v-model="selectedNode"
           :options="treeSelectNodes"
@@ -368,9 +330,7 @@ function searchCountry(event) {
       </div>
 
       <div class="card flex flex-col gap-4">
-        <div class="font-semibold text-xl">
-          ToggleButton
-        </div>
+        <div class="font-semibold text-xl">ToggleButton</div>
         <ToggleButton
           v-model="toggleValue"
           on-label="Yes"
@@ -378,9 +338,7 @@ function searchCountry(event) {
           :style="{ width: '10em' }"
         />
 
-        <div class="font-semibold text-xl">
-          SelectButton
-        </div>
+        <div class="font-semibold text-xl">SelectButton</div>
         <SelectButton
           v-model="selectButtonValue"
           :options="selectButtonValues"
@@ -392,9 +350,7 @@ function searchCountry(event) {
 
   <Fluid class="flex mt-8">
     <div class="card flex flex-col gap-4 w-full">
-      <div class="font-semibold text-xl">
-        InputGroup
-      </div>
+      <div class="font-semibold text-xl">InputGroup</div>
       <div class="flex flex-col md:flex-row gap-4">
         <InputGroup>
           <InputGroupAddon>

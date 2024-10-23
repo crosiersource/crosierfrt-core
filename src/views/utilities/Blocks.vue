@@ -415,10 +415,8 @@ const checked = ref(false);
       >
         <div class="col-span-12 md:col-span-6 p-12 text-center md:text-left flex items-center">
           <section>
-            <span class="block text-6xl font-bold mb-1">Create the screens </span>
-            <div class="text-6xl text-primary font-bold mb-4">
-              your visitors deserve to see
-            </div>
+            <span class="block text-6xl font-bold mb-1">Create the screens</span>
+            <div class="text-6xl text-primary font-bold mb-4">your visitors deserve to see</div>
             <p class="mt-0 mb-6 text-surface-700 dark:text-surface-100 leading-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
@@ -455,7 +453,7 @@ const checked = ref(false);
     >
       <div class="bg-surface-0 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20 text-center">
         <div class="mb-4 font-bold text-3xl">
-          <span class="text-surface-900 dark:text-surface-0">One Product, </span>
+          <span class="text-surface-900 dark:text-surface-0">One Product,</span>
           <span class="text-blue-600">Many Solutions</span>
         </div>
         <div class="text-surface-700 dark:text-surface-100 mb-12">
@@ -472,8 +470,10 @@ const checked = ref(false);
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
               Built for Developers
             </div>
-            <span class="text-surface-700 dark:text-surface-100 leading-normal">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur.</span>
+            <span class="text-surface-700 dark:text-surface-100 leading-normal">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </span>
           </div>
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
@@ -485,8 +485,10 @@ const checked = ref(false);
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
               End-to-End Encryption
             </div>
-            <span class="text-surface-700 dark:text-surface-100 leading-normal">Risus nec feugiat in fermentum posuere urna nec. Posuere sollicitudin aliquam
-              ultrices sagittis.</span>
+            <span class="text-surface-700 dark:text-surface-100 leading-normal">
+              Risus nec feugiat in fermentum posuere urna nec. Posuere sollicitudin aliquam ultrices
+              sagittis.
+            </span>
           </div>
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
@@ -498,8 +500,10 @@ const checked = ref(false);
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
               Easy to Use
             </div>
-            <span class="text-surface-700 dark:text-surface-100 leading-normal">Ornare suspendisse sed nisi lacus sed viverra tellus. Neque volutpat ac tincidunt
-              vitae semper.</span>
+            <span class="text-surface-700 dark:text-surface-100 leading-normal">
+              Ornare suspendisse sed nisi lacus sed viverra tellus. Neque volutpat ac tincidunt
+              vitae semper.
+            </span>
           </div>
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
@@ -511,7 +515,9 @@ const checked = ref(false);
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
               Fast & Global Support
             </div>
-            <span class="text-surface-700 dark:text-surface-100 leading-normal">Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus.</span>
+            <span class="text-surface-700 dark:text-surface-100 leading-normal">
+              Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus.
+            </span>
           </div>
           <div class="col-span-12 md:col-span-4 mb-6 px-8">
             <span
@@ -523,7 +529,8 @@ const checked = ref(false);
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
               Open Source
             </div>
-            <span class="text-surface-700 dark:text-surface-100 leading-normal">Nec tincidunt praesent semper feugiat. Sed adipiscing diam donec adipiscing tristique
+            <span class="text-surface-700 dark:text-surface-100 leading-normal">
+              Nec tincidunt praesent semper feugiat. Sed adipiscing diam donec adipiscing tristique
               risus nec feugiat.
             </span>
           </div>
@@ -537,8 +544,10 @@ const checked = ref(false);
             <div class="text-surface-900 dark:text-surface-0 text-xl mb-4 font-medium">
               Trusted Securitty
             </div>
-            <span class="text-surface-700 dark:text-surface-100 leading-normal">Mattis rhoncus urna neque viverra justo nec ultrices. Id cursus metus aliquam
-              eleifend.</span>
+            <span class="text-surface-700 dark:text-surface-100 leading-normal">
+              Mattis rhoncus urna neque viverra justo nec ultrices. Id cursus metus aliquam
+              eleifend.
+            </span>
           </div>
         </div>
       </div>
@@ -569,13 +578,13 @@ const checked = ref(false);
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Basic
                 </div>
-                <div class="text-surface-600 dark:text-surface-200">
-                  Plan description
-                </div>
+                <div class="text-surface-600 dark:text-surface-200">Plan description</div>
                 <hr class="my-4 mx-0 border-t border-0 border-surface">
                 <div class="flex items-center">
                   <span class="font-bold text-2xl text-surface-900 dark:text-surface-0">$9</span>
-                  <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">per month</span>
+                  <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">
+                    per month
+                  </span>
                 </div>
                 <hr class="my-4 mx-0 border-t border-0 border-surface">
                 <ul class="list-none p-0 m-0 grow">
@@ -613,13 +622,13 @@ const checked = ref(false);
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Premium
                 </div>
-                <div class="text-surface-600 dark:text-surface-200">
-                  Plan description
-                </div>
+                <div class="text-surface-600 dark:text-surface-200">Plan description</div>
                 <hr class="my-4 mx-0 border-t border-0 border-surface">
                 <div class="flex items-center">
                   <span class="font-bold text-2xl text-surface-900 dark:text-surface-0">$29</span>
-                  <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">per month</span>
+                  <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">
+                    per month
+                  </span>
                 </div>
                 <hr class="my-4 mx-0 border-t border-0 border-surface">
                 <ul class="list-none p-0 m-0 grow">
@@ -641,7 +650,9 @@ const checked = ref(false);
                   <li class="flex items-center mb-4">
                     <i class="pi pi-check-circle text-green-500 mr-2" />
 
-                    <span class="text-surface-900 dark:text-surface-0">Duis ultricies lacus sed</span>
+                    <span class="text-surface-900 dark:text-surface-0">
+                      Duis ultricies lacus sed
+                    </span>
                   </li>
                 </ul>
                 <hr class="mb-4 mx-0 border-t border-0 border-surface">
@@ -662,13 +673,13 @@ const checked = ref(false);
                 <div class="text-surface-900 dark:text-surface-0 font-medium text-xl mb-2">
                   Enterprise
                 </div>
-                <div class="text-surface-600 dark:text-surface-200">
-                  Plan description
-                </div>
+                <div class="text-surface-600 dark:text-surface-200">Plan description</div>
                 <hr class="my-4 mx-0 border-t border-0 border-surface">
                 <div class="flex items-center">
                   <span class="font-bold text-2xl text-surface-900 dark:text-surface-0">$49</span>
-                  <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">per month</span>
+                  <span class="ml-2 font-medium text-surface-600 dark:text-surface-200">
+                    per month
+                  </span>
                 </div>
                 <hr class="my-4 mx-0 border-t border-0 border-surface">
                 <ul class="list-none p-0 m-0 grow">
@@ -690,7 +701,9 @@ const checked = ref(false);
                   <li class="flex items-center mb-4">
                     <i class="pi pi-check-circle text-green-500 mr-2" />
 
-                    <span class="text-surface-900 dark:text-surface-0">Duis ultricies lacus sed</span>
+                    <span class="text-surface-900 dark:text-surface-0">
+                      Duis ultricies lacus sed
+                    </span>
                   </li>
                   <li class="flex items-center mb-4">
                     <i class="pi pi-check-circle text-green-500 mr-2" />
@@ -724,7 +737,8 @@ const checked = ref(false);
       <div class="bg-surface-0 dark:bg-surface-950 px-6 py-20 md:px-12 lg:px-20">
         <div class="text-surface-700 dark:text-surface-100 text-center">
           <div class="text-blue-600 font-bold mb-4">
-            <i class="pi pi-discord" />&nbsp;POWERED BY DISCORD
+            <i class="pi pi-discord" />
+            &nbsp;POWERED BY DISCORD
           </div>
           <div class="text-surface-900 dark:text-surface-0 font-bold text-5xl mb-4">
             Join Our Design Community
@@ -752,11 +766,11 @@ const checked = ref(false);
       <div
         class="bg-slate-900 text-gray-100 p-4 flex justify-between lg:justify-center items-center flex-wrap"
       >
-        <div class="font-bold mr-20">
-          🔥 Hot Deals!
-        </div>
+        <div class="font-bold mr-20">🔥 Hot Deals!</div>
         <div class="items-center hidden lg:flex">
-          <span class="leading-normal">Libero voluptatum atque exercitationem praesentium provident odit.</span>
+          <span class="leading-normal">
+            Libero voluptatum atque exercitationem praesentium provident odit.
+          </span>
         </div>
         <a class="flex items-center ml-2 mr-20">
           <a
@@ -773,9 +787,7 @@ const checked = ref(false);
       </div>
     </BlockViewer>
 
-    <div class="block-category-title">
-      Application UI
-    </div>
+    <div class="block-category-title">Application UI</div>
     <BlockViewer
       header="Page Heading"
       :code="block6"
@@ -786,7 +798,9 @@ const checked = ref(false);
           <li>
             <a
               class="text-surface-500 dark:text-surface-300 no-underline leading-normal cursor-pointer"
-            >Application</a>
+            >
+              Application
+            </a>
           </li>
           <li class="px-2">
             <i class="pi pi-angle-right text-surface-500 dark:text-surface-300 leading-normal" />
@@ -797,9 +811,7 @@ const checked = ref(false);
         </ul>
         <div class="flex items-start flex-col lg:justify-between lg:flex-row">
           <div>
-            <div class="font-medium text-3xl text-surface-900 dark:text-surface-0">
-              Customers
-            </div>
+            <div class="font-medium text-3xl text-surface-900 dark:text-surface-0">Customers</div>
             <div class="flex items-center text-surface-700 dark:text-surface-100 flex-wrap">
               <div class="mr-8 flex items-center mt-4">
                 <i class="pi pi-users mr-2" />
@@ -842,10 +854,10 @@ const checked = ref(false);
             <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border">
               <div class="flex justify-between mb-4">
                 <div>
-                  <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Orders</span>
-                  <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">
-                    152
-                  </div>
+                  <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">
+                    Orders
+                  </span>
+                  <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">152</div>
                 </div>
                 <div
                   class="flex items-center justify-center bg-blue-100 rounded-border"
@@ -854,7 +866,7 @@ const checked = ref(false);
                   <i class="pi pi-shopping-cart text-blue-500 text-xl" />
                 </div>
               </div>
-              <span class="text-green-500 font-medium">24 new </span>
+              <span class="text-green-500 font-medium">24 new</span>
               <span class="text-surface-500 dark:text-surface-300">since last visit</span>
             </div>
           </div>
@@ -862,10 +874,10 @@ const checked = ref(false);
             <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border">
               <div class="flex justify-between mb-4">
                 <div>
-                  <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Revenue</span>
-                  <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">
-                    $2.100
-                  </div>
+                  <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">
+                    Revenue
+                  </span>
+                  <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">$2.100</div>
                 </div>
                 <div
                   class="flex items-center justify-center bg-orange-100 rounded-border"
@@ -874,7 +886,7 @@ const checked = ref(false);
                   <i class="pi pi-map-marker text-orange-500 text-xl" />
                 </div>
               </div>
-              <span class="text-green-500 font-medium">%52+ </span>
+              <span class="text-green-500 font-medium">%52+</span>
               <span class="text-surface-500 dark:text-surface-300">since last week</span>
             </div>
           </div>
@@ -882,10 +894,10 @@ const checked = ref(false);
             <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border">
               <div class="flex justify-between mb-4">
                 <div>
-                  <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Customers</span>
-                  <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">
-                    28441
-                  </div>
+                  <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">
+                    Customers
+                  </span>
+                  <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">28441</div>
                 </div>
                 <div
                   class="flex items-center justify-center bg-cyan-100 rounded-border"
@@ -894,7 +906,7 @@ const checked = ref(false);
                   <i class="pi pi-inbox text-cyan-500 text-xl" />
                 </div>
               </div>
-              <span class="text-green-500 font-medium">520 </span>
+              <span class="text-green-500 font-medium">520</span>
               <span class="text-surface-500 dark:text-surface-300">newly registered</span>
             </div>
           </div>
@@ -902,7 +914,9 @@ const checked = ref(false);
             <div class="bg-surface-0 dark:bg-surface-900 shadow p-4 rounded-border">
               <div class="flex justify-between mb-4">
                 <div>
-                  <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">Comments</span>
+                  <span class="block text-surface-500 dark:text-surface-300 font-medium mb-4">
+                    Comments
+                  </span>
                   <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">
                     152 Unread
                   </div>
@@ -914,7 +928,7 @@ const checked = ref(false);
                   <i class="pi pi-comment text-purple-500 text-xl" />
                 </div>
               </div>
-              <span class="text-green-500 font-medium">85 </span>
+              <span class="text-green-500 font-medium">85</span>
               <span class="text-surface-500 dark:text-surface-300">responded</span>
             </div>
           </div>
@@ -939,7 +953,9 @@ const checked = ref(false);
           <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">
             Welcome Back
           </div>
-          <span class="text-surface-600 dark:text-surface-200 font-medium leading-normal">Don't have an account?</span>
+          <span class="text-surface-600 dark:text-surface-200 font-medium leading-normal">
+            Don't have an account?
+          </span>
           <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
         </div>
 
@@ -947,7 +963,9 @@ const checked = ref(false);
           <label
             for="email1"
             class="block text-surface-900 dark:text-surface-0 font-medium mb-2"
-          >Email</label>
+          >
+            Email
+          </label>
           <InputText
             id="email1"
             type="text"
@@ -958,7 +976,9 @@ const checked = ref(false);
           <label
             for="password1"
             class="block text-surface-900 dark:text-surface-0 font-medium mb-2"
-          >Password</label>
+          >
+            Password
+          </label>
           <InputText
             id="password1"
             type="password"
@@ -977,9 +997,13 @@ const checked = ref(false);
               <label
                 for="rememberme1"
                 class="text-surface-900 dark:text-surface-0"
-              >Remember me</label>
+              >
+                Remember me
+              </label>
             </div>
-            <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
+            <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">
+              Forgot password?
+            </a>
           </div>
 
           <Button
@@ -1110,9 +1134,7 @@ const checked = ref(false);
       free
     >
       <div class="bg-surface-0 dark:bg-surface-900 p-6 shadow rounded-border">
-        <div class="text-3xl font-medium text-surface-900 dark:text-surface-0 mb-4">
-          Card Title
-        </div>
+        <div class="text-3xl font-medium text-surface-900 dark:text-surface-0 mb-4">Card Title</div>
         <div class="font-medium text-surface-500 dark:text-surface-300 mb-4">
           Vivamus id nisl interdum, blandit augue sit amet, eleifend mi.
         </div>
