@@ -8,7 +8,7 @@
     <AppSidebar />
 
     <div class="layout-content-wrapper">
-      <AppBreadCrumb />
+      <AppBreadCrumb v-if="false" />
       <div class="layout-content">
         <RouterView />
       </div>

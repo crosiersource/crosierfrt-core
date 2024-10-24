@@ -6,14 +6,11 @@ const { isDarkTheme } = useLayout();
 
 <template>
   <div class="layout-footer">
-    <img
-      :src="'/layout/images/logo/footer-' + (isDarkTheme ? 'ultima-dark' : 'ultima') + '.svg'"
-      alt="ultima-footer-logo"
-    />
-    <div class="flex gap-2">
-      <Button icon="pi pi-github" rounded text plain />
-      <Button icon="pi pi-facebook" rounded text plain />
-      <Button icon="pi pi-twitter" rounded text plain />
-    </div>
+    <Image src="https://www.crosier.com.br/CROSIER_400x89.png" alt="Logo Crosier" width="70" />
+    <!--    <div class="flex gap-2">-->
+    <!--      <Button icon="pi pi-github" rounded text plain />-->
+    <!--      <Button icon="pi pi-facebook" rounded text plain />-->
+    <!--      <Button icon="pi pi-twitter" rounded text plain />-->
+    <!--    </div>-->
   </div>
 </template>

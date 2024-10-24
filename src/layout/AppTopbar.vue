@@ -85,13 +85,13 @@ function focusSearchInput() {
       <RouterLink class="layout-topbar-logo" to="/">
         <Image
           src="https://www.crosier.com.br/imgs/CROSIER_branco_transp.png"
-          alt="Image"
+          alt="Logo Crosier"
           width="180"
           class="layout-topbar-logo-full"
         />
         <Image
           src="https://www.crosier.com.br/imgs/CROSIER_branco_transp.png"
-          alt="Image"
+          alt="Logo Crosier"
           width="70"
           class="layout-topbar-logo-slim"
         />
@@ -107,7 +107,7 @@ function focusSearchInput() {
 
     <div class="layout-topbar-end">
       <div class="layout-topbar-actions-start">
-        <MegaMenu :model="item" class="layout-megamenu" breakpoint="0px" />
+        <MegaMenu :model="item" class="layout-megamenu" breakpoint="0px" style="display: none" />
       </div>
       <div class="layout-topbar-actions-end">
         <ul class="layout-topbar-items">
