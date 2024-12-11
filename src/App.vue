@@ -11,13 +11,13 @@ export default {
   name: 'App',
   data() {
     return {
-      authStore: useAuthStore(), // Obtém a store de autenticação
-      loadingStore: useLoadingStore(), // Obtém a store de autenticação
+      authStore: useAuthStore(),
+      loadingStore: useLoadingStore(),
     };
   },
   created() {
-    provide('authStore', this.authStore); // Fornece a store para todos os componentes filhos
-    provide('loadingStore', this.loadingStore); // Fornece a store para todos os componentes filhos
+    provide('authStore', this.authStore);
+    provide('loadingStore', this.loadingStore);
   },
 };
 </script>

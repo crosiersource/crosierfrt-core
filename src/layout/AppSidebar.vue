@@ -84,11 +84,11 @@ function onMouseLeave() {
       </a>
       <button class="layout-sidebar-anchor" type="button" @click="onAnchorToggle" />
     </div>
-    <AppMenuProfile v-if="layoutConfig.menuProfilePosition === 'start'" />
+    <AppMenuProfile v-if="false && layoutConfig.menuProfilePosition === 'start'" />
     <div class="layout-menu-container">
       <AppMenu />
     </div>
-    <AppMenuProfile v-if="layoutConfig.menuProfilePosition === 'end'" />
+    <AppMenuProfile v-if="false && layoutConfig.menuProfilePosition === 'end'" />
   </div>
 </template>
 

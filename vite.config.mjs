@@ -9,22 +9,22 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   optimizeDeps: {
     noDiscovery: true,
-    include: ['quill', 'mousetrap', 'tiny-case', 'property-expr', 'toposort']
+    include: ['quill', 'mousetrap', 'tiny-case', 'property-expr', 'toposort', 'moment-timezone'],
   },
   plugins: [
     vue(),
     Components({
-      resolvers: [PrimeVueResolver()]
-    })
+      resolvers: [PrimeVueResolver()],
+    }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
     // Adicionando suporte implícito a .vue
-    extensions: ['.js', '.json', '.vue']
+    extensions: ['.js', '.json', '.vue'],
   },
   server: {
-    port: 4000
-  }
+    port: 4000,
+  },
 });

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import AppMenuItem from './AppMenuItem.vue';
 
-const model = ref([
+const ultimaOriginal = [
   {
     label: 'Dashboards',
     icon: 'pi pi-home',
@@ -448,7 +448,29 @@ const model = ref([
       },
     ],
   },
-]);
+];
+
+const crosierMenu = [
+  {
+    label: 'Inicial',
+    icon: 'pi pi-home',
+    to: '/',
+  },
+  {
+    label: 'Configurações',
+    icon: 'fas fa-cogs',
+    items: [
+      {
+        label: 'Usuários',
+        icon: 'fas fa-users',
+        to: '/sec/usuario/list',
+      },
+    ],
+  },
+];
+
+// const model = ref(ultimaOriginal);
+const model = ref(crosierMenu);
 </script>
 
 <template>

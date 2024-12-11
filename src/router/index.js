@@ -2,10 +2,10 @@ import AppLayout from '@/layout/AppLayout.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 import { useAuthStore } from '@/stores/auth.store';
-import GrupoList from '@/views/Security/Grupo/List.vue';
-import GrupoForm from '@/views/Security/Grupo/Form.vue';
-import UsuarioList from '@/views/Security/Usuario/List.vue';
-import UsuarioForm from '@/views/Security/Usuario/Form.vue';
+import GrupoList from '@/views/Security/Grupo/GrupoList.vue';
+import GrupoForm from '@/views/Security/Grupo/GrupoForm.vue';
+import UsuarioList from '@/views/Security/Usuario/UsuarioList.vue';
+import UsuarioForm from '@/views/Security/Usuario/UsuarioForm.vue';
 
 const routes = [
   {
@@ -508,7 +508,6 @@ router.beforeEach(async (to) => {
     if (authStore.isTokenExpired()) {
       await authStore.doRefreshToken();
     }
-
     if (authRequired && authStore.isTokenExpired()) {
       authStore.returnUrl = to.fullPath;
       return '/auth/login';

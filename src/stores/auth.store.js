@@ -6,7 +6,6 @@ import { useLoadingStore } from './loading.store';
 export const useAuthStore = defineStore('auth', {
   state: () => {
     return {
-      // all these properties will have their type inferred automatically
       username: null,
       token: null,
       tokenExpiration: null,
@@ -64,6 +63,8 @@ export const useAuthStore = defineStore('auth', {
     },
 
     isTokenExpired() {
+      console.log('isTokenExpired', this.tokenExpiration);
+
       if (this.tokenExpiration) {
         return Date.now() >= this.tokenExpiration * 1000;
       }

@@ -1,42 +1,36 @@
 <template>
   <CrosierListS
     v-if="authStore.token"
-    api-resource="/api/sec/user"
-    titulo="Usuários"
+    api-resource="/api/sec/group"
+    titulo="Grupos"
     icon="fas fa-users"
     :headers="headers"
     :auth-store="authStore"
-    :store="userStore"
-    form-path="/sec/usuario/form"
-    list-path="/sec/usuario/list"
+    :store="groupStore"
+    form-path="/sec/grupo/form"
+    list-path="/sec/grupo/list"
   >
     <template #filters>
       <VTextField
         id="filters.id"
-        v-model="userStore.filters.id"
+        v-model="groupStore.filters.id"
         label="Id"
         outlined
         dense
         clearable
       />
 
-      <VTextField
-        v-model="userStore.filters.username"
-        label="Nome de Usuário"
-        outlined
-        dense
-        clearable
-      />
+      <VTextField v-model="groupStore.filters.groupname" label="Grupo" outlined dense clearable />
     </template>
   </CrosierListS>
 </template>
 <script>
-import CrosierListS from '@/components/Crosier/CrosierList';
+import CrosierListS from '@/components/crosier/CrosierListS';
 import { mapStores } from 'pinia';
-import { useUserStore } from '@/stores/Security/user.store';
+import { useGroupStore } from '@/stores/Security/group.store';
 
 export default {
-  name: 'UsuarioList',
+  name: 'GrupoList',
 
   components: {
     CrosierListS,
@@ -48,14 +42,14 @@ export default {
     return {
       headers: [
         { title: 'Id', key: 'id', sortable: true },
-        { title: 'Usuário', key: 'username' },
+        { title: 'Grupo', key: 'groupname' },
         { title: '', key: 'actions', sortable: false, width: '1%' },
       ],
     };
   },
 
   computed: {
-    ...mapStores(useUserStore),
+    ...mapStores(useGroupStore),
   },
 };
 </script>

@@ -27,7 +27,7 @@
   </CrosierForm>
 </template>
 <script>
-import CrosierForm from '@/components/Crosier/CrosierForm';
+import CrosierForm from '@/components/crosier/CrosierFormS';
 import { mapStores } from 'pinia';
 import { useGroupStore } from '@/stores/Security/group.store';
 export default {

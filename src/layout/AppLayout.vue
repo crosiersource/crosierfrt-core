@@ -1,5 +1,8 @@
 <template>
-  <div :class="['layout-container', { ...containerClass }]">
+  <div
+    style="display: flex; flex-direction: column; min-height: 100vh"
+    :class="['layout-container', { ...containerClass }]"
+  >
     <ProgressSpinner v-if="loadingStore.isLoading" class="progress-spinner" />
     <BlockUI full-screen :blocked="loadingStore.isLoading" />
 

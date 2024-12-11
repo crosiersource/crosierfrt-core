@@ -126,6 +126,27 @@ const dropdownItem = ref(null);
             <InputText id="zip" type="text" />
           </div>
         </div>
+
+        <div class="grid grid-cols-12 gap-4">
+          <!-- Campo State ocupando 9 colunas -->
+          <div class="col-span-12 md:col-span-9">
+            <label for="state">State</label>
+            <Select
+              id="state"
+              v-model="dropdownItem"
+              :options="dropdownItems"
+              option-label="name"
+              placeholder="Select One"
+              class="w-full"
+            />
+          </div>
+
+          <!-- Campo Zip ocupando 3 colunas -->
+          <div class="col-span-12 md:col-span-3">
+            <label for="zip">Zip</label>
+            <InputText id="zip" type="text" class="w-full" />
+          </div>
+        </div>
       </div>
     </div>
   </Fluid>
