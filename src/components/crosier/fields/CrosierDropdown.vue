@@ -1,52 +1,46 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <Dropdown
-        :class="'form-control ' + (this.error ? 'is-invalid' : '')"
-        :id="this.id"
-        :appendTo="this.appendTo"
+        :id="id"
+        fluid
+        :class="'form-control ' + (error ? 'is-invalid' : '')"
+        :appendTo="appendTo"
         :modelValue="modelValue"
-        @change="this.onChange"
         emptyMessage="Nenhum resultado encontrado"
-        :options="this.options"
-        :optionLabel="this.optionLabel"
-        :optionValue="this.optionValue"
-        :placeholder="this.showClear ? 'Selecione' : null"
-        :showClear="this.showClear"
-        :disabled="this.disabled"
-        :dataKey="this.dataKey"
+        :options="options"
+        :optionLabel="optionLabel"
+        :optionValue="optionValue"
+        :placeholder="showClear ? 'Selecione' : null"
+        :showClear="showClear"
+        :disabled="disabled"
+        :dataKey="dataKey"
         :filter="true"
-        :editable="this.editable"
-        @focus="this.$emit('focus')"
-        @blur="this.$emit('blur')"
+        :editable="editable"
+        @change="onChange"
+        @focus="$emit('focus')"
+        @blur="$emit('blur')"
       />
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Dropdown from "primevue/dropdown";
+import Dropdown from 'primevue/dropdown';
 
 export default {
-  name: "CrosierDropdown",
+  name: 'CrosierDropdown',
 
   components: {
     Dropdown,
   },
-
-  emits: ["update:modelValue", "change", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -58,7 +52,7 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     error: {
       type: String,
@@ -70,11 +64,11 @@ export default {
     },
     optionLabel: {
       type: String,
-      default: "label",
+      default: 'label',
     },
     optionValue: {
       type: String,
-      default: "value",
+      default: 'value',
     },
     options: {
       type: Array,
@@ -92,11 +86,11 @@ export default {
     },
     appendTo: {
       type: String,
-      default: "body",
+      default: 'body',
     },
     dataKey: {
       type: String,
-      default: "@id",
+      default: '@id',
     },
     showLabel: {
       type: Boolean,
@@ -112,6 +106,8 @@ export default {
     },
   },
 
+  emits: ['update:modelValue', 'change', 'focus', 'blur'],
+
   created() {
     if (!this.options || this.options.length < 1) {
       console.debug(`options n/d para ${this.id}`);
@@ -120,8 +116,8 @@ export default {
 
   methods: {
     onChange($event) {
-      this.$emit("change", $event);
-      this.$emit("update:modelValue", $event.value);
+      this.$emit('change', $event);
+      this.$emit('update:modelValue', $event.value);
     },
   },
 };

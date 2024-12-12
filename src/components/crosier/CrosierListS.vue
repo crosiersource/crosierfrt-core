@@ -1,6 +1,5 @@
 <template>
   <ConfirmDialog group="confirmDialog_crosierListS" />
-  <Toast group="toast_crosierListS" class="mb-5" />
 
   <Drawer
     v-if="comFiltragem && filtrosNaSidebar"

@@ -1,89 +1,83 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <div class="input-group">
         <Datepicker
-          :key="this.key"
-          :class="this.inputClass"
-          :id="this.id"
+          :id="id"
+          :key="key"
           ref="refCalendar"
+          fluid
+          :class="inputClass"
           :modelValue="modelValue"
-          @update:modelValue="this.onInput"
-          @cleared="this.clear"
-          @focus="this.$emit('focus')"
-          @blur="this.$emit('blur')"
-          :range="this.range"
-          :multiCalendars="this.range"
-          :maxRange="this.maxRange"
-          :format="this.format"
+          :range="range"
+          :multiCalendars="range"
+          :maxRange="maxRange"
+          :format="format"
           locale="pt-BR"
           selectText="OK"
           cancelText="Cancelar"
           nowButtonLabel="Agora"
           closeOnScroll
           autoApply
-          :disabled="this.disabled"
-          :textInput="this.textInput"
-          :enableTimePicker="this.showTimePicker"
-          :enableSeconds="this.showSeconds"
+          :disabled="disabled"
+          :textInput="textInput"
+          :enableTimePicker="showTimePicker"
+          :enableSeconds="showSeconds"
           weekStart="0"
-          :monthPicker="this.monthPicker"
-          :timePicker="this.timePicker"
+          :monthPicker="monthPicker"
+          :timePicker="timePicker"
+          @update:model-value="onInput"
+          @cleared="clear"
+          @focus="$emit('focus')"
+          @blur="$emit('blur')"
         />
-        <div class="input-group-append" v-if="this.comBotoesPeriodo">
+        <div v-if="comBotoesPeriodo" class="input-group-append">
           <button
             type="button"
             class="ml-1 btn btn-outline-info"
             title="Período anterior"
-            @click="this.trocaPeriodo(false)"
-            :disabled="!this.modelValue"
+            :disabled="!modelValue"
+            @click="trocaPeriodo(false)"
           >
-            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-left" />
           </button>
 
           <button
             type="button"
             class="ml-1 btn btn-outline-info"
             title="Próximo período"
-            @click="this.trocaPeriodo(true)"
-            :disabled="!this.modelValue"
+            :disabled="!modelValue"
+            @click="trocaPeriodo(true)"
           >
-            <i class="fas fa-angle-right"></i>
+            <i class="fas fa-angle-right" />
           </button>
         </div>
       </div>
 
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Datepicker from "@vuepic/vue-datepicker";
-import "@vuepic/vue-datepicker/dist/main.css";
-import moment from "moment";
-import axios from "axios";
-import { mapMutations } from "vuex";
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
+import moment from 'moment';
+import axios from 'axios';
+import { mapMutations } from 'vuex';
 
 export default {
-  name: "CrosierCalendar",
+  name: 'CrosierCalendar',
 
   components: {
     Datepicker,
   },
-
-  emits: ["update:modelValue", "date-select", "focus", "blur"],
 
   props: {
     modelValue: {},
@@ -97,7 +91,7 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
@@ -132,7 +126,7 @@ export default {
     },
     selectionMode: {
       type: String,
-      default: "single",
+      default: 'single',
     },
     showLabel: {
       type: Boolean,
@@ -155,10 +149,12 @@ export default {
     },
   },
 
+  emits: ['update:modelValue', 'date-select', 'focus', 'blur'],
+
   data() {
     return {
       inputClass: null,
-      format: "dd/MM/yyyy",
+      format: 'dd/MM/yyyy',
       showTimePicker: false,
       timePicker: false,
       key: 0,
@@ -169,26 +165,26 @@ export default {
     if (this.timeOnly) {
       this.timePicker = true;
       this.showTimePicker = true;
-      this.format = "HH:mm";
-      this.inputClass = "crsr-timeonly-nseg";
+      this.format = 'HH:mm';
+      this.inputClass = 'crsr-timeonly-nseg';
       if (this.showSeconds) {
-        this.format = "HH:mm:ss";
-        this.inputClass = "crsr-timeonly";
+        this.format = 'HH:mm:ss';
+        this.inputClass = 'crsr-timeonly';
       }
     } else if (this.monthPicker) {
-      this.format = "MM/yyyy";
+      this.format = 'MM/yyyy';
     } else if (this.range) {
-      this.inputClass = "crsr-date-periodo text-center";
+      this.inputClass = 'crsr-date-periodo text-center';
     } else if (this.showSeconds) {
-      this.format = "dd/MM/yyyy HH:mm:ss";
-      this.inputClass = "crsr-datetime";
+      this.format = 'dd/MM/yyyy HH:mm:ss';
+      this.inputClass = 'crsr-datetime';
       this.showTimePicker = true;
     } else if (this.showTime) {
-      this.format = "dd/MM/yyyy HH:mm";
-      this.inputClass = "crsr-datetime-nseg";
+      this.format = 'dd/MM/yyyy HH:mm';
+      this.inputClass = 'crsr-datetime-nseg';
       this.showTimePicker = true;
     } else {
-      this.inputClass = "crsr-date";
+      this.inputClass = 'crsr-date';
     }
 
     this.corrigirMascaras();
@@ -200,16 +196,16 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setLoading"]),
+    ...mapMutations(['setLoading']),
 
     moment(date) {
       return moment(date);
     },
 
     clear() {
-      this.$emit("update:modelValue", null);
-      this.$emit("date-select");
-      this.$emit("clear");
+      this.$emit('update:modelValue', null);
+      this.$emit('date-select');
+      this.$emit('clear');
     },
 
     onInput($event) {
@@ -217,7 +213,7 @@ export default {
         const dtStr = $event?.target?.value ?? $event;
 
         if (this.timeOnly) {
-          this.$emit("update:modelValue", dtStr);
+          this.$emit('update:modelValue', dtStr);
           return;
         }
 
@@ -229,20 +225,20 @@ export default {
 
         if (dtStr instanceof Date) {
           date = dtStr;
-        } else if (this.inputClass === "crsr-date") {
+        } else if (this.inputClass === 'crsr-date') {
           if (dtStr && dtStr.length === 10) {
             dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
             match = dtStr.match(dateParser);
             date = new Date(
               match[3], // year
               match[2] - 1, // monthIndex
-              match[1] // day
+              match[1], // day
               // match[4],  // hours
               // match[5],  // minutes
               // match[6]  //seconds
             );
           }
-        } else if (dtStr && dtStr.length === 16 && this.inputClass === "crsr-datetime-nseg") {
+        } else if (dtStr && dtStr.length === 16 && this.inputClass === 'crsr-datetime-nseg') {
           dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
           match = dtStr.match(dateParser);
           date = new Date(
@@ -250,10 +246,10 @@ export default {
             match[2] - 1, // monthIndex
             match[1], // day
             match[4], // hours
-            match[5] // minutes
+            match[5], // minutes
             // match[6]  //seconds
           );
-        } else if (dtStr && dtStr.length === 19 && this.inputClass === "crsr-datetime") {
+        } else if (dtStr && dtStr.length === 19 && this.inputClass === 'crsr-datetime') {
           dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})/;
           match = dtStr.match(dateParser);
           date = new Date(
@@ -262,109 +258,107 @@ export default {
             match[1], // day
             match[4], // hours
             match[5], // minutes
-            match[6] // seconds
+            match[6], // seconds
           );
-        } else if (dtStr && dtStr.length === 23 && this.selectionMode === "range") {
+        } else if (dtStr && dtStr.length === 23 && this.selectionMode === 'range') {
           dateParser = /(\d{2})\/(\d{2})\/(\d{4}) - (\d{2})\/(\d{2})\/(\d{4})/;
           match = dtStr.match(dateParser);
           dtIni = new Date(
             match[3], // year
             match[2] - 1, // monthIndex
-            match[1] // day
+            match[1], // day
           );
           dtFim = new Date(
             match[6], // year
             match[5] - 1, // monthIndex
-            match[4] // day
+            match[4], // day
           );
           if (dtIni && dtFim) {
             const dts = [dtIni, dtFim];
-            this.$emit("update:modelValue", dts);
+            this.$emit('update:modelValue', dts);
             return;
           }
         }
 
         if (date) {
-          this.$emit("update:modelValue", date);
+          this.$emit('update:modelValue', date);
         } else {
-          this.$emit("update:modelValue", dtStr);
+          this.$emit('update:modelValue', dtStr);
         }
-        this.$emit("date-select");
+        this.$emit('date-select');
       });
     },
 
     async trocaPeriodo(proximo) {
       this.setLoading(true);
-      const ini = moment(this.modelValue[0]).format("YYYY-MM-DD");
-      const fim = moment(this.modelValue[1]).format("YYYY-MM-DD");
+      const ini = moment(this.modelValue[0]).format('YYYY-MM-DD');
+      const fim = moment(this.modelValue[1]).format('YYYY-MM-DD');
 
       const rs = await axios.get(
-        // eslint-disable-next-line max-len
-        `/base/diaUtil/incPeriodo/?ini=${ini}&fim=${fim}&futuro=${proximo}&comercial=false&financeiro=false`
+        `/base/diaUtil/incPeriodo/?ini=${ini}&fim=${fim}&futuro=${proximo}&comercial=false&financeiro=false`,
       );
 
-      this.$emit("update:modelValue", [
+      this.$emit('update:modelValue', [
         new Date(moment(rs.data.dtIni)),
         new Date(moment(rs.data.dtFim)),
       ]);
 
-      this.$emit("date-select");
+      this.$emit('date-select');
 
       this.setLoading(false);
     },
 
     corrigirMascaras() {
-      document.querySelectorAll(".crsr-date > div > div > input").forEach(function format(el) {
-        // eslint-disable-next-line no-new,no-undef
+      document.querySelectorAll('.crsr-date > div > div > input').forEach(function format(el) {
         new Cleave(el, {
           date: true,
-          delimiter: "/",
-          datePattern: ["d", "m", "Y"],
+          delimiter: '/',
+          datePattern: ['d', 'm', 'Y'],
         });
       });
 
-      document.querySelectorAll(".crsr-datetime > div > div > input").forEach(function format(el) {
+      document.querySelectorAll('.crsr-datetime > div > div > input').forEach(function format(el) {
         el.maxLength = 19; // 01/02/1903 12:34:56
-        // eslint-disable-next-line no-new,no-undef
+
         new Cleave(el, {
           numeralPositiveOnly: true,
-          delimiters: ["/", "/", " ", ":"],
+          delimiters: ['/', '/', ' ', ':'],
           blocks: [2, 2, 4, 2, 2, 2],
         });
       });
 
       document
-        .querySelectorAll(".crsr-datetime-nseg > div > div > input")
+        .querySelectorAll('.crsr-datetime-nseg > div > div > input')
         .forEach(function format(el) {
           el.maxLength = 17; // 01/02/1903 12:34
-          // eslint-disable-next-line no-new, no-undef
+
           new Cleave(el, {
             numeralPositiveOnly: true,
-            delimiters: ["/", "/", " ", ":"],
+            delimiters: ['/', '/', ' ', ':'],
             blocks: [2, 2, 4, 2, 2],
           });
         });
 
       document
-        .querySelectorAll(".crsr-date-periodo > div > div > input")
+        .querySelectorAll('.crsr-date-periodo > div > div > input')
         .forEach(function format(el) {
           el.maxLength = 23; // 01/02/1903 12:34:56
-          // eslint-disable-next-line no-new,no-undef
+
           new Cleave(el, {
             numeralPositiveOnly: true,
-            delimiters: ["/", "/", " - ", "/", "/"],
+            delimiters: ['/', '/', ' - ', '/', '/'],
             blocks: [2, 2, 4, 2, 2, 4],
           });
         });
 
       document
-        .querySelectorAll(".crsr-timeonly-nseg > div > div > input")
+        .querySelectorAll('.crsr-timeonly-nseg > div > div > input')
         .forEach(function format(el) {
           el.maxLength = 5; // 12:34
-          // eslint-disable-next-line no-new,no-undef
+
           new Cleave(el, {
             numeralPositiveOnly: true,
-            delimiters: [":"],
+            delimiters: [':'],
             blocks: [2, 2],
           });
         });

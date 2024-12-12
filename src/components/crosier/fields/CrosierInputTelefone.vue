@@ -1,57 +1,52 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
 
       <InputMask
-        :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
-        :modelValue="this.modelValue"
-        @update:modelValue="this.onInput($event)"
-        v-if="this.modelValue && this.modelValue.length >= 11"
+        v-if="modelValue && modelValue.length >= 11"
+        fluid
+        :class="'form-control ' + (error ? 'is-invalid' : '') + inputClass"
+        :modelValue="modelValue"
         mask="(99) 99999-999?9"
         :unmask="true"
-        @focus="this.$emit('focus')"
-        @blur="this.$emit('blur')"
-        :disabled="this.disabled"
+        :disabled="disabled"
+        @update:model-value="onInput($event)"
+        @focus="$emit('focus')"
+        @blur="$emit('blur')"
       />
       <InputMask
-        :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
-        :modelValue="this.modelValue"
-        @update:modelValue="this.onInput($event)"
-        v-if="!this.modelValue || this.modelValue.length < 11"
+        v-if="!modelValue || modelValue.length < 11"
+        fluid
+        :class="'form-control ' + (error ? 'is-invalid' : '') + inputClass"
+        :modelValue="modelValue"
         mask="(99) 9999-9999?9"
         :unmask="true"
-        @focus="this.$emit('focus')"
-        @blur="this.$emit('blur')"
-        :disabled="this.disabled"
+        :disabled="disabled"
+        @update:model-value="onInput($event)"
+        @focus="$emit('focus')"
+        @blur="$emit('blur')"
       />
 
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import InputMask from "primevue/inputmask";
+import InputMask from 'primevue/inputmask';
 
 export default {
-  name: "CrosierInputTelefone",
+  name: 'CrosierInputTelefone',
 
   components: {
     InputMask,
   },
-
-  emits: ["update:modelValue", "input", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -67,7 +62,7 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
@@ -82,7 +77,7 @@ export default {
     },
     inputClass: {
       type: String,
-      default: "",
+      default: '',
     },
     showLabel: {
       type: Boolean,
@@ -94,11 +89,13 @@ export default {
     },
   },
 
+  emits: ['update:modelValue', 'input', 'focus', 'blur'],
+
   methods: {
     onInput($event) {
       this.$nextTick(async () => {
-        this.$emit("update:modelValue", $event);
-        this.$emit("input", $event);
+        this.$emit('update:modelValue', $event);
+        this.$emit('input', $event);
       });
     },
   },

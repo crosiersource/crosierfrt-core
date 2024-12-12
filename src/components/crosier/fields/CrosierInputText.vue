@@ -1,5 +1,5 @@
 <template>
-  <div :class="'col-md-' + col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
       <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
         labelTransparente ? '...' : label
@@ -10,7 +10,8 @@
         </div>
         <InputText
           :id="id"
-          :class="'form-control ' + (error ? 'is-invalid ' : ' ') + inputClass"
+          fluid
+          :class="'form-control ' + (error ? 'border-red-500 ' : ' ') + inputClass"
           type="text"
           :modelValue="modelValue"
           :disabled="disabled"
@@ -24,7 +25,7 @@
         <div v-if="appendButtonLinkHref" class="input-group-append">
           <a
             role="button"
-            class="btn btn-sm btn-block btn-outline-secondary"
+            class="btn btn-sm btn-outline-secondary"
             :target="appendButtonLinkTarget || '_blank'"
             :title="appendButtonTitle || 'Abrir registro'"
             :href="appendButtonLinkHref"
@@ -35,7 +36,7 @@
         <div v-if="appendButton" class="input-group-append">
           <button
             type="button"
-            class="btn btn-sm btn-block btn-outline-secondary"
+            class="btn btn-sm btn-outline-secondary"
             :title="appendButtonTitle"
             @click="$emit('appendButtonClicked')"
           >
@@ -44,8 +45,8 @@
         </div>
       </div>
 
-      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
-      <div v-show="error" class="invalid-feedbackk blink">
+      <small v-if="helpText" :id="id + '_help'" class="text-gray-500">{{ helpText }}</small>
+      <div v-show="error" class="text-red-500">
         {{ error }}
       </div>
     </div>
@@ -137,10 +138,7 @@ export default {
 };
 </script>
 <style scoped>
-.invalid-feedbackk {
-  width: 100%;
-  margin-top: 0.25rem;
-  font-size: 80%;
+.text-red-500 {
   color: #e55353;
 }
 </style>

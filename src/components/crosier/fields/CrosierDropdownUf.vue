@@ -1,52 +1,46 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <Dropdown
-        :class="'form-control ' + (this.error ? 'is-invalid' : '')"
-        :id="this.id"
-        :appendTo="this.appendTo"
+        :id="id"
+        fluid
+        :class="'form-control ' + (error ? 'is-invalid' : '')"
+        :appendTo="appendTo"
         :modelValue="modelValue"
-        @change="this.onChange"
-        :options="this.ufs"
+        :options="ufs"
         optionLabel="nome"
         optionValue="sigla"
-        :placeholder="this.showClear ? 'Selecione' : null"
-        :showClear="this.showClear"
-        :disabled="this.disabled"
-        :dataKey="this.dataKey"
+        :placeholder="showClear ? 'Selecione' : null"
+        :showClear="showClear"
+        :disabled="disabled"
+        :dataKey="dataKey"
         :filter="true"
-        @focus="this.$emit('focus')"
-        @blur="this.$emit('blur')"
+        @change="onChange"
+        @focus="$emit('focus')"
+        @blur="$emit('blur')"
       />
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Dropdown from "primevue/dropdown";
-import ufs from "../../ufs";
+import Dropdown from 'primevue/dropdown';
+import ufs from '../../ufs';
 // import ufs from "crosier-vue/src/ufs";
 
 export default {
-  name: "CrosierDropdownUf",
+  name: 'CrosierDropdownUf',
 
   components: {
     Dropdown,
   },
-
-  emits: ["update:modelValue", "change", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -56,11 +50,11 @@ export default {
     id: {
       type: String,
       required: false,
-      default: "uf",
+      default: 'uf',
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     error: {
       type: String,
@@ -69,7 +63,7 @@ export default {
     label: {
       type: String,
       required: false,
-      default: "UF",
+      default: 'UF',
     },
     disabled: {
       type: Boolean,
@@ -84,7 +78,7 @@ export default {
     },
     appendTo: {
       type: String,
-      default: "body",
+      default: 'body',
     },
     showLabel: {
       type: Boolean,
@@ -96,6 +90,8 @@ export default {
     },
   },
 
+  emits: ['update:modelValue', 'change', 'focus', 'blur'],
+
   data() {
     return {
       ufs,
@@ -104,8 +100,8 @@ export default {
 
   methods: {
     onChange($event) {
-      this.$emit("change", $event);
-      this.$emit("update:modelValue", $event.value);
+      this.$emit('change', $event);
+      this.$emit('update:modelValue', $event.value);
     },
   },
 };

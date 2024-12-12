@@ -1,74 +1,68 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <div class="input-group">
-        <div v-if="this.prepend" class="input-group-prepend">
-          <span class="input-group-text">{{ this.prepend }}</span>
+        <div v-if="prepend" class="input-group-prepend">
+          <span class="input-group-text">{{ prepend }}</span>
         </div>
         <InputNumber
-          :class="'form-control ' + (this.error ? 'is-invalid' : '')"
+          :id="id"
+          fluid
+          :class="'form-control ' + (error ? 'is-invalid' : '')"
           inputClass="text-right"
-          :id="this.id"
           :modelValue="modelValue"
-          @input="this.onInput"
-          :disabled="this.disabled"
-          :min="this.min"
-          :max="this.max"
-          @focus="this.$emit('focus')"
-          @blur="this.$emit('blur')"
+          :disabled="disabled"
+          :min="min"
+          :max="max"
+          @input="onInput"
+          @focus="$emit('focus')"
+          @blur="$emit('blur')"
         />
-        <div v-if="this.append" class="input-group-append">
-          <span class="input-group-text">{{ this.append }}</span>
+        <div v-if="append" class="input-group-append">
+          <span class="input-group-text">{{ append }}</span>
         </div>
-        <div v-if="this.appendButtonLinkHref" class="input-group-append">
+        <div v-if="appendButtonLinkHref" class="input-group-append">
           <a
             role="button"
             class="btn btn-sm btn-block btn-outline-secondary"
-            :target="this.appendButtonLinkTarget || '_blank'"
-            :title="this.appendButtonTitle || 'Abrir registro'"
-            :href="this.appendButtonLinkHref"
+            :target="appendButtonLinkTarget || '_blank'"
+            :title="appendButtonTitle || 'Abrir registro'"
+            :href="appendButtonLinkHref"
           >
-            <i :class="this.appendButtonIcon"></i>
+            <i :class="appendButtonIcon" />
           </a>
         </div>
-        <div v-if="this.appendButton" class="input-group-append">
+        <div v-if="appendButton" class="input-group-append">
           <button
             type="button"
             class="btn btn-sm btn-block btn-outline-secondary"
-            :title="this.appendButtonTitle"
-            @click="this.$emit('appendButtonClicked')"
+            :title="appendButtonTitle"
+            @click="$emit('appendButtonClicked')"
           >
-            <i :class="this.appendButtonIcon"></i>
+            <i :class="appendButtonIcon" />
           </button>
         </div>
       </div>
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import InputNumber from "primevue/inputnumber";
+import InputNumber from 'primevue/inputnumber';
 
 export default {
-  name: "CrosierInputInt",
+  name: 'CrosierInputInt',
 
   components: {
     InputNumber,
   },
-
-  emits: ["update:modelValue", "input", "focus", "blur", "appendButtonClicked"],
 
   props: {
     modelValue: {
@@ -84,7 +78,7 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
@@ -132,14 +126,16 @@ export default {
     },
     appendButtonIcon: {
       type: String,
-      default: "fas fa-search",
+      default: 'fas fa-search',
     },
   },
 
+  emits: ['update:modelValue', 'input', 'focus', 'blur', 'appendButtonClicked'],
+
   methods: {
     onInput($event) {
-      this.$emit("update:modelValue", $event.value);
-      this.$emit("input", $event);
+      this.$emit('update:modelValue', $event.value);
+      this.$emit('input', $event);
     },
   },
 };

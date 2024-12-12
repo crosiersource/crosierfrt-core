@@ -1,58 +1,52 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <div class="input-group">
         <input
+          :id="id"
+          fluid
           :class="
-            'form-control p-inputtext p-component ' +
-            (this.error ? 'is-invalid' : '') +
-            this.inputClass
+            'form-control p-inputtext p-component ' + (error ? 'is-invalid' : '') + inputClass
           "
           :value="modelValue"
-          :id="this.id"
-          @input="this.onInput($event)"
-          @focus="this.onFocus($event)"
-          @blur="this.onBlur($event)"
+          :disabled="disabled"
+          @input="onInput($event)"
+          @focus="onFocus($event)"
+          @blur="onBlur($event)"
           @keypress="validate($event)"
-          :disabled="this.disabled"
         />
-        <div v-if="this.appendButtonLinkHref" class="input-group-append">
+        <div v-if="appendButtonLinkHref" class="input-group-append">
           <a
             role="button"
             class="btn btn-sm btn-block btn-outline-secondary"
-            :target="this.appendButtonLinkTarget || '_blank'"
-            :title="this.appendButtonTitle || 'Abrir registro'"
-            :href="this.appendButtonLinkHref"
+            :target="appendButtonLinkTarget || '_blank'"
+            :title="appendButtonTitle || 'Abrir registro'"
+            :href="appendButtonLinkHref"
           >
-            <i :class="this.appendButtonIcon"></i>
+            <i :class="appendButtonIcon" />
           </a>
         </div>
-        <div v-if="this.appendButton" class="input-group-append">
+        <div v-if="appendButton" class="input-group-append">
           <button
             type="button"
             class="btn btn-sm btn-block btn-outline-secondary"
-            :title="this.appendButtonTitle"
-            @click="this.$emit('appendButtonClicked')"
+            :title="appendButtonTitle"
+            @click="$emit('appendButtonClicked')"
           >
-            <i :class="this.appendButtonIcon"></i>
+            <i :class="appendButtonIcon" />
           </button>
         </div>
       </div>
 
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
-      <div class="invalid-feedbackk blink" v-show="this.exibeValidacao && this.cpfCnpjInvalido">
-        {{ this.modelValue?.length === 14 ? "CPF" : "CNPJ" }} inválido!
+      <div v-show="exibeValidacao && cpfCnpjInvalido" class="invalid-feedbackk blink">
+        {{ modelValue?.length === 14 ? 'CPF' : 'CNPJ' }} inválido!
       </div>
     </div>
   </div>
@@ -60,11 +54,9 @@
 
 <script>
 export default {
-  name: "CrosierInputCpfCnpj",
+  name: 'CrosierInputCpfCnpj',
 
   components: {},
-
-  emits: ["update:modelValue", "input", "focus", "blur", "appendButtonClicked"],
 
   props: {
     modelValue: {
@@ -73,7 +65,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: "documento",
+      default: 'documento',
     },
     error: {
       type: String,
@@ -81,12 +73,12 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
       required: false,
-      default: "CPF/CNPJ",
+      default: 'CPF/CNPJ',
     },
     disabled: {
       type: Boolean,
@@ -97,7 +89,7 @@ export default {
     },
     inputClass: {
       type: String,
-      default: "",
+      default: '',
     },
     showLabel: {
       type: Boolean,
@@ -126,15 +118,31 @@ export default {
     },
     appendButtonIcon: {
       type: String,
-      default: "fas fa-search",
+      default: 'fas fa-search',
     },
   },
+
+  emits: ['update:modelValue', 'input', 'focus', 'blur', 'appendButtonClicked'],
 
   data() {
     return {
       value: null,
       jaFormatouAoConstruir: false,
     };
+  },
+
+  watch: {
+    modelValue(val, oldVal) {
+      if (
+        !this.jaFormatouAoConstruir &&
+        val &&
+        val !== oldVal &&
+        (val.lenght === 11 || val.length === 14)
+      ) {
+        this.jaFormatouAoConstruir = true;
+        this.format();
+      }
+    },
   },
 
   mounted() {
@@ -153,24 +161,24 @@ export default {
   methods: {
     onFocus($event) {
       this.$nextTick(async () => {
-        const val = $event.target.value.replace(/\D/g, "");
-        this.$emit("update:modelValue", val);
-        this.$emit("input", val);
+        const val = $event.target.value.replace(/\D/g, '');
+        this.$emit('update:modelValue', val);
+        this.$emit('input', val);
       });
     },
 
     onInput($event) {
       this.$nextTick(async () => {
-        this.$emit("update:modelValue", $event.target.value);
-        this.$emit("input", $event.target.value);
+        this.$emit('update:modelValue', $event.target.value);
+        this.$emit('input', $event.target.value);
       });
     },
 
     validate(theEvent) {
       // Handle paste
       let key = null;
-      if (theEvent.type === "paste") {
-        key = theEvent.clipboardData.getData("text/plain");
+      if (theEvent.type === 'paste') {
+        key = theEvent.clipboardData.getData('text/plain');
       } else {
         // Handle key press
         key = theEvent.keyCode || theEvent.which;
@@ -186,25 +194,25 @@ export default {
     onBlur() {
       this.$nextTick(async () => {
         this.format();
-        this.$emit("blur");
+        this.$emit('blur');
       });
     },
 
     format() {
       if (this.modelValue.length === 11) {
         this.$emit(
-          "update:modelValue",
-          this.modelValue.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
+          'update:modelValue',
+          this.modelValue.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'),
         );
       } else if (this.modelValue.length === 14) {
         const formatado = this.modelValue.replace(
           /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
-          "$1.$2.$3/$4-$5"
+          '$1.$2.$3/$4-$5',
         );
-        this.$emit("update:modelValue", formatado);
+        this.$emit('update:modelValue', formatado);
       }
       if (this.exibeValidacao) {
-        const valor = this.modelValue.replace(/[^0-9]/g, "");
+        const valor = this.modelValue.replace(/[^0-9]/g, '');
         if (valor.length === 11) {
           this.cpfCnpjInvalido = !this.validaCpf(valor);
         } else if (valor.length === 14) {
@@ -238,7 +246,7 @@ export default {
     validaCpf(valor) {
       if (!valor) return true;
       valor = valor.toString();
-      valor = valor.replace(/[^0-9]/g, "");
+      valor = valor.replace(/[^0-9]/g, '');
       const digitos = valor.substr(0, 9);
       let novoCpf = this.calcDigitosPosicoesCpf(digitos);
       novoCpf = this.calcDigitosPosicoesCpf(novoCpf, 11);
@@ -267,26 +275,12 @@ export default {
 
     validaCnpj(valor) {
       valor = valor.toString();
-      valor = valor.replace(/[^0-9]/g, "");
+      valor = valor.replace(/[^0-9]/g, '');
       const cnpjOriginal = valor;
       const primeirosNumerosCnpj = valor.substr(0, 12);
       const primeiroCalculo = this.calcDigitosPosicoesCnpj(primeirosNumerosCnpj, 5);
       const cnpj = this.calcDigitosPosicoesCnpj(primeiroCalculo, 6);
       return cnpj === cnpjOriginal;
-    },
-  },
-
-  watch: {
-    modelValue(val, oldVal) {
-      if (
-        !this.jaFormatouAoConstruir &&
-        val &&
-        val !== oldVal &&
-        (val.lenght === 11 || val.length === 14)
-      ) {
-        this.jaFormatouAoConstruir = true;
-        this.format();
-      }
     },
   },
 };

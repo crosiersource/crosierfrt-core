@@ -1,4 +1,4 @@
-export function validateFormData({ $store, schemaValidator }) {
+export function validateFormData({ $store, schemaValidator, $toast }) {
   const formData = $store.fields;
 
   console.log('store é');
@@ -21,6 +21,15 @@ export function validateFormData({ $store, schemaValidator }) {
           console.error(msg);
         }
       });
+
+      if ($toast) {
+        $toast.add({
+          severity: 'error',
+          summary: 'Erro',
+          detail: 'Verifique os campos obrigatórios',
+          life: 5000,
+        });
+      }
 
       $store.fieldsErrors = formErrors;
       console.log('Erros de validação:');

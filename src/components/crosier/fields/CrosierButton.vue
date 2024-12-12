@@ -1,42 +1,41 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
       <div>
         <label class="transparente">.</label>
       </div>
-      <div v-if="this.placeholder"></div>
+      <div v-if="placeholder" />
       <div v-else>
         <a
-          v-if="this.tipo === 'link'"
+          v-if="tipo === 'link'"
           role="button"
-          :class="'btn btn-' + this.cor + ' btn-sm'"
-          :title="this.title"
-          :href="this.href"
-          :target="this.target"
+          :class="'btn btn-' + cor + ' btn-sm'"
+          :title="title"
+          :href="href"
+          :target="target"
         >
-          <i :class="this.icon" aria-hidden="true"></i> {{ this.label }}
+          <i :class="icon" aria-hidden="true" /> {{ label }}
         </a>
 
-        <button
+        <Button
           v-else
+          fluid
           type="button"
-          :class="'btn btn-' + this.cor + ' btn-sm'"
-          @click="this.$emit('click')"
+          :class="'btn btn-' + cor + ' btn-sm'"
           role="button"
+          @click="$emit('click')"
         >
-          <i :class="this.icon" aria-hidden="true"></i> {{ this.label }}
-        </button>
+          <i :class="icon" aria-hidden="true" /> {{ label }}
+        </Button>
       </div>
-      <small v-if="this.helpText" class="form-text text-muted">{{ this.helpText }}</small>
+      <small v-if="helpText" class="form-text text-muted">{{ helpText }}</small>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CrosierButton",
-
-  emits: ["click"],
+  name: 'CrosierButton',
 
   props: {
     disabled: {
@@ -50,19 +49,19 @@ export default {
     },
     tipo: {
       type: String,
-      default: "button",
+      default: 'button',
     },
     icon: {
       type: String,
-      default: "fas fa-link",
+      default: 'fas fa-link',
     },
     col: {
       type: String,
-      default: "1",
+      default: '1',
     },
     cor: {
       type: String,
-      default: "primary",
+      default: 'primary',
     },
     label: {
       type: String,
@@ -78,13 +77,15 @@ export default {
     },
     target: {
       type: String,
-      default: "_self",
+      default: '_self',
     },
   },
 
+  emits: ['click'],
+
   methods: {
     onChange() {
-      this.$emit("update:modelValue", this.modelValue !== true);
+      this.$emit('update:modelValue', this.modelValue !== true);
     },
   },
 };

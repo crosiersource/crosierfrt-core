@@ -1,5 +1,5 @@
 <template>
-  <div :class="'col-md-' + col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
       <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
         labelTransparente ? '...' : label
@@ -7,6 +7,7 @@
       <Dropdown
         v-if="waitTo"
         :id="id"
+        fluid
         :class="'form-control ' + (error ? 'is-invalid' : '')"
         :modelValue="modelValue"
         :options="options"
@@ -37,6 +38,7 @@ import Skeleton from 'primevue/skeleton';
 import api from '../../../services/api.js';
 import { useLoadingStore } from '@/stores/loading.store';
 // import { api } from "crosier-vue";
+import { useAuthStore } from '@/stores/auth.store.js';
 
 export default {
   name: 'CrosierDropdownEntity',
@@ -130,6 +132,7 @@ export default {
     return {
       options: null,
       loadingStore: useLoadingStore(),
+      authStore: useAuthStore(),
     };
   },
 
@@ -143,11 +146,12 @@ export default {
     async load() {
       try {
         const response = await api.get({
-          apiResource: this.entityUri,
+          apiResource: import.meta.env.VITE_CROSIER_API + this.entityUri,
           allRows: true,
           filters: this.filters,
           order: this.orderBy,
           properties: this.properties,
+          authToken: this.authStore.token,
         });
 
         if (response.data['hydra:totalItems'] > 0) {

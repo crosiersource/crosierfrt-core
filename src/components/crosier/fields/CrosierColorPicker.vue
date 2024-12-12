@@ -1,59 +1,54 @@
 <template>
-  <div :class="'col-md-' + (this.col - 1)">
+  <div :class="'col-span-12 md:col-span-' + (col - 1)">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <br />
       <ColorPicker
         id="cor"
         :modelValue="modelValue"
-        @update:modelValue="this.onChange($event)"
-        :disabled="this.disabled"
+        :disabled="disabled"
+        @update:model-value="onChange($event)"
       />
     </div>
   </div>
-  <div class="col-md-1">
+  <div class="col-span-12 md:col-span-1">
     <div class="form-group">
-      <label v-if="this.showLabel" for="corInput">&nbsp;</label>
+      <label v-if="showLabel" for="corInput">&nbsp;</label>
       <br />
       <InputMask
+        :id="id + 'Input'"
         mask="#******"
         class="form-control"
-        :id="this.id + 'Input'"
         type="text"
         :modelValue="modelValue"
-        @change="this.onInput"
-        @focus="this.$emit('focus')"
-        @blur="this.$emit('blur')"
-        :disabled="this.disabled"
+        :disabled="disabled"
+        @change="onInput"
+        @focus="$emit('focus')"
+        @blur="$emit('blur')"
       />
     </div>
-    <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">
-      {{ this.helpText }}
+    <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">
+      {{ helpText }}
     </small>
-    <div class="invalid-feedbackk blink" v-show="this.error">
-      {{ this.error }}
+    <div v-show="error" class="invalid-feedbackk blink">
+      {{ error }}
     </div>
   </div>
 </template>
 
 <script>
-import ColorPicker from "primevue/colorpicker";
-import InputMask from "primevue/inputmask";
+import ColorPicker from 'primevue/colorpicker';
+import InputMask from 'primevue/inputmask';
 
 export default {
-  name: "CrosierColorPicker",
+  name: 'CrosierColorPicker',
 
   components: {
     InputMask,
     ColorPicker,
   },
-
-  emits: ["update:modelValue", "input", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -69,7 +64,7 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
@@ -84,7 +79,7 @@ export default {
     },
     inputClass: {
       type: String,
-      default: "",
+      default: '',
     },
     showLabel: {
       type: Boolean,
@@ -96,13 +91,15 @@ export default {
     },
   },
 
+  emits: ['update:modelValue', 'input', 'focus', 'blur'],
+
   methods: {
     onInput($event) {
-      this.$emit("update:modelValue", $event.target.value);
-      this.$emit("input", $event);
+      this.$emit('update:modelValue', $event.target.value);
+      this.$emit('input', $event);
     },
     onChange($event) {
-      this.$emit("update:modelValue", $event);
+      this.$emit('update:modelValue', $event);
     },
   },
 };

@@ -3,7 +3,6 @@
     :store="userStore"
     listUrl="/sec/usuario/list"
     titulo="Usuário"
-    subtitulo="subbbbb blabla"
     entityChanges
     entityClass="CrosierSource:CrosierLibBaseBundle:Entity:Security:User"
     @submit-form="submitForm"
@@ -34,13 +33,14 @@
     </div>
 
     <div class="form-row">
-      <div class="col-md-6">
+      <div class="col-span-6">
         <div class="form-group">
           <label for="password">Senha</label>
           <div class="input-group">
             <Password
               id="password"
               v-model="userStore.fields.password"
+              fluid
               :class="'form-control ' + (error ? 'is-invalid' : '')"
               weakLabel="Fraco"
               mediumLabel="Médio"
@@ -54,13 +54,14 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-span-6">
         <div class="form-group">
           <label for="password2">Repita a Senha</label>
           <div class="input-group">
             <Password
               id="password2"
               v-model="userStore.fields.password2"
+              fluid
               :class="'form-control ' + (error ? 'is-invalid' : '')"
               weakLabel="Fraco"
               mediumLabel="Médio"
@@ -113,22 +114,6 @@
         @change="onChangeGroup"
       />
     </div>
-
-    <div v-if="userStore.fields.id" class="row mt-3">
-      <div class="col text-right">
-        <button
-          v-if="!disabledSubmit"
-          class="btn btn-sm btn-primary"
-          style="width: 12rem"
-          type="submit"
-          icon="fas fa-save"
-        >
-          <i class="fas fa-save" /> Salvar
-        </button>
-      </div>
-    </div>
-
-    <UsuarioRoles v-if="userStore.fields.id" />
   </CrosierForm>
 </template>
 <script>
@@ -143,6 +128,7 @@ import UsuarioRoles from './UsuarioRoles.vue';
 import { mapStores } from 'pinia';
 import { useUserStore } from '@/stores/Security/user.store';
 import { useLoadingStore } from '@/stores/loading.store';
+import { submitForm } from '@/services/SubmitForm.js';
 import Password from 'primevue/password';
 import * as yup from 'yup';
 
@@ -168,28 +154,37 @@ export default {
       email: yup.string().required().typeError(),
       estabelecimentoId: yup.string().required().typeError(),
     });
+    // get id from route param
+    const id = this.$route.query.id;
+    this.userStore.load(id);
   },
 
   methods: {
     async submitForm() {
-      loadingStore.setLoading(true);
-      await submitForm({
-        apiResource: '/api/sec/user',
-        schemaValidator: this.schemaValidator,
-        $store: this.$store,
-        formDataStateName: 'fields',
-        $toast: this.$toast,
-        fnBeforeSave: (formData) => {
-          formData.group = formData.group ? formData.group['@id'] : null;
-          formData.estabelecimentoId = formData.estabelecimentoId.toString();
-          delete formData.userInsertedId;
-          delete formData.userUpdatedId;
-          if (formData.userRoles) {
-            formData.userRoles = formData.userRoles ? formData.userRoles.map((e) => e['@id']) : [];
-          }
-        },
-      });
-      loadingStore.setLoading(false);
+      console.log('Chamou o submitForm???');
+      this.loadingStore.setLoading(true);
+      try {
+        await submitForm({
+          apiResource: '/api/sec/user',
+          schemaValidator: this.schemaValidator,
+          $store: this.userStore,
+          $toast: this.$toast,
+          fnBeforeSave: (formData) => {
+            formData.group = formData.group ? formData.group['@id'] : null;
+            formData.estabelecimentoId = formData.estabelecimentoId.toString();
+            delete formData.userInsertedId;
+            delete formData.userUpdatedId;
+            if (formData.userRoles) {
+              formData.userRoles = formData.userRoles
+                ? formData.userRoles.map((e) => e['@id'])
+                : [];
+            }
+          },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+      this.loadingStore.setLoading(false);
     },
 
     async onChangeGroup() {

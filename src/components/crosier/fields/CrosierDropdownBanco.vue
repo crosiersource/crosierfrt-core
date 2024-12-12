@@ -1,11 +1,12 @@
 <template>
-  <div :class="'col-md-' + col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
       <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
         labelTransparente ? '...' : label
       }}</label>
       <Dropdown
         :id="id"
+        fluid
         :class="'form-control ' + (error ? 'is-invalid' : '')"
         :modelValue="modelValue"
         :options="options"

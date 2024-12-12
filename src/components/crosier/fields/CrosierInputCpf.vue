@@ -1,32 +1,28 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
 
       <InputMask
-        :id="this.id"
-        :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
+        :id="id"
+        fluid
+        :class="'form-control ' + (error ? 'is-invalid' : '') + inputClass"
         :modelValue="modelValue"
-        @update:modelValue="this.onInput($event)"
-        @blur="this.onBlur($event)"
         mask="999.999.999-99"
         :unmask="true"
-        @focus="this.$emit('focus')"
-        :disabled="this.disabled"
+        :disabled="disabled"
+        @update:model-value="onInput($event)"
+        @blur="onBlur($event)"
+        @focus="$emit('focus')"
       />
 
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
-      <div class="invalid-feedbackk blink" v-show="this.exibeValidacao && this.cpfInvalido">
+      <div v-show="exibeValidacao && cpfInvalido" class="invalid-feedbackk blink">
         CPF inválido!
       </div>
     </div>
@@ -34,16 +30,14 @@
 </template>
 
 <script>
-import InputMask from "primevue/inputmask";
+import InputMask from 'primevue/inputmask';
 
 export default {
-  name: "CrosierInputCpf",
+  name: 'CrosierInputCpf',
 
   components: {
     InputMask,
   },
-
-  emits: ["update:modelValue", "input", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -52,7 +46,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: "cpf",
+      default: 'cpf',
     },
     error: {
       type: String,
@@ -60,12 +54,12 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
       required: false,
-      default: "CPF",
+      default: 'CPF',
     },
     disabled: {
       type: Boolean,
@@ -80,7 +74,7 @@ export default {
     },
     inputClass: {
       type: String,
-      default: "",
+      default: '',
     },
     showLabel: {
       type: Boolean,
@@ -91,6 +85,8 @@ export default {
       default: false,
     },
   },
+
+  emits: ['update:modelValue', 'input', 'focus', 'blur'],
 
   data() {
     return {
@@ -107,8 +103,8 @@ export default {
   methods: {
     onInput($event) {
       this.$nextTick(async () => {
-        this.$emit("update:modelValue", $event);
-        this.$emit("input", $event);
+        this.$emit('update:modelValue', $event);
+        this.$emit('input', $event);
       });
     },
 
@@ -117,7 +113,7 @@ export default {
         if (this.exibeValidacao) {
           this.cpfInvalido = !this.validaCpf(this.modelValue);
         }
-        this.$emit("blur");
+        this.$emit('blur');
       });
     },
 
@@ -144,7 +140,7 @@ export default {
     validaCpf(valor) {
       if (!valor) return true;
       valor = valor.toString();
-      valor = valor.replace(/[^0-9]/g, "");
+      valor = valor.replace(/[^0-9]/g, '');
       const digitos = valor.substr(0, 9);
       let novoCpf = this.calcDigitosPosicoes(digitos);
       novoCpf = this.calcDigitosPosicoes(novoCpf, 11);

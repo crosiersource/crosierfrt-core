@@ -52,6 +52,18 @@
             />
           </template>
         </Toolbar>
+
+        <form @submit.prevent="$emit('submitForm')">
+          <fieldset :disabled="loadingStore.loading">
+            <slot />
+
+            <div class="form-row">
+              <div class="col-span-12 flex justify-end gap-4">
+                <Button type="submit" label="Salvar" icon="fas fa-save" />
+              </div>
+            </div>
+          </fieldset>
+        </form>
       </template>
     </Card>
   </div>
@@ -134,6 +146,8 @@ export default {
       loadingStore: useLoadingStore(),
     };
   },
+
+  mounted() {},
 
   computed: {
     ...mapStores(useLoadingStore),

@@ -3,7 +3,11 @@
     style="display: flex; flex-direction: column; min-height: 100vh"
     :class="['layout-container', { ...containerClass }]"
   >
-    <ProgressSpinner v-if="loadingStore.isLoading" class="progress-spinner" />
+    <ProgressBar
+      v-if="loadingStore.isLoading"
+      mode="indeterminate"
+      style="height: 3px; z-index: 10000"
+    />
     <BlockUI full-screen :blocked="loadingStore.isLoading" />
 
     <AppTopbar />
@@ -97,7 +101,7 @@ export default {
 </script>
 
 <style>
-.progress-spinner {
+.progressss-spinner {
   position: absolute; /* Posiciona o spinner em relação ao BlockUI */
   top: 50%;
   left: 50%;

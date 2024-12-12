@@ -14,6 +14,8 @@ import '@/assets/styles.scss';
 import '@/assets/tailwind.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
+import '@/yup.locale.pt-br.js';
+
 const app = createApp(App);
 
 app.use(router);

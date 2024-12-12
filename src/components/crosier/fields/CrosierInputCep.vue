@@ -1,61 +1,55 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <div class="input-group">
-        <div v-if="this.prepend" class="input-group-prepend">
-          <span class="input-group-text">{{ this.prepend }}</span>
+        <div v-if="prepend" class="input-group-prepend">
+          <span class="input-group-text">{{ prepend }}</span>
         </div>
         <InputMask
+          :id="id"
+          fluid
           mask="99999-999"
-          :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
-          :id="this.id"
+          :class="'form-control ' + (error ? 'is-invalid' : '') + inputClass"
           type="text"
           :modelValue="modelValue"
-          @update:modelValue="this.onInput($event)"
-          :disabled="this.disabled"
-          @focus="this.$emit('focus')"
-          @blur="this.$emit('blur')"
+          :disabled="disabled"
+          @update:model-value="onInput($event)"
+          @focus="$emit('focus')"
+          @blur="$emit('blur')"
         />
-        <div class="input-group-append" v-if="this.comConsulta">
+        <div v-if="comConsulta" class="input-group-append">
           <button
             type="button"
             class="btn btn-outline-primary btn-sm btn-block"
-            @click="this.consultarCep"
+            @click="consultarCep"
           >
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search" />
           </button>
         </div>
       </div>
 
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import InputMask from "primevue/inputmask";
-import { mapMutations } from "vuex";
-import axios from "axios";
+import InputMask from 'primevue/inputmask';
+import { mapMutations } from 'vuex';
+import axios from 'axios';
 
 export default {
-  name: "CrosierInputCep",
+  name: 'CrosierInputCep',
 
   components: {
     InputMask,
   },
-
-  emits: ["update:modelValue", "input", "focus", "blur", "consultaCep"],
 
   props: {
     modelValue: {
@@ -64,7 +58,7 @@ export default {
     id: {
       type: String,
       required: false,
-      default: "cep",
+      default: 'cep',
     },
     error: {
       type: String,
@@ -72,12 +66,12 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
       required: false,
-      default: "CEP",
+      default: 'CEP',
     },
     disabled: {
       type: Boolean,
@@ -88,7 +82,7 @@ export default {
     },
     inputClass: {
       type: String,
-      default: "",
+      default: '',
     },
     prepend: {
       type: String,
@@ -110,13 +104,15 @@ export default {
     },
   },
 
+  emits: ['update:modelValue', 'input', 'focus', 'blur', 'consultaCep'],
+
   methods: {
-    ...mapMutations(["setLoading"]),
+    ...mapMutations(['setLoading']),
 
     onInput($event) {
       this.$nextTick(async () => {
-        this.$emit("update:modelValue", $event);
-        this.$emit("input", $event);
+        this.$emit('update:modelValue', $event);
+        this.$emit('input', $event);
       });
     },
 
@@ -125,10 +121,10 @@ export default {
       try {
         const rs = await axios.get(`/base/municipio/findEnderecoByCEP?cep=${this.modelValue}`);
         if (rs?.status === 200) {
-          this.$emit("consultaCep", rs.data);
+          this.$emit('consultaCep', rs.data);
         }
       } catch (e) {
-        console.error("Erro ao consultar o CEP");
+        console.error('Erro ao consultar o CEP');
         console.error(e);
       }
       this.setLoading(false);

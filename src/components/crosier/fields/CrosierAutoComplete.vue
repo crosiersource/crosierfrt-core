@@ -1,54 +1,48 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <AutoComplete
+        :id="id"
+        fluid
         class="form-control"
         inputClass="form-control"
-        :id="this.id"
         :modelValue="modelValue"
-        @update:modelValue="this.$emit('update:modelValue', $event)"
-        :suggestions="this.values"
-        @complete="this.$emit('complete', $event)"
-        @item-select="this.$emit('item-select', $event)"
-        @clear="this.$emit('clear')"
-        :field="this.field"
-        :disabled="this.disabled"
-        :append-to="this.appendTo"
-        :force-selection="this.forceSelection"
-        @focus="this.$emit('focus')"
-        @blur="this.$emit('blur')"
+        :suggestions="values"
+        :field="field"
+        :disabled="disabled"
+        :append-to="appendTo"
+        :force-selection="forceSelection"
+        @update:model-value="$emit('update:modelValue', $event)"
+        @complete="$emit('complete', $event)"
+        @item-select="$emit('item-select', $event)"
+        @clear="$emit('clear')"
+        @focus="$emit('focus')"
+        @blur="$emit('blur')"
       >
         <template #item="item">
-          <slot name="item" :item="item.item"></slot>
+          <slot name="item" :item="item.item" />
         </template>
       </AutoComplete>
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import AutoComplete from "primevue/autocomplete";
+import AutoComplete from 'primevue/autocomplete';
 
 export default {
-  name: "CrosierAutoComplete",
+  name: 'CrosierAutoComplete',
 
   components: {
     AutoComplete,
   },
-
-  emits: ["update:modelValue", "complete", "item-select", "clear", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -68,7 +62,7 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
@@ -91,7 +85,7 @@ export default {
     },
     appendTo: {
       type: String,
-      default: "body",
+      default: 'body',
     },
     showLabel: {
       type: Boolean,
@@ -102,6 +96,8 @@ export default {
       default: false,
     },
   },
+
+  emits: ['update:modelValue', 'complete', 'item-select', 'clear', 'focus', 'blur'],
 };
 </script>
 <style scoped>

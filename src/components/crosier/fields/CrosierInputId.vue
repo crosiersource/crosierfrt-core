@@ -1,51 +1,45 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <div class="input-group">
-        <div v-if="this.prepend" class="input-group-prepend">
-          <span class="input-group-text">{{ this.prepend }}</span>
+        <div v-if="prepend" class="input-group-prepend">
+          <span class="input-group-text">{{ prepend }}</span>
         </div>
         <InputText
-          :class="'text-center form-control ' + (this.error ? 'is-invalid' : '')"
+          :id="id"
+          fluid
+          :class="'text-center form-control ' + (error ? 'is-invalid' : '')"
           inputClass="text-center"
-          :id="this.id"
           :modelValue="idParsed"
-          @input="this.onInput"
-          :disabled="this.disabled"
-          @focus="this.$emit('focus')"
-          @blur="this.$emit('blur')"
+          :disabled="disabled"
+          @input="onInput"
+          @focus="$emit('focus')"
+          @blur="$emit('blur')"
         />
-        <div v-if="this.append" class="input-group-append">
-          <span class="input-group-text">{{ this.append }}</span>
+        <div v-if="append" class="input-group-append">
+          <span class="input-group-text">{{ append }}</span>
         </div>
       </div>
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import InputText from "primevue/inputtext";
+import InputText from 'primevue/inputtext';
 
 export default {
-  name: "CrosierInputId",
+  name: 'CrosierInputId',
 
   components: {
     InputText,
   },
-
-  emits: ["update:modelValue", "input", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -53,7 +47,7 @@ export default {
     },
     id: {
       type: String,
-      default: "id",
+      default: 'id',
     },
     error: {
       type: String,
@@ -61,11 +55,11 @@ export default {
     },
     col: {
       type: String,
-      default: "2",
+      default: '2',
     },
     label: {
       type: String,
-      default: "Id",
+      default: 'Id',
     },
     disabled: {
       type: Boolean,
@@ -96,16 +90,18 @@ export default {
     },
   },
 
-  methods: {
-    onInput($event) {
-      this.$emit("update:modelValue", $event.value);
-      this.$emit("input", $event);
-    },
-  },
+  emits: ['update:modelValue', 'input', 'focus', 'blur'],
 
   computed: {
     idParsed() {
       return String(`000000000${this.modelValue ?? 0}`).slice(-9);
+    },
+  },
+
+  methods: {
+    onInput($event) {
+      this.$emit('update:modelValue', $event.value);
+      this.$emit('input', $event);
     },
   },
 };

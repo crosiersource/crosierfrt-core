@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Defina a classe form-row para comportar-se como grid-cols-12 e gap-4 */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Cria 12 colunas de largura igual */
+  gap: 1rem; /* Define o espaçamento entre as colunas e linhas */
+  margin-top: 0.8rem;
+}
+

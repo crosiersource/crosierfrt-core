@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function saveEntityData(apiResource, data, authToken) {
+export async function saveEntityData(apiResource, data, authToken, $toast) {
   if (apiResource) {
     do {
       if (!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i)) {
@@ -23,11 +23,22 @@ export async function saveEntityData(apiResource, data, authToken) {
   params.headers['Authorization'] = 'Bearer ' + authToken;
   console.log('data aqui');
   console.log(data);
-  if (data?.id) {
-    console.log('putttttting');
-    return axios.put(`${apiResource}/${data.id}`, JSON.stringify(data), params);
-  } else {
-    console.log('postttttting');
-    return axios.post(`${apiResource}`, JSON.stringify(data), params);
+  try {
+    if (data?.id) {
+      console.log('putttttting');
+      return axios.put(`${apiResource}/${data.id}`, JSON.stringify(data), params);
+    } else {
+      console.log('postttttting');
+      return axios.post(`${apiResource}`, JSON.stringify(data), params);
+    }
+  } catch (e) {
+    if ($toast) {
+      $toast.add({
+        severity: 'error',
+        summary: 'Erro',
+        detail: 'Erro ao salvar o registro',
+        life: 5000,
+      });
+    }
   }
 }

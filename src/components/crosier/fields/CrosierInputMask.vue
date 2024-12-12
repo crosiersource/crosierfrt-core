@@ -1,56 +1,50 @@
 <template>
-  <div :class="'col-md-' + this.col">
+  <div :class="'col-span-12 md:col-span-' + col">
     <div class="form-group">
-      <label
-        v-if="this.showLabel"
-        :class="this.labelTransparente ? 'transparente' : ''"
-        :for="this.id"
-        >{{ this.labelTransparente ? "..." : label }}</label
-      >
+      <label v-if="showLabel" :class="labelTransparente ? 'transparente' : ''" :for="id">{{
+        labelTransparente ? '...' : label
+      }}</label>
       <div class="input-group">
-        <div v-if="this.prepend" class="input-group-prepend">
-          <span class="input-group-text">{{ this.prepend }}</span>
+        <div v-if="prepend" class="input-group-prepend">
+          <span class="input-group-text">{{ prepend }}</span>
         </div>
         <InputMask
-          :class="'form-control ' + (this.error ? 'is-invalid ' : ' ') + this.inputClass"
-          :id="this.id"
+          :id="id"
+          fluid
+          :class="'form-control ' + (error ? 'is-invalid ' : ' ') + inputClass"
           type="text"
           :modelValue="modelValue"
-          @update:modelValue="this.onInput"
-          :disabled="this.disabled"
-          @focus="this.$emit('focus')"
-          @blur="this.$emit('blur')"
-          :mask="this.mask"
-          :slotChar="this.slotChar"
-          :autoClear="this.autoClear"
-          :unmask="this.unmask"
+          :disabled="disabled"
+          :mask="mask"
+          :slotChar="slotChar"
+          :autoClear="autoClear"
+          :unmask="unmask"
+          @update:model-value="onInput"
+          @focus="$emit('focus')"
+          @blur="$emit('blur')"
         />
-        <div v-if="this.append" class="input-group-append">
-          <span class="input-group-text">{{ this.append }}</span>
+        <div v-if="append" class="input-group-append">
+          <span class="input-group-text">{{ append }}</span>
         </div>
       </div>
 
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
+      <small v-if="helpText" :id="id + '_help'" class="form-text text-muted">{{ helpText }}</small>
+      <div v-show="error" class="invalid-feedbackk blink">
+        {{ error }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import InputMask from "primevue/inputmask";
+import InputMask from 'primevue/inputmask';
 
 export default {
-  name: "CrosierInputMask",
+  name: 'CrosierInputMask',
 
   components: {
     InputMask,
   },
-
-  emits: ["update:modelValue", "input", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -66,7 +60,7 @@ export default {
     },
     col: {
       type: String,
-      default: "12",
+      default: '12',
     },
     label: {
       type: String,
@@ -81,7 +75,7 @@ export default {
     },
     inputClass: {
       type: String,
-      default: "",
+      default: '',
     },
     prepend: {
       type: String,
@@ -102,7 +96,7 @@ export default {
     },
     slotChar: {
       type: String,
-      default: "_",
+      default: '_',
     },
     autoClear: {
       type: Boolean,
@@ -114,10 +108,12 @@ export default {
     },
   },
 
+  emits: ['update:modelValue', 'input', 'focus', 'blur'],
+
   methods: {
     onInput($event) {
-      this.$emit("update:modelValue", $event);
-      this.$emit("input", $event);
+      this.$emit('update:modelValue', $event);
+      this.$emit('input', $event);
     },
   },
 };
