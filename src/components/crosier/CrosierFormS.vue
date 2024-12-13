@@ -5,7 +5,7 @@
     :entityClass="entityClass"
   />
 
-  <div v-if="withoutCard">
+  <div v-if="semCard">
     <form @submit.prevent="$emit('submitForm')">
       <fieldset :disabled="loadingStore.loading">
         <slot />
@@ -25,47 +25,44 @@
     </form>
   </div>
   <div v-else>
-    <Card>
-      <template #content>
-        <Toolbar>
-          <template #start>
-            <div class="flex flex-col">
-              <div class="text-2xl font-semibold m-0">{{ titulo }}</div>
-              <div v-if="subtitulo" class="text-xl font-normal m-0">{{ subtitulo }}</div>
-            </div>
-          </template>
-          <template #end>
-            <Button
-              v-if="exibirBotaoNovo"
-              class="btn btn-info mr-1"
-              icon="fas fa-file"
-              title="Novo"
-              @click="novo"
-            />
-            <Button
-              v-if="listUrl"
-              class="btn btn-outline-secondary mr-1"
-              icon="fas fa-list"
-              title="Ir para a listagem"
-              as="router-link"
-              :to="listUrl"
-            />
-          </template>
-        </Toolbar>
-
-        <form @submit.prevent="$emit('submitForm')">
-          <fieldset :disabled="loadingStore.loading">
-            <slot />
-
-            <div class="form-row">
-              <div class="col-span-12 flex justify-end gap-4">
-                <Button type="submit" label="Salvar" icon="fas fa-save" />
-              </div>
-            </div>
-          </fieldset>
-        </form>
+    <Panel>
+      <template #header>
+        <div class="flex flex-col">
+          <div class="text-2xl font-semibold m-0">{{ titulo }}</div>
+          <div v-if="subtitulo" class="text-xl font-normal m-0">{{ subtitulo }}</div>
+        </div>
       </template>
-    </Card>
+      <template #icons>
+        <Button
+          v-if="exibirBotaoNovo"
+          class="btn btn-info mr-1"
+          icon="fas fa-file"
+          title="Novo"
+          severity="info"
+          @click="novo"
+        />
+        <Button
+          v-if="listUrl"
+          class="btn btn-outline-secondary mr-1"
+          icon="fas fa-list"
+          title="Ir para a listagem"
+          as="router-link"
+          :to="listUrl"
+        />
+      </template>
+
+      <form @submit.prevent="$emit('submitForm')">
+        <fieldset :disabled="loadingStore.loading">
+          <slot />
+
+          <div class="form-row">
+            <div class="col-span-12 flex justify-end gap-4">
+              <Button type="submit" label="Salvar" icon="fas fa-save" />
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </Panel>
   </div>
 </template>
 
@@ -104,7 +101,7 @@ export default {
       required: false,
       default: '',
     },
-    withoutCard: {
+    semCard: {
       type: Boolean,
       default: false,
     },
@@ -147,11 +144,7 @@ export default {
     };
   },
 
-  mounted() {},
-
   computed: {
-    ...mapStores(useLoadingStore),
-
     formUrlParsedFromUrl() {
       // remove the "id" param from URL and return, but only if formUrl is empty
       if (this.formUrl) {
@@ -162,6 +155,8 @@ export default {
       return url.pathname + url.search; // Retorna apenas o caminho e os parâmetros restantes
     },
   },
+
+  mounted() {},
 
   methods: {
     novo() {

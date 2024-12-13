@@ -1,6 +1,4 @@
 <template>
-  <ConfirmDialog group="confirmDialog_crosierListS" />
-
   <CrosierListS
     ref="dt"
     :store="userStore"
@@ -44,36 +42,6 @@
         <template #body="r">
           <div class="text-center">
             {{ r.data.isActive ? 'Sim' : 'Não' }}
-          </div>
-        </template>
-      </Column>
-
-      <Column field="updated" header="" :sortable="true">
-        <template #body="r" class="text-right">
-          <div class="d-flex justify-content-end">
-            <a
-              role="button"
-              class="btn btn-primary btn-sm"
-              title="Editar registro"
-              :href="formUrl + '?id=' + r.data.id"
-              ><i class="fas fa-wrench" aria-hidden="true"
-            /></a>
-            <a
-              role="button"
-              class="btn btn-danger btn-sm ml-1"
-              title="Deletar registro"
-              @click="$refs.dt.deletar(r.data.id)"
-              ><i class="fas fa-trash" aria-hidden="true"
-            /></a>
-          </div>
-          <div class="d-flex justify-content-end mt-1">
-            <span
-              v-if="r.data.updated"
-              class="badge badge-info"
-              title="Última alteração do registro"
-            >
-              {{ new Date(r.data.updated).toLocaleString() }}
-            </span>
           </div>
         </template>
       </Column>

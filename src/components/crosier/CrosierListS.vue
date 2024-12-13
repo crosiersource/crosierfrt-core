@@ -4,211 +4,218 @@
   <Drawer
     v-if="comFiltragem && filtrosNaSidebar"
     v-model:visible="visibleRight"
+    header="Filtros"
     class="!w-full md:!w-80 lg:!w-[30rem]"
     position="right"
   >
-    <div class="card">
-      <div class="card-body">
-        <div class="h5 card-title"><i class="fas fa-search" /> Filtros</div>
-        <form @submit.prevent="doFilter()">
-          <slot name="filter-fields" />
-          <div class="row mt-3">
-            <div class="col-12">
-              <InlineMessage severity="info">
-                <small>
-                  {{ totalRecords }} registro(s) encontrado(s)
-                  <span v-show="isFiltering">(com filtros aplicados)</span>.
-                </small>
-              </InlineMessage>
-            </div>
-          </div>
-
-          <div class="form-row mt-2">
-            <div class="col-6">
-              <button type="submit" class="btn btn-primary btn-sm btn-block">
-                <i class="fas fa-search" /> Filtrar
-              </button>
-            </div>
-            <div class="col-6">
-              <button
-                type="button"
-                class="btn btn-sm btn-secondary btn-block"
-                @click="doClearFilters()"
-              >
-                <i class="fas fa-backspace" /> Limpar
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
+    <div class="flex flex-col gap-2">
+      <form @submit.prevent="doFilter()">
+        <slot name="filter-fields" />
+        <div class="flex justify-end gap-2 mt-2">
+          <Button type="submit" icon="fas fa-search" label="Filtrar" size="small" />
+          <Button
+            icon="far fa-times-circle"
+            severity="warn"
+            label="Limpar filtros"
+            size="small"
+            @click="doClearFilters()"
+          />
+        </div>
+      </form>
     </div>
+    <Message severity="info" size="small" class="mt-2">
+      {{ totalRecords }} registro(s) encontrado(s)
+      <span v-show="isFiltering">(com filtros aplicados)</span>.
+    </Message>
+
+    <template #footer />
   </Drawer>
 
-  <div v-if="!withoutCard" :class="containerClass">
-    <div class="card" style="margin-bottom: 50px">
-      <div class="card-header">
-        <div class="d-flex flex-wrap align-items-center">
-          <div class="mr-1">
-            <div class="h3">{{ titulo }}</div>
-            <div v-if="subtitulo" class="h6">{{ subtitulo }}</div>
-          </div>
-          <div class="d-sm-flex flex-nowrap ml-auto">
-            <a
-              v-if="formUrl"
-              type="button"
-              class="btn btn-outline-info"
-              :href="formUrl"
-              title="Novo"
-            >
-              <i class="fas fa-file" aria-hidden="true" />
-            </a>
-
-            <button
-              v-if="comFiltragem"
-              type="button"
-              :class="'btn btn-' + (!isFiltering ? 'outline-' : '') + 'warning ml-1'"
-              @click="toggleFiltros"
-            >
-              <i class="fas fa-search" />
-            </button>
-
-            <button
-              v-if="comFiltragem"
-              type="button"
-              class="btn btn-outline-secondary ml-1"
-              title="Limpar filtros"
-              @click="doClearFilters()"
-            >
-              <i class="fas fa-backspace" />
-            </button>
-
-            <slot name="headerButtons" />
-          </div>
+  <div v-if="!semCard" :class="containerClass">
+    <Panel>
+      <template #header>
+        <div class="flex flex-col">
+          <div class="text-2xl font-semibold m-0">{{ titulo }}</div>
+          <div v-if="subtitulo" class="text-xl font-normal m-0">{{ subtitulo }}</div>
         </div>
-      </div>
-      <div class="card-body">
-        <div v-if="comFiltragem && !filtrosNaSidebar">
-          <Accordion :activeIndex="accordionActiveIndex">
-            <AccordionTab>
-              <template #header>
-                <span>Filtros</span>
-                <i class="pi pi-filter" />
-              </template>
-              <form class="notSubmit" @submit.prevent="doFilter()">
-                <slot name="filter-fields" />
-                <div class="row mt-3">
-                  <div class="col-8">
-                    <InlineMessage severity="info">
-                      <small>
-                        {{ totalRecords }} registro(s) encontrado(s)
-                        <span v-show="isFiltering">(com filtros aplicados)</span>.
-                      </small>
-                    </InlineMessage>
-                  </div>
-                  <div class="col-4 text-right">
-                    <button type="submit" class="btn btn-primary btn-sm">
-                      <i class="fas fa-search" /> Filtrar
-                    </button>
+      </template>
+      <template #icons>
+        <Button v-if="formUrl" icon="fas fa-file" title="Novo" :to="formUrl" severity="info" />
 
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-secondary ml-1"
-                      @click="doClearFilters()"
-                    >
-                      <i class="fas fa-backspace" /> Limpar
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </AccordionTab>
-          </Accordion>
-        </div>
+        <Button
+          v-if="comFiltragem"
+          class="ml-1"
+          icon="fas fa-search"
+          title="Abrir painel de filtros"
+          severity="help"
+          :variant="isFiltering ? 'filled' : 'outlined'"
+          @click="toggleFiltros"
+        />
 
-        <DataTable
-          ref="dt"
-          :stateStorage="stateStorage"
-          class="p-datatable-sm p-datatable-striped"
-          :stateKey="dataTableStateKey"
-          :value="tableData"
-          :totalRecords="totalRecords"
-          :lazy="true"
-          :paginator="comPaginador"
-          :rows="rows"
-          paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink
-           LastPageLink CurrentPageReport RowsPerPageDropdown"
-          :rowsPerPageOptions="[5, 10, 25, 50, 100, 200, 500]"
-          currentPageReportTemplate="{first}-{last} de {totalRecords}"
-          :selection="selection"
-          :selectionMode="selectionMode"
-          :metaKeySelection="metaKeySelection"
-          dataKey="id"
-          :resizableColumns="true"
-          columnResizeMode="fit"
-          :first="firstRecordIndex"
-          :rowHover="true"
-          :multiSortMeta="multiSortMeta"
-          :removableSort="removableSort"
-          :sortMode="sortMode"
-          :rowGroupMode="rowGroupMode"
-          :groupRowsBy="groupRowsBy"
-          :sortField="sortField"
-          :sortOrder="sortOrder"
-          :responsiveLayout="responsiveLayout"
-          :showGridlines="showGridlines"
-          @page="doFilter($event)"
-          @sort="doFilter($event)"
-          @update:selection="onUpdateSelection($event)"
-          @row-select="onRowSelect"
-          @row-unselect="onRowUnselect"
-        >
-          <template #groupheader="groupheader">
-            <slot name="groupheader" :groupheader="groupheader" />
-          </template>
+        <Button
+          v-if="comFiltragem"
+          :class="'btn btn-' + (!isFiltering ? 'outline-' : '') + 'warning ml-1'"
+          icon="far fa-times-circle"
+          title="Limpar filtros e recarregar"
+          severity="warn"
+          variant="outlined"
+          @click="doClearFilters()"
+        />
 
-          <template #footer>
-            <div v-if="comExportCSV" style="text-align: right">
-              <button
-                type="button"
-                class="btn btn-sm btn-outline-info"
-                title="Exportar para CSV"
-                @click="exportCSV($event)"
-              >
-                <i class="fas fa-file-csv" />
-              </button>
-            </div>
-            <slot name="footer" />
-          </template>
+        <slot name="headerButtons" />
+      </template>
 
-          <Column v-if="selecao" field="id" :sortable="true">
+      <div v-if="comFiltragem && !filtrosNaSidebar">
+        <Accordion :activeIndex="accordionActiveIndex">
+          <AccordionTab>
             <template #header>
-              <Checkbox
-                v-model="tudoSelecionado"
-                :binary="true"
-                onIcon="pi pi-check"
-                offIcon="pi pi-times"
-                @change="tudoSelecionadoClick()"
-              />&nbsp; Id
+              <span>Filtros</span>
+              <i class="pi pi-filter" />
             </template>
-            <template #body="r">
-              {{ ('0'.repeat(zerofillId) + r.data.id).slice(-zerofillId) }}
-            </template>
-          </Column>
-          <slot name="columns" />
-        </DataTable>
+            <form class="notSubmit" @submit.prevent="doFilter()">
+              <slot name="filter-fields" />
+              <div class="row mt-3">
+                <div class="col-8">
+                  <InlineMessage severity="info">
+                    <small>
+                      {{ totalRecords }} registro(s) encontrado(s)
+                      <span v-show="isFiltering">(com filtros aplicados)</span>.
+                    </small>
+                  </InlineMessage>
+                </div>
+                <div class="col-4 text-right">
+                  <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fas fa-search" /> Filtrar
+                  </button>
 
-        <div v-if="exibirBtnLimparConfiguracoesDaTabela" class="d-flex justify-content-end">
-          <button
-            id="btnLimparConfiguracoesDaTabela01"
-            type="button"
-            class="btn btn-outline-info btn-sm ml-1 mt-3"
-            title="Limpar configurações da tabela"
-            @click="limparConfiguracoesDaTabela"
-          >
-            <i class="fas fa-sync-alt" />
-          </button>
-        </div>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-secondary ml-1"
+                    @click="doClearFilters()"
+                  >
+                    <i class="fas fa-backspace" /> Limpar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </AccordionTab>
+        </Accordion>
       </div>
-    </div>
+
+      <DataTable
+        ref="dt"
+        :stateStorage="stateStorage"
+        class="p-datatable-sm p-datatable-striped"
+        :stateKey="dataTableStateKey"
+        :value="tableData"
+        :totalRecords="totalRecords"
+        :lazy="true"
+        :paginator="comPaginador"
+        :rows="rows"
+        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink
+           LastPageLink CurrentPageReport RowsPerPageDropdown"
+        :rowsPerPageOptions="[5, 10, 25, 50, 100, 200, 500]"
+        currentPageReportTemplate="{first}-{last} de {totalRecords}"
+        :selection="selection"
+        :selectionMode="selectionMode"
+        :metaKeySelection="metaKeySelection"
+        dataKey="id"
+        :resizableColumns="true"
+        columnResizeMode="fit"
+        :first="firstRecordIndex"
+        :rowHover="true"
+        :multiSortMeta="multiSortMeta"
+        :removableSort="removableSort"
+        :sortMode="sortMode"
+        :rowGroupMode="rowGroupMode"
+        :groupRowsBy="groupRowsBy"
+        :sortField="sortField"
+        :sortOrder="sortOrder"
+        :responsiveLayout="responsiveLayout"
+        :showGridlines="showGridlines"
+        @page="doFilter($event)"
+        @sort="doFilter($event)"
+        @update:selection="onUpdateSelection($event)"
+        @row-select="onRowSelect"
+        @row-unselect="onRowUnselect"
+      >
+        <template #groupheader="groupheader">
+          <slot name="groupheader" :groupheader="groupheader" />
+        </template>
+
+        <template #footer>
+          <div v-if="comExportCSV" style="text-align: right">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-info"
+              title="Exportar para CSV"
+              @click="exportCSV($event)"
+            >
+              <i class="fas fa-file-csv" />
+            </button>
+          </div>
+          <slot name="footer" />
+        </template>
+
+        <Column v-if="selecao" field="id" :sortable="true">
+          <template #header>
+            <Checkbox
+              v-model="tudoSelecionado"
+              :binary="true"
+              @change="tudoSelecionadoClick()"
+            />&nbsp; Id
+          </template>
+          <template #body="r">
+            {{ ('0'.repeat(zerofillId) + r.data.id).slice(-zerofillId) }}
+          </template>
+        </Column>
+        <slot name="columns" />
+
+        <Column v-if="exibirUltimaColuna" field="updated" header="" :sortable="true">
+          <template #body="r">
+            <div class="flex justify-end space-x-2">
+              <Button
+                as="router-link"
+                title="Editar registro"
+                :to="formUrl + '?id=' + r.data.id"
+                icon="fas fa-wrench"
+                severity="info"
+                size="small"
+              />
+              <Button
+                title="Deletar registro"
+                icon="fas fa-trash"
+                severity="danger"
+                size="small"
+                @click="deletar(r.data.id)"
+              />
+            </div>
+            <div class="flex justify-end space-x-2 mt-1">
+              <Badge
+                v-if="r.data.updated"
+                severity="secondary"
+                class="badge badge-info"
+                title="Última alteração do registro"
+              >
+                {{ new Date(r.data.updated).toLocaleString() }}
+              </Badge>
+            </div>
+          </template>
+        </Column>
+      </DataTable>
+
+      <div v-if="exibirBtnLimparConfiguracoesDaTabela" class="flex justify-end gap-2 mt-2">
+        <Button
+          id="btnLimparConfiguracoesDaTabela02"
+          title="Limpar configurações da tabela"
+          icon="fas fa-sync-alt"
+          severity="info"
+          variant="outlined"
+          size="small"
+          @click="limparConfiguracoesDaTabela"
+        />
+      </div>
+    </Panel>
   </div>
 
   <div v-else>
@@ -322,30 +329,21 @@
       <slot name="columns" />
     </DataTable>
 
-    <div v-if="exibirBtnLimparConfiguracoesDaTabela" class="d-flex justify-content-end">
-      <button
+    <div v-if="exibirBtnLimparConfiguracoesDaTabela" class="flex justify-end gap-2 mt-2">
+      <Button
         id="btnLimparConfiguracoesDaTabela02"
-        type="button"
-        class="btn btn-outline-info btn-sm ml-1 mt-3"
         title="Limpar configurações da tabela"
+        icon="fas fa-sync-alt"
+        severity="info"
+        variant="outlined"
+        size="small"
         @click="limparConfiguracoesDaTabela"
-      >
-        <i class="fas fa-sync-alt" />
-      </button>
+      />
     </div>
   </div>
 </template>
 
 <script>
-import Checkbox from 'primevue/checkbox';
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';
-import Toast from 'primevue/toast';
-import Accordion from 'primevue/accordion';
-import AccordionTab from 'primevue/accordiontab';
-import ConfirmDialog from 'primevue/confirmdialog';
-import InlineMessage from 'primevue/inlinemessage';
-import Drawer from 'primevue/drawer';
 // import { api, CrosierBlock } from "crosier-vue";
 import api from '@/services/api';
 import { useLoadingStore } from '@/stores/loading.store.js';
@@ -354,17 +352,7 @@ import { useAuthStore } from '@/stores/auth.store.js';
 export default {
   name: 'CrosierListS',
 
-  components: {
-    Accordion,
-    AccordionTab,
-    Checkbox,
-    ConfirmDialog,
-    DataTable,
-    Column,
-    InlineMessage,
-    Toast,
-    Drawer,
-  },
+  components: {},
 
   props: {
     store: {
@@ -375,9 +363,13 @@ export default {
       type: String,
       default: 'filters',
     },
-    withoutCard: {
+    semCard: {
       type: Boolean,
       default: false,
+    },
+    exibirUltimaColuna: {
+      type: Boolean,
+      default: true,
     },
     titulo: {
       type: String,
@@ -796,7 +788,7 @@ export default {
         accept: async () => {
           this.loadingStore.setLoading(true);
           try {
-            const deleteUrl = `${this.apiResource}${id}`;
+            const deleteUrl = `${import.meta.env.VITE_CROSIER_API}${this.apiResource}${id}`;
             const rsDelete = await api.delete(deleteUrl);
             if (!rsDelete) {
               throw new Error('rsDelete n/d');

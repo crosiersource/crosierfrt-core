@@ -1,7 +1,13 @@
 .layout-footer {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding: 0.3rem;
-    background-color: var(--surface-card);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0.5rem;
+  background-color: var(--surface-card);
+  z-index: 100; /* Garante que fique acima de outros elementos */
+  background-color: var(--surface-card);
 }

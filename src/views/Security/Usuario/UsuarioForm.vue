@@ -114,6 +114,8 @@
         @change="onChangeGroup"
       />
     </div>
+
+    <UsuarioRoles />
   </CrosierForm>
 </template>
 <script>
@@ -124,13 +126,13 @@ import CrosierInputEmail from '@/components/crosier/fields/CrosierInputEmail.vue
 import CrosierInputTelefone from '@/components/crosier/fields/CrosierInputTelefone.vue';
 import CrosierSwitch from '@/components/crosier/fields/CrosierSwitch.vue';
 import CrosierDropdownEntity from '@/components/crosier/fields/CrosierDropdownEntity.vue';
-import UsuarioRoles from './UsuarioRoles.vue';
 import { mapStores } from 'pinia';
 import { useUserStore } from '@/stores/Security/user.store';
 import { useLoadingStore } from '@/stores/loading.store';
 import { submitForm } from '@/services/SubmitForm.js';
 import Password from 'primevue/password';
 import * as yup from 'yup';
+import UsuarioRoles from './UsuarioRoles.vue';
 
 export default {
   name: 'UsuarioForm',
@@ -145,6 +147,10 @@ export default {
     CrosierSwitch,
     CrosierDropdownEntity,
     UsuarioRoles,
+  },
+
+  computed: {
+    ...mapStores(useUserStore, useLoadingStore),
   },
 
   mounted() {
@@ -192,10 +198,6 @@ export default {
         this.userStore.fields.userRoles = this.userStore.fields.group.roles;
       });
     },
-  },
-
-  computed: {
-    ...mapStores(useUserStore, useLoadingStore),
   },
 };
 </script>

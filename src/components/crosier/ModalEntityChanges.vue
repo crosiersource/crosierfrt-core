@@ -32,7 +32,7 @@
     <CrosierListS
       v-if="entityId"
       ref="crosierListS_entityChanges"
-      withoutCard
+      semCard
       :comFiltragem="false"
       :comPaginador="false"
       apiResource="/api/core/config/entityChanges/"
