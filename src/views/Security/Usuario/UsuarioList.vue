@@ -1,4 +1,5 @@
 <template>
+  <Compo1 />
   <CrosierListS
     ref="dt"
     :store="userStore"
@@ -55,8 +56,6 @@ import CrosierInputText from '@/components/crosier/fields/CrosierInputText.vue';
 import CrosierInputEmail from '@/components/crosier/fields/CrosierInputEmail.vue';
 import CrosierDropdownBoolean from '@/components/crosier/fields/CrosierDropdownBoolean.vue';
 import Column from 'primevue/column';
-import Toast from 'primevue/toast';
-import ConfirmDialog from 'primevue/confirmdialog';
 import { mapStores } from 'pinia';
 import { useUserStore } from '@/stores/Security/user.store.js';
 
@@ -69,8 +68,6 @@ export default {
     CrosierInputEmail,
     CrosierDropdownBoolean,
     Column,
-    Toast,
-    ConfirmDialog,
   },
 
   data() {
