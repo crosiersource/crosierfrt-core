@@ -470,7 +470,7 @@ const crosierMenu = [
 ];
 
 // const model = ref(ultimaOriginal);
-const model = ref(crosierMenu);
+const model = ref(ultimaOriginal);
 </script>
 
 <template>

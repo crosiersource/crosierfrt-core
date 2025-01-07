@@ -1,5 +1,5 @@
 <template>
-  <ul class="layout-menu">
+  <ul v-if="model" class="layout-menu">
     <template v-for="(item, i) in model" :key="item">
       <AppMenuItem :item="item" root :index="i" />
       <li class="menu-separator" />
@@ -31,31 +31,7 @@ export default {
     await menuStore.load();
     console.log('menuStore.menu', menuStore.menu);
     this.model = menuStore.menu;
-
-    // const crosierMenu = [
-    //   {
-    //     label: 'Inicial',
-    //     icon: 'pi pi-home',
-    //     to: '/',
-    //   },
-    //   {
-    //     label: 'Configurações',
-    //     icon: 'fas fa-cogs',
-    //     items: [
-    //       {
-    //         label: 'Usuários',
-    //         icon: 'fas fa-users',
-    //         to: '/sec/usuario/list',
-    //       },
-    //     ],
-    //   },
-    // ];
-    //
-    // const model = ref(crosierMenu);
-    //
-    // return {
-    //   model,
-    // };
+    console.log('this.model', this.model);
   },
 };
 </script>

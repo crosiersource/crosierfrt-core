@@ -33,6 +33,8 @@ export const useMenuStore = defineStore('menu', {
           apiResource: `${import.meta.env.VITE_CROSIER_API}/api/cfg/menuItem?exists[pai]=false&order[ordem]=ASC&order[items.ordem]=ASC`,
         });
 
+        console.log('aquiiiiiiii', response);
+
         if (response.data['hydra:member']) {
           function transformMenuData(menuData) {
             return menuData.map((item) => {

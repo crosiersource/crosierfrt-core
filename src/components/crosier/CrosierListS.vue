@@ -40,7 +40,15 @@
         </div>
       </template>
       <template #icons>
-        <Button v-if="formUrl" icon="fas fa-file" title="Novo" :to="formUrl" severity="info" />
+        <Button
+          v-if="formUrl"
+          icon="fas fa-file"
+          title="Novo"
+          as="router-link"
+          :to="formUrl"
+          severity="info"
+          @click="novoClick"
+        />
 
         <Button
           v-if="comFiltragem"
@@ -628,6 +636,10 @@ export default {
   },
 
   methods: {
+    novoClick() {
+      console.log('Clicquei: ' + this.formUrl);
+    },
+
     setFilters(filters) {
       if (this.filtersStoreName) {
         this.store[this.filtersStoreName] = filters;
@@ -682,10 +694,10 @@ export default {
         apiOrder = this.multiSortMeta;
       }
 
-      console.log('carregar de ' + import.meta.env.VITE_CROSIER_API + this.apiResource);
+      console.log('carregar de ' + this.apiResource);
 
       const response = await api.get({
-        apiResource: import.meta.env.VITE_CROSIER_API + this.apiResource,
+        apiResource: this.apiResource,
         authToken: this.authStore.token,
         page,
         rows,
@@ -788,8 +800,8 @@ export default {
         accept: async () => {
           this.loadingStore.setLoading(true);
           try {
-            const deleteUrl = `${import.meta.env.VITE_CROSIER_API}${this.apiResource}${id}`;
-            const rsDelete = await api.delete(deleteUrl);
+            const deleteUrl = `${this.apiResource}${id}`;
+            const rsDelete = await api.delete(deleteUrl, this.authStore.token);
             if (!rsDelete) {
               throw new Error('rsDelete n/d');
             }

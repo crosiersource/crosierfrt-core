@@ -4,7 +4,7 @@
     ref="dt"
     :store="userStore"
     titulo="Usuários"
-    apiResource="/api/sec/user/"
+    :apiResource="apiResource"
     :formUrl="formUrl"
     filtrosNaSidebar
   >
@@ -79,6 +79,10 @@ export default {
 
   computed: {
     ...mapStores(useUserStore),
+
+    apiResource() {
+      return import.meta.env.VITE_CROSIER_API + '/api/sec/user/';
+    },
   },
 
   methods: {},

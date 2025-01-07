@@ -44,13 +44,9 @@ export async function submitForm({
     await fnBeforeSave(formData);
   }
 
-  console.log('import.meta.env.VITE_CROSIER_API:', import.meta.env.VITE_CROSIER_API);
+  console.log('salvando para o endpoint:' + apiResource);
 
-  const response = await api.save(
-    import.meta.env.VITE_CROSIER_API + apiResource,
-    formData,
-    authStore.token,
-  );
+  const response = await api.save(apiResource, formData, authStore.token);
 
   console.log('response', response);
 

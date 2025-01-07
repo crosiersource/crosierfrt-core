@@ -22,6 +22,7 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       primevue: path.resolve(__dirname, './node_modules/primevue'),
+      yup: path.resolve(__dirname, './node_modules/yup'),
     },
     // Adicionando suporte implícito a .vue
     extensions: ['.js', '.json', '.vue'],
