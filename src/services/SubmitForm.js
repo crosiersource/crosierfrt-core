@@ -1,6 +1,7 @@
 import api from './api';
 import { validateFormData } from './ValidateFormData';
 import { useAuthStore } from '@/stores/auth.store';
+import { getToast } from '@/services/toast-service.js';
 
 // import { api, validateFormData } from "crosier-vue";
 
@@ -13,10 +14,11 @@ export async function submitForm({
   setUrlId = true,
   fnBeforeSave = null,
   fnAfterGet = null,
-  $toast = null,
   commitFormDataAfterSave = true,
 }) {
   console.log('vou para ' + apiResource);
+
+  const toast = getToast();
 
   console.log('authToken:');
   const authStore = useAuthStore();
@@ -33,10 +35,7 @@ export async function submitForm({
     return false;
   }
 
-  if (
-    schemaValidator &&
-    !validateFormData({ $store, formDataStateName, schemaValidator, $toast })
-  ) {
+  if (schemaValidator && !validateFormData({ $store, formDataStateName, schemaValidator, toast })) {
     return false;
   }
 
@@ -66,7 +65,7 @@ export async function submitForm({
       $store.fields = formData;
     }
 
-    $toast.add({
+    toast.add({
       severity: 'success',
       summary: 'Sucesso',
       detail: 'O registro foi salvo com sucesso!',

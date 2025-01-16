@@ -26,6 +26,11 @@ export const useUserStore = defineStore('user', {
   },
 
   actions: {
+    async novo() {
+      console.log('setando novo');
+      this.fields = {};
+    },
+
     async load(id) {
       const loadingStore = useLoadingStore();
       loadingStore.setLoading(true);
@@ -60,6 +65,8 @@ export const useUserStore = defineStore('user', {
       const schemaValidator = yup.object().shape({
         username: yup.string().required().typeError(),
       });
+
+      console.log('vou salvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 
       const authStore = useAuthStore();
 

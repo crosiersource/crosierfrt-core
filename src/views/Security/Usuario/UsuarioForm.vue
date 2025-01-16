@@ -5,7 +5,6 @@
     titulo="Usuário"
     entityChanges
     entityClass="CrosierSource:CrosierLibBaseBundle:Entity:Security:User"
-    @submit-form="submitForm"
   >
     <div class="form-row">
       <CrosierInputInt id="id" v-model="userStore.fields.id" label="Id" col="2" :disabled="true" />
@@ -129,9 +128,7 @@ import CrosierDropdownEntity from '@/components/crosier/fields/CrosierDropdownEn
 import { mapStores } from 'pinia';
 import { useUserStore } from '@/stores/Security/user.store';
 import { useLoadingStore } from '@/stores/loading.store';
-import { submitForm } from '@/services/SubmitForm.js';
 import Password from 'primevue/password';
-import * as yup from 'yup';
 import UsuarioRoles from './UsuarioRoles.vue';
 
 export default {
@@ -154,45 +151,11 @@ export default {
   },
 
   mounted() {
-    this.schemaValidator = yup.object().shape({
-      username: yup.string().required().typeError(),
-      nome: yup.string().required().typeError(),
-      email: yup.string().required().typeError(),
-      estabelecimentoId: yup.string().required().typeError(),
-    });
-    // get id from route param
     const id = this.$route.query.id;
     this.userStore.load(id);
   },
 
   methods: {
-    async submitForm() {
-      console.log('Chamou o submitForm???');
-      this.loadingStore.setLoading(true);
-      try {
-        await submitForm({
-          apiResource: '/api/sec/user',
-          schemaValidator: this.schemaValidator,
-          $store: this.userStore,
-          $toast: this.$toast,
-          fnBeforeSave: (formData) => {
-            formData.group = formData.group ? formData.group['@id'] : null;
-            formData.estabelecimentoId = formData.estabelecimentoId.toString();
-            delete formData.userInsertedId;
-            delete formData.userUpdatedId;
-            if (formData.userRoles) {
-              formData.userRoles = formData.userRoles
-                ? formData.userRoles.map((e) => e['@id'])
-                : [];
-            }
-          },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-      this.loadingStore.setLoading(false);
-    },
-
     async onChangeGroup() {
       this.$nextTick(() => {
         this.userStore.fields.userRoles = this.userStore.fields.group.roles;

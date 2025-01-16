@@ -1,5 +1,9 @@
-export function validateFormData({ $store, schemaValidator, $toast }) {
+import { getToast } from '@/services/toast-service.js';
+
+export function validateFormData({ $store, schemaValidator }) {
   const formData = $store.fields;
+
+  const toast = getToast();
 
   console.log('store é');
   console.log($store);
@@ -22,8 +26,8 @@ export function validateFormData({ $store, schemaValidator, $toast }) {
         }
       });
 
-      if ($toast) {
-        $toast.add({
+      if (toast) {
+        toast.add({
           severity: 'error',
           summary: 'Erro',
           detail: 'Verifique os campos obrigatórios',

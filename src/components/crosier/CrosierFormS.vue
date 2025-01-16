@@ -6,7 +6,7 @@
   />
 
   <div v-if="semCard">
-    <form @submit.prevent="$emit('submitForm')">
+    <form @submit.prevent="store.save">
       <fieldset :disabled="loadingStore.loading">
         <slot />
         <div v-if="!semBotaoSalvar" class="row mt-3">
@@ -51,7 +51,7 @@
         />
       </template>
 
-      <form @submit.prevent="$emit('submitForm')">
+      <form @submit.prevent="store.save">
         <fieldset :disabled="loadingStore.loading">
           <slot />
 
@@ -136,7 +136,7 @@ export default {
     },
   },
 
-  emits: ['submitForm', 'onClickNovo'],
+  emits: ['onClickNovo'],
 
   data() {
     return {
@@ -159,7 +159,8 @@ export default {
   mounted() {},
 
   methods: {
-    novo() {
+    async novo() {
+      await this.store.novo();
       window.history.pushState({}, '', this.formUrlParsedFromUrl);
       this.$emit('onClickNovo');
     },

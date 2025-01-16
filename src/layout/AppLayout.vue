@@ -38,6 +38,8 @@ import AppFooter from './AppFooter.vue';
 import AppRightMenu from './AppRightMenu.vue';
 import AppSidebar from './AppSidebar.vue';
 import AppTopbar from './AppTopbar.vue';
+import { useToast } from 'primevue/usetoast';
+import { setToast } from '../services/toast-service';
 
 export default {
   name: 'App',
@@ -52,6 +54,9 @@ export default {
   setup() {
     const { layoutConfig, layoutState, watchSidebarActive, unbindOutsideClickListener } =
       useLayout();
+
+    const toast = useToast();
+    setToast(toast);
 
     onMounted(() => {
       watchSidebarActive();

@@ -146,7 +146,7 @@ export default {
     async load() {
       try {
         const response = await api.get({
-          apiResource: import.meta.env.VITE_CROSIER_API + this.entityUri,
+          apiResource: this.entityUri,
           allRows: true,
           filters: this.filters,
           order: this.orderBy,
