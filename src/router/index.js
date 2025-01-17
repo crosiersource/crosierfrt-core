@@ -502,48 +502,40 @@ console.log(routes[0].children);
 // routes[0].children = [...routes[0].children, ...novasRotas];
 
 // Mapeia os possíveis caminhos de módulos de rotas
-const modules = import.meta.glob('../../../*/src/router/routes.js');
+const modules = import.meta.glob('../../../*/src/router/routes.js', { eager: true });
 
 console.log('modules', modules);
 
-await (async () => {
-  const subprojeto = import.meta.env.VITE_SUBPROJETOS;
+import novasRotas from '../../../crosierfrt-docplus/src/router/routes.js';
+console.log('novasRotas', novasRotas);
 
-  if (!subprojeto) {
-    console.error('Erro: VITE_SUBPROJETOS não definido no .env');
-    return;
+Object.keys(modules).forEach((path) => {
+  console.log(`Importando rotas do arquivo: ${path}`);
+  const subprojetoRoutes = modules[path].default; // As rotas devem estar exportadas como `default`
+
+  console.log('subprojetoRoutes', subprojetoRoutes);
+
+  if (Array.isArray(subprojetoRoutes)) {
+    console.log('Adicionando rotas do subprojeto:', subprojetoRoutes);
+
+    // Adiciona as rotas ao conjunto principal
+    routes[0].children = [...routes[0].children, ...subprojetoRoutes];
+  } else {
+    console.error(`O arquivo de rotas em "${path}" não exporta um array de rotas.`);
   }
+});
 
-  // Constrói o caminho correspondente ao subprojeto
-  const path = `../../../${subprojeto}/src/router/routes.js`;
+console.log('depois..');
 
-  try {
-    // Verifica se o arquivo existe no mapeamento
-    if (modules[path]) {
-      const module = await modules[path]();
-      console.log('achei o module', module);
-
-      const { extendRoutes } = module;
-
-      // Obtém as novas rotas
-      const novasRotas = extendRoutes();
-
-      console.log('Novas rotas:', novasRotas);
-
-      // Adiciona as rotas dinamicamente
-      routes[0].children = [...routes[0].children, ...novasRotas];
-    } else {
-      console.error(`O arquivo de rotas para "${subprojeto}" não foi encontrado.`);
-    }
-  } catch (error) {
-    console.error(`Erro ao importar rotas do subprojeto "${subprojeto}":`, error);
-  }
-})();
+// Adiciona as rotas dinamicamente
+// routes[0].children = [...routes[0].children, ...novasRotas];
 
 console.log('agora:', routes.length);
 
 console.log(routes);
 console.log(routes[0].children);
+
+console.log('createRouter');
 
 const router = createRouter({
   history: createWebHistory(),
@@ -552,6 +544,8 @@ const router = createRouter({
     return { left: 0, top: 0 };
   },
 });
+
+console.log('afterRouter');
 
 router.beforeEach(async (to) => {
   const publicPages = ['/auth/login', '/auth/esqueciMinhaSenha'];

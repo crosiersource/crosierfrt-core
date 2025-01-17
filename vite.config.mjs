@@ -8,15 +8,24 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'esnext',
+    },
+    noDiscovery: true,
+    include: [
+      'pinia',
+      'quill',
+      'mousetrap',
+      'tiny-case',
+      'property-expr',
+      'toposort',
+      'moment-timezone',
+    ],
+  },
   build: {
     target: 'esnext',
-    rollupOptions: {
-      external: ['pinia'],
-    },
-  },
-  optimizeDeps: {
-    noDiscovery: true,
-    include: ['quill', 'mousetrap', 'tiny-case', 'property-expr', 'toposort', 'moment-timezone'],
   },
   plugins: [
     vue(),
@@ -29,6 +38,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       primevue: path.resolve(__dirname, './node_modules/primevue'),
       yup: path.resolve(__dirname, './node_modules/yup'),
+      pinia: path.resolve(__dirname, './node_modules/pinia'),
     },
     // Adicionando suporte implícito a .vue
     extensions: ['.js', '.json', '.vue'],

@@ -16,7 +16,13 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 import '@/yup.locale.pt-br.js';
 
+console.log('vou createApp');
+
 const app = createApp(App);
+
+app.config.errorHandler = (err, instance, info) => {
+  console.log(info);
+};
 
 app.use(router);
 app.use(PrimeVue, {
@@ -40,5 +46,7 @@ app.use(ConfirmationService);
 app.use(pinia);
 
 app.component('BlockViewer', BlockViewer);
+
+console.log('Vou fazer o app.mount');
 
 app.mount('#app');
