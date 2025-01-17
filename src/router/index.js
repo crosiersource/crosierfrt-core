@@ -506,9 +506,6 @@ const modules = import.meta.glob('../../../*/src/router/routes.js', { eager: tru
 
 console.log('modules', modules);
 
-import novasRotas from '../../../crosierfrt-docplus/src/router/routes.js';
-console.log('novasRotas', novasRotas);
-
 Object.keys(modules).forEach((path) => {
   console.log(`Importando rotas do arquivo: ${path}`);
   const subprojetoRoutes = modules[path].default; // As rotas devem estar exportadas como `default`
